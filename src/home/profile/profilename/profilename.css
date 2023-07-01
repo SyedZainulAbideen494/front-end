@@ -1,0 +1,48 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .profilename span {
+    display: inline-flex;
+    font-size: small;
+  }
+  .profilename {
+    margin-left: 10px;
+  }
+  .lastname h2 {
+    margin-left: 5px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .profilename span {
+    display: inline-flex;
+  }
+  .profilename {
+    margin-left: 60px;
+  }
+  .lastname h2 {
+    margin-left: 5px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profilename span {
+    display: inline-flex;
+  }
+  .profilename {
+    margin-left: 130px;
+  }
+  .lastname h2 {
+    margin-left: 5px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .profilename span {
+    display: inline-flex;
+  }
+  .profilename {
+    margin-left: 200px;
+  }
+  .lastname h2 {
+    margin-left: 5px;
+  }
+}

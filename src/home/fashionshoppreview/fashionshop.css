@@ -1,0 +1,45 @@
+.headerinlinelelments span {
+  display: inline-flex;
+}
+
+.btnfashion button {
+  padding: 10px 30px;
+  color: white;
+  border: 2px solid black;
+  margin: 10px;
+  background-color: black;
+}
+
+.btnfashion button:hover {
+  text-decoration: underline red;
+  transition: 0.4s;
+}
+
+.headertxtname h1 {
+  margin-right: 50px;
+  color: white;
+}
+
+.headerstore1 header {
+  background: black;
+  display: flex;
+}
+
+.prodstxt1212 h2 {
+  margin-top: 60px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.aboutustxtheading h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.block2 {
+  float: right;
+}
+
+.block3 {
+  margin-top: 200px;
+}

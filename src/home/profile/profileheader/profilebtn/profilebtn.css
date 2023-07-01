@@ -1,0 +1,47 @@
+.editbtn button {
+  padding: 10px 30px;
+  border-radius: 15px;
+  background-color: #42413d;
+  color: #f7f7f7;
+  border: 2px solid #42413d;
+}
+
+.backbtnprofile button {
+  padding: 10px 30px;
+  border-radius: 15px;
+  background-color: #42413d;
+  color: #f7f7f7;
+  border: 2px solid #42413d;
+}
+
+.editbtn button:hover {
+  background-color: #42413d;
+  transition: 0.3s;
+  color: white;
+  border-radius: 25px;
+  border: 2px solid #ffce28;
+}
+
+.backbtnprofile button:hover {
+  background-color: #42413d;
+  transition: 0.3s;
+  color: white;
+  border-radius: 25px;
+  border: 2px solid #ffce28;
+}
+
+.planbtn button {
+  padding: 10px 30px;
+  border-radius: 15px;
+  background-color: #42413d;
+  color: #f7f7f7;
+  border: 2px solid #42413d;
+}
+
+.planbtn button:hover {
+  background-color: #42413d;
+  transition: 0.3s;
+  color: white;
+  border-radius: 25px;
+  border: 2px solid #ffce28;
+}

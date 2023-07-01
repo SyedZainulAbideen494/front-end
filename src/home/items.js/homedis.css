@@ -1,0 +1,99 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .productmodelmbile {
+    width: 160px;
+    height: 200px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    margin: 5px;
+  }
+  .productimgmobile img {
+    width: 140px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
+  }
+  .product__titlemobile h3 {
+    margin-left: 5px;
+    color: black;
+    text-decoration: none;
+  }
+  .product__amountmobile h4 {
+    margin-left: 6px;
+    color: black;
+  }
+  .productmodeltablet {
+    display: none;
+  }
+  .productmodelsmallscreen {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .productmodelmbile {
+    display: none;
+  }
+  .productmodeltablet {
+    width: 180px;
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: 5px;
+  }
+  .productimgtablet img {
+    width: 160px;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin-top: 5px;
+  }
+  .producttitletablet h3 {
+    margin-left: 5px;
+    color: black;
+  }
+  .productpricetablet h4 {
+    color: black;
+    margin-left: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .productmodelmbile {
+    display: none;
+  }
+  .productmodeltablet {
+    display: none;
+  }
+  .productmodelsmallscreen {
+    width: 200px;
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: 10px;
+  }
+  .productimgsmall img {
+    width: 180px;
+    margin-top: 5px;
+    margin-left: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+  }
+  .producttitlesmall h2 {
+    margin-left: 10px;
+    color: black;
+  }
+  .productpricesmall h3 {
+    margin-left: 12px;
+    color: black;
+  }
+}
+
+@media (min-width: 1025px) {
+  .productmodelmbile {
+    display: none;
+  }
+  .productmodeltablet {
+    display: none;
+  }
+}

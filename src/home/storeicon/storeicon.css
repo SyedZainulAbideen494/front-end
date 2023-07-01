@@ -1,0 +1,12 @@
+.imageofshop img {
+  width: 250px;
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.imageofshop img:hover {
+  opacity: 50%;
+  transition: 0.5s;
+}

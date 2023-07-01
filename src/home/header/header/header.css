@@ -1,0 +1,245 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .tabletheader header {
+    display: none;
+  }
+  .smallscreenheader header {
+    display: none;
+  }
+  .largescreenheader header {
+    display: none;
+  }
+  .tpinlinelemobile span {
+    display: inline-flex;
+  }
+  .dropmentmobile h4 {
+    margin-right: 150px;
+  }
+  .logoutbtnmobileheader button {
+    background-color: white;
+    border: 1px solid rgb(212, 51, 51);
+    border-radius: 15px;
+    padding: 6px 5px;
+  }
+  .loginbtnmobileheader button {
+    background-color: white;
+    border: 1px solid rgb(73, 212, 51);
+    border-radius: 15px;
+    padding: 6px 5px;
+  }
+  .mobilebtns {
+    margin-left: 5px;
+  }
+  .mobilebtns button {
+    padding: 6px 6px;
+    margin: 5px;
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .mobileheader header {
+    display: none;
+  }
+  .smallscreenheader header {
+    display: none;
+  }
+  .largescreenheader header {
+    display: none;
+  }
+  .headerinlineeletabletheader span {
+    display: inline-flex;
+  }
+  .dropmettabletheader h3 {
+    margin-right: 40px;
+  }
+  .authtabletheaderbtn {
+    margin-left: 30px;
+  }
+  .tabletheaderbtns button {
+    padding: 6px 5px;
+    margin: 5px;
+    background-color: white;
+    border: 1px solid white;
+  }
+  .tabletheaderbtns button:hover {
+    text-decoration: underline red;
+    transition: 0.4s;
+  }
+  .logoutbtntabletheader button {
+    padding: 6px 5px;
+    background-color: white;
+    border: 2px solid rgb(232, 53, 53);
+    border-radius: 25px;
+  }
+  .logoutbtntabletheader button :hover {
+    transition: 0.3s;
+    border: 2px solid black;
+  }
+  .loginbtntabletheader button {
+    padding: 6px 5px;
+    background-color: white;
+    border: 2px solid rgb(78, 191, 78);
+    border-radius: 25px;
+  }
+  .loginbtntabletheader button:hover {
+    transition: 0.3s;
+    border: 2px solid white;
+    text-decoration: underline green;
+    color: black;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tabletheader header {
+    display: none;
+  }
+  .mobileheader header {
+    display: none;
+  }
+  .largescreenheader header {
+    display: none;
+  }
+  .smallscreenheader header span {
+    display: inline-flex;
+  }
+  .smallscreendropment h2 {
+    margin-right: 100px;
+  }
+  .smallscreenbtns button {
+    padding: 8px 20px;
+    font-weight: 500;
+    margin: 6px;
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+  }
+  .smallscreenbtns button:hover {
+    border: 2px solid white;
+    text-decoration: underline red;
+    transition: 0.4s;
+    background-color: white;
+    color: black;
+  }
+  .auth {
+    margin-left: 90px;
+  }
+  .logoutbtnsmallscreen button {
+    padding: 8px 25px;
+    border-radius: 25px;
+    background-color: white;
+    border: 2px solid rgb(233, 64, 64);
+  }
+  .logoutbtnsmallscreen button:hover {
+    border: 2px solid black;
+    transition: 0.4s;
+  }
+  .loginbtnsmallscreen button {
+    border: 2px solid rgb(77, 193, 77);
+    color: black;
+    padding: 8px 20px;
+    background-color: white;
+    border-radius: 25px;
+  }
+  .loginbtnsmallscreen button:hover {
+    border: 2px solid white;
+    background-color: white;
+    text-decoration: underline rgb(77, 193, 77);
+    transition: 0.4s;
+    color: green;
+  }
+}
+@media (min-width: 1025px) {
+  .mobileheader header {
+    display: none;
+  }
+  .tabletheader header {
+    display: none;
+  }
+  .smallscreenheader header {
+    display: none;
+  }
+  .dopment h2 {
+    margin-left: 10px;
+    margin-right: 250px;
+  }
+  .largescreenheader header span {
+    display: inline-flex;
+  }
+
+  .largescreenheaderbtns button {
+    padding: 10px 35px;
+    font-weight: 500;
+    margin: 6px;
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+  }
+  .largescreenheaderbtns button:hover {
+    border: 2px solid white;
+    text-decoration: underline red;
+    transition: 0.4s;
+    background-color: white;
+    color: black;
+  }
+  .largescreenheaderauthbtns {
+    margin-left: 300px;
+  }
+  .logoutbtnlargescreen button {
+    padding: 10px 35px;
+    border-radius: 25px;
+    background-color: white;
+    border: 2px solid rgb(233, 64, 64);
+  }
+  .logoutbtnlargescreen button:hover {
+    border: 2px solid black;
+    transition: 0.4s;
+  }
+  .loginbtnlargescreen button {
+    border: 2px solid rgb(77, 193, 77);
+    color: black;
+    padding: 10px 35px;
+    background-color: white;
+    border-radius: 25px;
+  }
+  .loginbtnlargescreen button:hover {
+    border: 2px solid white;
+    background-color: white;
+    text-decoration: underline rgb(77, 193, 77);
+    transition: 0.4s;
+    color: green;
+  }
+}
+
+.logoutbtnheaderhome button {
+  background-color: red;
+  border-radius: 25px;
+  padding: 10px 30px;
+  color: white;
+  margin-left: 12px;
+  border: 2px solid red;
+  margin-right: 12px;
+}
+
+.logoutbtnheaderhome button:hover {
+  background-color: #42413d;
+  border: 2px solid red;
+  transition: 0.4s;
+}
+
+.loginbtnheaderhome button {
+  background-color: rgb(47, 181, 47);
+  border-radius: 25px;
+  padding: 10px 30px;
+  color: white;
+  margin-left: 12px;
+  border: 2px solid rgb(47, 181, 47);
+  margin-right: 12px;
+}
+
+.loginbtnheaderhome button:hover {
+  background-color: #42413d;
+  border: 2px solid rgb(47, 181, 47);
+  transition: 0.4s;
+}

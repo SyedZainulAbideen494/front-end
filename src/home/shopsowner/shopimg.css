@@ -1,0 +1,77 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .shopsinmyprofile {
+    width: 80px;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    border: 2px solid black;
+  }
+  .SHOPIMGINMYPROFILE img {
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 15px;
+  }
+  .shopnameinmyprofile {
+    color: black;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .shopsinmyprofile {
+    width: 120px;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    border: 2px solid black;
+  }
+  .SHOPIMGINMYPROFILE img {
+    width: 100px;
+    border: 2px solid black;
+    margin-left: 10px;
+    border-radius: 15px;
+  }
+  .shopnameinmyprofile {
+    color: black;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shopsinmyprofile {
+    width: 180px;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    border: 2px solid black;
+  }
+  .SHOPIMGINMYPROFILE img {
+    width: 150px;
+    border: 2px solid black;
+    margin-left: 10px;
+    border-radius: 15px;
+  }
+  .shopnameinmyprofile {
+    color: black;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .shopsinmyprofile {
+    width: 200px;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    border: 2px solid black;
+  }
+  .SHOPIMGINMYPROFILE img {
+    width: 180px;
+    border: 2px solid black;
+    margin-left: 10px;
+    border-radius: 15px;
+  }
+  .shopnameinmyprofile {
+    color: black;
+    margin-left: 20px;
+  }
+}

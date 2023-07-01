@@ -1,0 +1,19 @@
+.dishomeprodsorstore__btn {
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  margin-left: 500px;
+}
+
+.dishomeprodsorstore__btn span {
+  display: inline-block;
+}
+
+.productsbtn button {
+  padding: 12px 35px;
+  background-color: rgb(255, 255, 255);
+  margin: 6px;
+  border-radius: 15px;
+  border: 2px solid grey;
+  color: rgb(0, 0, 0);
+}

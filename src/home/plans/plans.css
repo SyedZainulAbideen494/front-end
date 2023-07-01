@@ -1,0 +1,49 @@
+.mini {
+  border: 2px solid black;
+  margin: 40px;
+  border-radius: 25px;
+  background-color: #ffffff;
+}
+
+.mini h1 {
+  color: #fca311;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.standard {
+  border: 2px solid black;
+  margin: 40px;
+  border-radius: 25px;
+}
+
+.ultra {
+  border: 2px solid black;
+  margin: 40px;
+  border-radius: 25px;
+}
+
+.dis h3 {
+  text-decoration: line-through;
+  color: rgb(157, 0, 120);
+}
+
+.disaf h2 {
+  color: rgb(240, 36, 36);
+}
+
+.subsbtn button {
+  padding: 8px 30px;
+  margin: 10px;
+  border-radius: 15px;
+  border: 1px solid rgb(250, 46, 46);
+  color: rgb(250, 46, 46);
+}
+
+.subsbtn button:hover {
+  border-radius: 20px;
+  color: black;
+  transition: 0.3s;
+}

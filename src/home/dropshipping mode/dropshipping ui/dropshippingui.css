@@ -1,0 +1,13 @@
+.dropbtn button {
+  background-color: red;
+  color: white;
+  border: 1px solid red;
+  margin: 12px;
+}
+
+.dropbtn button:hover {
+  color: black;
+  text-decoration: underline;
+  transition: 0.4s;
+  border: 1ps solid red;
+}

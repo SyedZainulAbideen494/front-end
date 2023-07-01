@@ -1,0 +1,44 @@
+.header-home-pc header span {
+  display: inline-block;
+}
+
+.app-dsp h1 {
+  color: white;
+}
+
+.search-bar input {
+  padding: 15px 120px;
+  border-radius: 10px;
+  margin-left: 450px;
+  border: 2px solid black;
+}
+
+.header-home header {
+  background-color: #1fbd63;
+  margin: 0px;
+}
+
+.name-app h2 {
+  float: right;
+  color: rgb(255, 45, 45);
+}
+
+.carticon {
+  width: 15px;
+}
+
+.header-btn span {
+  margin: 12px;
+}
+
+.header-btn button {
+  background-color: #1fbd63;
+  border: 2px solid #1fbd63;
+  color: white;
+}
+
+.header-btn button:hover {
+  color: red;
+  text-decoration: underline white;
+  transition: 0.3s;
+}

@@ -1,0 +1,18 @@
+.prodmodel {
+  border: 2px solid black;
+  width: 200px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.img img {
+  margin-top: 2px;
+  margin-left: 5px;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
+.title h3 {
+  text-decoration: none;
+  color: black;
+}

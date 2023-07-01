@@ -1,0 +1,44 @@
+.name h2 {
+  text-align: center;
+  color: white;
+}
+
+.keypoints {
+  display: inline-flex;
+  margin-left: 160px;
+}
+
+.keypoint {
+  margin: 40px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 190px;
+}
+
+.aboutustxttemp3 h2 {
+  text-decoration: underline;
+  text-align: center;
+}
+.prodstxt h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.contacttxttemp3 h3 {
+  text-align: center;
+  color: azure;
+}
+
+.footertemp3 footer {
+  background-color: black;
+}
+
+.contactli li {
+  color: aliceblue;
+}
+
+.temp3header header {
+  background-color: black;
+  padding: 40px;
+}

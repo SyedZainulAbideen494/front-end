@@ -1,0 +1,23 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .unique_id {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .unique_id {
+    margin-left: 150px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .unique_id {
+    margin-left: 300px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .unique_id {
+    margin-left: 400px;
+  }
+}

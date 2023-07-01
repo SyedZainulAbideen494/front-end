@@ -1,0 +1,56 @@
+.additemform {
+  margin-left: 450px;
+  background-color: #42413d;
+  border-radius: 25px;
+  padding: 40px;
+  margin-right: 400px;
+  margin-top: 10px;
+}
+
+.input input {
+  padding: 12px 80px;
+  border-radius: 5px;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.lable label {
+  margin: 5px;
+  color: white;
+  font-weight: 600;
+}
+
+.backbtn1212 button {
+  background-color: white;
+  color: black;
+  border: 2px solid #42413d;
+  border-radius: 25px;
+  padding: 10px 30px;
+  margin-bottom: 12px;
+}
+
+.backbtn1212 button:hover {
+  border: 2px solid white;
+  transition: 0.4s;
+  background-color: #42413d;
+  color: white;
+}
+
+.txt1212 h2 {
+  color: white;
+  margin-left: 50px;
+}
+
+.addprodsbtn button {
+  color: white;
+  padding: 10px 30px;
+  border: 2px solid #42413d;
+  background-color: #42413d;
+  margin-left: 90px;
+}
+
+.addprodsbtn button:hover {
+  border: 2px solid white;
+  transition: 0.4s;
+  border-radius: 25px;
+}

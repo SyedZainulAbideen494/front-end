@@ -1,0 +1,128 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .profileheadermobile header {
+    background-color: white;
+  }
+  .profilebtnsmoblie span {
+    display: inline-flex;
+  }
+  .backbtnmobileporfile button {
+    padding: 6px 6px;
+    color: black;
+    margin: 6px;
+    background-color: white;
+    border: 2px solid white;
+  }
+  .authbtnsprofile {
+    margin-left: 30px;
+  }
+  .loginoutbtnmobile button {
+    padding: 6px 8px;
+    color: black;
+    border: 2px solid #e63946;
+    border-radius: 25px;
+    background-color: white;
+  }
+  .logoutbtnmyrprofile2mobile button {
+    color: rgb(49, 182, 49);
+    border: 2px solid rgb(49, 182, 49);
+    border-radius: 25px;
+    padding: 6px;
+    background-color: white;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .profilebtnsmoblie span {
+    display: inline-flex;
+  }
+  .backbtnmobileporfile button {
+    padding: 6px 10px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 15px;
+  }
+  .authbtnsprofile {
+    margin-left: 140px;
+  }
+  .loginoutbtnmobile button {
+    padding: 8px 12px;
+    background-color: white;
+    border: 2px solid #e63946;
+    border-radius: 15px;
+  }
+  .logoutbtnmyrprofile2mobile button {
+    background-color: rgb(61, 179, 61);
+    color: white;
+    border: 2px solid rgb(61, 179, 61);
+    border-radius: 15px;
+    padding: 8px 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profilebtnsmoblie span {
+    display: inline-flex;
+  }
+  .backbtnmobileporfile {
+    margin-left: 50px;
+  }
+  .backbtnmobileporfile button {
+    padding: 8px 20px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 15px;
+  }
+  .authbtnsprofile {
+    margin-left: 140px;
+  }
+  .loginoutbtnmobile button {
+    padding: 8px 12px;
+    background-color: white;
+    border: 2px solid #e63946;
+    border-radius: 5px;
+  }
+  .logoutbtnmyrprofile2mobile button {
+    background-color: rgb(61, 179, 61);
+    color: white;
+    border: 2px solid rgb(61, 179, 61);
+    border-radius: 15px;
+    padding: 8px 10px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .profilebtnsmoblie span {
+    display: inline-flex;
+  }
+  .backbtnmobileporfile {
+    margin-left: 100px;
+  }
+  .backbtnmobileporfile button {
+    padding: 8px 20px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 15px;
+  }
+  .authbtnsprofile {
+    margin-left: 290px;
+  }
+  .loginoutbtnmobile button {
+    padding: 8px 12px;
+    background-color: white;
+    border: 2px solid #e63946;
+    border-radius: 5px;
+  }
+  .logoutbtnmyrprofile2mobile button {
+    background-color: rgb(61, 179, 61);
+    color: white;
+    border: 2px solid rgb(61, 179, 61);
+    border-radius: 15px;
+    padding: 8px 10px;
+  }
+}

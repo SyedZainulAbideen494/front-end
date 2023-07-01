@@ -1,0 +1,17 @@
+.shopowned img {
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 8px;
+}
+
+.shopsowned span {
+  display: inline-flex;
+}
+
+.addshop img {
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 8px;
+}

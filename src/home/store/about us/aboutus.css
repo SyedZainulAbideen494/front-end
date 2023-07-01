@@ -1,0 +1,12 @@
+.aboutusheaderbtn span {
+  display: inline-flex;
+  margin: 20px;
+}
+
+.aboutusheader header {
+  background-color: black;
+}
+
+.headtxt h1 {
+  color: white;
+}

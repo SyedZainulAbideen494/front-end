@@ -1,0 +1,152 @@
+.cartheader header {
+  background-color: black;
+}
+
+.carttxt h2 {
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.cart-menu {
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 25px;
+}
+
+.cartclosebtn button {
+  margin: 10px;
+  padding: 8px 25px;
+  border-radius: 25px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.cartclosebtn button:hover {
+  border-radius: 20px;
+  transition: 0.3s;
+  border: 1px solid grey;
+  color: red;
+}
+
+.mycarttxt h2 {
+  text-align: center;
+}
+
+.amountaddordecrnum span {
+  display: inline-flex;
+  margin-left: 8px;
+}
+
+.cartorderbtn button {
+  padding: 8px 25px;
+  border-radius: 25px;
+  background-color: #faa307;
+  border: 2px solid #faa307;
+  color: white;
+}
+
+.carttotalpmount {
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 15px;
+}
+
+.crtinlineele {
+  display: inline-flex;
+}
+
+.crtbtnremover button {
+  margin-right: 8px;
+}
+
+.crtbtnadd button {
+  margin-left: 8px;
+}
+
+.cartitemprice h3 {
+  margin-right: 25px;
+}
+
+.Cartitem {
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 200px;
+  height: 280px;
+  margin: 18px;
+}
+
+.cartitemimg img {
+  margin-left: 8px;
+  border-radius: 25px;
+  margin-top: 5px;
+  border: 1px solid black;
+}
+
+.cartitemtitle h2 {
+  margin-left: 12px;
+}
+
+.cartitemprice {
+  margin-left: 8px;
+}
+
+.carttotalpmount span {
+  margin-left: 15px;
+}
+
+.crttotalpricetxt h2 {
+  margin-left: 15px;
+}
+
+.crttotalpricenum h3 {
+  margin-left: 15px;
+}
+
+.crtbtnremover button {
+  padding: 3px 6px;
+  border-radius: 25px;
+  color: white;
+  background-color: #ff595e;
+  border: 2px solid #ff595e;
+}
+
+.crtbtnadd button {
+  padding: 3px 6px;
+  border-radius: 25px;
+  color: white;
+  background-color: #ff595e;
+  border: 2px solid #ff595e;
+}
+
+.cartitemprice h3 {
+  color: #ffbe0b;
+}
+
+.crtbtnremover button:active {
+  border: #ff595e;
+  color: black;
+  background-color: white;
+}
+
+.crtbtnadd button:active {
+  border: #ff595e;
+  color: black;
+  background-color: white;
+}
+
+.cartorderbtn button:hover {
+  border: 2px solid #ffbe0b;
+  color: #faa307;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 15px;
+}
+
+.cartorderbtn button:active {
+  background-color: white;
+  color: #faa307;
+  border: #faa307;
+  border-radius: 25px;
+  padding: 12px 30px;
+}

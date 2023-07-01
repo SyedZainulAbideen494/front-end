@@ -1,0 +1,35 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .prifilepic img {
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .prifilepic img {
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 150px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .prifilepic img {
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 250px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .prifilepic img {
+    width: 240px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 380px;
+  }
+}

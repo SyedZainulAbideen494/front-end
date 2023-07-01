@@ -1,0 +1,12 @@
+.dropshippingheader header {
+  background-color: red;
+}
+
+.dropshippingheader span {
+  display: inline-flex;
+}
+
+.headtxtdropshippingmode h2 {
+  color: #8ac926;
+  margin-right: 40px;
+}

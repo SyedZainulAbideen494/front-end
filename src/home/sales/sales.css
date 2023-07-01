@@ -1,0 +1,18 @@
+.saleschatheader header {
+  background-color: #42413d;
+  padding: 40px;
+}
+
+.inputforchat input {
+  width: 1000px;
+  height: 50px;
+  margin-left: 50px;
+}
+
+.orderdetails {
+  width: 300px;
+  height: 500px;
+  margin-left: 450px;
+  border-radius: 25px;
+  border: 2px solid black;
+}

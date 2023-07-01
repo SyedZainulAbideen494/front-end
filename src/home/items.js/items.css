@@ -1,0 +1,148 @@
+.formorder input {
+  width: 150px;
+  height: 25px;
+  margin: 10px;
+}
+
+.ord1 h1 {
+  color: rgb(52, 167, 52);
+}
+
+.ordsuccess {
+  align-items: center;
+  text-align: center;
+  border: 2px solid black;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+.btn button {
+  width: 80px;
+  height: 40px;
+  margin: 20px;
+}
+
+.placeordbtn button {
+  background-color: #ffb703;
+  border: 2px solid #ffb703;
+  border-radius: 15px;
+}
+
+.placeordbtn button:hover {
+  background-color: #ffde8c;
+
+  transition: 0.4s;
+}
+
+.closebtn button {
+  border-radius: 15px;
+}
+.btn span {
+  display: inline-block;
+}
+
+.closebtn button:hover {
+  border: 2px solid red;
+  transition: 0.4s;
+}
+
+.confbtn button {
+  background-color: #edf6f9;
+  padding: 8px 35px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.greentick img {
+  width: 80px;
+}
+
+.productmodelul ul {
+  list-style: none;
+}
+
+.productmodel {
+  margin: 15px;
+}
+
+.btnProduct span {
+  display: inline;
+}
+
+.btnProduct button {
+  padding: 5px 25px;
+  margin: 8px;
+}
+
+.productimg img {
+  width: 180px;
+  border-radius: 25px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.buy-now-btn button {
+  background-color: #ffa62b;
+  border: 2px solid #ffa62b;
+  color: white;
+  border-radius: 8px;
+  padding: 5px 25px;
+}
+
+.add-cart-btn button {
+  background-color: #000000;
+  border: 2px solid #000000;
+  color: white;
+  border-radius: 8px;
+}
+
+.productmodel {
+  width: 200px;
+  height: 230px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.product__title h2 {
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.product__amount h3 {
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.product__quantity h3 {
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.productmodelul ul {
+  display: inline-flex;
+}
+
+.buy-now-btn button:hover {
+  opacity: 40%;
+  transition: 0.4s;
+}
+
+.addtocartbtn2 button {
+  padding: 5px 15px;
+  border-radius: 8px;
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  margin-left: 8px;
+}
+
+.dropment h1 {
+  color: rgb(74, 215, 74);
+}
+
+.productmodelul ul {
+  overflow-x: auto;
+  display: flex;
+  white-space: nowrap;
+}

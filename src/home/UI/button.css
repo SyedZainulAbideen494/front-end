@@ -1,0 +1,29 @@
+.button button {
+  padding: 12px 35px;
+  background-color: rgb(0, 0, 0);
+  margin: 6px;
+  border-radius: 15px;
+  border: 2px solid grey;
+  color: rgb(255, 255, 255);
+}
+
+.button button:hover {
+  color: grey;
+  border: 2px solid rgb(0, 140, 255);
+  transition: 0.4s;
+}
+
+.button2 button {
+  padding: 12px 35px;
+  background-color: rgb(255, 253, 253);
+  margin: 6px;
+  border-radius: 15px;
+  border: 2px solid grey;
+  color: grey;
+}
+
+.button2 button:hover {
+  color: grey;
+  border: 2px solid rgb(0, 140, 255);
+  transition: 0.4s;
+}

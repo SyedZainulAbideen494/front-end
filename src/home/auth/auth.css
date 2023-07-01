@@ -1,0 +1,77 @@
+.loginbtn button {
+  background-color: #ffb703;
+  padding: 8px 40px;
+  margin-left: 30px;
+  margin-top: 15px;
+  border-radius: 25px;
+  border: 2px solid #ffb703;
+}
+
+.loginbtn button:hover {
+  transition: 0.4;
+  color: #ffffff;
+}
+
+.cancelbtn button {
+  background-color: #ffffff;
+  padding: 8px 40px;
+  margin-left: 30px;
+  margin-top: 15px;
+  border-radius: 25px;
+  border: 2px solid #000000;
+}
+
+.btnloginform span {
+  display: inline-block;
+}
+
+.cancelbtn button:hover {
+  color: #bb3e03;
+}
+
+.emailinp input {
+  padding: 15px 150px;
+  border-radius: 25px;
+}
+
+.loginform {
+  align-items: center;
+  text-align: center;
+}
+
+.password input {
+  padding: 15px 150px;
+  border-radius: 25px;
+}
+
+.signinbtn button {
+  padding: 8px 40px;
+  border-radius: 25px;
+  background-color: #06d6a0;
+  border: 2px solid #06d6a0;
+  color: white;
+}
+
+.signinformbtn span {
+  display: inline-block;
+}
+
+.signinform {
+  align-items: center;
+  text-align: center;
+}
+
+.inp input {
+  padding: 13px 150px;
+  border-radius: 15px;
+}
+
+.opt select {
+  padding: 8px 40px;
+  border-radius: 15px;
+}
+
+.loginct p {
+  text-decoration: underline;
+  color: #06d6a0;
+}

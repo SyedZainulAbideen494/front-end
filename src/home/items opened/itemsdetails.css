@@ -1,0 +1,109 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .imgitemdetails img {
+    width: 240px;
+    border: 2px solid black;
+    margin-left: 20px;
+    border-radius: 25px;
+  }
+  .prods__title h2 {
+    margin-left: 50px;
+  }
+  .prods__detail__btn button {
+    padding: 10px 100px;
+    margin-left: 10px;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+  }
+  .amount {
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .imgitemdetails img {
+    width: 340px;
+    border: 2px solid black;
+    margin-left: 50px;
+    border-radius: 25px;
+  }
+  .prods__title h2 {
+    margin-left: 50px;
+  }
+  .prods__detail__btn button {
+    padding: 8px 200px;
+    margin-left: 50px;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+  }
+  .amount {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .imgitemdetails img {
+    width: 400px;
+    border: 2px solid black;
+    margin-left: 150px;
+    border-radius: 25px;
+  }
+  .prods__title h2 {
+    margin-left: 150px;
+  }
+  .prods__detail__btn button {
+    padding: 12px 280px;
+    margin-left: 80px;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+  }
+  .amount {
+    margin-left: 150px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .imgitemdetails img {
+    width: 600px;
+    border: 2px solid black;
+    margin-left: 350px;
+    border-radius: 25px;
+  }
+  .prods__title h2 {
+    margin-left: 350px;
+  }
+  .prods__detail__btn button {
+    padding: 12px 380px;
+    margin-left: 210px;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+  }
+  .amount {
+    margin-left: 350px;
+  }
+}
+
+.prodsetailsheader header {
+  background-color: black;
+}
+
+.prodsetailsheader span {
+  display: inline-flex;
+}
+
+.prodsetailsheader button {
+  padding: 8px 25px;
+  border: 2px solid white;
+  border-radius: 25px;
+  margin: 5px;
+  background-color: black;
+  color: white;
+}
+
+.prodsetailsheader button:hover {
+  border: 2px solid red;
+  transition: 0.4s;
+}

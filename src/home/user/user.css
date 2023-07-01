@@ -1,0 +1,29 @@
+.userul ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+.userprofile {
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 330px;
+  width: 200px;
+  margin: 15px;
+}
+
+.profilepic img {
+  width: 150px;
+  margin-left: 16px;
+}
+
+.profiletxt {
+  margin-left: 15px;
+}
+
+.profilesubtxt {
+  margin-left: 15px;
+}
+
+.profileuniqueid {
+  margin-left: 15px;
+}

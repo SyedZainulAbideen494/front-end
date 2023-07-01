@@ -1,0 +1,74 @@
+.store-name-h1 h1 {
+  background-color: white;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.store-name-ul ul {
+  list-style: none;
+}
+
+.webstore-header header {
+  display: inline-flex;
+}
+
+.btn-store-header span {
+  display: inline-flex;
+}
+
+.btn-store-header {
+  margin-left: 800px;
+}
+
+.add-block-btn__btn button {
+  padding: 12px 35px;
+  background-color: rgb(0, 0, 0);
+  margin: 6px;
+  border-radius: 15px;
+  border: 2px solid grey;
+  color: rgb(255, 255, 255);
+}
+
+.add-block-btn__btn button:hover {
+  color: grey;
+  border: 2px solid rgb(0, 140, 255);
+  transition: 0.4s;
+}
+
+.edit_store_btn button {
+  font-family: sans-serif;
+  padding: 8px 25px;
+  background-color: #000000;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 2px solid rgb(113, 113, 113);
+}
+
+.settings_btn button {
+  font-family: sans-serif;
+  padding: 8px 25px;
+  background-color: #000000;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 2px solid rgb(113, 113, 113);
+}
+
+.edit_store_btn button:hover {
+  border: 2px solid white;
+  transition: 0.4s;
+}
+
+.settings_btn button:hover {
+  border: 2px solid white;
+  transition: 0.4s;
+}
+
+.profile-header-owner span {
+  display: inline-flex;
+}
+
+.profile-header-owner header {
+  background-color: black;
+}
