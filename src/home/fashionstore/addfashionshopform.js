@@ -28,7 +28,7 @@ const Addfashionshopform = (props) => {
     formData.append("shop_block2", shop_block2);
     formData.append("shop_block3", shop_block3);
 
-    Axios.post("http://localhost:8080/addShops/Fashion", formData, {
+    Axios.post("https://backend-zain-production.up.railway.app/addShops/Fashion", formData, {
       headers: {
         Authorization: token,
         "Content-Type": "multipart/form-data",
