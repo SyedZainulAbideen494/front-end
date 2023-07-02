@@ -21,7 +21,7 @@ const Loginform = () => {
   };
 
   const login = () => {
-    Axios.post("http://localhost:8080/login", {
+    Axios.post("https://backend-zain-production.up.railway.app/login", {
       email: email,
       password: password,
     }).then((response) => {
@@ -35,7 +35,7 @@ const Loginform = () => {
   };
 
   const userAuth = () => {
-    Axios.get("http://localhost:8080/isUserAuth");
+    Axios.get("https://backend-zain-production.up.railway.app/isUserAuth");
   };
 
   return (
