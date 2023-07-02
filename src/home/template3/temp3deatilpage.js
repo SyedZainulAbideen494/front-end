@@ -50,7 +50,7 @@ export async function loader({ request, params }) {
   const id = params.id;
 
   const response = await fetch(
-    "http://localhost:8080/user/shops/template3" + id
+    "https://backend-zain-production.up.railway.app/user/shops/template3" + id
   );
 
   if (!response.ok) {
