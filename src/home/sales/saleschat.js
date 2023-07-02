@@ -68,7 +68,7 @@ function Saleschat(props) {
 
   const addshophandler = () => {
     Axios.post(
-      "http://localhost:8080/sendmessage",
+      "https://backend-zain-production.up.railway.app/sendmessage",
       {
         message: message,
       },
