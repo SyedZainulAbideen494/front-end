@@ -23,7 +23,7 @@ const Editstoreform = () => {
 
     try {
       const response = await Axios.put(
-        "http://localhost:8080/updateshop1",
+        "https://backend-zain-production.up.railway.app/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
@@ -89,7 +89,7 @@ const Editbtndisplay = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:8080/user/id/editbtnstoredisplay1`,
+          `https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay1`,
           {
             headers: {
               Authorization: params.id,
@@ -119,7 +119,7 @@ const Editbtndisplay = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtnstoredisplay2",
+          "https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay2",
           {
             headers: {
               Authorization: token,
@@ -180,7 +180,7 @@ const Sales = (props) => {
     setloading(true);
 
     setloading(true);
-    const response = await fetch("http://localhost:8080/myorders", {
+    const response = await fetch("https://backend-zain-production.up.railway.app/myorders", {
       headers: {
         Authorization: params.id,
       },
@@ -354,7 +354,7 @@ function Productsinshopapp() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/use/shops/products", {
+      const response = await fetch("https://backend-zain-production.up.railway.app/use/shops/products", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -372,7 +372,7 @@ function Productsinshopapp() {
           price: itemsData.price,
           amount: itemsData.quantity,
           shop_id: itemsData.shop_id,
-          images: `http://localhost:8080/images/${itemsData.images}`,
+          images: `https://backend-zain-production.up.railway.app/images/${itemsData.images}`,
         };
       });
 
@@ -417,7 +417,7 @@ const Addproductstodatabase = (props) => {
     formdata.append("title", title); // Add title field
     formdata.append("price", price); // Add price field
     formdata.append("amount", amount); // Add amount field
-    Axios.post("http://localhost:8080/addProduct", formdata, {
+    Axios.post("https://backend-zain-production.up.railway.app/addProduct", formdata, {
       headers: {
         Authorization: params.shop_id,
       },
