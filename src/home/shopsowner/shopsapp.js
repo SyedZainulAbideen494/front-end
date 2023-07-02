@@ -14,7 +14,7 @@ function Shopapp() {
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/use/shops", {
+    const response = await fetch("https://backend-zain-production.up.railway.app/use/shops", {
       headers: {
         Authorization: token,
       },
