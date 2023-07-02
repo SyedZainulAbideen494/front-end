@@ -13,7 +13,7 @@ const Addshopform1 = (props) => {
 
   const addshophandler = () => {
     Axios.post(
-      "http://localhost:8080/addShops",
+      "https://backend-zain-production.up.railway.app/addShops",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
