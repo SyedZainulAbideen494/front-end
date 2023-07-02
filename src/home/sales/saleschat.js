@@ -12,7 +12,7 @@ const Fetchmessage = () => {
     setloading(true);
     const token = localStorage.getItem("token");
     setloading(true);
-    const response = await fetch("http://localhost:8080/message", {
+    const response = await fetch("https://backend-zain-production.up.railway.app/message", {
       headers: {
         Authorization: params.orders_id,
       },
