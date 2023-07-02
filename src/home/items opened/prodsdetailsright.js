@@ -39,7 +39,7 @@ const Editbtndisplay = () => {
       setloading(true);
       try {
         const response = await fetch(
-          `http://localhost:8080/user/id/editbtndiaplay1`,
+          `https://backend-zain-production.up.railway.app/user/id/editbtndiaplay1`,
           {
             headers: {
               Authorization: params.shop_id,
@@ -69,7 +69,7 @@ const Editbtndisplay = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
+          "https://backend-zain-production.up.railway.app/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -193,7 +193,7 @@ const Orderform = (props) => {
 
   const orderhandler = () => {
     Axios.post(
-      "http://localhost:8080/orders",
+      "https://backend-zain-production.up.railway.app/orders",
       {
         name: user,
         Phone: phoneno,
@@ -299,7 +299,7 @@ const Edititemform = () => {
 
     try {
       const response = await Axios.put(
-        "http://localhost:8080/updateprods",
+        "https://backend-zain-production.up.railway.app/updateprods",
         {
           title: title,
           price: price,
