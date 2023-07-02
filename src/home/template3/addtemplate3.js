@@ -24,7 +24,7 @@ const Addtemplate3form = (props) => {
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
-      "http://localhost:8080/addShops/template3",
+      "https://backend-zain-production.up.railway.app/addShops/template3",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
