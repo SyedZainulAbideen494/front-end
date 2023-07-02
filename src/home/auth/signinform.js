@@ -79,7 +79,7 @@ const Signinform = () => {
   };
   Axios.defaults.withCredentials = true;
   const register = () => {
-    Axios.post("http://localhost:8080/addUser", {
+    Axios.post("https://backend-zain-production.up.railway.app/addUser", {
       first_name: first_name,
       last_name: last_name,
       email: email,
