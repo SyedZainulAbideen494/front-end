@@ -245,9 +245,7 @@ const Signinform = () => {
           </span>
 
           <span className="signinbtn">
-            <Link to="/login">
               <button onClick={register}>Sign in</button>
-            </Link>
           </span>
         </div>
         <div className="logint">
