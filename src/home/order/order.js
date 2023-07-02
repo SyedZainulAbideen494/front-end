@@ -27,7 +27,7 @@ const FetchOrders = () => {
     setloading(true);
     const token = localStorage.getItem("token");
     setloading(true);
-    const response = await fetch("http://localhost:8080/user/orders", {
+    const response = await fetch("https://backend-zain-production.up.railway.app/user/orders", {
       headers: {
         Authorization: token,
       },
