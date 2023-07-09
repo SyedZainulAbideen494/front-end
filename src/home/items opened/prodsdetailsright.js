@@ -347,43 +347,54 @@ const Edititemform = () => {
 };
 
 function Prodsright() {
-  const [orderform, setorederform] = useState(false);
-  const [items, setitems] = useState([])
-  const [loading, setloading] = useState(false)
+  const [orderform, setOrderForm] = useState(false);
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
   const params = useParams();
 
-  const orderopenhandler = () => {
-    setorederform(true);
+  const orderOpenHandler = () => {
+    setOrderForm(true);
   };
 
-  const orderclosehanlder = () => {
-    setorederform(false);
+  const orderCloseHandler = () => {
+    setOrderForm(false);
   };
+
   const [showedititem, setshowitem] = useState(false);
 
   const showedit = () => {
     setshowitem(true);
   };
+
   const hideedit = () => {
     setshowitem(false);
   };
-  const fetchprodshandler = useCallback(async () => {
-    const response = await fetch("http://localhost:8080/imgprods",{
-          headers: {
-            Authorization: params.id,
-          },});
-    const data = await response.json();
-    const transformedItems = data.img.map((itemsdata) => {
-      return {
-        images: `http://localhost:8080/images/${itemsdata.images}`,
-      };
-    });
-    setitems(transformedItems);
-  }, []);
+
+  const fetchProdshandler = useCallback(async () => {
+    try {
+      const response = await fetch("http://localhost:8080/imgprods", {
+        headers: {
+          Authorization: params.id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.img.map((itemsdata) => {
+        return {
+          images: `http://localhost:8080/images/${itemsdata.images}`,
+        };
+      });
+      setItems(transformedItems);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [params.id]);
 
   useEffect(() => {
-    fetchprodshandler();
-  }, []);
+    setLoading(true);
+    fetchProdshandler().finally(() => {
+      setLoading(false);
+    });
+  }, [fetchProdshandler]);
 
   return (
     <Fragment>
@@ -403,7 +414,11 @@ function Prodsright() {
       </div>
       <div className="deatils">
         <div className="imgitemdetails">
-          <img src={items} alt="Product" />
+          {loading ? (
+            <div>Loading image...</div>
+          ) : (
+            <img src={items[0]?.images} alt="Product img" />
+          )}
         </div>
 
         <div className="prodes__right__full">
@@ -419,8 +434,8 @@ function Prodsright() {
           <br />
           <div className="prods__detail__btn">
             <span className="prods__detail_addtocart_btn">
-              <button onClick={orderopenhandler}>Buy Now</button>
-              {orderform && <Orderform onhidehanlder={orderclosehanlder} />}
+              <button onClick={orderOpenHandler}>Buy Now</button>
+              {orderform && <Orderform onhidehandler={orderCloseHandler} />}
             </span>
           </div>
         </div>
