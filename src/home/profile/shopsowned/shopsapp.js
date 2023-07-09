@@ -9,7 +9,7 @@ const Shopsapp = (props) => {
     setloading(true);
     const token = localStorage.getItem("token");
     setloading(true);
-    const response = await fetch("https://backend-zain-production.up.railway.app/users/profile/shops", {
+    const response = await fetch("http://localhost:8080/users/profile/shops", {
       headers: {
         Authorization: token,
       },

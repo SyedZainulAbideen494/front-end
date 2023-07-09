@@ -13,7 +13,7 @@ function Template3app() {
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("https://backend-zain-production.up.railway.app/user/shops/template3", {
+    const response = await fetch("http://localhost:8080/user/shops/template3", {
       headers: {
         Authorization: token,
       },

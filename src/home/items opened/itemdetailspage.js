@@ -22,6 +22,7 @@ const Productsrights = (props) => {
           price={itemdata.price}
           amount={itemdata.amount}
           shop_id={itemdata.shop_id}
+          images={itemdata.images}
         />
       ))}
     </Fragment>
@@ -33,7 +34,7 @@ export default Productsdeatilspage;
 export async function loader({ request, params }) {
   const id = params.id;
 
-  const response = await fetch("https://backend-zain-production.up.railway.app/products/product" + id);
+  const response = await fetch("http://localhost:8080/products/product" + id);
 
   if (!response.ok) {
     throw json(

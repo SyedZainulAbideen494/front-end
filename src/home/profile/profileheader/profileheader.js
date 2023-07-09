@@ -32,11 +32,6 @@ const Profileheader = (props) => {
             <span className="backbtnmobileporfile">
               <button>Edit</button>
             </span>
-            <span className="backbtnmobileporfile">
-              <Link to="/Plans">
-                <button>My plan</button>
-              </Link>
-            </span>
             <span className="authbtnsprofile">
               {islogin ? (
                 <span className="loginoutbtnmobile">

@@ -5,7 +5,7 @@ const Edititemform = () => {
   const [title, settitle] = useState("");
   const [price, setprice] = useState("");
   const [amount, setamount] = useState("");
-
+  const [message, setMessage] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
 

@@ -11,7 +11,7 @@ const Loginform = () => {
   const navigate = useNavigate();
 
   const userauthentication = () => {
-    Axios.get("https://backend-zain-production.up.railway.app/userAuth", {
+    Axios.get("http://localhost:8080/userAuth", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
@@ -21,7 +21,7 @@ const Loginform = () => {
   };
 
   const login = () => {
-    Axios.post("https://backend-zain-production.up.railway.app/login", {
+    Axios.post("http://localhost:8080/login", {
       email: email,
       password: password,
     }).then((response) => {

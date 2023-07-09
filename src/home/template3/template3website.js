@@ -4,6 +4,7 @@ import "./template3.css";
 import Productsapp from "../items.js/productsApp";
 import dummyItem from "../../home/header/images/download.jpg";
 import Axios from "axios";
+import tick from '../../home/header/images/301-3011315_icon-check-green-tick-transparent-background.png'
 
 const Editstoreform = () => {
   const params = useParams();
@@ -659,7 +660,9 @@ const Template3website = (props) => {
         </div>
         <div className="keypoints">
           <div className="keypoint">
-            <span className="img"></span>
+            <span className="img">
+              <img src={tick} />
+            </span>
             <span className="headingforkeypoint">
               <h3>{params.shop_keyhead1}</h3>
             </span>
@@ -668,7 +671,9 @@ const Template3website = (props) => {
             </span>
           </div>
           <div className="keypoint">
-            <span className="img"></span>
+            <span className="img">
+              <img src={tick} />
+            </span>
             <span className="headingforkeypoint">
               <h3>{params.shop_keyhead2}</h3>
             </span>
@@ -677,7 +682,9 @@ const Template3website = (props) => {
             </span>
           </div>
           <div className="keypoint">
-            <span className="img"></span>
+            <span className="img">
+              <img src={tick} />
+            </span>
             <span className="headingforkeypoint">
               <h3>{params.shop_keyhead3}</h3>
             </span>

@@ -13,7 +13,7 @@ function Productsapp() {
 
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("https://backend-zain-production.up.railway.app/products/product");
+    const response = await fetch("http://localhost:8080/products/product");
     const data = await response.json();
     const transformedItems = data.items.map((itemsdata) => {
       return {

@@ -39,7 +39,7 @@ const Editbtndisplay = () => {
       setloading(true);
       try {
         const response = await fetch(
-          `https://backend-zain-production.up.railway.app/user/id/editbtndiaplay1`,
+          `http://localhost:8080/id/editbtndiaplay1`,
           {
             headers: {
               Authorization: params.shop_id,
@@ -69,7 +69,7 @@ const Editbtndisplay = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "https://backend-zain-production.up.railway.app/user/id/editbtndiaplay2",
+          "http://localhost:8080/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -193,7 +193,7 @@ const Orderform = (props) => {
 
   const orderhandler = () => {
     Axios.post(
-      "https://backend-zain-production.up.railway.app/orders",
+      "http://localhost:8080/orders",
       {
         name: user,
         Phone: phoneno,
@@ -299,7 +299,7 @@ const Edititemform = () => {
 
     try {
       const response = await Axios.put(
-        "https://backend-zain-production.up.railway.app/updateprods",
+        "http://localhost:8080/updateprods",
         {
           title: title,
           price: price,
@@ -348,6 +348,8 @@ const Edititemform = () => {
 
 function Prodsright() {
   const [orderform, setorederform] = useState(false);
+  const [items, setitems] = useState([])
+  const [loading, setloading] = useState(false)
   const params = useParams();
 
   const orderopenhandler = () => {
@@ -365,6 +367,24 @@ function Prodsright() {
   const hideedit = () => {
     setshowitem(false);
   };
+  const fetchprodshandler = useCallback(async () => {
+    const response = await fetch("http://localhost:8080/imgprods",{
+          headers: {
+            Authorization: params.id,
+          },});
+    const data = await response.json();
+    const transformedItems = data.img.map((itemsdata) => {
+      return {
+        images: `http://localhost:8080/images/${itemsdata.images}`,
+      };
+    });
+    setitems(transformedItems);
+  }, []);
+
+  useEffect(() => {
+    fetchprodshandler();
+  }, []);
+
   return (
     <Fragment>
       <div className="prodsetailsheader">
@@ -383,7 +403,7 @@ function Prodsright() {
       </div>
       <div className="deatils">
         <div className="imgitemdetails">
-          <img src={Prodimg} alt="Product" />
+          <img src={items} alt="Product" />
         </div>
 
         <div className="prodes__right__full">

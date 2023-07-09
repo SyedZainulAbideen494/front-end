@@ -10,7 +10,7 @@ const Addproductstodatabas = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://backend-zain-production.up.railway.app/addProducts", {
+    fetch("http://localhost:8080/addProducts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
