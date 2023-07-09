@@ -13,11 +13,7 @@ const Addshopform1 = (props) => {
 
   const addshophandler = () => {
     Axios.post(
-<<<<<<< HEAD
-      "http://localhost:8080/addShops",
-=======
       "http://154.41.229.94/addShops",
->>>>>>> 710d2b62ca1c32ff36724303fbbb32e30581dd1c
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
