@@ -13,11 +13,7 @@ function Productsapp() {
 
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-<<<<<<< HEAD
-    const response = await fetch("http://localhost:8080/products/product");
-=======
     const response = await fetch("http://154.41.229.94/products/product");
->>>>>>> 710d2b62ca1c32ff36724303fbbb32e30581dd1c
     const data = await response.json();
     const transformedItems = data.items.map((itemsdata) => {
       return {
