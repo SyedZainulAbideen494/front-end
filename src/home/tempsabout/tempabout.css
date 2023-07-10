@@ -1,17 +1,82 @@
-.headingfortempabout h1 {
-    color: rgb(3, 3, 32);
+@media (min-width: 312px) and (max-width: 480px) {
+    .headingfortempabout {
+        border: 2px solid black;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+    .headingfortempabout h1 {
+        color: rgb(8, 8, 53);
+        font-size: large;
+        font-weight: 800;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .tempbrousebtn  button {
+        background-color: rgb(22, 109, 201);
+        border: 2px solid rgb(22, 109, 201);
+        border-radius: 15px;
+        margin-left: 35px;
+        color: white;
+        margin-bottom: 5px;
+    }
 }
-.headingfortempabout {
-    margin-top: 150px;
-    border: 2px solid black;
-    padding: 100px;
-    border-radius: 25px;
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .headingfortempabout {
+        border: 2px solid black;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+    .headingfortempabout h1 {
+        color: rgb(8, 8, 53);
+        font-size: larger;
+        font-weight: 800;
+    }
+    .tempbrousebtn  button {
+        background-color: rgb(22, 109, 201);
+        border: 2px solid rgb(22, 109, 201);
+        border-radius: 15px;
+        margin-left: 100px;
+        color: white;
+        margin-bottom: 5px;
+    }
 }
-.tempbrousebtn button {
-    padding: 10px;
-    border-radius: 15px;
-    color: white;
-    background-color: rgb(0, 115, 192);
-    border: 2px solid rgb(0, 115, 192);
-    margin-left: 300px;
+
+@media (min-width: 769px) and (max-width: 1024px){
+        .headingfortempabout {
+        border: 2px solid black;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+    .headingfortempabout h1 {
+        color: rgb(8, 8, 53);
+        font-weight: 300;
+    }
+    .tempbrousebtn  button {
+        background-color: rgb(22, 109, 201);
+        border: 2px solid rgb(22, 109, 201);
+        border-radius: 15px;
+        margin-left: 230px;
+        color: white;
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 1025px) {
+      .headingfortempabout {
+        border: 2px solid black;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+    .headingfortempabout h1 {
+        color: rgb(8, 8, 53);
+        font-weight: 300;
+    }
+    .tempbrousebtn  button {
+        background-color: rgb(22, 109, 201);
+        border: 2px solid rgb(22, 109, 201);
+        border-radius: 15px;
+        margin-left: 350px;
+        color: white;
+        margin-bottom: 5px;
+    }
 }

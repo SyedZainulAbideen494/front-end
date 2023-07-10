@@ -36,6 +36,9 @@
     background-color: white;
     color: black;
   }
+  .dopment img {
+    width: 60px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -88,6 +91,9 @@
     border: 2px solid white;
     text-decoration: underline green;
     color: black;
+  }
+  .dopment img {
+    width: 60px;
   }
 }
 
@@ -149,6 +155,9 @@
     transition: 0.4s;
     color: green;
   }
+  .dopment img {
+    width: 80px;
+  }
 }
 @media (min-width: 1025px) {
   .mobileheader header {
@@ -209,6 +218,9 @@
     text-decoration: underline rgb(77, 193, 77);
     transition: 0.4s;
     color: green;
+  }
+  .dopment img {
+    width: 90px;
   }
 }
 

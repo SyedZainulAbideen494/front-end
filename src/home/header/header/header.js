@@ -11,6 +11,7 @@ import Axios from "axios";
 import Button from "../../UI/button";
 import { Router, Link } from "react-router-dom";
 import Cartprovider from "../cart/cartprovider";
+import logo from '../images/dropmentlogo.jpg'
 
 const Mobileheader = (props) => {
   const [auth, setauth] = useState(false);
@@ -29,8 +30,9 @@ const Mobileheader = (props) => {
       <div className="mobileheader">
         <header>
           <div className="tpinlinelemobile">
-            <span className="dropmentmobile">
-              <h4>Dropment</h4>
+            <span className="dopment">
+              <img src={logo} />
+              <h2>Dropment</h2>
             </span>
             <span className="mobilebtns">
               {auth ? (
@@ -69,8 +71,9 @@ const Mobileheader = (props) => {
       <div className="tabletheader">
         <header>
           <div className="headerinlineeletabletheader">
-            <span className="dropmettabletheader">
-              <h3>Dropment</h3>
+            <span className="dopment">
+              <img src={logo} />
+              <h2>Dropment</h2>
             </span>
             <Link to="/profile">
               <span className="tabletheaderbtns">
@@ -105,7 +108,8 @@ const Mobileheader = (props) => {
       <div className="smallscreenheader">
         <header>
           <div className="heaerinlineelesmallscreenheader">
-            <span className="smallscreendropment">
+            <span className="dopment">
+              <img src={logo} />
               <h2>Dropment</h2>
             </span>
             <Link to="/profile">
@@ -144,6 +148,7 @@ const Mobileheader = (props) => {
         <header>
           <div className="headerinlineele">
             <span className="dopment">
+              <img src={logo} />
               <h2>Dropment</h2>
             </span>
             <Link to="/profile">

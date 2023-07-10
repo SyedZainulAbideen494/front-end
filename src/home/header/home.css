@@ -1,9 +1,20 @@
-.prodsonhomepg {
-    border: 2px solid black;
-    border-radius: 15px;
-    margin-top: 100px;
+@media (min-width: 312px) and (max-width: 480px) {
+    .prodsonhomepg {
+        border: 2px solid black;
+        border-radius: 15px;
+    }
 }
 
-.prodsheadhome h2 {
-    margin-left: 400px;
+@media (min-width: 481px) and (max-width: 768px) {
+    .prodsonhomepg {
+        border: 2px solid black;
+        border-radius: 15px;
+    }
+}
+
+@media (min-width: 769px) {
+    .prodsonhomepg {
+        border: 2px solid black;
+        border-radius: 15px;
+    }
 }
