@@ -10,6 +10,9 @@ import Order from "../order/order";
 import FashionShopapp from "../fashionstore/fashionshopapp.js";
 import Shopsright from "../shopsowner/shopsright";
 import Addshopform1 from "../addnewshop/addshopform1";
+import Tempsabout from "../tempsabout/tempsabout";
+import Contact from "../dropmentcontacts/contackts";
+import './home.css'
 
 const Home = () => {
   const [auth, setauth] = useState(false);
@@ -40,8 +43,19 @@ const Home = () => {
         <Cartprovider>
           <Mobleheader onShowcart={showcarthandler} />
           {showcart && <Mycart onHideCart={hidecarthandler} />}
-          <Homedisplay />
+          <div className="prodsonhomepg">
+            <div className="prodsheadhome">
+              <hr/>
+              <h2>Products from our customers</h2>
+              <hr/>
+            </div>
+            <Homedisplay />
+          </div>
         </Cartprovider>
+        <Tempsabout />
+        <footer>
+          <Contact />
+        </footer>
       </div>
     </Fragment>
   );

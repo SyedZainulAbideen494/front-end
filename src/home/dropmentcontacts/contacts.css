@@ -1,0 +1,13 @@
+.contact {
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+.contacthead h2 {
+    color: white;
+}
+
+.contacts li {
+    color: white;
+}

@@ -1,0 +1,17 @@
+.headingfortempabout h1 {
+    color: rgb(3, 3, 32);
+}
+.headingfortempabout {
+    margin-top: 150px;
+    border: 2px solid black;
+    padding: 100px;
+    border-radius: 25px;
+}
+.tempbrousebtn button {
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(0, 115, 192);
+    border: 2px solid rgb(0, 115, 192);
+    margin-left: 300px;
+}
