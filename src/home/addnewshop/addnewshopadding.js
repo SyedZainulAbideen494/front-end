@@ -10,9 +10,10 @@ const Addshopimg = () => {
       <Link to="/Addshoppage1">
         <div className="imgaddshop">
           <img src={add} />
-        </div>
-        <div>
-          <h3>add new shop</h3>
+
+          <div>
+            <h3>add new shop</h3>
+          </div>
         </div>
       </Link>
     </Fragment>

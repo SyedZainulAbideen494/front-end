@@ -192,3 +192,15 @@
   border-radius: 25px;
   margin: 5px;
 }
+.imgaddshop {
+  border: 2px solid black;
+  width: 220px;
+  height: 280px;
+  border-radius: 15px;
+}
+
+.imgaddshop h3 {
+  color: black;
+  margin-left: 20px
+  ;
+}
