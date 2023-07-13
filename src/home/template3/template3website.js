@@ -667,6 +667,7 @@ const ProductList = (props) => {
 const Template3website = (props) => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
+  const [instalink, setinstalink] = useState('')
 
   const showformhandler = () => {
     setshowform(true);
@@ -683,6 +684,9 @@ const Template3website = (props) => {
   const hidesaleshandler = () => {
     setshowsales(false);
   };
+  const linktoinsta = () => {
+    setinstalink(props.insta)
+  }
   const params = useParams();
   return (
     <Fragment>
@@ -695,21 +699,19 @@ const Template3website = (props) => {
         <div className="temp3header">
           <header>
             <div className="name">
-              <h2>{params.shop_name}</h2>
+              <h2>
+                {params.shop_tagline}
+                <br />
+                <h3>{params.shop_name}</h3>
+              </h2>
             </div>
             <div className="socials">
               <span className="insta">
-                <Link to="props.insta">
+                <Link to={instalink}>
                   <img src={insta} />
                 </Link>
               </span>
             </div>
-          </header>
-        </div>
-        <hr />
-        <div className="imgheaderfashion">
-          <header>
-            <h2>{params.shop_tagline}</h2>
           </header>
         </div>
         <div className="keypoints">

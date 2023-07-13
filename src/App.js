@@ -33,7 +33,10 @@ import Fashionshoppreview from "./home/fashionshoppreview/fashionshop";
 import Saleschat from "./home/sales/saleschat";
 import Order from "./home/order/order";
 import Template3website from "./home/template3/template3website";
+import Temp1rpeview from "./home/preview templates/temp1";
 import Addtemplate3form from "./home/template3/addtemplate3";
+import Temp2preview from "./home/preview templates/temp2";
+import Template3preview from "./home/preview templates/temp3";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -64,7 +67,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/temp1preview",
-    element: <Fashionshoppreview />,
+    element: <Temp1rpeview />,
   },
   {
     path: "/saleschat/:orders_id/:name/:Phone/:Email/:streetadrs/:city/:state/:zipcode/:country/:id/:product/:sender_id/:shop_id/:message",
@@ -74,9 +77,11 @@ const router = createBrowserRouter([
   { path: "/prevewtemp3", element: <Template3website /> },
   { path: "/addtemplate3form", element: <Addtemplate3form /> },
   {
-    path: "/mystore/template3/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone",
+    path: "/mystore/template3/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta",
     element: <Template3website />,
   },
+  { path: "/previewtemplate2", element: <Temp2preview /> },
+  { path: "/previewtemplate3", element: <Template3preview/> },
 ]);
 function App() {
   return (

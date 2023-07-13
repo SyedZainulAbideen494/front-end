@@ -85,9 +85,19 @@
 .insta img {
   width: 40px;
   float: right;
-  margin-left: 1000px;
+  margin-left: 980px;
 }
 
 .temp3header header {
   display: inline-flex;
+   background-image: url("../../home/header/images/head1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+}
+
+.name h2 {
+  color: white;
+  font-weight: 300;
 }

@@ -28,23 +28,32 @@ const Addshopniche = () => {
           <Link to="/Defaultstore">
             <button>Default(free)</button>
           </Link>
+          <span>
+            <Link to="/temp1preview">
+              <button>Preview</button>
+            </Link>
+          </span>
           <br />
           <div className="temp">
             <span>
-              <button>Dropment template 1 (comming soon)</button>
+              <Link to="/AddFAshionShopForm">
+                <button>Dropment template 1</button>
+              </Link>
             </span>
             <span className="previewbtn">
-              <Link to="temp1preview">
+              <Link to="/previewtemplate2">
                 <button>Preview</button>
               </Link>
             </span>
           </div>
           <div className="temp">
             <span>
-              <button>Dropment template 3</button>
+              <Link to="/addtemplate3form">
+                <button>Dropment template 3</button>
+              </Link>
             </span>
             <span className="previewbtn">
-              <Link to="/prevewtemp3">
+              <Link to="/previewtemplate3">
                 <button>Preview</button>
               </Link>
             </span>
