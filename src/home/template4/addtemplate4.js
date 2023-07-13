@@ -2,7 +2,7 @@ import React, { Fragment, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
-const Addtemplate3form = (props) => {
+const Addtemplate4form = (props) => {
   const [shop_name, setname] = useState("");
   const [shop_owner, setowner] = useState("");
   const [shop_tagline, setshop_tagline] = useState("");
@@ -20,7 +20,6 @@ const Addtemplate3form = (props) => {
   const [shop_keyhead3, setshop_keyhead3] = useState("");
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
-  const [insta, setinsta] = useState('')
 
   const addshophandler = () => {
     const token = localStorage.getItem("token");
@@ -44,7 +43,6 @@ const Addtemplate3form = (props) => {
         shop_key3: shop_key3,
         shop_email: shop_email,
         shop_phone: shop_phone,
-        insta: insta
       },
       {
         headers: {
@@ -286,19 +284,6 @@ const Addtemplate3form = (props) => {
             }}
           />
         </div>
-        <div className="inp">
-          <label>
-            <h3>Enter your instagram profile link</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter your instagram profile link"
-            onChange={(e) => {
-              setinsta(e.target.value);
-            }}
-          />
-        </div>
         <hr />
         <div className="addnewstorebtn">
           <button onClick={addshophandler}>Add new store</button>
@@ -308,4 +293,4 @@ const Addtemplate3form = (props) => {
   );
 };
 
-export default Addtemplate3form;
+export default Addtemplate4form;

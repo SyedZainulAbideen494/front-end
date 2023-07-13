@@ -21,3 +21,17 @@
         margin-top: 80px;
     }
 }
+
+.shopsonhome {
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.txthomeshops h2 {
+    text-align: center;
+}
+
+.prodsheadhome h2 {
+    text-align: center;
+}

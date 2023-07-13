@@ -18,6 +18,7 @@ const Shopslist = (props) => {
                 shop_about={item.shop_about}
                 shop_tagline={item.shop_tagline}
                 user_id={item.user_id}
+                shop_prods={item.shop_prods}
               />
             </Link>
           ))}

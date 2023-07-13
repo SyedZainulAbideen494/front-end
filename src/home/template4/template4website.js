@@ -1,169 +1,10 @@
 import React, { Fragment, useCallback, useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./template3.css";
 import Productsapp from "../items.js/productsApp";
 import dummyItem from "../../home/header/images/download.jpg";
 import Axios from "axios";
 import tick from '../../home/header/images/301-3011315_icon-check-green-tick-transparent-background.png'
-import insta from "../../home/header/images/download (1).jpg";
-
-const Editbtndisplay = () => {
-  const [showform, setshowform] = useState(false);
-  const [showsales, setshowsales] = useState(false);
-
-  const showformhandler = () => {
-    setshowform(true);
-  };
-
-  const hideformhandler = () => {
-    setshowform(false);
-  };
-
-  const showsaleshandler = () => {
-    setshowsales(true);
-  };
-
-  const hidesaleshandler = () => {
-    setshowsales(false);
-  };
-  const nav = useNavigate();
-  const params = useParams();
-  const [showedititem, setshowitem] = useState(false);
-
-  const [auth, setauth] = useState(false);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-  };
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setauth(true);
-    } else {
-      setauth(false);
-    }
-  }, []);
-  if (auth === false) {
-    nav("/login");
-  }
-
-  const showedit = () => {
-    setshowitem(true);
-  };
-  const hideedit = () => {
-    setshowitem(false);
-  };
-  const [name, setname] = useState([]);
-  const [name2, setname2] = useState([]);
-  const [loading, setloading] = useState(false);
-
-  useEffect(() => {
-    const fetchUsersHandler = async () => {
-      setloading(true);
-      try {
-        const response = await fetch(
-          `http://localhost:8080/user/id/editbtndiaplay1`,
-          {
-            headers: {
-              Authorization: params.shop_id,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser = data.shops.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setname(transformedUser);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setloading(false);
-      }
-    };
-
-    fetchUsersHandler();
-  }, [params.shop_id]);
-
-  useEffect(() => {
-    const fetchUser2sHandler = async () => {
-      setloading(true);
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
-          {
-            headers: {
-              Authorization: token,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser2 = data.user.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setname2(transformedUser2);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setloading(false);
-      }
-    };
-
-    fetchUser2sHandler();
-  }, []);
-
-  const EEditbtn = () => {
-    if (
-      name.length > 0 &&
-      name2.length > 0 &&
-      name[0].user_id === name2[0].user_id
-    ) {
-      return (
-        <Fragment>
-          <div className="profile-header-owner">
-            <header>
-              <div className="shop_owner_view">
-                <h2>Control panel</h2>
-                <div className="shopownerbtn">
-                  <span className="edit_store_btn"></span>
-                  <span className="btnwebstore">
-                    <Link to="/">
-                      <button>Home</button>
-                    </Link>
-                  </span>
-                  <span className="btnwebstore">
-                    <button onClick={showsaleshandler}>Sales</button>
-                  </span>
-                  <span className="btnwebstore">
-                    <button onClick={showformhandler}>Add Item</button>
-                  </span>
-                </div>
-              </div>
-            </header>
-          </div>
-          <div className="sales">
-            {showsales && <Sales onClick={hidesaleshandler} />}
-          </div>
-          <div className="addshopform">
-            {showform && <Addproductstodatabase onClick={hideformhandler} />}
-          </div>
-        </Fragment>
-      );;
-    } else {
-      return <h2>|</h2>;
-    }
-  };
-
-  return (
-    <div>
-      {!loading ? <EEditbtn /> : <p>Loading...</p>}
-    </div>
-  );
-};
-
 
 const Editstoreform = () => {
   const params = useParams();
@@ -336,7 +177,98 @@ const Editstoreform = () => {
   );
 };
 
+const Editbtndisplay = () => {
+  const params = useParams();
+  const [showEditItem, setShowEditItem] = useState(false);
+  const [name, setName] = useState([]);
+  const [name2, setName2] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    const fetchUsersHandler = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay1`,
+          {
+            headers: {
+              Authorization: params.id,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser = data.shops.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setName(transformedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUsersHandler();
+  }, [params.id]);
+
+  useEffect(() => {
+    const fetchUsers2Handler = async () => {
+      setLoading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+          "https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay2",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser2 = data.users.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setName2(transformedUser2);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUsers2Handler();
+  }, []);
+
+  const showEdit = () => {
+    setShowEditItem(true);
+  };
+
+  const hideEdit = () => {
+    setShowEditItem(false);
+  };
+
+  const EEditbtn = () => {
+    if (
+      name.length > 0 &&
+      name2.length > 0 &&
+      name[0].user_id === name2[0].user_id
+    ) {
+    } else {
+      return <button onClick={showEdit}>Edit</button>;
+    }
+  };
+
+  return (
+    <div>
+      {!loading ? <EEditbtn /> : <p>Loading...</p>}
+      {showEditItem && <Editstoreform />}
+    </div>
+  );
+};
 
 const Sales = (props) => {
   const [loading, setloading] = useState(false);
@@ -662,9 +594,7 @@ const ProductList = (props) => {
   );
 };
 
-
-
-const Template3website = (props) => {
+const Template4website = (props) => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
 
@@ -686,124 +616,40 @@ const Template3website = (props) => {
   const params = useParams();
   return (
     <Fragment>
-      <Editbtndisplay />
+      <div className="profile-header-owner">
+        <header>
+          <div className="shop_owner_view">
+            <div className="shopownerbtn">
+              <span className="edit_store_btn">
+                <Editbtndisplay />
+              </span>
+              <span className="btnwebstore">
+                <Link to="/">
+                  <button>Home</button>
+                </Link>
+              </span>
+              <span className="btnwebstore">
+                <button>Stats</button>
+              </span>
+              <span className="btnwebstore">
+                <button onClick={showsaleshandler}>Sales</button>
+              </span>
+              <span className="btnwebstore">
+                <button onClick={showformhandler}>Add Item</button>
+              </span>
+            </div>
+          </div>
+        </header>
+      </div>
       <div className="sales">{showsales && <Sales />}</div>
       <div className="addshopform">
         {showform && <Addproductstodatabase onClick={hideformhandler} />}
       </div>
-      <div className="website">
-        <div className="temp3header">
-          <header>
-            <div className="name">
-              <h2>{params.shop_name}</h2>
-            </div>
-            <div className="socials">
-              <span className="insta">
-                <Link to="props.insta">
-                  <img src={insta} />
-                </Link>
-              </span>
-            </div>
-          </header>
-        </div>
-        <hr />
-        <div className="imgheaderfashion">
-          <header>
-            <h2>{params.shop_tagline}</h2>
-          </header>
-        </div>
-        <div className="keypoints">
-          <div className="keypoint">
-            <span className="img">
-              <img src={tick} />
-            </span>
-            <span className="headingforkeypoint">
-              <h3>{params.shop_keyhead1}</h3>
-            </span>
-            <span className="keypointtxt">
-              <p>{params.shop_key1}</p>
-            </span>
-          </div>
-          <div className="keypoint">
-            <span className="img">
-              <img src={tick} />
-            </span>
-            <span className="headingforkeypoint">
-              <h3>{params.shop_keyhead2}</h3>
-            </span>
-            <span className="keypointtxt">
-              <p>{params.shop_key2}</p>
-            </span>
-          </div>
-          <div className="keypoint">
-            <span className="img">
-              <img src={tick} />
-            </span>
-            <span className="headingforkeypoint">
-              <h3>{params.shop_keyhead3}</h3>
-            </span>
-            <span className="keypointtxt">
-              <p>{params.shop_key3}</p>
-            </span>
-          </div>
-        </div>
-        <hr />
-        <div className="aboutsection">
-          <section>
-            <div className="aboutustxttemp3">
-              <h2>About us</h2>
-            </div>
-            <div className="block1">
-              <div className="block1header">
-                <h3>{params.shop_blockhead1}</h3>
-              </div>
-              <div className="block1txt">
-                <h4>{params.shop_block1}</h4>
-              </div>
-            </div>
-            <div className="block2">
-              <div className="block2header">
-                <h3>{params.shop_blockhead2}</h3>
-              </div>
-              <div className="block2txt">
-                <h4>{params.shop_block2}</h4>
-              </div>
-            </div>
-            <div className="block3">
-              <div className="block3header">
-                <h3>{params.shop_blockhead3}</h3>
-              </div>
-              <div className="block3txt">
-                <h4>{params.shop_block3}</h4>
-              </div>
-            </div>
-          </section>
-        </div>
-        <hr />
-        <div className="prodstemp3">
-          <div className="prodstxt">
-            <h2>Our Products</h2>
-            <div className="prodstemp2">
-              <Productsinshopapp />
-            </div>
-          </div>
-        </div>
-        <div className="footertemp3">
-          <footer>
-            <div className="contacttxttemp3">
-              <h3>Contact us</h3>
-            </div>
-            <div className="contactli">
-              <ul>
-                <li>Email: {params.shop_email}</li>
-                <li>phone no: {params.shop_phone}</li>
-              </ul>
-            </div>
-          </footer>
-        </div>
-      </div>
+      <header>
+        <div></div>
+      </header>
     </Fragment>
   );
 };
 
-export default Template3website;
+export default Template4website;

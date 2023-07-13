@@ -39,6 +39,7 @@ const Profile = (props) => {
         </div>
         <Shopapp />
         <Template3app />
+        <FashionShopapp/>
         <Addshopimg />
       </div>
     </Fragment>

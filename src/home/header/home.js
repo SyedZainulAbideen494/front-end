@@ -13,6 +13,7 @@ import Addshopform1 from "../addnewshop/addshopform1";
 import Tempsabout from "../tempsabout/tempsabout";
 import Contact from "../dropmentcontacts/contackts";
 import './home.css'
+import Displayshoponhome from "../display on home screen/displayshop";
 
 const Home = () => {
   const [auth, setauth] = useState(false);
@@ -50,6 +51,16 @@ const Home = () => {
               <hr/>
             </div>
             <Homedisplay />
+          </div>
+          <div className="shopsonhome">
+            <div className="txthomeshops">
+              <hr/>
+              <h2>Shops of our customer</h2>
+              <hr/>
+            </div>
+            <div>
+              <Displayshoponhome/>
+            </div>
           </div>
         </Cartprovider>
         <Tempsabout />

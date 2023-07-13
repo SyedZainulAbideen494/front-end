@@ -13,7 +13,7 @@ function Productsapp() {
 
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://154.41.229.94/products/product");
+    const response = await fetch("http://localhost:8080/products/product");
     const data = await response.json();
     const transformedItems = data.items.map((itemsdata) => {
       return {
@@ -22,7 +22,7 @@ function Productsapp() {
         price: itemsdata.price,
         amount: itemsdata.quantity,
         shop_id: itemsdata.shop_id,
-        images: `http://154.41.229.94/images/${itemsdata.images}`,
+        images: `http://localhost:8080/images/${itemsdata.images}`,
       };
     });
     setitems(transformedItems);

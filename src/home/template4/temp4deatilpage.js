@@ -2,9 +2,9 @@ import React, { Fragment, useState } from "react";
 import { useParams, json, useLoaderData } from "react-router-dom";
 import Shopsright from "./shopsright";
 import Shopsinprofile from "./shopsini";
-import Template3website from "./template3app";
+import Template3website from "./template4app";
 
-function Temp3detailspage() {
+function Temp4detailspage() {
   const data = useLoaderData();
 
   return (
@@ -38,14 +38,13 @@ const Productsrights = (props) => {
           shop_key3={item.shop_key3}
           shop_email={item.shop_email}
           shop_phone={item.shop_phone}
-          insta={item.insta}
         />
       ))}
     </Fragment>
   );
 };
 
-export default Temp3detailspage;
+export default Temp4detailspage;
 
 export async function loader({ request, params }) {
   const id = params.id;

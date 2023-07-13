@@ -31,4 +31,63 @@
   width: 50px;
   border-radius: 50%;
 } 
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .keypoint {
+  margin: 10px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 190px;
+}
+.keypoint img {
+  width: 50px;
+  border-radius: 50%;
+}
+.keypoints {
+  display: inline-flex;
+}
+}
+
+@media (min-width: 1025px){
+    .keypoint {
+  margin: 50px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 190px;
+}
+.keypoint img {
+  width: 50px;
+  border-radius: 50%;
+}
+.keypoints {
+  display: inline-flex;
+}
+}
+
+.footertemp3 footer {
+  background-color: black;
+}
+
+.contacttxttemp3 h3 {
+  color: white;
+}
+
+.footertemp3 li {
+  color: white;
+}
+.shop_owner_view h2 {
+  color: white;
+}
+.insta img {
+  width: 40px;
+  float: right;
+  margin-left: 1000px;
+}
+
+.temp3header header {
+  display: inline-flex;
 }

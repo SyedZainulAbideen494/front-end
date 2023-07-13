@@ -39,7 +39,7 @@ const Editbtndisplay = () => {
       setloading(true);
       try {
         const response = await fetch(
-          `http://localhost:8080/id/editbtndiaplay1`,
+          `http://localhost:8080/user/id/editbtndiaplay1`,
           {
             headers: {
               Authorization: params.shop_id,
