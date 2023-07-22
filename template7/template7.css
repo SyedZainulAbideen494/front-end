@@ -1,0 +1,188 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+
+}
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+ 
+}
+
+@media (min-width: 1025px){
+
+}
+
+.navigation li {
+    display: inline-flex;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.navigation ul {
+    margin-left: 60px;
+}
+
+.navigation button {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    padding: 15px 35px;
+    border-radius: 15px;
+}
+
+.header2 header {
+     background-image: url('../../home/header/images/pet1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1145px;
+  height: 450px;
+  border-radius: 15px;
+}
+
+.storename h1 {
+    color: purple;
+}
+
+.navigation {
+    display: inline-flex;
+}
+
+.imgblock1abt1 {
+    background-image: url('../../home/header/images/pet2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 400px;
+}
+
+.block1temp7 {
+    display: inline-flex;
+    margin-top: 100px;
+}
+
+.abtblock1no1head h1 {
+    margin-top: 100px;
+    color: orange;
+}
+
+.temp7imgblock2no1 {
+     background-image: url('../../home/header/images/pet3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+}
+
+.block2abtno1temp7 {
+    display: inline-flex;
+    margin-top: 80px;
+}
+
+.block2no1abtemp7head h1 {
+    margin-top: 100px;
+    margin-left: 450px;
+    color: orange;
+}
+
+.block2no1abttemp7txt h3 {
+    margin-left: 400px;
+}
+
+.imgblock1abt3 {
+     background-image: url('../../home/header/images/pet3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 400px;
+}
+
+.block3temp7 {
+    display: inline-flex;
+    margin-top: 80px;
+}
+
+.abtblock1no3head h1 {
+    margin-top: 100px;
+    color: orange;
+}
+
+.ser2block1img {
+       background-image: url('../../home/header/images/pet4.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  border-radius: 25px;
+}
+
+.blockset2temp7 {
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 100px;
+    display: inline-flex;
+}
+
+.ser2block2img {
+background-image: url('../../home/header/images/pet5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  border-radius: 25px;   
+  margin-left: 20px;
+}
+
+.ser2block3img {
+background-image: url('../../home/header/images/pet6.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  border-radius: 25px;   
+  margin-left: 20px;
+}
+
+.prodsheadtxt h2 {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.ourprodstemp7 {
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.contacts h2 {
+    text-align: center;
+}
+
+.contacts h3 {
+    margin-left: 30px;
+}
+
+.conatcttemp7 {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 25px;
+    margin-top: 100px;
+}
