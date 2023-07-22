@@ -1,0 +1,227 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+
+}
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+ 
+}
+
+@media (min-width: 1025px){
+
+}
+
+
+.headertemp5 header {
+    background-image: url('../../home/header/images/fashion1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1145px;
+  height: 450px;
+  border-radius: 15px;
+}
+
+.temp5hed1 header {
+    background-color: white;
+}
+
+.headersection h1 {
+    text-align: center;
+}
+
+.headersection h2 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+.headersection button {
+    padding: 18px 45px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: 2px solid white;
+    border-radius: 15px;
+    margin-left: 490px;
+    font-weight: 400;
+    font-size: medium;
+    margin-top: 60px;
+}
+
+.block1  {
+     background-image: url('../../home/header/images/Untitled\ design\ \(2\).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 350px;
+  margin-left: 10px;
+  border-radius: 25px;
+}
+
+.block2{
+ background-image: url('../../home/header/images/fashion3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 350px;
+  margin-left: 10px;
+  border-radius: 25px;
+}
+
+.blocks span {
+    display: inline-flex;
+    border-radius: 25px;
+}
+
+.block3 {
+    background-image: url('../../home/header/images/1u.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 350px;
+  margin-left: 10px;
+  border-radius: 25px;
+}
+
+.blocks {
+    margin-left: 80px;
+}
+
+.productimgtemp5 img {
+    width: 220px;
+    height: 150px;
+    margin-left: 15px;
+    border-radius: 25px;
+}
+
+.items5 {
+    border: 2px solid #faf3dd;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+.ourprods h2 {
+    color: #606c38;
+    border: 2px solid white;
+}
+
+.productmodeltemp5 {
+    border: 2px solid #606c38;
+    width: 250px;
+    height: 300px;
+    border-radius: 25px;
+}
+
+.blockheading h1 {
+    color: #faf3dd;
+}
+
+.blockheading h3 {
+    color: white;
+}
+
+.blockheading button {
+    margin-left: 100px;
+    padding: 12px 30px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    margin-top: 150px;
+}
+
+
+.firsttxt {
+    margin-right: 10px;
+}
+
+.notnorm p {
+    text-decoration: underline;
+}
+
+.ourprods span {
+    display: inline-flex;
+}
+
+.block {
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+.infoblock span{
+    margin-top: 40px;
+}
+
+.block1img img {
+    width: 400px;
+    margin-left: 500px;
+    border-radius: 25px;
+    margin-bottom: 40px;
+}
+
+.infoblock1 {
+    display: inline-flex;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 25px;
+}
+.infoblock2 {
+    display: inline-flex;
+    border: 1px solid black;
+    border-radius: 15px;
+     background-image: url('../../home/header/images/1u.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1145px;
+  height: 350px;
+}
+
+
+.block2textheadinganddetails {
+    margin-left: 730px;
+}
+
+.blockhead h2 {
+    color: #606c38;
+}
+
+.block3img img {
+    width: 450px;
+    border-radius: 25px;
+}
+
+.infoblock3 {
+    display: inline-flex;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 50px;
+    margin-top: 40px;
+}
+
+.blocktxt3 {
+    margin-left: 350px;
+}
+
+.contactfooter {
+    background-color: black;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.contactfooter h2 {
+    color: white;
+    text-align: center;
+}
+
+
+
+

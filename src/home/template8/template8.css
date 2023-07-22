@@ -1,0 +1,253 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+
+}
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+ 
+}
+
+@media (min-width: 1025px){
+
+}
+
+.imgoftemp8header section{
+     background-image: url('../../home/header/images/roi1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 450px;
+  height: 350px;
+  border-radius: 15px;
+  float: right;
+  margin-top: 20px;
+}
+
+.header1temp8 header {
+    background-color: #00a8e8;
+    border-radius: 25px;
+    height: 400px;
+    padding: 20px;
+}
+
+
+.shoptaglinetemp8 {
+    color: white;
+    margin-left: 80px;
+    padding-top: 80px;
+}
+
+.header2temp8 header {
+    display: inline-flex;
+}
+
+.temp8header1btns button {
+    padding: 15px 30px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-top: 16px;
+    font-size: medium;
+}
+
+.temp8header1btns {
+    margin-left: 150px;
+}
+
+.temp8header1btns button:hover {
+    padding: 15px 30px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-top: 16px;
+}
+
+.shopnametemp8 h1 {
+    margin-left: 20px;
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 145, 255);
+}
+
+.card1 section {
+     background-image: url('../../home/header/images/bluetick.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.card1 {
+    border: 1px solid #00a8e8;
+    padding: 40px;
+    border-radius: 25px;
+    width: 150px;
+    height: 200px;
+    margin-left: 80px;
+    margin-right: 40px;
+}
+
+.trustcards {
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.trustcards {
+    display: inline-flex;
+}
+
+.texttrustcard1 p {
+    color: #00a8e8;
+}
+
+.imgblock1abt1temp8  {
+        background-image: url('../../home/header/images/serv1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  border-radius: 25px;
+  margin-top: 40px;
+  border-radius: 50%;
+  margin-left: 450px;
+}
+
+.block1temp8 {
+    display: inline-flex;
+}
+
+.abtblock1no1headtemp8 h1 {
+    margin-top: 80px;
+        color: white;
+        padding-left: 30px;
+}
+
+.blockabt1temp8 {
+    margin-top: 80px;
+}
+
+.bodytxtheadblock1temp8 h3 {
+    color: white;
+}
+
+.block1temp8 {
+    background-color: #00a8e8;
+    margin-right: 100px;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.temp8imgblock2no1{
+        background-image: url('../../home/header/images/serv2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  border-radius: 25px;
+  margin-top: 40px;
+  border-radius: 50%;
+}
+
+.block2abtno1temp8 {
+    display: inline-flex;
+}
+
+.block2no1abtemp8head h1 {
+    margin-top: 80px;
+}
+.block2no1abtemp8head h1 {
+    color: #00a8e8;
+}
+
+.block2abtno1temp8 {
+    margin-left: 50px;
+}
+
+
+.ourservicestemp8 {
+    margin-top: 100px;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+
+.formordertemp8 {
+    margin-left: 420px;
+    margin-top: 100px;
+    background-color: black;
+    padding: 40px;
+    width: 240px;
+    border-radius: 25px;
+}
+
+.formordertemp8 input {
+    padding: 15px 30px;
+    margin-top: 5px;
+}
+
+.formordertemp8 label {
+    color: white;
+}
+
+.headingofgetintouchtemp8 h2 {
+    color: white;
+    margin-left: 50px;
+}
+
+.placeordbtntemp8 button {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    padding: 15px 35px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.servicesweprovidetemp8 {
+    display: inline-flex;
+}
+.productimgtemp8 img {
+    width: 250px;
+    height: 150px;
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.productmodeltemp8 {
+    width: 300px;
+    height: 400px;
+    border-radius: 25px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.product__titletemp8 h2 {
+    color: #00a8e8;
+    margin-left: 70px;
+}
+
+.product__amounttemp4 p {
+    color: #6c757d;
+    margin-left: 30px;
+}
+
+.sevricestemp8 {
+    margin-top: 100px;
+}
+
+.servicestemp8tetx h2 {
+    color: #00a8e8;
+    text-align: center;
+}

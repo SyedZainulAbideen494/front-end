@@ -1,0 +1,297 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+
+}
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+ 
+}
+
+@media (min-width: 1025px){
+
+}
+
+
+.temp6base {
+    background-color: #000000;
+}
+
+.temp6header header {
+     background-image: url('../../home/header/images/Untitled\ design\ \(17\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1145px;
+  height: 350px;
+  border-radius: 15px;
+}
+
+.nav ul li{
+    display: inline-flex;
+    margin: 30px;
+    color: white;
+    padding: 12px 30px;
+    font-size: medium;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.storename h1 {
+    color: #ffbd00;
+    text-align: center;
+}
+
+.temp6header h2 {
+    color: black;
+}
+
+.temp6header button {
+    color: white;
+    background-color: #ab8516;
+    padding: 15px 35px;
+    border: 2px solid #ab8516;
+    border-radius: 15px;
+}
+
+.temp6header h2{
+    margin-left: 500px;
+}
+
+.blockno1 section {
+    background-image: url('../../home/header/images/Untitled\ design\ \(19\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 350px;
+  border-radius: 25px;
+  margin: 20px;
+}
+
+.btntopheqader button {
+    margin-left: 480px;
+}
+
+
+.blockno2 section {
+    background-image: url('../../home/header/images/Untitled\ design\ \(28\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 350px;
+  border-radius: 25px;
+  margin: 20px;
+}
+
+.blockno3 section {
+    background-image: url('../../home/header/images/Untitled\ design\ \(30\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 350px;
+  border-radius: 25px;
+  margin: 20px;
+}
+
+.blockset1 {
+    display: inline-flex;
+    margin-left: 50px;
+}
+
+.blockset2no1img {
+     background-image: url('../../home/header/images/Untitled\ design\ \(20\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 450px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.blockset2no1  {
+    display: inline-flex;
+}
+
+.headblockset2no1txthead h1 {
+    color: white;
+    margin-top: 100px;
+    margin-left: 130px;
+}
+
+.txtdetailsblockset2no1 h3 {
+    margin-left: 90px;
+    color: white;
+}
+
+.imgblockset31{
+     background-image: url('../../home/header/images/jewl1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+}
+
+.txtheadblockset3 h1 {
+    color: white;
+    margin-left: 450px;
+}
+
+.detailstxtblockset3 h3 {
+    color: white;
+    margin-left: 420px;
+}
+
+.blockset3 {
+    margin-top: 160px;
+    margin-left: 30px;
+}
+
+.imgblockset32 {
+     background-image: url('../../home/header/images/Untitled\ design\ \(23\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.imgblockset33{
+     background-image: url('../../home/header/images/jewl2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.blockset3imgs {
+    display: inline-flex;
+}
+
+.temp6prodsection {
+    border: 2px solid white;
+    border-radius: 25px;
+    margin-top: 80px;
+}
+
+.prodssechead h2 {
+    color: white;
+    text-align: center;
+    border: 2px solid rgb(141, 99, 10);
+    padding: 20px;
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navigationtopbar button {
+    padding: 12px 30px;
+    border: 1px solid #ab8516;
+    color: #ab8516;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+.navigationtopbar {
+    margin-left: 330px;
+}
+
+.abtblock1img {
+   background-image: url('../../home/header/images/Untitled\ design\ \(26\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.abtblock1 {
+    display: inline-flex;
+}
+
+.abtblock1txt h1 {
+    color: white;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+
+.abtblock1txt h3 {
+    color: white;
+    margin-left: 320px;
+}
+
+.abtblock2img {
+     background-image: url('../../home/header/images/Untitled\ design\ \(27\).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-left: 500px;
+}
+
+.abtblock2 {
+    display: inline-flex;
+}
+
+.abtblock2txt h1 {
+    color: white;
+    margin-left: 70px;
+    margin-top: 150px;
+}
+
+.abtblock2txt h3 {
+    color: white;
+}
+
+.abtblock3img {
+     background-image: url('../../home/header/images/jewl3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 450px;
+  border-radius: 25px;
+  margin-top: 40px;
+}
+
+.contactushead h1 {
+    color: white;
+    text-align: center;
+    text-decoration: underline #ab8516;
+}
+
+.contactus {
+    margin-top: 80px;
+    border: 2px solid #ab8516;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.allcontacts h3{
+    color: white;
+}
