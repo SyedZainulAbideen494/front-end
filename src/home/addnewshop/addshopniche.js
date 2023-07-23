@@ -14,19 +14,17 @@ const Addshopniche = () => {
             <span className="nicheheaderbtn">
               <button>Home</button>
             </span>
-            <span className="nicheheaderbtn">
-              <button>Plans</button>
-            </span>
           </div>
         </header>
       </div>
       <div className="niches">
         <div className="txt2121">
-          <h2>PLEASE SELECT A TEMPLATE</h2>
+          <h1>PLEASE SELECT A TEMPLATE</h1>
         </div>
+        <h2>free templates</h2>
         <span className="temp">
           <Link to="/Defaultstore">
-            <button>Default(free)</button>
+            <button>Dropment template 1 </button>
           </Link>
           <span>
             <Link to="/temp1preview">
@@ -37,7 +35,7 @@ const Addshopniche = () => {
           <div className="temp">
             <span>
               <Link to="/AddFAshionShopForm">
-                <button>Dropment template 1</button>
+                <button>Dropment template 2</button>
               </Link>
             </span>
             <span className="previewbtn">
@@ -58,8 +56,47 @@ const Addshopniche = () => {
               </Link>
             </span>
           </div>
+          <h2>Fashion brand templates</h2>
+          <div className="temp">
+            <span>
+              <Link to="/addtemplate3form">
+                <button>Dropment template 4</button>
+              </Link>
+            </span>
+            <span className="previewbtn">
+              <Link to="/template4preview">
+                <button>Preview</button>
+              </Link>
+            </span>
+          </div>
+          <div className="temp">
+            <span>
+              <Link to="/addtemplate3form">
+                <button>Dropment template 5</button>
+              </Link>
+            </span>
+            <span className="previewbtn">
+              <Link to="/template5preview">
+                <button>Preview</button>
+              </Link>
+            </span>
+          </div>
+          <h2>Fashion brand templates</h2>
+          <div className="temp">
+            <span>
+              <Link to="/addtemplate3form">
+                <button>Dropment template 6</button>
+              </Link>
+            </span>
+            <span className="previewbtn">
+              <Link to="/template6preview">
+                <button>Preview</button>
+              </Link>
+            </span>
+          </div>
           <br />
         </span>
+        <h2></h2>
       </div>
     </Fragment>
   );
