@@ -28,6 +28,7 @@ function Shopapp() {
         shop_about: itemsdata.shop_about,
         shop_prods: itemsdata.shop_prods,
         user_id: itemsdata.user_id,
+        temp1: itemsdata.temp1
       };
     });
     setitems(transformedItems);

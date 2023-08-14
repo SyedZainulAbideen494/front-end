@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import "./items.css";
-import green from "../header/images/301-3011315_icon-check-green-tick-transparent-background.png";
 import { Link } from "react-router-dom";
 const Placeorder = (props) => {
   return (
@@ -13,7 +12,6 @@ const Placeorder = (props) => {
             Successfully!
           </h1>
           <div className="greentick">
-            <img src={green} />
           </div>
         </div>
         <div className="ord2">

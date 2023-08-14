@@ -11,7 +11,7 @@ const Addtemplate4form = (props) => {
   const [shop_blockhead1, setshop_blockheading1] = useState("");
   const [shop_block1, setshop_block1] = useState("");
   const [shop_block2, setshop_block2] = useState("");
-  const [shop_block3, setshop_block3] = useState("");
+  const [shop_block3, setshop_block3] = useState("")
   const [shop_key1, setshop_key1] = useState("");
   const [shop_keyhead1, setshp_keyhead1] = useState("");
   const [shop_key2, setshop_key2] = useState("");

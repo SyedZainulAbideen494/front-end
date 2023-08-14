@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import "./cart.css";
-import dummyitem from "../images/download.jpg";
 
 const CartItem = (props) => {
   return (
@@ -9,7 +8,6 @@ const CartItem = (props) => {
         <div className="inlinedivforcrt">
           <div className="inlinetitleimg">
             <span className="cartitemimg">
-              <img src={dummyitem} />
             </span>
             <span className="cartitemtitle">
               <h2>{props.title}</h2>

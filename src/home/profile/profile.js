@@ -15,6 +15,8 @@ import FashionShopapp from "../fashionstore/fashionshopapp.js";
 import Template3website from "../template3/template3website";
 import Template3app from "../template3/template3app";
 import { useNavigate } from "react-router-dom";
+import Template5app from "../template5/template5app";
+import Template4app from "../template4/template4app";
 
 const Profile = (props) => {
   return (
@@ -40,6 +42,8 @@ const Profile = (props) => {
         <Shopapp />
         <Template3app />
         <FashionShopapp/>
+        <Template5app/>
+        <Template4app/>
         <Addshopimg />
       </div>
     </Fragment>

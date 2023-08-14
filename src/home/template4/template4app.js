@@ -6,6 +6,7 @@ import React, {
   axios,
 } from "react";
 import Template3list from "./template4list";
+import Template4list from "./template4list";
 
 function Template4app() {
   const [items, setitems] = useState([]);
@@ -13,7 +14,7 @@ function Template4app() {
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/user/shops/template3", {
+    const response = await fetch("http://localhost:8080/user/shops/template4", {
       headers: {
         Authorization: token,
       },
@@ -40,6 +41,8 @@ function Template4app() {
         shop_key3: itemsdata.shop_key3,
         shop_email: itemsdata.shop_email,
         shop_phone: itemsdata.shop_phone,
+        temp4: itemsdata.temp4,
+        insta: itemsdata.insta
       };
     });
     setitems(transformedItems);
@@ -53,7 +56,7 @@ function Template4app() {
   return (
     <Fragment>
       <section>
-        {!loading && <Template3list shops={items} />}
+        {!loading && <Template4list shops={items} />}
         {loading && <p>Loading..</p>}
       </section>
     </Fragment>

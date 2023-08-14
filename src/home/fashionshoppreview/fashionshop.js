@@ -29,13 +29,6 @@ const Fashionshoppreview = (props) => {
       </div>
       <div className="imgheaderfashion">
         <header
-          style={{
-            backgroundImage: `url(${require("../../home/header/images/download.jpg")})`,
-            width: "1050px",
-            padding: "100px",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
         >
           <h2>Your store Tagline</h2>
         </header>

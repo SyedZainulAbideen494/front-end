@@ -1,6 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Fragment, useState, useEffect, useCallback } from "react";
-import Prodimg from "../../home/header/images/download.jpg";
 import Axios from "axios";
 import Productsapp from "../items.js/productsApp";
 const Editbtndisplay = () => {

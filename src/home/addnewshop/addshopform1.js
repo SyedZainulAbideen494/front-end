@@ -8,17 +8,20 @@ const Addshopform1 = (props) => {
   const [shop_owner, setowner] = useState("");
   const [shop_about, setstoredetails] = useState("");
   const [shop_prods, setprodsdetails] = useState("");
+  const [temp1, settemp1] = useState('')
+  const [images, setimages] = useState('')
 
   const token = localStorage.getItem("token");
 
   const addshophandler = () => {
     Axios.post(
-      "http://154.41.229.94/addShops",
+      "http://localhost:8080/addShops",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
         shop_about: shop_about,
         shop_prods: shop_prods,
+        temp1: temp1
       },
       {
         headers: {
@@ -99,6 +102,21 @@ const Addshopform1 = (props) => {
               }}
             />
           </div>
+          <div className="table">
+          <label>
+            <p>Enter owner/owners Name/Names</p>
+          </label>
+          <br />
+          <div className="inpupt"></div>
+          <input
+            placeholder="Enter owner's name"
+            required
+            onChange={(e) => {
+              settemp1(e.target.value);
+            }}
+          />
+        </div>
+
         </div>
         <hr />
         <div className="addnewstorebtn">

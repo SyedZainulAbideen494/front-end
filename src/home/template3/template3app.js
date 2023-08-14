@@ -40,7 +40,8 @@ function Template3app() {
         shop_key3: itemsdata.shop_key3,
         shop_email: itemsdata.shop_email,
         shop_phone: itemsdata.shop_phone,
-        insta: itemsdata.insta
+        insta: itemsdata.insta,
+        temp3: itemsdata.temp3
       };
     });
     setitems(transformedItems);

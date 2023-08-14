@@ -1,18 +1,11 @@
 import React, { Fragment, useCallback, useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Productsapp from "../items.js/productsApp";
-import dummyItem from "../../home/header/images/download.jpg";
 import Axios from "axios";
-import tick from '../../home/header/images/301-3011315_icon-check-green-tick-transparent-background.png'
-import fashion2 from '../../home/header/images/Untitled design.png'
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
-import fashion1 from '../../home/header/images/fashion1.jpg'
-import block1img from '../../home/header/images/Untitled design (2).png'
 import './template8.css'
-import fashion3 from "../../home/header/images/Untitled design.png";
-import fashion4 from '../header/images/pet6.png'
-import digital from '../header/images/servi4.png'
+
 
 const Editstoreform = () => {
   const params = useParams();
@@ -861,6 +854,7 @@ const Template8website = (props) => {
 
   return (
     <Fragment>
+      <Editbtndisplay/>
       <div className="header2temp8">
         <header>
           <div className="shopnametemp8">

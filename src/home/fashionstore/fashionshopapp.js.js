@@ -33,6 +33,7 @@ function FashionShopapp() {
         shop_block3: itemsdata.shop_block3,
         user_id: itemsdata.user_id,
         images: `http://localhost:8080/images/${itemsdata.images}`,
+        temp2: itemsdata.temp2
       };
     });
     setitems(transformedItems);

@@ -37,6 +37,14 @@ import Temp1rpeview from "./home/preview templates/temp1";
 import Addtemplate3form from "./home/template3/addtemplate3";
 import Temp2preview from "./home/preview templates/temp2";
 import Template3preview from "./home/preview templates/temp3";
+import Template5websitepreview from "./home/template5/template5websitepreview";
+import Template5website from "./home/template5/template5website";
+import Addtemplate5form from "./home/template5/addtemplate5";
+import Template4websitepreview from "./home/template4/template4website";
+import PaymentApp from "./home/payment/payment";
+import Addtemplate4form from "./home/template4/addtemplate4";
+import Template4website from "./home/template4/template4website";
+import Template6websitepreview from "./home/template5 copy/template6website";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -51,7 +59,7 @@ const router = createBrowserRouter([
   { path: "/shop-products", element: <Myshopproducts /> },
   { path: "/orderproduct", element: <Orderform /> },
   { path: "/profile", element: <Profile /> },
-  { path: "/Plans", element: <Plans /> },
+  { path: "/Plansss", element: <Plans /> },
   { path: "/Addshoppage1", element: <Addshopniche /> },
   { path: "/Dropshipping", element: <Dropshipping /> },
   {
@@ -82,6 +90,14 @@ const router = createBrowserRouter([
   },
   { path: "/previewtemplate2", element: <Temp2preview /> },
   { path: "/previewtemplate3", element: <Template3preview/> },
+  {path: "/temp5preview", element: <Template5websitepreview /> },
+  {path: '/addShopTemp5', element: <Addtemplate5form/>},
+  {path: '/mystore/template5/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta', element: <Template5website/>},
+  {path: '/template4/preview', element: <Template4websitepreview/>},
+  {path: '/Plans', element: <PaymentApp/>},
+  {path: '/Add/Tempate4/Form', element: <Addtemplate4form/>},
+  {path: '/mystore/template4/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta', element: <Template4website/>},
+  {path: '/Template6/preview', element: <Template6websitepreview/>}
 ]);
 function App() {
   return (

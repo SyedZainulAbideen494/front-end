@@ -9,7 +9,6 @@ const Shoplist = (props) => {
           {props.shop.map((shopdata) => (
             <Shopsowned
               shop_name={shopdata.shop_name}
-              shop_image={shopdata.shop_image}
             />
           ))}
         </ul>

@@ -9,7 +9,7 @@ const Shopslist = (props) => {
         <ul>
           {props.shops.map((item) => (
             <Link
-              to={`/mystore/${item.shop_id}/${item.shop_name}/${item.shop_owner}/${item.shop_about}/${item.shop_prods}/${item.user_id}`}
+              to={`/mystore/${item.shop_id}/${item.shop_name}/${item.shop_owner}/${item.shop_about}/${item.shop_prods}/${item.user_id}/${item.temp1}`}
             >
               <Shopsinprofile
                 shop_id={item.shop_id}
@@ -19,6 +19,7 @@ const Shopslist = (props) => {
                 shop_tagline={item.shop_tagline}
                 user_id={item.user_id}
                 shop_prods={item.shop_prods}
+                temp1={item.temp1}
               />
             </Link>
           ))}

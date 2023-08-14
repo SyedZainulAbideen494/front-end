@@ -25,6 +25,7 @@ const FashionShopslist = (props) => {
                 shop_block3={item.shop_block3}
                 user_id={item.user_id}
                 images={item.images}
+                temp2={item.temp2}
               />
             </Link>
           ))}

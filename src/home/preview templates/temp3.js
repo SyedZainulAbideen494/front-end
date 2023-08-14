@@ -1,7 +1,5 @@
 import React,{useCallback, Fragment} from "react";
-import insta from '../../home/header/images/download (1).jpg'
 import Productsinshopapp from "../items.js/productsApp";
-import tick from '../../home/header/images/301-3011315_icon-check-green-tick-transparent-background.png'
 import { Link } from "react-router-dom";
 
 const Template3preview = () => {
@@ -19,7 +17,6 @@ const Template3preview = () => {
             <div className="socials">
               <span className="insta">
                 <Link to="https://www.instagram.com/saz_494">
-                  <img src={insta} />
                 </Link>
               </span>
             </div>
@@ -28,7 +25,6 @@ const Template3preview = () => {
         <div className="keypoints">
           <div className="keypoint">
             <span className="img">
-              <img src={tick} />
             </span>
             <span className="headingforkeypoint">
               <h3>heading</h3>
@@ -39,7 +35,6 @@ const Template3preview = () => {
           </div>
           <div className="keypoint">
             <span className="img">
-              <img src={tick} />
             </span>
             <span className="headingforkeypoint">
               <h3>Heading</h3>
@@ -50,7 +45,6 @@ const Template3preview = () => {
           </div>
           <div className="keypoint">
             <span className="img">
-              <img src={tick} />
             </span>
             <span className="headingforkeypoint">
               <h3>heading</h3>

@@ -1,0 +1,134 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .btnwebstore button {
+    padding: 6px;
+    background-color: black;
+    color: white;
+    margin: 4px;
+    border: 1px solid black;
+  }
+
+  .inpt input {
+    padding: 6px;
+    border-radius: 25px;
+    border: 2px solid black;
+  }
+
+  .img2infoblock img {
+    margin-left: 150px;
+  }
+  .productmodelul ul {
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+  }
+  .productmodel {
+    height: 250px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .btnwebstore button {
+    padding: 6px;
+    background-color: black;
+    color: white;
+    margin: 4px;
+    border: 1px solid black;
+  }
+
+  .inpt input {
+    padding: 6px;
+    border-radius: 25px;
+    border: 2px solid black;
+  }
+
+  .img2infoblock img {
+    margin-left: 150px;
+  }
+  .productmodelul ul {
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+  }
+  .productmodel {
+    height: 250px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .btnwebstore button {
+    padding: 6px;
+    background-color: black;
+    color: white;
+    margin: 4px;
+    border: 1px solid black;
+  }
+
+  .inpt input {
+    padding: 10px 90px;
+    border-radius: 25px;
+    border: 2px solid black;
+  }
+
+  .img2infoblock img {
+    margin-left: 550px;
+  }
+  .productmodelul ul {
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+  }
+  .productmodel {
+    height: 250px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .btnwebstore button {
+    padding: 6px;
+    background-color: black;
+    color: white;
+    margin: 4px;
+    border: 1px solid black;
+  }
+
+  .inpt input {
+    padding: 10px 90px;
+    border-radius: 25px;
+    border: 2px solid black;
+  }
+
+  .img2infoblock img {
+    margin-left: 750px;
+  }
+  .productmodelul ul {
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+  }
+  .productmodel {
+    height: 250px;
+  }
+}
+
+.editbtns button {
+  color: black;
+  background-color: aliceblue;
+  border: 1px solid white;
+  text-decoration: underline;
+}
+
+.editbtns button:hover {
+  color: red;
+  text-decoration: underline red;
+  transition: 0.4s;
+}
+
+.item {
+  width: 300px ;
+  height: 300px;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 25px;
+  color: black;
+}

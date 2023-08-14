@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from "react";
-import profilepic from "../../../home/header/images/download.png";
 import "./profilepic.css";
+import pic from '../../header/images/profiledef.png'
 
 const Profilepic = (props) => {
   const Defaultpic = () => {
-    <img src={profilepic} />;
+    <img src={pic}/>
   };
 
   const Profilepicentered = (props) => {
@@ -22,7 +22,7 @@ const Profilepic = (props) => {
   return (
     <Fragment>
       <div className="prifilepic">
-        <img src={profilepic} />
+        <img src={pic} />
       </div>
     </Fragment>
   );

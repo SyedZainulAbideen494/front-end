@@ -59,24 +59,24 @@ const Addshopniche = () => {
           <h2>Fashion brand templates</h2>
           <div className="temp">
             <span>
-              <Link to="/addtemplate3form">
+              <Link to="/Add/Tempate4/Form">
                 <button>Dropment template 4</button>
               </Link>
             </span>
             <span className="previewbtn">
-              <Link to="/template4preview">
+              <Link to="/template4/preview">
                 <button>Preview</button>
               </Link>
             </span>
           </div>
           <div className="temp">
             <span>
-              <Link to="/addtemplate3form">
+              <Link to="/addShopTemp5">
                 <button>Dropment template 5</button>
               </Link>
             </span>
             <span className="previewbtn">
-              <Link to="/template5preview">
+              <Link to="/temp5preview">
                 <button>Preview</button>
               </Link>
             </span>
@@ -89,7 +89,7 @@ const Addshopniche = () => {
               </Link>
             </span>
             <span className="previewbtn">
-              <Link to="/template6preview">
+              <Link to="/Template6/preview">
                 <button>Preview</button>
               </Link>
             </span>

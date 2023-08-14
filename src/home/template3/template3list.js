@@ -33,6 +33,7 @@ const Template3list = (props) => {
                 shop_email={item.shop_email}
                 shop_phone={item.shop_phone}
                 insta={item.insta}
+                temp3={item.temp3}
               />
             </Link>
           ))}
