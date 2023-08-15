@@ -7,7 +7,6 @@ import Cartprovider from "./cart/cartprovider";
 import Mobleheader from "./header/header";
 import Mycart from "./cart/mycart";
 import Order from "../order/order";
-import FashionShopapp from "../fashionstore/fashionshopapp.js";
 import Shopsright from "../shopsowner/shopsright";
 import Addshopform1 from "../addnewshop/addshopform1";
 import Tempsabout from "../tempsabout/tempsabout";

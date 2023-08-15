@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
 
-const FashionShopsinprofile = (props) => {
-  if (props.temp2 === null) {
+
+const Template3inprofile = (props) => {
+  if (props.temp3 === null) {
     return;
   } else {
     return (
@@ -17,4 +18,4 @@ const FashionShopsinprofile = (props) => {
   
 };
 
-export default FashionShopsinprofile;
+export default Template3inprofile;

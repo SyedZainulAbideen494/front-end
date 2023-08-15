@@ -23,7 +23,7 @@ const Addshopniche = () => {
         </div>
         <h2>free templates</h2>
         <span className="temp">
-          <Link to="/Defaultstore">
+          <Link to="/Add/shop/template1/form">
             <button>Dropment template 1 </button>
           </Link>
           <span>
@@ -84,7 +84,7 @@ const Addshopniche = () => {
           <h2>Fashion brand templates</h2>
           <div className="temp">
             <span>
-              <Link to="/addtemplate3form">
+              <Link to="/Add/template6/form">
                 <button>Dropment template 6</button>
               </Link>
             </span>

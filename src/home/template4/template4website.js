@@ -1,5 +1,5 @@
 import React, { Fragment, useCallback, useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import "./template4.css";
 import Productsapp from "../items.js/productsApp";
@@ -39,7 +39,7 @@ const Editstoreform = () => {
 
     try {
       const response = await Axios.put(
-        "https://backend-zain-production.up.railway.app/updateshop1",
+        "http://localhost:8080/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
@@ -195,7 +195,7 @@ const Editbtndisplay = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay1`,
+          `http://localhost:8080/user/id/editbtnstoredisplay1`,
           {
             headers: {
               Authorization: params.id,
@@ -225,7 +225,7 @@ const Editbtndisplay = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay2",
+          "http://localhost:8080/user/id/editbtnstoredisplay2",
           {
             headers: {
               Authorization: token,
@@ -286,7 +286,7 @@ const Sales = (props) => {
     setloading(true);
 
     setloading(true);
-    const response = await fetch("https://backend-zain-production.up.railway.app/myorders", {
+    const response = await fetch("http://localhost:8080/myorders", {
       headers: {
         Authorization: params.id,
       },
@@ -422,7 +422,7 @@ function Productsinshopapp() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://backend-zain-production.up.railway.app/use/shops/products", {
+      const response = await fetch("http://localhost:8080/use/shops/products", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -440,7 +440,7 @@ function Productsinshopapp() {
           price: itemsData.price,
           amount: itemsData.quantity,
           shop_id: itemsData.shop_id,
-          images: `https://backend-zain-production.up.railway.app/images/${itemsData.images}`,
+          images: `http://localhost:8080/images/${itemsData.images}`,
         };
       });
 
@@ -465,96 +465,238 @@ function Productsinshopapp() {
   );
 }
 const Addproductstodatabase = (props) => {
-  const [id, setid] = useState("");
-  const [title, settitle] = useState("");
-  const [price, setprice] = useState("");
-  const [amount, setamount] = useState("");
-  const [images, setimage] = useState("");
+ const [title, setTitle] = useState("");
+ const [price, setPrice] = useState("");
+ const [amount, setAmount] = useState("");
+ const [image, setImage] = useState(null);
 
+ const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+
+ const params = useParams();
+
+ const addProductHandler = (e) => {
+   e.preventDefault();
+
+   const formData = new FormData();
+   formData.append("image", image);
+   formData.append("title", title);
+   formData.append("price", price);
+   formData.append("amount", amount);
+
+   Axios.post("http://localhost:8080/addProduct", formData, {
+     headers: {
+       Authorization: params.shop_id,
+     },
+   })
+     .then((response) => {
+       console.log(response.data);
+       // Handle success
+     })
+     .catch((error) => {
+       console.error("Error adding product:", error);
+       // Handle error
+     });
+ };
+
+ return (
+   <div>
+     <h2>ADD NEW ITEM</h2>
+     <form onSubmit={addProductHandler}>
+       <label>Product Title</label>
+       <input
+         type="text"
+         placeholder="Product title"
+         value={title}
+         onChange={(e) => setTitle(e.target.value)}
+       />
+
+       <label>Product Price</label>
+       <input
+         type="text"
+         placeholder="Product price"
+         value={price}
+         onChange={(e) => setPrice(e.target.value)}
+       />
+
+       <label>Product Quantity</label>
+       <input
+         type="text"
+         placeholder="Product amount"
+         value={amount}
+         onChange={(e) => setAmount(e.target.value)}
+       />
+
+       <label>Image</label>
+       <input
+         type="file"
+         placeholder="image"
+         onChange={(e) => setImage(e.target.files[0])}
+       />
+
+       <button type="submit">Add Product</button>
+     </form>
+   </div>
+ );
+};
+
+const Editbtndisplay1 = () => {
+  const [showform, setshowform] = useState(false);
+  const [showsales, setshowsales] = useState(false);
+
+  const showformhandler = () => {
+    setshowform(true);
+  };
+
+  const hideformhandler = () => {
+    setshowform(false);
+  };
+
+  const showsaleshandler = () => {
+    setshowsales(true);
+  };
+
+  const hidesaleshandler = () => {
+    setshowsales(false);
+  };
+  const nav = useNavigate();
   const params = useParams();
+  const [showedititem, setshowitem] = useState(false);
 
-  const shop_id = useEffect(() => {
-    setid(params.shop_id);
+  const [auth, setauth] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+  }, []);
+  if (auth === false) {
+    nav("/login");
+  }
+
+  const showedit = () => {
+    setshowitem(true);
+  };
+  const hideedit = () => {
+    setshowitem(false);
+  };
+  const [name, setname] = useState([]);
+  const [name2, setname2] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    const fetchUsersHandler = async () => {
+      setloading(true);
+      try {
+        const response = await fetch(
+          `http://localhost:8080/user/id/editbtndiaplay1`,
+          {
+            headers: {
+              Authorization: params.shop_id,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser = data.shops.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname(transformedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUsersHandler();
+  }, [params.shop_id]);
+
+  useEffect(() => {
+    const fetchUser2sHandler = async () => {
+      setloading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+          "http://localhost:8080/user/id/editbtndiaplay2",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser2 = data.user.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname2(transformedUser2);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUser2sHandler();
   }, []);
 
-  const token = localStorage.getItem("token");
-
-  const addshophandler = () => {
-    const formdata = new FormData();
-    formdata.append("image", images);
-    formdata.append("title", title); // Add title field
-    formdata.append("price", price); // Add price field
-    formdata.append("amount", amount); // Add amount field
-    Axios.post("https://backend-zain-production.up.railway.app/addProduct", formdata, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    });
+  const EEditbtn = () => {
+    if (
+      name.length > 0 &&
+      name2.length > 0 &&
+      name[0].user_id === name2[0].user_id
+    ) {
+      return (
+        <Fragment>
+          <div className="profile-header-owner">
+            <header>
+              <div className="shop_owner_view">
+                <h2>Control panel</h2>
+                <div className="shopownerbtn">
+                  <span className="edit_store_btn"></span>
+                  <span className="btnwebstore">
+                    <Link to="/">
+                      <button>Home</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showsaleshandler}>Sales</button>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showformhandler}>Add Item</button>
+                  </span>
+                </div>
+              </div>
+            </header>
+          </div>
+          <div className="sales">
+            {showsales && <Sales onClick={hidesaleshandler} />}
+          </div>
+          <div className="addshopform">
+            {showform && <Addproductstodatabase onClick={hideformhandler} />}
+          </div>
+          <Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
+        </Fragment>
+      );
+    } else {
+      return;
+    }
   };
-  return (
-    <Fragment>
-      <div className="formitemadd">
-        <div className="txt12">
-          <h2>ADD NEW ITEM</h2>
-        </div>
-        <div className="backbtn1212">
-          <button onClick={props.onClick}>Close</button>
-        </div>
-        <form onSubmit={addshophandler}>
-          <div className="txt">
-            <label>Product Title</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="txt"
-              placeholder="Product title"
-              value={title}
-              onChange={(e) => settitle(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Product Price</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="text"
-              placeholder="Product price"
-              value={price}
-              onChange={(e) => setprice(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Product Quantity</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="text"
-              placeholder="Product amount"
-              value={amount}
-              onChange={(e) => setamount(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Image</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="file"
-              placeholder="image"
-              onChange={(e) => setimage(e.target.files[0])}
-            />
-          </div>
-          <br />
-          <div className="addprodsbtn">
-            <button type="submit">Add Product</button>
-          </div>
-        </form>
-      </div>
-    </Fragment>
-  );
+
+  return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
 
 const Products = (props) => {
@@ -618,9 +760,330 @@ const TestProducts = (props) => {
   );
 };
 
+
+const Addimage1 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg1", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 1</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 1</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage2 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg2", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 2</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 2</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage3 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg3", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 3</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 3</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage4 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg4", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 4</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 4</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage5 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg5", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 5</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 5</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage6 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg6", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 6</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 6</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage7 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg7", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 7</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 7</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ 
+
 const Template4website = (props) => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
+  const [items, setItems] = useState([]);
+const [loading, setLoading] = useState(false);
+const params = useParams();
 
   const showformhandler = () => {
     setshowform(true);
@@ -637,6 +1100,41 @@ const Template4website = (props) => {
   const hidesaleshandler = () => {
     setshowsales(false);
   };
+
+  const fetchProdshandler = useCallback(async () => {
+    try {
+      const response = await fetch("http://localhost:8080/custom/img/shop", {
+        headers: {
+          Authorization: params.shop_id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.img.map((itemsdata) => {
+        return {
+          images1: `http://localhost:8080/images/${itemsdata.images1}`,
+          images2: `http://localhost:8080/images/${itemsdata.images2}`,
+          images3: `http://localhost:8080/images/${itemsdata.images3}`,
+          images4: `http://localhost:8080/images/${itemsdata.images4}`,
+          images5: `http://localhost:8080/images/${itemsdata.images5}`,
+          images6: `http://localhost:8080/images/${itemsdata.images6}`,
+          images7: `http://localhost:8080/images/${itemsdata.images7}`,
+
+        };
+      });
+      setItems(transformedItems);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [params.id]);
+
+  useEffect(() => {
+    setLoading(true);
+    fetchProdshandler().finally(() => {
+      setLoading(false);
+    });
+  }, [fetchProdshandler]);
+
+
   const itemsRef = useRef(null)
   const aboutusRef = useRef(null);
   const contactusRef = useRef(null);
@@ -657,14 +1155,15 @@ const Template4website = (props) => {
     }
   };
 
-  const params = useParams();
+
   return (
     <Fragment>
+      <Editbtndisplay1/>
       <div className="maintemp4">
         <main>
         <div className="temp4header1">
           <header>
-            <h1>Shop Name</h1>
+            <h1>{params.shop_name}</h1>
             <div className="btnstemp4head1">
               <ul>
                 <li><button onClick={scrollToItems}>Products</button></li>
@@ -676,13 +1175,13 @@ const Template4website = (props) => {
         </div>
         <div className="img2header2temp4">
           <header>
-          <img src={img1}/>
+          <img src={items[0]?.images1}/>
           </header>
         </div>
         <div className="abtustemp4" ref={aboutusRef}>
           <div className="abtusno1part1">
             <span>
-              <img src={img2}/>
+              <img src={items[0]?.images2}/>
             </span>
             <span>
               <h2>{params.shop_blockhead1}</h2>
@@ -695,12 +1194,12 @@ const Template4website = (props) => {
               <p>{params.shop_block2}</p>
             </span>
             <span>
-              <img src={img3}/>
+              <img src={items[0]?.images3}/>
             </span>
           </div>
           <div className="abt1temp4part3">
             <span>
-              <img src={img4}/>
+              <img src={items[0]?.images4}/>
             </span>
             <span>
               <h2>{params.shop_blockhead3}</h2>
@@ -725,17 +1224,17 @@ const Template4website = (props) => {
         <div className="greateimgtemp4">
           <section>
             <div className="grtimgtemp41">
-            <img src={img5}/>
+            <img src={items[0]?.images5}/>
             </div>
           </section>
           <section>
           <div className="grtimgtemp42">
-            <img src={img6}/>
+            <img src={items[0]?.images6}/>
             </div>
           </section>
           <section>
           <div className="grtimgtemp43">
-            <img src={img7}/>
+            <img src={items[0]?.images7}/>
             </div>
           </section>
         </div>

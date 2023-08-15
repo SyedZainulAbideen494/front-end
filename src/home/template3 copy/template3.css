@@ -1,0 +1,102 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+.keypoint {
+  margin: 40px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 190px;
+}
+.keypoint img {
+  width: 50px;
+} 
+.footertemp3 {
+  background: black;
+}
+.contacttxttemp3 h3 {
+  color: white;
+}
+.contactli li {
+  color: white;
+}
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .keypoint {
+  margin: 40px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 190px;
+}
+.keypoint img {
+  width: 50px;
+  border-radius: 50%;
+} 
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .keypoint {
+  margin: 10px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 190px;
+}
+.keypoint img {
+  width: 50px;
+  border-radius: 50%;
+}
+.keypoints {
+  display: inline-flex;
+}
+}
+
+@media (min-width: 1025px){
+    .keypoint {
+  margin: 50px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 25px;
+  height: 190px;
+}
+.keypoint img {
+  width: 50px;
+  border-radius: 50%;
+}
+.keypoints {
+  display: inline-flex;
+}
+}
+
+.footertemp3 footer {
+  background-color: black;
+}
+
+.contacttxttemp3 h3 {
+  color: white;
+}
+
+.footertemp3 li {
+  color: white;
+}
+.shop_owner_view h2 {
+  color: white;
+}
+.insta img {
+  width: 40px;
+  float: right;
+  margin-left: 980px;
+}
+
+.temp3header header {
+  display: inline-flex;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+}
+
+.name h2 {
+  color: white;
+  font-weight: 300;
+}

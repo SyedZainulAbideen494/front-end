@@ -1,36 +1,65 @@
-import { useParams, Link } from "react-router-dom";
-import { Fragment, useState, useCallback, useEffect } from "react";
+import React, { Fragment, useCallback, useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Productsapp from "../items.js/productsApp";
-import "./shopsowner.css";
-import "./shopblock.css";
 import Axios from "axios";
-import ItemsDetails from "../items opened/itemsdetails";
-import Edititemform from "../edit/edititem";
+import { animateScroll as scroll } from "react-scroll";
+import { useRef } from "react";
+import './shopsowner.css'
+import head2img from '../../home/header/images/The Indian Gent.jpg'
+import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
+import key2img from '../../home/header/images/key2img.jpg'
+import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+
 
 const Editstoreform = () => {
-  const [shop_name, setshop_name] = useState([]);
-  const [shop_owner, setshop_owner] = useState([]);
-  const [shop_about, setshop_about] = useState([]);
-  const [shop_prods, setshop_prods] = useState([]);
-  const [message, setMessage] = useState("");
-
   const params = useParams();
+
+  const [shop_name, setname] = useState("");
+  const [shop_owner, setowner] = useState("");
+  const [shop_tagline, setshop_tagline] = useState("");
+  const [shop_blockhead2, setshop_blockheading2] = useState("");
+  const [shop_blockhead3, setshop_blockheading3] = useState("");
+  const [shop_blockhead1, setshop_blockheading1] = useState("");
+  const [shop_block1, setshop_block1] = useState("");
+  const [shop_block2, setshop_block2] = useState("");
+  const [shop_block3, setshop_block3] = useState("");
+  const [shop_key1, setshop_key1] = useState("");
+  const [shop_keyhead1, setshp_keyhead1] = useState("");
+  const [shop_key2, setshop_key2] = useState("");
+  const [shop_keyhead2, setshop_keyhead2] = useState("");
+  const [shop_key3, setshop_key3] = useState("");
+  const [shop_keyhead3, setshop_keyhead3] = useState("");
+  const [shop_email, setshop_email] = useState("");
+  const [shop_phone, setshop_phone] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await Axios.put(
-        "http://localhost:8080//updateshop1",
+        "http://localhost:8080/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
-          shop_about: shop_about,
-          shop_prods: shop_prods,
+          shop_tagline: shop_tagline,
+          shop_blockhead2: shop_blockhead2,
+          shop_block2: shop_block2,
+          shop_blockhead3: shop_blockhead3,
+          shop_blockhead1: shop_blockhead1,
+          shop_block1: shop_block1,
+          shop_keyhead1: shop_keyhead1,
+          shop_key1: shop_key1,
+          shop_keyhead2: shop_keyhead2,
+          shop_key2: shop_key2,
+          shop_keyhead3: shop_keyhead3,
+          shop_key3: shop_key3,
+          shop_email: shop_email,
+          shop_phone: shop_phone,
         },
         {
           headers: {
-            Authorization: params.id,
+            Authorization: params.shop_id,
           },
         }
       );
@@ -47,25 +76,103 @@ const Editstoreform = () => {
         <input
           type="text"
           value={shop_name}
-          onChange={(e) => setshop_name(e.target.value)}
+          onChange={(e) => setname(e.target.value)}
           placeholder="Enter title"
         />
         <input
           type="text"
           value={shop_owner}
-          onChange={(e) => setshop_owner(e.target.value)}
+          onChange={(e) => setowner(e.target.value)}
+          placeholder="Enter title"
+        />
+        <input
+          type="text"
+          value={shop_tagline}
+          onChange={(e) => setshop_tagline(e.target.value)}
+          placeholder="Enter title"
+        />
+        <input
+          type="text"
+          value={shop_blockhead1}
+          onChange={(e) => setshop_blockheading1(e.target.value)}
+          placeholder="Enter title"
+        />
+        <input
+          type="text"
+          value={shop_block1}
+          onChange={(e) => setshop_block1(e.target.value)}
+          placeholder="Enter title"
+        />
+        <input
+          type="text"
+          value={shop_blockhead2}
+          onChange={(e) => setshop_blockheading2(e.target.value)}
+          placeholder="Enter title"
+        />
+        <input
+          type="text"
+          value={shop_block2}
+          onChange={(e) => setshop_block2(e.target.value)}
           placeholder="price"
         />
         <input
           type="text"
-          value={shop_about}
-          onChange={(e) => setshop_about(e.target.value)}
+          value={shop_blockhead3}
+          onChange={(e) => setshop_blockheading3(e.target.value)}
           placeholder="amount"
         />
         <input
           type="text"
-          value={shop_prods}
-          onChange={(e) => setshop_prods(e.target.value)}
+          value={shop_block3}
+          onChange={(e) => setshop_block3(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_keyhead1}
+          onChange={(e) => setshp_keyhead1(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_key1}
+          onChange={(e) => setshop_key1(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_keyhead2}
+          onChange={(e) => setshop_keyhead2(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_key2}
+          onChange={(e) => setshop_key2(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_keyhead3}
+          onChange={(e) => setshop_keyhead3(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_key3}
+          onChange={(e) => setshop_key3(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_email}
+          onChange={(e) => setshop_email(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_phone}
+          onChange={(e) => setshop_phone(e.target.value)}
           placeholder="amount"
         />
         <button type="submit">Update</button>
@@ -180,7 +287,7 @@ const Sales = (props) => {
     setloading(true);
     const response = await fetch("http://localhost:8080/myorders", {
       headers: {
-        Authorization: params.shop_id,
+        Authorization: params.id,
       },
     });
     const data = await response.json();
@@ -239,8 +346,20 @@ const Saleshead = (props) => {
       <div className="salesheader">
         <header>
           <div className="salesheaderbtn">
+            <span className="headtxtsales">
+              <h2>My Sales</h2>
+            </span>
             <span className="backbtnsales">
-              <button onClick={props.onClick}>Back</button>
+              <Salesbtn>Back</Salesbtn>
+            </span>
+            <span className="productsbtnsales">
+              <Salesbtn>Products</Salesbtn>
+            </span>
+            <span className="statsbtnsales">
+              <Salesbtn>Stats</Salesbtn>
+            </span>
+            <span className="editstorebtnsales">
+              <Salesbtn>edit store</Salesbtn>
             </span>
           </div>
         </header>
@@ -286,60 +405,10 @@ const Solditems = (props) => {
   return (
     <Fragment>
       <div className="item">
-        <p>order id:- {props.orders_id}</p>
-        <p>product:- {props.product}</p>
-        <p>name:- {props.name}</p>
-        <p>country:- {props.country}</p>
-        <p>state:- {props.state}</p>
-        <p>city:- {props.city}</p>
-        <p>zipcode:- {props.zipcode}</p>
-        <p>street:- {props.streetadrs}</p>
-        <p>Chat with customer</p>
+        <h2>{props.product}</h2>
+        <h2>{props.name}</h2>
       </div>
     </Fragment>
-  );
-};
-
-const Products = (props) => {
-  return (
-    <div className="productmodel">
-      <li>
-        <div className="productimg">
-          <img src={props.images} alt="Product Image" />
-        </div>
-        <div className="product__title">
-          <h2>{props.title}</h2>
-        </div>
-        <div className="product__amount">
-          <h3>{props.price}</h3>
-        </div>
-      </li>
-    </div>
-  );
-};
-
-const ProductList = (props) => {
-  return (
-    <div className="productmodelul">
-      <ul>
-        {props.items.map((item) => (
-          <div key={item.id}>
-            <Link
-              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}/`}
-            >
-              <Products
-                id={item.id}
-                title={item.title}
-                amount={item.amount}
-                price={item.price}
-                shop_id={item.shop_id}
-                images={item.images}
-              />
-            </Link>
-          </div>
-        ))}
-      </ul>
-    </div>
   );
 };
 
@@ -395,98 +464,615 @@ function Productsinshopapp() {
   );
 }
 const Addproductstodatabase = (props) => {
-  const [id, setid] = useState("");
-  const [title, settitle] = useState("");
-  const [price, setprice] = useState("");
-  const [amount, setamount] = useState("");
-  const [images, setimage] = useState("");
+ const [title, setTitle] = useState("");
+ const [price, setPrice] = useState("");
+ const [amount, setAmount] = useState("");
+ const [image, setImage] = useState(null);
 
-  const params = useParams();
+ const shopId = props.shop_id; // Assuming you're passing shopId as a prop
 
-  const shop_id = useEffect(() => {
-    setid(params.shop_id);
-  }, []);
+ const params = useParams();
 
-  const token = localStorage.getItem("token");
+ const addProductHandler = (e) => {
+   e.preventDefault();
 
-  const addshophandler = () => {
-    const formdata = new FormData();
-    formdata.append("image", images);
-    formdata.append("title", title); // Add title field
-    formdata.append("price", price); // Add price field
-    formdata.append("amount", amount); // Add amount field
-    Axios.post("http://localhost:8080/addProduct", formdata, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    });
-  };
+   const formData = new FormData();
+   formData.append("image", image);
+   formData.append("title", title);
+   formData.append("price", price);
+   formData.append("amount", amount);
+
+   Axios.post("http://localhost:8080/addProduct", formData, {
+     headers: {
+       Authorization: params.shop_id,
+     },
+   })
+     .then((response) => {
+       console.log(response.data);
+       // Handle success
+     })
+     .catch((error) => {
+       console.error("Error adding product:", error);
+       // Handle error
+     });
+ };
+
+ return (
+   <div>
+     <h2>ADD NEW ITEM</h2>
+     <form onSubmit={addProductHandler}>
+       <label>Product Title</label>
+       <input
+         type="text"
+         placeholder="Product title"
+         value={title}
+         onChange={(e) => setTitle(e.target.value)}
+       />
+
+       <label>Product Price</label>
+       <input
+         type="text"
+         placeholder="Product price"
+         value={price}
+         onChange={(e) => setPrice(e.target.value)}
+       />
+
+       <label>Product Quantity</label>
+       <input
+         type="text"
+         placeholder="Product amount"
+         value={amount}
+         onChange={(e) => setAmount(e.target.value)}
+       />
+
+       <label>Image</label>
+       <input
+         type="file"
+         placeholder="image"
+         onChange={(e) => setImage(e.target.files[0])}
+       />
+
+       <button type="submit">Add Product</button>
+     </form>
+   </div>
+ );
+};
+
+const Products = (props) => {
   return (
-    <Fragment>
-      <div className="formitemadd">
-        <div className="txt12">
-          <h2>ADD NEW ITEM</h2>
+    <div className="productmodeltemp4">
+      <li>
+        <div className="productimgtemp4">
+          <img src={props.images} alt="Product Image" />
         </div>
-        <div className="backbtn1212">
-          <button onClick={props.onClick}>Close</button>
+        <div className="product__titletemp4">
+          <h2>{props.title}</h2>
         </div>
-        <form onSubmit={addshophandler}>
-          <div className="txt">
-            <label>Product Title</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="txt"
-              placeholder="Product title"
-              value={title}
-              onChange={(e) => settitle(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Product Price</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="text"
-              placeholder="Product price"
-              value={price}
-              onChange={(e) => setprice(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Product Quantity</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="text"
-              placeholder="Product amount"
-              value={amount}
-              onChange={(e) => setamount(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Image</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="file"
-              placeholder="image"
-              onChange={(e) => setimage(e.target.files[0])}
-            />
-          </div>
-          <br />
-          <div className="addprodsbtn">
-            <button type="submit">Add Product</button>
-          </div>
-        </form>
-      </div>
-    </Fragment>
+        <div className="product__amounttemp4">
+          <h3>{props.price}</h3>
+        </div>
+      </li>
+    </div>
   );
 };
 
+const TestProducts = (props) => {
+  return (
+    <div className="productmodeltemp4">
+      <li>
+        <div className="product__titletemp4">
+          <h2>title</h2>
+        </div>
+        <div className="product__amounttemp4">
+          <h3>$30</h3>
+        </div>
+      </li>
+    </div>
+  );
+};
+
+const ProductList = (props) => {
+  return (
+    <div className="productmodelul">
+      <ul>
+        {props.items.map((item) => (
+          <div key={item.id}>
+            <Link
+              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}/`}
+            >
+              <Products
+                id={item.id}
+                title={item.title}
+                amount={item.amount}
+                price={item.price}
+                shop_id={item.shop_id}
+                images={item.images}
+              />
+            </Link>
+          </div>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const Editbtndisplay1 = () => {
+  const [showform, setshowform] = useState(false);
+  const [showsales, setshowsales] = useState(false);
+
+  const showformhandler = () => {
+    setshowform(true);
+  };
+
+  const hideformhandler = () => {
+    setshowform(false);
+  };
+
+  const showsaleshandler = () => {
+    setshowsales(true);
+  };
+
+  const hidesaleshandler = () => {
+    setshowsales(false);
+  };
+  const nav = useNavigate();
+  const params = useParams();
+  const [showedititem, setshowitem] = useState(false);
+
+  const [auth, setauth] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+  }, []);
+  if (auth === false) {
+    nav("/login");
+  }
+
+  const showedit = () => {
+    setshowitem(true);
+  };
+  const hideedit = () => {
+    setshowitem(false);
+  };
+  const [name, setname] = useState([]);
+  const [name2, setname2] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    const fetchUsersHandler = async () => {
+      setloading(true);
+      try {
+        const response = await fetch(
+          `http://localhost:8080/user/id/editbtndiaplay1`,
+          {
+            headers: {
+              Authorization: params.shop_id,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser = data.shops.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname(transformedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUsersHandler();
+  }, [params.shop_id]);
+
+  useEffect(() => {
+    const fetchUser2sHandler = async () => {
+      setloading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+          "http://localhost:8080/user/id/editbtndiaplay2",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser2 = data.user.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname2(transformedUser2);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUser2sHandler();
+  }, []);
+
+  const EEditbtn = () => {
+    if (
+      name.length > 0 &&
+      name2.length > 0 &&
+      name[0].user_id === name2[0].user_id
+    ) {
+      return (
+        <Fragment>
+          <div className="profile-header-owner">
+            <header>
+              <div className="shop_owner_view">
+                <h2>Control panel</h2>
+                <div className="shopownerbtn">
+                  <span className="edit_store_btn"></span>
+                  <span className="btnwebstore">
+                    <Link to="/">
+                      <button>Home</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showsaleshandler}>Sales</button>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showformhandler}>Add Item</button>
+                  </span>
+                </div>
+              </div>
+            </header>
+          </div>
+          <div className="sales">
+            {showsales && <Sales onClick={hidesaleshandler} />}
+          </div>
+          <div className="addshopform">
+            {showform && <Addproductstodatabase onClick={hideformhandler} />}
+          </div>
+          <Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
+        </Fragment>
+      );
+    } else {
+      return;
+    }
+  };
+
+  return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
+};
+
+const Addimage1 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg1", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 1</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 1</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage2 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg2", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 2</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 2</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage3 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg3", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 3</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 3</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage4 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg4", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 4</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 4</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage5 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg5", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 5</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 5</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage6 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg6", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 6</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 6</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage7 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg7", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 7</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 7</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ 
+ 
 function Shopsright({ items }) {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
@@ -509,59 +1095,7 @@ function Shopsright({ items }) {
   const params = useParams();
   return (
     <Fragment>
-      <div className="profile-header-owner">
-        <header>
-          <div className="shop_owner_view">
-            <div className="shopownerbtn">
-              <span className="btnwebstore">
-                <Editbtndisplay />
-              </span>
-              <span className="btnwebstore">
-                <Link to="/">
-                  <button>Home</button>
-                </Link>
-              </span>
-              <span className="btnwebstore">
-                <button onClick={showsaleshandler}>Sales</button>
-              </span>
-              <span className="btnwebstore">
-                <button onClick={showformhandler}>Add Item</button>
-              </span>
-            </div>
-          </div>
-        </header>
-      </div>
-      <div className="sales">
-        {showsales && <Sales onClick={hidesaleshandler} />}
-      </div>
-      <div className="addshopform">
-        {showform && <Addproductstodatabase onClick={hideformhandler} />}
-      </div>
-      <div className="shop_name">
-        <h2>{params.shop_name}</h2>
-      </div>
-      <div className="stinfoblock">
-        <hr />
-
-        <span>
-          <div className="stinfoblockheadtxt">
-            <h3>{params.shop_about}</h3>
-          </div>
-        </span>
-        <hr />
-      </div>
-      <div className="ndinfoblock">
-        <hr />
-        <span>
-          <div className="infoblock2headtxt">
-            <h3>{params.shop_prods}</h3>
-          </div>
-        </span>
-        <hr />
-      </div>
-      <div className="itemsinshop">
-        <Productsinshopapp />
-      </div>
+      
     </Fragment>
   );
 }

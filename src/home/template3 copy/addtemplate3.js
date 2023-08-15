@@ -2,7 +2,7 @@ import React, { Fragment, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
-const Addtemplate6form = (props) => {
+const Addtemplate3form = (props) => {
   const [shop_name, setname] = useState("");
   const [shop_owner, setowner] = useState("");
   const [shop_tagline, setshop_tagline] = useState("");
@@ -20,13 +20,12 @@ const Addtemplate6form = (props) => {
   const [shop_keyhead3, setshop_keyhead3] = useState("");
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
-  const [temp6, settemp6]= useState('')
-  const [insta, setinsta] = useState("")
-  const [salestext, setsalestext] = useState('')
+  const [insta, setinsta] = useState('')
+
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
-      "http://localhost:8080/addShops/template6",
+      "http://localhost:8080/addShops/template3",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
@@ -45,9 +44,7 @@ const Addtemplate6form = (props) => {
         shop_key3: shop_key3,
         shop_email: shop_email,
         shop_phone: shop_phone,
-        insta: insta,
-        salestext: salestext,
-        temp6: temp6,
+        insta: insta
       },
       {
         headers: {
@@ -83,19 +80,6 @@ const Addtemplate6form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter instagram Id</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter instagram Id"
-            onChange={(e) => {
-              setinsta(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
             <h3>Enter owner name</h3>
           </label>
           <br />
@@ -104,19 +88,6 @@ const Addtemplate6form = (props) => {
             placeholder="Enter owner name"
             onChange={(e) => {
               setowner(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter sales text</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter sales text"
-            onChange={(e) => {
-              setsalestext(e.target.value);
             }}
           />
         </div>
@@ -317,14 +288,14 @@ const Addtemplate6form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter any text to confirm</h3>
+            <h3>Enter your instagram profile link</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter any text to confirm"
+            placeholder="Enter your instagram profile link"
             onChange={(e) => {
-              settemp6(e.target.value);
+              setinsta(e.target.value);
             }}
           />
         </div>
@@ -337,4 +308,4 @@ const Addtemplate6form = (props) => {
   );
 };
 
-export default Addtemplate6form;
+export default Addtemplate3form;

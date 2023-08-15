@@ -4,11 +4,13 @@ import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
-import './template5.css'
-import head2img from '../../home/header/images/The Indian Gent.jpg'
-import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
-import key2img from '../../home/header/images/key2img.jpg'
-import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+import './template1.css'
+import banner from '../header/images/Dropment (1).png'
+import logo from '../header/images/Dropment.png'
+import code from '../header/images/Dropment (7).png'
+import host from '../header/images/Dropment (8).png'
+import keyimg from '../header/images/Dropment (10).png'
+import arrow from '../header/images/Untitled design (16).png'
 
 
 const Editstoreform = () => {
@@ -1074,7 +1076,7 @@ const Addimage1 = (props) => {
  
 
 
-const Template5websitepreview = (props) => {
+const Template1websitepreview = (props) => {
 
   const itemsRef = useRef(null);
   const aboutusRef = useRef(null);
@@ -1095,59 +1097,18 @@ const Template5websitepreview = (props) => {
       contactusRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const Blocktext = () => {
-    return (
-      <Fragment>
-        <div className="block1">
-          <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-          </div>
-        </div>
-      </Fragment>
-    );
-  }
-
-    const Blocktext2 = () => {
-      return (
-        <Fragment>
-          <div className="block2">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
-
-    const Blocktext3 = () => {
-      return (
-        <Fragment>
-          <div className="block3">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
-
+  
     const TestProducts = (props) => {
       return (
-        <div className="productmodeltemp5">
+        <div className="productmodeltemp1">
           <li>
-            <div className="productimgtemp5">
-              <img src={key1img}/>
+            <div className="productimgtemp1">
+              <img src={banner}/>
             </div>
-            <div className="product__titletemp5">
+            <div className="product__titletemp1">
               <h2>title</h2>
             </div>
-            <div className="product__amounttemp5">
+            <div className="product__amounttemp1">
               <h3>$30</h3>
             </div>
           </li>
@@ -1155,104 +1116,108 @@ const Template5websitepreview = (props) => {
       );
     };
 
-    const Block1 = () => {
-      return(<Fragment>
-        <div className="block">
-          <div className="blockhead">
-            <h2>Heading</h2>
-          </div>
-          <div className="blocktextdetails">
-            <p>Deatils about the heading above</p>
-          </div>
-        </div>
-      </Fragment>)
-    }
-
-
   return (
     <Fragment>
-      <Editbtndisplay/>
-      <div className="maintemp5">
-        <div className="temp5head1">
+      <div className="maindivtemp1">
+        <div className="temp1head2">
           <header>
-            <div className="storenametemp5">
-              <h1>Store name</h1>
+            <img src={logo}/>
+            <h2>shop name</h2>
+            <ul>
+              <li><button>Our service</button></li>
+              <li><button>About us</button></li>
+              <li><button>Contact us</button></li>
+            </ul>
+          </header>
+        </div>
+        <div className="header2temp1">
+          <header>
+            <div className="temp1headtextsection">
+              <section>
+              <h1 className="slaestexttemp1">Sales text goes here</h1>
+              <h1>Your tagline</h1>
+              </section>
             </div>
-            <div className="btnhead1temp5">
-              <button onClick={scrollToItems}>Our products</button>
-              <button onClick={scrollToaboutus}>About us</button>
-              <button onClick={scrollTocontactus}>Contact us</button>
+            <div className="temp1head1img">
+              <secion>
+                <img src={banner}/>
+              </secion>
             </div>
           </header>
+        </div>
+        <div className="keystemp1">
+          <div className="key1temp1">
+            <section>
+              <img src={code}/>
+            </section>
+            <section className="textsectiontemp1key1">
+              <h2>Key 1 head</h2>
+              <p>Key 1 some details about above heading</p>
+            </section>
           </div>
-          <div className="temp5head2">
-            <header>
-              <div className="head2imgtem5">
-                <img src={head2img}/>
-              </div>
-            </header>
+          <div className="key1temp1">
+            <section>
+              <img src={host}/>
+            </section>
+            <section className="textsectiontemp1key1">
+              <h2>Key 2 head</h2>
+              <p>Key 2 some details about above heading</p>
+            </section>
           </div>
-        <div className="abt1temp1">
-          <div className="abt1temp5text">
-            <h2>Some text here</h2>
-            <h4>some text here</h4>
-          </div>
-          <div className="inilineimgtemp5abt1">
-          <div className="abt1key1">
-            <img src={key1img}/>
-          </div>
-          <div className="abt1key1">
-            <img src={key2img}/>
-          </div>
-          <div className="abt1key1">
-            <img src={key3img}/>
-          </div>
+          <div className="key1temp1">
+            <section>
+              <img src={keyimg}/>
+            </section>
+            <section className="textsectiontemp1key1">
+              <h2>Key 3 head</h2>
+              <p>Key 3 some details about above heading</p>
+            </section>
           </div>
         </div>
-        <div className="prodstemp5section" ref={itemsRef}>
-          <div className='propdstexttemp5'>
-            <h1>Our products</h1>
-            <p><h4>Our latest and best selling  products</h4></p>
+        <div className="stepswedotemp1">
+          <main>
+            <div className="whitelinetemp1">
+          <section className="step1temp1">
+            <h1 className="circletemp1">1</h1>
+            <h2>Your 1st step</h2>
+          </section><br/>
+          <section className="step2temp1">
+            <h1 className="circletemp1">2</h1>
+            <h2>Your 2nd step</h2>
+          </section><br/>
+          <section className="step3temp1">
+            <h1 className="circletemp1">3</h1>
+            <h2>Your 3rd step</h2>
+          </section><br/>
+          <section className="step4temp1">
+            <h1 className="circletemp1">4</h1>
+            <h2>Your 4th step</h2>
+          </section>
           </div>
-          <div className="prodstemp5">
-            <TestProducts/>
-          </div>
+          </main>
         </div>
-        <div className="abt2temp5" ref={aboutusRef}>
-          <div className="abt2no1temp5">
-            <span className="imgtemp5abt2no1">
-              <img src={key1img}/>
-            </span>
-            <span className="texttemp5abt2no1"><h2>Block 1 head</h2>
-            <p>Deatils about above heading</p></span>
-          </div>
-          <div className="abt2no2temp5">
-          <span className="texttemp5abt2no2"><h2>Block 2 head</h2>
-            <p>Deatils about above heading</p></span>
-            <span className="imgtemp5abt2no2">
-              <img src={key3img}/>
-            </span>
-          </div>
-          <div className="abt2no1temp5">
-            <span className="imgtemp5abt2no1">
-              <img src={key1img}/>
-            </span>
-            <span className="texttemp5abt2no1"><h2>Block 1 head</h2>
-            <p>Deatils about above heading</p></span>
-          </div>
+        <div className="ourcomapnytypetemp1">
+          <section className="ourcompanytypetexttemp1head">
+            <h1>Our [your company type]</h1>
+            <p>Details about your company in 50words</p>
+            <button>Our services</button>
+          </section>
+          <section className="imgtypecomplaytemp1">
+            <img src={banner}/>
+          </section>
         </div>
-        <div className="contacttemp5" ref={contactusRef}>
+        <div className="ourservicestemp1">
+          <h1>Our services</h1>
+          <TestProducts/>
+        </div>
+        <div className="contactustemp1">
           <footer>
-            <div className="contactheadtemp5"> 
-              <h2>Contact us</h2>
-            </div>
-            <div className="conytactstmep5">
-              <ul>
-                <li>@instagram</li>
-                <li>1010101010</li>
-                <li>You@gmail.com</li>
-              </ul>
-            </div>
+            <h2>Contact us</h2>
+            <ul>
+              <li>@instagram</li>
+              <li>77665544</li>
+              <li>You@gmail.com</li>
+            </ul>
           </footer>
         </div>
       </div>
@@ -1260,4 +1225,4 @@ const Template5websitepreview = (props) => {
   );
 };
 
-export default Template5websitepreview;
+export default Template1websitepreview;

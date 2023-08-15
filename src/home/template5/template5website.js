@@ -38,7 +38,7 @@ const Editstoreform = () => {
 
     try {
       const response = await Axios.put(
-        "https://backend-zain-production.up.railway.app/updateshop1",
+        "http://localhost:8080/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
@@ -194,7 +194,7 @@ const Editbtndisplay = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay1`,
+          `http://localhost:8080/user/id/editbtnstoredisplay1`,
           {
             headers: {
               Authorization: params.id,
@@ -224,7 +224,7 @@ const Editbtndisplay = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "https://backend-zain-production.up.railway.app/user/id/editbtnstoredisplay2",
+          "http://localhost:8080/user/id/editbtnstoredisplay2",
           {
             headers: {
               Authorization: token,
@@ -285,7 +285,7 @@ const Sales = (props) => {
     setloading(true);
 
     setloading(true);
-    const response = await fetch("https://backend-zain-production.up.railway.app/myorders", {
+    const response = await fetch("http://localhost:8080/myorders", {
       headers: {
         Authorization: params.id,
       },
@@ -540,15 +540,15 @@ const Addproductstodatabase = (props) => {
 
 const Products = (props) => {
   return (
-    <div className="productmodeltemp5">
+    <div className="productmodeltemp4">
       <li>
-        <div className="productimgtemp5">
+        <div className="productimgtemp4">
           <img src={props.images} alt="Product Image" />
         </div>
-        <div className="product__titletemp5">
+        <div className="product__titletemp4">
           <h2>{props.title}</h2>
         </div>
-        <div className="product__amounttemp5">
+        <div className="product__amounttemp4">
           <h3>{props.price}</h3>
         </div>
       </li>
@@ -739,6 +739,13 @@ const Editbtndisplay1 = () => {
           <div className="addshopform">
             {showform && <Addproductstodatabase onClick={hideformhandler} />}
           </div>
+          <Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
         </Fragment>
       );
     } else {
@@ -794,9 +801,282 @@ const Addimage1 = (props) => {
     </div>
   );
  };
+ const Addimage2 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg2", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 2</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 2</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage3 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg3", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 3</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 3</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage4 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg4", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 4</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 4</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage5 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg5", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 5</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 5</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage6 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg6", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 6</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 6</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage7 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg7", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 7</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 7</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ 
  
 
 const Template5website = (props) => {
+const [items, setItems] = useState([]);
+const [loading, setLoading] = useState(false);
 const params = useParams()
   const itemsRef = useRef(null);
   const aboutusRef = useRef(null);
@@ -890,6 +1170,38 @@ const params = useParams()
       </Fragment>)
     }
 
+    const fetchProdshandler = useCallback(async () => {
+    try {
+      const response = await fetch("http://localhost:8080/custom/img/shop", {
+        headers: {
+          Authorization: params.shop_id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.img.map((itemsdata) => {
+        return {
+          images1: `http://localhost:8080/images/${itemsdata.images1}`,
+          images2: `http://localhost:8080/images/${itemsdata.images2}`,
+          images3: `http://localhost:8080/images/${itemsdata.images3}`,
+          images4: `http://localhost:8080/images/${itemsdata.images4}`,
+          images5: `http://localhost:8080/images/${itemsdata.images5}`,
+          images6: `http://localhost:8080/images/${itemsdata.images6}`,
+          images7: `http://localhost:8080/images/${itemsdata.images7}`,
+
+        };
+      });
+      setItems(transformedItems);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [params.id]);
+
+  useEffect(() => {
+    setLoading(true);
+    fetchProdshandler().finally(() => {
+      setLoading(false);
+    });
+  }, [fetchProdshandler]);
 
   return (
     <Fragment>
@@ -910,7 +1222,7 @@ const params = useParams()
           <div className="temp5head2">
             <header>
               <div className="head2imgtem5">
-                <img src={head2img}/>
+                <img src={items[0]?.images1} alt="image 1"/>
               </div>
             </header>
           </div>
@@ -921,13 +1233,13 @@ const params = useParams()
           </div>
           <div className="inilineimgtemp5abt1">
           <div className="abt1key1">
-            <img src={key1img}/>
+            <img src={items[0]?.images2} alt="image 2"/>
           </div>
           <div className="abt1key1">
-            <img src={key2img}/>
+            <img src={items[0]?.images3}/>
           </div>
           <div className="abt1key1">
-            <img src={key3img}/>
+            <img src={items[0]?.images4}/>
           </div>
           </div>
         </div>
@@ -943,7 +1255,7 @@ const params = useParams()
         <div className="abt2temp5" ref={aboutusRef}>
           <div className="abt2no1temp5">
             <span className="imgtemp5abt2no1">
-              <img src={key1img}/>
+              <img src={items[0]?.images5}/>
             </span>
             <span className="texttemp5abt2no1"><h2>{params.shop_blockhead1}</h2>
             <p>{params.block1}</p></span>
@@ -952,12 +1264,12 @@ const params = useParams()
           <span className="texttemp5abt2no2"><h2>{params.shop_blockhead2}</h2>
             <p>{params.shop_block2}</p></span>
             <span className="imgtemp5abt2no2">
-              <img src={key3img}/>
+              <img src={items[0]?.images6}/>
             </span>
           </div>
           <div className="abt2no1temp5">
             <span className="imgtemp5abt2no1">
-              <img src={key1img}/>
+              <img src={items[0]?.images7}/>
             </span>
             <span className="texttemp5abt2no1"><h2>{params.shop_blockhead3}</h2>
             <p>{params.shop_block3}</p></span>

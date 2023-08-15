@@ -1,6 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState } from "react"
 
-const Template6inprofile = (props) => {
+const Template1inprofile = (props) => {
+  if (props.temp1 === null){
+    return;
+  }else{
   return (
     <Fragment>
       <div className="shop">
@@ -11,5 +14,5 @@ const Template6inprofile = (props) => {
     </Fragment>
   );
 };
-
-export default Template6inprofile;
+}
+export default Template1inprofile;

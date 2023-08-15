@@ -1,21 +1,187 @@
-import React, { useState, Fragment, useCallback, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import "./fashionshop.css";
-import Productsinstoreapp from "./itemsinshop/productsApp";
+import React, { Fragment, useCallback, useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import "./template3.css";
+import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
+
+const Editbtndisplay = () => {
+  const [showform, setshowform] = useState(false);
+  const [showsales, setshowsales] = useState(false);
+
+  const showformhandler = () => {
+    setshowform(true);
+  };
+
+  const hideformhandler = () => {
+    setshowform(false);
+  };
+
+  const showsaleshandler = () => {
+    setshowsales(true);
+  };
+
+  const hidesaleshandler = () => {
+    setshowsales(false);
+  };
+  const nav = useNavigate();
+  const params = useParams();
+  const [showedititem, setshowitem] = useState(false);
+
+  const [auth, setauth] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+  }, []);
+  if (auth === false) {
+    nav("/login");
+  }
+
+  const showedit = () => {
+    setshowitem(true);
+  };
+  const hideedit = () => {
+    setshowitem(false);
+  };
+  const [name, setname] = useState([]);
+  const [name2, setname2] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    const fetchUsersHandler = async () => {
+      setloading(true);
+      try {
+        const response = await fetch(
+          `http://localhost:8080/user/id/editbtndiaplay1`,
+          {
+            headers: {
+              Authorization: params.shop_id,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser = data.shops.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname(transformedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUsersHandler();
+  }, [params.shop_id]);
+
+  useEffect(() => {
+    const fetchUser2sHandler = async () => {
+      setloading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+          "http://localhost:8080/user/id/editbtndiaplay2",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser2 = data.user.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname2(transformedUser2);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUser2sHandler();
+  }, []);
+
+  const EEditbtn = () => {
+    if (
+      name.length > 0 &&
+      name2.length > 0 &&
+      name[0].user_id === name2[0].user_id
+    ) {
+      return (
+        <Fragment>
+          <div className="profile-header-owner">
+            <header>
+              <div className="shop_owner_view">
+                <h2>Control panel</h2>
+                <div className="shopownerbtn">
+                  <span className="edit_store_btn"></span>
+                  <span className="btnwebstore">
+                    <Link to="/">
+                      <button>Home</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showsaleshandler}>Sales</button>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showformhandler}>Add Item</button>
+                  </span>
+                </div>
+              </div>
+            </header>
+          </div>
+          <div className="sales">
+            {showsales && <Sales onClick={hidesaleshandler} />}
+          </div>
+          <div className="addshopform">
+            {showform && <Addproductstodatabase onClick={hideformhandler} />}
+          </div>
+        </Fragment>
+      );;
+    } else {
+      return <h2>|</h2>;
+    }
+  };
+
+  return (
+    <div>
+      {!loading ? <EEditbtn /> : <p>Loading...</p>}
+    </div>
+  );
+};
+
 
 const Editstoreform = () => {
   const params = useParams();
 
   const [shop_name, setname] = useState("");
   const [shop_owner, setowner] = useState("");
-  const [shop_abouthead, setshop_abouthead] = useState("");
-  const [shop_about, setstoredetails] = useState("");
   const [shop_tagline, setshop_tagline] = useState("");
-  const [shop_blockheading2, setshop_blockheading2] = useState("");
-  const [shop_blockheading3, setshop_blockheading3] = useState("");
+  const [shop_blockhead2, setshop_blockheading2] = useState("");
+  const [shop_blockhead3, setshop_blockheading3] = useState("");
+  const [shop_blockhead1, setshop_blockheading1] = useState("");
+  const [shop_block1, setshop_block1] = useState("");
   const [shop_block2, setshop_block2] = useState("");
   const [shop_block3, setshop_block3] = useState("");
+  const [shop_key1, setshop_key1] = useState("");
+  const [shop_keyhead1, setshp_keyhead1] = useState("");
+  const [shop_key2, setshop_key2] = useState("");
+  const [shop_keyhead2, setshop_keyhead2] = useState("");
+  const [shop_key3, setshop_key3] = useState("");
+  const [shop_keyhead3, setshop_keyhead3] = useState("");
+  const [shop_email, setshop_email] = useState("");
+  const [shop_phone, setshop_phone] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
@@ -23,17 +189,24 @@ const Editstoreform = () => {
 
     try {
       const response = await Axios.put(
-        "http://localhost:8080/updateshop1",
+        "https://backend-zain-production.up.railway.app/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
-          shop_abouthead: shop_abouthead,
-          shop_about: shop_about,
           shop_tagline: shop_tagline,
-          shop_blockhead2: shop_blockheading2,
-          shop_blockhead3: shop_blockheading3,
+          shop_blockhead2: shop_blockhead2,
           shop_block2: shop_block2,
-          shop_block3: shop_block3,
+          shop_blockhead3: shop_blockhead3,
+          shop_blockhead1: shop_blockhead1,
+          shop_block1: shop_block1,
+          shop_keyhead1: shop_keyhead1,
+          shop_key1: shop_key1,
+          shop_keyhead2: shop_keyhead2,
+          shop_key2: shop_key2,
+          shop_keyhead3: shop_keyhead3,
+          shop_key3: shop_key3,
+          shop_email: shop_email,
+          shop_phone: shop_phone,
         },
         {
           headers: {
@@ -65,25 +238,25 @@ const Editstoreform = () => {
         />
         <input
           type="text"
-          value={shop_abouthead}
-          onChange={(e) => setshop_abouthead(e.target.value)}
-          placeholder="Enter title"
-        />
-        <input
-          type="text"
-          value={shop_about}
-          onChange={(e) => setstoredetails(e.target.value)}
-          placeholder="Enter title"
-        />
-        <input
-          type="text"
           value={shop_tagline}
           onChange={(e) => setshop_tagline(e.target.value)}
           placeholder="Enter title"
         />
         <input
           type="text"
-          value={shop_blockheading2}
+          value={shop_blockhead1}
+          onChange={(e) => setshop_blockheading1(e.target.value)}
+          placeholder="Enter title"
+        />
+        <input
+          type="text"
+          value={shop_block1}
+          onChange={(e) => setshop_block1(e.target.value)}
+          placeholder="Enter title"
+        />
+        <input
+          type="text"
+          value={shop_blockhead2}
           onChange={(e) => setshop_blockheading2(e.target.value)}
           placeholder="Enter title"
         />
@@ -95,7 +268,7 @@ const Editstoreform = () => {
         />
         <input
           type="text"
-          value={shop_blockheading3}
+          value={shop_blockhead3}
           onChange={(e) => setshop_blockheading3(e.target.value)}
           placeholder="amount"
         />
@@ -105,6 +278,54 @@ const Editstoreform = () => {
           onChange={(e) => setshop_block3(e.target.value)}
           placeholder="amount"
         />
+        <input
+          type="text"
+          value={shop_keyhead1}
+          onChange={(e) => setshp_keyhead1(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_key1}
+          onChange={(e) => setshop_key1(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_keyhead2}
+          onChange={(e) => setshop_keyhead2(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_key2}
+          onChange={(e) => setshop_key2(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_keyhead3}
+          onChange={(e) => setshop_keyhead3(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_key3}
+          onChange={(e) => setshop_key3(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_email}
+          onChange={(e) => setshop_email(e.target.value)}
+          placeholder="amount"
+        />
+        <input
+          type="text"
+          value={shop_phone}
+          onChange={(e) => setshop_phone(e.target.value)}
+          placeholder="amount"
+        />
         <button type="submit">Update</button>
       </form>
       <p>{message}</p>
@@ -112,98 +333,7 @@ const Editstoreform = () => {
   );
 };
 
-const Editbtndisplay = () => {
-  const params = useParams();
-  const [showEditItem, setShowEditItem] = useState(false);
-  const [name, setName] = useState([]);
-  const [name2, setName2] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchUsersHandler = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `http://localhost:8080/user/id/editbtnstoredisplay1`,
-          {
-            headers: {
-              Authorization: params.id,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser = data.shops.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setName(transformedUser);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUsersHandler();
-  }, [params.id]);
-
-  useEffect(() => {
-    const fetchUsers2Handler = async () => {
-      setLoading(true);
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(
-          "http://localhost:8080/user/id/editbtnstoredisplay2",
-          {
-            headers: {
-              Authorization: token,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser2 = data.users.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setName2(transformedUser2);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUsers2Handler();
-  }, []);
-
-  const showEdit = () => {
-    setShowEditItem(true);
-  };
-
-  const hideEdit = () => {
-    setShowEditItem(false);
-  };
-
-  const EEditbtn = () => {
-    if (
-      name.length > 0 &&
-      name2.length > 0 &&
-      name[0].user_id === name2[0].user_id
-    ) {
-    } else {
-      return <button onClick={showEdit}>Edit</button>;
-    }
-  };
-
-  return (
-    <div>
-      {!loading ? <EEditbtn /> : <p>Loading...</p>}
-      {showEditItem && <Editstoreform />}
-    </div>
-  );
-};
 
 const Sales = (props) => {
   const [loading, setloading] = useState(false);
@@ -215,7 +345,7 @@ const Sales = (props) => {
     setloading(true);
 
     setloading(true);
-    const response = await fetch("http://localhost:8080/myorders", {
+    const response = await fetch("https://backend-zain-production.up.railway.app/myorders", {
       headers: {
         Authorization: params.id,
       },
@@ -351,7 +481,7 @@ function Productsinshopapp() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/use/shops/products", {
+      const response = await fetch("https://backend-zain-production.up.railway.app/use/shops/products", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -369,7 +499,7 @@ function Productsinshopapp() {
           price: itemsData.price,
           amount: itemsData.quantity,
           shop_id: itemsData.shop_id,
-          images: `http://localhost:8080/images/${itemsData.images}`,
+          images: `https://backend-zain-production.up.railway.app/images/${itemsData.images}`,
         };
       });
 
@@ -414,7 +544,7 @@ const Addproductstodatabase = (props) => {
     formdata.append("title", title); // Add title field
     formdata.append("price", price); // Add price field
     formdata.append("amount", amount); // Add amount field
-    Axios.post("http://localhost:8080/addProduct", formdata, {
+    Axios.post("https://backend-zain-production.up.railway.app/addProduct", formdata, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -529,10 +659,12 @@ const ProductList = (props) => {
   );
 };
 
-const Fashionshop = (props) => {
-  const params = useParams();
+
+
+const Template3website = (props) => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
+  const [instalink, setinstalink] = useState('')
 
   const showformhandler = () => {
     setshowform(true);
@@ -549,85 +681,124 @@ const Fashionshop = (props) => {
   const hidesaleshandler = () => {
     setshowsales(false);
   };
+  const linktoinsta = () => {
+    setinstalink(props.insta)
+  }
+  const params = useParams();
   return (
     <Fragment>
-      <div className="profile-header-owner">
-        <header>
-          <div className="shop_owner_view">
-            <div className="shopownerbtn">
-              <span className="edit_store_btn">
-                <Editbtndisplay />
-              </span>
-              <span className="settings_btn">
-                <button>Settings</button>
-              </span>
-              <span className="btnwebstore">
-                <Link to="/">
-                  <button>Home</button>
-                </Link>
-              </span>
-              <span className="btnwebstore">
-                <button>Stats</button>
-              </span>
-              <span className="btnwebstore">
-                <button onClick={showsaleshandler}>Sales</button>
-              </span>
-              <span className="btnwebstore">
-                <button onClick={showformhandler}>Add Item</button>
-              </span>
-            </div>
-          </div>
-        </header>
-      </div>
+      <Editbtndisplay />
       <div className="sales">{showsales && <Sales />}</div>
       <div className="addshopform">
         {showform && <Addproductstodatabase onClick={hideformhandler} />}
       </div>
-      <div className="headerstore1">
-        <header>
-          <div className="headerinlinelelments">
-            <span className="headertxtname">
-              <h1>{params.shop_name}</h1>
+      <div className="website">
+        <div className="temp3header">
+          <header>
+            <div className="name">
+              <h2>
+                {params.shop_tagline}
+                <br />
+                <h3>{params.shop_name}</h3>
+              </h2>
+            </div>
+            <div className="socials">
+              <span className="insta">
+                <Link to={instalink}>
+                </Link>
+              </span>
+            </div>
+          </header>
+        </div>
+        <div className="keypoints">
+          <div className="keypoint">
+            <span className="img">
+            </span>
+            <span className="headingforkeypoint">
+              <h3>{params.shop_keyhead1}</h3>
+            </span>
+            <span className="keypointtxt">
+              <p>{params.shop_key1}</p>
             </span>
           </div>
-        </header>
-      </div>
-      <div className="imgheaderfashion">
-        <header>
-          <h2>{params.shop_tagline}</h2>
-        </header>
-      </div>
-      <div className="prodssection">
-        <section>
-          <div className="prodstxt1212">
-            <hr />
-            <h2>Products</h2>
-            <Productsinshopapp />
+          <div className="keypoint">
+            <span className="img">
+            </span>
+            <span className="headingforkeypoint">
+              <h3>{params.shop_keyhead2}</h3>
+            </span>
+            <span className="keypointtxt">
+              <p>{params.shop_key2}</p>
+            </span>
           </div>
-        </section>
+          <div className="keypoint">
+            <span className="img">
+            </span>
+            <span className="headingforkeypoint">
+              <h3>{params.shop_keyhead3}</h3>
+            </span>
+            <span className="keypointtxt">
+              <p>{params.shop_key3}</p>
+            </span>
+          </div>
+        </div>
         <hr />
-      </div>
-      <div className="aboutussection">
-        <section>
-          <div className="aboutustxtheading">
-            <h2>About us</h2>
+        <div className="aboutsection">
+          <section>
+            <div className="aboutustxttemp3">
+              <h2>About us</h2>
+            </div>
+            <div className="block1">
+              <div className="block1header">
+                <h3>{params.shop_blockhead1}</h3>
+              </div>
+              <div className="block1txt">
+                <h4>{params.shop_block1}</h4>
+              </div>
+            </div>
+            <div className="block2">
+              <div className="block2header">
+                <h3>{params.shop_blockhead2}</h3>
+              </div>
+              <div className="block2txt">
+                <h4>{params.shop_block2}</h4>
+              </div>
+            </div>
+            <div className="block3">
+              <div className="block3header">
+                <h3>{params.shop_blockhead3}</h3>
+              </div>
+              <div className="block3txt">
+                <h4>{params.shop_block3}</h4>
+              </div>
+            </div>
+          </section>
+        </div>
+        <hr />
+        <div className="prodstemp3">
+          <div className="prodstxt">
+            <h2>Our Products</h2>
+            <div className="prodstemp2">
+              <Productsinshopapp />
+            </div>
           </div>
-          <div className="aboutusblock1">
-            <h2>{params.shop_abouthead}</h2>
-            <h3>{params.shop_about}</h3>
-          </div>
-          <div className="block2">
-            <h2>{params.shop_blockheading2}</h2>
-            <h3>{params.shop_block2}</h3>
-          </div>
-          <div className="block3">
-            <h2>{params.shop_blockheading3}</h2>
-            <h3>{params.shop_block3}</h3>
-          </div>
-        </section>
+        </div>
+        <div className="footertemp3">
+          <footer>
+            <div className="contacttxttemp3">
+              <h3>Contact us</h3>
+            </div>
+            <div className="contactli">
+              <ul>
+                <li>Email: {params.shop_email}</li>
+                <li>phone no: {params.shop_phone}</li>
+              </ul>
+            </div>
+          </footer>
+        </div>
       </div>
     </Fragment>
   );
 };
 
-export default Fashionshop;
+export default Template3website;

@@ -4,11 +4,14 @@ import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
-import './template5.css'
-import head2img from '../../home/header/images/The Indian Gent.jpg'
-import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
-import key2img from '../../home/header/images/key2img.jpg'
-import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+import './template1.css'
+import banner from '../header/images/Dropment (1).png'
+import logo from '../header/images/Dropment.png'
+import code from '../header/images/Dropment (7).png'
+import host from '../header/images/Dropment (8).png'
+import key1img from '../header/images/Dropment (10).png'
+import arrow from '../header/images/Untitled design (16).png'
+import keyimg from '../header/images/Dropment (10).png'
 
 
 const Editstoreform = () => {
@@ -1072,10 +1075,12 @@ const Addimage1 = (props) => {
   );
  };
  
+ 
 
-
-const Template5websitepreview = (props) => {
-
+const Template1website = (props) => {
+const [items, setItems] = useState([]);
+const [loading, setLoading] = useState(false);
+const params = useParams()
   const itemsRef = useRef(null);
   const aboutusRef = useRef(null);
   const contactusRef = useRef(null);
@@ -1095,48 +1100,7 @@ const Template5websitepreview = (props) => {
       contactusRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const Blocktext = () => {
-    return (
-      <Fragment>
-        <div className="block1">
-          <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-          </div>
-        </div>
-      </Fragment>
-    );
-  }
-
-    const Blocktext2 = () => {
-      return (
-        <Fragment>
-          <div className="block2">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
-
-    const Blocktext3 = () => {
-      return (
-        <Fragment>
-          <div className="block3">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
-
+  
     const TestProducts = (props) => {
       return (
         <div className="productmodeltemp5">
@@ -1155,104 +1119,142 @@ const Template5websitepreview = (props) => {
       );
     };
 
-    const Block1 = () => {
-      return(<Fragment>
-        <div className="block">
-          <div className="blockhead">
-            <h2>Heading</h2>
-          </div>
-          <div className="blocktextdetails">
-            <p>Deatils about the heading above</p>
-          </div>
-        </div>
-      </Fragment>)
-    }
+    const fetchProdshandler = useCallback(async () => {
+    try {
+      const response = await fetch("http://localhost:8080/custom/img/shop", {
+        headers: {
+          Authorization: params.shop_id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.img.map((itemsdata) => {
+        return {
+          images1: `http://localhost:8080/images/${itemsdata.images1}`,
+          images2: `http://localhost:8080/images/${itemsdata.images2}`,
+          images3: `http://localhost:8080/images/${itemsdata.images3}`,
+          images4: `http://localhost:8080/images/${itemsdata.images4}`,
+          images5: `http://localhost:8080/images/${itemsdata.images5}`,
+          images6: `http://localhost:8080/images/${itemsdata.images6}`,
+          images7: `http://localhost:8080/images/${itemsdata.images7}`,
 
+        };
+      });
+      setItems(transformedItems);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [params.id]);
+
+  useEffect(() => {
+    setLoading(true);
+    fetchProdshandler().finally(() => {
+      setLoading(false);
+    });
+  }, [fetchProdshandler]);
 
   return (
     <Fragment>
-      <Editbtndisplay/>
-      <div className="maintemp5">
-        <div className="temp5head1">
+      <Editbtndisplay1/>
+      <div className="maindivtemp1">
+        <div className="temp1head2">
           <header>
-            <div className="storenametemp5">
-              <h1>Store name</h1>
+            <img src={items[0]?.images1} alt="image 1"/>
+            <h2>shop name</h2>
+            <ul>
+              <li><button>Our service</button></li>
+              <li><button>About us</button></li>
+              <li><button>Contact us</button></li>
+            </ul>
+          </header>
+        </div>
+        <div className="header2temp1">
+          <header>
+            <div className="temp1headtextsection">
+              <section>
+              <h1 className="slaestexttemp1">{params.salestext}</h1>
+              <h1>{params.shop_tagline}</h1>
+              </section>
             </div>
-            <div className="btnhead1temp5">
-              <button onClick={scrollToItems}>Our products</button>
-              <button onClick={scrollToaboutus}>About us</button>
-              <button onClick={scrollTocontactus}>Contact us</button>
+            <div className="temp1head1img">
+              <secion>
+                <img src={items[0]?.images2} alt="image 2"/>
+              </secion>
             </div>
           </header>
+        </div>
+        <div className="keystemp1">
+          <div className="key1temp1">
+            <section>
+              <img src={items[0]?.images3} alt="image 3"/>
+            </section>
+            <section className="textsectiontemp1key1">
+              <h2>{params.shop_keyhead1}</h2>
+              <p>{params.shop_key1}</p>
+            </section>
           </div>
-          <div className="temp5head2">
-            <header>
-              <div className="head2imgtem5">
-                <img src={head2img}/>
-              </div>
-            </header>
+          <div className="key1temp1">
+            <section>
+              <img src={items[0]?.images4} alt="image 4"/>
+            </section>
+            <section className="textsectiontemp1key1">
+              <h2>{params.shop_keyhead2}</h2>
+              <p>{params.shop_key2}</p>
+            </section>
           </div>
-        <div className="abt1temp1">
-          <div className="abt1temp5text">
-            <h2>Some text here</h2>
-            <h4>some text here</h4>
-          </div>
-          <div className="inilineimgtemp5abt1">
-          <div className="abt1key1">
-            <img src={key1img}/>
-          </div>
-          <div className="abt1key1">
-            <img src={key2img}/>
-          </div>
-          <div className="abt1key1">
-            <img src={key3img}/>
-          </div>
+          <div className="key1temp1">
+            <section>
+              <img src={items[0]?.images5} alt="image 5"/>
+            </section>
+            <section className="textsectiontemp1key1">
+              <h2>{params.shop_keyhead3}</h2>
+              <p>{params.shop_key3}</p>
+            </section>
           </div>
         </div>
-        <div className="prodstemp5section" ref={itemsRef}>
-          <div className='propdstexttemp5'>
-            <h1>Our products</h1>
-            <p><h4>Our latest and best selling  products</h4></p>
+        <div className="stepswedotemp1">
+          <main>
+            <div className="whitelinetemp1">
+          <section className="step1temp1">
+            <h1 className="circletemp1">1</h1>
+            <h2>{params.shop_blockhead1}</h2>
+          </section><br/>
+          <section className="step2temp1">
+            <h1 className="circletemp1">2</h1>
+            <h2>{params.shop_block1}</h2>
+          </section><br/>
+          <section className="step3temp1">
+            <h1 className="circletemp1">3</h1>
+            <h2>{params.shop_blockhead2}</h2>
+          </section><br/>
+          <section className="step4temp1">
+            <h1 className="circletemp1">4</h1>
+            <h2>{params.shop_block2}</h2>
+          </section>
           </div>
-          <div className="prodstemp5">
-            <TestProducts/>
-          </div>
+          </main>
         </div>
-        <div className="abt2temp5" ref={aboutusRef}>
-          <div className="abt2no1temp5">
-            <span className="imgtemp5abt2no1">
-              <img src={key1img}/>
-            </span>
-            <span className="texttemp5abt2no1"><h2>Block 1 head</h2>
-            <p>Deatils about above heading</p></span>
-          </div>
-          <div className="abt2no2temp5">
-          <span className="texttemp5abt2no2"><h2>Block 2 head</h2>
-            <p>Deatils about above heading</p></span>
-            <span className="imgtemp5abt2no2">
-              <img src={key3img}/>
-            </span>
-          </div>
-          <div className="abt2no1temp5">
-            <span className="imgtemp5abt2no1">
-              <img src={key1img}/>
-            </span>
-            <span className="texttemp5abt2no1"><h2>Block 1 head</h2>
-            <p>Deatils about above heading</p></span>
-          </div>
+        <div className="ourcomapnytypetemp1">
+          <section className="ourcompanytypetexttemp1head">
+            <h1>Our {params.blockhead3}</h1>
+            <p>{params.shop_block3}</p>
+            <button>Our services</button>
+          </section>
+          <section className="imgtypecomplaytemp1">
+            <img src={items[0]?.images6} alt="image 6"/>
+          </section>
         </div>
-        <div className="contacttemp5" ref={contactusRef}>
+        <div className="ourservicestemp1">
+          <h1>Our services</h1>
+          <TestProducts/>
+        </div>
+        <div className="contactustemp1">
           <footer>
-            <div className="contactheadtemp5"> 
-              <h2>Contact us</h2>
-            </div>
-            <div className="conytactstmep5">
-              <ul>
-                <li>@instagram</li>
-                <li>1010101010</li>
-                <li>You@gmail.com</li>
-              </ul>
-            </div>
+            <h2>Contact us</h2>
+            <ul>
+              <li>{params.insta}</li>
+              <li>{params.shop_phone}</li>
+              <li>{params.shop_email}</li>
+            </ul>
           </footer>
         </div>
       </div>
@@ -1260,4 +1262,4 @@ const Template5websitepreview = (props) => {
   );
 };
 
-export default Template5websitepreview;
+export default Template1website;

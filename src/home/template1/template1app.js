@@ -5,15 +5,16 @@ import React, {
   Fragment,
   axios,
 } from "react";
-import FashionShopslist from "./fashionshoplist";
+import Template3list from "./template1list";
+import Template1list from "./template1list";
 
-function FashionShopapp() {
+function Template1app() {
   const [items, setitems] = useState([]);
   const [loading, setloading] = useState(false);
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/user/shops/fashion", {
+    const response = await fetch("http://localhost:8080/user/shops/template1", {
       headers: {
         Authorization: token,
       },
@@ -24,16 +25,25 @@ function FashionShopapp() {
         shop_id: itemsdata.shop_id,
         shop_name: itemsdata.shop_name,
         shop_owner: itemsdata.shop_owner,
-        shop_about: itemsdata.shop_about,
         shop_tagline: itemsdata.shop_tagline,
-        shop_abouthead: itemsdata.shop_abouthead,
         shop_blockhead2: itemsdata.shop_blockhead2,
         shop_block2: itemsdata.shop_block2,
         shop_blockhead3: itemsdata.shop_blockhead3,
         shop_block3: itemsdata.shop_block3,
         user_id: itemsdata.user_id,
-        images: `http://localhost:8080/images/${itemsdata.images}`,
-        temp2: itemsdata.temp2
+        shop_blockhead1: itemsdata.shop_blockhead1,
+        shop_block1: itemsdata.shop_block1,
+        shop_keyhead1: itemsdata.shop_keyhead1,
+        shop_key1: itemsdata.shop_key1,
+        shop_keyhead2: itemsdata.shop_keyhead2,
+        shop_key2: itemsdata.shop_key2,
+        shop_keyhead3: itemsdata.shop_keyhead3,
+        shop_key3: itemsdata.shop_key3,
+        shop_email: itemsdata.shop_email,
+        shop_phone: itemsdata.shop_phone,
+        temp1: itemsdata.temp1,
+        insta: itemsdata.insta,
+        salestext: itemsdata.salestext
       };
     });
     setitems(transformedItems);
@@ -47,11 +57,11 @@ function FashionShopapp() {
   return (
     <Fragment>
       <section>
-        {!loading && <FashionShopslist shops={items} />}
+        {!loading && <Template1list shops={items} />}
         {loading && <p>Loading..</p>}
       </section>
     </Fragment>
   );
 }
 
-export default FashionShopapp;
+export default Template1app;
