@@ -4,7 +4,7 @@ import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
-import './template1.css'
+import './template2.css'
 import banner from '../header/images/Dropment (1).png'
 import logo from '../header/images/Dropment.png'
 import code from '../header/images/Dropment (7).png'
@@ -12,7 +12,7 @@ import host from '../header/images/Dropment (8).png'
 import key1img from '../header/images/Dropment (10).png'
 import arrow from '../header/images/Untitled design (16).png'
 import keyimg from '../header/images/Dropment (10).png'
-import '../addnewshop/addshop.css'
+
 
 const Editstoreform = () => {
   const params = useParams();
@@ -788,7 +788,7 @@ const Addimage1 = (props) => {
   };
  
   return (
-    <div className="addimg">
+    <div>
       <h2>ADD Image 1</h2>
       <form onSubmit={Addimage1Handler}>
  
@@ -1077,7 +1077,7 @@ const Addimage1 = (props) => {
  
  
 
-const Template1website = (props) => {
+const Template2website = (props) => {
 const [items, setItems] = useState([]);
 const [loading, setLoading] = useState(false);
 const params = useParams()
@@ -1154,112 +1154,9 @@ const params = useParams()
 
   return (
     <Fragment>
-      <Editbtndisplay1/>
-      <div className="maindivtemp1">
-        <div className="temp1head2">
-          <header>
-            <img src={items[0]?.images1} alt="image 1"/>
-            <h2>shop name</h2>
-            <ul>
-              <li><button>Our service</button></li>
-              <li><button>About us</button></li>
-              <li><button>Contact us</button></li>
-            </ul>
-          </header>
-        </div>
-        <div className="header2temp1">
-          <header>
-            <div className="temp1headtextsection">
-              <section>
-              <h1 className="slaestexttemp1">{params.salestext}</h1>
-              <h1>{params.shop_tagline}</h1>
-              </section>
-            </div>
-            <div className="temp1head1img">
-              <secion>
-                <img src={items[0]?.images2} alt="image 2"/>
-              </secion>
-            </div>
-          </header>
-        </div>
-        <div className="keystemp1">
-          <div className="key1temp1">
-            <section>
-              <img src={items[0]?.images3} alt="image 3"/>
-            </section>
-            <section className="textsectiontemp1key1">
-              <h2>{params.shop_keyhead1}</h2>
-              <p>{params.shop_key1}</p>
-            </section>
-          </div>
-          <div className="key1temp1">
-            <section>
-              <img src={items[0]?.images4} alt="image 4"/>
-            </section>
-            <section className="textsectiontemp1key1">
-              <h2>{params.shop_keyhead2}</h2>
-              <p>{params.shop_key2}</p>
-            </section>
-          </div>
-          <div className="key1temp1">
-            <section>
-              <img src={items[0]?.images5} alt="image 5"/>
-            </section>
-            <section className="textsectiontemp1key1">
-              <h2>{params.shop_keyhead3}</h2>
-              <p>{params.shop_key3}</p>
-            </section>
-          </div>
-        </div>
-        <div className="stepswedotemp1">
-          <main>
-            <div className="whitelinetemp1">
-          <section className="step1temp1">
-            <h1 className="circletemp1">1</h1>
-            <h2>{params.shop_blockhead1}</h2>
-          </section><br/>
-          <section className="step2temp1">
-            <h1 className="circletemp1">2</h1>
-            <h2>{params.shop_block1}</h2>
-          </section><br/>
-          <section className="step3temp1">
-            <h1 className="circletemp1">3</h1>
-            <h2>{params.shop_blockhead2}</h2>
-          </section><br/>
-          <section className="step4temp1">
-            <h1 className="circletemp1">4</h1>
-            <h2>{params.shop_block2}</h2>
-          </section>
-          </div>
-          </main>
-        </div>
-        <div className="ourcomapnytypetemp1">
-          <section className="ourcompanytypetexttemp1head">
-            <h1>Our {params.blockhead3}</h1>
-            <p>{params.shop_block3}</p>
-            <button>Our services</button>
-          </section>
-          <section className="imgtypecomplaytemp1">
-            <img src={items[0]?.images6} alt="image 6"/>
-          </section>
-        </div>
-        <div className="ourservicestemp1">
-          <h1>Our services</h1>
-          <TestProducts/>
-        </div>
-        <div className="contactustemp1">
-          <footer>
-            <h2>Contact us</h2>
-            <ul>
-              <li>{params.insta}</li>
-              <li>{params.shop_phone}</li>
-              <li>{params.shop_email}</li>
-            </ul>
-          </footer>
-        </div>
-      </div>
+
     </Fragment>
   );
 };
 
-export default Template1website;
+export default Template2website;

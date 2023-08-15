@@ -34,12 +34,12 @@ const Addshopniche = () => {
           <br />
           <div className="temp">
             <span>
-              <Link to="/AddFAshionShopForm">
+              <Link to="/Preview/Template2">
                 <button>Dropment template 2</button>
               </Link>
             </span>
             <span className="previewbtn">
-              <Link to="/previewtemplate2">
+              <Link to="/Preview/Template2">
                 <button>Preview</button>
               </Link>
             </span>
