@@ -23,6 +23,7 @@ function Productsapp() {
         amount: itemsdata.quantity,
         shop_id: itemsdata.shop_id,
         images: `http://localhost:8080/images/${itemsdata.images}`,
+        payment: itemsdata.payment
       };
     });
     setitems(transformedItems);

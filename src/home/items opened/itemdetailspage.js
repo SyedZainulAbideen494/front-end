@@ -23,6 +23,7 @@ const Productsrights = (props) => {
           amount={itemdata.amount}
           shop_id={itemdata.shop_id}
           images={itemdata.images}
+          payment={itemdata.payment}
         />
       ))}
     </Fragment>

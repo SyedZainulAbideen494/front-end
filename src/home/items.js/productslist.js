@@ -11,7 +11,7 @@ const Productlist = (props) => {
         <ul>
           {props.items.map((item) => (
             <Link
-              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}/`}
+              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}`}
             >
               <Products
                 id={item.id}
@@ -20,6 +20,7 @@ const Productlist = (props) => {
                 price={item.price}
                 shop_id={item.shop_id}
                 images={item.images}
+                payment={item.payment}
               />
             </Link>
           ))}

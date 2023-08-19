@@ -69,7 +69,7 @@ const router = createBrowserRouter([
   { path: "/Addshoppage1", element: <Addshopniche /> },
   { path: "/Dropshipping", element: <Dropshipping /> },
   {
-    path: "/products/:id/:title/:price/:shop_id/",
+    path: "/products/:id/:title/:price/:shop_id",
     element: <Prodsright />,
   },
   { path: "/Addproducts", element: <Addproductstodatabase /> },

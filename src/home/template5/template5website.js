@@ -464,79 +464,88 @@ function Productsinshopapp() {
   );
 }
 const Addproductstodatabase = (props) => {
- const [title, setTitle] = useState("");
- const [price, setPrice] = useState("");
- const [amount, setAmount] = useState("");
- const [image, setImage] = useState(null);
-
- const shopId = props.shop_id; // Assuming you're passing shopId as a prop
-
- const params = useParams();
-
- const addProductHandler = (e) => {
-   e.preventDefault();
-
-   const formData = new FormData();
-   formData.append("image", image);
-   formData.append("title", title);
-   formData.append("price", price);
-   formData.append("amount", amount);
-
-   Axios.post("http://localhost:8080/addProduct", formData, {
-     headers: {
-       Authorization: params.shop_id,
-     },
-   })
-     .then((response) => {
-       console.log(response.data);
-       // Handle success
-     })
-     .catch((error) => {
-       console.error("Error adding product:", error);
-       // Handle error
-     });
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [amount, setAmount] = useState("");
+  const [image, setImage] = useState(null);
+  const [payment, setpayment] = useState('')
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const addProductHandler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("price", price);
+    formData.append("amount", amount);
+    formData.append("payment", payment)
+ 
+    Axios.post("http://localhost:8080/addProduct", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD NEW ITEM</h2>
+      <form onSubmit={addProductHandler}>
+        <label>Product Title</label>
+        <input
+          type="text"
+          placeholder="Product title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+ 
+        <label>Product Price</label>
+        <input
+          type="text"
+          placeholder="Product price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+ 
+        <label>Product Quantity</label>
+        <input
+          type="text"
+          placeholder="Product amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+        <label>Enter your stripe payment url</label>
+        <input
+          type="text"
+          placeholder="Enter your stripe payment url"
+          value={payment}
+          onChange={(e) => setpayment(e.target.value)}
+        />
+ 
+        <label>Image</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
  };
-
- return (
-   <div>
-     <h2>ADD NEW ITEM</h2>
-     <form onSubmit={addProductHandler}>
-       <label>Product Title</label>
-       <input
-         type="text"
-         placeholder="Product title"
-         value={title}
-         onChange={(e) => setTitle(e.target.value)}
-       />
-
-       <label>Product Price</label>
-       <input
-         type="text"
-         placeholder="Product price"
-         value={price}
-         onChange={(e) => setPrice(e.target.value)}
-       />
-
-       <label>Product Quantity</label>
-       <input
-         type="text"
-         placeholder="Product amount"
-         value={amount}
-         onChange={(e) => setAmount(e.target.value)}
-       />
-
-       <label>Image</label>
-       <input
-         type="file"
-         placeholder="image"
-         onChange={(e) => setImage(e.target.files[0])}
-       />
-
-       <button type="submit">Add Product</button>
-     </form>
-   </div>
- );
-};
 
 const Products = (props) => {
   return (

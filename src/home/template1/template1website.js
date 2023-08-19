@@ -533,7 +533,7 @@ const Addproductstodatabase = (props) => {
        <input
          type="text"
          placeholder="Enter your stripe payment url"
-         value={amount}
+         value={payment}
          onChange={(e) => setpayment(e.target.value)}
        />
 

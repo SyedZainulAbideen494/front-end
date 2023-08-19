@@ -348,6 +348,7 @@ const Edititemform = () => {
 function Prodsright() {
   const [orderform, setOrderForm] = useState(false);
   const [items, setItems] = useState([]);
+  const [paymentlink, setPaymentLink] = useState('');
   const [loading, setLoading] = useState(false);
   const params = useParams();
 
@@ -359,41 +360,55 @@ function Prodsright() {
     setOrderForm(false);
   };
 
-  const [showedititem, setshowitem] = useState(false);
+  const [showedititem, setShowItem] = useState(false);
 
-  const showedit = () => {
-    setshowitem(true);
+  const showEdit = () => {
+    setShowItem(true);
   };
 
-  const hideedit = () => {
-    setshowitem(false);
+  const hideEdit = () => {
+    setShowItem(false);
   };
 
   const fetchProdshandler = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:8080/imgprods", {
+      setLoading(true);
+      const response = await fetch(`http://localhost:8080/imgprods/`, {
         headers: {
           Authorization: params.id,
         },
       });
       const data = await response.json();
-      const transformedItems = data.img.map((itemsdata) => {
-        return {
-          images: `http://localhost:8080/images/${itemsdata.images}`,
-        };
-      });
+      const transformedItems = data.img.map((itemsdata) => ({
+        images: `http://localhost:8080/images/${itemsdata.images}`,
+      }));
       setItems(transformedItems);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
+  }, [params.id]);
+
+  const fetchProdspayhandler = useCallback(async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/imgprods/`, {
+        headers: {
+          Authorization: params.id,
+        },
+      });
+      const data = await response.json();
+      const payment = data.img[0]?.payment || '';
+      setPaymentLink(payment);
     } catch (error) {
       console.error(error);
     }
   }, [params.id]);
 
   useEffect(() => {
-    setLoading(true);
-    fetchProdshandler().finally(() => {
-      setLoading(false);
-    });
-  }, [fetchProdshandler]);
+    fetchProdshandler();
+    fetchProdspayhandler();
+  }, [fetchProdshandler, fetchProdspayhandler]);
 
   return (
     <Fragment>
@@ -406,6 +421,7 @@ function Prodsright() {
               </Link>
             </span>
             <span className="prodsbtns">
+              {/* Assuming Editbtndisplay is a component */}
               <Editbtndisplay />
             </span>
           </div>
@@ -433,7 +449,9 @@ function Prodsright() {
           <br />
           <div className="prods__detail__btn">
             <span className="prods__detail_addtocart_btn">
-              <button onClick={orderOpenHandler}>Buy Now</button>
+              <a href={paymentlink}>
+                <button>Buy Now</button>
+              </a>
               {orderform && <Orderform onhidehandler={orderCloseHandler} />}
             </span>
           </div>
@@ -444,6 +462,7 @@ function Prodsright() {
             <h3>More products you might like</h3>
           </span>
           <hr />
+          {/* Assuming Productsapp is a component */}
           <Productsapp />
         </div>
       </div>
