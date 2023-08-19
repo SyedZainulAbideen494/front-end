@@ -5,16 +5,15 @@ import React, {
   Fragment,
   axios,
 } from "react";
-import Template3list from "./template2list";
-import Template1list from "./template2list";
+import Template2list from "./template1list";
 
-function Template1app() {
+function Template2app() {
   const [items, setitems] = useState([]);
   const [loading, setloading] = useState(false);
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/user/shops/template1", {
+    const response = await fetch("http://localhost:8080/user/shops/template2", {
       headers: {
         Authorization: token,
       },
@@ -41,7 +40,7 @@ function Template1app() {
         shop_key3: itemsdata.shop_key3,
         shop_email: itemsdata.shop_email,
         shop_phone: itemsdata.shop_phone,
-        temp1: itemsdata.temp1,
+        temp2: itemsdata.temp2,
         insta: itemsdata.insta,
         salestext: itemsdata.salestext
       };
@@ -57,11 +56,11 @@ function Template1app() {
   return (
     <Fragment>
       <section>
-        {!loading && <Template1list shops={items} />}
+        {!loading && <Template2list shops={items} />}
         {loading && <p>Loading..</p>}
       </section>
     </Fragment>
   );
 }
 
-export default Template1app;
+export default Template2app;

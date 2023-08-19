@@ -1099,16 +1099,16 @@ const Template2websitepreview = (props) => {
   
     const TestProducts = (props) => {
       return (
-        <div className="productmodeltemp1">
+        <div className="productmodeltemp2">
           <li>
-            <div className="productimgtemp1">
+            <div className="productimgtemp2">
               <img src={banner}/>
             </div>
-            <div className="product__titletemp1">
+            <div className="product__titletemp2">
               <h2>title</h2>
             </div>
-            <div className="product__amounttemp1">
-              <h3>$30</h3>
+            <div className="product__amounttemp2">
+              <h3>$30</h3> 
             </div>
           </li>
         </div>
@@ -1173,6 +1173,26 @@ const Template2websitepreview = (props) => {
             <img src={r6}/>
           </section>
         </div>
+      </div>
+      <div className="temp2prodsection">
+        <div className="prodstexttem2">
+          <h1>Our products</h1>
+        </div>
+        <div className="prodstemp2">
+          <TestProducts/>
+        </div>
+      </div>
+      <div className="footertemp2">
+        <footer>
+          <div className="contactstemp2">
+            <h2>Contact us</h2>
+            <ul>
+              <li>@instagram</li>
+              <li>77665544</li>
+              <li>You@gmail.com</li>
+            </ul>
+          </div>
+        </footer>
       </div>
       </div>
     </Fragment>

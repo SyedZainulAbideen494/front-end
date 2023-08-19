@@ -11,13 +11,13 @@ import Shopsapp from "./shopsowned/shopsapp";
 import Shopapp from "../shopsowner/shopsapp";
 import Addshopform1 from "../addnewshop/addshopform1";
 import Addshopimg from "../addnewshop/addnewshopadding";
-import Template3website from "../template3/template3website";
 import Template3app from "../template3/template3app";
 import { useNavigate } from "react-router-dom";
 import Template5app from "../template5/template5app";
 import Template4app from "../template4/template4app";
 import Template6app from "../template5 copy/template6app";
 import Template1app from "../template1/template1app";
+import Template2app from "../template2/template2app";
 
 const Profile = (props) => {
   return (
@@ -41,7 +41,8 @@ const Profile = (props) => {
           <hr />
         </div>
         <Template1app/>
-        <Template3app />
+        <Template2app/>
+        <Template3app/>
         <Template5app/>
         <Template4app/>
         <Template6app/>  

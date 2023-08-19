@@ -2,7 +2,7 @@ import React, { Fragment, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
-const Addtemplate1form = (props) => {
+const Addtemplate2form = (props) => {
   const [shop_name, setname] = useState("");
   const [shop_owner, setowner] = useState("");
   const [shop_tagline, setshop_tagline] = useState("");
@@ -20,13 +20,13 @@ const Addtemplate1form = (props) => {
   const [shop_keyhead3, setshop_keyhead3] = useState("");
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
-  const [temp1, settemp1]= useState('')
+  const [temp2, settemp2]= useState('')
   const [insta, setinsta] = useState("")
   const [salestext, setsalestext] = useState('')
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
-      "http://localhost:8080/addShops/template1",
+      "http://localhost:8080/addShops/template2",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
@@ -47,7 +47,7 @@ const Addtemplate1form = (props) => {
         shop_phone: shop_phone,
         insta: insta,
         salestext: salestext,
-        temp1: temp1,
+        temp2: temp2,
       },
       {
         headers: {
@@ -239,7 +239,7 @@ const Addtemplate1form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter first step</h3>
+            <h3>Enter block head1</h3>
           </label>
           <br />
           <input
@@ -252,7 +252,7 @@ const Addtemplate1form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter your 2nd step</h3>
+            <h3>Enter block 1</h3>
           </label>
           <br />
           <input
@@ -265,58 +265,6 @@ const Addtemplate1form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter your 3rd step</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter your 3rd step"
-            onChange={(e) => {
-              setshop_blockheading2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter your 4rt step</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter your 4rt step"
-            onChange={(e) => {
-              setshop_block2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>What type of a comapny is it(example agency)</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="What type of a comapny is it(example agency)"
-            onChange={(e) => {
-              setshop_blockheading3(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter some details about your company</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter some details about your company"
-            onChange={(e) => {
-              setshop_block3(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
             <h3>Enter any text to confirm</h3>
           </label>
           <br />
@@ -324,7 +272,7 @@ const Addtemplate1form = (props) => {
             required
             placeholder="Enter any text to confirm"
             onChange={(e) => {
-              settemp1(e.target.value);
+              settemp2(e.target.value);
             }}
           />
         </div>
@@ -337,4 +285,4 @@ const Addtemplate1form = (props) => {
   );
 };
 
-export default Addtemplate1form;
+export default Addtemplate2form;

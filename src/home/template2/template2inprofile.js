@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react"
 
-const Template1inprofile = (props) => {
-  if (props.temp1 === null){
+const Template2inprofile = (props) => {
+  if (props.temp2 === null){
     return;
   }else{
   return (
@@ -15,4 +15,4 @@ const Template1inprofile = (props) => {
   );
 };
 }
-export default Template1inprofile;
+export default Template2inprofile;

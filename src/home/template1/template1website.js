@@ -471,6 +471,7 @@ const Addproductstodatabase = (props) => {
  const [price, setPrice] = useState("");
  const [amount, setAmount] = useState("");
  const [image, setImage] = useState(null);
+ const [payment, setpayment] = useState('')
 
  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
 
@@ -484,6 +485,7 @@ const Addproductstodatabase = (props) => {
    formData.append("title", title);
    formData.append("price", price);
    formData.append("amount", amount);
+   formData.append("payment", payment)
 
    Axios.post("http://localhost:8080/addProduct", formData, {
      headers: {
@@ -526,6 +528,13 @@ const Addproductstodatabase = (props) => {
          placeholder="Product amount"
          value={amount}
          onChange={(e) => setAmount(e.target.value)}
+       />
+       <label>Enter your stripe payment url</label>
+       <input
+         type="text"
+         placeholder="Enter your stripe payment url"
+         value={amount}
+         onChange={(e) => setpayment(e.target.value)}
        />
 
        <label>Image</label>

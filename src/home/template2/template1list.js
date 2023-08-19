@@ -4,17 +4,18 @@ import { Link, useParams } from "react-router-dom";
 import Template3inprofile from "./template2inprofile";
 import Template5inprofile from "./template2inprofile";
 import Template1inprofile from "./template2inprofile";
+import Template2inprofile from "./template2inprofile";
 
-const Template1list = (props) => {
+const Template2list = (props) => {
   return (
     <Fragment>
       <div className="productmodelul">
         <ul>
           {props.shops.map((item) => (
             <Link
-              to={`/mystore/template1/${item.shop_id}/${item.shop_name}/${item.shop_owner}/${item.shop_tagline}/${item.shop_block2}/${item.shop_blockhead2}/${item.shop_blockhead3}/${item.shop_block3}/${item.user_id}/${item.shop_blockhead1}/${item.shop_block1}/${item.shop_keyhead1}/${item.shop_key1}/${item.shop_keyhead2}/${item.shop_key2}/${item.shop_keyhead3}/${item.shop_key3}/${item.shop_email}/${item.shop_phone}/${item.insta}/${item.salestext}`}
+              to={`/mystore/template2/${item.shop_id}/${item.shop_name}/${item.shop_owner}/${item.user_id}/${item.shop_blockhead1}/${item.shop_block1}/${item.shop_keyhead1}/${item.shop_key1}/${item.shop_keyhead2}/${item.shop_key2}/${item.shop_keyhead3}/${item.shop_key3}/${item.shop_email}/${item.shop_phone}/${item.insta}`}
             >
-              <Template1inprofile
+              <Template2inprofile
                 shop_id={item.shop_id}
                 shop_name={item.shop_name}
                 shop_owner={item.shop_owner}
@@ -34,7 +35,7 @@ const Template1list = (props) => {
                 shop_key3={item.shop_key3}
                 shop_email={item.shop_email}
                 shop_phone={item.shop_phone}
-                temp1={item.temp1}
+                temp2={item.temp2}
                 insta={item.insta}
                 salestext={item.slaestext}
               />
@@ -46,4 +47,4 @@ const Template1list = (props) => {
   );
 };
 
-export default Template1list;
+export default Template2list;

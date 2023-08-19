@@ -21,6 +21,7 @@ const Addtemplate3form = (props) => {
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
   const [insta, setinsta] = useState('')
+  const [temp3, settemp3] = useState('')
 
   const addshophandler = () => {
     const token = localStorage.getItem("token");
@@ -44,7 +45,8 @@ const Addtemplate3form = (props) => {
         shop_key3: shop_key3,
         shop_email: shop_email,
         shop_phone: shop_phone,
-        insta: insta
+        insta: insta,
+        temp3: temp3
       },
       {
         headers: {
@@ -106,51 +108,12 @@ const Addtemplate3form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter Shop key point heading 1</h3>
+            <h3>Any good point about your business in 5 words or less</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point heading 1"
-            onChange={(e) => {
-              setshp_keyhead1(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter Shop key point 1</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter Shop key point 1"
-            onChange={(e) => {
-              setshop_key1(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter Shop key point heading 2</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter Shop key point heading 2"
-            onChange={(e) => {
-              setshop_keyhead2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter Shop key point 2</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter Shop key point 2"
+            placeholder="Any good point about your business in 5 words or less"
             onChange={(e) => {
               setshop_key2(e.target.value);
             }}
@@ -158,12 +121,12 @@ const Addtemplate3form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter Shop key point heading 3</h3>
+            <h3>rating of your business</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point heading 3"
+            placeholder="rating of your business"
             onChange={(e) => {
               setshop_keyhead3(e.target.value);
             }}
@@ -171,12 +134,12 @@ const Addtemplate3form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter Shop key point 3</h3>
+            <h3>Enter number of clients worked with</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point 3"
+            placeholder="Enter number of clients worked with"
             onChange={(e) => {
               setshop_key3(e.target.value);
             }}
@@ -296,6 +259,19 @@ const Addtemplate3form = (props) => {
             placeholder="Enter your instagram profile link"
             onChange={(e) => {
               setinsta(e.target.value);
+            }}
+          />
+        </div>
+        <div className="inp">
+          <label>
+            <h3>Enter any text to confirm</h3>
+          </label>
+          <br />
+          <input
+            required
+            placeholder="Enter any text to confirm"
+            onChange={(e) => {
+              settemp3(e.target.value);
             }}
           />
         </div>

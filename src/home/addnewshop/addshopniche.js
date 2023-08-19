@@ -34,7 +34,7 @@ const Addshopniche = () => {
           <br />
           <div className="temp">
             <span>
-              <Link to="/Preview/Template2">
+              <Link to="/Add/template2/form">
                 <button>Dropment template 2</button>
               </Link>
             </span>
@@ -51,7 +51,7 @@ const Addshopniche = () => {
               </Link>
             </span>
             <span className="previewbtn">
-              <Link to="/previewtemplate3">
+              <Link to="/preview/template3">
                 <button>Preview</button>
               </Link>
             </span>

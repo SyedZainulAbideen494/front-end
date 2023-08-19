@@ -48,6 +48,9 @@ import Template6website from "./home/template5 copy/template6website";
 import Addtemplate1form from "./home/template1/addtemplate1";
 import Template1website from "./home/template1/template1website";
 import Template2websitepreview from "./home/template2/template2websitepreview";
+import Addtemplate2form from "./home/template2/addtemplate2";
+import Template3websitepreview from "./home/template3/template3websitepreview";
+import Template2website from "./home/template2/template2website";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -88,7 +91,6 @@ const router = createBrowserRouter([
     element: <Template3website />,
   },
   { path: "/previewtemplate2", element: <Temp2preview /> },
-  { path: "/previewtemplate3", element: <Template3preview/> },
   {path: "/temp5preview", element: <Template5websitepreview /> },
   {path: '/addShopTemp5', element: <Addtemplate5form/>},
   {path: '/mystore/template5/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta', element: <Template5website/>},
@@ -99,7 +101,10 @@ const router = createBrowserRouter([
   {path: '/Template6/preview', element: <Template6websitepreview/>},
   {path: '/Add/template6/form', element: <Addtemplate6form/>},
   {path: '/mystore/template6/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta/:salestext', element: <Template6website/>},
-  {path: '/Preview/Template2', element: <Template2websitepreview/>}
+  {path: '/Preview/Template2', element: <Template2websitepreview/>},
+  {path: '/Add/template2/form', element: <Addtemplate2form/>},
+  {path: '/preview/template3', element: <Template3websitepreview/>},
+  {path: '/mystore/template2/:shop_id/:shop_name/:shop_owner/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta', element: <Template2website/>}
 ]);
 function App() {
   return (

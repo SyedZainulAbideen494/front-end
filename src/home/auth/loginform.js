@@ -7,6 +7,7 @@ const Loginform = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [loginstatus, setloginstatus] = useState(false);
+  const [error, setError] = useState("")
 
   const navigate = useNavigate();
 
@@ -21,21 +22,24 @@ const Loginform = () => {
   };
 
   const login = () => {
+    setError(""); // Clear any previous errors
     Axios.post("http://localhost:8080/login", {
       email: email,
       password: password,
     }).then((response) => {
       if (!response.data.auth) {
-        navigate("/login");
+        setError(response.data.message || "An error occurred"); // Display the error message from the server, or a generic error message
       } else {
         navigate("/");
         localStorage.setItem("token", response.data.token);
       }
+    }).catch((error) => {
+      setError("An error occurred while logging in"); // Display generic error message for network or other errors
     });
   };
 
   const userAuth = () => {
-    Axios.get("https://backend-zain-production.up.railway.app/isUserAuth");
+    Axios.get("http://localhost:8080/isUserAuth");
   };
 
   return (
@@ -69,6 +73,7 @@ const Loginform = () => {
             }}
           />
         </div>
+        {error && <p className="error-message">{error}</p>}
         <div className="btnloginform">
           <span>
             <Link to="/">
@@ -89,7 +94,6 @@ const Loginform = () => {
           </div>
         </div>
       </div>
-      {loginstatus && <button onClick={userAuth}>check123</button>}
     </Fragment>
   );
 };

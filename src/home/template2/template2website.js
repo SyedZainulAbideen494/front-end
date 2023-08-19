@@ -5,13 +5,11 @@ import Axios from "axios";
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
 import './template2.css'
-import banner from '../header/images/Dropment (1).png'
+import banner from '../header/images/Untitled design (2).png'
 import logo from '../header/images/Dropment.png'
-import code from '../header/images/Dropment (7).png'
-import host from '../header/images/Dropment (8).png'
-import key1img from '../header/images/Dropment (10).png'
-import arrow from '../header/images/Untitled design (16).png'
-import keyimg from '../header/images/Dropment (10).png'
+import r1 from  '../header/images/Untitled design (1).png'
+import r4  from '../header/images/Untitled design (4).png'
+import r6 from '../header/images/Untitled design (6).png'
 
 
 const Editstoreform = () => {
@@ -467,80 +465,89 @@ function Productsinshopapp() {
   );
 }
 const Addproductstodatabase = (props) => {
- const [title, setTitle] = useState("");
- const [price, setPrice] = useState("");
- const [amount, setAmount] = useState("");
- const [image, setImage] = useState(null);
-
- const shopId = props.shop_id; // Assuming you're passing shopId as a prop
-
- const params = useParams();
-
- const addProductHandler = (e) => {
-   e.preventDefault();
-
-   const formData = new FormData();
-   formData.append("image", image);
-   formData.append("title", title);
-   formData.append("price", price);
-   formData.append("amount", amount);
-
-   Axios.post("http://localhost:8080/addProduct", formData, {
-     headers: {
-       Authorization: params.shop_id,
-     },
-   })
-     .then((response) => {
-       console.log(response.data);
-       // Handle success
-     })
-     .catch((error) => {
-       console.error("Error adding product:", error);
-       // Handle error
-     });
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [amount, setAmount] = useState("");
+  const [image, setImage] = useState(null);
+  const [payment, setpayment] = useState('')
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const addProductHandler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("price", price);
+    formData.append("amount", amount);
+    formData.append("payment", payment)
+ 
+    Axios.post("http://localhost:8080/addProduct", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD NEW ITEM</h2>
+      <form onSubmit={addProductHandler}>
+        <label>Product Title</label>
+        <input
+          type="text"
+          placeholder="Product title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+ 
+        <label>Product Price</label>
+        <input
+          type="text"
+          placeholder="Product price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+ 
+        <label>Product Quantity</label>
+        <input
+          type="text"
+          placeholder="Product amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+        <label>Enter your stripe payment url</label>
+        <input
+          type="text"
+          placeholder="Enter your stripe payment url"
+          value={amount}
+          onChange={(e) => setpayment(e.target.value)}
+        />
+ 
+        <label>Image</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
  };
-
- return (
-   <div>
-     <h2>ADD NEW ITEM</h2>
-     <form onSubmit={addProductHandler}>
-       <label>Product Title</label>
-       <input
-         type="text"
-         placeholder="Product title"
-         value={title}
-         onChange={(e) => setTitle(e.target.value)}
-       />
-
-       <label>Product Price</label>
-       <input
-         type="text"
-         placeholder="Product price"
-         value={price}
-         onChange={(e) => setPrice(e.target.value)}
-       />
-
-       <label>Product Quantity</label>
-       <input
-         type="text"
-         placeholder="Product amount"
-         value={amount}
-         onChange={(e) => setAmount(e.target.value)}
-       />
-
-       <label>Image</label>
-       <input
-         type="file"
-         placeholder="image"
-         onChange={(e) => setImage(e.target.files[0])}
-       />
-
-       <button type="submit">Add Product</button>
-     </form>
-   </div>
- );
-};
-
+ 
 const Products = (props) => {
   return (
     <div className="productmodeltemp4">
@@ -748,7 +755,6 @@ const Editbtndisplay1 = () => {
           <Addimage4/>
           <Addimage5/>
           <Addimage6/>
-          <Addimage7/>
         </Fragment>
       );
     } else {
@@ -1029,52 +1035,7 @@ const Addimage1 = (props) => {
     </div>
   );
  };
- const Addimage7 = (props) => {
-  const [image, setImage] = useState(null);
- 
-  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
- 
-  const params = useParams();
- 
-  const Addimage1Handler = (e) => {
-    e.preventDefault();
- 
-    const formData = new FormData();
-    formData.append("image", image);
- 
-    Axios.post("http://localhost:8080/addshopimg7", formData, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    })
-      .then((response) => {
-        console.log(response.data);
-        // Handle success
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-        // Handle error
-      });
-  };
- 
-  return (
-    <div>
-      <h2>ADD Image 7</h2>
-      <form onSubmit={Addimage1Handler}>
- 
-        <label>Image 7</label>
-        <input
-          type="file"
-          placeholder="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
- 
-        <button type="submit">Add Product</button>
-      </form>
-    </div>
-  );
- };
- 
+
  
 
 const Template2website = (props) => {
@@ -1106,7 +1067,7 @@ const params = useParams()
         <div className="productmodeltemp5">
           <li>
             <div className="productimgtemp5">
-              <img src={key1img}/>
+              <img src={r6}/>
             </div>
             <div className="product__titletemp5">
               <h2>title</h2>
@@ -1154,7 +1115,85 @@ const params = useParams()
 
   return (
     <Fragment>
-
+      <Editbtndisplay1/>
+<div className="maindivfortemp2">
+      <div className="header1temp2">
+        <header>
+          <img src={items[0]?.images1} alt="image 1"/>
+          <h2>Shop Name</h2>
+          <ul>
+            <li><button>Products</button></li>
+            <li><button>about us</button></li>
+            <li><button>contact us</button></li>
+          </ul>
+        </header>
+      </div>
+      <div className="header2temp2">
+        <header>
+          <img src={items[0]?.images2} alt="image2"/>
+        </header>
+      </div>
+      <div className="keystemp2">
+        <div className="key1temp2">
+          <section className="key1temp2text">
+            <h2>Key head1</h2>
+            <p>key 1</p>
+          </section>
+          <section>
+            <img src={items[0]?.images3} alt="images 3"/>
+          </section>
+        </div>
+        <div className="key1temp2">
+          <section className="key1temp2text">
+            <h2>Key head1</h2>
+            <p>key 1</p>
+          </section>
+          <section>
+            <img src={items[0]?.images4} alt="image 4"/>
+          </section>
+        </div>
+        <div className="key1temp2">
+          <section className="key1temp2text">
+            <h2>Key head1</h2>
+            <p>key 1</p>
+          </section>
+          <section>
+            <img src={items[0]?.images5} alt="image 5"/>
+          </section>
+        </div>
+      </div>
+      <div className="aboutustemp2">
+        <div className="abt1temp2">
+          <section className="abt1no1temp2text">
+            <h1>Block 1 heading</h1>
+            <p>Block 1 details about above heading some random text its a checking by dropment developer 123 text 123</p>
+          </section>
+          <section className="abt1no1temp2img">
+            <img src={items[0]?.images6} alt="image 6"/>
+          </section>
+        </div>
+      </div>
+      <div className="temp2prodsection">
+        <div className="prodstexttem2">
+          <h1>Our products</h1>
+        </div>
+        <div className="prodstemp2">
+          <TestProducts/>
+        </div>
+      </div>
+      <div className="footertemp2">
+        <footer>
+          <div className="contactstemp2">
+            <h2>Contact us</h2>
+            <ul>
+              <li>@instagram</li>
+              <li>77665544</li>
+              <li>You@gmail.com</li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+      </div>
     </Fragment>
   );
 };

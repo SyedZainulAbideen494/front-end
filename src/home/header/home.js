@@ -206,7 +206,7 @@ const Home = () => {
             </div>
           </div>
           <div className="textforshopsonhomepageondropment">
-            <h1>Stores made by ur users</h1>
+            <h1>Stores made by our users</h1>
           </div>
           <div className="shopsfromourusershomepagedemo">
             <Displayshoponhome/>

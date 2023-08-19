@@ -3,6 +3,10 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import "./template3.css";
 import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
+import banner from '../header/images/Dropment (1).png'
+import logo from '../header/images/Dropment.png'
+import abt1 from '../header/images/ffri (1).png'
+import star from '../header/images/Untitled design (18).png'
 
 const Editbtndisplay = () => {
   const [showform, setshowform] = useState(false);
@@ -524,110 +528,99 @@ function Productsinshopapp() {
   );
 }
 const Addproductstodatabase = (props) => {
-  const [id, setid] = useState("");
-  const [title, settitle] = useState("");
-  const [price, setprice] = useState("");
-  const [amount, setamount] = useState("");
-  const [images, setimage] = useState("");
-
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [amount, setAmount] = useState("");
+  const [image, setImage] = useState(null);
+  const [payment, setpayment] = useState('')
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
   const params = useParams();
-
-  const shop_id = useEffect(() => {
-    setid(params.shop_id);
-  }, []);
-
-  const token = localStorage.getItem("token");
-
-  const addshophandler = () => {
-    const formdata = new FormData();
-    formdata.append("image", images);
-    formdata.append("title", title); // Add title field
-    formdata.append("price", price); // Add price field
-    formdata.append("amount", amount); // Add amount field
-    Axios.post("https://backend-zain-production.up.railway.app/addProduct", formdata, {
+ 
+  const addProductHandler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("price", price);
+    formData.append("amount", amount);
+    formData.append("payment", payment)
+ 
+    Axios.post("http://localhost:8080/addProduct", formData, {
       headers: {
         Authorization: params.shop_id,
       },
-    });
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
   };
+ 
   return (
-    <Fragment>
-      <div className="formitemadd">
-        <div className="txt12">
-          <h2>ADD NEW ITEM</h2>
-        </div>
-        <div className="backbtn1212">
-          <button onClick={props.onClick}>Close</button>
-        </div>
-        <form onSubmit={addshophandler}>
-          <div className="txt">
-            <label>Product Title</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="txt"
-              placeholder="Product title"
-              value={title}
-              onChange={(e) => settitle(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Product Price</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="text"
-              placeholder="Product price"
-              value={price}
-              onChange={(e) => setprice(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Product Quantity</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="text"
-              placeholder="Product amount"
-              value={amount}
-              onChange={(e) => setamount(e.target.value)}
-            />
-          </div>
-          <br />
-          <div className="txt">
-            <label>Image</label>
-          </div>
-          <div className="inpt">
-            <input
-              type="file"
-              placeholder="image"
-              onChange={(e) => setimage(e.target.files[0])}
-            />
-          </div>
-          <br />
-          <div className="addprodsbtn">
-            <button type="submit">Add Product</button>
-          </div>
-        </form>
-      </div>
-    </Fragment>
+    <div>
+      <h2>ADD NEW ITEM</h2>
+      <form onSubmit={addProductHandler}>
+        <label>Product Title</label>
+        <input
+          type="text"
+          placeholder="Product title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+ 
+        <label>Product Price</label>
+        <input
+          type="text"
+          placeholder="Product price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+ 
+        <label>Product Quantity</label>
+        <input
+          type="text"
+          placeholder="Product amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+        <label>Enter your stripe payment url</label>
+        <input
+          type="text"
+          placeholder="Enter your stripe payment url"
+          value={amount}
+          onChange={(e) => setpayment(e.target.value)}
+        />
+ 
+        <label>Image</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
   );
-};
+ };
+ 
 
 const Products = (props) => {
   return (
-    <div className="productmodel">
+    <div className="productmodeltemp3">
       <li>
-        <div className="productimg">
+        <div className="productimgtemp3">
           <img src={props.images} alt="Product Image" />
         </div>
-        <div className="product__title">
+        <div className="product__titletemp3">
           <h2>{props.title}</h2>
-        </div>
-        <div className="product__amount">
-          <h3>{props.price}</h3>
         </div>
       </li>
     </div>
@@ -659,37 +652,104 @@ const ProductList = (props) => {
   );
 };
 
+const TestProducts = (props) => {
+  return (
+    <div className="productmodeltemp3">
+      <li>
+        <div className="productimgtemp3">
+          <img src={banner} alt="Product Image" />
+        </div>
+        <div className="product__titletemp3">
+          <h2>Title</h2>
+        </div>
+      </li>
+    </div>
+  );
+};
 
 
 const Template3websitepreview = (props) => {
-  const [showform, setshowform] = useState(false);
-  const [showsales, setshowsales] = useState(false);
-  const [instalink, setinstalink] = useState('')
+  return<Fragment>
+    <div className="maindivfortemplate3">
+      <div className="header1tem3">
+        <header>
+          <div className="temp3logo">
+            <img src={logo}/>
+          </div>
+          <h1>Shop name</h1>
+          <div className="btnsheader1temp3">
+            <ul>
+              <li><button>Our services</button></li>
+              <li><button>About us</button></li>
+              <li><button>Contact us</button></li>
+            </ul>
+          </div>
+        </header>
+      </div>
+      <div className="header2temp3">
+        <section className="textsectiontemp3header2">
+          <div className="salestexttemp3">
+            <h1>Sale text or some here text here</h1>
+          </div>
+          <div className="taglinetemp3">
+            <h1>Tagline here</h1>
+          </div>
+        </section>
+        <section className="imgsectionintemp3header2">
+          <img src={banner}/>
+        </section>
+      </div>
+      <div className="ourservicestemp3">
+        <h1>Our services</h1>
+        <TestProducts/>
+      </div>
+      <div className="abttemp3part1">
+        <div className="abt1no1part1temp3">
+          <section className="textsectemp3abt1part1">
+            <h2>Block 1 head</h2>
+            <p>Block 1 any text here dropmnt team testing text 123 123 test text 123 test here test here you  can enetr any text here its template 3</p>
+          </section>
+          <section className="imgsecabt1no1tmep3part1">
+            <img src={abt1}/>
+          </section>
+        </div>
+        <div className="abt1no1part1temp3">
+        <section className="imgsecabt1no1tmep3part1">
+            <img src={abt1}/>
+          </section>
+          <section className="textsectemp3abt1part1">
+            <h2>Block 2 head</h2>
+            <p>Block 2 any text here dropmnt team testing text 123 123 test text 123 test here test here you  can enetr any text here its template 3</p>
+          </section>          
+        </div>
+        <div className="abt1no1part1temp3">
+          <section className="textsectemp3abt1part1">
+            <h2>Block 3 head</h2>
+            <p>Block 3 any text here dropmnt team testing text 123 123 test text 123 test here test here you  can enetr any text here its template 3</p>
+          </section>
+          <section className="imgsecabt1no1tmep3part1">
+            <img src={abt1}/>
+          </section>
+        </div>
+      </div>
+      <div className="testimonialtemp3">
 
-  const showformhandler = () => {
-    setshowform(true);
-  };
-
-  const hideformhandler = () => {
-    setshowform(false);
-  };
-
-  const showsaleshandler = () => {
-    setshowsales(true);
-  };
-
-  const hidesaleshandler = () => {
-    setshowsales(false);
-  };
-  const linktoinsta = () => {
-    setinstalink(props.insta)
-  }
-  const params = useParams();
-  return (
-    <Fragment>
-
-    </Fragment>
-  );
+        <section className="testimonial1temp3">30M+<br/>Clients</section>
+        <section className="testimonial1temp3">4.5<img src={star}/><br/>Rating</section>
+        <section className="testimonial1temp3">3 Days response time</section>
+      </div>
+      <div className="footerfortemp3">
+        <footer>
+          <h2>Contact us</h2>
+          <ul>
+            <li>@instagram</li>
+            <li>You@gmail.com</li>
+            <li>77665544</li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </Fragment>
 };
 
 export default Template3websitepreview;
