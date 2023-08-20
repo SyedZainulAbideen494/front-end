@@ -554,15 +554,15 @@ const Addproductstodatabase = (props) => {
  };
 const Products = (props) => {
   return (
-    <div className="productmodeltemp4">
+    <div className="productmodeltemp6">
       <li>
-        <div className="productimgtemp4">
+        <div className="productimgtemp6">
           <img src={props.images} alt="Product Image" />
         </div>
-        <div className="product__titletemp4">
+        <div className="product__titletemp6">
           <h2>{props.title}</h2>
         </div>
-        <div className="product__amounttemp4">
+        <div className="product__amounttemp6">
           <h3>{props.price}</h3>
         </div>
       </li>

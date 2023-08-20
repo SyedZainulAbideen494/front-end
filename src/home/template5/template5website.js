@@ -567,12 +567,12 @@ const Products = (props) => {
 
 const TestProducts = (props) => {
   return (
-    <div className="productmodeltemp4">
+    <div className="productmodeltemp5">
       <li>
-        <div className="product__titletemp4">
+        <div className="product__titletemp5">
           <h2>title</h2>
         </div>
-        <div className="product__amounttemp4">
+        <div className="product__amounttemp5">
           <h3>$30</h3>
         </div>
       </li>

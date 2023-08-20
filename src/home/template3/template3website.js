@@ -627,6 +627,21 @@ const Products = (props) => {
   );
 };
 
+const TestProductss = (props) => {
+  return (
+    <div className="productmodeltemp3">
+      <li>
+        <div className="productimgtemp3">
+          <img src={banner} alt="Product Image" />
+        </div>
+        <div className="product__titletemp3">
+          <h2>Title</h2>
+        </div>
+      </li>
+    </div>
+  );
+};
+
 const ProductList = (props) => {
   return (
     <div className="productmodelul">

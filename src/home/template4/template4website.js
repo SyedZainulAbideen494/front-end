@@ -709,16 +709,34 @@ const Editbtndisplay1 = () => {
 
 const Products = (props) => {
   return (
-    <div className="productmodel">
+    <div className="productmodel4">
       <li>
-        <div className="productimg">
+        <div className="productimg4">
           <img src={props.images} alt="Product Image" />
         </div>
-        <div className="product__title">
+        <div className="product__title4">
           <h2>{props.title}</h2>
         </div>
-        <div className="product__amount">
+        <div className="product__amount4">
           <h3>{props.price}</h3>
+        </div>
+      </li>
+    </div>
+  );
+};
+
+const TestProducts = (props) => {
+  return (
+    <div className="productmodel4">
+      <li>
+        <div className="productimg4">
+          <img src={img4} alt="Product Image" />
+        </div>
+        <div className="product__title4">
+          <h2>Name of the product</h2>
+        </div>
+        <div className="product__amount4">
+          <h3>$23</h3>
         </div>
       </li>
     </div>
@@ -750,23 +768,7 @@ const ProductList = (props) => {
   );
 };
 
-const TestProducts = (props) => {
-  return (
-    <div className="productmodel4">
-      <li>
-        <div className="productimg4">
-          <img src={img4} alt="Product Image" />
-        </div>
-        <div className="product__title4">
-          <h2>Name of the product</h2>
-        </div>
-        <div className="product__amount4">
-          <h3>$23</h3>
-        </div>
-      </li>
-    </div>
-  );
-};
+
 
 
 const Addimage1 = (props) => {

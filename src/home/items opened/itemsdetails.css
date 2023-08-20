@@ -87,7 +87,7 @@
 }
 
 .prodsetailsheader header {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 .prodsetailsheader span {
@@ -107,3 +107,4 @@
   border: 2px solid red;
   transition: 0.4s;
 }
+

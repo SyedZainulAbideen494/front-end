@@ -552,15 +552,15 @@ const Addproductstodatabase = (props) => {
 
 const Products = (props) => {
   return (
-    <div className="productmodeltemp4">
+    <div className="productmodeltemp5">
       <li>
-        <div className="productimgtemp4">
+        <div className="productimgtemp5">
           <img src={props.images} alt="Product Image" />
         </div>
-        <div className="product__titletemp4">
+        <div className="product__titletemp5">
           <h2>{props.title}</h2>
         </div>
-        <div className="product__amounttemp4">
+        <div className="product__amounttemp5">
           <h3>{props.price}</h3>
         </div>
       </li>
@@ -570,18 +570,23 @@ const Products = (props) => {
 
 const TestProducts = (props) => {
   return (
-    <div className="productmodeltemp4">
+    <div className="productmodeltemp5">
       <li>
-        <div className="product__titletemp4">
+        <div className="productimgtemp5">
+          <img src={key1img}/>
+        </div>
+        <div className="product__titletemp5">
           <h2>title</h2>
         </div>
-        <div className="product__amounttemp4">
+        <div className="product__amounttemp5">
           <h3>$30</h3>
         </div>
       </li>
     </div>
   );
 };
+
+
 
 const ProductList = (props) => {
   return (
@@ -1110,23 +1115,7 @@ const params = useParams()
     }
   };
   
-    const TestProducts = (props) => {
-      return (
-        <div className="productmodeltemp5">
-          <li>
-            <div className="productimgtemp5">
-              <img src={key1img}/>
-            </div>
-            <div className="product__titletemp5">
-              <h2>title</h2>
-            </div>
-            <div className="product__amounttemp5">
-              <h3>$30</h3>
-            </div>
-          </li>
-        </div>
-      );
-    };
+    
 
     const fetchProdshandler = useCallback(async () => {
     try {
