@@ -23,7 +23,27 @@ function Productsapp() {
         amount: itemsdata.quantity,
         shop_id: itemsdata.shop_id,
         images: `http://localhost:8080/images/${itemsdata.images}`,
-        payment: itemsdata.payment
+        payment: itemsdata.payment,
+        usd: itemsdata.usd,
+        EUR: itemsdata.EUR,
+        GBP: itemsdata.GBP,
+        JPY: itemsdata.JPY,
+        CAD: itemsdata.CAD,
+        AUD: itemsdata.AUD,
+        CHF: itemsdata.CHF,
+        CNY: itemsdata.CNY,
+        INR: itemsdata.INR,
+        BRL: itemsdata.BRL,
+        RUB: itemsdata.RUB,
+        KRW: itemsdata.KRW,
+        SGD: itemsdata.SGD,
+        NZD: itemsdata.NZD,
+        MXN: itemsdata.MXN,
+        HKD: itemsdata.HKD,
+        TRY: itemsdata.TRY,
+        ZAR: itemsdata.ZAR,
+        SEK: itemsdata.SEK,
+        NOK: itemsdata.NOK,
       };
     });
     setitems(transformedItems);

@@ -583,6 +583,10 @@
     }
 }
 
-
+.shop {
+    border: 2px solid black;
+    padding: 40px;
+    border-radius: 25px;
+}
 
 

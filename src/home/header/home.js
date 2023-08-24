@@ -59,7 +59,9 @@ const Home = () => {
                 <h1>Your Dream Store Awaits: Just a Few Clicks Away!</h1>
                 </div>
                 <div className="header2dropbtn">
+                <Link to='/Addshoppage1'>
                 <button><h2>Get started</h2></button>
+                </Link>
               </div>
                 </div>
               </section>  

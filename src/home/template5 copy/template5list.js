@@ -35,6 +35,7 @@ const Template6list = (props) => {
                 shop_phone={item.shop_phone}
                 insta={item.insta}
                 salestext={item.salestext}
+                temp6={item.temp6}
               />
             </Link>
           ))}

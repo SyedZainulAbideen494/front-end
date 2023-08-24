@@ -197,7 +197,7 @@ const Editbtndisplay = () => {
           `http://localhost:8080/user/id/editbtnstoredisplay1`,
           {
             headers: {
-              Authorization: params.id,
+              Authorization: params.shop_id,
             },
           }
         );
@@ -319,7 +319,7 @@ const Sales = (props) => {
 
   return (
     <Fragment>
-      <Saleshead />
+      <h2>My store sales</h2>
       <section>
         {!loading && <Saleslist Sales={orders} />}
         {loading && <p>Loading..</p>}
@@ -805,7 +805,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -850,7 +850,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -895,7 +895,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -940,7 +940,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -985,7 +985,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -1030,7 +1030,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -1075,7 +1075,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );

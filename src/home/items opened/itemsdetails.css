@@ -108,3 +108,9 @@
   transition: 0.4s;
 }
 
+.prodes__right__full button {
+  margin-top: 40px;
+  margin-left: 30px;
+  border: 1px solid black;
+  border-radius: 25px;
+}

@@ -351,7 +351,7 @@ const Sales = (props) => {
     setloading(true);
     const response = await fetch("https://backend-zain-production.up.railway.app/myorders", {
       headers: {
-        Authorization: params.id,
+        Authorization: params.shop_id,
       },
     });
     const data = await response.json();
@@ -383,7 +383,7 @@ const Sales = (props) => {
 
   return (
     <Fragment>
-      <Saleshead />
+      <h2>My store sales</h2>
       <section>
         {!loading && <Saleslist Sales={orders} />}
         {loading && <p>Loading..</p>}
@@ -485,7 +485,7 @@ function Productsinshopapp() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://backend-zain-production.up.railway.app/use/shops/products", {
+      const response = await fetch("http://localhost:8080/use/shops/products", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -503,7 +503,27 @@ function Productsinshopapp() {
           price: itemsData.price,
           amount: itemsData.quantity,
           shop_id: itemsData.shop_id,
-          images: `https://backend-zain-production.up.railway.app/images/${itemsData.images}`,
+          images: `http://localhost:8080/images/${itemsData.images}`,
+          usd: itemsData.usd,
+          EUR: itemsData.EUR,
+          GBP: itemsData.GBP,
+          JPY: itemsData.JPY,
+          CAD: itemsData.CAD,
+          AUD: itemsData.AUD,
+          CHF: itemsData.CHF,
+          CNY: itemsData.CNY,
+          INR: itemsData.INR,
+          BRL: itemsData.BRL,
+          RUB: itemsData.RUB,
+          KRW: itemsData.KRW,
+          SGD: itemsData.SGD,
+          NZD: itemsData.NZD,
+          MXN: itemsData.MXN,
+          HKD: itemsData.HKD,
+          TRY: itemsData.TRY,
+          ZAR: itemsData.ZAR,
+          SEK: itemsData.SEK,
+          NOK: itemsData.NOK,
         };
       });
 
@@ -529,7 +549,26 @@ function Productsinshopapp() {
 }
 const Addproductstodatabase = (props) => {
   const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
+  const [usd, setUSD] = useState("");
+  const [EUR, setEUR] = useState("");
+  const [GBP, setGBP] = useState("");
+  const [JPY, setJPY] = useState("");
+  const [CAD, setCAD] = useState("");
+  const [AUD, setAUD] = useState("");
+  const [CHF, setCHF] = useState("");
+  const [CNY, setCNY] = useState("");
+  const [INR, setINR] = useState("");
+  const [BRL, setBRL] = useState("");
+  const [RUB, setRUB] = useState("");
+  const [KRW, setKRW] = useState("");
+  const [SGD, setSGD] = useState("");
+  const [NZD, setNZD] = useState("");
+  const [MXN, setMXN] = useState("");
+  const [HKD, setHKD] = useState("");
+  const [TRY, setTRY] = useState("");
+  const [ZAR, setZAR] = useState("");
+  const [SEK, setSEK] = useState("");
+  const [NOK, setNOK] = useState("");
   const [amount, setAmount] = useState("");
   const [image, setImage] = useState(null);
   const [payment, setpayment] = useState('')
@@ -544,9 +583,28 @@ const Addproductstodatabase = (props) => {
     const formData = new FormData();
     formData.append("image", image);
     formData.append("title", title);
-    formData.append("price", price);
     formData.append("amount", amount);
     formData.append("payment", payment)
+    formData.append("usd", usd);
+    formData.append("EUR", EUR);
+    formData.append("GBP", GBP);
+    formData.append("JPY", JPY);
+    formData.append("CAD", CAD);
+    formData.append("AUD", AUD);
+    formData.append("CHF", CHF);
+    formData.append("CNY", CNY);
+    formData.append("INR", INR);
+    formData.append("BRL", BRL);
+    formData.append("RUB", RUB);
+    formData.append("KRW", KRW);
+    formData.append("SGD", SGD);
+    formData.append("NZD", NZD);
+    formData.append("MXN", MXN);
+    formData.append("HKD", HKD);
+    formData.append("TRY", TRY);
+    formData.append("ZAR", ZAR);
+    formData.append("SEK", SEK);
+    formData.append("NOK", NOK);
  
     Axios.post("http://localhost:8080/addProduct", formData, {
       headers: {
@@ -575,18 +633,10 @@ const Addproductstodatabase = (props) => {
           onChange={(e) => setTitle(e.target.value)}
         />
  
-        <label>Product Price</label>
-        <input
-          type="text"
-          placeholder="Product price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
- 
         <label>Product Quantity</label>
         <input
           type="text"
-          placeholder="Product amount"
+          placeholder="Product Quantity"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
@@ -597,7 +647,149 @@ const Addproductstodatabase = (props) => {
           value={payment}
           onChange={(e) => setpayment(e.target.value)}
         />
- 
+
+        <label>USD</label>
+        <input
+          type="text"
+          placeholder="USD"
+          value={usd}
+          onChange={(e) => setUSD(e.target.value)}
+        />
+        <label>EUR</label>
+        <input
+          type="text"
+          placeholder="EUR"
+          value={EUR}
+          onChange={(e) => setEUR(e.target.value)}
+        />
+        <label>GBP</label>
+        <input
+          type="text"
+          placeholder="GBP"
+          value={GBP}
+          onChange={(e) => setGBP(e.target.value)}
+        />
+        <label>JPY</label>
+        <input
+          type="text"
+          placeholder="JPY"
+          value={JPY}
+          onChange={(e) => setJPY(e.target.value)}
+        />
+        <label>CAD</label>
+        <input
+          type="text"
+          placeholder="CAD"
+          value={CAD}
+          onChange={(e) => setCAD(e.target.value)}
+        />
+        <label>AUD</label>
+        <input
+          type="text"
+          placeholder="AUD"
+          value={AUD}
+          onChange={(e) => setAUD(e.target.value)}
+        />
+        <label>CHF</label>
+        <input
+          type="text"
+          placeholder="CHF"
+          value={CHF}
+          onChange={(e) => setCHF(e.target.value)}
+        />
+        <label>CNY</label>
+        <input
+          type="text"
+          placeholder="CNY"
+          value={CNY}
+          onChange={(e) => setCNY(e.target.value)}
+        />
+        <label>INR</label>
+        <input
+          type="text"
+          placeholder="INR"
+          value={INR}
+          onChange={(e) => setINR(e.target.value)}
+        />
+        <label>BRL</label>
+        <input
+          type="text"
+          placeholder="BRL"
+          value={BRL}
+          onChange={(e) => setBRL(e.target.value)}
+        />
+        <label>RUB</label>
+        <input
+          type="text"
+          placeholder="RUB"
+          value={RUB}
+          onChange={(e) => setRUB(e.target.value)}
+        />
+        <label>Price in KRW</label>
+        <input
+          type="text"
+          placeholder="Price in KRW"
+          value={KRW}
+          onChange={(e) => setKRW(e.target.value)}
+        />
+        <label>Price in SGD</label>
+        <input
+          type="text"
+          placeholder="Price in SGD"
+          value={SGD}
+          onChange={(e) => setSGD(e.target.value)}
+        />
+        <label>Price in NZD</label>
+        <input
+          type="text"
+          placeholder="Price in NZD"
+          value={NZD}
+          onChange={(e) => setNZD(e.target.value)}
+        />
+        <label>Price in MXN</label>
+        <input
+          type="text"
+          placeholder="Price in MXN"
+          value={MXN}
+          onChange={(e) => setMXN(e.target.value)}
+        />
+        <label>Price in HKD</label>
+        <input
+          type="text"
+          placeholder="Price in HKD"
+          value={HKD}
+          onChange={(e) => setHKD(e.target.value)}
+        />
+        <label>Price in TRY</label>
+        <input
+          type="text"
+          placeholder="Price in TRY"
+          value={TRY}
+          onChange={(e) => setTRY(e.target.value)}
+        />
+        <label>Price in TRY</label>
+        <input
+          type="text"
+          placeholder="Price in TRY"
+          value={TRY}
+          onChange={(e) => setTRY(e.target.value)}
+        />
+        <label>Price in SEK</label>
+        <input
+          type="text"
+          placeholder="Price in SEK"
+          value={SEK}
+          onChange={(e) => setSEK
+            (e.target.value)}
+        />
+        <label>Price in NOK</label>
+        <input
+          type="text"
+          placeholder="Price in NOK"
+          value={NOK}
+          onChange={(e) => setNOK(e.target.value)}
+        />        
+
         <label>Image</label>
         <input
           type="file"
@@ -612,17 +804,101 @@ const Addproductstodatabase = (props) => {
  };
  
 
-const Products = (props) => {
+ const Products = (props) => {
+  const Pricing = ({ country }) => {
+    if (country === "India") {
+      return <h3>{props.INR} ₹</h3>;
+    } else if (country === "europe") {
+      return <h3>{props.EUR} €</h3>;
+    } else if (country === "united kingdom") {
+      return <h3>{props.GBP} £</h3>;
+    } else if (country === "japan") {
+      return <h3>{props.JPY} ¥</h3>;
+    } else if (country === "canada") {
+      return <h3>{props.CAD} CAD</h3>;
+    } else if (country === "australia") {
+      return <h3>{props.AUD} AUD</h3>;
+    } else if (country === "switzerland") {
+      return <h3>{props.CHF} Fr</h3>;
+    } else if (country === "china") {
+      return <h3>{props.CNY} ¥</h3>;
+    } else if (country === "brazil") {
+      return <h3>{props.BRL} R$</h3>;
+    } else if (country === "south korea") {
+      return <h3>{props.KRW} ₩</h3>;
+    } else if (country === "singapore") {
+      return <h3>{props.SGD} SGD</h3>;
+    } else if (country === "new zealand") {
+      return <h3>{props.NZD} NZD</h3>;
+    } else if (country === "mexico") {
+      return <h3>{props.MXN} MXN</h3>;
+    } else if (country === "hong kong") {
+      return <h3>{props.HKD} HKD</h3>;
+    } else if (country === "turkey") {
+      return <h3>{props.TRY} ₺</h3>;
+    } else if (country === "south africa") {
+      return <h3>{props.ZAR} R</h3>;
+    } else if (country === "sweden") {
+      return <h3>{props.SEK} kr</h3>;
+    } else if (country === "norway") {
+      return <h3>{props.NOK} kr</h3>;
+    } else {
+      return <h3>{props.USD} $</h3>;
+    }
+  };
+
+  const [name, setName] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchUsersHandler = useCallback(async () => {
+    setLoading(true);
+    const token = localStorage.getItem("token");
+    
+    try {
+      const response = await fetch("http://localhost:8080/users/", {
+        headers: {
+          Authorization: token,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch user data.");
+      }
+
+      const data = await response.json();
+      const transformedUsers = data.user.map((userData) => {
+        return {
+          first_name: userData.first_name,
+          last_name: userData.last_name,
+          country: userData.country,
+        };
+      });
+
+      setName(transformedUsers);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchUsersHandler();
+  }, [fetchUsersHandler]);
+
   return (
     <div className="productmodeltemp3">
-      <li>
-        <div className="productimgtemp3">
-          <img src={props.images} alt="Product Image" />
-        </div>
-        <div className="product__titletemp3">
-          <h2>{props.title}</h2>
-        </div>
-      </li>
+      {name.map((user, index) => (
+        <li key={index}>
+          <div className="productimgtemp3">
+            <img src={props.images} alt="Product Image" />
+          </div>
+          <div className="product__titletemp3">
+            <h2>{props.title}</h2>
+          </div>
+          <Pricing country={user.country} />
+        </li>
+      ))}
     </div>
   );
 };
@@ -649,7 +925,7 @@ const ProductList = (props) => {
         {props.items.map((item) => (
           <div key={item.id}>
             <Link
-              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}/`}
+             to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}`}
             >
               <Products
                 id={item.id}
@@ -658,6 +934,27 @@ const ProductList = (props) => {
                 price={item.price}
                 shop_id={item.shop_id}
                 images={item.images}
+                payment={item.payment}
+                usd={item.usd}
+                EUR={item.EUR}
+                GBP={item.GBP}
+                JPY={item.JPY}
+                CAD={item.CAD}
+                AUD={item.AUD}
+                CHF={item.CHF}
+                CNY={item.CNY}
+                INR={item.INR}
+                BRL={item.BRL}
+                RUB={item.RUB}
+                KRW={item.KRW}
+                SGD={item.SGD}
+                NZD={item.NZD}
+                MXN={item.MXN}
+                HKD={item.HKD}
+                TRY={item.TRY}
+                ZAR={item.ZAR}
+                SEK={item.SEK}
+                NOK={item.NOK}
               />
             </Link>
           </div>
@@ -865,7 +1162,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -910,7 +1207,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -955,7 +1252,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -1000,7 +1297,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -1045,7 +1342,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );
@@ -1090,7 +1387,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Image</button>
       </form>
     </div>
   );

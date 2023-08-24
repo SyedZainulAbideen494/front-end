@@ -125,6 +125,7 @@ const Orderform = (props) => {
   const [id, setid] = useState("");
   const [title, setitle] = useState("");
   const [shop_id, setshop_id] = useState("");
+  const [paymentlink, setPaymentLink] = useState('');
 
   const nameHandler = (event) => {
     setname(event.target.value);
@@ -190,6 +191,27 @@ const Orderform = (props) => {
   };
 
   const token = localStorage.getItem("token");
+  const nav = useNavigate()
+
+  const fetchProdspayhandler = useCallback(async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/imgprods/`, {
+        headers: {
+          Authorization: params.id,
+        },
+      });
+      const data = await response.json();
+      const payment = data.img[0]?.payment || '';
+      setPaymentLink(payment);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [params.id]);
+
+  useEffect(() => {
+    fetchProdspayhandler();
+  }, [fetchProdspayhandler]);
+
 
   const orderhandler = () => {
     Axios.post(
@@ -212,7 +234,10 @@ const Orderform = (props) => {
           Authorization: token,
         },
       }
-    );
+    ).then(() => {
+      // Redirect to the payment link
+      window.location.href = paymentlink;
+    });
   };
 
   return (
@@ -768,24 +793,25 @@ function Prodsright() {
           {loading ? (
             <div>Loading image...</div>
           ) : (
-            <section>
+            <section className="imgprodsdetailsfordetails6imgs">
             {img1 && <Showimg1/>}
             {img2 && <Showimg2/>}
             {img3 && <Showimg3/>}
             {img4 && <Showimg4/>}
             {img5 && <Showimg5/>}
             {img6 && <Showimg6/>}
-            <button onClick={showmg1}>Image 1</button>
-            <button onClick={showmg2}>Image 2</button>
-            <button onClick={showmg3}>Image 3</button>
-            <button onClick={showmg4}>Image 4</button>
-            <button onClick={showmg5}>Image 5</button>
-            <button onClick={showmg6}>Image 6</button>
+            
             </section>
           )}
         </div>
 
         <div className="prodes__right__full">
+          <button onClick={showmg1}>Image 1</button>
+            <button onClick={showmg2}>Image 2</button>
+            <button onClick={showmg3}>Image 3</button>
+            <button onClick={showmg4}>Image 4</button>
+            <button onClick={showmg5}>Image 5</button>
+            <button onClick={showmg6}>Image 6</button>
           <div className="prods__title">
             <h2>{params.title}</h2>
           </div>
@@ -798,9 +824,9 @@ function Prodsright() {
           <br />
           <div className="prods__detail__btn">
             <span className="prods__detail_addtocart_btn">
-              <a href={paymentlink}>
-                <button>Buy Now</button>
-              </a>
+            
+                <button onClick={orderOpenHandler}>Buy Now</button>
+                <a href={paymentlink}></a>
               {orderform && <Orderform onhidehandler={orderCloseHandler} />}
             </span>
           </div>
