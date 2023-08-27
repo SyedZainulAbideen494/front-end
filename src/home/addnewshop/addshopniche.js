@@ -21,7 +21,6 @@ const Addshopniche = () => {
         <div className="txt2121">
           <h1>PLEASE SELECT A TEMPLATE</h1>
         </div>
-        <h2>free templates</h2>
         <span className="temp">
           <Link to="/Add/shop/template1/form">
             <button>Dropment template 1 </button>
@@ -56,7 +55,6 @@ const Addshopniche = () => {
               </Link>
             </span>
           </div>
-          <h2>Fashion brand templates</h2>
           <div className="temp">
             <span>
               <Link to="/Add/Tempate4/Form">
@@ -81,7 +79,6 @@ const Addshopniche = () => {
               </Link>
             </span>
           </div>
-          <h2>Fashion brand templates</h2>
           <div className="temp">
             <span>
               <Link to="/Add/template6/form">
@@ -94,6 +91,19 @@ const Addshopniche = () => {
               </Link>
             </span>
           </div>
+          <div className="temp">
+            <span>
+              <Link to="/Add/template6/form">
+                <button>Dropment template 7</button>
+              </Link>
+            </span>
+            <span className="previewbtn">
+              <Link to="/Template7/preview">
+                <button>Preview</button>
+              </Link>
+            </span>
+          </div>
+
           <br />
         </span>
         <h2></h2>

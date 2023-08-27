@@ -65,6 +65,9 @@ const Chat = (props) => {
 
 function Saleschat(props) {
   const [message, setmessage] = useState([]);
+  const [order, setorder]  =useState([])
+  const [loading, setloading] = useState(false);
+  const params = useParams();
 
   const addshophandler = () => {
     Axios.post(
@@ -80,14 +83,50 @@ function Saleschat(props) {
     );
   };
 
-  const params = useParams();
+    const fetchmessages = useCallback(async () => {
+    setloading(true);
+    const token = localStorage.getItem("token");
+    setloading(true);
+    const response = await fetch("http://localhost:8080/order/details", {
+      headers: {
+        Authorization: params.orders_id,
+      },
+    });
+    const data = await response.json();
+    const transformedser = data.order.map((userdata) => {
+      return {
+        orders_id: userdata.orders_id,
+        name: userdata.name,
+        Phone: userdata.Phone,
+        Email: userdata.Email,
+        streetadrs: userdata.streetadrs,
+        city: userdata.city,
+        state: userdata.state,
+        zipcode: userdata.zipcode,
+        country: userdata.country,
+        id: userdata.id,
+        product: userdata.product,
+        sender_id: userdata.sender_id,
+        shop_id: userdata.shop_id,
+        message: userdata.message,
+      };
+    });
+    setorder(transformedser);
+    setloading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchmessages();
+  }, []);
+
+ 
   return (
     <Fragment>
       <div className="saleschatheader">
         <header>
           <div className="headerbtnssaleschat">
             <span className="btns">
-              <h2>{params.name}</h2>
+              <h2>{order[0]?.name}</h2>
             </span>
             <Link to="/profile">
               <span className="btns">
@@ -100,16 +139,16 @@ function Saleschat(props) {
 
       <div className="chatinterface">
         <div className="orderdetails">
-          <h3>{params.orders_id}</h3>
-          <h3>{params.name}</h3>
-          <h3>{params.Phone}</h3>
-          <h3>{params.Email}</h3>
-          <h3>{params.streetadrs}</h3>
-          <h3>{params.city}</h3>
-          <h3>{params.state}</h3>
-          <h3>{params.country}</h3>
-          <h3>{params.zaipcode}</h3>
-          <h3>{params.product}</h3>
+          <h3>{order[0]?.orders_id}</h3>
+          <h3>{order[0]?.name}</h3>
+          <h3>{order[0]?.Phone}</h3>
+          <h3>{order[0]?.Email}</h3>
+          <h3>{order[0]?.streetadrs}</h3>
+          <h3>{order[0]?.city}</h3>
+          <h3>{order[0]?.state}</h3>
+          <h3>{order[0]?.country}</h3>
+          <h3>{order[0]?.zaipcode}</h3>
+          <h3>{order[0]?.product}</h3>
         </div>
       </div>
       <div className="chatininterface">
@@ -134,5 +173,6 @@ function Saleschat(props) {
     </Fragment>
   );
 }
+
 
 export default Saleschat;

@@ -376,7 +376,7 @@ const Saleslist = (props) => {
         <ul>
           {props.Sales.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
+              to={`/saleschat/${itemdata.orders_id}`}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -1377,7 +1377,28 @@ const params = useParams()
           images5: `http://localhost:8080/images/${itemsdata.images5}`,
           images6: `http://localhost:8080/images/${itemsdata.images6}`,
           images7: `http://localhost:8080/images/${itemsdata.images7}`,
-
+          shop_id: itemsdata.shop_id,
+          shop_name: itemsdata.shop_name,
+          shop_owner: itemsdata.shop_owner,
+          shop_tagline: itemsdata.shop_tagline,
+          shop_blockhead2: itemsdata.shop_blockhead2,
+          shop_block2: itemsdata.shop_block2,
+          shop_blockhead3: itemsdata.shop_blockhead3,
+          shop_block3: itemsdata.shop_block3,
+          user_id: itemsdata.user_id,
+          shop_blockhead1: itemsdata.shop_blockhead1,
+          shop_block1: itemsdata.shop_block1,
+          shop_keyhead1: itemsdata.shop_keyhead1,
+          shop_key1: itemsdata.shop_key1,
+          shop_keyhead2: itemsdata.shop_keyhead2,
+          shop_key2: itemsdata.shop_key2,
+          shop_keyhead3: itemsdata.shop_keyhead3,
+          shop_key3: itemsdata.shop_key3,
+          shop_email: itemsdata.shop_email,
+          shop_phone: itemsdata.shop_phone,
+          temp2: itemsdata.temp2,
+          insta: itemsdata.insta,
+          salestext: itemsdata.salestext
         };
       });
       setItems(transformedItems);
@@ -1400,7 +1421,7 @@ const params = useParams()
       <div className="header1temp2">
         <header>
           <img src={items[0]?.images1} alt="image 1"/>
-          <h2>Shop Name</h2>
+          <h2>{items[0]?.shop_name}</h2>
           <ul>
             <li><button>Products</button></li>
             <li><button>about us</button></li>
@@ -1416,8 +1437,8 @@ const params = useParams()
       <div className="keystemp2">
         <div className="key1temp2">
           <section className="key1temp2text">
-            <h2>Key head1</h2>
-            <p>key 1</p>
+            <h2>{items[0]?.shop_keyhead1}</h2>
+            <p>{items[0]?.shop_key1}</p>
           </section>
           <section>
             <img src={items[0]?.images3} alt="images 3"/>
@@ -1425,8 +1446,8 @@ const params = useParams()
         </div>
         <div className="key1temp2">
           <section className="key1temp2text">
-            <h2>Key head1</h2>
-            <p>key 1</p>
+            <h2>{items[0]?.shop_keyhead2}</h2>
+            <p>{items[0]?.shop_key2}</p>
           </section>
           <section>
             <img src={items[0]?.images4} alt="image 4"/>
@@ -1434,8 +1455,8 @@ const params = useParams()
         </div>
         <div className="key1temp2">
           <section className="key1temp2text">
-            <h2>Key head1</h2>
-            <p>key 1</p>
+            <h2>{items[0]?.shop_keyhead3}</h2>
+            <p>{items[0]?.shop_key3}</p>
           </section>
           <section>
             <img src={items[0]?.images5} alt="image 5"/>
@@ -1445,8 +1466,8 @@ const params = useParams()
       <div className="aboutustemp2">
         <div className="abt1temp2">
           <section className="abt1no1temp2text">
-            <h1>Block 1 heading</h1>
-            <p>Block 1 details about above heading some random text its a checking by dropment developer 123 text 123</p>
+            <h1>{items[0]?.shop_blockhead1}</h1>
+            <p>{items[0]?.shop_block1}</p>
           </section>
           <section className="abt1no1temp2img">
             <img src={items[0]?.images6} alt="image 6"/>
@@ -1466,9 +1487,9 @@ const params = useParams()
           <div className="contactstemp2">
             <h2>Contact us</h2>
             <ul>
-              <li>@instagram</li>
-              <li>77665544</li>
-              <li>You@gmail.com</li>
+              <li>{items[0]?.insta}</li>
+              <li>{items[0]?.shop_phone}</li>
+              <li>{items[0]?.shop_email}</li>
             </ul>
           </div>
         </footer>

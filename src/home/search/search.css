@@ -1,19 +1,52 @@
-.inpsearchbar input {
-    padding: 15px 420px;
-}
-
-.inpsearchbar button {
-    padding: 15px 20px;
-    background-color: transparent;
-    border-radius: 15px;
-    border: 1px solid black;
-    margin-left: 5px;
-}
-
-.searchresults {
-    display: inline-flex;
-}
-.searchresults span {
-    margin-right: 200px;
-}
-
+@media (min-width: 312px) and (max-width: 480px) {
+    .inpsearchbar input {
+        padding: 20px;
+        width: 280px;
+        height: 20px;
+        border-radius: 25px;
+    }
+    .inpsearchbar button {
+        padding: 15px;
+        border-radius: 25px;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    .inpsearchbar input {
+        padding: 20px;
+        width: 450px;
+        height: 20px;
+        border-radius: 25px;
+    }
+    .inpsearchbar button {
+        padding: 20px;
+        border-radius: 25px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .inpsearchbar input {
+        padding: 20px;
+        width: 730px;
+        height: 20px;
+        border-radius: 25px;
+    }
+    .inpsearchbar button {
+        padding: 25px;
+        border-radius: 25px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .inpsearchbar input {
+        padding: 20px;
+        width: 1000px;
+        height: 20px;
+        border-radius: 25px;
+    }
+    .inpsearchbar button {
+        padding: 14px;
+        border-radius: 25px;
+    }
+  }
+  

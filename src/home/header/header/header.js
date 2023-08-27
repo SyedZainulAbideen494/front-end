@@ -43,7 +43,9 @@ const Mobileheader = (props) => {
               </span>
             </Link>
             <span className="largescreenheaderbtns">
-              <button>Search</button>
+              <Link to="/search">
+               <button>Search</button>
+              </Link>
             </span>
             <span className="largescreenheaderauthbtns">
               {auth ? (

@@ -349,7 +349,7 @@ const Sales = (props) => {
     setloading(true);
 
     setloading(true);
-    const response = await fetch("https://backend-zain-production.up.railway.app/myorders", {
+    const response = await fetch("http://localhost:8080/myorders", {
       headers: {
         Authorization: params.shop_id,
       },
@@ -439,7 +439,7 @@ const Saleslist = (props) => {
         <ul>
           {props.Sales.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
+              to={`/saleschat/${itemdata.orders_id}`}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -1432,7 +1432,27 @@ const params = useParams()
           images5: `http://localhost:8080/images/${itemsdata.images5}`,
           images6: `http://localhost:8080/images/${itemsdata.images6}`,
           images7: `http://localhost:8080/images/${itemsdata.images7}`,
-
+          shop_id: itemsdata.shop_id,
+          shop_name: itemsdata.shop_name,
+          shop_owner: itemsdata.shop_owner,
+          shop_tagline: itemsdata.shop_tagline,
+          shop_blockhead2: itemsdata.shop_blockhead2,
+          shop_block2: itemsdata.shop_block2,
+          shop_blockhead3: itemsdata.shop_blockhead3,
+          shop_block3: itemsdata.shop_block3,
+          user_id: itemsdata.user_id,
+          shop_blockhead1: itemsdata.shop_blockhead1,
+          shop_block1: itemsdata.shop_block1,
+          shop_keyhead1: itemsdata.shop_keyhead1,
+          shop_key1: itemsdata.shop_key1,
+          shop_keyhead2: itemsdata.shop_keyhead2,
+          shop_key2: itemsdata.shop_key2,
+          shop_keyhead3: itemsdata.shop_keyhead3,
+          shop_key3: itemsdata.shop_key3,
+          shop_email: itemsdata.shop_email,
+          shop_phone: itemsdata.shop_phone,
+          insta: itemsdata.insta,
+          temp3: itemsdata.temp3
         };
       });
       setItems(transformedItems);
@@ -1455,7 +1475,7 @@ const params = useParams()
           <div className="temp3logo">
             <img src={items[0]?.images1} alt="image 1"/>
           </div>
-          <h1>{params.shop_name}</h1>
+          <h1>{items[0]?.shop_name}</h1>
           <div className="btnsheader1temp3">
             <ul>
               <li><button>Our services</button></li>
@@ -1468,10 +1488,10 @@ const params = useParams()
       <div className="header2temp3">
         <section className="textsectiontemp3header2">
           <div className="salestexttemp3">
-            <h1>{params.salestext}</h1>
+            <h1>{items[0]?.salestext}</h1>
           </div>
           <div className="taglinetemp3">
-            <h1>{params.shop_tagline}</h1>
+            <h1>{items[0]?.shop_tagline}</h1>
           </div>
         </section>
         <section className="imgsectionintemp3header2">
@@ -1485,8 +1505,8 @@ const params = useParams()
       <div className="abttemp3part1">
         <div className="abt1no1part1temp3">
           <section className="textsectemp3abt1part1">
-            <h2>{params.shop_blockhead1}</h2>
-            <p>{params.shop_block1}</p>
+            <h2>{items[0]?.shop_blockhead1}</h2>
+            <p>{items[0]?.shop_block1}</p>
           </section>
           <section className="imgsecabt1no1tmep3part1">
             <img src={items[0]?.images3} alt="images 3"/>
@@ -1497,14 +1517,14 @@ const params = useParams()
             <img src={items[0]?.images4} alt="images 4"/>
           </section>
           <section className="textsectemp3abt1part1">
-            <h2>{params.shop_blockhead2}</h2>
-            <p>{params.shop_block2}</p>
+            <h2>{items[0]?.shop_blockhead2}</h2>
+            <p>{items[0]?.shop_block2}</p>
           </section>          
         </div>
         <div className="abt1no1part1temp3">
           <section className="textsectemp3abt1part1">
-            <h2>{params.shop_blockhead3}</h2>
-            <p>{params.shop_block3}</p>
+            <h2>{items[0]?.shop_blockhead3}</h2>
+            <p>{items[0]?.shop_block3}</p>
           </section>
           <section className="imgsecabt1no1tmep3part1">
             <img src={items[0]?.images5} alt="images 5"/>
@@ -1513,17 +1533,17 @@ const params = useParams()
       </div>
       <div className="testimonialtemp3">
 
-        <section className="testimonial1temp3">{params.shop_key3}<br/>Clients</section>
-        <section className="testimonial1temp3">{params.shop_keyhead3}<img src={star}/><br/>Rating</section>
-        <section className="testimonial1temp3">{params.shop_key2}</section>
+        <section className="testimonial1temp3">{items[0]?.shop_key3}<br/>Clients</section>
+        <section className="testimonial1temp3">{items[0]?.shop_keyhead3}<img src={star}/><br/>Rating</section>
+        <section className="testimonial1temp3">{items[0]?.shop_key2}</section>
       </div>
       <div className="footerfortemp3">
         <footer>
           <h2>Contact us</h2>
           <ul>
-            <li>{params.insta}</li>
-            <li>{params.shop_email}</li>
-            <li>{params.shop_phone}</li>
+            <li>{items[0]?.insta}</li>
+            <li>{items[0]?.shop_email}</li>
+            <li>{items[0]?.shop_phone}</li>
           </ul>
         </footer>
       </div>

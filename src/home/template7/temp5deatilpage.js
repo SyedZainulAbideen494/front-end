@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { useParams, json, useLoaderData } from "react-router-dom";
 import Shopsright from "./shopsright";
 import Shopsinprofile from "./shopsini";
-import Template3website from "./template8app";
+import Template3website from "./template5app";
 
 function Temp4detailspage() {
   const data = useLoaderData();

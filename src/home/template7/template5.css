@@ -1,0 +1,100 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+
+}
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px){
+    .header1temp7 header {
+        display: inline-flex;
+    }
+    .header1temp7 img {
+        width: 550px;
+        height: 500px;
+    }
+    .btnsectionheader1temp7 li {
+        display: inline-flex;
+    }
+    .btnsectionheader1temp7 ul {
+        list-style: none;
+    }
+    .btnsectionheader1temp7 button {
+        margin-left: 50px;
+        border-radius: 25px;
+         background-color: transparent;
+         border: transparent;
+         color: white;
+    }
+    .btnsectionheader1temp7 {
+        width: 700px;
+        background-color: #14213d;
+    }
+    .btnsectionheader1temp7 h1 {
+        width: 400px;
+        margin-left: 50px;
+        color: white;
+        font-size: xx-large;
+        margin-top: 90px;
+    }
+    .btnviewnowtemp7 button {
+        color: white;
+        background-color: #0077b6;
+        padding: 20px;
+        border-radius: 15px;
+        width: 70px;
+        margin-left: 90px;
+    }
+    .abtno1temp7 {
+        display: inline-flex;
+        margin-top: 150px;
+    }
+    .imgsectiontemp7abtno1 img {
+        width: 500px;
+        height: 400px;
+        border-radius: 15px;
+    }
+    .textsectionabtno1temp7 {
+        width: 600px;
+        margin-right: 100px;
+        margin-left: 20px;
+        text-align: center;
+    }
+    .textsectionabtno1temp7 h1 {
+        font-size: xx-large;
+        color: #0077b6;
+        width: 400px;
+    }
+    .textsectionabtno1temp7 button {
+        padding: 20px;
+        border: 1px solid #0077b6;
+        background-color: #0077b6;
+        border-radius: 15px;
+        color: white;
+    }
+    .textsectionabtno1temp7 p {
+        width: 400px;
+    }
+    .productimgtemp7 img {
+        width: 180px;
+        height: 150px;
+        border-radius: 15px;
+        margin-left: 10px;
+    }
+    .productmodeltemp7 {
+        width: 200px;
+        padding: 20px;
+        list-style: none;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+
+
+
+

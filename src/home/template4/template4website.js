@@ -376,7 +376,7 @@ const Saleslist = (props) => {
         <ul>
           {props.Sales.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
+              to={`/saleschat/${itemdata.orders_id}`}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -1365,6 +1365,7 @@ const Addimage1 = (props) => {
     </div>
   );
  };
+
  
 
 const Template4website = (props) => {
@@ -1407,7 +1408,27 @@ const params = useParams();
           images5: `http://localhost:8080/images/${itemsdata.images5}`,
           images6: `http://localhost:8080/images/${itemsdata.images6}`,
           images7: `http://localhost:8080/images/${itemsdata.images7}`,
-
+          shop_id: itemsdata.shop_id,
+          shop_name: itemsdata.shop_name,
+          shop_owner: itemsdata.shop_owner,
+          shop_tagline: itemsdata.shop_tagline,
+          shop_blockhead2: itemsdata.shop_blockhead2,
+          shop_block2: itemsdata.shop_block2,
+          shop_blockhead3: itemsdata.shop_blockhead3,
+          shop_block3: itemsdata.shop_block3,
+          user_id: itemsdata.user_id,
+          shop_blockhead1: itemsdata.shop_blockhead1,
+          shop_block1: itemsdata.shop_block1,
+          shop_keyhead1: itemsdata.shop_keyhead1,
+          shop_key1: itemsdata.shop_key1,
+          shop_keyhead2: itemsdata.shop_keyhead2,
+          shop_key2: itemsdata.shop_key2,
+          shop_keyhead3: itemsdata.shop_keyhead3,
+          shop_key3: itemsdata.shop_key3,
+          shop_email: itemsdata.shop_email,
+          shop_phone: itemsdata.shop_phone,
+          temp4: itemsdata.temp4,
+          insta: itemsdata.insta
         };
       });
       setItems(transformedItems);
@@ -1452,7 +1473,7 @@ const params = useParams();
         <main>
         <div className="temp4header1">
           <header>
-            <h1>{params.shop_name}</h1>
+            <h1>{items[0]?.shop_name}</h1>
             <div className="btnstemp4head1">
               <ul>
                 <li><button onClick={scrollToItems}>Products</button></li>
@@ -1473,14 +1494,14 @@ const params = useParams();
               <img src={items[0]?.images2}/>
             </span>
             <span>
-              <h2>{params.shop_blockhead1}</h2>
-              <p>{params.shop_block1}</p>
+              <h2>{items[0]?.shop_blockhead1}</h2>
+              <p>{items[0]?.shop_block1}</p>
             </span>
           </div>
           <div className="abt1part2temp4">
           <span>
-              <h2>{params.shop_blockhead2}</h2>
-              <p>{params.shop_block2}</p>
+              <h2>{items[0]?.shop_blockhead2}</h2>
+              <p>{items[0]?.shop_block2}</p>
             </span>
             <span>
               <img src={items[0]?.images3}/>
@@ -1491,8 +1512,8 @@ const params = useParams();
               <img src={items[0]?.images4}/>
             </span>
             <span>
-              <h2>{params.shop_blockhead3}</h2>
-              <p>{params.shop_block3}</p>
+              <h2>{items[0]?.shop_blockhead3}</h2>
+              <p>{items[0]?.shop_block3}</p>
             </span>
           </div>
         </div>
@@ -1507,8 +1528,8 @@ const params = useParams();
         </div>
         <div className="maindivforgrtimgtemp4">
           <div className="temp4textgrtimg">
-            <h2>{params.shop_keyhead1}</h2>
-            <h4>{params.shop_key1}</h4>
+            <h2>{items[0]?.shop_keyhead1}</h2>
+            <h4>{items[0]?.shop_key1}</h4>
           </div>
         <div className="greateimgtemp4">
           <section>
@@ -1532,9 +1553,9 @@ const params = useParams();
           <footer>
             <h2>Contact us</h2>
             <ul>
-              <li>{params.insta}</li>
-              <li>{params.shop_phone}</li>
-              <li>{params.shop_email}</li>
+              <li>{items[0]?.insta}</li>
+              <li>{items[0]?.shop_phone}</li>
+              <li>{items[0]?.shop_email}</li>
             </ul>
           </footer>
         </div>

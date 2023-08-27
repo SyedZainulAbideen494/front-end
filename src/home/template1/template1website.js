@@ -378,7 +378,7 @@ const Saleslist = (props) => {
         <ul>
           {props.Sales.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
+              to={`/saleschat/${itemdata.orders_id}`}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -1410,7 +1410,28 @@ const params = useParams()
           images5: `http://localhost:8080/images/${itemsdata.images5}`,
           images6: `http://localhost:8080/images/${itemsdata.images6}`,
           images7: `http://localhost:8080/images/${itemsdata.images7}`,
-
+          shop_id: itemsdata.shop_id,
+          shop_name: itemsdata.shop_name,
+          shop_owner: itemsdata.shop_owner,
+          shop_tagline: itemsdata.shop_tagline,
+          shop_blockhead2: itemsdata.shop_blockhead2,
+          shop_block2: itemsdata.shop_block2,
+          shop_blockhead3: itemsdata.shop_blockhead3,
+          shop_block3: itemsdata.shop_block3,
+          user_id: itemsdata.user_id,
+          shop_blockhead1: itemsdata.shop_blockhead1,
+          shop_block1: itemsdata.shop_block1,
+          shop_keyhead1: itemsdata.shop_keyhead1,
+          shop_key1: itemsdata.shop_key1,
+          shop_keyhead2: itemsdata.shop_keyhead2,
+          shop_key2: itemsdata.shop_key2,
+          shop_keyhead3: itemsdata.shop_keyhead3,
+          shop_key3: itemsdata.shop_key3,
+          shop_email: itemsdata.shop_email,
+          shop_phone: itemsdata.shop_phone,
+          temp1: itemsdata.temp1,
+          insta: itemsdata.insta,
+          salestext: itemsdata.salestext
         };
       });
       setItems(transformedItems);
@@ -1433,7 +1454,7 @@ const params = useParams()
         <div className="temp1head2">
           <header>
             <img src={items[0]?.images1} alt="image 1"/>
-            <h2>shop name</h2>
+            <h2>{items[0]?.shop_name}</h2>
             <ul>
               <li><button>Our service</button></li>
               <li><button>About us</button></li>
@@ -1445,8 +1466,8 @@ const params = useParams()
           <header>
             <div className="temp1headtextsection">
               <section>
-              <h1 className="slaestexttemp1">{params.salestext}</h1>
-              <h1>{params.shop_tagline}</h1>
+              <h1 className="slaestexttemp1">{items[0]?.salestext}</h1>
+              <h1>{items[0]?.shop_tagline}</h1>
               </section>
             </div>
             <div className="temp1head1img">
@@ -1462,8 +1483,8 @@ const params = useParams()
               <img src={items[0]?.images3} alt="image 3"/>
             </section>
             <section className="textsectiontemp1key1">
-              <h2>{params.shop_keyhead1}</h2>
-              <p>{params.shop_key1}</p>
+              <h2>{items[0]?.shop_keyhead1}</h2>
+              <p>{items[0]?.shop_key1}</p>
             </section>
           </div>
           <div className="key1temp1">
@@ -1471,8 +1492,8 @@ const params = useParams()
               <img src={items[0]?.images4} alt="image 4"/>
             </section>
             <section className="textsectiontemp1key1">
-              <h2>{params.shop_keyhead2}</h2>
-              <p>{params.shop_key2}</p>
+              <h2>{items[0]?.shop_keyhead2}</h2>
+              <p>{items[0]?.shop_key2}</p>
             </section>
           </div>
           <div className="key1temp1">
@@ -1480,8 +1501,8 @@ const params = useParams()
               <img src={items[0]?.images5} alt="image 5"/>
             </section>
             <section className="textsectiontemp1key1">
-              <h2>{params.shop_keyhead3}</h2>
-              <p>{params.shop_key3}</p>
+              <h2>{items[0]?.shop_keyhead3}</h2>
+              <p>{items[0]?.shop_key3}</p>
             </section>
           </div>
         </div>
@@ -1490,27 +1511,27 @@ const params = useParams()
             <div className="whitelinetemp1">
           <section className="step1temp1">
             <h1 className="circletemp1">1</h1>
-            <h2>{params.shop_blockhead1}</h2>
+            <h2>{items[0]?.shop_blockhead1}</h2>
           </section><br/>
           <section className="step2temp1">
             <h1 className="circletemp1">2</h1>
-            <h2>{params.shop_block1}</h2>
+            <h2>{items[0]?.shop_block1}</h2>
           </section><br/>
           <section className="step3temp1">
             <h1 className="circletemp1">3</h1>
-            <h2>{params.shop_blockhead2}</h2>
+            <h2>{items[0]?.shop_blockhead2}</h2>
           </section><br/>
           <section className="step4temp1">
             <h1 className="circletemp1">4</h1>
-            <h2>{params.shop_block2}</h2>
+            <h2>{items[0]?.shop_block2}</h2>
           </section>
           </div>
           </main>
         </div>
         <div className="ourcomapnytypetemp1">
           <section className="ourcompanytypetexttemp1head">
-            <h1>Our {params.blockhead3}</h1>
-            <p>{params.shop_block3}</p>
+            <h1>Our {items[0]?.blockhead3}</h1>
+            <p>{items[0]?.shop_block3}</p>
             <button>Our services</button>
           </section>
           <section className="imgtypecomplaytemp1">
@@ -1525,9 +1546,9 @@ const params = useParams()
           <footer>
             <h2>Contact us</h2>
             <ul>
-              <li>{params.insta}</li>
-              <li>{params.shop_phone}</li>
-              <li>{params.shop_email}</li>
+              <li>{items[0]?.insta}</li>
+              <li>{items[0]?.shop_phone}</li>
+              <li>{items[0]?.shop_email}</li>
             </ul>
           </footer>
         </div>

@@ -5,15 +5,15 @@ import React, {
   Fragment,
   axios,
 } from "react";
-import Template3list from "./template7list";
+import Template3list from "./template5list";
 
-function Template4app() {
+function Template5app() {
   const [items, setitems] = useState([]);
   const [loading, setloading] = useState(false);
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/user/shops/template3", {
+    const response = await fetch("http://localhost:8080/user/shops/template5", {
       headers: {
         Authorization: token,
       },
@@ -40,6 +40,8 @@ function Template4app() {
         shop_key3: itemsdata.shop_key3,
         shop_email: itemsdata.shop_email,
         shop_phone: itemsdata.shop_phone,
+        temp5: itemsdata.temp5,
+        insta: itemsdata.insta
       };
     });
     setitems(transformedItems);
@@ -60,4 +62,4 @@ function Template4app() {
   );
 }
 
-export default Template4app;
+export default Template5app;

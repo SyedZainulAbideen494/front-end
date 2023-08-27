@@ -4,7 +4,12 @@ import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
-import './template8.css'
+import './template5.css'
+import head2img from '../../home/header/images/The Indian Gent.jpg'
+import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
+import key2img from '../../home/header/images/key2img.jpg'
+import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+import estate from '../header/images/Untitled design (21).png'
 
 
 const Editstoreform = () => {
@@ -34,7 +39,7 @@ const Editstoreform = () => {
 
     try {
       const response = await Axios.put(
-        "https://backend-zain-production.up.railway.app/updateshop1",
+        "http://localhost:8080/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
@@ -508,7 +513,7 @@ const Addproductstodatabase = (props) => {
        <label>Product Price</label>
        <input
          type="text"
-         placeholder="Product Decription"
+         placeholder="Product price"
          value={price}
          onChange={(e) => setPrice(e.target.value)}
        />
@@ -545,13 +550,27 @@ const Products = (props) => {
           <h2>{props.title}</h2>
         </div>
         <div className="product__amounttemp4">
-          <p>{props.price}</p>
+          <h3>{props.price}</h3>
         </div>
       </li>
     </div>
   );
 };
 
+const TestProducts = (props) => {
+  return (
+    <div className="productmodeltemp4">
+      <li>
+        <div className="product__titletemp4">
+          <h2>title</h2>
+        </div>
+        <div className="product__amounttemp4">
+          <h3>$30</h3>
+        </div>
+      </li>
+    </div>
+  );
+};
 
 const ProductList = (props) => {
   return (
@@ -721,6 +740,13 @@ const Editbtndisplay1 = () => {
           <div className="addshopform">
             {showform && <Addproductstodatabase onClick={hideformhandler} />}
           </div>
+          <Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
         </Fragment>
       );
     } else {
@@ -731,288 +757,407 @@ const Editbtndisplay1 = () => {
   return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
 
-const TestProducts = (props) => {
+const Addimage1 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg1", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
   return (
-    <div className="productmodeltemp8">
-      <div className="productimgtemp8">
-        <img src={digital} alt="Product Image" />
-      </div>
-      <div className="product__titletemp8">
-        <h2>Service name</h2>
-      </div>
-      <div className="product__amounttemp4">
-        <p>Detials About the service mentioned above </p>
-      </div>
+    <div>
+      <h2>ADD Image 1</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 1</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
     </div>
   );
-};
+ };
+ const Addimage2 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg2", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 2</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 2</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage3 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg3", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 3</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 3</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage4 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg4", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 4</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 4</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage5 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg5", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 5</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 5</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage6 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg6", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 6</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 6</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage7 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg7", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 7</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 7</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ 
 
 
-const Template8website = (props) => {
-    const [user, setname] = useState("");
-    const [phoneno, setphoneno] = useState("");
-    const [email, setemail] = useState("");
-    const [streetadrs, setstreetsdrs] = useState("");
-    const [city, setcity] = useState("");
-    const [state, setstate] = useState("");
-    const [zipcode, setzipcode] = useState("");
-    const [country, setcountry] = useState("");
-    const [id, setid] = useState("");
-    const [title, setitle] = useState("");
-    const [shop_id, setshop_id] = useState("");
+const Template7websitepreview = (props) => {
 
-    const nameHandler = (event) => {
-      setname(event.target.value);
+  const itemsRef = useRef(null);
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
+
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+ 
+    const TestProducts = (props) => {
+      return (
+        <div className="productmodeltemp7">
+          <li>
+            <div className="productimgtemp7">
+              <img src={estate}/>
+            </div>
+            <div className="product__titletemp7">
+              <h2>name</h2>
+            </div>
+            <div className="product__amounttemp7">
+              <h3>$30</h3>
+            </div>
+          </li>
+        </div>
+      );
     };
-
-    const phoneNohandler = (event) => {
-      setphoneno(event.target.value);
-    };
-
-    const emailhandler = (event) => {
-      setemail(event.target.value);
-    };
-
-    const streetaddress = (event) => {
-      setstreetsdrs(event.target.value);
-    };
-
-    const cityadrs = (event) => {
-      setcity(event.target.value);
-    };
-
-    const stateadrs = (event) => {
-      setstate(event.target.value);
-    };
-
-    const zipcodeadrs = (event) => {
-      setzipcode(event.target.value);
-    };
-
-    const counrtyadrs = (event) => {
-      setcountry(event.target.value);
-    };
-
-    const params = useParams();
-
-    useEffect(() => {
-      setid(params.id);
-    }, [params.id]);
-    useEffect(() => {
-      setitle(params.title);
-    }, [params.title]);
-    useEffect(() => {
-      setshop_id(params.shop_id);
-    }, [params.shop_id]);
-
-
-         const token = localStorage.getItem("token");
-
-         const orderhandler = () => {
-           Axios.post(
-             "http://localhost:8080/orders",
-             {
-               name: user,
-               Phone: phoneno,
-               Email: email,
-               streetadrs: streetadrs,
-               city: city,
-               state: state,
-               zipcode: zipcode,
-               country: country,
-               id: id,
-               product: title,
-               shop_id: shop_id,
-             },
-             {
-               headers: {
-                 Authorization: token,
-               },
-             }
-           );
-         };
-
-          const itemsRef = useRef(null);
-          const aboutusRef = useRef(null);
-          const contactusRef = useRef(null);
-
-          const scrollToItems = () => {
-            if (itemsRef.current) {
-              itemsRef.current.scrollIntoView({ behavior: "smooth" });
-            }
-          };
-          const scrollToaboutus = () => {
-            if (aboutusRef.current) {
-              aboutusRef.current.scrollIntoView({ behavior: "smooth" });
-            }
-          };
-          const scrollTocontactus = () => {
-            if (contactusRef.current) {
-              contactusRef.current.scrollIntoView({ behavior: "smooth" });
-            }
-          };
 
   return (
     <Fragment>
-      <Editbtndisplay/>
-      <div className="header2temp8">
-        <header>
-          <div className="shopnametemp8">
-            <h1>Shop name</h1>
-          </div>
-          <div className="temp8header1btns">
-            <span>
-              <button onClick={scrollToaboutus}>About us</button>
-            </span>
-            <span>
-              <button onClick={scrollToItems}>Our Services</button>
-            </span>
-            <span>
-              <button onClick={scrollTocontactus}>Get in touch</button>
-            </span>
-          </div>
-        </header>
-      </div>
-      <div className="header1temp8">
-        <header>
-          <div className="imgoftemp8header">
-            <section></section>
-          </div>
-          <div className="shoptaglinetemp8">
-            <h2>Get the best ROI Sevices(tagline line1)</h2>
-            <br />
-            <h2>Line 2</h2>
-            <br />
-            <h2>Line 3</h2>
-          </div>
-        </header>
-      </div>
-      <div className="aboutus" ref={aboutusRef}>
-        <div className="trustcards">
-          <div className="card1">
-            <section></section>
-            <div className="texttrustcard1">
-              <h2>Service check</h2>
-              <p>Details</p>
-            </div>
-          </div>
-          <div className="card1">
-            <section></section>
-            <div className="texttrustcard1">
-              <h2>Service check</h2>
-              <p>Details</p>
-            </div>
-          </div>
-          <div className="card1">
-            <section></section>
-            <div className="texttrustcard1">
-              <h2>Service check</h2>
-              <p>Details</p>
-            </div>
-          </div>
+      <div className="maindivtemp7">
+        <div className="header1temp7">
+          <header>
+            <div className="btnsectionheader1temp7">
+             <section>
+              <ul>
+                <li><button>View</button></li>
+                <li><button>About us</button></li>
+                <li><button>Contact us</button></li>
+              </ul>
+              <h1>Text heading 1</h1>
+              <div className="btnviewnowtemp7">
+              <button>View</button>
+              </div>
+             </section>
+             </div>
+             <div className="header1temp7imgsection">
+             <section>
+              <img src={estate}/>
+             </section>
+             </div>
+          </header>
         </div>
-        <div className="blockabt1temp8">
-          <div className="block1temp8">
-            <section className="blockabtno11tep8">
-              <div className="abtblock1no1headtemp8">
-                <h1>Heading block 1</h1>
-              </div>
-              <div className="bodytxtheadblock1temp8">
-                <h3>details about your heading written above</h3>
-              </div>
-            </section>
-            <section className="imgblock1abt1temp8"></section>
-          </div>
-          <div className="block2abtno1temp8">
-            <section className="temp8imgblock2no1"></section>
-            <section>
-              <div className="block2no1abtemp8head">
-                <h1>Heading block 2</h1>
-              </div>
-              <div className="block2no1abttemp8txt">
-                <h3>details about your heading written above</h3>
-              </div>
-            </section>
-          </div>
+        <div className="abtno1temp7">
+          <section className="textsectionabtno1temp7">
+            <h1>Text 2 heading 2</h1>
+            <p>Text 2</p>
+            <button>Shop Now</button>
+          </section>
+          <section className="imgsectiontemp7abtno1">
+            <img src={estate}/>
+          </section>
+        </div>
+        <div className="prodssectiontemp7">
+          <h1>Our listing</h1>
+          <p>View our latest properties(text 3)</p>
+          <TestProducts/>
         </div>
       </div>
-      <div className="sevricestemp8" ref={itemsRef}>
-        <div className="servicestemp8tetx">
-          <h2>Our Services</h2>
-        </div>
-        <div className="seriveswepeovidetemp8">
-          <TestProducts />
-        </div>
-      </div>
-      <Fragment>
-        <div className="formordertemp8" ref={contactusRef}>
-          <div className="headingofgetintouchtemp8">
-            <h2>Get in touch</h2>
-          </div>
-          <form onSubmit={orderhandler}>
-            <div className="nametemp8">
-              <h2>{props.prodsdetails}</h2>
-              <label>Name</label>
-              <br />
-              <input type="text" value={user} onChange={nameHandler} />
-            </div>
-            <div className="phonetemp8">
-              <label>Phone number</label>
-              <br />
-              <input type="number" value={phoneno} onChange={phoneNohandler} />
-            </div>
-            <div className="emailtemp8">
-              <label>Email</label>
-              <br />
-              <input type="email" value={email} onChange={emailhandler} />
-            </div>
-            <div className="addresstemp8">
-              <label>Address</label>
-              <br />
-              <input
-                type="text"
-                placeholder="street address"
-                value={streetadrs}
-                onChange={streetaddress}
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="city"
-                value={city}
-                onChange={cityadrs}
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="state/ province"
-                value={state}
-                onChange={stateadrs}
-              />
-              <br />
-              <input
-                type="number"
-                placeholder="Zip code/ postal"
-                value={zipcode}
-                onChange={zipcodeadrs}
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="country"
-                value={country}
-                onChange={counrtyadrs}
-              />
-            </div>
-            <div className="btntemp8">
-              <span className="placeordbtntemp8">
-                <button type="submit">Get in touch</button>
-              </span>
-            </div>
-          </form>
-        </div>
-      </Fragment>
     </Fragment>
   );
-}
-export default Template8website;
+};
+
+export default Template7websitepreview;

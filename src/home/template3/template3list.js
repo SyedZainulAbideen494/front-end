@@ -10,7 +10,7 @@ const Template3list = (props) => {
         <ul>
           {props.shops.map((item) => (
             <Link
-              to={`/mystore/template3/${item.shop_id}/${item.shop_name}/${item.shop_owner}/${item.shop_tagline}/${item.shop_block2}/${item.shop_blockhead2}/${item.shop_blockhead3}/${item.shop_block3}/${item.user_id}/${item.shop_blockhead1}/${item.shop_block1}/${item.shop_keyhead1}/${item.shop_key1}/${item.shop_keyhead2}/${item.shop_key2}/${item.shop_keyhead3}/${item.shop_key3}/${item.shop_email}/${item.shop_phone}/${item.insta}`}
+              to={`/mystore3/${item.shop_id}/${item.shop_name}`}
             >
               <Template3inprofile
                 shop_id={item.shop_id}

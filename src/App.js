@@ -51,6 +51,8 @@ import Template2websitepreview from "./home/template2/template2websitepreview";
 import Addtemplate2form from "./home/template2/addtemplate2";
 import Template3websitepreview from "./home/template3/template3websitepreview";
 import Template2website from "./home/template2/template2website";
+import Search from "./home/search/search";
+import Template7websitepreview from "./home/template7/template5websitepreview";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -74,37 +76,39 @@ const router = createBrowserRouter([
   },
   { path: "/Addproducts", element: <Addproductstodatabase /> },
   { path: "/Add/shop/template1/form", element: <Addtemplate1form /> },
-  {path: '/mystore/template1/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta/:salestext', element: <Template1website/>},
+  {path: '/mystore1/:shop_id/:shop_name/', element: <Template1website/>},
   {
     path: "/temp1preview",
     element: <Template1websitepreview />,
   },
   {
-    path: "/saleschat/:orders_id/:name/:Phone/:Email/:streetadrs/:city/:state/:zipcode/:country/:id/:product/:sender_id/:shop_id/:message",
+    path: "/saleschat/:orders_id",
     element: <Saleschat />,
   },
   { path: "/orders", element: <Order /> },
   { path: "/prevewtemp3", element: <Template3website /> },
   { path: "/addtemplate3form", element: <Addtemplate3form /> },
   {
-    path: "/mystore/template3/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta",
+    path: "/mystore3/:shop_id/:shop_name/",
     element: <Template3website />,
   },
   { path: "/previewtemplate2", element: <Temp2preview /> },
   {path: "/temp5preview", element: <Template5websitepreview /> },
   {path: '/addShopTemp5', element: <Addtemplate5form/>},
-  {path: '/mystore/template5/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta', element: <Template5website/>},
+  {path: '/mystore5/:shop_id/:shop_name', element: <Template5website/>},
   {path: '/template4/preview', element: <Template4websitepreview/>},
   {path: '/Plans', element: <PaymentApp/>},
   {path: '/Add/Tempate4/Form', element: <Addtemplate4form/>},
-  {path: '/mystore/template4/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta', element: <Template4website/>},
+  {path: '/mystore4/:shop_id/:shop_name', element: <Template4website/>},
   {path: '/Template6/preview', element: <Template6websitepreview/>},
   {path: '/Add/template6/form', element: <Addtemplate6form/>},
-  {path: '/mystore/template6/:shop_id/:shop_name/:shop_owner/:shop_tagline/:shop_block2/:shop_blockhead2/:shop_blockhead3/:shop_block3/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta/:salestext', element: <Template6website/>},
+  {path: '/mystore6/:shop_id/:shop_name', element: <Template6website/>},
   {path: '/Preview/Template2', element: <Template2websitepreview/>},
   {path: '/Add/template2/form', element: <Addtemplate2form/>},
   {path: '/preview/template3', element: <Template3websitepreview/>},
-  {path: '/mystore/template2/:shop_id/:shop_name/:shop_owner/:user_id/:shop_blockhead1/:shop_block1/:shop_keyhead1/:shop_key1/:shop_keyhead2/:shop_key2/:shop_keyhead3/:shop_key3/:shop_email/:shop_phone/:insta', element: <Template2website/>}
+  {path: '/mystore2/:shop_id/:shop_name/', element: <Template2website/>},
+  {path: '/search', element: <Search/>},
+  {path: '/template7/preview', element: <Template7websitepreview/>}
 ]);
 function App() {
   return (

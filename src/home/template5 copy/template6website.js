@@ -381,7 +381,7 @@ const Saleslist = (props) => {
         <ul>
           {props.Sales.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
+              to={`/saleschat/${itemdata.orders_id}`}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -1718,7 +1718,28 @@ const Template6website = (props) => {
             images11: `http://localhost:8080/images/${itemsdata.images11}`,
             images12: `http://localhost:8080/images/${itemsdata.images12}`,
             images13: `http://localhost:8080/images/${itemsdata.images13}`,
-  
+            shop_id: itemsdata.shop_id,
+            shop_name: itemsdata.shop_name,
+            shop_owner: itemsdata.shop_owner,
+            shop_tagline: itemsdata.shop_tagline,
+            shop_blockhead2: itemsdata.shop_blockhead2,
+            shop_block2: itemsdata.shop_block2,
+            shop_blockhead3: itemsdata.shop_blockhead3,
+            shop_block3: itemsdata.shop_block3,
+            user_id: itemsdata.user_id,
+            shop_blockhead1: itemsdata.shop_blockhead1,
+            shop_block1: itemsdata.shop_block1,
+            shop_keyhead1: itemsdata.shop_keyhead1,
+            shop_key1: itemsdata.shop_key1,
+            shop_keyhead2: itemsdata.shop_keyhead2,
+            shop_key2: itemsdata.shop_key2,
+            shop_keyhead3: itemsdata.shop_keyhead3,
+            shop_key3: itemsdata.shop_key3,
+            shop_email: itemsdata.shop_email,
+            shop_phone: itemsdata.shop_phone,
+            insta: itemsdata.insta,
+            salestext: itemsdata.salestext,
+            temp6: itemsdata.temp6
           };
         });
         setItems(transformedItems);
@@ -1742,7 +1763,7 @@ const Template6website = (props) => {
        <div className="header1temp6">
         <header>
           <img src={items[0]?.images1} alt="image 1"/>
-          <h1>{params.shop_name}</h1>
+          <h1>{items[0]?.shop_name}</h1>
           <ul>
             <li><button>Products</button></li>
             <li><button>About us</button></li>
@@ -1753,8 +1774,8 @@ const Template6website = (props) => {
        <div className="header2temp6">
         <div className="textsectionheader2temp6">
           <section>
-          <h1 className="salestext">{params.salestext}</h1>
-          <h1>{params.shop_tagline}</h1>
+          <h1 className="salestext">{items[0]?.salestext}</h1>
+          <h1>{items[0]?.shop_tagline}</h1>
           </section>
         </div>
         <div className="temp6header2img">
@@ -1779,16 +1800,16 @@ const Template6website = (props) => {
        </div>
        <div className="temp6keys">
        <div className="key1temp6">
-        <h2>{params.shop_keyhead1}</h2>
-        <p>{params.shop_key1}</p>
+        <h2>{items[0]?.shop_keyhead1}</h2>
+        <p>{items[0]?.shop_key1}</p>
        </div>
        <div className="key1temp6">
-        <h2>{params.shop_keyhead2}</h2>
-        <p>{params.shop_key2}</p>
+        <h2>{items[0]?.shop_keyhead2}</h2>
+        <p>{items[0]?.shop_key2}</p>
        </div>
        <div className="key3temp6">
-        <h2>{params.shop_keyhead3}</h2>
-        <p>{params.shop_key3}</p>
+        <h2>{items[0]?.shop_keyhead3}</h2>
+        <p>{items[0]?.shop_key3}</p>
        </div>
        </div>
        <div className="abtus1temp6">
@@ -1797,14 +1818,14 @@ const Template6website = (props) => {
             <img src={items[0]?.images7} alt="image 7"/>
           </div>
           <div className="abt1no1text">
-            <h1>{params.shop_blockhead1}</h1>
-            <p>{params.shop_block1}</p>
+            <h1>{items[0]?.shop_blockhead1}</h1>
+            <p>{items[0]?.shop_block1}</p>
           </div>
         </div>
         <div className="abt1no2temp6">     
           <div className="abt1no2text">
-            <h1>{params.shop_blockhead2}</h1>
-            <p>{params.shop_block2}</p>
+            <h1>{items[0]?.shop_blockhead2}</h1>
+            <p>{items[0]?.shop_block2}</p>
           </div>
           <div className="abt1no2temp6img">
             <img src={items[0]?.images8} alt="image 8"/>
@@ -1815,8 +1836,8 @@ const Template6website = (props) => {
             <img src={items[0]?.images9} alt="image 9"/>
           </div>
           <div className="abt1no1text">
-            <h1>{params.shop_blockhead3}</h1>
-            <p>{params.shop_block3}</p>
+            <h1>{items[0]?.shop_blockhead3}</h1>
+            <p>{items[0]?.shop_block3}</p>
           </div>
         </div>
        </div>
@@ -1835,9 +1856,9 @@ const Template6website = (props) => {
           <footer>
             <h2>Contact us</h2>
             <ul>
-              <li>{params.insta}</li>
-              <li>{params.shop_email}</li>
-              <li>{params.shop_phone}</li>
+              <li>{items[0]?.insta}</li>
+              <li>{items[0]?.shop_email}</li>
+              <li>{items[0]?.shop_phone}</li>
             </ul>
           </footer>
         </div>
