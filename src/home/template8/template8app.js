@@ -5,16 +5,15 @@ import React, {
   Fragment,
   axios,
 } from "react";
-import Template3list from "./template5list";
-import Template7list from "./template5list";
+import Template8list from "./template8list";
 
-function Template7app() {
+function Template8app() {
   const [items, setitems] = useState([]);
   const [loading, setloading] = useState(false);
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/user/shops/template7", {
+    const response = await fetch("http://localhost:8080/user/shops/template8", {
       headers: {
         Authorization: token,
       },
@@ -41,7 +40,7 @@ function Template7app() {
         shop_key3: itemsdata.shop_key3,
         shop_email: itemsdata.shop_email,
         shop_phone: itemsdata.shop_phone,
-        temp7: itemsdata.temp7,
+        temp8: itemsdata.temp8,
         insta: itemsdata.insta
       };
     });
@@ -56,11 +55,11 @@ function Template7app() {
   return (
     <Fragment>
       <section>
-        {!loading && <Template7list shops={items} />}
+        {!loading && <Template8list shops={items} />}
         {loading && <p>Loading..</p>}
       </section>
     </Fragment>
   );
 }
 
-export default Template7app;
+export default Template8app;

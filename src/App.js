@@ -53,6 +53,12 @@ import Template3websitepreview from "./home/template3/template3websitepreview";
 import Template2website from "./home/template2/template2website";
 import Search from "./home/search/search";
 import Template7websitepreview from "./home/template7/template5websitepreview";
+import Addtemplate7form from "./home/template7/addtemplate5";
+import Template7website from "./home/template7/template5website";
+import Template8websitepreview from "./home/template8/template8websitepreview";
+import Addtemplate8form from "./home/template8/addtemplate8";
+import Template8website from "./home/template8/template8website";
+import SubscriptionForm from "./home/payment/payment";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -97,7 +103,7 @@ const router = createBrowserRouter([
   {path: '/addShopTemp5', element: <Addtemplate5form/>},
   {path: '/mystore5/:shop_id/:shop_name', element: <Template5website/>},
   {path: '/template4/preview', element: <Template4websitepreview/>},
-  {path: '/Plans', element: <PaymentApp/>},
+  {path: '/Plans', element: <SubscriptionForm/>},
   {path: '/Add/Tempate4/Form', element: <Addtemplate4form/>},
   {path: '/mystore4/:shop_id/:shop_name', element: <Template4website/>},
   {path: '/Template6/preview', element: <Template6websitepreview/>},
@@ -108,7 +114,12 @@ const router = createBrowserRouter([
   {path: '/preview/template3', element: <Template3websitepreview/>},
   {path: '/mystore2/:shop_id/:shop_name/', element: <Template2website/>},
   {path: '/search', element: <Search/>},
-  {path: '/template7/preview', element: <Template7websitepreview/>}
+  {path: '/template7/preview', element: <Template7websitepreview/>},
+  {path: '/Add/Template7/Form', element: <Addtemplate7form/>},
+  {path: '/mystore7/:shop_id/:shop_name/', element: <Template7website/>},
+  {path: '/preview/template8', element: <Template8websitepreview/>},
+  {path: '/add/template8/form', element: <Addtemplate8form/>},
+  {path: '/mystore8/:shop_id/:shop_name/', element: <Template8website/>},
 ]);
 function App() {
   return (

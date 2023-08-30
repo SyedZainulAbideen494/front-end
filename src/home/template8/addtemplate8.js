@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
-import './template5.css'
+import './template8.css'
 
-const Addtemplate7form = (props) => {
+const Addtemplate8form = (props) => {
   const [shop_name, setname] = useState("");
   const [shop_owner, setowner] = useState("");
   const [shop_tagline, setshop_tagline] = useState("");
@@ -22,12 +22,13 @@ const Addtemplate7form = (props) => {
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
   const [insta, setinsta] = useState("")
-  const [temp7, settemp7] = useState('')
+  const [temp8, settemp8] = useState('')
+  const [salestext, setsalestext] = useState('')
 
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
-      "http://localhost:8080/addShops/template7",
+      "http://localhost:8080/addShops/template8",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
@@ -39,10 +40,16 @@ const Addtemplate7form = (props) => {
         shop_block3: shop_block3,
         shop_keyhead1: shop_keyhead1,
         shop_key1: shop_key1,
+        shop_keyhead2: shop_keyhead2,
+        shop_key2: shop_key2,
+        shop_keyhead3: shop_keyhead3,
+        shop_key3: shop_key3,
         shop_email: shop_email,
         shop_phone: shop_phone,
         insta: insta,
-        temp7: temp7
+        temp8: temp8,
+        salestext: salestext,
+        shop_tagline: shop_tagline
       },
       {
         headers: {
@@ -91,12 +98,12 @@ const Addtemplate7form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>text 4 heading</h3>
+            <h3>text 7</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point heading 1"
+            placeholder="Enter text 7"
             onChange={(e) => {
               setshp_keyhead1(e.target.value);
             }}
@@ -104,12 +111,12 @@ const Addtemplate7form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Text 4</h3>
+            <h3>Text 8</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point 1"
+            placeholder="Enter text 8"
             onChange={(e) => {
               setshop_key1(e.target.value);
             }}
@@ -117,12 +124,12 @@ const Addtemplate7form = (props) => {
           </div>
           <div className="inp">
           <label>
-            <h3>text 5 heading</h3>
+            <h3>text 9</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point heading 1"
+            placeholder="Enter text 9"
             onChange={(e) => {
               setshop_keyhead2(e.target.value);
             }}
@@ -130,12 +137,12 @@ const Addtemplate7form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Text 5</h3>
+            <h3>Text 10</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point 1"
+            placeholder="Text 10"
             onChange={(e) => {
               setshop_key2(e.target.value);
             }}
@@ -143,12 +150,12 @@ const Addtemplate7form = (props) => {
           </div>
           <div className="inp">
           <label>
-            <h3>text 6 heading</h3>
+            <h3>text 11</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point heading 1"
+            placeholder="text 11"
             onChange={(e) => {
               setshop_keyhead3(e.target.value);
             }}
@@ -156,12 +163,12 @@ const Addtemplate7form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Text 6</h3>
+            <h3>Text 12</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point 1"
+            placeholder="Text 12"
             onChange={(e) => {
               setshop_key3(e.target.value);
             }}
@@ -195,12 +202,12 @@ const Addtemplate7form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>text heading 2</h3>
+            <h3>text 3</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop about block heading 1"
+            placeholder="text 3"
             onChange={(e) => {
               setshop_blockheading1(e.target.value);
             }}
@@ -208,25 +215,51 @@ const Addtemplate7form = (props) => {
         </div>
         <div className="inp">
           <label>
+            <h3>Text 4</h3>
+          </label>
+          <br />
+          <input
+            required
+            placeholder="Text 4"
+            onChange={(e) => {
+              setshop_block1(e.target.value);
+            }}
+          />
+          </div>
+          <div className="inp">
+          <label>
+            <h3>Text 1</h3>
+          </label>
+          <br />
+          <input
+            required
+            placeholder="Text 4"
+            onChange={(e) => {
+              setsalestext(e.target.value);
+            }}
+          />
+          </div>
+          <div className="inp">
+          <label>
             <h3>Text 2</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop about block 1"
+            placeholder="Text 2"
             onChange={(e) => {
-              setshop_block1(e.target.value);
+              setshop_tagline(e.target.value);
             }}
           />
         </div>
         <div className="inp">
           <label>
-            <h3>Text 7 heading</h3>
+            <h3>Text 5</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter a heading for deatil block number 2"
+            placeholder="Text 5"
             onChange={(e) => {
               setshop_blockheading2(e.target.value);
             }}
@@ -234,27 +267,14 @@ const Addtemplate7form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>text 7</h3>
+            <h3>text 6</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter deatils some deatils about your shop for block 2"
+            placeholder="text 6"
             onChange={(e) => {
               setshop_block2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Text 3</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter deatils some deatils about your shop for block 3"
-            onChange={(e) => {
-              setshop_block3(e.target.value);
             }}
           />
         </div>
@@ -280,7 +300,7 @@ const Addtemplate7form = (props) => {
             required
             placeholder="Enter Any text to confirm"
             onChange={(e) => {
-              settemp7(e.target.value);
+              settemp8(e.target.value);
             }}
           />
         </div>
@@ -293,4 +313,4 @@ const Addtemplate7form = (props) => {
   );
 };
 
-export default Addtemplate7form;
+export default Addtemplate8form;

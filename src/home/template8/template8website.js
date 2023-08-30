@@ -4,7 +4,7 @@ import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
-import './template5.css'
+import './template8.css'
 import head2img from '../../home/header/images/The Indian Gent.jpg'
 import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
 import key2img from '../../home/header/images/key2img.jpg'
@@ -549,16 +549,13 @@ const Addproductstodatabase = (props) => {
 
 const Products = (props) => {
   return (
-    <div className="productmodeltemp4">
+    <div className="productmodeltemp8">
       <li>
-        <div className="productimgtemp4">
+        <div className="productimgtemp8">
           <img src={props.images} alt="Product Image" />
         </div>
-        <div className="product__titletemp4">
+        <div className="product__titletemp8">
           <h2>{props.title}</h2>
-        </div>
-        <div className="product__amounttemp4">
-          <h3>{props.price}</h3>
         </div>
       </li>
     </div>
@@ -753,7 +750,6 @@ const Editbtndisplay1 = () => {
           <Addimage3/>
           <Addimage4/>
           <Addimage5/>
-          <Addimage6/>
         </Fragment>
       );
     } else {
@@ -989,54 +985,10 @@ const Addimage1 = (props) => {
     </div>
   );
  };
- const Addimage6 = (props) => {
-  const [image, setImage] = useState(null);
- 
-  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
- 
-  const params = useParams();
- 
-  const Addimage1Handler = (e) => {
-    e.preventDefault();
- 
-    const formData = new FormData();
-    formData.append("image", image);
- 
-    Axios.post("http://localhost:8080/addshopimg6", formData, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    })
-      .then((response) => {
-        console.log(response.data);
-        // Handle success
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-        // Handle error
-      });
-  };
- 
-  return (
-    <div>
-      <h2>ADD Image 6</h2>
-      <form onSubmit={Addimage1Handler}>
- 
-        <label>Image 6</label>
-        <input
-          type="file"
-          placeholder="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
- 
-        <button type="submit">Add Image</button>
-      </form>
-    </div>
-  );
- };
+
  
 
-const Template7website = (props) => {
+const Template8website = (props) => {
 const [items, setItems] = useState([]);
 const [loading, setLoading] = useState(false);
 const params = useParams()
@@ -1059,47 +1011,7 @@ const params = useParams()
       contactusRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const Blocktext = () => {
-    return (
-      <Fragment>
-        <div className="block1">
-          <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-          </div>
-        </div>
-      </Fragment>
-    );
-  }
-
-    const Blocktext2 = () => {
-      return (
-        <Fragment>
-          <div className="block2">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
-
-    const Blocktext3 = () => {
-      return (
-        <Fragment>
-          <div className="block3">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
+  
 
     const TestProducts = (props) => {
       return (
@@ -1118,19 +1030,6 @@ const params = useParams()
         </div>
       );
     };
-
-    const Block1 = () => {
-      return(<Fragment>
-        <div className="block">
-          <div className="blockhead">
-            <h2>Heading</h2>
-          </div>
-          <div className="blocktextdetails">
-            <p>Deatils about the heading above</p>
-          </div>
-        </div>
-      </Fragment>)
-    }
 
     const fetchProdshandler = useCallback(async () => {
     try {
@@ -1169,7 +1068,8 @@ const params = useParams()
           shop_email: itemsdata.shop_email,
           shop_phone: itemsdata.shop_phone,
           temp5: itemsdata.temp5,
-          insta: itemsdata.insta
+          insta: itemsdata.insta,
+          salestext: itemsdata.salestext
         };
       });
       setItems(transformedItems);
@@ -1188,86 +1088,68 @@ const params = useParams()
   return (
     <Fragment>
       <Editbtndisplay1/>
-      <div className="maindivtemp7">
-        <div className="header1temp7">
+      <div className="maindivtemp8">
+        <div className="header1temp8">
           <header>
-            <div className="btnsectionheader1temp7">
-             <section>
-              <ul>
-                <li><button>View</button></li>
-                <li><button>About us</button></li>
-                <li><button>Contact us</button></li>
-              </ul>
-              <h1>{items[0]?.shop_tagline}</h1>
-              <div className="btnviewnowtemp7">
-              <button>View</button>
-              </div>
-             </section>
-             </div>
-             <div className="header1temp7imgsection">
-             <section>
-              <img src={items[0]?.images1} alt="image 1"/>
-             </section>
-             </div>
+           <h1>Shop name</h1>
+           <div className="taglintemp8">
+           <h1>{items[0]?.salestext}</h1>
+           <h3>{items[0]?.shop_tagline}</h3>
+           <button>Our properties</button>
+           </div>
           </header>
         </div>
-        <div className="abtno1temp7">
-          <section className="textsectionabtno1temp7">
+        <div className="abt1temp8">
+          <div className='imagesabt1temp8'>
+          <img src={items[0]?.images1} alt="image 1" className="img1temp8abt1"/>
+          <div className="img1temp8abt1">
+          <img src={items[0]?.images2} alt="image 2" className="img1temp8abt1"/>
+          </div>
+          </div>
+          <div className="abt1temp8textarea">
             <h1>{items[0]?.shop_blockhead1}</h1>
-            <p>{items[0]?.shop_block1}</p>
-            <button>Shop Now</button>
-          </section>
-          <section className="imgsectiontemp7abtno1">
-            <img src={items[0]?.images2} alt="image 2"/>
+            <h4>{items[0]?.shop_block1}</h4>
+            <p>{items[0]?.shop_blockhead2}</p>
+            <button>About us</button>
+          </div>
+        </div>
+        <div className="whatwedotemp8">
+          <section>
+            <div className="h3temp8whatwedo">
+            <h3>What we do</h3>
+            </div>
+            <div className="h1whwedotext6temp8">
+              <h1>{items[0]?.shop_block2}</h1>
+            </div>
+            <div className="whatwedoservicestemp8">
+              <section className="textareawhatwedoparttemp8">
+                <h2>{items[0]?.shop_keyhead1}</h2>
+                <p>{items[0]?.shop_key1}</p>
+              </section >
+              <section className="textareawhatwedoparttemp8">
+                <h2>{items[0]?.shop_keyhead2}</h2>
+                <p>{items[0]?.shop_key2}</p>
+              </section>
+              <section className="textareawhatwedoparttemp8">
+                <h2>{items[0]?.shop_keyhead3}</h2>
+                <p>{items[0]?.shop_key3}</p>
+              </section>
+            </div>
+            <div className="ourprojectstemp8">
+            <h2>Our projects</h2>
+            <div className="ourprojectsimgtemp8">
+              <img src={items[0]?.images3} alt="image 3" />
+              <img src={items[0]?.images4} alt="image 4"/>
+              <img src={items[0]?.images5} alt="image 5"/>
+            </div>
+          </div>
           </section>
         </div>
-        <div className="prodssectiontemp7">
-          <div className="textsecprodstemp7">
-          <h1>Our listing</h1>
-          <p>{items[0]?.shop_block3}</p>
-          </div>
+        <div className="ourprodssectemp8">
+          <h1>Our listings</h1>
           <Productsinshopapp/>
         </div>
-        <div className="keypointtemp7">
-          <div className="key1temp7">
-            <section className="textsectionkey1temp7">
-              <h1>{items[0]?.shop_keyhead1}</h1>
-              <p>{items[0]?.shop_key1}</p>
-            </section>
-            <section className="imgsectionkey1temp7">
-              <img src={items[0]?.images3} alt="image 3"/>
-            </section>
-          </div>
-          <div className="key1temp7"> 
-          <section className="textsectionkey1temp7">
-              <h1>{items[0]?.shop_keyhead2}</h1>
-              <p>{items[0]?.shop_key2}</p>
-            </section>
-            <section className="imgsectionkey1temp7">
-              <img src={items[0]?.images4} alt="image 4"/>
-            </section>
-            </div>
-          <div className="key1temp7">
-          <section className="textsectionkey1temp7">
-              <h1>{items[0]?.shop_keyhead3}</h1>
-              <p>{items[0]?.shop_key3}</p>
-            </section>
-            <section className="imgsectionkey1temp7">
-              <img src={items[0]?.images5} alt="image 5"/>
-            </section>
-          </div>
-        </div>
-        <div className="abt2temp7">
-          <section className="temp7abt2img">
-            <img src={items[0]?.images6} alt="image 6"/>
-          </section>
-          <section className="textsecabt2temp7">
-            <h1>{items[0]?.shop_blockhead2}</h1>
-            <p>{items[0]?.shop_block3}</p>
-            <button>View</button>
-          </section>
-        </div>
-        <div className="contctustmep7">
+        <div className="contactsectemp8">
           <footer>
             <h2>Contact us</h2>
             <ul>
@@ -1282,4 +1164,4 @@ const params = useParams()
   );
 };
 
-export default Template7website;
+export default Template8website;

@@ -1151,9 +1151,60 @@ const Template7websitepreview = (props) => {
           </section>
         </div>
         <div className="prodssectiontemp7">
+          <div className="textsecprodstemp7">
           <h1>Our listing</h1>
           <p>View our latest properties(text 3)</p>
+          </div>
           <TestProducts/>
+        </div>
+        <div className="keypointtemp7">
+          <div className="key1temp7">
+            <section className="textsectionkey1temp7">
+              <h1>Text 4 heading</h1>
+              <p>text 4</p>
+            </section>
+            <section className="imgsectionkey1temp7">
+              <img src={estate}/>
+            </section>
+          </div>
+          <div className="key1temp7"> 
+          <section className="textsectionkey1temp7">
+              <h1>Text 5 heading</h1>
+              <p>text 5</p>
+            </section>
+            <section className="imgsectionkey1temp7">
+              <img src={estate}/>
+            </section>
+            </div>
+          <div className="key1temp7">
+          <section className="textsectionkey1temp7">
+              <h1>Text 6 heading</h1>
+              <p>text 6</p>
+            </section>
+            <section className="imgsectionkey1temp7">
+              <img src={estate}/>
+            </section>
+          </div>
+        </div>
+        <div className="abt2temp7">
+          <section className="temp7abt2img">
+            <img src={estate}/>
+          </section>
+          <section className="textsecabt2temp7">
+            <h1>Text heading 7</h1>
+            <p>Text 7</p>
+            <button>View</button>
+          </section>
+        </div>
+        <div className="contctustmep7">
+          <footer>
+            <h2>Contact us</h2>
+            <ul>
+              <li>@instagram</li>
+              <li>7795683107</li>
+              <li>you@gmail.com</li>
+            </ul>
+          </footer>
         </div>
       </div>
     </Fragment>

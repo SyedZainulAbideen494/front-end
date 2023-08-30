@@ -18,6 +18,8 @@ import Template4app from "../template4/template4app";
 import Template6app from "../template5 copy/template6app";
 import Template1app from "../template1/template1app";
 import Template2app from "../template2/template2app";
+import Template7app from "../template7/template5app";
+import Template8app from "../template8/template8app";
 
 const Profile = (props) => {
   return (
@@ -46,6 +48,8 @@ const Profile = (props) => {
         <Template5app/>
         <Template4app/>
         <Template6app/>  
+        <Template7app/>
+        <Template8app/>
         <Addshopimg />
       </div>
     </Fragment>

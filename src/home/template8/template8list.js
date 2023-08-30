@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
-import Template3inprofile from "./template5inprofile";
-import Template5inprofile from "./template5inprofile";
-import Template7inprofile from "./template5inprofile";
+import Template8inprofile from "./template8inprofile";
 
-const Template7list = (props) => {
+const Template8list = (props) => {
   return (
     <Fragment>
       <div className="productmodelul">
         <ul>
           {props.shops.map((item) => (
             <Link
-              to={`/mystore7/${item.shop_id}/${item.shop_name}`}
+              to={`/mystore8/${item.shop_id}/${item.shop_name}`}
             >
-              <Template7inprofile
+              <Template8inprofile
                 shop_id={item.shop_id}
                 shop_name={item.shop_name}
                 shop_owner={item.shop_owner}
@@ -34,7 +32,7 @@ const Template7list = (props) => {
                 shop_key3={item.shop_key3}
                 shop_email={item.shop_email}
                 shop_phone={item.shop_phone}
-                temp7={item.temp7}
+                temp8={item.temp8}
                 insta={item.insta}
               />
             </Link>
@@ -45,4 +43,4 @@ const Template7list = (props) => {
   );
 };
 
-export default Template7list;
+export default Template8list;

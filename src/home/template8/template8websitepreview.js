@@ -4,11 +4,14 @@ import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
 import { animateScroll as scroll } from "react-scroll";
 import { useRef } from "react";
-import './template5.css'
+import './template8.css'
 import head2img from '../../home/header/images/The Indian Gent.jpg'
 import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
 import key2img from '../../home/header/images/key2img.jpg'
 import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+import estate from '../header/images/Untitled design (21).png'
+import estate1 from '../header/images/Untitled design (24).png'
+import estate2 from '../header/images/Untitled design (25).png'
 
 
 const Editstoreform = () => {
@@ -197,7 +200,7 @@ const Editbtndisplay = () => {
           `http://localhost:8080/user/id/editbtnstoredisplay1`,
           {
             headers: {
-              Authorization: params.shop_id,
+              Authorization: params.id,
             },
           }
         );
@@ -319,7 +322,7 @@ const Sales = (props) => {
 
   return (
     <Fragment>
-      <h2>My store sales</h2>
+      <Saleshead />
       <section>
         {!loading && <Saleslist Sales={orders} />}
         {loading && <p>Loading..</p>}
@@ -375,7 +378,7 @@ const Saleslist = (props) => {
         <ul>
           {props.Sales.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}`}
+              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -464,88 +467,79 @@ function Productsinshopapp() {
   );
 }
 const Addproductstodatabase = (props) => {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [amount, setAmount] = useState("");
-  const [image, setImage] = useState(null);
-  const [payment, setpayment] = useState('')
- 
-  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
- 
-  const params = useParams();
- 
-  const addProductHandler = (e) => {
-    e.preventDefault();
- 
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("title", title);
-    formData.append("price", price);
-    formData.append("amount", amount);
-    formData.append("payment", payment)
- 
-    Axios.post("http://localhost:8080/addProduct", formData, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    })
-      .then((response) => {
-        console.log(response.data);
-        // Handle success
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-        // Handle error
-      });
-  };
- 
-  return (
-    <div>
-      <h2>ADD NEW ITEM</h2>
-      <form onSubmit={addProductHandler}>
-        <label>Product Title</label>
-        <input
-          type="text"
-          placeholder="Product title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
- 
-        <label>Product Price</label>
-        <input
-          type="text"
-          placeholder="Product price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
- 
-        <label>Product Quantity</label>
-        <input
-          type="text"
-          placeholder="Product amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-        <label>Enter your stripe payment url</label>
-        <input
-          type="text"
-          placeholder="Enter your stripe payment url"
-          value={payment}
-          onChange={(e) => setpayment(e.target.value)}
-        />
- 
-        <label>Image</label>
-        <input
-          type="file"
-          placeholder="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
- 
-        <button type="submit">Add Product</button>
-      </form>
-    </div>
-  );
+ const [title, setTitle] = useState("");
+ const [price, setPrice] = useState("");
+ const [amount, setAmount] = useState("");
+ const [image, setImage] = useState(null);
+
+ const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+
+ const params = useParams();
+
+ const addProductHandler = (e) => {
+   e.preventDefault();
+
+   const formData = new FormData();
+   formData.append("image", image);
+   formData.append("title", title);
+   formData.append("price", price);
+   formData.append("amount", amount);
+
+   Axios.post("http://localhost:8080/addProduct", formData, {
+     headers: {
+       Authorization: params.shop_id,
+     },
+   })
+     .then((response) => {
+       console.log(response.data);
+       // Handle success
+     })
+     .catch((error) => {
+       console.error("Error adding product:", error);
+       // Handle error
+     });
  };
+
+ return (
+   <div>
+     <h2>ADD NEW ITEM</h2>
+     <form onSubmit={addProductHandler}>
+       <label>Product Title</label>
+       <input
+         type="text"
+         placeholder="Product title"
+         value={title}
+         onChange={(e) => setTitle(e.target.value)}
+       />
+
+       <label>Product Price</label>
+       <input
+         type="text"
+         placeholder="Product price"
+         value={price}
+         onChange={(e) => setPrice(e.target.value)}
+       />
+
+       <label>Product Quantity</label>
+       <input
+         type="text"
+         placeholder="Product amount"
+         value={amount}
+         onChange={(e) => setAmount(e.target.value)}
+       />
+
+       <label>Image</label>
+       <input
+         type="file"
+         placeholder="image"
+         onChange={(e) => setImage(e.target.files[0])}
+       />
+
+       <button type="submit">Add Product</button>
+     </form>
+   </div>
+ );
+};
 
 const Products = (props) => {
   return (
@@ -567,12 +561,12 @@ const Products = (props) => {
 
 const TestProducts = (props) => {
   return (
-    <div className="productmodeltemp5">
+    <div className="productmodeltemp4">
       <li>
-        <div className="product__titletemp5">
+        <div className="product__titletemp4">
           <h2>title</h2>
         </div>
-        <div className="product__amounttemp5">
+        <div className="product__amounttemp4">
           <h3>$30</h3>
         </div>
       </li>
@@ -754,6 +748,7 @@ const Editbtndisplay1 = () => {
           <Addimage4/>
           <Addimage5/>
           <Addimage6/>
+          <Addimage7/>
         </Fragment>
       );
     } else {
@@ -804,7 +799,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -849,7 +844,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -894,7 +889,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -939,7 +934,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -984,7 +979,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -1029,17 +1024,61 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+ };
+ const Addimage7 = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/addshopimg7", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Image 7</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Image 7</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
  };
  
 
-const Template7website = (props) => {
-const [items, setItems] = useState([]);
-const [loading, setLoading] = useState(false);
-const params = useParams()
+
+const Template8websitepreview = (props) => {
+
   const itemsRef = useRef(null);
   const aboutusRef = useRef(null);
   const contactusRef = useRef(null);
@@ -1059,221 +1098,92 @@ const params = useParams()
       contactusRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const Blocktext = () => {
-    return (
-      <Fragment>
-        <div className="block1">
-          <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-          </div>
-        </div>
-      </Fragment>
-    );
-  }
-
-    const Blocktext2 = () => {
-      return (
-        <Fragment>
-          <div className="block2">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
-
-    const Blocktext3 = () => {
-      return (
-        <Fragment>
-          <div className="block3">
-            <div className="blockheading">
-              <h1>Block 1 heading</h1>
-              <br />
-              <button onClick={scrollToItems}>View</button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    };
-
+ 
     const TestProducts = (props) => {
       return (
-        <div className="productmodeltemp5">
+        <div className="productmodeltemp8">
           <li>
-            <div className="productimgtemp5">
-              <img src={key1img}/>
+            <div className="productimgtemp8">
+              <img src={estate}/>
             </div>
-            <div className="product__titletemp5">
-              <h2>title</h2>
-            </div>
-            <div className="product__amounttemp5">
-              <h3>$30</h3>
+            <div className="product__titletemp8">
+              <h2>name</h2>
             </div>
           </li>
         </div>
       );
     };
 
-    const Block1 = () => {
-      return(<Fragment>
-        <div className="block">
-          <div className="blockhead">
-            <h2>Heading</h2>
-          </div>
-          <div className="blocktextdetails">
-            <p>Deatils about the heading above</p>
-          </div>
-        </div>
-      </Fragment>)
-    }
-
-    const fetchProdshandler = useCallback(async () => {
-    try {
-      const response = await fetch("http://localhost:8080/custom/img/shop", {
-        headers: {
-          Authorization: params.shop_id,
-        },
-      });
-      const data = await response.json();
-      const transformedItems = data.img.map((itemsdata) => {
-        return {
-          images1: `http://localhost:8080/images/${itemsdata.images1}`,
-          images2: `http://localhost:8080/images/${itemsdata.images2}`,
-          images3: `http://localhost:8080/images/${itemsdata.images3}`,
-          images4: `http://localhost:8080/images/${itemsdata.images4}`,
-          images5: `http://localhost:8080/images/${itemsdata.images5}`,
-          images6: `http://localhost:8080/images/${itemsdata.images6}`,
-          images7: `http://localhost:8080/images/${itemsdata.images7}`,
-          shop_id: itemsdata.shop_id,
-          shop_name: itemsdata.shop_name,
-          shop_owner: itemsdata.shop_owner,
-          shop_tagline: itemsdata.shop_tagline,
-          shop_blockhead2: itemsdata.shop_blockhead2,
-          shop_block2: itemsdata.shop_block2,
-          shop_blockhead3: itemsdata.shop_blockhead3,
-          shop_block3: itemsdata.shop_block3,
-          user_id: itemsdata.user_id,
-          shop_blockhead1: itemsdata.shop_blockhead1,
-          shop_block1: itemsdata.shop_block1,
-          shop_keyhead1: itemsdata.shop_keyhead1,
-          shop_key1: itemsdata.shop_key1,
-          shop_keyhead2: itemsdata.shop_keyhead2,
-          shop_key2: itemsdata.shop_key2,
-          shop_keyhead3: itemsdata.shop_keyhead3,
-          shop_key3: itemsdata.shop_key3,
-          shop_email: itemsdata.shop_email,
-          shop_phone: itemsdata.shop_phone,
-          temp5: itemsdata.temp5,
-          insta: itemsdata.insta
-        };
-      });
-      setItems(transformedItems);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [params.id]);
-
-  useEffect(() => {
-    setLoading(true);
-    fetchProdshandler().finally(() => {
-      setLoading(false);
-    });
-  }, [fetchProdshandler]);
-
   return (
     <Fragment>
-      <Editbtndisplay1/>
-      <div className="maindivtemp7">
-        <div className="header1temp7">
+      <div className="maindivtemp8">
+        <div className="header1temp8">
           <header>
-            <div className="btnsectionheader1temp7">
-             <section>
-              <ul>
-                <li><button>View</button></li>
-                <li><button>About us</button></li>
-                <li><button>Contact us</button></li>
-              </ul>
-              <h1>{items[0]?.shop_tagline}</h1>
-              <div className="btnviewnowtemp7">
-              <button>View</button>
-              </div>
-             </section>
-             </div>
-             <div className="header1temp7imgsection">
-             <section>
-              <img src={items[0]?.images1} alt="image 1"/>
-             </section>
-             </div>
+           <h1>Shop name</h1>
+           <div className="taglintemp8">
+           <h1>Text 1</h1>
+           <h3>Text 2</h3>
+           <button>Our properties</button>
+           </div>
           </header>
         </div>
-        <div className="abtno1temp7">
-          <section className="textsectionabtno1temp7">
-            <h1>{items[0]?.shop_blockhead1}</h1>
-            <p>{items[0]?.shop_block1}</p>
-            <button>Shop Now</button>
-          </section>
-          <section className="imgsectiontemp7abtno1">
-            <img src={items[0]?.images2} alt="image 2"/>
-          </section>
-        </div>
-        <div className="prodssectiontemp7">
-          <div className="textsecprodstemp7">
-          <h1>Our listing</h1>
-          <p>{items[0]?.shop_block3}</p>
+        <div className="abt1temp8">
+          <div className='imagesabt1temp8'>
+          <img src={estate1} className="img1temp8abt1"/>
+          <div className="img1temp8abt1">
+          <img src={estate2} className="img1temp8abt1"/>
           </div>
-          <Productsinshopapp/>
-        </div>
-        <div className="keypointtemp7">
-          <div className="key1temp7">
-            <section className="textsectionkey1temp7">
-              <h1>{items[0]?.shop_keyhead1}</h1>
-              <p>{items[0]?.shop_key1}</p>
-            </section>
-            <section className="imgsectionkey1temp7">
-              <img src={items[0]?.images3} alt="image 3"/>
-            </section>
           </div>
-          <div className="key1temp7"> 
-          <section className="textsectionkey1temp7">
-              <h1>{items[0]?.shop_keyhead2}</h1>
-              <p>{items[0]?.shop_key2}</p>
-            </section>
-            <section className="imgsectionkey1temp7">
-              <img src={items[0]?.images4} alt="image 4"/>
-            </section>
+          <div className="abt1temp8textarea">
+            <h1>Text 3</h1>
+            <h4>Text 4</h4>
+            <p>Text 5</p>
+            <button>About us</button>
+          </div>
+        </div>
+        <div className="whatwedotemp8">
+          <section>
+            <div className="h3temp8whatwedo">
+            <h3>What we do</h3>
             </div>
-          <div className="key1temp7">
-          <section className="textsectionkey1temp7">
-              <h1>{items[0]?.shop_keyhead3}</h1>
-              <p>{items[0]?.shop_key3}</p>
-            </section>
-            <section className="imgsectionkey1temp7">
-              <img src={items[0]?.images5} alt="image 5"/>
-            </section>
+            <div className="h1whwedotext6temp8">
+              <h1>Text 6</h1>
+            </div>
+            <div className="whatwedoservicestemp8">
+              <section className="textareawhatwedoparttemp8">
+                <h2>Text 7</h2>
+                <p>Text 8</p>
+              </section >
+              <section className="textareawhatwedoparttemp8">
+                <h2>Text 9</h2>
+                <p>Text 10</p>
+              </section>
+              <section className="textareawhatwedoparttemp8">
+                <h2>Text 11</h2>
+                <p>text 12</p>
+              </section>
+            </div>
+            <div className="ourprojectstemp8">
+            <h2>Our projects</h2>
+            <div className="ourprojectsimgtemp8">
+              <img src={estate}/>
+              <img src={estate1}/>
+              <img src={estate2}/>
+            </div>
           </div>
-        </div>
-        <div className="abt2temp7">
-          <section className="temp7abt2img">
-            <img src={items[0]?.images6} alt="image 6"/>
-          </section>
-          <section className="textsecabt2temp7">
-            <h1>{items[0]?.shop_blockhead2}</h1>
-            <p>{items[0]?.shop_block3}</p>
-            <button>View</button>
           </section>
         </div>
-        <div className="contctustmep7">
+        <div className="ourprodssectemp8">
+          <h1>Our listings</h1>
+          <TestProducts/>
+        </div>
+        <div className="contactsectemp8">
           <footer>
             <h2>Contact us</h2>
             <ul>
-              <li>{items[0]?.insta}</li>
-              <li>{items[0]?.shop_phone}</li>
-              <li>{items[0]?.shop_email}</li>
+              <li>@instagram</li>
+              <li>7791527840</li>
+              <li>you@gmail.com</li>
             </ul>
           </footer>
         </div>
@@ -1282,4 +1192,4 @@ const params = useParams()
   );
 };
 
-export default Template7website;
+export default Template8websitepreview;
