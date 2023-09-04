@@ -1,0 +1,52 @@
+@media (min-width: 312px) and (max-width: 480px) {
+
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+  
+  }
+  
+  @media (min-width: 1025px) {
+    .headerplansetion header {
+        display: inline-flex;
+    }
+    .headerplansetion button {
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: 10px;
+    }
+    .headerplansetion ul {
+        list-style: none;
+    }
+    .plansfordropment {
+      display: inline-flex;
+    }
+    .plan1 {
+      width: 300px;
+      height: 400px;
+      box-shadow: 15px 15px 15px rgba(1, 1, 1, 0.1);
+      margin-left: 80px;
+    }
+    .priceplans {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      color: darkblue;
+    }
+    .plan1 h1 {
+      text-align: center;
+    }
+    .plan1 button {
+      width: 250px;
+      margin-left: 25px;
+      height: 40px;
+      margin-top: 50px;
+      background-color: rgb(135, 39, 198);
+      border: 1px solid rgb(135, 39, 198);
+      border-radius: 25px;
+      color: white;
+    }
+  }

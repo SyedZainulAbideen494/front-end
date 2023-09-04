@@ -27,8 +27,8 @@
     margin-right: 30px;
   }
   .imgsectionintemp3header2 img {
-    width: 150px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
     border-radius: 25px;
     margin-top: 30px;
   }
@@ -58,19 +58,19 @@
      margin-top: 150px;
   }
   .textsectemp3abt1part1 {
-    width: 100px;
+    width: 150px;
     text-align: center;
   }
   .imgsecabt1no1tmep3part1 img {
-    width: 150px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
     border-radius: 25px;
   }
   .testimonialtemp3  {
     background-color: #5e17eb;
     padding: 10px;
     display: inline-flex;
-    width: 280px;
+    width: 340px;
     margin-top: 150px;
     border-radius: 25px;
   }

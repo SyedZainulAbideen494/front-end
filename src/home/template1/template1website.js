@@ -1530,7 +1530,7 @@ const params = useParams()
         </div>
         <div className="ourcomapnytypetemp1">
           <section className="ourcompanytypetexttemp1head">
-            <h1>Our {items[0]?.blockhead3}</h1>
+            <h1>Our {items[0]?.shop_blockhead3}</h1>
             <p>{items[0]?.shop_block3}</p>
             <button>Our services</button>
           </section>
