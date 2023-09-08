@@ -321,8 +321,11 @@ const Sales = (props) => {
   }, []);
 
   return (
-    <Fragment>
+    <Fragment><div className="closebtn">
+    <button onClick={props.onClick}>close</button>
+  </div>
       <h2>My store sales</h2>
+
       <section>
         {!loading && <Saleslist Sales={orders} />}
         {loading && <p>Loading..</p>}
@@ -379,6 +382,7 @@ const Saleslist = (props) => {
           {props.Sales.map((itemdata) => (
             <Link
               to={`/saleschat/${itemdata.orders_id}`}
+              style={{textDecoration: 'none', color: 'black'}}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -407,9 +411,9 @@ const Saleslist = (props) => {
 const Solditems = (props) => {
   return (
     <Fragment>
-      <div className="item">
+      <div className="itemsold">
+        <h2>Sold Item</h2>
         <h2>{props.product}</h2>
-        <h2>{props.name}</h2>
       </div>
     </Fragment>
   );
@@ -562,6 +566,9 @@ const Addproductstodatabase = (props) => {
  
   return (
     <div>
+      <div className="closebtn">
+        <button onClick={props.onClick}>Close</button>
+      </div>
       <h2>ADD NEW ITEM</h2>
       <form onSubmit={addProductHandler}>
         <label>Product Title</label>
@@ -570,7 +577,7 @@ const Addproductstodatabase = (props) => {
           placeholder="Product title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-        />
+        /><br/>
  
         <label>Product Quantity</label>
         <input
@@ -578,14 +585,14 @@ const Addproductstodatabase = (props) => {
           placeholder="Product Quantity"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-        />
+        /><br/>
         <label>Enter your stripe payment url</label>
         <input
           type="text"
           placeholder="Enter your stripe payment url"
           value={payment}
           onChange={(e) => setpayment(e.target.value)}
-        />
+        /><br/>
 
         <label>USD</label>
         <input
@@ -593,126 +600,126 @@ const Addproductstodatabase = (props) => {
           placeholder="USD"
           value={usd}
           onChange={(e) => setUSD(e.target.value)}
-        />
+        /><br/>
         <label>EUR</label>
         <input
           type="text"
           placeholder="EUR"
           value={EUR}
           onChange={(e) => setEUR(e.target.value)}
-        />
+        /><br/>
         <label>GBP</label>
         <input
           type="text"
           placeholder="GBP"
           value={GBP}
           onChange={(e) => setGBP(e.target.value)}
-        />
+        /><br/>
         <label>JPY</label>
         <input
           type="text"
           placeholder="JPY"
           value={JPY}
           onChange={(e) => setJPY(e.target.value)}
-        />
+        /><br/>
         <label>CAD</label>
         <input
           type="text"
           placeholder="CAD"
           value={CAD}
           onChange={(e) => setCAD(e.target.value)}
-        />
+        /><br/>
         <label>AUD</label>
         <input
           type="text"
           placeholder="AUD"
           value={AUD}
           onChange={(e) => setAUD(e.target.value)}
-        />
+        /><br/>
         <label>CHF</label>
         <input
           type="text"
           placeholder="CHF"
           value={CHF}
           onChange={(e) => setCHF(e.target.value)}
-        />
+        /><br/>
         <label>CNY</label>
         <input
           type="text"
           placeholder="CNY"
           value={CNY}
           onChange={(e) => setCNY(e.target.value)}
-        />
+        /><br/>
         <label>INR</label>
         <input
           type="text"
           placeholder="INR"
           value={INR}
           onChange={(e) => setINR(e.target.value)}
-        />
+        /><br/>
         <label>BRL</label>
         <input
           type="text"
           placeholder="BRL"
           value={BRL}
           onChange={(e) => setBRL(e.target.value)}
-        />
+        /><br/>
         <label>RUB</label>
         <input
           type="text"
           placeholder="RUB"
           value={RUB}
           onChange={(e) => setRUB(e.target.value)}
-        />
+        /><br/>
         <label>Price in KRW</label>
         <input
           type="text"
           placeholder="Price in KRW"
           value={KRW}
           onChange={(e) => setKRW(e.target.value)}
-        />
+        /><br/>
         <label>Price in SGD</label>
         <input
           type="text"
           placeholder="Price in SGD"
           value={SGD}
           onChange={(e) => setSGD(e.target.value)}
-        />
+        /><br/>
         <label>Price in NZD</label>
         <input
           type="text"
           placeholder="Price in NZD"
           value={NZD}
           onChange={(e) => setNZD(e.target.value)}
-        />
+        /><br/>
         <label>Price in MXN</label>
         <input
           type="text"
           placeholder="Price in MXN"
           value={MXN}
           onChange={(e) => setMXN(e.target.value)}
-        />
+        /><br/>
         <label>Price in HKD</label>
         <input
           type="text"
           placeholder="Price in HKD"
           value={HKD}
           onChange={(e) => setHKD(e.target.value)}
-        />
+        /><br/>
         <label>Price in TRY</label>
         <input
           type="text"
           placeholder="Price in TRY"
           value={TRY}
           onChange={(e) => setTRY(e.target.value)}
-        />
+        /><br/>
         <label>Price in TRY</label>
         <input
           type="text"
           placeholder="Price in TRY"
           value={TRY}
           onChange={(e) => setTRY(e.target.value)}
-        />
+        /><br/>
         <label>Price in SEK</label>
         <input
           type="text"
@@ -720,14 +727,14 @@ const Addproductstodatabase = (props) => {
           value={SEK}
           onChange={(e) => setSEK
             (e.target.value)}
-        />
+        /><br/>
         <label>Price in NOK</label>
         <input
           type="text"
           placeholder="Price in NOK"
           value={NOK}
           onChange={(e) => setNOK(e.target.value)}
-        />        
+        />       <br/> 
 
         <label>Image</label>
         <input
@@ -892,6 +899,7 @@ const ProductList = (props) => {
 const Editbtndisplay1 = () => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
+  const [showimg, setshowimg] = useState(false);
 
   const showformhandler = () => {
     setshowform(true);
@@ -899,6 +907,14 @@ const Editbtndisplay1 = () => {
 
   const hideformhandler = () => {
     setshowform(false);
+  };
+
+  const showimghandler = () => {
+    setshowimg(true);
+  };
+
+  const hideimghandler = () => {
+    setshowimg(false);
   };
 
   const showsaleshandler = () => {
@@ -1022,6 +1038,9 @@ const Editbtndisplay1 = () => {
                   <span className="btnwebstore">
                     <button onClick={showformhandler}>Add Item</button>
                   </span>
+                  <span className="btnwebstore">
+                    <button onClick={showimghandler}>Add custom images</button>
+                  </span>
                 </div>
               </div>
             </header>
@@ -1032,13 +1051,9 @@ const Editbtndisplay1 = () => {
           <div className="addshopform">
             {showform && <Addproductstodatabase onClick={hideformhandler} />}
           </div>
-          <Addimage1/>
-          <Addimage2/>
-          <Addimage3/>
-          <Addimage4/>
-          <Addimage5/>
-          <Addimage6/>
-          <Addimage7/>
+          <div className="addshopform">
+            {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
+          </div>
         </Fragment>
       );
     } else {
@@ -1048,6 +1063,21 @@ const Editbtndisplay1 = () => {
 
   return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
+
+const Addimgsectionwithimgs= (props) => {
+  return<Fragment>
+    <div className='closebtnimgsec'>
+    <button onClick={props.onClick}>Close</button>
+    </div>
+<Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
+  </Fragment>
+}
 
 const Addimage1 = (props) => {
   const [image, setImage] = useState(null);

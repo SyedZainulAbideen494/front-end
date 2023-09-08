@@ -124,14 +124,9 @@ function Saleschat(props) {
     <Fragment>
       <div className="saleschatheader">
         <header>
-          <div className="headerbtnssaleschat">
-            <span className="btns">
-              <h2>{order[0]?.name}</h2>
-            </span>
-            <Link to="/profile">
-              <span className="btns">
-                <button>Profile</button>
-              </span>
+          <div className="headerbtnschat">
+            <Link to="/">
+            <span><button>Back</button></span>
             </Link>
           </div>
         </header>

@@ -376,6 +376,7 @@ const Saleslist = (props) => {
           {props.Sales.map((itemdata) => (
             <Link
               to={`/saleschat/${itemdata.orders_id}`}
+              style={{textDecoration: 'none', color: 'black'}}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -404,9 +405,9 @@ const Saleslist = (props) => {
 const Solditems = (props) => {
   return (
     <Fragment>
-      <div className="item">
+      <div className="itemsold">
+        <h2>Sold Item</h2>
         <h2>{props.product}</h2>
-        <h2>{props.name}</h2>
       </div>
     </Fragment>
   );
@@ -440,6 +441,26 @@ function Productsinshopapp() {
           amount: itemsData.quantity,
           shop_id: itemsData.shop_id,
           images: `http://localhost:8080/images/${itemsData.images}`,
+          usd: itemsData.usd,
+          EUR: itemsData.EUR,
+          GBP: itemsData.GBP,
+          JPY: itemsData.JPY,
+          CAD: itemsData.CAD,
+          AUD: itemsData.AUD,
+          CHF: itemsData.CHF,
+          CNY: itemsData.CNY,
+          INR: itemsData.INR,
+          BRL: itemsData.BRL,
+          RUB: itemsData.RUB,
+          KRW: itemsData.KRW,
+          SGD: itemsData.SGD,
+          NZD: itemsData.NZD,
+          MXN: itemsData.MXN,
+          HKD: itemsData.HKD,
+          TRY: itemsData.TRY,
+          ZAR: itemsData.ZAR,
+          SEK: itemsData.SEK,
+          NOK: itemsData.NOK,
         };
       });
 
@@ -465,7 +486,26 @@ function Productsinshopapp() {
 }
 const Addproductstodatabase = (props) => {
   const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
+  const [usd, setUSD] = useState("");
+  const [EUR, setEUR] = useState("");
+  const [GBP, setGBP] = useState("");
+  const [JPY, setJPY] = useState("");
+  const [CAD, setCAD] = useState("");
+  const [AUD, setAUD] = useState("");
+  const [CHF, setCHF] = useState("");
+  const [CNY, setCNY] = useState("");
+  const [INR, setINR] = useState("");
+  const [BRL, setBRL] = useState("");
+  const [RUB, setRUB] = useState("");
+  const [KRW, setKRW] = useState("");
+  const [SGD, setSGD] = useState("");
+  const [NZD, setNZD] = useState("");
+  const [MXN, setMXN] = useState("");
+  const [HKD, setHKD] = useState("");
+  const [TRY, setTRY] = useState("");
+  const [ZAR, setZAR] = useState("");
+  const [SEK, setSEK] = useState("");
+  const [NOK, setNOK] = useState("");
   const [amount, setAmount] = useState("");
   const [image, setImage] = useState(null);
   const [payment, setpayment] = useState('')
@@ -480,9 +520,28 @@ const Addproductstodatabase = (props) => {
     const formData = new FormData();
     formData.append("image", image);
     formData.append("title", title);
-    formData.append("price", price);
     formData.append("amount", amount);
     formData.append("payment", payment)
+    formData.append("usd", usd);
+    formData.append("EUR", EUR);
+    formData.append("GBP", GBP);
+    formData.append("JPY", JPY);
+    formData.append("CAD", CAD);
+    formData.append("AUD", AUD);
+    formData.append("CHF", CHF);
+    formData.append("CNY", CNY);
+    formData.append("INR", INR);
+    formData.append("BRL", BRL);
+    formData.append("RUB", RUB);
+    formData.append("KRW", KRW);
+    formData.append("SGD", SGD);
+    formData.append("NZD", NZD);
+    formData.append("MXN", MXN);
+    formData.append("HKD", HKD);
+    formData.append("TRY", TRY);
+    formData.append("ZAR", ZAR);
+    formData.append("SEK", SEK);
+    formData.append("NOK", NOK);
  
     Axios.post("http://localhost:8080/addProduct", formData, {
       headers: {
@@ -501,6 +560,9 @@ const Addproductstodatabase = (props) => {
  
   return (
     <div>
+      <div className="closebtn">
+        <button onClick={props.onClick}>Close</button>
+      </div>
       <h2>ADD NEW ITEM</h2>
       <form onSubmit={addProductHandler}>
         <label>Product Title</label>
@@ -509,31 +571,165 @@ const Addproductstodatabase = (props) => {
           placeholder="Product title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-        />
- 
-        <label>Product Price</label>
-        <input
-          type="text"
-          placeholder="Product price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
+        /><br/>
  
         <label>Product Quantity</label>
         <input
           type="text"
-          placeholder="Product amount"
+          placeholder="Product Quantity"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-        />
+        /><br/>
         <label>Enter your stripe payment url</label>
         <input
           type="text"
           placeholder="Enter your stripe payment url"
           value={payment}
           onChange={(e) => setpayment(e.target.value)}
-        />
- 
+        /><br/>
+
+        <label>USD</label>
+        <input
+          type="text"
+          placeholder="USD"
+          value={usd}
+          onChange={(e) => setUSD(e.target.value)}
+        /><br/>
+        <label>EUR</label>
+        <input
+          type="text"
+          placeholder="EUR"
+          value={EUR}
+          onChange={(e) => setEUR(e.target.value)}
+        /><br/>
+        <label>GBP</label>
+        <input
+          type="text"
+          placeholder="GBP"
+          value={GBP}
+          onChange={(e) => setGBP(e.target.value)}
+        /><br/>
+        <label>JPY</label>
+        <input
+          type="text"
+          placeholder="JPY"
+          value={JPY}
+          onChange={(e) => setJPY(e.target.value)}
+        /><br/>
+        <label>CAD</label>
+        <input
+          type="text"
+          placeholder="CAD"
+          value={CAD}
+          onChange={(e) => setCAD(e.target.value)}
+        /><br/>
+        <label>AUD</label>
+        <input
+          type="text"
+          placeholder="AUD"
+          value={AUD}
+          onChange={(e) => setAUD(e.target.value)}
+        /><br/>
+        <label>CHF</label>
+        <input
+          type="text"
+          placeholder="CHF"
+          value={CHF}
+          onChange={(e) => setCHF(e.target.value)}
+        /><br/>
+        <label>CNY</label>
+        <input
+          type="text"
+          placeholder="CNY"
+          value={CNY}
+          onChange={(e) => setCNY(e.target.value)}
+        /><br/>
+        <label>INR</label>
+        <input
+          type="text"
+          placeholder="INR"
+          value={INR}
+          onChange={(e) => setINR(e.target.value)}
+        /><br/>
+        <label>BRL</label>
+        <input
+          type="text"
+          placeholder="BRL"
+          value={BRL}
+          onChange={(e) => setBRL(e.target.value)}
+        /><br/>
+        <label>RUB</label>
+        <input
+          type="text"
+          placeholder="RUB"
+          value={RUB}
+          onChange={(e) => setRUB(e.target.value)}
+        /><br/>
+        <label>Price in KRW</label>
+        <input
+          type="text"
+          placeholder="Price in KRW"
+          value={KRW}
+          onChange={(e) => setKRW(e.target.value)}
+        /><br/>
+        <label>Price in SGD</label>
+        <input
+          type="text"
+          placeholder="Price in SGD"
+          value={SGD}
+          onChange={(e) => setSGD(e.target.value)}
+        /><br/>
+        <label>Price in NZD</label>
+        <input
+          type="text"
+          placeholder="Price in NZD"
+          value={NZD}
+          onChange={(e) => setNZD(e.target.value)}
+        /><br/>
+        <label>Price in MXN</label>
+        <input
+          type="text"
+          placeholder="Price in MXN"
+          value={MXN}
+          onChange={(e) => setMXN(e.target.value)}
+        /><br/>
+        <label>Price in HKD</label>
+        <input
+          type="text"
+          placeholder="Price in HKD"
+          value={HKD}
+          onChange={(e) => setHKD(e.target.value)}
+        /><br/>
+        <label>Price in TRY</label>
+        <input
+          type="text"
+          placeholder="Price in TRY"
+          value={TRY}
+          onChange={(e) => setTRY(e.target.value)}
+        /><br/>
+        <label>Price in TRY</label>
+        <input
+          type="text"
+          placeholder="Price in TRY"
+          value={TRY}
+          onChange={(e) => setTRY(e.target.value)}
+        /><br/>
+        <label>Price in SEK</label>
+        <input
+          type="text"
+          placeholder="Price in SEK"
+          value={SEK}
+          onChange={(e) => setSEK
+            (e.target.value)}
+        /><br/>
+        <label>Price in NOK</label>
+        <input
+          type="text"
+          placeholder="Price in NOK"
+          value={NOK}
+          onChange={(e) => setNOK(e.target.value)}
+        />       <br/> 
+
         <label>Image</label>
         <input
           type="file"
@@ -546,6 +742,7 @@ const Addproductstodatabase = (props) => {
     </div>
   );
  };
+ 
 
 const Products = (props) => {
   return (

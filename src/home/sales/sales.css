@@ -1,18 +1,183 @@
-.saleschatheader header {
-  background-color: #42413d;
-  padding: 40px;
+@media (min-width: 312px) and (max-width: 480px) {
+  .saleschatheader {
+    background-color: black;
+  }
+  .headerbtnschat button {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px sold black;
+  }
+  .chatinterface {
+    text-align: center;
+    border: 2px solid white;
+    background-color: #2ec4b6;
+    color: white;
+    width: 300px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+  }
+  .chattxt {
+    width: 200px;
+    background-color: #52b788;
+    color: white;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 20px;
+  }
+  .footherforchat input {
+    width: 200px;
+    margin-top: 50px;
+    padding: 10px;
+    border-top-left-radius: 25px;
+    margin-left: 50px;
+    border-bottom-left-radius: 25px;
+  }
+  .footherforchat button {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 10px;
+  }
 }
 
-.inputforchat input {
-  width: 1000px;
-  height: 50px;
-  margin-left: 50px;
+@media (min-width: 481px) and (max-width: 768px) {
+  .saleschatheader {
+    background-color: black;
+  }
+  .headerbtnschat button {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px sold black;
+  }
+  .chatinterface {
+    text-align: center;
+    border: 2px solid white;
+    background-color: #2ec4b6;
+    color: white;
+    width: 300px;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+  }
+  .chattxt {
+    width: 200px;
+    background-color: #52b788;
+    color: white;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 20px;
+  }
+  .footherforchat input {
+    width: 200px;
+    margin-top: 50px;
+    padding: 10px;
+    border-top-left-radius: 25px;
+    margin-left: 50px;
+    border-bottom-left-radius: 25px;
+  }
+  .footherforchat button {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 10px;
+  }
 }
 
-.orderdetails {
-  width: 300px;
-  height: 500px;
-  margin-left: 450px;
-  border-radius: 25px;
-  border: 2px solid black;
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saleschatheader {
+    background-color: black;
+  }
+  .headerbtnschat button {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px sold black;
+  }
+  .chatinterface {
+    text-align: center;
+    border: 2px solid white;
+    background-color: #2ec4b6;
+    color: white;
+    width: 300px;
+    margin-left: 280px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+  }
+  .chattxt {
+    width: 400px;
+    background-color: #52b788;
+    color: white;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 20px;
+  }
+  .footherforchat input {
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 50px;
+    padding: 20px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .footherforchat button {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .saleschatheader {
+    background-color: black;
+  }
+  .headerbtnschat button {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px sold black;
+  }
+  .chatinterface {
+    text-align: center;
+    border: 2px solid white;
+    background-color: #2ec4b6;
+    color: white;
+    width: 300px;
+    margin-left: 480px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+  }
+  .chattxt {
+    width: 400px;
+    background-color: #52b788;
+    color: white;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 20px;
+  }
+  .footherforchat input {
+    width: 500px;
+    margin-left: 300px;
+    margin-top: 50px;
+    padding: 20px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .footherforchat button {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 20px;
+  }
 }

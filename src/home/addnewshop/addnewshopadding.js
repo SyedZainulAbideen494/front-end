@@ -6,7 +6,7 @@ import "./addshopimg.css";
 const Addshopimg = () => {
   return (
     <Fragment>
-      <Link to="/Addshoppage1">
+      <Link to="/Addshoppage1" style={{textDecoration: 'none', color: 'black'}}>
         <div className="imgaddshop">
 
           <div>

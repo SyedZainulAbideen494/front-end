@@ -591,4 +591,18 @@
     margin-left: 30px;
 }
 
-
+.itemsold {
+    font-size: small;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    width: 100px;
+    text-decoration: none;
+}
+.closebtnimgsec button {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black ;
+    border-radius: 5px;
+    padding: 10px;
+}

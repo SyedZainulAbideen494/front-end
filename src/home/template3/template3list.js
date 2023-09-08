@@ -11,6 +11,7 @@ const Template3list = (props) => {
           {props.shops.map((item) => (
             <Link
               to={`/mystore3/${item.shop_id}/${item.shop_name}`}
+              style={{textDecoration: 'none', color: 'black'}}
             >
               <Template3inprofile
                 shop_id={item.shop_id}

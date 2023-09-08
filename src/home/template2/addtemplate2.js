@@ -20,13 +20,13 @@ const Addtemplate1form = (props) => {
   const [shop_keyhead3, setshop_keyhead3] = useState("");
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
-  const [temp1, settemp1]= useState('')
+  const [temp2, settemp2]= useState('')
   const [insta, setinsta] = useState("")
   const [salestext, setsalestext] = useState('')
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
-      "http://localhost:8080/addShops/template1",
+      "http://localhost:8080/addShops/template2",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
@@ -47,7 +47,7 @@ const Addtemplate1form = (props) => {
         shop_phone: shop_phone,
         insta: insta,
         salestext: salestext,
-        temp1: temp1,
+        temp2: temp2,
       },
       {
         headers: {
@@ -324,7 +324,7 @@ const Addtemplate1form = (props) => {
             required
             placeholder="Enter any text to confirm"
             onChange={(e) => {
-              settemp1(e.target.value);
+              settemp2(e.target.value);
             }}
           />
         </div>

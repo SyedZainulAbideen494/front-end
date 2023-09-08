@@ -75,7 +75,8 @@ const Orderslist = (props) => {
         <ul>
           {props.order.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
+              to={`/saleschat/${itemdata.orders_id}`}
+              style={{textDecoration: 'none', color: 'black'}}
             >
               <Orderproduct
                 orders_id={itemdata.orders_id}
