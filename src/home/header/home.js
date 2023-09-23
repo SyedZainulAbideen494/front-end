@@ -16,6 +16,7 @@ import Displayshoponhome from "../display on home screen/displayshop";
 import logo from './images/Dropment (2).png'
 import nocode from './images/Dropment (7).png'
 import step from './images/Step 1.png'
+import Users from "../user/userapp";
 
 const Home = () => {
   const [auth, setauth] = useState(false);
@@ -205,13 +206,8 @@ const Home = () => {
             </div>
             <div className="itemsdropment">
               <Homedisplay/>
+              <Users/>
             </div>
-          </div>
-          <div className="textforshopsonhomepageondropment">
-            <h1>Stores made by our users</h1>
-          </div>
-          <div className="shopsfromourusershomepagedemo">
-            <Displayshoponhome/>
           </div>
         </div>
         <div className="footer">

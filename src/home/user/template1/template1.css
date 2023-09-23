@@ -1,0 +1,608 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+    .temp1head2 img {
+        width: 80px;
+        height: 80px;
+    }
+    .temp1head2 header{
+        display: inline-flex;
+    }
+    .temp1head2 ul {
+        display: inline-flex;
+        list-style: none;
+    }
+    .temp1head2 button {
+        background-color: transparent;
+        border: transparent;
+    }
+    .header2temp1 header {
+        display: inline-flex;
+    }
+    .temp1head1img img {
+        width: 200px;
+        height: 150px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        margin-top: 30px;
+    }
+    .temp1headtextsection {
+        width: 160px;
+        font-size: medium;
+    }
+    .slaestexttemp1 {
+        color: rgb(0, 128, 255);
+    }
+    .keystemp1 {
+        margin-top: 150px;
+    }
+    .key1temp1 img {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+    }
+    .key1temp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+    .textsectiontemp1key1 {
+        text-align: center;
+    }
+    .textsectiontemp1key1 h2 {
+        color: rgb(0, 128, 255);
+    }
+    .stepswedotemp1 {
+        background-color: rgb(0, 128, 255);
+        color: white;
+        margin-top: 100px;
+        border-radius: 25px;
+    }
+    .step1temp1 {
+        display: inline-flex;
+        margin-left: 3px;
+    }
+    .circletemp1 {
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 10px;
+        margin-left: 10px;
+    }
+
+    .step2temp1 {
+        margin-left: 3px;
+        display: inline-flex;
+    }
+    .step3temp1 {
+        display: inline-flex;
+        margin-left: 3px;
+    }
+    .step4temp1 {
+        display: inline-flex;
+        margin-left: 3px;
+    }
+    .ourcomapnytypetemp1 {
+        margin-top: 100px;
+    }
+    .imgtypecomplaytemp1 img {
+        width: 300px;
+        margin-top: 50px;
+        border-radius: 25px;
+    }
+    .ourcompanytypetexttemp1head {
+        width: 200px;
+        text-align: center;
+        margin-left: 50px;
+    }
+    .ourcompanytypetexttemp1head button {
+        background-color: rgb(0, 128, 255);
+        padding: 10px;
+        color: white;
+        font-size: medium;
+        border-radius: 25px;
+        border: 1px solid rgb(0, 128, 255);
+    }
+    .productmodeltemp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 50px;
+        margin-top: 100px;
+        list-style: none;
+        padding: 10px;
+    }
+    .productimgtemp1 img {
+        width: 180px;
+        margin-left: 10px;
+        border-radius: 25px;
+    }
+    .ourservicestemp1 h1 {
+        text-align: center;
+        margin-top: 150px;
+    }
+    .contactustemp1 {
+        margin-top: 100px;
+        background-color: rgb(0, 128, 255);
+        color: white;
+        list-style: none;
+        padding:40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 25px;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .temp1head2 img {
+        width: 70px;
+        height: 70px;
+    }
+    .temp1head2 header{
+        display: inline-flex;
+    }
+    .temp1head2 ul {
+        display: inline-flex;
+        list-style: none;
+    }
+    .temp1head2 button {
+        background-color: transparent;
+        border: transparent;
+        margin-top: 10px;
+    }
+    .temp1head2 h2 {
+        margin-top: 20px;
+    }
+    .header2temp1 header {
+        display: inline-flex;
+    }
+    .temp1head1img img {
+        width: 200px;
+        height: 150px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+    .temp1headtextsection {
+        width: 200px;
+    }
+    .slaestexttemp1 {
+        font-size: x-large;
+        color: rgb(0, 128, 255);
+    }
+    .keystemp1 {
+        margin-top: 150px;
+        margin-left: 100px;
+    }
+    .key1temp1 img {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+    }
+    .key1temp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 50px;
+        margin-top: 100px;
+    }
+    .textsectiontemp1key1 {
+        text-align: center;
+    }
+    .textsectiontemp1key1 h2 {
+        color: rgb(0, 128, 255);
+    }
+    .stepswedotemp1 {
+        background-color: rgb(0, 128, 255);
+        color: white;
+        padding: 20px;
+        margin-top: 100px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border-radius: 25px;
+    }
+    .step1temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .circletemp1 {
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 20px;
+        margin-right: 100px;
+    }
+
+    .step2temp1 {
+        margin-left: 100px;
+        display: inline-flex;
+    }
+    .step3temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .step4temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .ourcomapnytypetemp1 {
+        margin-top: 100px;
+    }
+    .imgtypecomplaytemp1 img {
+        width: 400px;
+        margin-left: 50px;
+        border-radius: 25px;
+        margin-top: 50px;
+    }
+    .ourcompanytypetexttemp1head {
+        width: 400px;
+        margin-left: 40px;
+        text-align: center;
+    }
+    .ourcompanytypetexttemp1head button {
+        background-color: rgb(0, 128, 255);
+        padding: 10px;
+        color: white;
+        font-size: medium;
+        border-radius: 25px;
+        border: 1px solid rgb(0, 128, 255);
+    }
+    .productmodeltemp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 50px;
+        margin-top: 100px;
+        list-style: none;
+        padding: 10px;
+    }
+    .productimgtemp1 img {
+        width: 180px;
+        margin-left: 10px;
+        border-radius: 25px;
+    }
+    .ourservicestemp1 h1 {
+        text-align: center;
+        margin-top: 150px;
+    }
+    .contactustemp1 {
+        margin-top: 100px;
+        background-color: rgb(0, 128, 255);
+        color: white;
+        list-style: none;
+        padding:40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 25px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .temp1head2 img {
+        width: 100px;
+    }
+    .temp1head2 header{
+        display: inline-flex;
+    }
+    .temp1head2 ul {
+        display: inline-flex;
+        list-style: none;
+        margin-left: 50px;
+    }
+    .temp1head2 button {
+        background-color: transparent;
+        border: transparent;
+        margin-left: 40px;
+        margin-top: 30px;
+    }
+    .temp1head2 h2 {
+        margin-top: 50px;
+    }
+    .header2temp1 header {
+        display: inline-flex;
+    }
+    .temp1head1img img {
+        width: 300px;
+        height: 250px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        margin-left: 100px;
+    }
+    .temp1headtextsection {
+        width: 300px;
+    }
+    .slaestexttemp1 {
+        font-size: x-large;
+        color: rgb(0, 128, 255);
+    }
+    .keystemp1 {
+        display: inline-flex;
+        margin-top: 150px;
+        align-items: center;
+        margin-left: 50px;
+    }
+    .key1temp1 img {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+    }
+    .key1temp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+    .textsectiontemp1key1 {
+        text-align: center;
+    }
+    .textsectiontemp1key1 h2 {
+        color: rgb(0, 128, 255);
+    }
+    .stepswedotemp1 {
+        background-color: rgb(0, 128, 255);
+        color: white;
+        padding: 20px;
+        margin-top: 100px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border-radius: 25px;
+    }
+    .step1temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .circletemp1 {
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 20px;
+        margin-right: 100px;
+    }
+
+    .step2temp1 {
+        margin-left: 100px;
+        display: inline-flex;
+    }
+    .step3temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .step4temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .ourcomapnytypetemp1 {
+        display: inline-flex;
+        margin-top: 100px;
+    }
+    .imgtypecomplaytemp1 img {
+        width: 300px;
+        border-radius: 25px;
+    }
+    .ourcompanytypetexttemp1head {
+        width: 300px;
+        text-align: center;
+        margin-left: 30px;
+        margin-right: 40px;
+    }
+    .ourcompanytypetexttemp1head button {
+        background-color: rgb(0, 128, 255);
+        padding: 10px;
+        color: white;
+        font-size: medium;
+        border-radius: 25px;
+        border: 1px solid rgb(0, 128, 255);
+    }
+    .productmodeltemp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 50px;
+        margin-top: 100px;
+        list-style: none;
+        padding: 10px;
+    }
+    .productimgtemp1 img {
+        width: 180px;
+        margin-left: 10px;
+        border-radius: 25px;
+    }
+    .ourservicestemp1 h1 {
+        text-align: center;
+        margin-top: 150px;
+    }
+    .contactustemp1 {
+        margin-top: 100px;
+        background-color: rgb(0, 128, 255);
+        color: white;
+        list-style: none;
+        padding:40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 25px;
+    }
+}
+
+@media (min-width: 1025px){
+    .temp1head2 img {
+        width: 100px;
+    }
+    .temp1head2 header{
+        display: inline-flex;
+    }
+    .temp1head2 ul {
+        display: inline-flex;
+        list-style: none;
+        margin-left: 50px;
+    }
+    .temp1head2 button {
+        background-color: transparent;
+        border: transparent;
+        margin-left: 40px;
+        margin-top: 30px;
+    }
+    .temp1head2 h2 {
+        margin-top: 50px;
+    }
+    .header2temp1 header {
+        display: inline-flex;
+    }
+    .temp1head1img img {
+        width: 500px;
+        height: 350px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        margin-left: 170px;
+    }
+    .temp1headtextsection {
+        margin-left: 30px;
+        width: 500px;
+    }
+    .slaestexttemp1 {
+        font-size: xx-large;
+        color: rgb(0, 128, 255);
+    }
+    .keystemp1 {
+        display: inline-flex;
+        margin-left: 200px;
+        margin-top: 150px;
+    }
+    .key1temp1 img {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+    }
+    .key1temp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 50px;
+        margin-top: 100px;
+    }
+    .textsectiontemp1key1 {
+        text-align: center;
+    }
+    .textsectiontemp1key1 h2 {
+        color: rgb(0, 128, 255);
+    }
+    .stepswedotemp1 {
+        background-color: rgb(0, 128, 255);
+        color: white;
+        padding: 20px;
+        margin-top: 100px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border-radius: 25px;
+    }
+    .step1temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .circletemp1 {
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 20px;
+        margin-right: 100px;
+    }
+
+    .step2temp1 {
+        margin-left: 100px;
+        display: inline-flex;
+    }
+    .step3temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .step4temp1 {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+    .ourcomapnytypetemp1 {
+        display: inline-flex;
+        margin-top: 100px;
+    }
+    .imgtypecomplaytemp1 img {
+        width: 400px;
+        margin-left: 200px;
+        border-radius: 25px;
+    }
+    .ourcompanytypetexttemp1head {
+        width: 400px;
+        margin-left: 40px;
+        text-align: center;
+    }
+    .ourcompanytypetexttemp1head button {
+        background-color: rgb(0, 128, 255);
+        padding: 10px;
+        color: white;
+        font-size: medium;
+        border-radius: 25px;
+        border: 1px solid rgb(0, 128, 255);
+    }
+    .productmodeltemp1 {
+        width: 200px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 1, 2);
+        margin-left: 50px;
+        margin-top: 100px;
+        list-style: none;
+        padding: 10px;
+    }
+    .productimgtemp1 img {
+        width: 180px;
+        margin-left: 10px;
+        border-radius: 25px;
+    }
+    .ourservicestemp1 h1 {
+        text-align: center;
+        margin-top: 150px;
+    }
+    .contactustemp1 {
+        margin-top: 100px;
+        background-color: rgb(0, 128, 255);
+        color: white;
+        list-style: none;
+        padding:40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 25px;
+    }
+}
+
+.shop {
+    border: 2px solid black;
+    padding: 40px;
+    border-radius: 25px;
+    color: black;
+    margin-left: 30px;
+}
+
+.itemsold {
+    font-size: small;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    width: 100px;
+    text-decoration: none;
+}
+.closebtnimgsec button {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black ;
+    border-radius: 5px;
+    padding: 10px;
+}

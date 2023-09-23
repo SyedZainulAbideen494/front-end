@@ -1,16 +1,18 @@
 import React, { Fragment, useCallback, useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useRef } from "react";
-import "./template4.css";
 import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
-import img1 from '../header/images/Untitled design (5).png'
-import img2 from '../header/images/Untitled design (4).png'
-import img3 from '../header/images/Untitled design (2).png'
-import img4 from '../header/images/Untitled design (6).png'
-import img5 from '../header/images/Untitled design (7).png'
-import img6 from '../header/images/Untitled design (8).png'
-import img7 from '../header/images/Untitled design (9).png'
+import { animateScroll as scroll } from "react-scroll";
+import { useRef } from "react";
+import './template8.css'
+import head2img from '../../home/header/images/The Indian Gent.jpg'
+import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
+import key2img from '../../home/header/images/key2img.jpg'
+import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+import estate from '../header/images/Untitled design (21).png'
+import estate1 from '../header/images/Untitled design (24).png'
+import estate2 from '../header/images/Untitled design (25).png'
+
 
 const Editstoreform = () => {
   const params = useParams();
@@ -288,7 +290,7 @@ const Sales = (props) => {
     setloading(true);
     const response = await fetch("http://localhost:8080/myorders", {
       headers: {
-        Authorization: params.shop_id,
+        Authorization: params.id,
       },
     });
     const data = await response.json();
@@ -320,7 +322,7 @@ const Sales = (props) => {
 
   return (
     <Fragment>
-      <h2>My store sales</h2>
+      <Saleshead />
       <section>
         {!loading && <Saleslist Sales={orders} />}
         {loading && <p>Loading..</p>}
@@ -376,8 +378,7 @@ const Saleslist = (props) => {
         <ul>
           {props.Sales.map((itemdata) => (
             <Link
-              to={`/saleschat/${itemdata.orders_id}`}
-              style={{textDecoration: 'none', color: 'black'}}
+              to={`/saleschat/${itemdata.orders_id}/${itemdata.name}/${itemdata.Phone}/${itemdata.Email}/${itemdata.streetadrs}/${itemdata.city}/${itemdata.state}/${itemdata.zipcode}/${itemdata.country}/${itemdata.id}/${itemdata.product}/${itemdata.sender_id}/${itemdata.shop_id}/${itemdata.message}`}
             >
               <Solditems
                 orders_id={itemdata.orders_id}
@@ -406,18 +407,201 @@ const Saleslist = (props) => {
 const Solditems = (props) => {
   return (
     <Fragment>
-      <div className="itemsold">
-        <h2>Sold Item</h2>
+      <div className="item">
         <h2>{props.product}</h2>
+        <h2>{props.name}</h2>
       </div>
     </Fragment>
+  );
+};
+
+function Productsinshopapp() {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const params = useParams();
+
+  const fetchProductsHandler = useCallback(async () => {
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8080/use/shops/products", {
+        headers: {
+          Authorization: params.shop_id,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch products.");
+      }
+
+      const data = await response.json();
+      const transformedItems = data.items.map((itemsData) => {
+        return {
+          id: itemsData.id,
+          title: itemsData.title,
+          price: itemsData.price,
+          amount: itemsData.quantity,
+          shop_id: itemsData.shop_id,
+          images: `http://localhost:8080/images/${itemsData.images}`,
+        };
+      });
+
+      setItems(transformedItems);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchProductsHandler();
+  }, [fetchProductsHandler]);
+
+  return (
+    <Fragment>
+      <section>
+        {!loading ? <ProductList items={items} /> : <p>Loading..</p>}
+      </section>
+    </Fragment>
+  );
+}
+const Addproductstodatabase = (props) => {
+ const [title, setTitle] = useState("");
+ const [price, setPrice] = useState("");
+ const [amount, setAmount] = useState("");
+ const [image, setImage] = useState(null);
+
+ const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+
+ const params = useParams();
+
+ const addProductHandler = (e) => {
+   e.preventDefault();
+
+   const formData = new FormData();
+   formData.append("image", image);
+   formData.append("title", title);
+   formData.append("price", price);
+   formData.append("amount", amount);
+
+   Axios.post("http://localhost:8080/addProduct", formData, {
+     headers: {
+       Authorization: params.shop_id,
+     },
+   })
+     .then((response) => {
+       console.log(response.data);
+       // Handle success
+     })
+     .catch((error) => {
+       console.error("Error adding product:", error);
+       // Handle error
+     });
+ };
+
+ return (
+   <div>
+     <h2>ADD NEW ITEM</h2>
+     <form onSubmit={addProductHandler}>
+       <label>Product Title</label>
+       <input
+         type="text"
+         placeholder="Product title"
+         value={title}
+         onChange={(e) => setTitle(e.target.value)}
+       />
+
+       <label>Product Price</label>
+       <input
+         type="text"
+         placeholder="Product price"
+         value={price}
+         onChange={(e) => setPrice(e.target.value)}
+       />
+
+       <label>Product Quantity</label>
+       <input
+         type="text"
+         placeholder="Product amount"
+         value={amount}
+         onChange={(e) => setAmount(e.target.value)}
+       />
+
+       <label>Image</label>
+       <input
+         type="file"
+         placeholder="image"
+         onChange={(e) => setImage(e.target.files[0])}
+       />
+
+       <button type="submit">Add Product</button>
+     </form>
+   </div>
+ );
+};
+
+const Products = (props) => {
+  return (
+    <div className="productmodeltemp4">
+      <li>
+        <div className="productimgtemp4">
+          <img src={props.images} alt="Product Image" />
+        </div>
+        <div className="product__titletemp4">
+          <h2>{props.title}</h2>
+        </div>
+        <div className="product__amounttemp4">
+          <h3>{props.price}</h3>
+        </div>
+      </li>
+    </div>
+  );
+};
+
+const TestProducts = (props) => {
+  return (
+    <div className="productmodeltemp4">
+      <li>
+        <div className="product__titletemp4">
+          <h2>title</h2>
+        </div>
+        <div className="product__amounttemp4">
+          <h3>$30</h3>
+        </div>
+      </li>
+    </div>
+  );
+};
+
+const ProductList = (props) => {
+  return (
+    <div className="productmodelul">
+      <ul>
+        {props.items.map((item) => (
+          <div key={item.id}>
+            <Link
+              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}/`}
+            >
+              <Products
+                id={item.id}
+                title={item.title}
+                amount={item.amount}
+                price={item.price}
+                shop_id={item.shop_id}
+                images={item.images}
+              />
+            </Link>
+          </div>
+        ))}
+      </ul>
+    </div>
   );
 };
 
 const Editbtndisplay1 = () => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
-  const [showimg, setshowimg] = useState(false);
 
   const showformhandler = () => {
     setshowform(true);
@@ -425,14 +609,6 @@ const Editbtndisplay1 = () => {
 
   const hideformhandler = () => {
     setshowform(false);
-  };
-
-  const showimghandler = () => {
-    setshowimg(true);
-  };
-
-  const hideimghandler = () => {
-    setshowimg(false);
   };
 
   const showsaleshandler = () => {
@@ -556,9 +732,6 @@ const Editbtndisplay1 = () => {
                   <span className="btnwebstore">
                     <button onClick={showformhandler}>Add Item</button>
                   </span>
-                  <span className="btnwebstore">
-                    <button onClick={showimghandler}>Add custom images</button>
-                  </span>
                 </div>
               </div>
             </header>
@@ -569,9 +742,13 @@ const Editbtndisplay1 = () => {
           <div className="addshopform">
             {showform && <Addproductstodatabase onClick={hideformhandler} />}
           </div>
-          <div className="addshopform">
-            {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
-          </div>
+          <Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
         </Fragment>
       );
     } else {
@@ -581,502 +758,6 @@ const Editbtndisplay1 = () => {
 
   return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
-
-const Addimgsectionwithimgs= (props) => {
-  return<Fragment>
-    <div className='closebtnimgsec'>
-    <button onClick={props.onClick}>Close</button>
-    </div>
-<Addimage1/>
-          <Addimage2/>
-          <Addimage3/>
-          <Addimage4/>
-          <Addimage5/>
-          <Addimage6/>
-          <Addimage7/>
-  </Fragment>
-}
-
-function Productsinshopapp() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const params = useParams();
-
-  const fetchProductsHandler = useCallback(async () => {
-    setLoading(true);
-
-    try {
-      const response = await fetch("http://localhost:8080/use/shops/products", {
-        headers: {
-          Authorization: params.shop_id,
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch products.");
-      }
-
-      const data = await response.json();
-      const transformedItems = data.items.map((itemsData) => {
-        return {
-          id: itemsData.id,
-          title: itemsData.title,
-          price: itemsData.price,
-          amount: itemsData.quantity,
-          shop_id: itemsData.shop_id,
-          images: `http://localhost:8080/images/${itemsData.images}`,
-          usd: itemsData.usd,
-          EUR: itemsData.EUR,
-          GBP: itemsData.GBP,
-          JPY: itemsData.JPY,
-          CAD: itemsData.CAD,
-          AUD: itemsData.AUD,
-          CHF: itemsData.CHF,
-          CNY: itemsData.CNY,
-          INR: itemsData.INR,
-          BRL: itemsData.BRL,
-          RUB: itemsData.RUB,
-          KRW: itemsData.KRW,
-          SGD: itemsData.SGD,
-          NZD: itemsData.NZD,
-          MXN: itemsData.MXN,
-          HKD: itemsData.HKD,
-          TRY: itemsData.TRY,
-          ZAR: itemsData.ZAR,
-          SEK: itemsData.SEK,
-          NOK: itemsData.NOK,
-        };
-      });
-
-      setItems(transformedItems);
-    } catch (error) {
-      console.log(error);
-    }
-
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
-
-  return (
-    <Fragment>
-      <section>
-        {!loading ? <ProductList items={items} /> : <p>Loading..</p>}
-      </section>
-    </Fragment>
-  );
-}
-const Addproductstodatabase = (props) => {
-  const [title, setTitle] = useState("");
-  const [usd, setUSD] = useState("");
-  const [EUR, setEUR] = useState("");
-  const [GBP, setGBP] = useState("");
-  const [JPY, setJPY] = useState("");
-  const [CAD, setCAD] = useState("");
-  const [AUD, setAUD] = useState("");
-  const [CHF, setCHF] = useState("");
-  const [CNY, setCNY] = useState("");
-  const [INR, setINR] = useState("");
-  const [BRL, setBRL] = useState("");
-  const [RUB, setRUB] = useState("");
-  const [KRW, setKRW] = useState("");
-  const [SGD, setSGD] = useState("");
-  const [NZD, setNZD] = useState("");
-  const [MXN, setMXN] = useState("");
-  const [HKD, setHKD] = useState("");
-  const [TRY, setTRY] = useState("");
-  const [ZAR, setZAR] = useState("");
-  const [SEK, setSEK] = useState("");
-  const [NOK, setNOK] = useState("");
-  const [amount, setAmount] = useState("");
-  const [image, setImage] = useState(null);
-  const [payment, setpayment] = useState('')
- 
-  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
- 
-  const params = useParams();
- 
-  const addProductHandler = (e) => {
-    e.preventDefault();
- 
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("title", title);
-    formData.append("amount", amount);
-    formData.append("payment", payment)
-    formData.append("usd", usd);
-    formData.append("EUR", EUR);
-    formData.append("GBP", GBP);
-    formData.append("JPY", JPY);
-    formData.append("CAD", CAD);
-    formData.append("AUD", AUD);
-    formData.append("CHF", CHF);
-    formData.append("CNY", CNY);
-    formData.append("INR", INR);
-    formData.append("BRL", BRL);
-    formData.append("RUB", RUB);
-    formData.append("KRW", KRW);
-    formData.append("SGD", SGD);
-    formData.append("NZD", NZD);
-    formData.append("MXN", MXN);
-    formData.append("HKD", HKD);
-    formData.append("TRY", TRY);
-    formData.append("ZAR", ZAR);
-    formData.append("SEK", SEK);
-    formData.append("NOK", NOK);
- 
-    Axios.post("http://localhost:8080/addProduct", formData, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    })
-      .then((response) => {
-        console.log(response.data);
-        // Handle success
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-        // Handle error
-      });
-  };
- 
-  return (
-    <div>
-      <div className="closebtn">
-        <button onClick={props.onClick}>Close</button>
-      </div>
-      <h2>ADD NEW ITEM</h2>
-      <form onSubmit={addProductHandler}>
-        <label>Product Title</label>
-        <input
-          type="text"
-          placeholder="Product title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        /><br/>
- 
-        <label>Product Quantity</label>
-        <input
-          type="text"
-          placeholder="Product Quantity"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        /><br/>
-        <label>Enter your stripe payment url</label>
-        <input
-          type="text"
-          placeholder="Enter your stripe payment url"
-          value={payment}
-          onChange={(e) => setpayment(e.target.value)}
-        /><br/>
-
-        <label>USD</label>
-        <input
-          type="text"
-          placeholder="USD"
-          value={usd}
-          onChange={(e) => setUSD(e.target.value)}
-        /><br/>
-        <label>EUR</label>
-        <input
-          type="text"
-          placeholder="EUR"
-          value={EUR}
-          onChange={(e) => setEUR(e.target.value)}
-        /><br/>
-        <label>GBP</label>
-        <input
-          type="text"
-          placeholder="GBP"
-          value={GBP}
-          onChange={(e) => setGBP(e.target.value)}
-        /><br/>
-        <label>JPY</label>
-        <input
-          type="text"
-          placeholder="JPY"
-          value={JPY}
-          onChange={(e) => setJPY(e.target.value)}
-        /><br/>
-        <label>CAD</label>
-        <input
-          type="text"
-          placeholder="CAD"
-          value={CAD}
-          onChange={(e) => setCAD(e.target.value)}
-        /><br/>
-        <label>AUD</label>
-        <input
-          type="text"
-          placeholder="AUD"
-          value={AUD}
-          onChange={(e) => setAUD(e.target.value)}
-        /><br/>
-        <label>CHF</label>
-        <input
-          type="text"
-          placeholder="CHF"
-          value={CHF}
-          onChange={(e) => setCHF(e.target.value)}
-        /><br/>
-        <label>CNY</label>
-        <input
-          type="text"
-          placeholder="CNY"
-          value={CNY}
-          onChange={(e) => setCNY(e.target.value)}
-        /><br/>
-        <label>INR</label>
-        <input
-          type="text"
-          placeholder="INR"
-          value={INR}
-          onChange={(e) => setINR(e.target.value)}
-        /><br/>
-        <label>BRL</label>
-        <input
-          type="text"
-          placeholder="BRL"
-          value={BRL}
-          onChange={(e) => setBRL(e.target.value)}
-        /><br/>
-        <label>RUB</label>
-        <input
-          type="text"
-          placeholder="RUB"
-          value={RUB}
-          onChange={(e) => setRUB(e.target.value)}
-        /><br/>
-        <label>Price in KRW</label>
-        <input
-          type="text"
-          placeholder="Price in KRW"
-          value={KRW}
-          onChange={(e) => setKRW(e.target.value)}
-        /><br/>
-        <label>Price in SGD</label>
-        <input
-          type="text"
-          placeholder="Price in SGD"
-          value={SGD}
-          onChange={(e) => setSGD(e.target.value)}
-        /><br/>
-        <label>Price in NZD</label>
-        <input
-          type="text"
-          placeholder="Price in NZD"
-          value={NZD}
-          onChange={(e) => setNZD(e.target.value)}
-        /><br/>
-        <label>Price in MXN</label>
-        <input
-          type="text"
-          placeholder="Price in MXN"
-          value={MXN}
-          onChange={(e) => setMXN(e.target.value)}
-        /><br/>
-        <label>Price in HKD</label>
-        <input
-          type="text"
-          placeholder="Price in HKD"
-          value={HKD}
-          onChange={(e) => setHKD(e.target.value)}
-        /><br/>
-        <label>Price in TRY</label>
-        <input
-          type="text"
-          placeholder="Price in TRY"
-          value={TRY}
-          onChange={(e) => setTRY(e.target.value)}
-        /><br/>
-        <label>Price in TRY</label>
-        <input
-          type="text"
-          placeholder="Price in TRY"
-          value={TRY}
-          onChange={(e) => setTRY(e.target.value)}
-        /><br/>
-        <label>Price in SEK</label>
-        <input
-          type="text"
-          placeholder="Price in SEK"
-          value={SEK}
-          onChange={(e) => setSEK
-            (e.target.value)}
-        /><br/>
-        <label>Price in NOK</label>
-        <input
-          type="text"
-          placeholder="Price in NOK"
-          value={NOK}
-          onChange={(e) => setNOK(e.target.value)}
-        />       <br/> 
-
-        <label>Image</label>
-        <input
-          type="file"
-          placeholder="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
- 
-        <button type="submit">Add Product</button>
-      </form>
-    </div>
-  );
- };
- 
-
-
- const Products = (props) => {
-  const Pricing = ({ country }) => {
-    if (country === "India") {
-      return <h3>{props.INR} ₹</h3>;
-    } else if (country === "europe") {
-      return <h3>{props.EUR} €</h3>;
-    } else if (country === "united kingdom") {
-      return <h3>{props.GBP} £</h3>;
-    } else if (country === "japan") {
-      return <h3>{props.JPY} ¥</h3>;
-    } else if (country === "canada") {
-      return <h3>{props.CAD} CAD</h3>;
-    } else if (country === "australia") {
-      return <h3>{props.AUD} AUD</h3>;
-    } else if (country === "switzerland") {
-      return <h3>{props.CHF} Fr</h3>;
-    } else if (country === "china") {
-      return <h3>{props.CNY} ¥</h3>;
-    } else if (country === "brazil") {
-      return <h3>{props.BRL} R$</h3>;
-    } else if (country === "south korea") {
-      return <h3>{props.KRW} ₩</h3>;
-    } else if (country === "singapore") {
-      return <h3>{props.SGD} SGD</h3>;
-    } else if (country === "new zealand") {
-      return <h3>{props.NZD} NZD</h3>;
-    } else if (country === "mexico") {
-      return <h3>{props.MXN} MXN</h3>;
-    } else if (country === "hong kong") {
-      return <h3>{props.HKD} HKD</h3>;
-    } else if (country === "turkey") {
-      return <h3>{props.TRY} ₺</h3>;
-    } else if (country === "south africa") {
-      return <h3>{props.ZAR} R</h3>;
-    } else if (country === "sweden") {
-      return <h3>{props.SEK} kr</h3>;
-    } else if (country === "norway") {
-      return <h3>{props.NOK} kr</h3>;
-    } else {
-      return <h3>{props.USD} $</h3>;
-    }
-  };
-
-  const [name, setName] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchUsersHandler = useCallback(async () => {
-    setLoading(true);
-    const token = localStorage.getItem("token");
-    
-    try {
-      const response = await fetch("http://localhost:8080/users/", {
-        headers: {
-          Authorization: token,
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch user data.");
-      }
-
-      const data = await response.json();
-      const transformedUsers = data.user.map((userData) => {
-        return {
-          first_name: userData.first_name,
-          last_name: userData.last_name,
-          country: userData.country,
-        };
-      });
-
-      setName(transformedUsers);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
-
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    fetchUsersHandler();
-  }, [fetchUsersHandler]);
-
-  return (
-    <div className="productmodel4">
-      {name.map((user, index) => (
-        <li key={index}>
-          <div className="productimg4">
-            <img src={props.images} alt="Product Image" />
-          </div>
-          <div className="product__title4">
-            <h2>{props.title}</h2>
-          </div>
-          <Pricing country={user.country} />
-        </li>
-      ))}
-    </div>
-  );
-};
-
-const ProductList = (props) => {
-  return (
-    <div className="productmodelul">
-      <ul>
-        {props.items.map((item) => (
-          <div key={item.id}>
-            <Link
-             to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}`}
-            >
-              <Products
-                id={item.id}
-                title={item.title}
-                amount={item.amount}
-                price={item.price}
-                shop_id={item.shop_id}
-                images={item.images}
-                payment={item.payment}
-                usd={item.usd}
-                EUR={item.EUR}
-                GBP={item.GBP}
-                JPY={item.JPY}
-                CAD={item.CAD}
-                AUD={item.AUD}
-                CHF={item.CHF}
-                CNY={item.CNY}
-                INR={item.INR}
-                BRL={item.BRL}
-                RUB={item.RUB}
-                KRW={item.KRW}
-                SGD={item.SGD}
-                NZD={item.NZD}
-                MXN={item.MXN}
-                HKD={item.HKD}
-                TRY={item.TRY}
-                ZAR={item.ZAR}
-                SEK={item.SEK}
-                NOK={item.NOK}
-              />
-            </Link>
-          </div>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-
-
-
 
 const Addimage1 = (props) => {
   const [image, setImage] = useState(null);
@@ -1118,7 +799,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -1163,7 +844,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -1208,7 +889,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -1253,7 +934,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -1298,7 +979,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -1343,7 +1024,7 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
@@ -1388,92 +1069,17 @@ const Addimage1 = (props) => {
           onChange={(e) => setImage(e.target.files[0])}
         />
  
-        <button type="submit">Add Image</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
  };
-
  
 
-const Template4website = (props) => {
-  const [showform, setshowform] = useState(false);
-  const [showsales, setshowsales] = useState(false);
-  const [items, setItems] = useState([]);
-const [loading, setLoading] = useState(false);
-const params = useParams();
 
-  const showformhandler = () => {
-    setshowform(true);
-  };
+const Template8websitepreview = (props) => {
 
-  const hideformhandler = () => {
-    setshowform(false);
-  };
-
-  const showsaleshandler = () => {
-    setshowsales(true);
-  };
-
-  const hidesaleshandler = () => {
-    setshowsales(false);
-  };
-
-  const fetchProdshandler = useCallback(async () => {
-    try {
-      const response = await fetch("http://localhost:8080/custom/img/shop", {
-        headers: {
-          Authorization: params.shop_id,
-        },
-      });
-      const data = await response.json();
-      const transformedItems = data.img.map((itemsdata) => {
-        return {
-          images1: `http://localhost:8080/images/${itemsdata.images1}`,
-          images2: `http://localhost:8080/images/${itemsdata.images2}`,
-          images3: `http://localhost:8080/images/${itemsdata.images3}`,
-          images4: `http://localhost:8080/images/${itemsdata.images4}`,
-          images5: `http://localhost:8080/images/${itemsdata.images5}`,
-          images6: `http://localhost:8080/images/${itemsdata.images6}`,
-          images7: `http://localhost:8080/images/${itemsdata.images7}`,
-          shop_id: itemsdata.shop_id,
-          shop_name: itemsdata.shop_name,
-          shop_owner: itemsdata.shop_owner,
-          shop_tagline: itemsdata.shop_tagline,
-          shop_blockhead2: itemsdata.shop_blockhead2,
-          shop_block2: itemsdata.shop_block2,
-          shop_blockhead3: itemsdata.shop_blockhead3,
-          shop_block3: itemsdata.shop_block3,
-          user_id: itemsdata.user_id,
-          shop_blockhead1: itemsdata.shop_blockhead1,
-          shop_block1: itemsdata.shop_block1,
-          shop_keyhead1: itemsdata.shop_keyhead1,
-          shop_key1: itemsdata.shop_key1,
-          shop_keyhead2: itemsdata.shop_keyhead2,
-          shop_key2: itemsdata.shop_key2,
-          shop_keyhead3: itemsdata.shop_keyhead3,
-          shop_key3: itemsdata.shop_key3,
-          shop_email: itemsdata.shop_email,
-          shop_phone: itemsdata.shop_phone,
-          temp4: itemsdata.temp4,
-          insta: itemsdata.insta
-        };
-      });
-      setItems(transformedItems);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [params.id]);
-
-  useEffect(() => {
-    setLoading(true);
-    fetchProdshandler().finally(() => {
-      setLoading(false);
-    });
-  }, [fetchProdshandler]);
-
-
-  const itemsRef = useRef(null)
+  const itemsRef = useRef(null);
   const aboutusRef = useRef(null);
   const contactusRef = useRef(null);
 
@@ -1492,105 +1098,98 @@ const params = useParams();
       contactusRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+ 
+    const TestProducts = (props) => {
+      return (
+        <div className="productmodeltemp8">
+          <li>
+            <div className="productimgtemp8">
+              <img src={estate}/>
+            </div>
+            <div className="product__titletemp8">
+              <h2>name</h2>
+            </div>
+          </li>
+        </div>
+      );
+    };
 
   return (
     <Fragment>
-      <Editbtndisplay1/>
-      <div className="maintemp4">
-        <main>
-        <div className="temp4header1">
+      <div className="maindivtemp8">
+        <div className="header1temp8">
           <header>
-            <h1>{items[0]?.shop_name}</h1>
-            <div className="btnstemp4head1">
-              <ul>
-                <li><button onClick={scrollToItems}>Products</button></li>
-                <li><button onClick={scrollToaboutus}>About us</button></li>
-                <li><button onClick={scrollTocontactus}>Contact us</button></li>
-              </ul>
-            </div>
+           <h1>Shop name</h1>
+           <div className="taglintemp8">
+           <h1>Text 1</h1>
+           <h3>Text 2</h3>
+           <button>Our properties</button>
+           </div>
           </header>
         </div>
-        <div className="img2header2temp4">
-          <header>
-          <img src={items[0]?.images1}/>
-          </header>
-        </div>
-        <div className="abtustemp4" ref={aboutusRef}>
-          <div className="abtusno1part1">
-            <span>
-              <img src={items[0]?.images2}/>
-            </span>
-            <span>
-              <h2>{items[0]?.shop_blockhead1}</h2>
-              <p>{items[0]?.shop_block1}</p>
-            </span>
+        <div className="abt1temp8">
+          <div className='imagesabt1temp8'>
+          <img src={estate1} className="img1temp8abt1"/>
+          <div className="img1temp8abt1">
+          <img src={estate2} className="img1temp8abt1"/>
           </div>
-          <div className="abt1part2temp4">
-          <span>
-              <h2>{items[0]?.shop_blockhead2}</h2>
-              <p>{items[0]?.shop_block2}</p>
-            </span>
-            <span>
-              <img src={items[0]?.images3}/>
-            </span>
           </div>
-          <div className="abt1temp4part3">
-            <span>
-              <img src={items[0]?.images4}/>
-            </span>
-            <span>
-              <h2>{items[0]?.shop_blockhead3}</h2>
-              <p>{items[0]?.shop_block3}</p>
-            </span>
+          <div className="abt1temp8textarea">
+            <h1>Text 3</h1>
+            <h4>Text 4</h4>
+            <p>Text 5</p>
+            <button>About us</button>
           </div>
         </div>
-        <div className="ourprodstemp4" ref={itemsRef}>
-          <div className="prodstemp4text">
-            <h1>Our Products</h1>
-            <h4>Our latest and best selling products</h4>
-          </div>
-          <div className="ourprodstemp4section">
-            <Productsinshopapp/>
-          </div>
-        </div>
-        <div className="maindivforgrtimgtemp4">
-          <div className="temp4textgrtimg">
-            <h2>{items[0]?.shop_keyhead1}</h2>
-            <h4>{items[0]?.shop_key1}</h4>
-          </div>
-        <div className="greateimgtemp4">
+        <div className="whatwedotemp8">
           <section>
-            <div className="grtimgtemp41">
-            <img src={items[0]?.images5}/>
+            <div className="h3temp8whatwedo">
+            <h3>What we do</h3>
             </div>
-          </section>
-          <section>
-          <div className="grtimgtemp42">
-            <img src={items[0]?.images6}/>
+            <div className="h1whwedotext6temp8">
+              <h1>Text 6</h1>
             </div>
-          </section>
-          <section>
-          <div className="grtimgtemp43">
-            <img src={items[0]?.images7}/>
+            <div className="whatwedoservicestemp8">
+              <section className="textareawhatwedoparttemp8">
+                <h2>Text 7</h2>
+                <p>Text 8</p>
+              </section >
+              <section className="textareawhatwedoparttemp8">
+                <h2>Text 9</h2>
+                <p>Text 10</p>
+              </section>
+              <section className="textareawhatwedoparttemp8">
+                <h2>Text 11</h2>
+                <p>text 12</p>
+              </section>
             </div>
+            <div className="ourprojectstemp8">
+            <h2>Our projects</h2>
+            <div className="ourprojectsimgtemp8">
+              <img src={estate}/>
+              <img src={estate1}/>
+              <img src={estate2}/>
+            </div>
+          </div>
           </section>
         </div>
+        <div className="ourprodssectemp8">
+          <h1>Our listings</h1>
+          <TestProducts/>
         </div>
-        <div className="footertemp4" ref={contactusRef}>
+        <div className="contactsectemp8">
           <footer>
             <h2>Contact us</h2>
             <ul>
-              <li>{items[0]?.insta}</li>
-              <li>{items[0]?.shop_phone}</li>
-              <li>{items[0]?.shop_email}</li>
+              <li>@instagram</li>
+              <li>7791527840</li>
+              <li>you@gmail.com</li>
             </ul>
           </footer>
         </div>
-        </main>
       </div>
     </Fragment>
   );
 };
 
-export default Template4website;
+export default Template8websitepreview;

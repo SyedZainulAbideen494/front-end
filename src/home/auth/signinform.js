@@ -20,9 +20,14 @@ const Signinform = () => {
   const [zipcode, setzipcode] = useState("");
   const [country, setcountry] = useState("");
   const [unique_id, setunique_id] = useState("");
+  const [bio, setbio] = useState("")
 
   const firstnameHandler = (event) => {
     setfirstname(event.target.value);
+  };
+
+  const bioHandler = (event) => {
+    setbio(event.target.value);
   };
 
   const idhandler = (event) => {
@@ -94,6 +99,7 @@ const Signinform = () => {
         state: state,
         zipcode: zipcode,
         country: country,
+        bio: bio
       });
 
       if (response.status === 200) {
@@ -221,6 +227,18 @@ const Signinform = () => {
               value={age}
               onChange={ageHandler}
               placeholder="Enter Age"
+              required
+            />
+          </div>
+          <div className="inp">
+            <label htmlFor="bio">Bio</label>
+            <input
+              type="text"
+              id="bio"
+              name="bio"
+              value={bio}
+              onChange={bioHandler}
+              placeholder="bio"
               required
             />
           </div>

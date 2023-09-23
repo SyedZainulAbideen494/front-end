@@ -57,7 +57,7 @@ const Chat = (props) => {
   return (
     <Fragment>
       <div className="chattxt">
-        <h2>{props.message}</h2>
+        <h4>{props.message}</h4>
       </div>
     </Fragment>
   );

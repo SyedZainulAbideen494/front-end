@@ -1,16 +1,15 @@
 import React, { Fragment, useCallback, useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useRef } from "react";
-import "./template4.css";
 import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
-import img1 from '../header/images/Untitled design (5).png'
-import img2 from '../header/images/Untitled design (4).png'
-import img3 from '../header/images/Untitled design (2).png'
-import img4 from '../header/images/Untitled design (6).png'
-import img5 from '../header/images/Untitled design (7).png'
-import img6 from '../header/images/Untitled design (8).png'
-import img7 from '../header/images/Untitled design (9).png'
+import { animateScroll as scroll } from "react-scroll";
+import { useRef } from "react";
+import './template5.css'
+import head2img from '../../home/header/images/The Indian Gent.jpg'
+import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
+import key2img from '../../home/header/images/key2img.jpg'
+import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+
 
 const Editstoreform = () => {
   const params = useParams();
@@ -198,7 +197,7 @@ const Editbtndisplay = () => {
           `http://localhost:8080/user/id/editbtnstoredisplay1`,
           {
             headers: {
-              Authorization: params.id,
+              Authorization: params.shop_id,
             },
           }
         );
@@ -288,7 +287,7 @@ const Sales = (props) => {
     setloading(true);
     const response = await fetch("http://localhost:8080/myorders", {
       headers: {
-        Authorization: params.shop_id,
+        Authorization: params.id,
       },
     });
     const data = await response.json();
@@ -414,10 +413,398 @@ const Solditems = (props) => {
   );
 };
 
+function Productsinshopapp() {
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const params = useParams();
+  
+    const fetchProductsHandler = useCallback(async () => {
+      setLoading(true);
+  
+      try {
+        const response = await fetch("http://localhost:8080/use/shops/products", {
+          headers: {
+            Authorization: params.shop_id,
+          },
+        });
+  
+        if (!response.ok) {
+          throw new Error("Failed to fetch products.");
+        }
+  
+        const data = await response.json();
+        const transformedItems = data.items.map((itemsData) => {
+          return {
+            id: itemsData.id,
+            title: itemsData.title,
+            price: itemsData.price,
+            amount: itemsData.quantity,
+            shop_id: itemsData.shop_id,
+            images: `http://localhost:8080/images/${itemsData.images}`,
+            usd: itemsData.usd,
+            EUR: itemsData.EUR,
+            GBP: itemsData.GBP,
+            JPY: itemsData.JPY,
+            CAD: itemsData.CAD,
+            AUD: itemsData.AUD,
+            CHF: itemsData.CHF,
+            CNY: itemsData.CNY,
+            INR: itemsData.INR,
+            BRL: itemsData.BRL,
+            RUB: itemsData.RUB,
+            KRW: itemsData.KRW,
+            SGD: itemsData.SGD,
+            NZD: itemsData.NZD,
+            MXN: itemsData.MXN,
+            HKD: itemsData.HKD,
+            TRY: itemsData.TRY,
+            ZAR: itemsData.ZAR,
+            SEK: itemsData.SEK,
+            NOK: itemsData.NOK,
+          };
+        });
+  
+        setItems(transformedItems);
+      } catch (error) {
+        console.log(error);
+      }
+  
+      setLoading(false);
+    }, []);
+  
+    useEffect(() => {
+      fetchProductsHandler();
+    }, [fetchProductsHandler]);
+  
+    return (
+      <Fragment>
+        <section>
+          {!loading ? <ProductList items={items} /> : <p>Loading..</p>}
+        </section>
+      </Fragment>
+    );
+  }
+
+  const Addproductstodatabase = (props) => {
+    const [title, setTitle] = useState("");
+    const [usd, setUSD] = useState("");
+    const [EUR, setEUR] = useState("");
+    const [GBP, setGBP] = useState("");
+    const [JPY, setJPY] = useState("");
+    const [CAD, setCAD] = useState("");
+    const [AUD, setAUD] = useState("");
+    const [CHF, setCHF] = useState("");
+    const [CNY, setCNY] = useState("");
+    const [INR, setINR] = useState("");
+    const [BRL, setBRL] = useState("");
+    const [RUB, setRUB] = useState("");
+    const [KRW, setKRW] = useState("");
+    const [SGD, setSGD] = useState("");
+    const [NZD, setNZD] = useState("");
+    const [MXN, setMXN] = useState("");
+    const [HKD, setHKD] = useState("");
+    const [TRY, setTRY] = useState("");
+    const [ZAR, setZAR] = useState("");
+    const [SEK, setSEK] = useState("");
+    const [NOK, setNOK] = useState("");
+    const [amount, setAmount] = useState("");
+    const [image, setImage] = useState(null);
+    const [payment, setpayment] = useState('')
+   
+    const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+   
+    const params = useParams();
+   
+    const addProductHandler = (e) => {
+      e.preventDefault();
+   
+      const formData = new FormData();
+      formData.append("image", image);
+      formData.append("title", title);
+      formData.append("amount", amount);
+      formData.append("payment", payment)
+      formData.append("usd", usd);
+      formData.append("EUR", EUR);
+      formData.append("GBP", GBP);
+      formData.append("JPY", JPY);
+      formData.append("CAD", CAD);
+      formData.append("AUD", AUD);
+      formData.append("CHF", CHF);
+      formData.append("CNY", CNY);
+      formData.append("INR", INR);
+      formData.append("BRL", BRL);
+      formData.append("RUB", RUB);
+      formData.append("KRW", KRW);
+      formData.append("SGD", SGD);
+      formData.append("NZD", NZD);
+      formData.append("MXN", MXN);
+      formData.append("HKD", HKD);
+      formData.append("TRY", TRY);
+      formData.append("ZAR", ZAR);
+      formData.append("SEK", SEK);
+      formData.append("NOK", NOK);
+   
+      Axios.post("http://localhost:8080/addProduct", formData, {
+        headers: {
+          Authorization: params.shop_id,
+        },
+      })
+        .then((response) => {
+          console.log(response.data);
+          // Handle success
+        })
+        .catch((error) => {
+          console.error("Error adding product:", error);
+          // Handle error
+        });
+    };
+   
+    return (
+      <div>
+        <div className="closebtn">
+          <button onClick={props.onClick}>Close</button>
+        </div>
+        <h2>ADD NEW ITEM</h2>
+        <form onSubmit={addProductHandler}>
+          <label>Product Title</label>
+          <input
+            type="text"
+            placeholder="Product title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          /><br/>
+   
+          <label>Product Quantity</label>
+          <input
+            type="text"
+            placeholder="Product Quantity"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          /><br/>
+          <label>Enter your stripe payment url</label>
+          <input
+            type="text"
+            placeholder="Enter your stripe payment url"
+            value={payment}
+            onChange={(e) => setpayment(e.target.value)}
+          /><br/>
+  
+          <label>USD</label>
+          <input
+            type="text"
+            placeholder="USD"
+            value={usd}
+            onChange={(e) => setUSD(e.target.value)}
+          /><br/>
+          <label>EUR</label>
+          <input
+            type="text"
+            placeholder="EUR"
+            value={EUR}
+            onChange={(e) => setEUR(e.target.value)}
+          /><br/>
+          <label>GBP</label>
+          <input
+            type="text"
+            placeholder="GBP"
+            value={GBP}
+            onChange={(e) => setGBP(e.target.value)}
+          /><br/>
+          <label>JPY</label>
+          <input
+            type="text"
+            placeholder="JPY"
+            value={JPY}
+            onChange={(e) => setJPY(e.target.value)}
+          /><br/>
+          <label>CAD</label>
+          <input
+            type="text"
+            placeholder="CAD"
+            value={CAD}
+            onChange={(e) => setCAD(e.target.value)}
+          /><br/>
+          <label>AUD</label>
+          <input
+            type="text"
+            placeholder="AUD"
+            value={AUD}
+            onChange={(e) => setAUD(e.target.value)}
+          /><br/>
+          <label>CHF</label>
+          <input
+            type="text"
+            placeholder="CHF"
+            value={CHF}
+            onChange={(e) => setCHF(e.target.value)}
+          /><br/>
+          <label>CNY</label>
+          <input
+            type="text"
+            placeholder="CNY"
+            value={CNY}
+            onChange={(e) => setCNY(e.target.value)}
+          /><br/>
+          <label>INR</label>
+          <input
+            type="text"
+            placeholder="INR"
+            value={INR}
+            onChange={(e) => setINR(e.target.value)}
+          /><br/>
+          <label>BRL</label>
+          <input
+            type="text"
+            placeholder="BRL"
+            value={BRL}
+            onChange={(e) => setBRL(e.target.value)}
+          /><br/>
+          <label>RUB</label>
+          <input
+            type="text"
+            placeholder="RUB"
+            value={RUB}
+            onChange={(e) => setRUB(e.target.value)}
+          /><br/>
+          <label>Price in KRW</label>
+          <input
+            type="text"
+            placeholder="Price in KRW"
+            value={KRW}
+            onChange={(e) => setKRW(e.target.value)}
+          /><br/>
+          <label>Price in SGD</label>
+          <input
+            type="text"
+            placeholder="Price in SGD"
+            value={SGD}
+            onChange={(e) => setSGD(e.target.value)}
+          /><br/>
+          <label>Price in NZD</label>
+          <input
+            type="text"
+            placeholder="Price in NZD"
+            value={NZD}
+            onChange={(e) => setNZD(e.target.value)}
+          /><br/>
+          <label>Price in MXN</label>
+          <input
+            type="text"
+            placeholder="Price in MXN"
+            value={MXN}
+            onChange={(e) => setMXN(e.target.value)}
+          /><br/>
+          <label>Price in HKD</label>
+          <input
+            type="text"
+            placeholder="Price in HKD"
+            value={HKD}
+            onChange={(e) => setHKD(e.target.value)}
+          /><br/>
+          <label>Price in TRY</label>
+          <input
+            type="text"
+            placeholder="Price in TRY"
+            value={TRY}
+            onChange={(e) => setTRY(e.target.value)}
+          /><br/>
+          <label>Price in TRY</label>
+          <input
+            type="text"
+            placeholder="Price in TRY"
+            value={TRY}
+            onChange={(e) => setTRY(e.target.value)}
+          /><br/>
+          <label>Price in SEK</label>
+          <input
+            type="text"
+            placeholder="Price in SEK"
+            value={SEK}
+            onChange={(e) => setSEK
+              (e.target.value)}
+          /><br/>
+          <label>Price in NOK</label>
+          <input
+            type="text"
+            placeholder="Price in NOK"
+            value={NOK}
+            onChange={(e) => setNOK(e.target.value)}
+          />       <br/> 
+  
+          <label>Image</label>
+          <input
+            type="file"
+            placeholder="image"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+   
+          <button type="submit">Add Product</button>
+        </form>
+      </div>
+    );
+   };
+   
+const Products = (props) => {
+  return (
+    <div className="productmodeltemp4">
+      <li>
+        <div className="productimgtemp4">
+          <img src={props.images} alt="Product Image" />
+        </div>
+        <div className="product__titletemp4">
+          <h2>{props.title}</h2>
+        </div>
+        <div className="product__amounttemp4">
+          <h3>{props.price}</h3>
+        </div>
+      </li>
+    </div>
+  );
+};
+
+const TestProducts = (props) => {
+  return (
+    <div className="productmodeltemp5">
+      <li>
+        <div className="product__titletemp5">
+          <h2>title</h2>
+        </div>
+        <div className="product__amounttemp5">
+          <h3>$30</h3>
+        </div>
+      </li>
+    </div>
+  );
+};
+
+const ProductList = (props) => {
+  return (
+    <div className="productmodelul">
+      <ul>
+        {props.items.map((item) => (
+          <div key={item.id}>
+            <Link
+              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}/`}
+            >
+              <Products
+                id={item.id}
+                title={item.title}
+                amount={item.amount}
+                price={item.price}
+                shop_id={item.shop_id}
+                images={item.images}
+              />
+            </Link>
+          </div>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const Editbtndisplay1 = () => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
-  const [showimg, setshowimg] = useState(false);
 
   const showformhandler = () => {
     setshowform(true);
@@ -425,14 +812,6 @@ const Editbtndisplay1 = () => {
 
   const hideformhandler = () => {
     setshowform(false);
-  };
-
-  const showimghandler = () => {
-    setshowimg(true);
-  };
-
-  const hideimghandler = () => {
-    setshowimg(false);
   };
 
   const showsaleshandler = () => {
@@ -556,9 +935,6 @@ const Editbtndisplay1 = () => {
                   <span className="btnwebstore">
                     <button onClick={showformhandler}>Add Item</button>
                   </span>
-                  <span className="btnwebstore">
-                    <button onClick={showimghandler}>Add custom images</button>
-                  </span>
                 </div>
               </div>
             </header>
@@ -569,9 +945,13 @@ const Editbtndisplay1 = () => {
           <div className="addshopform">
             {showform && <Addproductstodatabase onClick={hideformhandler} />}
           </div>
-          <div className="addshopform">
-            {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
-          </div>
+          <Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
         </Fragment>
       );
     } else {
@@ -581,502 +961,6 @@ const Editbtndisplay1 = () => {
 
   return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
-
-const Addimgsectionwithimgs= (props) => {
-  return<Fragment>
-    <div className='closebtnimgsec'>
-    <button onClick={props.onClick}>Close</button>
-    </div>
-<Addimage1/>
-          <Addimage2/>
-          <Addimage3/>
-          <Addimage4/>
-          <Addimage5/>
-          <Addimage6/>
-          <Addimage7/>
-  </Fragment>
-}
-
-function Productsinshopapp() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const params = useParams();
-
-  const fetchProductsHandler = useCallback(async () => {
-    setLoading(true);
-
-    try {
-      const response = await fetch("http://localhost:8080/use/shops/products", {
-        headers: {
-          Authorization: params.shop_id,
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch products.");
-      }
-
-      const data = await response.json();
-      const transformedItems = data.items.map((itemsData) => {
-        return {
-          id: itemsData.id,
-          title: itemsData.title,
-          price: itemsData.price,
-          amount: itemsData.quantity,
-          shop_id: itemsData.shop_id,
-          images: `http://localhost:8080/images/${itemsData.images}`,
-          usd: itemsData.usd,
-          EUR: itemsData.EUR,
-          GBP: itemsData.GBP,
-          JPY: itemsData.JPY,
-          CAD: itemsData.CAD,
-          AUD: itemsData.AUD,
-          CHF: itemsData.CHF,
-          CNY: itemsData.CNY,
-          INR: itemsData.INR,
-          BRL: itemsData.BRL,
-          RUB: itemsData.RUB,
-          KRW: itemsData.KRW,
-          SGD: itemsData.SGD,
-          NZD: itemsData.NZD,
-          MXN: itemsData.MXN,
-          HKD: itemsData.HKD,
-          TRY: itemsData.TRY,
-          ZAR: itemsData.ZAR,
-          SEK: itemsData.SEK,
-          NOK: itemsData.NOK,
-        };
-      });
-
-      setItems(transformedItems);
-    } catch (error) {
-      console.log(error);
-    }
-
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
-
-  return (
-    <Fragment>
-      <section>
-        {!loading ? <ProductList items={items} /> : <p>Loading..</p>}
-      </section>
-    </Fragment>
-  );
-}
-const Addproductstodatabase = (props) => {
-  const [title, setTitle] = useState("");
-  const [usd, setUSD] = useState("");
-  const [EUR, setEUR] = useState("");
-  const [GBP, setGBP] = useState("");
-  const [JPY, setJPY] = useState("");
-  const [CAD, setCAD] = useState("");
-  const [AUD, setAUD] = useState("");
-  const [CHF, setCHF] = useState("");
-  const [CNY, setCNY] = useState("");
-  const [INR, setINR] = useState("");
-  const [BRL, setBRL] = useState("");
-  const [RUB, setRUB] = useState("");
-  const [KRW, setKRW] = useState("");
-  const [SGD, setSGD] = useState("");
-  const [NZD, setNZD] = useState("");
-  const [MXN, setMXN] = useState("");
-  const [HKD, setHKD] = useState("");
-  const [TRY, setTRY] = useState("");
-  const [ZAR, setZAR] = useState("");
-  const [SEK, setSEK] = useState("");
-  const [NOK, setNOK] = useState("");
-  const [amount, setAmount] = useState("");
-  const [image, setImage] = useState(null);
-  const [payment, setpayment] = useState('')
- 
-  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
- 
-  const params = useParams();
- 
-  const addProductHandler = (e) => {
-    e.preventDefault();
- 
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("title", title);
-    formData.append("amount", amount);
-    formData.append("payment", payment)
-    formData.append("usd", usd);
-    formData.append("EUR", EUR);
-    formData.append("GBP", GBP);
-    formData.append("JPY", JPY);
-    formData.append("CAD", CAD);
-    formData.append("AUD", AUD);
-    formData.append("CHF", CHF);
-    formData.append("CNY", CNY);
-    formData.append("INR", INR);
-    formData.append("BRL", BRL);
-    formData.append("RUB", RUB);
-    formData.append("KRW", KRW);
-    formData.append("SGD", SGD);
-    formData.append("NZD", NZD);
-    formData.append("MXN", MXN);
-    formData.append("HKD", HKD);
-    formData.append("TRY", TRY);
-    formData.append("ZAR", ZAR);
-    formData.append("SEK", SEK);
-    formData.append("NOK", NOK);
- 
-    Axios.post("http://localhost:8080/addProduct", formData, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    })
-      .then((response) => {
-        console.log(response.data);
-        // Handle success
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-        // Handle error
-      });
-  };
- 
-  return (
-    <div>
-      <div className="closebtn">
-        <button onClick={props.onClick}>Close</button>
-      </div>
-      <h2>ADD NEW ITEM</h2>
-      <form onSubmit={addProductHandler}>
-        <label>Product Title</label>
-        <input
-          type="text"
-          placeholder="Product title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        /><br/>
- 
-        <label>Product Quantity</label>
-        <input
-          type="text"
-          placeholder="Product Quantity"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        /><br/>
-        <label>Enter your stripe payment url</label>
-        <input
-          type="text"
-          placeholder="Enter your stripe payment url"
-          value={payment}
-          onChange={(e) => setpayment(e.target.value)}
-        /><br/>
-
-        <label>USD</label>
-        <input
-          type="text"
-          placeholder="USD"
-          value={usd}
-          onChange={(e) => setUSD(e.target.value)}
-        /><br/>
-        <label>EUR</label>
-        <input
-          type="text"
-          placeholder="EUR"
-          value={EUR}
-          onChange={(e) => setEUR(e.target.value)}
-        /><br/>
-        <label>GBP</label>
-        <input
-          type="text"
-          placeholder="GBP"
-          value={GBP}
-          onChange={(e) => setGBP(e.target.value)}
-        /><br/>
-        <label>JPY</label>
-        <input
-          type="text"
-          placeholder="JPY"
-          value={JPY}
-          onChange={(e) => setJPY(e.target.value)}
-        /><br/>
-        <label>CAD</label>
-        <input
-          type="text"
-          placeholder="CAD"
-          value={CAD}
-          onChange={(e) => setCAD(e.target.value)}
-        /><br/>
-        <label>AUD</label>
-        <input
-          type="text"
-          placeholder="AUD"
-          value={AUD}
-          onChange={(e) => setAUD(e.target.value)}
-        /><br/>
-        <label>CHF</label>
-        <input
-          type="text"
-          placeholder="CHF"
-          value={CHF}
-          onChange={(e) => setCHF(e.target.value)}
-        /><br/>
-        <label>CNY</label>
-        <input
-          type="text"
-          placeholder="CNY"
-          value={CNY}
-          onChange={(e) => setCNY(e.target.value)}
-        /><br/>
-        <label>INR</label>
-        <input
-          type="text"
-          placeholder="INR"
-          value={INR}
-          onChange={(e) => setINR(e.target.value)}
-        /><br/>
-        <label>BRL</label>
-        <input
-          type="text"
-          placeholder="BRL"
-          value={BRL}
-          onChange={(e) => setBRL(e.target.value)}
-        /><br/>
-        <label>RUB</label>
-        <input
-          type="text"
-          placeholder="RUB"
-          value={RUB}
-          onChange={(e) => setRUB(e.target.value)}
-        /><br/>
-        <label>Price in KRW</label>
-        <input
-          type="text"
-          placeholder="Price in KRW"
-          value={KRW}
-          onChange={(e) => setKRW(e.target.value)}
-        /><br/>
-        <label>Price in SGD</label>
-        <input
-          type="text"
-          placeholder="Price in SGD"
-          value={SGD}
-          onChange={(e) => setSGD(e.target.value)}
-        /><br/>
-        <label>Price in NZD</label>
-        <input
-          type="text"
-          placeholder="Price in NZD"
-          value={NZD}
-          onChange={(e) => setNZD(e.target.value)}
-        /><br/>
-        <label>Price in MXN</label>
-        <input
-          type="text"
-          placeholder="Price in MXN"
-          value={MXN}
-          onChange={(e) => setMXN(e.target.value)}
-        /><br/>
-        <label>Price in HKD</label>
-        <input
-          type="text"
-          placeholder="Price in HKD"
-          value={HKD}
-          onChange={(e) => setHKD(e.target.value)}
-        /><br/>
-        <label>Price in TRY</label>
-        <input
-          type="text"
-          placeholder="Price in TRY"
-          value={TRY}
-          onChange={(e) => setTRY(e.target.value)}
-        /><br/>
-        <label>Price in TRY</label>
-        <input
-          type="text"
-          placeholder="Price in TRY"
-          value={TRY}
-          onChange={(e) => setTRY(e.target.value)}
-        /><br/>
-        <label>Price in SEK</label>
-        <input
-          type="text"
-          placeholder="Price in SEK"
-          value={SEK}
-          onChange={(e) => setSEK
-            (e.target.value)}
-        /><br/>
-        <label>Price in NOK</label>
-        <input
-          type="text"
-          placeholder="Price in NOK"
-          value={NOK}
-          onChange={(e) => setNOK(e.target.value)}
-        />       <br/> 
-
-        <label>Image</label>
-        <input
-          type="file"
-          placeholder="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
- 
-        <button type="submit">Add Product</button>
-      </form>
-    </div>
-  );
- };
- 
-
-
- const Products = (props) => {
-  const Pricing = ({ country }) => {
-    if (country === "India") {
-      return <h3>{props.INR} ₹</h3>;
-    } else if (country === "europe") {
-      return <h3>{props.EUR} €</h3>;
-    } else if (country === "united kingdom") {
-      return <h3>{props.GBP} £</h3>;
-    } else if (country === "japan") {
-      return <h3>{props.JPY} ¥</h3>;
-    } else if (country === "canada") {
-      return <h3>{props.CAD} CAD</h3>;
-    } else if (country === "australia") {
-      return <h3>{props.AUD} AUD</h3>;
-    } else if (country === "switzerland") {
-      return <h3>{props.CHF} Fr</h3>;
-    } else if (country === "china") {
-      return <h3>{props.CNY} ¥</h3>;
-    } else if (country === "brazil") {
-      return <h3>{props.BRL} R$</h3>;
-    } else if (country === "south korea") {
-      return <h3>{props.KRW} ₩</h3>;
-    } else if (country === "singapore") {
-      return <h3>{props.SGD} SGD</h3>;
-    } else if (country === "new zealand") {
-      return <h3>{props.NZD} NZD</h3>;
-    } else if (country === "mexico") {
-      return <h3>{props.MXN} MXN</h3>;
-    } else if (country === "hong kong") {
-      return <h3>{props.HKD} HKD</h3>;
-    } else if (country === "turkey") {
-      return <h3>{props.TRY} ₺</h3>;
-    } else if (country === "south africa") {
-      return <h3>{props.ZAR} R</h3>;
-    } else if (country === "sweden") {
-      return <h3>{props.SEK} kr</h3>;
-    } else if (country === "norway") {
-      return <h3>{props.NOK} kr</h3>;
-    } else {
-      return <h3>{props.USD} $</h3>;
-    }
-  };
-
-  const [name, setName] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchUsersHandler = useCallback(async () => {
-    setLoading(true);
-    const token = localStorage.getItem("token");
-    
-    try {
-      const response = await fetch("http://localhost:8080/users/", {
-        headers: {
-          Authorization: token,
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch user data.");
-      }
-
-      const data = await response.json();
-      const transformedUsers = data.user.map((userData) => {
-        return {
-          first_name: userData.first_name,
-          last_name: userData.last_name,
-          country: userData.country,
-        };
-      });
-
-      setName(transformedUsers);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
-
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    fetchUsersHandler();
-  }, [fetchUsersHandler]);
-
-  return (
-    <div className="productmodel4">
-      {name.map((user, index) => (
-        <li key={index}>
-          <div className="productimg4">
-            <img src={props.images} alt="Product Image" />
-          </div>
-          <div className="product__title4">
-            <h2>{props.title}</h2>
-          </div>
-          <Pricing country={user.country} />
-        </li>
-      ))}
-    </div>
-  );
-};
-
-const ProductList = (props) => {
-  return (
-    <div className="productmodelul">
-      <ul>
-        {props.items.map((item) => (
-          <div key={item.id}>
-            <Link
-             to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}`}
-            >
-              <Products
-                id={item.id}
-                title={item.title}
-                amount={item.amount}
-                price={item.price}
-                shop_id={item.shop_id}
-                images={item.images}
-                payment={item.payment}
-                usd={item.usd}
-                EUR={item.EUR}
-                GBP={item.GBP}
-                JPY={item.JPY}
-                CAD={item.CAD}
-                AUD={item.AUD}
-                CHF={item.CHF}
-                CNY={item.CNY}
-                INR={item.INR}
-                BRL={item.BRL}
-                RUB={item.RUB}
-                KRW={item.KRW}
-                SGD={item.SGD}
-                NZD={item.NZD}
-                MXN={item.MXN}
-                HKD={item.HKD}
-                TRY={item.TRY}
-                ZAR={item.ZAR}
-                SEK={item.SEK}
-                NOK={item.NOK}
-              />
-            </Link>
-          </div>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-
-
-
 
 const Addimage1 = (props) => {
   const [image, setImage] = useState(null);
@@ -1393,33 +1277,106 @@ const Addimage1 = (props) => {
     </div>
   );
  };
-
+ 
  
 
-const Template4website = (props) => {
-  const [showform, setshowform] = useState(false);
-  const [showsales, setshowsales] = useState(false);
-  const [items, setItems] = useState([]);
+const Template5website = (props) => {
+const [items, setItems] = useState([]);
 const [loading, setLoading] = useState(false);
-const params = useParams();
+const params = useParams()
+  const itemsRef = useRef(null);
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
 
-  const showformhandler = () => {
-    setshowform(true);
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
-
-  const hideformhandler = () => {
-    setshowform(false);
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
-
-  const showsaleshandler = () => {
-    setshowsales(true);
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
+  const Blocktext = () => {
+    return (
+      <Fragment>
+        <div className="block1">
+          <div className="blockheading">
+              <h1>Block 1 heading</h1>
+              <br />
+              <button onClick={scrollToItems}>View</button>
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
 
-  const hidesaleshandler = () => {
-    setshowsales(false);
-  };
+    const Blocktext2 = () => {
+      return (
+        <Fragment>
+          <div className="block2">
+            <div className="blockheading">
+              <h1>Block 1 heading</h1>
+              <br />
+              <button onClick={scrollToItems}>View</button>
+            </div>
+          </div>
+        </Fragment>
+      );
+    };
 
-  const fetchProdshandler = useCallback(async () => {
+    const Blocktext3 = () => {
+      return (
+        <Fragment>
+          <div className="block3">
+            <div className="blockheading">
+              <h1>Block 1 heading</h1>
+              <br />
+              <button onClick={scrollToItems}>View</button>
+            </div>
+          </div>
+        </Fragment>
+      );
+    };
+
+    const TestProducts = (props) => {
+      return (
+        <div className="productmodeltemp5">
+          <li>
+            <div className="productimgtemp5">
+              <img src={key1img}/>
+            </div>
+            <div className="product__titletemp5">
+              <h2>title</h2>
+            </div>
+            <div className="product__amounttemp5">
+              <h3>$30</h3>
+            </div>
+          </li>
+        </div>
+      );
+    };
+
+    const Block1 = () => {
+      return(<Fragment>
+        <div className="block">
+          <div className="blockhead">
+            <h2>Heading</h2>
+          </div>
+          <div className="blocktextdetails">
+            <p>Deatils about the heading above</p>
+          </div>
+        </div>
+      </Fragment>)
+    }
+
+    const fetchProdshandler = useCallback(async () => {
     try {
       const response = await fetch("http://localhost:8080/custom/img/shop", {
         headers: {
@@ -1455,7 +1412,7 @@ const params = useParams();
           shop_key3: itemsdata.shop_key3,
           shop_email: itemsdata.shop_email,
           shop_phone: itemsdata.shop_phone,
-          temp4: itemsdata.temp4,
+          temp5: itemsdata.temp5,
           insta: itemsdata.insta
         };
       });
@@ -1472,125 +1429,95 @@ const params = useParams();
     });
   }, [fetchProdshandler]);
 
-
-  const itemsRef = useRef(null)
-  const aboutusRef = useRef(null);
-  const contactusRef = useRef(null);
-
-  const scrollToItems = () => {
-    if (itemsRef.current) {
-      itemsRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const scrollToaboutus = () => {
-    if (aboutusRef.current) {
-      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const scrollTocontactus = () => {
-    if (contactusRef.current) {
-      contactusRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-
   return (
     <Fragment>
       <Editbtndisplay1/>
-      <div className="maintemp4">
-        <main>
-        <div className="temp4header1">
+      <div className="maintemp5">
+        <div className="temp5head1">
           <header>
-            <h1>{items[0]?.shop_name}</h1>
-            <div className="btnstemp4head1">
-              <ul>
-                <li><button onClick={scrollToItems}>Products</button></li>
-                <li><button onClick={scrollToaboutus}>About us</button></li>
-                <li><button onClick={scrollTocontactus}>Contact us</button></li>
-              </ul>
+            <div className="storenametemp5">
+              <h1>{items[0]?.shop_name}</h1>
+            </div>
+            <div className="btnhead1temp5">
+              <button onClick={scrollToItems}>Our products</button>
+              <button onClick={scrollToaboutus}>About us</button>
+              <button onClick={scrollTocontactus}>Contact us</button>
             </div>
           </header>
-        </div>
-        <div className="img2header2temp4">
-          <header>
-          <img src={items[0]?.images1}/>
-          </header>
-        </div>
-        <div className="abtustemp4" ref={aboutusRef}>
-          <div className="abtusno1part1">
-            <span>
-              <img src={items[0]?.images2}/>
-            </span>
-            <span>
-              <h2>{items[0]?.shop_blockhead1}</h2>
-              <p>{items[0]?.shop_block1}</p>
-            </span>
           </div>
-          <div className="abt1part2temp4">
-          <span>
-              <h2>{items[0]?.shop_blockhead2}</h2>
-              <p>{items[0]?.shop_block2}</p>
-            </span>
-            <span>
-              <img src={items[0]?.images3}/>
-            </span>
+          <div className="temp5head2">
+            <header>
+              <div className="head2imgtem5">
+                <img src={items[0]?.images1} alt="image 1"/>
+              </div>
+            </header>
           </div>
-          <div className="abt1temp4part3">
-            <span>
-              <img src={items[0]?.images4}/>
-            </span>
-            <span>
-              <h2>{items[0]?.shop_blockhead3}</h2>
-              <p>{items[0]?.shop_block3}</p>
-            </span>
-          </div>
-        </div>
-        <div className="ourprodstemp4" ref={itemsRef}>
-          <div className="prodstemp4text">
-            <h1>Our Products</h1>
-            <h4>Our latest and best selling products</h4>
-          </div>
-          <div className="ourprodstemp4section">
-            <Productsinshopapp/>
-          </div>
-        </div>
-        <div className="maindivforgrtimgtemp4">
-          <div className="temp4textgrtimg">
+        <div className="abt1temp1">
+          <div className="abt1temp5text">
             <h2>{items[0]?.shop_keyhead1}</h2>
             <h4>{items[0]?.shop_key1}</h4>
           </div>
-        <div className="greateimgtemp4">
-          <section>
-            <div className="grtimgtemp41">
-            <img src={items[0]?.images5}/>
-            </div>
-          </section>
-          <section>
-          <div className="grtimgtemp42">
-            <img src={items[0]?.images6}/>
-            </div>
-          </section>
-          <section>
-          <div className="grtimgtemp43">
-            <img src={items[0]?.images7}/>
-            </div>
-          </section>
+          <div className="inilineimgtemp5abt1">
+          <div className="abt1key1">
+            <img src={items[0]?.images2} alt="image 2"/>
+          </div>
+          <div className="abt1key1">
+            <img src={items[0]?.images3}/>
+          </div>
+          <div className="abt1key1">
+            <img src={items[0]?.images4}/>
+          </div>
+          </div>
         </div>
+        <div className="prodstemp5section" ref={itemsRef}>
+          <div className='propdstexttemp5'>
+            <h1>Our products</h1>
+            <p><h4>Our latest and best selling  products</h4></p>
+          </div>
+          <div className="prodstemp5">
+            <Productsinshopapp/>
+          </div>
         </div>
-        <div className="footertemp4" ref={contactusRef}>
+        <div className="abt2temp5" ref={aboutusRef}>
+          <div className="abt2no1temp5">
+            <span className="imgtemp5abt2no1">
+              <img src={items[0]?.images5}/>
+            </span>
+            <span className="texttemp5abt2no1"><h2>{items[0]?.shop_blockhead1}</h2>
+            <p>{items[0]?.block1}</p></span>
+          </div>
+          <div className="abt2no2temp5">
+          <span className="texttemp5abt2no2"><h2>{items[0]?.shop_blockhead2}</h2>
+            <p>{items[0]?.shop_block2}</p></span>
+            <span className="imgtemp5abt2no2">
+              <img src={items[0]?.images6}/>
+            </span>
+          </div>
+          <div className="abt2no1temp5">
+            <span className="imgtemp5abt2no1">
+              <img src={items[0]?.images7}/>
+            </span>
+            <span className="texttemp5abt2no1"><h2>{items[0]?.shop_blockhead3}</h2>
+            <p>{items[0]?.shop_block3}</p></span>
+          </div>
+        </div>
+        <div className="contacttemp5" ref={contactusRef}>
           <footer>
-            <h2>Contact us</h2>
-            <ul>
-              <li>{items[0]?.insta}</li>
-              <li>{items[0]?.shop_phone}</li>
-              <li>{items[0]?.shop_email}</li>
-            </ul>
+            <div className="contactheadtemp5"> 
+              <h2>Contact us</h2>
+            </div>
+            <div className="conytactstmep5">
+              <ul>
+                <li>{items[0]?.insta}</li>
+                <li>{items[0]?.shop_phone}</li>
+                <li>{items[0]?.shop_email}</li>
+              </ul>
+            </div>
           </footer>
         </div>
-        </main>
       </div>
     </Fragment>
   );
 };
 
-export default Template4website;
+export default Template5website;

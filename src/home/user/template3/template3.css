@@ -1,0 +1,415 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+  .header1tem3 header {
+    display: inline-flex;
+    background-color: white;
+  }
+  .header1tem3 img {
+    width: 50px;
+    height: 50px;
+  }
+  .header1tem3 ul {
+    display: inline-flex;
+    list-style: none;
+  }
+  .header1tem3 h1 {
+    font-size: small;
+  }
+  .header1tem3 button {
+    background-color: transparent;
+    color: black;
+    border: transparent;
+  }
+  .header2temp3 {
+    display: inline-flex;
+  }
+  .textsectiontemp3header2 {
+    width: 120px;
+    margin-right: 30px;
+  }
+  .imgsectionintemp3header2 img {
+    width: 200px;
+    height: 150px;
+    border-radius: 25px;
+    margin-top: 30px;
+  }
+  .salestexttemp3 {
+    color: #480ca8;
+  }
+  .productimgtemp3 img {
+    width: 180px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 25px;
+  }
+  .productmodeltemp3 {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    width: 200px;
+    height: 240px;
+    list-style: none;
+  }
+  .ourservicestemp3 h1 {
+    margin-top: 150px;
+    text-align: center;
+  }
+  .abt1no1part1temp3 {
+     display: inline-flex;
+     margin-top: 150px;
+  }
+  .textsectemp3abt1part1 {
+    width: 150px;
+    text-align: center;
+  }
+  .imgsecabt1no1tmep3part1 img {
+    width: 200px;
+    height: 150px;
+    border-radius: 25px;
+  }
+  .testimonialtemp3  {
+    background-color: #5e17eb;
+    padding: 10px;
+    display: inline-flex;
+    width: 340px;
+    margin-top: 150px;
+    border-radius: 25px;
+  }
+  .testimonialtemp3 img {
+    width: 15px;
+    height: 15px;
+  }
+  .testimonial1temp3 {
+    margin-left: 8px;
+    color: white;
+  }
+  .footerfortemp3 footer {
+    background-color: #5e17eb;
+    border-radius: 25px;
+    margin-top: 150px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 40px;
+    color: white;
+  }
+  .footerfortemp3 ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .footerfortemp3 li {
+    margin-top: 8px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .header1tem3 header {
+    display: inline-flex;
+    background-color: white;
+  }
+  .header1tem3 img {
+    width: 80px;
+    height: 80px;
+  }
+  .header1tem3 ul {
+    display: inline-flex;
+    list-style: none;
+  }
+  .header1tem3 h1 {
+    margin-top: 20px;
+    font-size: small;
+  }
+  .header1tem3 button {
+    background-color: transparent;
+    color: black;
+    border: transparent;
+  }
+  .header2temp3 {
+    display: inline-flex;
+  }
+  .textsectiontemp3header2 {
+    width: 200px;
+    margin-right: 30px;
+  }
+  .imgsectionintemp3header2 img {
+    width: 200px;
+    height: 150px;
+    border-radius: 25px;
+    margin-top: 30px;
+  }
+  .salestexttemp3 {
+    color: #480ca8;
+  }
+  .productimgtemp3 img {
+    width: 180px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 25px;
+  }
+  .productmodeltemp3 {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    width: 200px;
+    height: 240px;
+    list-style: none;
+  }
+  .ourservicestemp3 h1 {
+    margin-top: 150px;
+    text-align: center;
+  }
+  .abt1no1part1temp3 {
+     display: inline-flex;
+     margin-top: 150px;
+  }
+  .textsectemp3abt1part1 {
+    width: 200px;
+    text-align: center;
+  }
+  .imgsecabt1no1tmep3part1 img {
+    width: 200px;
+    height: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 25px;
+  }
+  .testimonialtemp3  {
+    background-color: #5e17eb;
+    padding: 10px;
+    display: inline-flex;
+    width: 450px;
+    margin-top: 150px;
+    border-radius: 25px;
+  }
+  .testimonialtemp3 img {
+    width: 15px;
+    height: 15px;
+  }
+  .testimonial1temp3 {
+    margin-left: 80px;
+    color: white;
+  }
+  .footerfortemp3 footer {
+    background-color: #5e17eb;
+    border-radius: 25px;
+    margin-top: 150px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 40px;
+    color: white;
+  }
+  .footerfortemp3 ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .footerfortemp3 li {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header1tem3 header {
+    display: inline-flex;
+    background-color: white;
+  }
+  .header1tem3 img {
+    width: 100px;
+    height: 100px;
+  }
+  .header1tem3 ul {
+    display: inline-flex;
+    list-style: none;
+  }
+  .header1tem3 button {
+    background-color: transparent;
+    color: black;
+    border: transparent;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+  .header2temp3 {
+    display: inline-flex;
+    margin-left: 40px;
+  }
+  .textsectiontemp3header2 {
+    width: 400px;
+  }
+  .imgsectionintemp3header2 img {
+    width: 300px;
+    height: 250px;
+    margin-left: 0px;
+    border-radius: 25px;
+  }
+  .salestexttemp3 {
+    color: #480ca8;
+  }
+  .productimgtemp3 img {
+    width: 180px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 25px;
+  }
+  .productmodeltemp3 {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    width: 200px;
+    height: 240px;
+    list-style: none;
+  }
+  .ourservicestemp3 h1 {
+    margin-top: 150px;
+    text-align: center;
+  }
+  .abt1no1part1temp3 {
+     display: inline-flex;
+     margin-top: 150px;
+  }
+  .textsectemp3abt1part1 {
+    width: 300px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+  }
+  .imgsecabt1no1tmep3part1 img {
+    width: 300px;
+    height: 250px;
+    border-radius: 25px;
+  }
+  .testimonialtemp3  {
+    background-color: #5e17eb;
+    display: inline-flex;
+    width: 750px;
+    margin-top: 150px;
+    border-radius: 25px;
+  }
+  .testimonialtemp3 img {
+    width: 15px;
+    height: 15px;
+  }
+  .testimonial1temp3 {
+    margin-left: 140px;
+    font-size: x-large;
+    color: white;
+  }
+  .footerfortemp3 footer {
+    background-color: #5e17eb;
+    border-radius: 25px;
+    margin-top: 150px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 40px;
+    color: white;
+  }
+  .footerfortemp3 ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .footerfortemp3 li {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 1025px){
+  .header1tem3 header {
+    display: inline-flex;
+    background-color: white;
+  }
+  .header1tem3 img {
+    width: 100px;
+    height: 100px;
+  }
+  .header1tem3 ul {
+    display: inline-flex;
+    list-style: none;
+  }
+  .header1tem3 button {
+    background-color: transparent;
+    color: black;
+    border: transparent;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: medium;
+  }
+  .header2temp3 {
+    display: inline-flex;
+    margin-left: 40px;
+  }
+  .textsectiontemp3header2 {
+    width: 400px;
+  }
+  .imgsectionintemp3header2 img {
+    width: 500px;
+    height: 350px;
+    margin-left: 300px;
+    border-radius: 25px;
+  }
+  .salestexttemp3 {
+    color: #480ca8;
+    font-size: xx-large;
+  }
+  .productimgtemp3 img {
+    width: 180px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 25px;
+  }
+  .productmodeltemp3 {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    width: 200px;
+    height: 240px;
+    list-style: none;
+  }
+  .ourservicestemp3 h1 {
+    margin-top: 150px;
+    text-align: center;
+  }
+  .abt1no1part1temp3 {
+     display: inline-flex;
+     margin-top: 150px;
+  }
+  .textsectemp3abt1part1 {
+    width: 500px;
+    text-align: center;
+    margin-left: 100px;
+  }
+  .imgsecabt1no1tmep3part1 img {
+    width: 450px;
+    height: 400px;
+    border-radius: 25px;
+    margin-left: 100px;
+  }
+  .testimonialtemp3  {
+    background-color: #5e17eb;
+    padding: 70px;
+    display: inline-flex;
+    width: 1045px;
+    margin-top: 150px;
+    margin-left: 50px;
+    border-radius: 25px;
+  }
+  .testimonialtemp3 img {
+    width: 15px;
+    height: 15px;
+  }
+  .testimonial1temp3 {
+    margin-left: 200px;
+    font-size: x-large;
+    color: white;
+  }
+  .footerfortemp3 footer {
+    background-color: #5e17eb;
+    border-radius: 25px;
+    margin-top: 150px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 40px;
+    color: white;
+  }
+  .footerfortemp3 ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .footerfortemp3 li {
+    margin-top: 8px;
+  }
+}

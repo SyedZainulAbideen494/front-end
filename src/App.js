@@ -59,16 +59,14 @@ import Template8websitepreview from "./home/template8/template8websitepreview";
 import Addtemplate8form from "./home/template8/addtemplate8";
 import Template8website from "./home/template8/template8website";
 import SubscriptionForm from "./home/payment/payment";
+import Userdisplay from "./home/user/userdisplay";
+import Usersindetails from "./home/user/usersdetails";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/cart", element: <Mycart /> },
   { path: "/login", element: <Login /> },
   { path: "/signin", element: <Signin /> },
-  {
-    path: "/mystore/:shop_id/:shop_name/:shop_owner/:shop_about/:shop_prods/:user_id",
-    element: <Shopsright />,
-  },
   { path: "/aboutus", element: <Storeabout /> },
   { path: "/shop-products", element: <Myshopproducts /> },
   { path: "/orderproduct", element: <Orderform /> },
@@ -120,6 +118,7 @@ const router = createBrowserRouter([
   {path: '/preview/template8', element: <Template8websitepreview/>},
   {path: '/add/template8/form', element: <Addtemplate8form/>},
   {path: '/mystore8/:shop_id/:shop_name/', element: <Template8website/>},
+  {path: '/user/:user_id', element: <Usersindetails/>},
 ]);
 function App() {
   return (

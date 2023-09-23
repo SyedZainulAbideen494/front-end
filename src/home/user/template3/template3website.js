@@ -1,16 +1,170 @@
 import React, { Fragment, useCallback, useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useRef } from "react";
-import "./template4.css";
+import "./template3.css";
 import Productsapp from "../items.js/productsApp";
 import Axios from "axios";
-import img1 from '../header/images/Untitled design (5).png'
-import img2 from '../header/images/Untitled design (4).png'
-import img3 from '../header/images/Untitled design (2).png'
-import img4 from '../header/images/Untitled design (6).png'
-import img5 from '../header/images/Untitled design (7).png'
-import img6 from '../header/images/Untitled design (8).png'
-import img7 from '../header/images/Untitled design (9).png'
+import banner from '../header/images/Dropment (1).png'
+import logo from '../header/images/Dropment.png'
+import abt1 from '../header/images/ffri (1).png'
+import star from '../header/images/Untitled design (18).png'
+
+const Editbtndisplay = () => {
+  const [showform, setshowform] = useState(false);
+  const [showsales, setshowsales] = useState(false);
+
+  const showformhandler = () => {
+    setshowform(true);
+  };
+
+  const hideformhandler = () => {
+    setshowform(false);
+  };
+
+  const showsaleshandler = () => {
+    setshowsales(true);
+  };
+
+  const hidesaleshandler = () => {
+    setshowsales(false);
+  };
+  const nav = useNavigate();
+  const params = useParams();
+  const [showedititem, setshowitem] = useState(false);
+
+  const [auth, setauth] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+  }, []);
+  if (auth === false) {
+    nav("/login");
+  }
+
+  const showedit = () => {
+    setshowitem(true);
+  };
+  const hideedit = () => {
+    setshowitem(false);
+  };
+  const [name, setname] = useState([]);
+  const [name2, setname2] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    const fetchUsersHandler = async () => {
+      setloading(true);
+      try {
+        const response = await fetch(
+          `http://localhost:8080/user/id/editbtndiaplay1`,
+          {
+            headers: {
+              Authorization: params.shop_id,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser = data.shops.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname(transformedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUsersHandler();
+  }, [params.shop_id]);
+
+  useEffect(() => {
+    const fetchUser2sHandler = async () => {
+      setloading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+          "http://localhost:8080/user/id/editbtndiaplay2",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser2 = data.user.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname2(transformedUser2);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUser2sHandler();
+  }, []);
+
+  const EEditbtn = () => {
+    if (
+      name.length > 0 &&
+      name2.length > 0 &&
+      name[0].user_id === name2[0].user_id
+    ) {
+      return (
+        <Fragment>
+          <div className="profile-header-owner">
+            <header>
+              <div className="shop_owner_view">
+                <h2>Control panel</h2>
+                <div className="shopownerbtn">
+                  <span className="edit_store_btn"></span>
+                  <span className="btnwebstore">
+                    <Link to="/">
+                      <button>Home</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showsaleshandler}>Sales</button>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showformhandler}>Add Item</button>
+                  </span>
+                </div>
+              </div>
+            </header>
+          </div>
+          <div className="sales">
+            {showsales && <Sales onClick={hidesaleshandler} />}
+          </div>
+          <div className="addshopform">
+            {showform && <Addproductstodatabase onClick={hideformhandler} />}
+          </div>
+        </Fragment>
+      );;
+    } else {
+      return <h2>|</h2>;
+    }
+  };
+
+  return (
+    <div>
+      {!loading ? <EEditbtn /> : <p>Loading...</p>}
+    </div>
+  );
+};
+
 
 const Editstoreform = () => {
   const params = useParams();
@@ -39,7 +193,7 @@ const Editstoreform = () => {
 
     try {
       const response = await Axios.put(
-        "http://localhost:8080/updateshop1",
+        "https://backend-zain-production.up.railway.app/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
@@ -183,98 +337,7 @@ const Editstoreform = () => {
   );
 };
 
-const Editbtndisplay = () => {
-  const params = useParams();
-  const [showEditItem, setShowEditItem] = useState(false);
-  const [name, setName] = useState([]);
-  const [name2, setName2] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchUsersHandler = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `http://localhost:8080/user/id/editbtnstoredisplay1`,
-          {
-            headers: {
-              Authorization: params.id,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser = data.shops.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setName(transformedUser);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUsersHandler();
-  }, [params.id]);
-
-  useEffect(() => {
-    const fetchUsers2Handler = async () => {
-      setLoading(true);
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(
-          "http://localhost:8080/user/id/editbtnstoredisplay2",
-          {
-            headers: {
-              Authorization: token,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser2 = data.users.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setName2(transformedUser2);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUsers2Handler();
-  }, []);
-
-  const showEdit = () => {
-    setShowEditItem(true);
-  };
-
-  const hideEdit = () => {
-    setShowEditItem(false);
-  };
-
-  const EEditbtn = () => {
-    if (
-      name.length > 0 &&
-      name2.length > 0 &&
-      name[0].user_id === name2[0].user_id
-    ) {
-    } else {
-      return <button onClick={showEdit}>Edit</button>;
-    }
-  };
-
-  return (
-    <div>
-      {!loading ? <EEditbtn /> : <p>Loading...</p>}
-      {showEditItem && <Editstoreform />}
-    </div>
-  );
-};
 
 const Sales = (props) => {
   const [loading, setloading] = useState(false);
@@ -413,189 +476,6 @@ const Solditems = (props) => {
     </Fragment>
   );
 };
-
-const Editbtndisplay1 = () => {
-  const [showform, setshowform] = useState(false);
-  const [showsales, setshowsales] = useState(false);
-  const [showimg, setshowimg] = useState(false);
-
-  const showformhandler = () => {
-    setshowform(true);
-  };
-
-  const hideformhandler = () => {
-    setshowform(false);
-  };
-
-  const showimghandler = () => {
-    setshowimg(true);
-  };
-
-  const hideimghandler = () => {
-    setshowimg(false);
-  };
-
-  const showsaleshandler = () => {
-    setshowsales(true);
-  };
-
-  const hidesaleshandler = () => {
-    setshowsales(false);
-  };
-  const nav = useNavigate();
-  const params = useParams();
-  const [showedititem, setshowitem] = useState(false);
-
-  const [auth, setauth] = useState(false);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-  };
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setauth(true);
-    } else {
-      setauth(false);
-    }
-  }, []);
-  if (auth === false) {
-    nav("/login");
-  }
-
-  const showedit = () => {
-    setshowitem(true);
-  };
-  const hideedit = () => {
-    setshowitem(false);
-  };
-  const [name, setname] = useState([]);
-  const [name2, setname2] = useState([]);
-  const [loading, setloading] = useState(false);
-
-  useEffect(() => {
-    const fetchUsersHandler = async () => {
-      setloading(true);
-      try {
-        const response = await fetch(
-          `http://localhost:8080/user/id/editbtndiaplay1`,
-          {
-            headers: {
-              Authorization: params.shop_id,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser = data.shops.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setname(transformedUser);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setloading(false);
-      }
-    };
-
-    fetchUsersHandler();
-  }, [params.shop_id]);
-
-  useEffect(() => {
-    const fetchUser2sHandler = async () => {
-      setloading(true);
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
-          {
-            headers: {
-              Authorization: token,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser2 = data.user.map((userdata) => {
-          return {
-            user_id: userdata.user_id,
-          };
-        });
-        setname2(transformedUser2);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setloading(false);
-      }
-    };
-
-    fetchUser2sHandler();
-  }, []);
-
-  const EEditbtn = () => {
-    if (
-      name.length > 0 &&
-      name2.length > 0 &&
-      name[0].user_id === name2[0].user_id
-    ) {
-      return (
-        <Fragment>
-          <div className="profile-header-owner">
-            <header>
-              <div className="shop_owner_view">
-                <h2>Control panel</h2>
-                <div className="shopownerbtn">
-                  <span className="edit_store_btn"></span>
-                  <span className="btnwebstore">
-                    <Link to="/">
-                      <button>Home</button>
-                    </Link>
-                  </span>
-                  <span className="btnwebstore">
-                    <button onClick={showsaleshandler}>Sales</button>
-                  </span>
-                  <span className="btnwebstore">
-                    <button onClick={showformhandler}>Add Item</button>
-                  </span>
-                  <span className="btnwebstore">
-                    <button onClick={showimghandler}>Add custom images</button>
-                  </span>
-                </div>
-              </div>
-            </header>
-          </div>
-          <div className="sales">
-            {showsales && <Sales onClick={hidesaleshandler} />}
-          </div>
-          <div className="addshopform">
-            {showform && <Addproductstodatabase onClick={hideformhandler} />}
-          </div>
-          <div className="addshopform">
-            {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
-          </div>
-        </Fragment>
-      );
-    } else {
-      return;
-    }
-  };
-
-  return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
-};
-
-const Addimgsectionwithimgs= (props) => {
-  return<Fragment>
-    <div className='closebtnimgsec'>
-    <button onClick={props.onClick}>Close</button>
-    </div>
-<Addimage1/>
-          <Addimage2/>
-          <Addimage3/>
-          <Addimage4/>
-          <Addimage5/>
-          <Addimage6/>
-          <Addimage7/>
-  </Fragment>
-}
 
 function Productsinshopapp() {
   const [items, setItems] = useState([]);
@@ -928,7 +808,6 @@ const Addproductstodatabase = (props) => {
  };
  
 
-
  const Products = (props) => {
   const Pricing = ({ country }) => {
     if (country === "India") {
@@ -1012,18 +891,33 @@ const Addproductstodatabase = (props) => {
   }, [fetchUsersHandler]);
 
   return (
-    <div className="productmodel4">
+    <div className="productmodeltemp3">
       {name.map((user, index) => (
         <li key={index}>
-          <div className="productimg4">
+          <div className="productimgtemp3">
             <img src={props.images} alt="Product Image" />
           </div>
-          <div className="product__title4">
+          <div className="product__titletemp3">
             <h2>{props.title}</h2>
           </div>
           <Pricing country={user.country} />
         </li>
       ))}
+    </div>
+  );
+};
+
+const TestProductss = (props) => {
+  return (
+    <div className="productmodeltemp3">
+      <li>
+        <div className="productimgtemp3">
+          <img src={banner} alt="Product Image" />
+        </div>
+        <div className="product__titletemp3">
+          <h2>Title</h2>
+        </div>
+      </li>
     </div>
   );
 };
@@ -1074,9 +968,163 @@ const ProductList = (props) => {
   );
 };
 
+const Editbtndisplay1 = () => {
+  const [showform, setshowform] = useState(false);
+  const [showsales, setshowsales] = useState(false);
 
+  const showformhandler = () => {
+    setshowform(true);
+  };
 
+  const hideformhandler = () => {
+    setshowform(false);
+  };
 
+  const showsaleshandler = () => {
+    setshowsales(true);
+  };
+
+  const hidesaleshandler = () => {
+    setshowsales(false);
+  };
+  const nav = useNavigate();
+  const params = useParams();
+  const [showedititem, setshowitem] = useState(false);
+
+  const [auth, setauth] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+  }, []);
+  if (auth === false) {
+    nav("/login");
+  }
+
+  const showedit = () => {
+    setshowitem(true);
+  };
+  const hideedit = () => {
+    setshowitem(false);
+  };
+  const [name, setname] = useState([]);
+  const [name2, setname2] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    const fetchUsersHandler = async () => {
+      setloading(true);
+      try {
+        const response = await fetch(
+          `http://localhost:8080/user/id/editbtndiaplay1`,
+          {
+            headers: {
+              Authorization: params.shop_id,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser = data.shops.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname(transformedUser);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUsersHandler();
+  }, [params.shop_id]);
+
+  useEffect(() => {
+    const fetchUser2sHandler = async () => {
+      setloading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+          "http://localhost:8080/user/id/editbtndiaplay2",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser2 = data.user.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+          };
+        });
+        setname2(transformedUser2);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setloading(false);
+      }
+    };
+
+    fetchUser2sHandler();
+  }, []);
+
+  const EEditbtn = () => {
+    if (
+      name.length > 0 &&
+      name2.length > 0 &&
+      name[0].user_id === name2[0].user_id
+    ) {
+      return (
+        <Fragment>
+          <div className="profile-header-owner">
+            <header>
+              <div className="shop_owner_view">
+                <h2>Control panel</h2>
+                <div className="shopownerbtn">
+                  <span className="edit_store_btn"></span>
+                  <span className="btnwebstore">
+                    <Link to="/">
+                      <button>Home</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showsaleshandler}>Sales</button>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={showformhandler}>Add Item</button>
+                  </span>
+                </div>
+              </div>
+            </header>
+          </div>
+          <div className="sales">
+            {showsales && <Sales onClick={hidesaleshandler} />}
+          </div>
+          <div className="addshopform">
+            {showform && <Addproductstodatabase onClick={hideformhandler} />}
+          </div>
+          <Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+        </Fragment>
+      );
+    } else {
+      return;
+    }
+  };
+
+  return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
+};
 
 const Addimage1 = (props) => {
   const [image, setImage] = useState(null);
@@ -1348,77 +1396,29 @@ const Addimage1 = (props) => {
     </div>
   );
  };
- const Addimage7 = (props) => {
-  const [image, setImage] = useState(null);
+
  
-  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
- 
-  const params = useParams();
- 
-  const Addimage1Handler = (e) => {
-    e.preventDefault();
- 
-    const formData = new FormData();
-    formData.append("image", image);
- 
-    Axios.post("http://localhost:8080/addshopimg7", formData, {
-      headers: {
-        Authorization: params.shop_id,
-      },
-    })
-      .then((response) => {
-        console.log(response.data);
-        // Handle success
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-        // Handle error
-      });
-  };
- 
+
+const TestProducts = (props) => {
   return (
-    <div>
-      <h2>ADD Image 7</h2>
-      <form onSubmit={Addimage1Handler}>
- 
-        <label>Image 7</label>
-        <input
-          type="file"
-          placeholder="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
- 
-        <button type="submit">Add Image</button>
-      </form>
+    <div className="productmodeltemp3">
+      <li>
+        <div className="productimgtemp3">
+          <img src={banner} alt="Product Image" />
+        </div>
+        <div className="product__titletemp3">
+          <h2>Title</h2>
+        </div>
+      </li>
     </div>
   );
- };
+};
 
- 
 
-const Template4website = (props) => {
-  const [showform, setshowform] = useState(false);
-  const [showsales, setshowsales] = useState(false);
+const Template3website = (props) => {
   const [items, setItems] = useState([]);
 const [loading, setLoading] = useState(false);
-const params = useParams();
-
-  const showformhandler = () => {
-    setshowform(true);
-  };
-
-  const hideformhandler = () => {
-    setshowform(false);
-  };
-
-  const showsaleshandler = () => {
-    setshowsales(true);
-  };
-
-  const hidesaleshandler = () => {
-    setshowsales(false);
-  };
-
+const params = useParams()
   const fetchProdshandler = useCallback(async () => {
     try {
       const response = await fetch("http://localhost:8080/custom/img/shop", {
@@ -1455,8 +1455,8 @@ const params = useParams();
           shop_key3: itemsdata.shop_key3,
           shop_email: itemsdata.shop_email,
           shop_phone: itemsdata.shop_phone,
-          temp4: itemsdata.temp4,
-          insta: itemsdata.insta
+          insta: itemsdata.insta,
+          temp3: itemsdata.temp3
         };
       });
       setItems(transformedItems);
@@ -1471,126 +1471,88 @@ const params = useParams();
       setLoading(false);
     });
   }, [fetchProdshandler]);
-
-
-  const itemsRef = useRef(null)
-  const aboutusRef = useRef(null);
-  const contactusRef = useRef(null);
-
-  const scrollToItems = () => {
-    if (itemsRef.current) {
-      itemsRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const scrollToaboutus = () => {
-    if (aboutusRef.current) {
-      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const scrollTocontactus = () => {
-    if (contactusRef.current) {
-      contactusRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-
-  return (
-    <Fragment>
-      <Editbtndisplay1/>
-      <div className="maintemp4">
-        <main>
-        <div className="temp4header1">
-          <header>
-            <h1>{items[0]?.shop_name}</h1>
-            <div className="btnstemp4head1">
-              <ul>
-                <li><button onClick={scrollToItems}>Products</button></li>
-                <li><button onClick={scrollToaboutus}>About us</button></li>
-                <li><button onClick={scrollTocontactus}>Contact us</button></li>
-              </ul>
-            </div>
-          </header>
-        </div>
-        <div className="img2header2temp4">
-          <header>
-          <img src={items[0]?.images1}/>
-          </header>
-        </div>
-        <div className="abtustemp4" ref={aboutusRef}>
-          <div className="abtusno1part1">
-            <span>
-              <img src={items[0]?.images2}/>
-            </span>
-            <span>
-              <h2>{items[0]?.shop_blockhead1}</h2>
-              <p>{items[0]?.shop_block1}</p>
-            </span>
+  return<Fragment>
+    <Editbtndisplay1/>
+    <div className="maindivfortemplate3">
+      <div className="header1tem3">
+        <header>
+          <div className="temp3logo">
+            <img src={items[0]?.images1} alt="image 1"/>
           </div>
-          <div className="abt1part2temp4">
-          <span>
-              <h2>{items[0]?.shop_blockhead2}</h2>
-              <p>{items[0]?.shop_block2}</p>
-            </span>
-            <span>
-              <img src={items[0]?.images3}/>
-            </span>
-          </div>
-          <div className="abt1temp4part3">
-            <span>
-              <img src={items[0]?.images4}/>
-            </span>
-            <span>
-              <h2>{items[0]?.shop_blockhead3}</h2>
-              <p>{items[0]?.shop_block3}</p>
-            </span>
-          </div>
-        </div>
-        <div className="ourprodstemp4" ref={itemsRef}>
-          <div className="prodstemp4text">
-            <h1>Our Products</h1>
-            <h4>Our latest and best selling products</h4>
-          </div>
-          <div className="ourprodstemp4section">
-            <Productsinshopapp/>
-          </div>
-        </div>
-        <div className="maindivforgrtimgtemp4">
-          <div className="temp4textgrtimg">
-            <h2>{items[0]?.shop_keyhead1}</h2>
-            <h4>{items[0]?.shop_key1}</h4>
-          </div>
-        <div className="greateimgtemp4">
-          <section>
-            <div className="grtimgtemp41">
-            <img src={items[0]?.images5}/>
-            </div>
-          </section>
-          <section>
-          <div className="grtimgtemp42">
-            <img src={items[0]?.images6}/>
-            </div>
-          </section>
-          <section>
-          <div className="grtimgtemp43">
-            <img src={items[0]?.images7}/>
-            </div>
-          </section>
-        </div>
-        </div>
-        <div className="footertemp4" ref={contactusRef}>
-          <footer>
-            <h2>Contact us</h2>
+          <h1>{items[0]?.shop_name}</h1>
+          <div className="btnsheader1temp3">
             <ul>
-              <li>{items[0]?.insta}</li>
-              <li>{items[0]?.shop_phone}</li>
-              <li>{items[0]?.shop_email}</li>
+              <li><button>Our services</button></li>
+              <li><button>About us</button></li>
+              <li><button>Contact us</button></li>
             </ul>
-          </footer>
-        </div>
-        </main>
+          </div>
+        </header>
       </div>
-    </Fragment>
-  );
+      <div className="header2temp3">
+        <section className="textsectiontemp3header2">
+          <div className="salestexttemp3">
+            <h1>{items[0]?.salestext}</h1>
+          </div>
+          <div className="taglinetemp3">
+            <h1>{items[0]?.shop_tagline}</h1>
+          </div>
+        </section>
+        <section className="imgsectionintemp3header2">
+          <img src={items[0]?.images2} alt="images 2"/>
+        </section>
+      </div>
+      <div className="ourservicestemp3">
+        <h1>Our services</h1>
+        <Productsinshopapp/>
+      </div>
+      <div className="abttemp3part1">
+        <div className="abt1no1part1temp3">
+          <section className="textsectemp3abt1part1">
+            <h2>{items[0]?.shop_blockhead1}</h2>
+            <p>{items[0]?.shop_block1}</p>
+          </section>
+          <section className="imgsecabt1no1tmep3part1">
+            <img src={items[0]?.images3} alt="images 3"/>
+          </section>
+        </div>
+        <div className="abt1no1part1temp3">
+        <section className="imgsecabt1no1tmep3part1">
+            <img src={items[0]?.images4} alt="images 4"/>
+          </section>
+          <section className="textsectemp3abt1part1">
+            <h2>{items[0]?.shop_blockhead2}</h2>
+            <p>{items[0]?.shop_block2}</p>
+          </section>          
+        </div>
+        <div className="abt1no1part1temp3">
+          <section className="textsectemp3abt1part1">
+            <h2>{items[0]?.shop_blockhead3}</h2>
+            <p>{items[0]?.shop_block3}</p>
+          </section>
+          <section className="imgsecabt1no1tmep3part1">
+            <img src={items[0]?.images5} alt="images 5"/>
+          </section>
+        </div>
+      </div>
+      <div className="testimonialtemp3">
+
+        <section className="testimonial1temp3">{items[0]?.shop_key3}<br/>Clients</section>
+        <section className="testimonial1temp3">{items[0]?.shop_keyhead3}<img src={star}/><br/>Rating</section>
+        <section className="testimonial1temp3">{items[0]?.shop_key2}</section>
+      </div>
+      <div className="footerfortemp3">
+        <footer>
+          <h2>Contact us</h2>
+          <ul>
+            <li>{items[0]?.insta}</li>
+            <li>{items[0]?.shop_email}</li>
+            <li>{items[0]?.shop_phone}</li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </Fragment>
 };
 
-export default Template4website;
+export default Template3website;

@@ -1,29 +1,109 @@
-.userul ul {
-  display: inline-flex;
-  list-style: none;
+.user {
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 20px;
+    margin-left: 10px;
+}
+.usermodelul ul {
+    display: inline-flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+@media (min-width: 312px) and (max-width: 480px) {
+
 }
 
-.userprofile {
-  border: 2px solid black;
-  border-radius: 25px;
-  height: 330px;
-  width: 200px;
-  margin: 15px;
+@media (min-width: 481px) and (max-width: 768px) {
+
 }
 
-.profilepic img {
-  width: 150px;
-  margin-left: 16px;
+@media (min-width: 769px) and (max-width: 1024px){
+
 }
 
-.profiletxt {
-  margin-left: 15px;
-}
-
-.profilesubtxt {
-  margin-left: 15px;
-}
-
-.profileuniqueid {
-  margin-left: 15px;
+@media (min-width: 1025px) {
+    .imgprof img {
+        width: 180px;
+        border-radius: 50%;
+        margin-top: 80px;
+        margin-left: 90px;
+    }
+    .nameofproleowner {
+        display: inline-flex;
+    }
+    .nameofproleowner h2 {
+        margin-left: 7px;
+    }
+    .userprofilesec1 {
+        display: inline-flex;
+    }
+    .alltextabouttheprofile {
+        margin-top: 80px;
+        margin-left: 50px;
+    }
+    .btnprofiles {
+        display: inline-flex;
+    }
+    .homebtnprofilesusrs {
+        background-color: transparent;
+        color: black;
+        font-size: medium;
+        margin-left: 40px;
+        border: 1px solid transparent;
+        padding: 10px;
+    }
+    .unfollowbtn {
+        background-color: transparent;
+        color: #00b4d8;
+        border: 1px solid #00b4d8;
+        padding: 10px;
+        font-size: medium;
+        margin-left: 30px;
+        border-radius: 25px;
+    }
+    .followbtn {
+        padding: 10px;
+        border: 1px solid #00b4d8;
+        background-color: #00b4d8;
+        color: white;
+        border-radius: 15px;
+        font-size: medium;
+        margin-left: 30px;
+    }
+    .profilesectionusers {
+        display: inline-flex;
+    }
+    .detailsaboutusersection {
+        margin-top: 70px;
+        margin-left: 80px;
+    }
+    .lastnameuserdetails {
+        margin-left: 7px;
+    }
+    .nameofuser h2 {
+        display: inline-flex;
+        font-weight: 200;
+    }
+    .folloiwngandunfloowingbtn button {
+        display: inline-flex;
+        border: 1px solid transparent;
+    }
+    .folloiwngandunfloowingbtn h3 {
+        margin-right: 7px;
+    }
+    .biouserdetils h3 {
+        font-weight: 200;
+    }
+    .nameofuser h3 {
+        font-weight: 200;
+    }
+    .shopssecuserporfileinusers {
+        margin-top: 100px;
+    }
+    .shopssecuserporfileinusers h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 }

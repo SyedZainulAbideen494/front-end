@@ -302,7 +302,9 @@ const Orderform = (props) => {
               <button onClick={props.onhidehanlder}>Close</button>
             </span>
             <span className="placeordbtn">
+            <a href={paymentlink}></a>
               <button type="submit">Place order</button>
+              
             </span>
           </div>
         </form>
@@ -824,10 +826,10 @@ function Prodsright() {
           <br />
           <div className="prods__detail__btn">
             <span className="prods__detail_addtocart_btn">
-            
+           
                 <button onClick={orderOpenHandler}>Buy Now</button>
-                <a href={paymentlink}></a>
               {orderform && <Orderform onhidehandler={orderCloseHandler} />}
+             
             </span>
           </div>
         </div>

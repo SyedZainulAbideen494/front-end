@@ -133,6 +133,7 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 20px;
+    border-left: 0px solid transparent;
   }
 }
 

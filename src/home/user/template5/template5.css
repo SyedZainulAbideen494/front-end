@@ -1,0 +1,411 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+    .head2imgtem5 img {
+        width: 300px;
+        height: 250px;
+    }
+    .temp5head1 {
+        display: inline-flex;
+    }
+    .btnhead1temp5 button {
+        background-color: transparent;
+        border: transparent;
+        margin-left: 10px;
+    }
+    .abt1temp1 img {
+        width: 200px;
+        margin-top: 50px;
+        margin-left: 50px;
+        border-radius: 25px;
+    }
+    .abt1temp5text {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .prodstemp5 {
+        margin-top: 80px;
+    }
+    .prodstemp5section h1 ,p{
+        text-align: center;
+    }
+    .productimgtemp5 img {
+        width: 180px;
+        height: 150px;
+        border-radius: 25px;
+    }
+    .productmodeltemp5 {
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 25px;
+        height: 240px;
+        width: 180px;
+    }
+    .productmodeltemp5 li {
+        list-style: none;
+    }
+    .prodstemp5section {
+        margin-top: 80px;
+    }
+    .imgtemp5abt2no1 img {
+        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-right: 7px;
+    }
+    .abt2no1temp5  {
+        display: inline-flex;
+        width: 312px;
+        font-size: small;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+    }
+    .imgtemp5abt2no2 img {
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+    .abt2no2temp5  {
+        display: inline-flex;
+        font-size: small;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+    }
+    .storenametemp5 h1 {
+        margin-left: 50px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .contacttemp5 {
+        margin-top: 100px;
+        margin-left: 50px;
+        background-color: #6b705c;
+        color: #ffe8d6;
+        margin-right: 50px;
+        border-radius: 15px;
+        padding: 20px;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .head2imgtem5 img {
+        width: 481px ;
+        height: 400px;
+    }
+    .temp5head1  header{
+        display: inline-flex;
+    }
+    .btnhead1temp5 button {
+        margin-top: 30px;
+        margin-left: 20px;
+        background-color: transparent;
+        border: transparent;
+    }
+    .abt1temp1 img {
+        width: 140px;
+        margin-top: 50px;
+        border-radius: 25px;
+        margin-left: 5px;
+        height: 220px;
+    }
+    .abt1temp5text {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .inilineimgtemp5abt1 {
+        display: inline-flex;
+        margin-left: 20px;
+    }
+    .prodstemp5 {
+        margin-top: 80px;
+    }
+    .prodstemp5section h1 ,p{
+        text-align: center;
+    }
+    .productimgtemp5 img {
+        width: 240px;
+        height: 180px;
+        border-radius: 25px;
+    }
+    .productmodeltemp5 {
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 25px;
+        height: 300px;
+        width: 240px;
+    }
+    .productmodeltemp5 li {
+        list-style: none;
+    }
+    .imgtemp5abt2no1 img {
+        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+    .abt2no1temp5  {
+        display: inline-flex;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+        width: 470px;
+    }
+    .imgtemp5abt2no2 img {
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-left: 100px;
+    }
+    .abt2no2temp5  {
+        display: inline-flex;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+    }
+    .texttemp5abt2no1 {
+        margin-left: 80px;
+    }
+    .storenametemp5 h1 {
+        margin-left: 50px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .abt1temp1 {
+        background-color: #6b705c;
+        color: #ffe8d6;
+        border-radius: 25px;
+        padding-bottom: 20px;
+    }
+    .contacttemp5 {
+        margin-top: 100px;
+        margin-left: 50px;
+        background-color: #6b705c;
+        color: #ffe8d6;
+        margin-right: 50px;
+        border-radius: 15px;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .head2imgtem5 img {
+        width: 769px ;
+        height: 600px;
+    }
+    .temp5head1  header{
+        display: inline-flex;
+    }
+    .btnhead1temp5 button {
+        margin-top: 30px;
+        margin-left: 60px;
+        background-color: transparent;
+        border: transparent;
+        font-size: medium;
+    }
+    .abt1temp1 img {
+        width: 240px;
+        margin-top: 50px;
+        border-radius: 25px;
+        margin-left: 5px;
+        height: 270px;
+    }
+    .abt1temp5text {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .inilineimgtemp5abt1 {
+        display: inline-flex;
+        margin-left: 20px;
+    }
+    .prodstemp5 {
+        margin-top: 80px;
+    }
+    .prodstemp5section h1 ,p{
+        text-align: center;
+    }
+    .productimgtemp5 img {
+        width: 240px;
+        height: 180px;
+        border-radius: 25px;
+    }
+    .productmodeltemp5 {
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 25px;
+        height: 300px;
+        width: 240px;
+    }
+    .productmodeltemp5 li {
+        list-style: none;
+    }
+    .imgtemp5abt2no1 img {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        width: 300px;
+        height: 300px;
+    }
+    .abt2no1temp5  {
+        display: inline-flex;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+    }
+    .imgtemp5abt2no2 img {
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+        width: 300px;
+        height: 300px;
+        margin-left: 250px;
+    }
+    .abt2no2temp5  {
+        display: inline-flex;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+        width: 769px;
+    }
+    .texttemp5abt2no1 {
+        margin-left: 80px;
+    }
+    .storenametemp5 h1 {
+        margin-left: 50px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .abt1temp1 {
+        background-color: #6b705c;
+        color: #ffe8d6;
+        border-radius: 25px;
+        padding-bottom: 20px;
+    }
+    .contacttemp5 {
+        margin-top: 100px;
+        margin-left: 50px;
+        background-color: #6b705c;
+        color: #ffe8d6;
+        margin-right: 50px;
+        border-radius: 15px;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1025px){
+    .head2imgtem5 img {
+        width: 1150px ;
+        height: 700px;
+        margin-left: 40px;
+    }
+    .temp5head1  header{
+        display: inline-flex;
+    }
+    .btnhead1temp5 button {
+        margin-top: 30px;
+        margin-left: 60px;
+        background-color: transparent;
+        border: transparent;
+        font-size: medium;
+    }
+    .btnhead1temp5 {
+        margin-left: 150px;
+    }
+    .abt1temp1 img {
+        width: 340px;
+        margin-top: 50px;
+        border-radius: 25px;
+        margin-left: 5px;
+        height: 380px;
+    }
+    .abt1temp5text {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .inilineimgtemp5abt1 {
+        display: inline-flex;
+        margin-left: 80px;
+    }
+    .prodstemp5section {
+        margin-top: 80px;
+    }
+    .prodstemp5section h1 ,p{
+        text-align: center;
+    }
+    .productimgtemp5 img {
+        width: 240px;
+        height: 180px;
+        border-radius: 25px;
+    }
+    .productmodeltemp5 {
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 25px;
+        height: 300px;
+        width: 240px;
+    }
+    .productmodeltemp5 li {
+        list-style: none;
+    }
+    .imgtemp5abt2no1 img {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        width: 400px;
+        height: 400px;
+    }
+    .abt2no1temp5  {
+        display: inline-flex;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+    }
+    .texttemp5abt2no1 {
+        margin-left: 80px;
+    }
+    .abt2no1temp5 {
+        margin-left: 200px;
+    }
+    .imgtemp5abt2no2 img {
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+        width: 400px;
+        height: 400px;
+        margin-left: 250px;
+    }
+    .abt2no2temp5  {
+        display: inline-flex;
+    }
+    .abt2temp5 {
+        margin-top: 100px;
+    }
+    .texttemp5abt2no1 {
+        margin-left: 80px;
+    }
+    .abt2no2temp5 {
+        margin-left: 200px;
+    }
+    .storenametemp5 h1 {
+        margin-left: 50px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .abt1temp1 {
+        background-color: #6b705c;
+        color: #ffe8d6;
+        margin: 40px;
+        border-radius: 25px;
+        padding-bottom: 20px;
+    }
+    .contacttemp5 {
+        margin-top: 100px;
+        margin-left: 50px;
+        background-color: #6b705c;
+        color: #ffe8d6;
+        margin-right: 50px;
+        border-radius: 15px;
+        padding: 20px;
+    }
+}
+
+
+.form1 h3 {
+    color: white;
+}
+
+
+
