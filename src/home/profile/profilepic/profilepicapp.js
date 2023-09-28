@@ -18,7 +18,7 @@ const Profilepicapp = (props) => {
     const data = await response.json();
     const transformeduser = data.user.map((userdata) => {
       return {
-        image: userdata.image,
+        porfilepic: userdata.porfilepic,
       };
     });
     setimage(transformeduser);

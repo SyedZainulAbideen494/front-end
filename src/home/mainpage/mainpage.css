@@ -1,0 +1,39 @@
+@media (min-width: 312px) and (max-width: 480px) {
+
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+
+  }
+  
+  @media (min-width: 1025px) {
+    .dropmentlogomainpage img {
+        width: 100px;
+    }
+    .dropmentmainheader button {
+      display: inline-flex;
+      margin-top: 50px;
+      margin-left: 40px;
+      border: 0px solid black;
+      font-size: medium;
+    }
+    .dropmentmainheader header {
+      display: inline-flex;
+    }
+    .dropmentmainheader img {
+      margin-right: 200px;
+    }
+    .createstorebtnmainpg button {
+      margin-left: 290px;
+      background-color: #0096c7;
+      color: white;
+      border: 1px solid #0096c7;
+      border-radius: 15px;
+      padding: 10px;
+    }
+  }
+  

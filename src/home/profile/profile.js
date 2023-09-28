@@ -40,17 +40,11 @@ const Profile = (props) => {
         <div className="shopownertxtprofile">
           <hr />
           <h2>Shops Owned</h2>
+          <Addshopimg />
           <hr />
         </div>
         <Template1app/>
-        <Template2app/>
-        <Template3app/>
-        <Template5app/>
-        <Template4app/>
-        <Template6app/>  
-        <Template7app/>
-        <Template8app/>
-        <Addshopimg />
+        
       </div>
     </Fragment>
   );

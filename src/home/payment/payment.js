@@ -439,57 +439,60 @@ const Price3 = (props) => {
                     }
     return (
       <Fragment>
-        <div className='maindivforplans'>
-          <div className='headerplansetion'>
+      <div className='maindivforplans'>
+        <div className='headerplansetion'>
           <header>
             <h2>Dropment</h2>
             <ul>
-              <Link to="/">
-              <li><button>Back</button></li>
+              <Link to='/'>
+                <li>
+                  <button>Back</button>
+                </li>
               </Link>
             </ul>
           </header>
+        </div>
+        <div className='plansfordropment'>
+          <div className='plan1'>
+            <section>
+              <h1>Standard Plan</h1>
+              <h1 className='priceplans'><Price1/></h1>
+              <ul>
+                <li>200 sales a week</li>
+                <li>3 Templates</li>
+                <li>10 Shops</li>
+              </ul>
+              <button onClick={handleSubscription}>Upgrade</button>
+            </section>
           </div>
-          <div className='plansfordropment'>
-            <div className='plan1'>
-              <section>
-                <h1>Standard Plan</h1>
-                <h1 className='priceplans'><Price1/></h1>
-                <ul>
-                  <li>200 sales a week</li>
-                  <li>3 Templates</li>
-                  <li>10 Shops</li>
-                </ul>
-                <button onClick={handleSubscription}>Upgrade</button>
-              </section>
-            </div>
-            <div className='plan1'>
-              <section>
-                <h1>Premium Plan</h1>
-                <h1 className='priceplans'><Price2/></h1>
-                <ul>
-                  <li>400 sales a week</li>
-                  <li>All Templates</li>
-                  <li>25 Shops</li>
-                </ul>
-                <button onClick={handleSubscription2}>Upgrade</button>
-              </section>
-            </div>
-            <div className='plan1'>
-              <section>
-                <h1>Ultra Plan</h1>
-                <h1 className='priceplans'><Price3/></h1>
-                <ul>
-                  <li>Unlimited sales a week</li>
-                  <li>all Templates</li>
-                  <li>Unlimited Shops</li>
-                </ul>
-                <button onClick={handleSubscription3}>Upgrade</button>
-              </section>
-            </div>
+          <div className='plan1'>
+            <section>
+              <h1>Premium Plan</h1>
+              <h1 className='priceplans'><Price2/></h1>
+              <ul>
+                <li>400 sales a week</li>
+                <li>All Templates</li>
+                <li>25 Shops</li>
+              </ul>
+              <button onClick={handleSubscription2}>Upgrade</button>
+            </section>
+          </div>
+          <div className='plan1'>
+            <section>
+              <h1>Ultra Plan</h1>
+              <h1 className='priceplans'><Price3/></h1>
+              <ul>
+                <li>Unlimited sales a week</li>
+                <li>All Templates</li>
+                <li>Unlimited Shops</li>
+              </ul>
+              <button onClick={handleSubscription3}>Upgrade</button>
+            </section>
+          </div>
         </div>
-        </div>
-      </Fragment>
+      </div>
+    </Fragment>
+
     );
   }
 

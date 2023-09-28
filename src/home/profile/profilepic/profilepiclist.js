@@ -7,7 +7,7 @@ const Profilepiclist = (props) => {
       <div>
         <ul>
           {props.image.map((user) => (
-            <Profilepic image={user.image} />
+            <Profilepic image={user.porfilepic} />
           ))}
         </ul>
       </div>

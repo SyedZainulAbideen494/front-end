@@ -900,6 +900,15 @@ const Editbtndisplay1 = () => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
   const [showimg, setshowimg] = useState(false);
+  const [ratingform, setRatingform] = useState(false)
+
+  const showratingform = () => {
+    setRatingform(true)
+  }
+
+  const hideratingform = () => {
+    setRatingform(false)
+  }
 
   const showformhandler = () => {
     setshowform(true);
@@ -1041,6 +1050,9 @@ const Editbtndisplay1 = () => {
                   <span className="btnwebstore">
                     <button onClick={showimghandler}>Add custom images</button>
                   </span>
+                  <span className="btnwebstore">
+                    <button onClick={showratingform}>Rate shop</button>
+                  </span>
                 </div>
               </div>
             </header>
@@ -1053,6 +1065,9 @@ const Editbtndisplay1 = () => {
           </div>
           <div className="addshopform">
             {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
+          </div>
+          <div className="review">
+          {ratingform && <RatingForm onClick={hideratingform} />}
           </div>
         </Fragment>
       );
@@ -1069,6 +1084,7 @@ const Addimgsectionwithimgs= (props) => {
     <div className='closebtnimgsec'>
     <button onClick={props.onClick}>Close</button>
     </div>
+    <AddLogo/>
 <Addimage1/>
           <Addimage2/>
           <Addimage3/>
@@ -1078,6 +1094,52 @@ const Addimgsectionwithimgs= (props) => {
           <Addimage7/>
   </Fragment>
 }
+
+const AddLogo = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/add/shop/logo5", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Logo</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Logo</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Logo</button>
+      </form>
+    </div>
+  );
+ };
 
 const Addimage1 = (props) => {
   const [image, setImage] = useState(null);
@@ -1395,6 +1457,54 @@ const Addimage1 = (props) => {
   );
  };
  
+
+ const RatingForm = (props) => {
+  const [itemId, setItemId] = useState('');
+  const [rating, setRating] = useState('');
+
+  const params = useParams()
+
+  const shop_id = params.shop_id
+  const user_id = props.user_id
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await Axios.post('http://localhost:8080/api/ratings', { shop_id, rating, user_id });
+      // Add logic to update UI or show success message
+    } catch (error) {
+      console.error(error);
+      // Handle error
+    }
+  };
+
+  return (
+    <div>
+      <h2>Submit Rating</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>write a review</label>
+          <input
+            type="text"
+            value={itemId}
+            onChange={(e) => setItemId(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Rating (1-5):</label>
+          <input
+            type="number"
+            min="1"
+            max="5"
+            value={rating}
+            onChange={(e) => setRating(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
  
 
 const Template1website = (props) => {
@@ -1476,6 +1586,8 @@ const params = useParams()
       setLoading(false);
     });
   }, [fetchProdshandler]);
+
+
 
   return (
     <Fragment>

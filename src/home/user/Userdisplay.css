@@ -1,0 +1,85 @@
+@media (min-width: 312px) and (max-width: 480px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+
+}
+
+@media (min-width: 1025px) {
+  .user-card {
+    max-width: 400px;
+    margin: 16px auto; /* Add some spacing around the box */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .user-post {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .user-post-username {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    margin-left: 12px;
+  }
+  
+  .user-unique-id {
+    font-size: 14px;
+    color: #999;
+    margin-top: 4px;
+  }
+  
+  .user-profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-bio {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  
+  .user-post-actions {
+    margin-bottom: 12px;
+  }
+  
+  .profile-link-button {
+    color: #3897f0; /* Change text color */
+    text-decoration: none;
+    padding: 5px 10px; /* Adjust padding for a smaller button */
+    border: 1px solid #3897f0; /* Add a border */
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .user-post-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+  }
+  
+  .heart-icon,
+  .comment-icon {
+    margin-right: 4px;
+  }
+}

@@ -1,0 +1,77 @@
+.profilepicmaindisplaychatsys {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.maindivforchatdisplayonchat {
+    width: 240px;
+    border: 1px solid grey;
+    height: 75px;
+    display: inline-flex;
+    margin-left: 30px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.usernameonchatdisplaymaindiv {
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+.chat-container {
+    max-width: 400px; /* Adjust as needed */
+    margin: 0 auto;
+  }
+  
+  /* Chat message style */
+  .chat-message {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    max-width: 70%; /* Adjust as needed */
+  }
+  
+  /* Style for messages from the current user */
+  .current-user {
+    background-color: #6f42c1; /* Purple color */
+    color: #fff; /* White text */
+    margin-right: 0; /* Remove margin on the right */
+    margin-left: 0; /* Remove margin on the left */
+    padding-left: 10px; /* Add padding to the left to move messages more to the left */
+    text-align: left; /* Align text to the left within the message */
+  }
+  
+  /* Input field and send button */
+  .inputforchat form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  .inputforchat input {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .inputforchat button {
+    background-color: #6f42c1; /* Purple color */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .inputforchat button:hover {
+    background-color: #5c3597; /* Darker purple on hover */
+  }
+  

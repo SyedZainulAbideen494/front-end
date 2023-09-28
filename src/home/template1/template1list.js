@@ -6,6 +6,28 @@ import Template5inprofile from "./template1inprofile";
 import Template1inprofile from "./template1inprofile";
 
 const Template1list = (props) => {
+
+  const Linkno = (item) => {
+    if (item.temp1 !== null) {
+      return "/mystore1";
+    } else if (item.temp2 !== null) {
+      return "/mystore2";
+    } else if (item.temp3 !== null) {
+      return "/mystore3";
+    } else if (item.temp4 !== null) {
+      return "/mystore4";
+    } else if (item.temp5 !== null) {
+      return "/mystore5";
+    } else if (item.temp6 !== null) {
+      return "/mystore6";
+    } else if (item.temp7 !== null) {
+      return "/mystore7";
+    } 
+    else if (item.temp8 !== null) {
+      return "/mystore8";
+    } 
+  };
+
   return (
     <Fragment>
       <div className="productmodelul">
@@ -16,28 +38,19 @@ const Template1list = (props) => {
               style={{textDecoration: 'none', color: 'black'}}
             >
               <Template1inprofile
-                shop_id={item.shop_id}
-                shop_name={item.shop_name}
-                shop_owner={item.shop_owner}
-                shop_tagline={item.shop_tagline}
-                shop_block2={item.shop_block2}
-                shop_blockhead2={item.shop_blockhead2}
-                shop_blockhead3={item.shop_blockhead3}
-                shop_block3={item.shop_block3}
-                user_id={item.user_id}
-                shop_blockhead1={item.shop_blockhead1}
-                shop_block1={item.shop_block1}
-                shop_keyhead1={item.shop_keyhead1}
-                shop_key1={item.shop_key1}
-                shop_keyhead2={item.shop_keyhead2}
-                shop_key2={item.shop_key2}
-                shop_keyhead3={item.shop_keyhead3}
-                shop_key3={item.shop_key3}
-                shop_email={item.shop_email}
-                shop_phone={item.shop_phone}
-                temp1={item.temp1}
-                insta={item.insta}
-                salestext={item.slaestext}
+  shop_id={item.shop_id}
+  shop_name={item.shop_name}
+  temp1={item.temp1}
+  temp2={item.temp2}
+  temp3={item.temp3}
+  temp4={item.temp4}
+  temp5={item.temp5}
+  temp6={item.temp6}
+  temp7={item.temp7}
+  temp8={item.temp8}
+  logo={item.logo}
+  shop_owner={item.shop_owner}
+  user_id={item.user_id}
               />
             </Link>
           ))}

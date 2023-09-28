@@ -1,49 +1,70 @@
-.mini {
-  border: 2px solid black;
-  margin: 40px;
-  border-radius: 25px;
-  background-color: #ffffff;
-}
-
-.mini h1 {
-  color: #fca311;
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 25px;
+.headerplans {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
   text-align: center;
 }
 
-.standard {
-  border: 2px solid black;
-  margin: 40px;
-  border-radius: 25px;
+.headerplans header {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.ultra {
-  border: 2px solid black;
-  margin: 40px;
-  border-radius: 25px;
+.planheadbtn {
+  margin-left: auto;
 }
 
-.dis h3 {
-  text-decoration: line-through;
-  color: rgb(157, 0, 120);
+.plans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.disaf h2 {
-  color: rgb(240, 36, 36);
+.mini {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  width: 300px;
 }
 
-.subsbtn button {
-  padding: 8px 30px;
-  margin: 10px;
-  border-radius: 15px;
-  border: 1px solid rgb(250, 46, 46);
-  color: rgb(250, 46, 46);
+.mini h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.subsbtn button:hover {
-  border-radius: 20px;
-  color: black;
-  transition: 0.3s;
+.mini h4 {
+  font-size: 16px;
+  color: #888;
+}
+
+.pricing {
+  margin-top: 20px;
+}
+
+.dis {
+  font-size: 20px;
+  color: #333;
+}
+
+.disaf {
+  font-size: 16px;
+  color: #888;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-top: 15px;
+  text-align: left;
+}
+
+Subsbtn {
+  margin-top: 20px;
 }

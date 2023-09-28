@@ -4,6 +4,7 @@ import Backbtnprofile from "./profilebtn/backbtn";
 import "./profileheader.css";
 import { Link } from "react-router-dom";
 import Profilepicapp from "../profilepic/profilepicapp";
+import Addshopimg from "../../addnewshop/addnewshopadding";
 
 const Profileheader = (props) => {
   const [islogin, setislogin] = useState(false);
@@ -35,8 +36,9 @@ const Profileheader = (props) => {
             <span className="backbtnmobileporfile">
               <Link to='/Plans'>
               <button>Upgrade plan</button>
-              </Link>
+              </Link> 
             </span>
+            
             <span className="authbtnsprofile">
               {islogin ? (
                 <span className="loginoutbtnmobile">

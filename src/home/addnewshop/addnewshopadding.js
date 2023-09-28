@@ -1,21 +1,26 @@
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
-import "./addshop.css";
-import "./addshopimg.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import './addshop.css';
 
-const Addshopimg = () => {
+function CreateStoreButton() {
+  const [creatingStore, setCreatingStore] = useState(false);
+
   return (
-    <Fragment>
-      <Link to="/Addshoppage1" style={{textDecoration: 'none', color: 'black'}}>
-        <div className="imgaddshop">
-
-          <div>
-            <h3>add new shop</h3>
-          </div>
+    <div className="create-store-button-container">
+      {creatingStore ? (
+        <div className="creating-store-message">
+          Creating a new store...
         </div>
-      </Link>
-    </Fragment>
+      ) : (
+        <Link to="/Addshoppage1" className="create-store-link">
+          <FontAwesomeIcon icon={faPlus} className="plus-icon" />
+          Create New Store
+        </Link>
+      )}
+    </div>
   );
-};
+}
 
-export default Addshopimg;
+export default CreateStoreButton;

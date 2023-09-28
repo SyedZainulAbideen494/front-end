@@ -587,6 +587,7 @@ const Addimgsectionwithimgs= (props) => {
     <div className='closebtnimgsec'>
     <button onClick={props.onClick}>Close</button>
     </div>
+    <AddLogo/>
 <Addimage1/>
           <Addimage2/>
           <Addimage3/>
@@ -1074,7 +1075,51 @@ const ProductList = (props) => {
   );
 };
 
-
+const AddLogo = (props) => {
+  const [image, setImage] = useState(null);
+ 
+  const shopId = props.shop_id; // Assuming you're passing shopId as a prop
+ 
+  const params = useParams();
+ 
+  const Addimage1Handler = (e) => {
+    e.preventDefault();
+ 
+    const formData = new FormData();
+    formData.append("image", image);
+ 
+    Axios.post("http://localhost:8080/add/shop/logo5", formData, {
+      headers: {
+        Authorization: params.shop_id,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+        // Handle error
+      });
+  };
+ 
+  return (
+    <div>
+      <h2>ADD Logo</h2>
+      <form onSubmit={Addimage1Handler}>
+ 
+        <label>Logo</label>
+        <input
+          type="file"
+          placeholder="image"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+ 
+        <button type="submit">Add Logo</button>
+      </form>
+    </div>
+  );
+ };
 
 
 

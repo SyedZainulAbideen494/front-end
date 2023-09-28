@@ -32,6 +32,21 @@ const Home = () => {
     }
   }, []);
 
+    const nav = useNavigate();
+  const [order, setorder] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+  }, []);
+  if (auth === true) {
+    nav("/home");
+  }
+
   const [showcart, setshowcart] = useState(false);
   const showcarthandler = () => {
     setshowcart(true);

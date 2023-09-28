@@ -1,44 +1,249 @@
 @media (min-width: 312px) and (max-width: 480px) {
-
+  .headerplansetion header {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .headerplansetion button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 10px;
+    color: darkblue;
+  }
+  
+  .headerplansetion ul {
+    list-style: none;
+  }
+  
+  .plansfordropment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .plan1 {
+    width: 100%;
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto;
+    box-shadow: 5px 5px 10px rgba(1, 1, 1, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0 auto 20px; /* Center the card horizontally */
+  }
+  
+  .priceplans {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: darkblue;
+  }
+  
+  .plan1 h1 {
+    text-align: center;
+  }
+  
+  .plan1 ul {
+    padding-left: 0;
+    text-align: left;
+  }
+  
+  .plan1 ul li {
+    margin-bottom: 10px;
+  }
+  
+  .plan1 button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background-color: rgb(135, 39, 198);
+    border: 1px solid rgb(135, 39, 198);
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .plan1 button:hover {
+    background-color: #5011b3; /* Darker shade on hover */
+  }
   }
   
   @media (min-width: 481px) and (max-width: 768px) {
-
+    .headerplansetion header {
+      display: inline-flex;
+    }
+    
+    .headerplansetion button {
+      background-color: transparent;
+      border: 1px solid transparent;
+      padding: 10px;
+      color: darkblue;
+    }
+    
+    .headerplansetion ul {
+      list-style: none;
+    }
+    
+    .plansfordropment {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    
+    .plan1 {
+      width: 100%;
+      max-width: 400px; /* Adjust the max-width as needed */
+      height: auto;
+      box-shadow: 15px 15px 15px rgba(1, 1, 1, 0.1);
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 auto 20px; /* Center the card horizontally */
+    }
+    
+    .priceplans {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      color: darkblue;
+    }
+    
+    .plan1 h1 {
+      text-align: center;
+    }
+    
+    .plan1 ul {
+      padding-left: 0;
+      text-align: left;
+    }
+    
+    .plan1 ul li {
+      margin-bottom: 10px;
+    }
+    
+    .plan1 button {
+      width: 100%;
+      height: 40px;
+      margin-top: 20px;
+      background-color: rgb(135, 39, 198);
+      border: 1px solid rgb(135, 39, 198);
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .plan1 button:hover {
+      background-color: #5011b3; /* Darker shade on hover */
+    }
   }
   
   @media (min-width: 769px) and (max-width: 1024px) {
-  
+    .headerplansetion header {
+      display: inline-flex;
+    }
+    
+    .headerplansetion button {
+      background-color: transparent;
+      border: 1px solid transparent;
+      padding: 10px;
+      color: darkblue;
+    }
+    
+    .headerplansetion ul {
+      list-style: none;
+    }
+    
+    .plansfordropment {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    
+    .plan1 {
+      width: 100%;
+      max-width: 400px; /* Adjust the max-width as needed */
+      height: auto;
+      box-shadow: 15px 15px 15px rgba(1, 1, 1, 0.1);
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 auto 20px; /* Center the card horizontally */
+    }
+    
+    .priceplans {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      color: darkblue;
+    }
+    
+    .plan1 h1 {
+      text-align: center;
+    }
+    
+    .plan1 ul {
+      padding-left: 0;
+      text-align: left;
+    }
+    
+    .plan1 ul li {
+      margin-bottom: 10px;
+    }
+    
+    .plan1 button {
+      width: 100%;
+      height: 40px;
+      margin-top: 20px;
+      background-color: rgb(135, 39, 198);
+      border: 1px solid rgb(135, 39, 198);
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .plan1 button:hover {
+      background-color: #5011b3; /* Darker shade on hover */
+    }
   }
   
   @media (min-width: 1025px) {
     .headerplansetion header {
-        display: inline-flex;
+      display: inline-flex;
     }
+    
     .headerplansetion button {
-        background-color: transparent;
-        border: 1px solid transparent;
-        padding: 10px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      padding: 10px;
+      color: darkblue;
     }
+    
     .headerplansetion ul {
-        list-style: none;
+      list-style: none;
     }
+    
     .plansfordropment {
       display: inline-flex;
     }
+    
     .plan1 {
       width: 300px;
       height: 400px;
       box-shadow: 15px 15px 15px rgba(1, 1, 1, 0.1);
       margin-left: 80px;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
     }
+    
     .priceplans {
       margin-top: 60px;
       margin-bottom: 80px;
       color: darkblue;
     }
+    
     .plan1 h1 {
       text-align: center;
     }
+    
     .plan1 button {
       width: 250px;
       margin-left: 25px;
@@ -48,5 +253,9 @@
       border: 1px solid rgb(135, 39, 198);
       border-radius: 25px;
       color: white;
+    }
+    
+    .plan1 button:hover {
+      background-color: #5011b3; /* Darker shade on hover */
     }
   }

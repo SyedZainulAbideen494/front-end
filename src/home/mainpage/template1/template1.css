@@ -1,0 +1,108 @@
+@media (min-width: 312px) and (max-width: 480px){ 
+    
+}
+@media (min-width: 481px) and (max-width: 768px) {
+   
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+}
+
+@media (min-width: 1025px){
+    .shop-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 35vh;
+        background-color: #f0f0f0; /* Set a background color for the entire page */
+      }
+      
+      .shop-card {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      
+      .shop-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+      }
+      
+      .shop-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      
+      .shop-header-details {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .shop-name {
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+      }
+      
+      .shop-owner {
+        color: #555;
+        font-size: 0.9rem;
+      }
+      
+      .shop-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+      }
+      
+      .shop-actions {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-top: 1px solid #ddd;
+      }
+      
+      .follow-button {
+        background-color: #0095f6;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 15px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      .follow-button.following {
+        background-color: #ccc;
+      }
+      
+      .shop-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      
+      .star-icon {
+        color: gold;
+        margin-right: 3px;
+      }
+/* Additional styling can be added based on your preferences */
+    }
+
+

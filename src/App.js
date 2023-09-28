@@ -61,6 +61,8 @@ import Template8website from "./home/template8/template8website";
 import SubscriptionForm from "./home/payment/payment";
 import Userdisplay from "./home/user/userdisplay";
 import Usersindetails from "./home/user/usersdetails";
+import Mainpage from "./home/mainpage/mainpage";
+import MainChatMessageSystem from "./home/chat/mainchat";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -79,7 +81,7 @@ const router = createBrowserRouter([
     element: <Prodsright />,
   },
   { path: "/Addproducts", element: <Addproductstodatabase /> },
-  { path: "/Add/shop/template1/form", element: <Addtemplate1form /> },
+  { path: "/Add/temp1/form", element: <Addtemplate1form /> },
   {path: '/mystore1/:shop_id/:shop_name/', element: <Template1website/>},
   {
     path: "/temp1preview",
@@ -90,35 +92,37 @@ const router = createBrowserRouter([
     element: <Saleschat />,
   },
   { path: "/orders", element: <Order /> },
-  { path: "/prevewtemp3", element: <Template3website /> },
-  { path: "/addtemplate3form", element: <Addtemplate3form /> },
+  { path: "/temp3preview", element: <Template3website /> },
+  { path: "/Add/temp3/form", element: <Addtemplate3form /> },
   {
     path: "/mystore3/:shop_id/:shop_name/",
     element: <Template3website />,
   },
-  { path: "/previewtemplate2", element: <Temp2preview /> },
+  { path: "/temp2preview", element: <Temp2preview /> },
   {path: "/temp5preview", element: <Template5websitepreview /> },
-  {path: '/addShopTemp5', element: <Addtemplate5form/>},
+  {path: '/Add/temp5/form', element: <Addtemplate5form/>},
   {path: '/mystore5/:shop_id/:shop_name', element: <Template5website/>},
-  {path: '/template4/preview', element: <Template4websitepreview/>},
+  {path: '/temp4preview', element: <Template4websitepreview/>},
   {path: '/Plans', element: <SubscriptionForm/>},
-  {path: '/Add/Tempate4/Form', element: <Addtemplate4form/>},
+  {path: '/Add/temp4/form', element: <Addtemplate4form/>},
   {path: '/mystore4/:shop_id/:shop_name', element: <Template4website/>},
-  {path: '/Template6/preview', element: <Template6websitepreview/>},
-  {path: '/Add/template6/form', element: <Addtemplate6form/>},
+  {path: '/temp6preview', element: <Template6websitepreview/>},
+  {path: '/Add/temp6/form', element: <Addtemplate6form/>},
   {path: '/mystore6/:shop_id/:shop_name', element: <Template6website/>},
-  {path: '/Preview/Template2', element: <Template2websitepreview/>},
-  {path: '/Add/template2/form', element: <Addtemplate2form/>},
-  {path: '/preview/template3', element: <Template3websitepreview/>},
+  {path: '/temp2preview', element: <Template2websitepreview/>},
+  {path: '/Add/temp2/form', element: <Addtemplate2form/>},
+  {path: '/temp3preview', element: <Template3websitepreview/>},
   {path: '/mystore2/:shop_id/:shop_name/', element: <Template2website/>},
   {path: '/search', element: <Search/>},
-  {path: '/template7/preview', element: <Template7websitepreview/>},
-  {path: '/Add/Template7/Form', element: <Addtemplate7form/>},
+  {path: '/temp7preview', element: <Template7websitepreview/>},
+  {path: '/Add/temp7/form', element: <Addtemplate7form/>},
   {path: '/mystore7/:shop_id/:shop_name/', element: <Template7website/>},
-  {path: '/preview/template8', element: <Template8websitepreview/>},
-  {path: '/add/template8/form', element: <Addtemplate8form/>},
+  {path: '/temp8preview', element: <Template8websitepreview/>},
+  {path: '/Add/temp8/form', element: <Addtemplate8form/>},
   {path: '/mystore8/:shop_id/:shop_name/', element: <Template8website/>},
   {path: '/user/:user_id', element: <Usersindetails/>},
+  {path: '/home', element: <Mainpage/>},
+  {path: '/chat/:user_id_1/:user_id_2/:chat_id', element:<MainChatMessageSystem/>}
 ]);
 function App() {
   return (

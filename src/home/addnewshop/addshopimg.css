@@ -1,30 +1,92 @@
 @media (min-width: 312px) and (max-width: 480px) {
-  .imgaddshop img {
-    width: 100px;
-  }
+
 }
 @media (min-width: 481px) and (max-width: 768px) {
-  .imgaddshop img {
-    width: 150px;
-  }
+
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .imgaddshop img {
-    width: 180px;
-  }
+
 }
 
 @media (min-width: 1025px) {
-  .imgaddshop img {
-    width: 200px;
+  .nichehead {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .nicheheaderbtns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nicheheaderbtn button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .nicheheaderbtn button:hover {
+    text-decoration: underline;
+  }
+  
+  .niches {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .txt2121 h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .templates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .template {
+    margin: 10px;
+  }
+  
+  .template-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .template-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .preview-span {
+    margin-top: 5px;
+  }
+  
+  .preview-link {
+    text-decoration: none;
+  }
+  
+  .preview-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .preview-button:hover {
+    background-color: #218838;
   }
 }
 
-.temp button {
-  padding: 8px 20px;
-  margin: 10px;
-  border: 2px solid grey;
-  border: 25px;
-  background-color: white;
-}

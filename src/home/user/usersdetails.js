@@ -150,6 +150,25 @@ function UserProfile() {
     fetchuserdetails();
   }, []);
 
+  const chatHandler = async () => {
+    const token = localStorage.getItem("token");
+    try {
+      await Axios.post(
+        "http://localhost:8080/start/chat",
+        {
+          user_id: params.user_id,
+        },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+    } catch (error) {
+      // Handle errors here, e.g., display an error message to the user
+      console.error("An error occurred:", error);
+    }
+  };
 
   return (<Fragment>
   <div className='headerforprofiles'>
@@ -167,6 +186,7 @@ function UserProfile() {
     ) : (
       <button onClick={toggleFollow} className='followbtn'>Link</button>
     )}
+    <button onClick={chatHandler}>Chat</button>
   </div>
   </div>
   </header>
@@ -197,13 +217,6 @@ function UserProfile() {
   <h2>Stores owned by {userInfo[0]?.first_name}</h2>
     <div className='allshopsecuser'>
       <Template1userapp/>
-      <Template2userapp/>
-      <Template3userapp/>
-      <Template4userapp/>
-      <Template5userapp/>
-      <Template6userapp/>
-      <Template7userapp/>
-      <Template8userapp/>
     </div>
   </section>
     </Fragment>
