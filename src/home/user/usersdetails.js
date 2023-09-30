@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Fragment, useCallback } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useState, useEffect, Fragment, useCallback, } from 'react';
+import { Link, useParams, } from 'react-router-dom';
 import Axios from 'axios';
 import './user.css'
 import pic from '../header/images/profiledef.png'
@@ -86,6 +86,7 @@ function UserProfile() {
         const transformedUser2 = data.user.map((userdata) => {
           return {
             user_id: userdata.user_id,
+            first_name: userdata.first_name
           };
         });
         setName2(transformedUser2);
@@ -153,10 +154,12 @@ function UserProfile() {
   const chatHandler = async () => {
     const token = localStorage.getItem("token");
     try {
-      await Axios.post(
+      const response = await Axios.post(
         "http://localhost:8080/start/chat",
         {
           user_id: params.user_id,
+          first_name1: name2[0]?.first_name,
+          first_name2: userInfo[0]?.first_name
         },
         {
           headers: {
@@ -164,8 +167,18 @@ function UserProfile() {
           },
         }
       );
+  
+      if (response.status === 200) {
+        // Chat started successfully, perform the redirection
+        const { chat_id, user1, user2 } = response.data;
+  
+        window.location.href = `/chat/${chat_id}/${user1}/${user2}`;
+      } else {
+        // Handle other response statuses (e.g., 401, 500) here.
+        console.error("An error occurred:", response.data);
+      }
     } catch (error) {
-      // Handle errors here, e.g., display an error message to the user
+      // Handle network or other errors here.
       console.error("An error occurred:", error);
     }
   };

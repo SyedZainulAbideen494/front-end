@@ -83,3 +83,23 @@
     margin-right: 4px;
   }
 }
+
+
+.usermodelmainpage {
+  max-height: 500px; /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrollbar */ /* Right-to-left direction to move scrollbar to the left */
+}
+
+/* Styling the scrollbar */
+.usermodelmainpage::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+.usermodelmainpage::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+.usermodelmainpage::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the thumb on hover */
+}

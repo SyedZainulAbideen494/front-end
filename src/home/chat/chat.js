@@ -3,175 +3,154 @@ import './chat.css';
 import { Link } from "react-router-dom";
 
 function ChatMessageapp() {
-  const [loading, setLoading] = useState(false);
   const [tokenId, setTokenId] = useState([]);
   const [user1Id, setUser1Id] = useState([]);
   const [user2Id, setUser2Id] = useState([]);
   const [chatData, setChatData] = useState([]);
+  const [chatData2, setChatData2] = useState([]);
+  const [order, setorder] = useState([]);
+  const [loading, setloading] = useState(false);
 
-  const fetchUsersHandler = useCallback(async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/chat/users/display", {
-        headers: {
-          Authorization: token,
-        },
-      });
-      const data = await response.json();
-      const transformedUsers = data.chat.map((itemsdata) => ({
-        message_id: itemsdata.message_id,
-        sender_id: itemsdata.sender_id,
-        reciver_id: itemsdata.reciver_id,
-        message_text: itemsdata.message_text,
-        user_id_1: itemsdata.user_id_1,
-        user_id_2: itemsdata.user_id_2,
-      }));
-      setChatData(transformedUsers);
-    } catch (error) {
-      console.error(error);
-    }
+  const fetchusershandler = useCallback(async () => {
+    setloading(true);
+    const token = localStorage.getItem("token");
+    setloading(true);
+    const response = await fetch("http://localhost:8080/chat/users/display", {
+      headers: {
+        Authorization: token,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.chat.map((userdata) => {
+      return {
+        chat_id: userdata.chat_id,
+        user1: userdata.user1,
+        user2: userdata.user2,
+        first_name1: userdata.first_name1,
+        first_name2: userdata.first_name2
+      };
+    });
+    setorder(transformeduser);
+    setloading(false);
   }, []);
 
   useEffect(() => {
-    fetchUsersHandler();
-  }, []);
-
-  const user1 = chatData[0]?.user_id_1;
-  const user2 = chatData[0]?.user_id_2;
-
-  const fetchChatHandler1 = useCallback(async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/user/chat/details/1", {
-        headers: {
-          Authorization: user1,
-        },
-      });
-      const data = await response.json();
-      const transformedUser = data.user.map((userdata) => ({
-        first_name: userdata.first_name,
-        last_name: userdata.last_name,
-        profilepic: `http://localhost:8080/images/${userdata.porfilepic}`,
-        unique_id: userdata.unique_id,
-      }));
-      setUser1Id(transformedUser);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [user1]);
-
-  useEffect(() => {
-    fetchChatHandler1();
-  }, [fetchChatHandler1]);
-
-  const fetchChatHandler2 = useCallback(async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/user/chat/details/2", {
-        headers: {
-          Authorization: user2,
-        },
-      });
-      const data = await response.json();
-      const transformedUser = data.user.map((userdata) => ({
-        first_name: userdata.first_name,
-        last_name: userdata.last_name,
-        profilepic: `http://localhost:8080/images/${userdata.porfilepic}`,
-        unique_id: userdata.unique_id,
-      }));
-      setUser2Id(transformedUser);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [user2]);
-
-  useEffect(() => {
-    fetchChatHandler2();
-  }, [fetchChatHandler2]);
-
-  useEffect(() => {
-    const fetchUser2sHandler = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
-          {
-            headers: {
-              Authorization: token,
-            },
-          }
-        );
-        const data = await response.json();
-        const transformedUser2 = data.user.map((userdata) => ({
-          user_id: userdata.user_id,
-        }));
-        setTokenId(transformedUser2);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchUser2sHandler();
-  }, []);
-
-  const EEditbtn = () => {
-    if (tokenId[0]?.user_id === chatData[0]?.user_id_1) {
-      return (
-        <Fragment>
-          <Link
-              to={`/chat/${chatData[0]?.user_id_1}/${chatData[0]?.user_id_2}/${chatData[0]?.message_id}`}
-            >
-          <div className="maindivforchatdisplayonchat">
-            <img
-              className="profile-picmaindisplaychatsys"
-              src={user2Id[0]?.profilepic}
-              alt="Profile Pic"
-            />
-            <div className="user-detailsmaindisplaychatsys">
-              <p className="usernameonchatdisplaymaindiv">
-                {user2Id[0]?.first_name}
-              </p>
-            </div>
-          </div>
-          </Link>
-        </Fragment>
-      );
-    } else {
-      return (
-        <Fragment>
-        <Link
-              to={`/chat/${chatData[0]?.user_id_1}/${chatData[0]?.user_id_2}/${chatData[0]?.message_id}`}
-            >
-          <div className="maindivforchatdisplayonchat">
-            <img
-              className="profilepicmaindisplaychatsys"
-              src={user1Id[0]?.profilepic}
-              alt="Profile Pic"
-            />
-            <div className="userdetailsmaindisplaychatsys">
-              <h4 className="usernameonchatdisplaymaindiv">
-                {user1Id[0]?.first_name}
-              </h4>
-            </div>
-          </div>
-          </Link>
-        </Fragment>
-      );
-    }
-  };
-
-  useEffect(() => {
-    EEditbtn();
+    fetchusershandler();
   }, []);
 
   return (
     <Fragment>
-      <div className="chatdisplaymain">
-        <EEditbtn/>
+      <section>
+        {!loading && <Orderslist order={order} />}
+        {loading && <p>Loading..</p>}
+      </section>
+    </Fragment>
+  );
+};
+
+const Orderslist = (props) => {
+  return (
+    <Fragment>
+      <div className="chatinmainpagelist">
+        <ul>
+          {props.order.map((itemdata) => (
+              <Orderproduct
+                chat_id={itemdata.chat_id}
+                user1={itemdata.user1}
+                user2={itemdata.user2}
+                first_name1={itemdata.first_name1}
+                first_name2={itemdata.first_name2}
+              />
+          ))}
+        </ul>
       </div>
     </Fragment>
   );
-}
+};
 
+const Orderproduct = (props) => {
+  const { chat_id, user1, user2, first_name1, first_name2 } = props;
+  const [tokenId, setTokenId] = useState([]);
+  const [user1Id, setUser1Id] = useState([]);
+  const [user2Id, setUser2Id] = useState([]);
+  const [chatData, setChatData] = useState([]);
+  const [chatData2, setChatData2] = useState([]);
+  const [order, setorder] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  const fetchusershandler1 = useCallback(async () => {
+    const token = localStorage.getItem("token");
+    const response = await fetch("http://localhost:8080/user/chat/details/1", {
+      headers: {
+        Authorization: user1,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.user.map((userdata) => {
+      return {
+        first_name: userdata.first_name,
+        last_name: userdata.last_name,
+        profilepic: `http://localhost:8080/images/${userdata.porfilepic}`,
+      };
+    });
+    setUser1Id(transformeduser);
+  }, []);
+  
+  useEffect(() => {
+    fetchusershandler1();
+  }, []);
+
+  const fetchusershandler2 = useCallback(async () => {
+    const token = localStorage.getItem("token");
+    const response = await fetch("http://localhost:8080/user/chat/details/2", {
+      headers: {
+        Authorization: user2,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.user.map((userdata) => {
+      return {
+        first_name: userdata.first_name,
+        last_name: userdata.last_name,
+        profilepic: `http://localhost:8080/images/${userdata.porfilepic}`,
+      };
+    });
+    setUser2Id(transformeduser);
+  }, []);
+  
+  useEffect(() => {
+    fetchusershandler2();
+  }, []);
+
+  return (
+    <Fragment>
+    <Link to={`/chat/${chat_id}/${user1}/${user2}`}
+    style={{textDecoration: 'none', color: 'black'}}
+    >
+      <div className="maindivforchatsmain">
+        <div className="user-profiles">
+          {loading ? (
+            <div className="placeholder-image" />
+          ) : (
+            <Fragment>
+              <img
+                src={user1Id[0]?.profilepic || "placeholder.jpg"}
+                alt={`${first_name1}'s Profile`}
+              />
+              <img
+                src={user2Id[0]?.profilepic || "placeholder.jpg"}
+                alt={`${first_name2}'s Profile`}
+              />
+            </Fragment>
+          )}
+        </div>
+        <div className="chat-details">
+          <p className="user-names">{first_name1} and {first_name2}</p>
+          <p className="chat-button">Chat</p>
+        </div>
+      </div>
+    </Link>
+  </Fragment>
+);
+};
 export default ChatMessageapp;
-
-

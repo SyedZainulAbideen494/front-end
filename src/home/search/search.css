@@ -38,19 +38,217 @@
   }
   
   @media (min-width: 1025px) {
-    .inpsearchbar input {
-        padding: 20px;
-        width: 1000px;
-        height: 20px;
-        border-radius: 25px;
+    .user-post-search-result {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      background-color: #f9f9f9;
+      width: 280px;
+      border-radius: 8px;
     }
-    .inpsearchbar button {
-        padding: 14px;
-        border-radius: 25px;
+    
+    /* Style the user-post header */
+    .user-post-header-search-result {
+      display: flex;
+      align-items: center;
     }
-  }
+    
+    /* Style the user profile picture */
+    .user-profile-pic-search-result {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    /* Style the user-post details */
+    .user-post-details-search-result {
+      flex: 1;
+    }
+    
+    /* Style the user-post username */
+    .user-post-username-search-result {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+    
+    /* Style the user unique ID */
+    .user-unique-id-search-result {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 5px;
+    }
+    
+    /* Style the user bio */
+    .user-bio-search-result {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+    
+    /* Style the profile link button */
+    .profile-link-button-search-result {
+      background-color: #007bff;
+      color: #fff;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    
+    .profile-link-button-search-result:hover {
+      background-color: #0056b3;
+    }
+
+/* Define styles for the shop-container */
+.shop-container-search-result {
+  width: 300px; /* Adjust the width as per your preference */
+  margin: 10px;
+  background-color: #fff;
+}
+
+/* Style the shop-card */
+.shop-card-search-result {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin-left: 30px;
+  margin-right: 50px;
+}
+
+/* Style the shop-header */
+.shop-header-search-result {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style the shop logo */
+.shop-logo-search-result {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Style the shop header details */
+.shop-header-details-search-result {
+  flex: 1;
+}
+
+/* Style the shop name link */
+.shop-name-link-search-result {
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.shop-name-link-search-result:hover {
+  text-decoration: underline;
+}
+
+/* Style the shop image */
+.shop-image-search-result {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Style the shop image picture */
+.shop-image-pic-search-result {
+  width: 150px;
+  height: auto;
+}
+
+/* Styles for the outer container of search results */
+.PRoducts-card-search-result {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+/* Styles for the product image */
+.product-img-search-result img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Styles for the product title */
+.product-title-search-result h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px 0;
+  color: #333;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Style for the search bar */
+.inpsearchbar {
+  margin-bottom: 20px;
+}
+
+.inpsearchbar input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.inpsearchbar button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style for the three sections */
+
+/* Add specific styles for each section */
+/* For the Products section */
+.products-section {
+  background-color: #f5f5f5;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* For the User and Shop sections */
+.user-shop-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Style for User and Shop components (can be further customized) */
+.user-shop-section {
+  flex-basis: calc(50% - 10px);
+  padding: 16px;
+  border-radius: 4px;
+  text-align: center;
+}
+}
   
-  .shopsseacr {
-    border: 1px solid black;
-    width: 100px;
-  }
+ 

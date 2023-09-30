@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Axios from "axios";
 import "./chat.css"; // Import your CSS for styling
 
@@ -7,8 +7,8 @@ const MainChatMessageSystem = () => {
   const [chatData, setChatData] = useState([]);
   const [message, setmessage] = useState("");
   const [tokenId, setTokenId] = useState([]);
-
   const params = useParams();
+  const [chatName] = useState(params.first_name);
 
   const fetchChatHandler = useCallback(async () => {
     try {
@@ -76,7 +76,7 @@ const MainChatMessageSystem = () => {
           : "chat-message"
       }
     >
-      <p>{message.message_text}</p>
+      <p className="textchatofusers">{message.message_text}</p>
     </div>
   ));
 
@@ -108,24 +108,40 @@ const MainChatMessageSystem = () => {
   return (
     <Fragment>
       <div className="chat-container">
-        {chatMessages}
-      </div>
-      <div className="footerforchat">
-        <footer>
-          <div className="inputforchat">
-            <form onSubmit={addMessageHandler}>
-              <input
-                required
-                placeholder="Send message"
-                value={message}
-                onChange={(e) => {
-                  setmessage(e.target.value);
-                }}
-              />
-              <button>Send</button>
-            </form>
+        <div className="chat-sidebar">
+          {/* Sidebar with a list of users */}
+          <div className="user-list">
+            {/* Add user list here */}
           </div>
-        </footer>
+        </div>
+        <div className="chat-main">
+          <div className="header">
+            <Link to='/home'>
+              <button>Back</button>
+            </Link>
+            <h3>{chatName}</h3>
+          </div>
+          <div className="chat-messages">
+            {chatMessages}
+          </div>
+          <div className="footerforchat">
+            <footer>
+              <div className="inputforchat">
+                <form onSubmit={addMessageHandler}>
+                  <input
+                    required
+                    placeholder="Send message"
+                    value={message}
+                    onChange={(e) => {
+                      setmessage(e.target.value);
+                    }}
+                  />
+                  <button>Send</button>
+                </form>
+              </div>
+            </footer>
+          </div>
+        </div>
       </div>
     </Fragment>
   );

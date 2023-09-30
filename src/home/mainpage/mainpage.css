@@ -11,29 +11,84 @@
   }
   
   @media (min-width: 1025px) {
-    .dropmentlogomainpage img {
-        width: 100px;
+    .maindivefordropmentmainpage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .dropmentmainheader button {
-      display: inline-flex;
-      margin-top: 50px;
-      margin-left: 40px;
-      border: 0px solid black;
+    
+    .dropmentmainheader {
+      width: 100%;
+      background-color: #ffffff; /* Adjust background color as needed */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    
+    .dropmentlogomainpage {
+      margin-right: 0px;
+    }
+    
+    .dropmentlogomainpage img {
+      max-height: 80px; /* Adjust as needed */
+    }
+    
+    .dropmentmainbtns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .dropmentmainbtns button {
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
       font-size: medium;
     }
-    .dropmentmainheader header {
-      display: inline-flex;
+    
+    .createstorebtnmainpg {
+      /* Style for ChatMessageapp */
     }
-    .dropmentmainheader img {
-      margin-right: 200px;
+    
+    .section1inmainpage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px;
     }
-    .createstorebtnmainpg button {
-      margin-left: 290px;
-      background-color: #0096c7;
-      color: white;
-      border: 1px solid #0096c7;
-      border-radius: 15px;
-      padding: 10px;
+    
+    .content-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1200px; /* Adjust as needed */
+    }
+    
+    .left-content {
+      flex: 1;
+      max-width: 300px; /* Adjust as needed */
+      margin-right: 20px;
+    }
+    
+    .middle-content {
+      flex: 3;
+    }
+    
+    .right-content {
+      flex: 1;
+      max-width: 300px; /* Adjust as needed */
+      margin-left: 20px;
+    }
+    .recomprofilemainpagetxtp {
+      color: grey;
+      text-align: center;
+    }
+    .recomprofilemainpagetxt {
+      color: grey;
+      text-align: left;
+      margin-left: 19px;
     }
   }
   

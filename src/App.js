@@ -62,7 +62,9 @@ import SubscriptionForm from "./home/payment/payment";
 import Userdisplay from "./home/user/userdisplay";
 import Usersindetails from "./home/user/usersdetails";
 import Mainpage from "./home/mainpage/mainpage";
-import MainChatMessageSystem from "./home/chat/mainchat";
+import ChatMessageapp from "./home/chat/mainchat";
+import Stripform from "./home/payment/payment2";
+import StripeApp from "./home/payment/paymentapp";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -77,7 +79,7 @@ const router = createBrowserRouter([
   { path: "/Addshoppage1", element: <Addshopniche /> },
   { path: "/Dropshipping", element: <Dropshipping /> },
   {
-    path: "/products/:id/:title/:price/:shop_id",
+    path: "/products/:id/",
     element: <Prodsright />,
   },
   { path: "/Addproducts", element: <Addproductstodatabase /> },
@@ -103,7 +105,7 @@ const router = createBrowserRouter([
   {path: '/Add/temp5/form', element: <Addtemplate5form/>},
   {path: '/mystore5/:shop_id/:shop_name', element: <Template5website/>},
   {path: '/temp4preview', element: <Template4websitepreview/>},
-  {path: '/Plans', element: <SubscriptionForm/>},
+  {path: '/Plans', element: <StripeApp/>},
   {path: '/Add/temp4/form', element: <Addtemplate4form/>},
   {path: '/mystore4/:shop_id/:shop_name', element: <Template4website/>},
   {path: '/temp6preview', element: <Template6websitepreview/>},
@@ -122,7 +124,7 @@ const router = createBrowserRouter([
   {path: '/mystore8/:shop_id/:shop_name/', element: <Template8website/>},
   {path: '/user/:user_id', element: <Usersindetails/>},
   {path: '/home', element: <Mainpage/>},
-  {path: '/chat/:user_id_1/:user_id_2/:chat_id', element:<MainChatMessageSystem/>}
+  {path: '/chat/:chat_id/:user1/:user2/', element:<ChatMessageapp/>}
 ]);
 function App() {
   return (

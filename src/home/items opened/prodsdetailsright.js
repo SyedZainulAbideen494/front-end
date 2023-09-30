@@ -126,6 +126,34 @@ const Orderform = (props) => {
   const [title, setitle] = useState("");
   const [shop_id, setshop_id] = useState("");
   const [paymentlink, setPaymentLink] = useState('');
+  const [items, setItems] = useState('')
+
+  const fetchProdshandler = useCallback(async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/imgprods/`, {
+        headers: {
+          Authorization: params.id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.img.map((itemsdata) => ({
+        images: `http://localhost:8080/images/${itemsdata.images}`,
+        images2: `http://localhost:8080/images/${itemsdata.images2}`,
+        images3: `http://localhost:8080/images/${itemsdata.images3}`,
+        images4: `http://localhost:8080/images/${itemsdata.images4}`,
+        images5: `http://localhost:8080/images/${itemsdata.images5}`,
+        images6: `http://localhost:8080/images/${itemsdata.images6}`,
+        title: itemsdata.title,
+        price: itemsdata.price,
+        description: itemsdata.description,
+        id: itemsdata.id,
+        shop_id: itemsdata.shop_id
+      }));
+      setItems(transformedItems);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [params.id]);
 
   const nameHandler = (event) => {
     setname(event.target.value);
@@ -165,11 +193,11 @@ const Orderform = (props) => {
     setid(params.id);
   }, [params.id]);
   useEffect(() => {
-    setitle(params.title);
-  }, [params.title]);
+    setitle(items[0]?.title);
+  }, [items[0]?.title]);
   useEffect(() => {
-    setshop_id(params.shop_id);
-  }, [params.shop_id]);
+    setshop_id(items[0]?.shop_id);
+  }, [items[0]?.shop_id]);
 
   const onOrderSubmitHandler = (event) => {
     event.preventDefault();
@@ -622,7 +650,7 @@ function Prodsright() {
   const [items, setItems] = useState([]);
   const [paymentlink, setPaymentLink] = useState('');
   const [loading, setLoading] = useState(false);
-  const [img1, setimg1] = useState(false)
+  const [img1, setimg1] = useState(true)
   const [img2, setimg2] = useState(false)
   const [img3, setimg3] = useState(false)
   const [img4, setimg4] = useState(false)
@@ -713,6 +741,11 @@ function Prodsright() {
         images4: `http://localhost:8080/images/${itemsdata.images4}`,
         images5: `http://localhost:8080/images/${itemsdata.images5}`,
         images6: `http://localhost:8080/images/${itemsdata.images6}`,
+        title: itemsdata.title,
+        price: itemsdata.price,
+        description: itemsdata.product_description,
+        id: itemsdata.id,
+        shop_id: itemsdata.shop_id
       }));
       setItems(transformedItems);
       setLoading(false);
@@ -744,106 +777,103 @@ function Prodsright() {
 
   const Showimg1 = () => {
     return<Fragment>
-      <img src={items[0]?.images} alt="image1"/>
+      <img src={items[0]?.images} alt="image1" className="imgdetailsprodsimgs"/>
     </Fragment>
   }
   const Showimg2 = () => {
     return<Fragment>
-      <img src={items[0]?.images2} alt="image2"/>
+      <img src={items[0]?.images2} alt="image2" className="imgdetailsprodsimgs"/>
     </Fragment>
   }
   const Showimg3 = () => {
     return<Fragment>
-      <img src={items[0]?.images3} alt="image3"/>
+      <img src={items[0]?.images3} alt="image3" className="imgdetailsprodsimgs"/>
     </Fragment>
   }
   const Showimg4 = () => {
     return<Fragment>
-      <img src={items[0]?.images4} alt="image4"/>
+      <img src={items[0]?.images4} alt="image4" className="imgdetailsprodsimgs"/>
     </Fragment>
   }
   const Showimg5 = () => {
     return<Fragment>
-      <img src={items[0]?.images5} alt="image5"/>
+      <img src={items[0]?.images5} alt="image5" className="imgdetailsprodsimgs"/>
     </Fragment>
   }
   const Showimg6 = () => {
     return<Fragment>
-      <img src={items[0]?.images6} alt="imag6"/>
+      <img src={items[0]?.images6} alt="imag6" className="imgdetailsprodsimgs"/>
     </Fragment>
   }
 
   return (
     <Fragment>
-      <div className="prodsetailsheader">
-        <header>
-          <div className="prodsdetailsbtns">
-            <span className="prodsbtns">
-              <Link to="/">
-                <button>back</button>
-              </Link>
-            </span>
-            <span className="prodsbtns">
-              {/* Assuming Editbtndisplay is a component */}
-              <Editbtndisplay />
-            </span>
-          </div>
-        </header>
-      </div>
-      <div className="deatils">
-        <div className="imgitemdetails">
-          {loading ? (
-            <div>Loading image...</div>
-          ) : (
-            <section className="imgprodsdetailsfordetails6imgs">
-            {img1 && <Showimg1/>}
-            {img2 && <Showimg2/>}
-            {img3 && <Showimg3/>}
-            {img4 && <Showimg4/>}
-            {img5 && <Showimg5/>}
-            {img6 && <Showimg6/>}
-            
-            </section>
-          )}
-        </div>
-
-        <div className="prodes__right__full">
-          <button onClick={showmg1}>Image 1</button>
-            <button onClick={showmg2}>Image 2</button>
-            <button onClick={showmg3}>Image 3</button>
-            <button onClick={showmg4}>Image 4</button>
-            <button onClick={showmg5}>Image 5</button>
-            <button onClick={showmg6}>Image 6</button>
-          <div className="prods__title">
-            <h2>{params.title}</h2>
-          </div>
-          <br />
-          <div className="amount">
-            Price: <br />
-            <h3>{params.price}</h3>
-          </div>
-          <div className="editbtns">{showedititem && <Edititemform />}</div>
-          <br />
-          <div className="prods__detail__btn">
-            <span className="prods__detail_addtocart_btn">
-           
-                <button onClick={orderOpenHandler}>Buy Now</button>
-              {orderform && <Orderform onhidehandler={orderCloseHandler} />}
-             
-            </span>
-          </div>
-        </div>
-        <div className="prodsdetails__products">
-          <hr />
-          <span className="prodsliketxt">
-            <h3>More products you might like</h3>
+  <div className="product-page">
+    <div className="product-header">
+      <header>
+        <div className="product-buttons">
+          <span className="product-btn">
+            <Link to="/">
+              <button className="back-button">Back</button>
+            </Link>
           </span>
-          <hr />
-          {/* Assuming Productsapp is a component */}
-          <Productsapp />
         </div>
+      </header>
+    </div>
+    <div className="product-details">
+      <div className="product-images">
+        {loading ? (
+          <div className="loading-image">Loading image...</div>
+        ) : (
+          <>
+            <section className="product-image-section">
+            {img1 && <Showimg1 />}
+            {img2 && <Showimg2 />}
+            {img3 && <Showimg3 />}
+            {img4 && <Showimg4 />}
+            {img5 && <Showimg5 />}
+            {img6 && <Showimg6 />}
+            </section>
+            <div className="image-change-buttons">
+            <button className="image-button" onClick={showmg1}>Image 1</button>
+        <button className="image-button" onClick={showmg2}>Image 2</button>
+        <button className="image-button" onClick={showmg3}>Image 3</button>
+        <button className="image-button" onClick={showmg4}>Image 4</button>
+        <button className="image-button" onClick={showmg5}>Image 5</button>
+        <button className="image-button" onClick={showmg6}>Image 6</button>
+            </div>
+          </>
+        )}
       </div>
-    </Fragment>
+
+      <div className="product-info">
+        <div className="product-title">
+          <h2>{items[0]?.title}</h2>
+        </div>
+        <div className="product-amount">
+          <h3>Price:</h3>
+          <p>{items[0]?.price}</p>
+        </div>
+        <div className="product-buttons">
+          <button className="buy-button" onClick={orderOpenHandler}>
+            Buy Now
+          </button>
+        </div>
+        <div className="product-description">{items[0]?.description}</div>
+      </div>
+    </div>
+    
+    <div className="product-related-products">
+      <hr />
+      <div className="product-like-text">
+        <h3>More products you might like</h3>
+      </div>
+      <hr />
+      {/* Assuming Productsapp is a component */}
+      <Productsapp />
+    </div>
+  </div>
+</Fragment>
   );
 }
 

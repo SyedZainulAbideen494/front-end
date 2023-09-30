@@ -508,6 +508,7 @@ const Addproductstodatabase = (props) => {
   const [amount, setAmount] = useState("");
   const [image, setImage] = useState(null);
   const [payment, setpayment] = useState('')
+  const [product_description, setproduct_description] = useState('')
  
   const shopId = props.shop_id; // Assuming you're passing shopId as a prop
  
@@ -541,6 +542,7 @@ const Addproductstodatabase = (props) => {
     formData.append("ZAR", ZAR);
     formData.append("SEK", SEK);
     formData.append("NOK", NOK);
+    formData.append("product_description", product_description)
  
     Axios.post("http://localhost:8080/addProduct", formData, {
       headers: {
@@ -586,7 +588,14 @@ const Addproductstodatabase = (props) => {
           value={payment}
           onChange={(e) => setpayment(e.target.value)}
         /><br/>
-
+        <label>Enter description below 2000 words</label>
+        <input
+          type="text"
+          placeholder="Enter description below 2000 words"
+          value={product_description}
+          onChange={(e) => setproduct_description(e.target.value)}
+        /><br/>
+        <h3>Price (please enter the price only where you want to sell your products)</h3>
         <label>USD</label>
         <input
           type="text"
@@ -784,7 +793,7 @@ const ProductList = (props) => {
         {props.items.map((item) => (
           <div key={item.id}>
             <Link
-              to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}/`}
+              to={`/products/${item.id}`}
             >
               <Products
                 id={item.id}

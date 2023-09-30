@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import Userdisplay from "./userdisplay";
+import "./Userdisplay.css";
 
 const Userslist = (props) => {
   return (
     <Fragment>
-      <div className="usermodelul">
+      <div className="usermodelmainpage">
         <ul>
           {props.shops.map((item) => (
               <Userdisplay

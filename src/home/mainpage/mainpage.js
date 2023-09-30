@@ -30,43 +30,50 @@ const Mainpage = () => {
   
 
     return<Fragment>
-    <div className="maindivefordropmentmainpage">
-        <div className="dropmentmainheader">
-            <header>
-                <div className="dropmentlogomainpage">
-                    <img src={dropment}/>
-                </div>
-                <div className="dropmentmainbtns">
-                  <Link to='/profile'>
-                    <button>My profile</button>
-                    </Link>
-                    <Link to='/orders'>
-                    <button>My orders</button>
-                    </Link>
-                    <Link to='/search'>
-                    <button>Search</button>
-                    </Link>
-              {auth ? (
-                  <button onClick={handleLogout}>Logout</button>
-              ) : (
-                  <Link to="/login">
-                    <button>Login</button>
-                  </Link>
-              )}
-                </div>
-            </header>
+    
+     <div className="maindivefordropmentmainpage">
+      <div className="dropmentmainheader">
+        <header>
+          <div className="dropmentlogomainpage">
+            <img src={dropment} alt="Dropment Logo" />
+          </div>
+          <div className="dropmentmainbtns">
+            <Link to="/profile">
+              <button>My profile</button>
+            </Link>
+            <Link to="/orders">
+              <button>My orders</button>
+            </Link>
+            <Link to="/search">
+              <button>Search</button>
+            </Link>
+            {auth ? (
+              <button onClick={handleLogout}>Logout</button>
+            ) : (
+              <Link to="/login">
+                <button>Login</button>
+              </Link>
+            )}
+          </div>
+        </header>
+      </div>
+      <div className="section1inmainpage">
+        <div className="content-container">
+          <div className="left-content">
+          <p className="recomprofilemainpagetxtp">Conversations</p>
+            <ChatMessageapp />
+          </div>
+          <div className="middle-content">
+            <AllTemplate1app />
+          </div>
+          <div className="right-content">
+            <p className="recomprofilemainpagetxtp">Featured profiles</p>
+            <Users />
+          </div>
         </div>
-        <div className="rightsectionmainpagedropment">
-        <ChatMessageapp/>
-        </div>
-        <div className="section1inmainpage">
-          <AllTemplate1app/>
-          
-          <Users/>
-          
-        </div>
+      </div>
     </div>
-</Fragment>
+  </Fragment>
 }
 
 export default Mainpage
