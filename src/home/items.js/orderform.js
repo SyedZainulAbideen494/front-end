@@ -42,7 +42,7 @@ const Orderform = (props) => {
         description: itemsdata.description,
         id: itemsdata.id,
         shop_id: itemsdata.shop_id,
-        payment: itemsdata.payment,
+        payment: itemsdata.payment
       }));
       setItems(transformedItems);
     } catch (error) {
