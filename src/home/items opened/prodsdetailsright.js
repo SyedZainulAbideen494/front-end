@@ -648,6 +648,8 @@ const Addimage2 = (props) => {
 function Prodsright() {
   const [orderform, setOrderForm] = useState(false);
   const [items, setItems] = useState([]);
+  const [shops, setShops] = useState([]);
+  const [users, setUsers] = useState([]);
   const [paymentlink, setPaymentLink] = useState('');
   const [loading, setLoading] = useState(false);
   const [img1, setimg1] = useState(true)
@@ -755,6 +757,50 @@ function Prodsright() {
     }
   }, [params.id]);
 
+  const fetchshopdata = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`http://localhost:8080/prods/details/shop/details`, {
+        headers: {
+          Authorization: items[0]?.shop_id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.shops.map((itemsdata) => ({
+        shop_name: itemsdata.shop_name,
+        shop_owner: itemsdata.shop_owner,
+        shop_id: itemsdata.shop_id,
+        user_id: itemsdata.user_id
+      }));
+      setShops(transformedItems);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
+  }, [items[0]?.shop_id]);
+
+  const fetchuserdata = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`http://localhost:8080/user/details/shop/details`, {
+        headers: {
+          Authorization: shops[0]?.user_id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.users.map((itemsdata) => ({
+        user_id: itemsdata.user_id,
+        first_name: itemsdata.first_name
+      }));
+      setUsers(transformedItems);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
+  }, [shops[0]?.user_id]);
+
   const fetchProdspayhandler = useCallback(async () => {
     try {
       const response = await fetch(`http://localhost:8080/imgprods/`, {
@@ -773,7 +819,9 @@ function Prodsright() {
   useEffect(() => {
     fetchProdshandler();
     fetchProdspayhandler();
-  }, [fetchProdshandler, fetchProdspayhandler]);
+    fetchshopdata()
+    fetchuserdata()
+  }, [fetchProdshandler, fetchProdspayhandler, fetchshopdata, fetchuserdata]);
 
   const Showimg1 = () => {
     return<Fragment>
@@ -805,6 +853,27 @@ function Prodsright() {
       <img src={items[0]?.images6} alt="imag6" className="imgdetailsprodsimgs"/>
     </Fragment>
   }
+
+  const Linkno = (props) => {
+    if (shops[0]?.temp1 !== null) {
+      return "/mystore1";
+    } else if (shops[0]?.temp2 !== null) {
+      return "/mystore2";
+    } else if (shops[0]?.temp3 !== null) {
+      return "/mystore3";
+    } else if (shops[0]?.temp4 !== null) {
+      return "/mystore4";
+    } else if (shops[0]?.temp5 !== null) {
+      return "/mystore5";
+    } else if (shops[0]?.temp6 !== null) {
+      return "/mystore6";
+    } else if (shops[0]?.temp7 !== null) {
+      return "/mystore7";
+    } 
+    else if (shops[0]?.temp8 !== null) {
+      return "/mystore8";
+    } 
+  };
 
   return (
     <Fragment>
@@ -850,14 +919,28 @@ function Prodsright() {
         <div className="product-title">
           <h2>{items[0]?.title}</h2>
         </div>
+        
+        <p>Item by <Link
+        to={`${Linkno(shops)}/${shops[0]?.shop_id}/${shops[0]?.shop_name}`}
+        style={{ textDecoration: 'none', color: 'black' }}
+      >{shops[0]?.shop_name}</Link></p>
+        
+        
+         <p>Shop by <Link
+        to={`/user/${users[0]?.user_id}/`}
+        style={{ textDecoration: 'none', color: 'black' }}
+      >{users[0]?.first_name}</Link></p>
+          
         <div className="product-amount">
           <h3>Price:</h3>
           <p>{items[0]?.price}</p>
         </div>
         <div className="product-buttons">
-          <button className="buy-button" onClick={orderOpenHandler}>
+          <Link to={`/orders/${params.id}/${params.shop_id}`}>
+          <button className="buy-button">
             Buy Now
           </button>
+          </Link>
         </div>
         <div className="product-description">{items[0]?.description}</div>
       </div>

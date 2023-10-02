@@ -1,8 +1,8 @@
-import { Fragment } from "react";
-import React, { useState } from "react";
+import { Fragment, useState, useCallback, useEffect } from "react";
 import "./items.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Placeorder from "./placeorder";
+import Axios from "axios"; // Change this line to import Axios properly
 
 const Orderform = (props) => {
   const [user, setname] = useState("");
@@ -13,20 +13,44 @@ const Orderform = (props) => {
   const [state, setstate] = useState("");
   const [zipcode, setzipcode] = useState("");
   const [country, setcountry] = useState("");
-  const [placeord, setplaceord] = useState(false);
-  const [itemdetails, setitemdetails] = useState("");
+  const [id, setid] = useState("");
+  const [title, setitle] = useState("");
+  const [shop_id, setshop_id] = useState("");
+  const [paymentlink, setPaymentLink] = useState("");
+  const [items, setItems] = useState([]);
+  const params = useParams();
+  const [loading, setLoading] = useState(false);
+  const [name2, setName2] = useState([]);
 
-  const data = () => {
-    setitemdetails(props.prodsdetails);
-  };
+  const fetchProdshandler = useCallback(async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/imgprods/`, {
+        headers: {
+          Authorization: params.id,
+        },
+      });
+      const data = await response.json();
+      const transformedItems = data.img.map((itemsdata) => ({
+        images: `http://localhost:8080/images/${itemsdata.images}`,
+        images2: `http://localhost:8080/images/${itemsdata.images2}`,
+        images3: `http://localhost:8080/images/${itemsdata.images3}`,
+        images4: `http://localhost:8080/images/${itemsdata.images4}`,
+        images5: `http://localhost:8080/images/${itemsdata.images5}`,
+        images6: `http://localhost:8080/images/${itemsdata.images6}`,
+        title: itemsdata.title,
+        price: itemsdata.price,
+        description: itemsdata.description,
+        id: itemsdata.id,
+        shop_id: itemsdata.shop_id,
+        payment: itemsdata.payment,
+      }));
+      setItems(transformedItems);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [params.id]);
 
-  const openplaceordHandler = () => {
-    setplaceord(true);
-  };
-
-  const closeplaceordHandler = () => {
-    setplaceord(false);
-  };
+  const token = localStorage.getItem("token");
 
   const nameHandler = (event) => {
     setname(event.target.value);
@@ -60,97 +84,117 @@ const Orderform = (props) => {
     setcountry(event.target.value);
   };
 
-  const onOrderSubmitHandler = (event) => {
-    event.preventDefault();
-
-    const orderDeatails = {
-      name: user,
-      Phone: phoneno,
-      Email: email,
-      Address: streetadrs,
-      city,
-      state,
-      zipcode,
-      country,
-      itemdetails,
+  useEffect(() => {
+    const fetchUsers2Handler = async () => {
+      setLoading(true);
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+          "http://localhost:8080/user/details/orders/for/details",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        const data = await response.json();
+        const transformedUser2 = data.products.map((userdata) => {
+          return {
+            user_id: userdata.user_id,
+            email: userdata.email,
+            age: userdata.age,
+            occupation: userdata.occupation,
+          };
+        });
+        setName2(transformedUser2);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    console.log(orderDeatails);
+    fetchUsers2Handler();
+  }, []);
+
+  console.log(items)
+
+  const orderhandler = () => {
+    console.log("Order Handler Called");
+    console.log("user:", user);
+    console.log("phoneno:", phoneno);
+    console.log("name2:", name2);
+    console.log("items:", items);
+    console.log("shop_id:", shop_id);
+    Axios.post(
+      "http://localhost:8080/place/order",
+      {
+        name: user,
+        Phone: phoneno,
+        Email: name2[0]?.email,
+        streetadrs: streetadrs,
+        city: city,
+        state: state,
+        zipcode: zipcode,
+        country: country,
+        id: params.id,
+        product: items[0]?.title,
+        shop_id: params.shop_id,
+        occupation: name2[0]?.occupation,
+        age: name2[0]?.age,
+        sender_id: name2[0]?.user_id,
+      },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    ).then(() => {
+      // Open the payment link in a new tab or window
+      window.open(items[0]?.payment, "_blank");
+    });
   };
 
   return (
-    <Fragment>
-      <div className="formorder">
-        <form onSubmit={onOrderSubmitHandler}>
-          <div className="name">
-            <h2>{props.prodsdetails}</h2>
-            <label>Name</label>
-            <br />
-            <input type="text" value={user} onChange={nameHandler} />
-          </div>
-          <div className="phone">
-            <label>Phone number</label>
-            <br />
-            <input type="number" value={phoneno} onChange={phoneNohandler} />
-          </div>
-          <div className="email">
-            <label>Email</label>
-            <br />
-            <input type="email" value={email} onChange={emailhandler} />
-          </div>
-          <div className="address">
-            <label>Address</label>
-            <br />
-            <input
-              type="text"
-              placeholder="street address"
-              value={streetadrs}
-              onChange={streetaddress}
-            />
-            <br />
-            <input
-              type="text"
-              placeholder="city"
-              value={city}
-              onChange={cityadrs}
-            />
-            <input
-              type="text"
-              placeholder="state/ province"
-              value={state}
-              onChange={stateadrs}
-            />
-            <br />
-            <input
-              type="number"
-              placeholder="Zip code/ postal"
-              value={zipcode}
-              onChange={zipcodeadrs}
-            />
-            <br />
-            <input
-              type="text"
-              placeholder="country"
-              value={country}
-              onChange={counrtyadrs}
-            />
-          </div>
-          <div className="btn">
-            <span className="closebtn">
-              <Link to="/">
-                <button>Close</button>
-              </Link>
-            </span>
-            <span className="placeordbtn">
-              <button onClick={openplaceordHandler} type="submit">
-                Place order
-              </button>
-            </span>
-          </div>
-        </form>
-      </div>
-      {placeord && <Placeorder onClose={closeplaceordHandler} />}
-    </Fragment>
+    <div className="formorder">
+      <form onSubmit={orderhandler}>
+        <h2>{items[0]?.title}</h2>
+        <label>Name</label>
+        <input type="text" value={user} onChange={nameHandler} />
+        <label>Phone number</label>
+        <input type="number" value={phoneno} onChange={phoneNohandler} />
+        <label>Address</label>
+        <input
+          type="text"
+          placeholder="Street Address"
+          value={streetadrs}
+          onChange={streetaddress}
+        />
+        <input type="text" placeholder="City" value={city} onChange={cityadrs} />
+        <input
+          type="text"
+          placeholder="State/Province"
+          value={state}
+          onChange={stateadrs}
+        />
+        <input
+          type="number"
+          placeholder="Zip Code/Postal"
+          value={zipcode}
+          onChange={zipcodeadrs}
+        />
+        <input
+          type="text"
+          placeholder="Country"
+          value={country}
+          onChange={counrtyadrs}
+        />
+        <div className="btn">
+          <button onClick={props.onhidehanlder}>Close</button>
+          <button type="submit">Place Order</button>
+        </div>
+      </form>
+    </div>
   );
 };
 

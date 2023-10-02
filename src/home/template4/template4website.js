@@ -551,7 +551,9 @@ const Editbtndisplay1 = () => {
                     </Link>
                   </span>
                   <span className="btnwebstore">
-                    <button onClick={showsaleshandler}>Sales</button>
+                  <Link to={`/sales/report/${params.shop_id}`}>
+                    <button>Sales</button>
+                    </Link>
                   </span>
                   <span className="btnwebstore">
                     <button onClick={showformhandler}>Add Item</button>
@@ -1044,7 +1046,7 @@ const ProductList = (props) => {
         {props.items.map((item) => (
           <div key={item.id}>
             <Link
-            to={`/products/${item.id}`}
+            to={`/products/${item.id}/${item.shop_id}`}
             >
               <Products
                 id={item.id}

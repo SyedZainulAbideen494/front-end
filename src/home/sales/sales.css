@@ -181,4 +181,51 @@
     border-bottom-right-radius: 25px;
     padding: 20px;
   }
+  
+.sales-report-app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sales-report-app h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.sales-report-app table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sales-report-app th, .sales-report-app td {
+  padding: 12px;
+  text-align: left;
+}
+
+.sales-report-app th {
+  background-color: #333;
+  color: #fff;
+}
+
+.sales-report-app tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.sales-report-app tr:hover {
+  background-color: #ddd;
+}
+
+.sales-report-app p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
+}
+
 }

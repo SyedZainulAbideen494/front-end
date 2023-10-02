@@ -65,6 +65,7 @@ import Mainpage from "./home/mainpage/mainpage";
 import ChatMessageapp from "./home/chat/mainchat";
 import Stripform from "./home/payment/payment2";
 import StripeApp from "./home/payment/paymentapp";
+import SalesReportApp from "./home/sales/chatsreport";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -73,13 +74,13 @@ const router = createBrowserRouter([
   { path: "/signin", element: <Signin /> },
   { path: "/aboutus", element: <Storeabout /> },
   { path: "/shop-products", element: <Myshopproducts /> },
-  { path: "/orderproduct", element: <Orderform /> },
+  { path: "/orders/:id/:shop_id", element: <Orderform /> },
   { path: "/profile", element: <Profile /> },
   { path: "/Plansss", element: <Plans /> },
   { path: "/Addshoppage1", element: <Addshopniche /> },
   { path: "/Dropshipping", element: <Dropshipping /> },
   {
-    path: "/products/:id/",
+    path: "/products/:id/:shop_id",
     element: <Prodsright />,
   },
   { path: "/Addproducts", element: <Addproductstodatabase /> },
@@ -93,7 +94,7 @@ const router = createBrowserRouter([
     path: "/saleschat/:orders_id",
     element: <Saleschat />,
   },
-  { path: "/orders", element: <Order /> },
+  { path: "/orders/", element: <Order /> },
   { path: "/temp3preview", element: <Template3website /> },
   { path: "/Add/temp3/form", element: <Addtemplate3form /> },
   {
@@ -124,7 +125,8 @@ const router = createBrowserRouter([
   {path: '/mystore8/:shop_id/:shop_name/', element: <Template8website/>},
   {path: '/user/:user_id', element: <Usersindetails/>},
   {path: '/home', element: <Mainpage/>},
-  {path: '/chat/:chat_id/:user1/:user2/', element:<ChatMessageapp/>}
+  {path: '/chat/:chat_id/:user1/:user2/', element: <ChatMessageapp/>},
+  {path: '/sales/report/:shop_id', element: <SalesReportApp/>}
 ]);
 function App() {
   return (

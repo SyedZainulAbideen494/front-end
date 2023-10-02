@@ -191,5 +191,7 @@
     justify-content: center; /* Center the buttons horizontally */
     margin-top: 10px;
   }
-  
+  .imgdetailsprodsimgs {
+    width: 300px;
+  }
 }  
