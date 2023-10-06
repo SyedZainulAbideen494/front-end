@@ -66,6 +66,7 @@ import ChatMessageapp from "./home/chat/mainchat";
 import Stripform from "./home/payment/payment2";
 import StripeApp from "./home/payment/paymentapp";
 import SalesReportApp from "./home/sales/chatsreport";
+import AddProductsForm from "./home/additemsform/additemsform";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
   { path: "/signin", element: <Signin /> },
   { path: "/aboutus", element: <Storeabout /> },
   { path: "/shop-products", element: <Myshopproducts /> },
-  { path: "/orders/:id/:shop_id", element: <Orderform /> },
+  { path: "/orders/:id/:shop_id/:title", element: <Orderform /> },
   { path: "/profile", element: <Profile /> },
   { path: "/Plansss", element: <Plans /> },
   { path: "/Addshoppage1", element: <Addshopniche /> },
@@ -126,7 +127,8 @@ const router = createBrowserRouter([
   {path: '/user/:user_id', element: <Usersindetails/>},
   {path: '/home', element: <Mainpage/>},
   {path: '/chat/:chat_id/:user1/:user2/', element: <ChatMessageapp/>},
-  {path: '/sales/report/:shop_id', element: <SalesReportApp/>}
+  {path: '/sales/report/:shop_id', element: <SalesReportApp/>},
+  {path: '/add/product/:shop_id', element: <AddProductsForm/>}
 ]);
 function App() {
   return (

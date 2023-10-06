@@ -8,7 +8,7 @@ import './template5.css'
 import head2img from '../../home/header/images/The Indian Gent.jpg'
 import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
 import key2img from '../../home/header/images/key2img.jpg'
-import key3img from '../header/images/الامل سر الحياة😻ماريا&جواد.jpg'
+import key3img from '../header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
 
 
 const Editstoreform = () => {

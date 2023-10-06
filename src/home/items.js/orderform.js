@@ -24,13 +24,13 @@ const Orderform = (props) => {
 
   const fetchProdshandler = useCallback(async () => {
     try {
-      const response = await fetch(`http://localhost:8080/imgprods/`, {
+      const response = await fetch(`http://localhost:8080/prods/details/orders/for/details`, {
         headers: {
           Authorization: params.id,
         },
       });
       const data = await response.json();
-      const transformedItems = data.img.map((itemsdata) => ({
+      const transformedItems = data.products.map((itemsdata) => ({
         images: `http://localhost:8080/images/${itemsdata.images}`,
         images2: `http://localhost:8080/images/${itemsdata.images2}`,
         images3: `http://localhost:8080/images/${itemsdata.images3}`,
@@ -49,6 +49,8 @@ const Orderform = (props) => {
       console.error(error);
     }
   }, [params.id]);
+
+  console.log(items[0]?.id)
 
   const token = localStorage.getItem("token");
 
@@ -138,7 +140,7 @@ const Orderform = (props) => {
         zipcode: zipcode,
         country: country,
         id: params.id,
-        product: items[0]?.title,
+        product: params.title,
         shop_id: params.shop_id,
         occupation: name2[0]?.occupation,
         age: name2[0]?.age,

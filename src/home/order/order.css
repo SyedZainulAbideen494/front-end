@@ -1,35 +1,94 @@
-.orderprods {
+.order-details-card {
+  width: 300px; /* Adjust the width as needed */
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: #fff;
-  padding: 10px;
-  margin: 0 0 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
 }
 
-.orderprods:hover {
-  background-color: #f9f9f9;
-  transform: translateY(-2px);
+.order-tracking-bar {
+  /* Your existing styles for the order tracking bar */
 }
 
-.prodimg img {
-  max-width: 50px;
-  height: auto;
-  margin-right: 10px;
+/* Styling for the order details */
+.order-details {
+  margin-top: 20px;
 }
 
-.nameofuser p {
-  font-weight: bold;
-  margin: 0;
+.order-details p {
   font-size: 14px;
-  color: #111;
+  color: #555;
+  margin: 5px 0;
 }
 
-.nameofprod {
-  flex-grow: 1;
-  text-align: right;
-  font-size: 12px;
+.order-details strong {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.order-details-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.order-details-button:hover {
+  background-color: #45a049;
+}
+
+.order-tracking-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+}
+
+.order-status {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.status-label {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  flex: 1;
+}
+
+.status-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.status-dot.active {
+  background-color: #4caf50; /* Green color for active status */
+}
+
+.order-progress {
+  width: 100%;
+  height: 4px;
+  background-color: #ccc;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.order-progress-bar {
+  height: 100%;
+  background-color: #4caf50; /* Green color for progress */
+  width: 0; /* Progress width will be set dynamically */
+  transition: width 0.3s ease;
 }

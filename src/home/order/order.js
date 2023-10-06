@@ -1,40 +1,28 @@
-import React, { Fragment, useState, useCallback, useEffect } from "react";
-import Button2 from "../UI/button2";
-import { Link, useNavigate } from "react-router-dom";
-import "./order.css";
+import React, { useState, useEffect, useCallback, Fragment } from 'react';
+import { useParams } from 'react-router-dom';
+import Axios from 'axios';
+import './order.css'
 
-const FetchOrders = () => {
-  const nav = useNavigate();
-  const [order, setorder] = useState([]);
-  const [loading, setloading] = useState(false);
-  const [auth, setauth] = useState(false);
+function Order() {
+  const [salesData, setSalesData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [name2, setName2] = useState([]);
+  const params = useParams();
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-  };
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setauth(true);
-    } else {
-      setauth(false);
-    }
-  }, []);
-  if (auth === false) {
-    nav("/login");
-  }
-
-  const fetchusershandler = useCallback(async () => {
-    setloading(true);
-    const token = localStorage.getItem("token");
-    setloading(true);
-    const response = await fetch("http://localhost:8080/user/orders", {
-      headers: {
-        Authorization: token,
-      },
-    });
-    const data = await response.json();
-    const transformeduser = data.orders.map((userdata) => {
-      return {
+  const fetchMessages = useCallback(async () => {
+    setLoading(true);
+    const token = localStorage.getItem('token');
+    try {
+      const response = await fetch(`http://localhost:8080/user/order/display`, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      const transformedData = data.user.map((userdata) => ({
         orders_id: userdata.orders_id,
         name: userdata.name,
         Phone: userdata.Phone,
@@ -48,86 +36,157 @@ const FetchOrders = () => {
         product: userdata.product,
         sender_id: userdata.sender_id,
         shop_id: userdata.shop_id,
-      };
-    });
-    setorder(transformeduser);
-    setloading(false);
+        message: userdata.message,
+        age: userdata.age,
+        occupation: userdata.occupation,
+        status: userdata.status
+      }));
+      setSalesData(transformedData);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
   }, []);
 
   useEffect(() => {
-    fetchusershandler();
+    fetchMessages();
+  }, [fetchMessages]);
+
+  const chatHandler = async (user_id, name) => {
+    if (!user_id || !name) {
+      console.error("Invalid user data:", user_id, name);
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+    try {
+      const response = await Axios.post(
+        "http://localhost:8080/start/chat",
+        {
+          user_id: user_id,
+          first_name1: name2[0]?.first_name,
+          first_name2: name,
+        },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+
+      console.log(name);
+
+      if (response.status === 200) {
+        // Chat started successfully, perform the redirection
+        const { chat_id, user1, user2 } = response.data;
+
+        window.location.href = `/chat/${chat_id}/${user1}/${user2}`;
+      } else {
+        // Handle other response statuses (e.g., 401, 500) here.
+        console.error("An error occurred:", response.data);
+      }
+    } catch (error) {
+      // Handle network or other errors here.
+      console.error("An error occurred:", error);
+    }
+  };
+
+  const fetchUser2sHandler = useCallback(async () => {
+    setLoading(true);
+    try {
+      const token = localStorage.getItem("token");
+      const response = await fetch(
+        "http://localhost:8080/user/id/editbtndiaplay2",
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      const transformedUser2 = data.user.map((userdata) => {
+        return {
+          user_id: userdata.user_id,
+          first_name: userdata.first_name,
+        };
+      });
+      setName2(transformedUser2);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
-  return (
-    <Fragment>
-      <section>
-        {!loading && <Orderslist order={order} />}
-        {loading && <p>Loading..</p>}
-      </section>
-    </Fragment>
-  );
-};
+  useEffect(() => {
+    fetchUser2sHandler();
+  }, [fetchUser2sHandler]);
 
-const Orderslist = (props) => {
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'packed':
+        return '30%';
+      case 'shipped':
+        return '60%';
+      case 'success':
+        return '100%';
+      default:
+        return '0%';
+    }
+  };
+
   return (
-    <Fragment>
-      <div>
-        <ul>
-          {props.order.map((itemdata) => (
-            <Link
-              to={`/saleschat/${itemdata.orders_id}`}
-              style={{textDecoration: 'none', color: 'black'}}
-            >
-              <Orderproduct
-                orders_id={itemdata.orders_id}
-                name={itemdata.name}
-                product={itemdata.product}
+    <div className="order-container-customer-side-all-order-main-div">
+    <h1>Your Orders</h1>
+    {loading ? (
+      <p>Loading...</p>
+    ) : (
+      salesData.map((item) => (
+        <div className="order-details-card" key={item.orders_id}>
+           <div className="order-tracking-bar" key={item.orders_id}>
+            <div className="order-status">
+              <div className="status-label">Packed</div>
+              <div className={`status-dot ${item.status === 'packed' ? 'active' : ''}`} />
+            </div>
+            <div className="order-status">
+              <div className="status-label">Shipped</div>
+              <div className={`status-dot ${item.status === 'shipped' ? 'active' : ''}`} />
+            </div>
+            <div className="order-status">
+              <div className="status-label">Delivered</div>
+              <div className={`status-dot ${item.status === 'success' ? 'active' : ''}`} />
+            </div>
+            <div className="order-progress">
+              <div
+                className="order-progress-bar"
+                style={{ width: getStatusColor(item.status) }}
               />
-            </Link>
-          ))}
-        </ul>
-      </div>
-    </Fragment>
-  );
-};
-
-const Orderproduct = (props) => {
-  return (
-    <Fragment>
-      <div className="orderprods">
-        <div className="nameofuser">
-          <p>{props.orders_id}</p>
+            </div>
+          </div>
+          <div className="order-details">
+            <strong>Order ID: {item.orders_id}</strong>
+            <p>Product: {item.product}</p>
+            <p>
+              Ship To: {item.name}, {item.streetadrs}, {item.city}, {item.state} {item.zipcode}
+            </p>
+            <p>Phone: {item.Phone}</p>
+            <p>Status: {item.status}</p>
+          </div>
+          <button
+            className="order-details-button"
+            onClick={() => chatHandler(item.sender_id, item.name)}
+          >
+            Chat
+          </button>
         </div>
-        <div className="nameofprod">
-          <p>{props.product}</p>
-          <p>Chat with seller</p>
-        </div>
-      </div>
-    </Fragment>
+      ))
+    )}
+  </div>
   );
-};
-
-const Order = (props) => {
-  return (
-    <Fragment>
-      <div className="order">
-        <div className="orderheadinorder">
-          <header>
-            <span>
-              <Link to="/">
-                <button>close</button>
-              </Link>
-            </span>
-            <span className="ordtxt">
-              <h2>My orders</h2>
-            </span>
-          </header>
-          <hr />
-        </div>
-      </div>
-      <FetchOrders />
-    </Fragment>
-  );
-};
+}
 
 export default Order;

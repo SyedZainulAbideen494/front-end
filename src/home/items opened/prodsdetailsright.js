@@ -936,7 +936,7 @@ function Prodsright() {
           <p>{items[0]?.price}</p>
         </div>
         <div className="product-buttons">
-          <Link to={`/orders/${params.id}/${params.shop_id}`}>
+          <Link to={`/orders/${params.id}/${params.shop_id}/${items[0]?.title}`}>
           <button className="buy-button">
             Buy Now
           </button>

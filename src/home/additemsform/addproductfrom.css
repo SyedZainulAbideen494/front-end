@@ -1,0 +1,65 @@
+.currency-section {
+  display: flex;
+  align-items: center;
+}
+
+.currency-section label {
+  width: 80px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.currency-section input[type="text"] {
+  flex: 1;
+  width: auto;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #ffffff; /* White background similar to Shopify and Instagram */
+  border-radius: 5px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.form-container h3 {
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  margin-top: 0;
+  border-radius: 3px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333; /* Dark text color similar to Shopify and Instagram */
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-container button[type="submit"] {
+  background-color: #007bff; /* Shopify and Instagram's primary blue color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker shade of blue for hover effect */
+}

@@ -606,3 +606,7 @@
     border-radius: 5px;
     padding: 10px;
 }
+.btnwebstore-addproducts button{
+    color: white;
+    background-color: #38b000;
+}

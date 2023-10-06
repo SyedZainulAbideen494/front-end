@@ -1055,8 +1055,10 @@ const Editbtndisplay1 = () => {
                     <button>Sales</button>
                     </Link>
                   </span>
-                  <span className="btnwebstore">
-                    <button onClick={showformhandler}>Add Item</button>
+                  <span className="btnwebstore-addproducts">
+                    <Link to={`/add/product/${params.shop_id}`}>
+                    <button>Add Products +</button>
+                    </Link>
                   </span>
                   <span className="btnwebstore">
                     <button onClick={showimghandler}>Add custom images</button>

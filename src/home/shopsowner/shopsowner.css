@@ -84,11 +84,7 @@
 
 @media (min-width: 1025px) {
   .btnwebstore button {
-    padding: 6px;
-    background-color: black;
-    color: white;
-    margin: 4px;
-    border: 1px solid black;
+
   }
 
   .inpt input {
