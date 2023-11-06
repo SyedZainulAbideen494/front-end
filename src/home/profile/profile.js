@@ -1,50 +1,38 @@
-import React, { Fragment, useState, useEffect } from "react";
-import Profilenameapp from "./profilename/profilenameapp";
-import Profileuniqueidapp from "./profileuniqueid/profileuniqueidapp";
-import Profilepicapp from "./profilepic/profilepicapp";
-import Fav from "./faviorties/favicon";
-import Profileheader from "./profileheader/profileheader";
-import Profilepic from "./profilepic/profilepic";
-import Shopsinprofile from "../shopsowner/shopsini";
-import "./profile.css";
-import Shopsapp from "./shopsowned/shopsapp";
-import Shopapp from "../shopsowner/shopsapp";
-import Addshopform1 from "../addnewshop/addshopform1";
-import Addshopimg from "../addnewshop/addnewshopadding";
-import Template3app from "../template3/template3app";
-import { useNavigate } from "react-router-dom";
-import Template5app from "../template5/template5app";
-import Template4app from "../template4/template4app";
-import Template6app from "../template5 copy/template6app";
-import Template1app from "../template1/template1app";
-import Template2app from "../template2/template2app";
-import Template7app from "../template7/template5app";
-import Template8app from "../template8/template8app";
+import React, { Fragment, useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import ProfileHeader from "./profileheader/profileheader";
+import ProfilePicApp from "./profilepic/profilepicapp";
+import ProfileNameApp from "./profilename/profilenameapp";
+import ProfileUniqueIdApp from "./profileuniqueid/profileuniqueidapp";
+import AddShopImg from "../addnewshop/addnewshopadding";
+import Template1App from "../template1/template1app";
+
 
 const Profile = (props) => {
   return (
     <Fragment>
       <div className="profileheaderinmyprofilesection">
-        <Profileheader />
+        <ProfileHeader />
       </div>
       <div className="profilepic">
-        <Profilepicapp />
+        <ProfilePicApp />
       </div>
       <div className="profilename">
-        <Profilenameapp />
+        <ProfileNameApp />
       </div>
       <div className="uniqueid">
-        <Profileuniqueidapp />
+        <ProfileUniqueIdApp />
       </div>
       <div className="shops">
         <div className="shopownertxtprofile">
           <hr />
           <h2>Shops Owned</h2>
-          <Addshopimg />
+          <AddShopImg />
           <hr />
         </div>
-        <Template1app/>
-        
+        <div className="customshop-in-profile">
+        </div>
+        <Template1App />
       </div>
     </Fragment>
   );

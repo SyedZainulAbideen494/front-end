@@ -46,7 +46,7 @@ const Addtemplate3form = (props) => {
         shop_email: shop_email,
         shop_phone: shop_phone,
         insta: insta,
-        temp3: temp3
+        temp3: 'temp3'
       },
       {
         headers: {

@@ -43,7 +43,7 @@ function Template1userapp() {
         shop_key3: itemsdata.shop_key3,
         shop_email: itemsdata.shop_email,
         shop_phone: itemsdata.shop_phone,
-        temp1: itemsdata.temp1,
+        temp: itemsdata.temp,
         insta: itemsdata.insta,
         salestext: itemsdata.salestext
       };

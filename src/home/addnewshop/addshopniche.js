@@ -1,8 +1,28 @@
 import React, { Fragment, useState } from "react";
 import "./addshop.css";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 
 const Addshopniche = () => {
+
+  const addCustomShopHandler = () => {
+    const token = localStorage.getItem('token');
+    Axios.post(
+      "http://localhost:8080/add/custom/shop",
+      null,  // Request body should be null or an empty object if there's no data to send
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
+    .then((response) => {
+      window.location.href = `/profile`;
+    })
+    .catch((error) => {
+      // Handle errors here
+    });
+  };
   return (
     <Fragment>
       <div className="nichehead">
@@ -22,6 +42,11 @@ const Addshopniche = () => {
           <h1>PLEASE SELECT A TEMPLATE</h1>
         </div>
         <div className="templates">
+        <div className="template">
+          <Link to='/custom/shop/build/page1'>
+              <button className="button button-primary template-button">Custom shop</button>
+              </Link>
+          </div>
           {/* Template 1 */}
           <div className="template">
             <Link to="/Add/temp1/form">

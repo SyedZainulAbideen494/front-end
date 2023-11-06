@@ -15,14 +15,7 @@ const Template1userlist = (props) => {
               <Template1inuser
               shop_id={item.shop_id}
               shop_name={item.shop_name}
-              temp1={item.temp1}
-              temp2={item.temp2}
-              temp3={item.temp3}
-              temp4={item.temp4}
-              temp5={item.temp5}
-              temp6={item.temp6}
-              temp7={item.temp7}
-              temp8={item.temp8}
+              temp={item.temp}
               logo={item.logo}
               shop_owner={item.shop_owner}
               user_id={item.user_id}

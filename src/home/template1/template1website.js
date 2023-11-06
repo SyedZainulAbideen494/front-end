@@ -1064,7 +1064,7 @@ const Editbtndisplay1 = () => {
                     <button onClick={showimghandler}>Add custom images</button>
                   </span>
                   <span className="btnwebstore">
-                    <button onClick={showratingform}>Rate shop</button>
+                    
                   </span>
                 </div>
               </div>
@@ -1079,9 +1079,7 @@ const Editbtndisplay1 = () => {
           <div className="addshopform">
             {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
           </div>
-          <div className="review">
-          {ratingform && <RatingForm onClick={hideratingform} />}
-          </div>
+          
         </Fragment>
       );
     } else {
@@ -1543,7 +1541,16 @@ const params = useParams()
       contactusRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
+
+  const [ratingform, setRatingform] = useState(false)
+
+  const showratingform = () => {
+    setRatingform(true)
+  }
+
+  const hideratingform = () => {
+    setRatingform(false)
+  }
     
 
     const fetchProdshandler = useCallback(async () => {
@@ -1705,6 +1712,10 @@ const params = useParams()
               <li>{items[0]?.shop_phone}</li>
               <li>{items[0]?.shop_email}</li>
             </ul>
+            <button onClick={showratingform}>Rate shop</button>
+            <div className="review">
+          {ratingform && <RatingForm onClick={hideratingform} />}
+          </div>
           </footer>
         </div>
       </div>

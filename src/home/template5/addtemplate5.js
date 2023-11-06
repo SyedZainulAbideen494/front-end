@@ -42,7 +42,7 @@ const Addtemplate5form = (props) => {
         shop_email: shop_email,
         shop_phone: shop_phone,
         insta: insta,
-        temp5: temp5
+        temp5: 'temp5'
       },
       {
         headers: {

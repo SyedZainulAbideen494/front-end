@@ -47,7 +47,7 @@ const Addtemplate1form = (props) => {
         shop_phone: shop_phone,
         insta: insta,
         salestext: salestext,
-        temp2: temp2,
+        temp2: 'temp2',
       },
       {
         headers: {

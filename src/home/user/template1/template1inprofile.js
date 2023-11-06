@@ -144,26 +144,30 @@ useEffect(() => {
   }, []);
 
   const Linkno = (props) => {
-    if (props.temp1 !== null) {
+    if (props.temp === 'temp1') {
       return "/mystore1";
-    } else if (props.temp2 !== null) {
+    } else if (props.temp === 'temp2') {
       return "/mystore2";
-    } else if (props.temp3 !== null) {
+    } else if (props.temp === 'temp3') {
       return "/mystore3";
-    } else if (props.temp4 !== null) {
+    } else if (props.temp === 'temp4') {
       return "/mystore4";
-    } else if (props.temp5 !== null) {
+    } else if (props.temp === 'temp5') {
       return "/mystore5";
-    } else if (props.temp6 !== null) {
+    } else if (props.temp === 'temp6') {
       return "/mystore6";
-    } else if (props.temp7 !== null) {
+    } else if (props.temp === 'temp7') {
       return "/mystore7";
-    } 
-    else if (props.temp8 !== null) {
+    } else if (props.temp === 'temp8') {
       return "/mystore8";
-    } 
+    }else if (props.temp === 'incomplete') {
+      return `/build/${props.build}/step1`;
+    }else if (props.temp === 'custom') {
+      return `/mystore`;
+    }
   };
 
+  
   const fetchuserdetails = useCallback(async () => {
     setLoading(true);
     const response = await fetch("http://localhost:8080/shop/main/user/details/profile", {

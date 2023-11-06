@@ -1,0 +1,155 @@
+.storiesuserprofilepicuser {
+  width: 80px;
+ margin: 10px;
+ height: 80px;
+  border-radius: 50%;
+}
+
+.userporfilepic-details-display-user-story img {
+  width: 100px;
+}
+
+.stories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.story-upload-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.no-stories-message {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.story-card {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.story-image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.story-video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.story-title {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.story-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.story-button:hover {
+  background-color: #0056b3;
+}
+.story-upload-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.story-upload-container h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.story-upload-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.story-upload-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.story-upload-container input[type="text"],
+.story-upload-container input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.story-upload-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.story-upload-container button:hover {
+  background-color: #0056b3;
+}
+
+.preview-image {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.maindivforstoriesuserdisplay {
+  margin-left: 15px;
+  margin-right: 15px;
+  display: inline-flex;
+}
+
+.maindivforstoriesuserdisplay img {
+  margin-left: 25px;
+}
+.storysmodelul-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks for list items */
+  max-width: 600px; /* Adjust the maximum width as needed */
+}
+
+.storysmodelul {
+  list-style: none; /* Remove list bullet points */
+  padding: 0; /* Remove default list padding */
+  display: inline-block; /* Display list items inline */
+}

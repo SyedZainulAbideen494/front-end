@@ -1,66 +1,260 @@
 @media (min-width: 312px) and (max-width: 480px) {
-  .imgitemdetails img {
-    width: 240px;
-    border: 2px solid black;
-    margin-left: 20px;
-    border-radius: 25px;
+  .product-page {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px; /* Reduce padding for smaller screens */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
-  .prods__title h2 {
-    margin-left: 50px;
+  
+  .product-header {
+    text-align: center; /* Center-align the header */
+    margin-bottom: 10px; /* Reduce margin for smaller screens */
   }
-  .prods__detail__btn button {
-    padding: 10px 100px;
-    margin-left: 10px;
+  
+  .product-buttons {
+    display: flex;
+    justify-content: center; /* Center-align buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  }
+  
+  .back-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Add margin to separate the button */
+  }
+  
+  .product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Center-align product details */
+  }
+  
+  .product-images {
+    flex: 1;
+    position: relative;
+  }
+  
+  .imgdetailsprodsimgs {
     border-radius: 25px;
+    max-width: 100%; /* Ensure the image fits the screen */
+  }
+  
+  .image-change-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Center-align image buttons */
+    margin-top: 10px;
+  }
+  
+  .image-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: 40px;
+  }
+  
+  .image-button:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align product info */
+    margin-top: 10px; /* Add margin to separate the info */
+  }
+  
+  .product-title {
+    font-size: 20px; /* Slightly reduce font size for smaller screens */
+    margin-bottom: 10px;
+  }
+  
+  .product-amount h3 {
+    color: black;
+    font-weight: lighter;
+  }
+  
+  .buy-button {
     background-color: black;
     color: white;
+    border: none;
+    padding: 15px 150px; /* Reduce button width further */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-top: 10px; /* Slightly push the button down */
   }
-  .amount {
-    margin-left: 50px;
+  
+  .buy-button:hover {
+    transform: scale(1.05);
+    background-color: #6f42c1;
+  }
+  
+  .product-description {
+    margin-top: 10px; /* Add margin to separate the description */
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    max-width: 100%; /* Ensure the text fits the screen */
+  }
+  
+  .product-related-products hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0; /* Reduce margin for smaller screens */
+  }
+  
+  .product-like-text h3 {
+    text-align: center;
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  .imgitemdetails img {
-    width: 340px;
-    border: 2px solid black;
-    margin-left: 50px;
-    border-radius: 25px;
+@media (min-width: 481px) and (max-width: 1025px) {
+  .product-page {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
-  .prods__title h2 {
-    margin-left: 50px;
+  
+  .product-header {
+    text-align: center; /* Center-align the header */
+    margin-bottom: 20px;
   }
-  .prods__detail__btn button {
-    padding: 8px 200px;
-    margin-left: 50px;
+  
+  .product-buttons {
+    display: flex;
+    justify-content: center; /* Center-align buttons */
+  }
+  
+  .back-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center-align product details */
+  }
+  
+  .product-images {
+    flex: 1;
+    position: relative;
+  }
+  
+  .imgdetailsprodsimgs {
     border-radius: 25px;
+    width: 300px;
+  }
+  
+  .image-change-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center; /* Center-align image buttons */
+  }
+  
+  .image-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: 40px;
+  }
+  
+  .image-button:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align product info */
+  }
+  
+  .product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .product-amount h3 {
+    color: black;
+    font-weight: lighter;
+  }
+  
+  .buy-button {
     background-color: black;
     color: white;
+    border: none;
+    padding: 15px 200px; /* Adjust button width */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-top: 20px; /* Slightly push the button down */
   }
-  .amount {
-    margin-left: 10px;
+  
+  .buy-button:hover {
+    transform: scale(1.05);
+    background-color: #6f42c1;
   }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .imgitemdetails img {
-    width: 400px;
-    border: 2px solid black;
-    margin-left: 150px;
-    border-radius: 25px;
+  
+  .product-description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    max-width: 550px; /* Adjust the maximum width for text */
   }
-  .prods__title h2 {
-    margin-left: 150px;
+  
+  .product-related-products hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
   }
-  .prods__detail__btn button {
-    padding: 12px 280px;
-    margin-left: 80px;
-    border-radius: 25px;
-    background-color: black;
-    color: white;
+  
+  .product-like-text h3 {
+    text-align: center;
   }
-  .amount {
-    margin-left: 150px;
+  
+  @media screen and (max-width: 768px) {
+    /* Apply tablet styles */
+    .product-page {
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .product-details {
+      flex-direction: column; /* Stack product details on smaller screens */
+    }
+  
+    .product-info {
+      text-align: center; /* Center-align product info on smaller screens */
+    }
+  
+    .buy-button {
+      padding: 15px 150px; /* Further reduce button width */
+    }
   }
 }
 

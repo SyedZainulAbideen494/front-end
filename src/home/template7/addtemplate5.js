@@ -42,7 +42,7 @@ const Addtemplate7form = (props) => {
         shop_email: shop_email,
         shop_phone: shop_phone,
         insta: insta,
-        temp7: temp7
+        temp7: 'temp7'
       },
       {
         headers: {

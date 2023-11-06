@@ -1,0 +1,87 @@
+.edit-menu-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+  }
+
+  .edit-section-inp-txt {
+    display: inline-flex;
+  }
+  
+  .edit-menu-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #C5D8EA;
+  }
+  
+  .edit-section-form, .color-selection-form {
+    margin-bottom: 20px;
+  }
+  
+  .edit-section-input {
+    margin-bottom: 10px;
+  }
+  
+  .edit-section-input input {
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+  
+  .edit-menu-container button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-menu-container button[type="submit"] {
+    background-color: #F8F9F9; /* Green color for submit button */
+    color: #292E42;
+    margin-left: 10px;
+  }
+  .edit-menu-container button[type="submit"]:hover {
+    background-color: #48A9F8; /* Green color for submit button */
+    color: white;
+    transition: 0.3s;
+    margin-left: 10px;
+  }
+  .color-palette {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: transparent;
+    height: 50px;
+  }
+  
+  .color-palette h4 {
+    margin-bottom: 5px;
+    font-weight: 100;
+    color: #ccc;
+  }
+  .edit-menu-container header {
+    display: inline-flex;
+  }
+
+  .edit-menu-container header button {
+    margin-left: 40px;
+  }
+  .ImagesEditsectionElement {
+    margin-top: 15px;
+  }
+  .ImagesEditsectionElement label {
+    color: #ffffff;
+  }
+

@@ -1396,7 +1396,53 @@ const Addimage1 = (props) => {
   );
  };
 
- 
+ const RatingForm = (props) => {
+  const [itemId, setItemId] = useState('');
+  const [rating, setRating] = useState('');
+
+  const params = useParams()
+
+  const shop_id = params.shop_id
+  const user_id = props.user_id
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await Axios.post('http://localhost:8080/api/ratings', { shop_id, rating, user_id });
+      // Add logic to update UI or show success message
+    } catch (error) {
+      console.error(error);
+      // Handle error
+    }
+  };
+
+  return (
+    <div>
+      <h2>Submit Rating</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>write a review</label>
+          <input
+            type="text"
+            value={itemId}
+            onChange={(e) => setItemId(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Rating (1-5):</label>
+          <input
+            type="number"
+            min="1"
+            max="5"
+            value={rating}
+            onChange={(e) => setRating(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
 
 const Template2website = (props) => {
 const [items, setItems] = useState([]);
@@ -1477,6 +1523,17 @@ const params = useParams()
       setLoading(false);
     });
   }, [fetchProdshandler]);
+  const [ratingform, setRatingform] = useState(false)
+
+  const showratingform = () => {
+    setRatingform(true)
+  }
+
+  const hideratingform = () => {
+    setRatingform(false)
+  }
+
+    
 
   return (
     <Fragment>
@@ -1555,6 +1612,10 @@ const params = useParams()
               <li>{items[0]?.shop_phone}</li>
               <li>{items[0]?.shop_email}</li>
             </ul>
+            <button onClick={showratingform}>Rate shop</button>
+            <div className="review">
+          {ratingform && <RatingForm onClick={hideratingform} />}
+          </div>
           </div>
         </footer>
       </div>

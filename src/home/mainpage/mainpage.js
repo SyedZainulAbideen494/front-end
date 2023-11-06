@@ -5,6 +5,8 @@ import './mainpage.css'
 import AllTemplate1app from "./template1/template1app";
 import Users from "../user/userapp";
 import ChatMessageapp from "../chat/chat";
+import Stories from "../stories/stories";
+import Storiesapp from "../stories/storiesdisplay";
 
 const Mainpage = () => {
     const [auth, setauth] = useState(false);
@@ -57,6 +59,10 @@ const Mainpage = () => {
           </div>
         </header>
       </div>
+      <Link to="/add/BlinkFeed">
+            <button>Add a BlinkFeed</button>
+            </Link>
+      <Storiesapp/>
       <div className="section1inmainpage">
         <div className="content-container">
           <div className="left-content">

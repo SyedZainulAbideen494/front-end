@@ -1,0 +1,332 @@
+@media (min-width: 312px) and (max-width: 480px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 769px) {
+
+}
+@media (min-width: 769) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) {
+    /*header1*/
+    .header1-build header{
+        display: flex;
+        margin-top: 50px;
+    }
+    .imgsheadersection1-build img {
+        width: 500px;
+        height: 300px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        margin-left: 400px;
+    }
+    .textheadersection1-build {
+        margin-left: 100px;
+    }
+    .textheadersection1-build h1 {
+        font-size: x-large;
+        color: #0d1321;
+        font-weight: 300;
+        width: 200px;
+    }
+    .textheadersection1-build h2 {
+        color: #d90429;
+        font-size: xx-large;
+        font-weight: 100;
+        margin-top: 30px;
+        width: 300px;
+    }
+
+    /*header 2*/
+    .hero-2 {
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    
+    .hero-content-2 {
+      max-width: 600px;
+      padding: 20px;
+    }
+    
+    .hero-title-2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .hero-subtitle-2 {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta-button-2 {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: black;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      border: 2px solid white;
+    }
+    
+    .cta-button-2:hover {
+      border: 2px solid white;
+      background-color: white;
+    }
+    /*header 2 preview*/
+    .hero-2-preview {
+      background-image: url('../../header/images/Untitled\ design\ \(6\).png'); /* Add your background image path */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    
+    .hero-content-2-preview {
+      max-width: 600px;
+      padding: 20px;
+    }
+    
+    .hero-title-2-preview {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .hero-subtitle-2-preview {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta-button-2-preview{
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: black;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      border: 2px solid white;
+    }
+    
+    .cta-button-2-preview:hover {
+      border: 2px solid white;
+      background-color: white;
+    }
+
+    /*header 3 preview*/
+    .header3-preview {
+      background-image: url('../../header/images/Untitled\ design\ \(8\).png'); /* Add your background image path */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+    .header3 {
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+
+    /*header 4*/
+    .hero-section-4-preview {
+      background-color: rgba(0, 0, 0, 0.8); /* Background color with some transparency */
+      color: #fff; /* Text color */
+      text-align: center;
+      padding: 100px 0;
+      background-image: url('../../header/images/Untitled design (6).png'); /* Add your background image path */
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
+      background-blend-mode: multiply; /* Blend mode to blend text with background */
+    }
+    
+    .header4-hero-title-preview {
+      font-size: 24px;
+      text-transform: uppercase; /* Uppercase title text */
+    }
+    
+    .header4-hero-tagline-preview {
+      font-size: 16px;
+      margin: 20px 0; /* Increased margin */
+    }
+    
+    .sales-offer-header4-preview {
+      margin-top: 20px;
+    }
+    
+    .header4-hero-sales-text-preview {
+      font-size: 36px;
+    }
+    
+    .header4-hero-sales-discount-preview {
+      font-size: 60px;
+    }
+    
+    .cta-buttons {
+      margin-top: 30px;
+    }
+    
+    .header4-shop-button-preview, .header4-learn-button-preview {
+      font-size: 18px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .header4-shop-button-preview:hover, .header4-learn-button-preview:hover {
+      background-color: #333;
+    }
+
+    .hero-section-4 {
+      background-color: rgba(0, 0, 0, 0.8); /* Background color with some transparency */
+      color: #fff; /* Text color */
+      text-align: center;
+      padding: 100px 0;
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
+      background-blend-mode: multiply; /* Blend mode to blend text with background */
+    }
+    
+    .header4-hero-title {
+      font-size: 24px;
+      text-transform: uppercase; /* Uppercase title text */
+    }
+    
+    .header4-hero-tagline {
+      font-size: 16px;
+      margin: 20px 0; /* Increased margin */
+    }
+    
+    .sales-offer-header4 {
+      margin-top: 20px;
+    }
+    
+    .header4-hero-sales-text {
+      font-size: 36px;
+    }
+    
+    .header4-hero-sales-discount{
+      font-size: 60px;
+    }
+    
+    .cta-buttons {
+      margin-top: 30px;
+    }
+    
+    .header4-shop-button, .header4-learn-button {
+      font-size: 18px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .header4-shop-button:hover, .header4-learn-button-preview:hover {
+      background-color: #333;
+    }
+    /*header 5*/
+    .hero-section-header5-preview {
+      background-image: url('../../header/images/fashion1.png'); /* Set your background image here */
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      width: 600px;
+      border-radius: 9px;
+    }
+    .header5-preview {
+      display: inline-flex;
+    }
+    .hero-section2-header5-preview {
+      width: 600px;
+      margin-left: 100px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .hero-section2-header5-preview h1 {
+      font-size: 80px;
+      font-weight: 200;
+    }
+    .hero-section2-header5-preview p {
+      font-size: 20px;
+    }
+    .hero-section2-header5-preview button {
+      background-color: black;
+      color: #fff;
+      border-radius: 15px;
+      border: 2px solid black;
+      padding: 15px 20px;
+      margin-left: 30px;
+      margin-right: 30px;
+      font-size: medium;
+    }
+    .hero-section2-header5-preview button:hover {
+      border: 2px solid black;
+      color: black;
+      transition: 0.3s;
+      border-radius: 25px;
+      background-color: transparent;
+    }
+
+
+    .hero-section-header5 {
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      width: 600px;
+      border-radius: 9px;
+    }
+    .header5 {
+      display: inline-flex;
+    }
+    .hero-section2-header5 {
+      width: 600px;
+      margin-left: 100px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .hero-section2-header5 h1 {
+      font-size: 80px;
+      font-weight: 200;
+    }
+    .hero-section2-header5 p {
+      font-size: 20px;
+    }
+    .hero-section2-header5 button {
+      background-color: black;
+      color: #fff;
+      border-radius: 15px;
+      border: 2px solid black;
+      padding: 15px 20px;
+      margin-left: 30px;
+      margin-right: 30px;
+      font-size: medium;
+    }
+    .hero-section2-header5 button:hover {
+      border: 2px solid black;
+      color: black;
+      transition: 0.3s;
+      border-radius: 25px;
+      background-color: transparent;
+    }
+}

@@ -98,14 +98,14 @@
 }
 
 /* Style for form headings */
-h2 {
+.formorder h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: #333;
 }
 
 /* Style for labels */
-label {
+.formorder label {
   font-weight: bold;
   display: block;
   margin-top: 10px;
@@ -113,9 +113,9 @@ label {
 }
 
 /* Style for input fields */
-input[type="text"],
-input[type="number"],
-input[type="email"] {
+.formorder input[type="text"],
+.formorder input[type="number"],
+.formorder input[type="email"] {
   width: 100%;
   padding: 10px;
   margin: 5px 0;
@@ -124,7 +124,7 @@ input[type="email"] {
 }
 
 /* Style for buttons */
-button {
+.formorder button {
   padding: 10px 20px;
   margin-top: 10px;
   border: none;
@@ -134,7 +134,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.formorder button:hover {
   background-color: #0056b3;
 }
 

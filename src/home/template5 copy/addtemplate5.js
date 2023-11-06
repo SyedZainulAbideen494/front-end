@@ -47,7 +47,7 @@ const Addtemplate6form = (props) => {
         shop_phone: shop_phone,
         insta: insta,
         salestext: salestext,
-        temp6: temp6,
+        temp6: 'temp6',
       },
       {
         headers: {

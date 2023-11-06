@@ -1,0 +1,580 @@
+@media (min-width: 312px) and (max-width: 480px) {
+  .headernavbar1 {
+    text-align: center;
+  }
+
+  .navbar1header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .imglogonavbar1 {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .headernavbar1 h2 {
+    color: #333;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 15px;
+  }
+
+  .headernavbar1 button {
+    background-color: #00b4d8;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: #fafafa;
+    padding: 10px 12px;
+    margin-left: 5px;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+  }
+
+  .headernavbar1 button:hover,
+  .headernavbar1 button:focus {
+    color: #00b4d8;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-color: white;
+  }
+
+
+  /*nav bar 2*/
+  .header-navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    transition: background-color 0.3s;
+  }
+  
+  .logo-navbar2 img {
+    width: 100px;
+  }
+  
+  .shop-name-navbar2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-navbar2 {
+    display: flex;
+  }
+  
+  .nav-button-navbar2 {
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:0.3s;
+    background-color: transparent;
+    font-size: medium;
+    font-weight: 300;
+  }
+  
+  .nav-button-navbar2:hover {
+    color: #00b4d8;
+  }
+  /*nav bar3*/
+
+  .navbar3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: none;
+  }
+  
+  .navbar3-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar3-logo img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .navbar3-content {
+    text-align: center;
+  }
+  
+  .navbar3-shopname {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .navbar3-buttons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar3-button {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 8px 16px;
+    transition: color 0.3s;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+  }
+  
+  .navbar3-button:hover {
+    color: #007BFF; /* Change to your desired hover color */
+    border-color: #007BFF;
+    border: transparent;
+  }
+  /*nav bar 4*/
+  .header-navbar4 {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-left: 300px;
+    margin-right: 300px; 
+  }
+  
+  
+  /* Navigation List Styles */
+  .nav-list-navbar4 {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Button Styles */
+  .nav-button-navbar4 {
+    background-color: transparent;
+    border: none;
+    color: rgb(22, 21, 21);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .nav-button-navbar4:hover {
+    color: #00b4d8;
+    border-radius: 25px;
+  }
+
+  /*nav bar 5*/
+  .nav-bar5-header {
+    background-color: #0d1321;
+  }
+  .nav-bar5 {
+    display: inline-flex;
+  }
+  .name-shop-nav-bars5 h2 {
+    font-weight: 300;
+    margin-left: 80px;
+    color: #f0ebd8;
+  }
+  .nav-bar5-btns {
+    margin-top: 25px;
+    margin-left: 800px;
+  }
+  .nav-bar5-btns button {
+    margin-left: 30px;
+    background-color: transparent;
+    border: transparent;
+    color: #f0ebd8;
+    font-size: medium;
+  }
+  .nav-bar5-btns button:hover {
+    color: #748cab;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  /*nav bar 6*/
+  .nav-bar6 {
+    display: inline-flex;
+  }
+  .section1-nav-bar-6 img {
+    width: 50px;
+    margin-top: 50px;
+  }
+  .section2-nav-bar-6 img {
+    width: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .section2-nav-bar-6 button {
+    border: transparent;
+    color: black;
+    font-size: medium;
+    background-color: transparent;
+    font-weight: 500;
+  }
+  .section2-nav-bar-6 {
+    margin-left: 400px;
+  }
+
+  /*nav bar 7*/
+  .section1-nav-bar7 h2 {
+    font-weight: 600;
+  }
+  .nav-bar-7 {
+    display: inline-flex;
+  }
+  .section2-nav-bar-7 {
+    margin-left: 400px;
+    margin-top: 30px;
+  }
+  .section2-nav-bar-7 button {
+    background-color: transparent;
+    color: black;
+    margin-left: 30px;
+    border: transparent;
+    font-size: medium;
+    font-weight: 400;
+  }
+  .section2-nav-bar-7 button:hover {
+    text-decoration: underline #ffb703 2px solid;
+  }
+  .section3-nav-bar-7{
+    margin-left: 400px;
+    margin-top: 30px;
+  }
+  .section3-nav-bar-7 button {
+    background-color: #ffb703;
+    padding: 10px;
+    border: 2px solid #ffb703;
+    border-radius: 7px;
+    font-size: medium;
+    color: white;
+    transition: 0.3s;
+  }
+  .section3-nav-bar-7 button:hover {
+    background-color: transparent;
+    border: 2px solid #ffb703;
+    color: black;
+  }
+}
+
+  
+  @media (min-width: 481px) and (max-width: 769px) {
+
+  }
+  @media (min-width: 769) and (max-width: 1024px) {
+
+  }
+  
+  @media (min-width: 1025px) {
+    .headernavbar1 {
+        padding: 10px 0;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      }
+      
+      .navbar1header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+      
+      .imglogonavbar1 {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+      }
+      
+      .headernavbar1 h2 {
+        color: #333; /* Adjust the text color */
+        margin: 0;
+        font-size: 24px;
+      }
+      
+      .button-container {
+        display: flex;
+        gap: 15px;
+      }
+      
+      .headernavbar1 button {
+        background-color: #00b4d8;
+        border: 2px solid transparent; /* Adjust the border color */
+        border-radius: 5px;
+        color: #fafafa; /* Adjust the text color */
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      
+      .headernavbar1 button:hover,
+      .headernavbar1 button:focus {
+        color: #00b4d8;
+       transition: 0.3s;
+        cursor: pointer;
+        border: 2px solid transparent;
+        background-color: white;
+      }
+
+
+      /*nav bar 2*/
+      .header-navbar2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: transparent;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+        transition: background-color 0.3s;
+      }
+      
+      .logo-navbar2 img {
+        width: 100px;
+      }
+      
+      .shop-name-navbar2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+      
+      .nav-navbar2 {
+        display: flex;
+      }
+      
+      .nav-button-navbar2 {
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition:0.3s;
+        background-color: transparent;
+        font-size: medium;
+        font-weight: 300;
+      }
+      
+      .nav-button-navbar2:hover {
+        color: #00b4d8;
+      }
+      /*nav bar3*/
+
+      .navbar3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: none;
+      }
+      
+      .navbar3-logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      .navbar3-logo img {
+        max-width: 100px;
+        height: auto;
+      }
+      
+      .navbar3-content {
+        text-align: center;
+      }
+      
+      .navbar3-shopname {
+        font-size: 28px;
+        color: #333;
+        margin: 0;
+      }
+      
+      .navbar3-buttons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+      }
+      
+      .navbar3-button {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 20px;
+        padding: 8px 16px;
+        transition: color 0.3s;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        background: transparent;
+      }
+      
+      .navbar3-button:hover {
+        color: #007BFF; /* Change to your desired hover color */
+        border-color: #007BFF;
+        border: transparent;
+      }
+      /*nav bar 4*/
+      .header-navbar4 {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-left: 300px;
+        margin-right: 300px; 
+      }
+      
+      
+      /* Navigation List Styles */
+      .nav-list-navbar4 {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Button Styles */
+      .nav-button-navbar4 {
+        background-color: transparent;
+        border: none;
+        color: rgb(22, 21, 21);
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+      
+      .nav-button-navbar4:hover {
+        color: #00b4d8;
+        border-radius: 25px;
+      }
+
+      /*nav bar 5*/
+      .nav-bar5-header {
+        background-color: #0d1321;
+      }
+      .nav-bar5 {
+        display: inline-flex;
+      }
+      .name-shop-nav-bars5 h2 {
+        font-weight: 300;
+        margin-left: 80px;
+        color: #f0ebd8;
+      }
+      .nav-bar5-btns {
+        margin-top: 25px;
+        margin-left: 800px;
+      }
+      .nav-bar5-btns button {
+        margin-left: 30px;
+        background-color: transparent;
+        border: transparent;
+        color: #f0ebd8;
+        font-size: medium;
+      }
+      .nav-bar5-btns button:hover {
+        color: #748cab;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      /*nav bar 6*/
+      .nav-bar6 {
+        display: inline-flex;
+      }
+      .section1-nav-bar-6 img {
+        width: 50px;
+        margin-top: 50px;
+      }
+      .section2-nav-bar-6 img {
+        width: 100px;
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+      .section2-nav-bar-6 button {
+        border: transparent;
+        color: black;
+        font-size: medium;
+        background-color: transparent;
+        font-weight: 500;
+      }
+      .section2-nav-bar-6 {
+        margin-left: 400px;
+      }
+
+      /*nav bar 7*/
+      .section1-nav-bar7 h2 {
+        font-weight: 600;
+      }
+      .nav-bar-7 {
+        display: inline-flex;
+      }
+      .section2-nav-bar-7 {
+        margin-left: 400px;
+        margin-top: 30px;
+      }
+      .section2-nav-bar-7 button {
+        background-color: transparent;
+        color: black;
+        margin-left: 30px;
+        border: transparent;
+        font-size: medium;
+        font-weight: 400;
+      }
+      .section2-nav-bar-7 button:hover {
+        text-decoration: underline #ffb703 2px solid;
+      }
+      .section3-nav-bar-7{
+        margin-left: 400px;
+        margin-top: 30px;
+      }
+      .section3-nav-bar-7 button {
+        background-color: #ffb703;
+        padding: 10px;
+        border: 2px solid #ffb703;
+        border-radius: 7px;
+        font-size: medium;
+        color: white;
+        transition: 0.3s;
+      }
+      .section3-nav-bar-7 button:hover {
+        background-color: transparent;
+        border: 2px solid #ffb703;
+        color: black;
+      }
+}
+  

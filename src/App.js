@@ -67,6 +67,31 @@ import Stripform from "./home/payment/payment2";
 import StripeApp from "./home/payment/paymentapp";
 import SalesReportApp from "./home/sales/chatsreport";
 import AddProductsForm from "./home/additemsform/additemsform";
+import AddStories from "./home/stories/addstories";
+import Stories from "./home/stories/stories";
+import SelectNoSection from "./home/custom-shop/custom-shop-selection";
+import Step1build from "./home/custom-shop/build-step1";
+import Step2build from "./home/custom-shop/build-step2";
+import Step3build from "./home/custom-shop/build-step3";
+import Step4build from "./home/custom-shop/build-step4";
+import Step5build from "./home/custom-shop/build-step5";
+import StepFooterBuild from "./home/custom-shop/build-footer";
+import Step6build from "./home/custom-shop/build-step6";
+import Step7build from "./home/custom-shop/build-step7";
+import Step8build from "./home/custom-shop/build-step8";
+import Step9build from "./home/custom-shop/build-step9";
+import Step10build from "./home/custom-shop/build-step10";
+import Step11build from "./home/custom-shop/build-step11";
+import Step12build from "./home/custom-shop/build-step12";
+import CustomShopForm from "./home/custom-shop/custom-shop-form";
+import NavBarsForm from "./home/custom-shop/navigation-bars/navbarform";
+import HeadersForm from "./home/custom-shop/headers-parts/headerform";
+import Section1Form from "./home/custom-shop/sections-parts/sectionsform";
+import Footerform from "./home/custom-shop/footer-parts/foothersform";
+import CustomShop from "./home/custom-shop/customshop";
+import Section4Form from "./home/custom-shop/sections-parts/sectionsform-section4";
+import Section5Form from "./home/custom-shop/sections-parts/sectionsform-section5";
+import Section6Form from "./home/custom-shop/sections-parts/sectionsform-section6";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -96,7 +121,7 @@ const router = createBrowserRouter([
     element: <Saleschat />,
   },
   { path: "/orders/", element: <Order /> },
-  { path: "/temp3preview", element: <Template3website /> },
+  { path: "/temp3preview", element: <Template3websitepreview /> },
   { path: "/Add/temp3/form", element: <Addtemplate3form /> },
   {
     path: "/mystore3/:shop_id/:shop_name/",
@@ -128,7 +153,32 @@ const router = createBrowserRouter([
   {path: '/home', element: <Mainpage/>},
   {path: '/chat/:chat_id/:user1/:user2/', element: <ChatMessageapp/>},
   {path: '/sales/report/:shop_id', element: <SalesReportApp/>},
-  {path: '/add/product/:shop_id', element: <AddProductsForm/>}
+  {path: '/add/product/:shop_id', element: <AddProductsForm/>},
+  {path: '/add/BlinkFeed', element: <AddStories/>},
+  {path: '/story/:user_id', element: <Stories/>},
+  {path: '/custom/shop/build/page1', element:<SelectNoSection/>},
+  {path: '/build/:build/step1/:shop_id/:build', element: <Step1build/>},
+  {path: '/build/:build/step1/form/:shop_id/:number', element: <NavBarsForm/>},
+  {path: '/build/:build/step2/form/:shop_id/:number', element: <HeadersForm/>},
+  {path: '/build/:build/step2/:shop_id/:build', element: <Step2build/>},
+  {path: '/build/:build/step3/:shop_id/:build', element: <Step3build/>},
+  {path: '/build/:build/step3/form/:shop_id/:number', element: <Section1Form/>},
+  {path: '/build/:build/step4/:shop_id/:build', element: <Step4build/>},
+  {path: '/build/:build/step4/form/:shop_id/:number', element: <Section4Form/>},
+  {path: '/build/:build/step5/:shop_id/:build', element: <Step5build/>},
+  {path: '/build/:build/step5/form/:shop_id/:number', element: <Section5Form/>},
+  {path: '/build/:build/step6/:shop_id/:build', element: <Step6build/>},
+  {path: '/build/:build/step6/form/:shop_id/:number', element: <Section6Form/>},
+  {path: '/build/:build/step7/:shop_id/:build', element: <Step7build/>},
+  {path: '/build/:build/step8/:shop_id/:build', element: <Step8build/>},
+  {path: '/build/:build/step9/:shop_id/:build', element: <Step9build/>},
+  {path: '/build/:build/step10/:shop_id/:build', element: <Step10build/>},
+  {path: '/build/:build/step11/:shop_id/:build', element: <Step11build/>},
+  {path: '/build/:build/step12/:shop_id/:build', element: <Step12build/>},
+  {path: '/build/:build/footer/:shop_id/:build', element: <StepFooterBuild/>},
+  {path: '/build/:build/footer/form/:shop_id/:number', element: <Footerform/>},
+  {path: '/build/:build/:shop_id/form/custom', element: <CustomShopForm/>},
+  {path: '/mystore/:shop_id/:shop_name', element: <CustomShop/>}
 ]);
 function App() {
   return (

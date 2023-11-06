@@ -878,6 +878,7 @@ function Prodsright() {
   return (
     <Fragment>
   <div className="product-page">
+    <Editbtndisplay/>
     <div className="product-header">
       <header>
         <div className="product-buttons">

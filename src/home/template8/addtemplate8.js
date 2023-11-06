@@ -47,7 +47,7 @@ const Addtemplate8form = (props) => {
         shop_email: shop_email,
         shop_phone: shop_phone,
         insta: insta,
-        temp8: temp8,
+        temp8: 'temp9',
         salestext: salestext,
         shop_tagline: shop_tagline
       },
