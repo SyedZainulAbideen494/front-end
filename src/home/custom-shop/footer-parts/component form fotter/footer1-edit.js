@@ -1,12 +1,15 @@
 import React,{Fragment, useCallback, useState, useEffect} from "react";
 import '../footers.css'
-import  Axios  from "axios";
+import insta from '../../../header/images/instagram_logo.png'
+import facebook from '../../../header/images/facebook_logo.png'
+import linkdin from '../../../header/images/linkdin_logo.png'
+import x from '../../../header/images/x.png'
+import whatsapp from '../../../header/images/@amo_amigurumis _ Linktree.jpg'
+import { Axios } from "axios";
 import { useParams } from "react-router-dom";
 
 const Footer1Edit = () => {
   const [items, setItems] = useState([]);
-  const [salestext, setsalestext] = useState('')
-  const [tagline, settagline] = useState('')
   const [loading, setLoading] = useState(false);
   const [sec1, setSec1] = useState(false);
   const [backgroundColor1, setbackgorundColor1] = useState('#fffff'); // Default color is black
@@ -21,6 +24,15 @@ const Footer1Edit = () => {
   const [showContent, setShowContent] = useState(true)
   const [showColors, setShowColors] = useState(false)
   const [showImages, setShowImages] = useState(false)
+  const [insta, setinsta] = useState('')
+  const [facebook, setfacebook] = useState('')
+  const [twiter, settwiter] = useState('')
+  const [linkdin, setlinkdin] = useState('')
+  const [phone, setphone] = useState('')
+  const [whatsapp, setwhatsapp] = useState('')
+  const [slogan, setslogan] = useState('')
+  const [companyname, setcompanyname] = useState('')
+  const [email, setemail] = useState('')
   const token = localStorage.getItem("token");
   const params = useParams();
 
@@ -60,10 +72,18 @@ const Footer1Edit = () => {
 
     const addShopHandler = () => {
       Axios.put(
-        "http://localhost:8080/header/data",
+        "http://localhost:8080/footer/data/insert",
         {
-          tagline: tagline,
-          salestext: salestext
+         companyname: companyname,
+         slogan: slogan,
+          insta:insta,
+          facebook: facebook,
+          twiter: twiter,
+          linkdin: linkdin,
+          phone: phone,
+          email: email,
+          whatsapp: whatsapp,
+
         },
         {
           headers: {
@@ -91,7 +111,7 @@ const Footer1Edit = () => {
 
     const addColorsHandler = () => {
       Axios.post(
-        "http://localhost:8080/color/selection/section/footer",
+        "http://localhost:8080/color/selection/section/footer/color",
         {
           backgroundColor1: backgroundColor1,
           backgroundColor2: backgroundColor2,
@@ -310,7 +330,6 @@ const Footer1Edit = () => {
         <h2>Component Edit menu</h2>
         <button onClick={handleShowContent} className="edit-conten-btn-edit-component">Edit Content</button>
         <button onClick={handleShowColors}>Edit colors</button>
-        <button onClick={handleShowImages}>Add Images</button>
         </header>
         {showContent &&
         <form onSubmit={addShopHandler}>
@@ -318,15 +337,64 @@ const Footer1Edit = () => {
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 1"
-              onChange={e => settagline(e.target.value)}
+              placeholder="comapany name"
+              onChange={e => setcompanyname(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 2"
-              onChange={e => setsalestext(e.target.value)}
+              placeholder="slogan"
+              onChange={e => setslogan(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="instgram link"
+              onChange={e => setinsta(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="facebook link"
+              onChange={e => setfacebook(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="twiter link"
+              onChange={e => settwiter(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="Linkdin link"
+              onChange={e => setlinkdin(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="hpone number"
+              onChange={e => setphone(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="whatsapp number"
+              onChange={e => setwhatsapp(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="email"
+              onChange={e => setemail(e.target.value)}
             />
           </div>
           </div>
@@ -414,11 +482,33 @@ const Footer1Edit = () => {
 
     return<Fragment>
       <EditMenu/>
-        <footer style={{backgroundColor: backgroundColor1}}>
-            <li style={{color: fontColor1}}>{items[0]?.insta || '@instagram'}</li>
-            <li style={{color: fontColor2}}>{items[0]?.shop_email || 'you@gmail.com'}</li>
-            <li style={{color: fontColor3}}>{items[0]?.shop_phone || '84629472058'}</li>
-            <li style={{color: fontColor4}}>{items[0]?.othersocials ||'other Socials'}</li>
+      <footer style={{backgroundColor: backgroundColor1}}>
+          <div className="footer-1-">
+          <div className="footer-1-section-1">
+            <h4 style={{color: fontColor1, textDecoration: `underline ${fontColor4} 3px solid`}}>Our company</h4>
+            <p style={{color: fontColor2}}>Company name</p>
+            <p style={{color: fontColor2}}>Slogan</p>
+          </div>
+          <div className="footer-1-section-2">
+          <h4 style={{color: fontColor1, textDecoration: `underline ${fontColor4} 3px solid`}}>Sections</h4>
+            <p style={{color: fontColor2}}>About us</p>
+            <p style={{color: fontColor2}}>Products</p>
+          </div>
+          <div className="footer-1-section-3">
+            <h4 style={{color: fontColor1, textDecoration: `underline ${fontColor4} 3px solid`}}>Follow us</h4>
+            <img src={insta}/>
+            <img src={facebook}/>
+            <img src={x}/>
+            <img src={linkdin}/>
+          </div>
+          <div className="footer-1-section-4">
+            <h4 style={{color: fontColor1, textDecoration: `underline ${fontColor4} 3px solid`}}>Contact us</h4>
+            <p style={{color: fontColor2}}>Email: you@gmail.com</p>
+            <p style={{color: fontColor2}}>Phone: (123) 456-7890</p>
+            <img src={whatsapp}/>
+          </div>
+          </div>
+          <div style={{backgroundColor: backgroundColor2}}><p style={{color: fontColor3}}>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
         </footer>
     </Fragment>
 }

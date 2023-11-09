@@ -1,0 +1,35 @@
+.footer-1-section-3 img {
+    width: 30px;
+}
+.footer-1- {
+    display: inline-flex;
+}
+.footer-1-section-4 img {
+    width: 30px;
+}
+.footer-1-section-1,
+.footer-1-section-2,
+.footer-1-section-3,
+.footer-1-section-4 {
+    width: 200px;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.footer-1- {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-1-section-1,
+.footer-1-section-2,
+.footer-1-section-3,
+.footer-1-section-4 {
+    width: 200px;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.footer-1- h4 {
+    text-decoration: underline grey 3px solid;
+}

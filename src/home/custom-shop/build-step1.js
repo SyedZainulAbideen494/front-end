@@ -62,8 +62,6 @@ const Step1build = () => {
       <div className="allNavBars">
       <NavBar4Preview/>
         <button onClick={() => addShopHandler(4)} className="select-nav-bar-build-shop">Select</button>
-        <NavBar5Preview/>
-        <button onClick={() => addShopHandler(5)} className="select-nav-bar-build-shop">Select</button>
         <NavBar1Preview />
         <button onClick={() => addShopHandler(1)} className="select-nav-bar-build-shop">
           Select
