@@ -35,7 +35,7 @@ const Section5BuildEditSec4 = () => {
     const [shop_block3, setShop_block3] = useState();
 
     const addShopHandler = () => {
-      Axios.put(
+      Axios.post(
         `http://localhost:8080/section4/data`,
         {
           shop_blockhead1,

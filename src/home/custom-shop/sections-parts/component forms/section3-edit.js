@@ -319,13 +319,6 @@ const Section3BuildEdit = () => {
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 1"
-              onChange={e => setShop_block1(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
               placeholder="Heading 2"
               onChange={e => setShop_blockhead2(e.target.value)}
             />
@@ -333,22 +326,8 @@ const Section3BuildEdit = () => {
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 2"
-              onChange={e => setShop_block2(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
               placeholder="Heading 3"
               onChange={e => setShop_blockhead3(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
-              placeholder="Text 3"
-              onChange={e => setShop_block3(e.target.value)}
             />
           </div>
           </div>

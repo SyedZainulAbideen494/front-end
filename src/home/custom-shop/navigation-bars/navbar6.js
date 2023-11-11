@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import './nav-bars.css';
-import logo from '../../header/images/Dropment (2).png';
+import logo from '../../header/images/drop2_logo.png';
 import { useParams } from 'react-router-dom';
-import insta from '../../header/images/insta.png';
-import phonelogo from '../../header/images/phone.jpg';
+import insta from '../../header/images/icons8-instagram-50.png';
+import phonelogo from '../../header/images/icons8-phone-50.png';
 
 function NavBar6() {
   const [items, setItems] = useState([]);

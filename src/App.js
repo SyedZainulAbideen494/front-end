@@ -92,6 +92,7 @@ import CustomShop from "./home/custom-shop/customshop";
 import Section4Form from "./home/custom-shop/sections-parts/sectionsform-section4";
 import Section5Form from "./home/custom-shop/sections-parts/sectionsform-section5";
 import Section6Form from "./home/custom-shop/sections-parts/sectionsform-section6";
+import SubscriptionFormInner from "./home/payment/payment";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -132,7 +133,7 @@ const router = createBrowserRouter([
   {path: '/Add/temp5/form', element: <Addtemplate5form/>},
   {path: '/mystore5/:shop_id/:shop_name', element: <Template5website/>},
   {path: '/temp4preview', element: <Template4websitepreview/>},
-  {path: '/Plans', element: <StripeApp/>},
+  {path: '/Plans', element: <SubscriptionFormInner/>},
   {path: '/Add/temp4/form', element: <Addtemplate4form/>},
   {path: '/mystore4/:shop_id/:shop_name', element: <Template4website/>},
   {path: '/temp6preview', element: <Template6websitepreview/>},

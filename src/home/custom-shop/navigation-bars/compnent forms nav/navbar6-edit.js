@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useEffect, Fragment } from 'react';
 import '../nav-bars.css';
 import  Axios  from 'axios';
-import logo from '../../../header/images/Dropment (2).png';
+import logo from '../../../header/images/drop2_logo.png';
 import { useParams } from 'react-router-dom';
-import insta from '../../../header/images/insta.png';
-import phonelogo from '../../../header/images/phone.jpg';
+import insta from '../../../header/images/icons8-instagram-50.png';
+import phonelogo from '../../../header/images/icons8-phone-50.png';
 
 function NavBar6Edit() {
   const [items, setItems] = useState([]);
@@ -13,6 +13,7 @@ function NavBar6Edit() {
   const [backgroundColor1, setbackgorundColor1] = useState('#fffff'); // Default color is black
   const [backgroundColor2, setbackgorundColor2] = useState('#fffff'); // Default color is black
   const [backgroundColor3, setbackgorundColor3] = useState('#fffff'); // Default color is black
+  const [backgroundColor4, setbackgorundColor4] = useState('#fffff'); // Default color is black
   const [fontColor1, setfontColor1] = useState('#000000'); // Default color is black
   const [fontColor2, setfontColor2] = useState('#000000'); // Default color is black
   const [fontColor3, setfontColor3] = useState('#000000'); // Default color is black
@@ -47,6 +48,9 @@ function NavBar6Edit() {
     const handleBackgroundColorChange3 = (event) => {
       setbackgorundColor3(event.target.value);
     };
+    const handleBackgroundColorChange4 = (event) => {
+      setbackgorundColor4(event.target.value);
+    };
     const handleFontColorChange1 = (event) => {
       setfontColor1(event.target.value);
     };
@@ -77,6 +81,7 @@ function NavBar6Edit() {
           backgroundColor1: backgroundColor1,
           backgroundColor2: backgroundColor2,
           backgroundColor3: backgroundColor3,
+          backgroundColor4: backgroundColor4,
           fontColor1: fontColor1,
           fontColor2: fontColor2,
           fontColor3: fontColor3,
@@ -265,6 +270,17 @@ function NavBar6Edit() {
         <h4 style={{color: backgroundColor3}}>{backgroundColor3}</h4>
       </div>
       <div className="color-palette">
+          <label htmlFor="bgclr4"><h4>background color 4</h4></label>
+        <input
+          type="color"
+          value={backgroundColor4}
+          onChange={handleBackgroundColorChange4}
+          style={{ background: 'transparent', border: "none" }}
+          id="bgclr4"
+        />
+        <h4 style={{color: backgroundColor4}}>{backgroundColor4}</h4>
+      </div>
+      <div className="color-palette">
           <label htmlFor="fc1"><h4>font color 1</h4></label>
         <input
           type="color"
@@ -311,7 +327,7 @@ function NavBar6Edit() {
   return (
     <Fragment>
       <EditMenu/>
-    <div className='nav-bar6-header' style={{backgroundColor: backgroundColor1}}>
+    <div className='nav-bar6-header' style={{backgroundColor: backgroundColor4}}>
       <header className='nav-bar6'>
         <section className='section1-nav-bar-6'>
           <a href={items[0]?.instagram_link || 'https://www.instagram.com/saz_494/'}>

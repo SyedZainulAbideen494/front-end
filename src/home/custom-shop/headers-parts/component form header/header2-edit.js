@@ -6,8 +6,6 @@ import { useParams } from "react-router-dom";
 
 const Header2Edit = () => {
   const [items, setItems] = useState([]);
-  const [salestext, setsalestext] = useState('')
-  const [tagline, settagline] = useState('')
   const [loading, setLoading] = useState(false);
   const [sec1, setSec1] = useState(false);
   const [backgroundColor1, setbackgorundColor1] = useState('#fffff'); // Default color is black
@@ -25,64 +23,17 @@ const Header2Edit = () => {
   const token = localStorage.getItem("token");
   const params = useParams();
 
-  const fetchProductsHandler = useCallback(async () => {
-    setLoading(true);
-    try {
-      const response = await Axios.get(`http://localhost:8080/custom/shop/display`, {
-        headers: {
-          Authorization: params.shop_id,
-        },
-      });
-      const data = response.data;
-      const transformedItems = data.shops.map(itemsdata => ({
-        shop_blockhead1: itemsdata.shop_blockhead1,
-        shop_block1: itemsdata.shop_block1,
-        shop_blockhead2: itemsdata.shop_blockhead2,
-        shop_block2: itemsdata.shop_block2,
-        shop_blockhead3: itemsdata.shop_blockhead3,
-        shop_block3: itemsdata.shop_block3,
-        images2: `http://localhost:8080/images/${itemsdata.images2}`,
-        images3: `http://localhost:8080/images/${itemsdata.images3}`,
-        images4: `http://localhost:8080/images/${itemsdata.images4}`,
-      }));
-      setItems(transformedItems);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  }, [params.shop_id]);
-
-  useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
 
   const EditMenu = () => {
+    const [tagline, settagline] = useState('');
+    const [salestext, setsalestext] = useState('');
+    const [phone, setPhoneNo] = useState('');
+    const [instaLink, setInstaLink] = useState('');
+    const [shop_blockhead3, setShop_blockhead3] = useState('');
+    const [shop_block3, setShop_block3] = useState('');
     const params = useParams();
 
-    const addShopHandler = () => {
-      Axios.put(
-        "http://localhost:8080/header/data",
-        {
-          tagline: tagline,
-          salestext: salestext
-        },
-        {
-          headers: {
-            Authorization: params.shop_id
-          }
-        }
-      )
-      .then(response => {
-        if (response.status === 200) {
-          console.log('Operation succeeded');
-        } else {
-          console.log('Operation failed');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    };
+
     
   
     const handleBackgroundColorChange1 = (event) => {
@@ -114,7 +65,7 @@ const Header2Edit = () => {
     };
 
     const NextStep = () => {
-      window.location.href = `/build/${params.build}/step3/${params.shop_id}/${params.build}`; 
+        window.location.href = `/build/${params.build}/step3/${params.shop_id}/${params.build}`;  
     };
 
     const addColorsHandler = () => {
@@ -179,7 +130,7 @@ const Header2Edit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg1", formData, {
+        Axios.post("http://localhost:8080/add/shop/logo5", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -199,10 +150,10 @@ const Header2Edit = () => {
   
           <form onSubmit={Addimage1Handler}>
      
-            <label>Image 1</label>
+            <label>Add your logo</label>
             <input
               type="file"
-              placeholder="image"
+              placeholder="Logo"
               onChange={(e) => setImage(e.target.files[0])}
             />
      
@@ -211,96 +162,33 @@ const Header2Edit = () => {
         </div>
       );
      };
-     const Addimage2 = (props) => {
-      const [image, setImage] = useState(null);
-     
-      const shopId = props.shop_id; // Assuming you're passing shopId as a prop
-     
-      const params = useParams();
-     
-      const Addimage1Handler = (e) => {
-        e.preventDefault();
-     
-        const formData = new FormData();
-        formData.append("image", image);
-     
-        Axios.post("http://localhost:8080/addshopimg2", formData, {
-          headers: {
-            Authorization: params.shop_id,
-          },
-        })
-          .then((response) => {
-            console.log(response.data);
-            // Handle success
-          })
-          .catch((error) => {
-            console.error("Error adding product:", error);
-            // Handle error
-          });
-      };
-     
-      return (
-        <div className="ImagesEditsectionElement">
 
-          <form onSubmit={Addimage1Handler}>
-     
-            <label>Image 2</label>
-            <input
-              type="file"
-              placeholder="image"
-              onChange={(e) => setImage(e.target.files[0])}
-            />
-     
-            <button type="submit">Add Image</button>
-          </form>
-        </div>
-      );
-     };
-     const Addimage3 = (props) => {
-      const [image, setImage] = useState(null);
-     
-      const shopId = props.shop_id; // Assuming you're passing shopId as a prop
-     
-      const params = useParams();
-     
-      const Addimage1Handler = (e) => {
-        e.preventDefault();
-     
-        const formData = new FormData();
-        formData.append("image", image);
-     
-        Axios.post("http://localhost:8080/addshopimg3", formData, {
+
+     const addShopHandler = () => {
+      Axios.put(
+        "http://localhost:8080/header/data",
+        {
+         salestext: salestext,
+         tagline: tagline
+        },
+        {
           headers: {
-            Authorization: params.shop_id,
-          },
-        })
-          .then((response) => {
-            console.log(response.data);
-            // Handle success
-          })
-          .catch((error) => {
-            console.error("Error adding product:", error);
-            // Handle error
-          });
-      };
-     
-      return (
-        <div className="ImagesEditsectionElement">
-  
-          <form onSubmit={Addimage1Handler}>
-     
-            <label>Image 3</label>
-            <input
-              type="file"
-              placeholder="image"
-              onChange={(e) => setImage(e.target.files[0])}
-            />
-     
-            <button type="submit">Add Image</button>
-          </form>
-        </div>
-      );
-     };
+            Authorization: params.shop_id
+          }
+        }
+      )
+      .then(response => {
+        if (response.status === 200) {
+          console.log('Operation succeeded');
+        } else {
+          console.log('Operation failed');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    };
+    
   
     return (
       <Fragment>
@@ -335,7 +223,7 @@ const Header2Edit = () => {
   }
         {showColors && 
         <form onSubmit={addColorsHandler}>
-           <div className="color-palette">
+        <div className="color-palette">
           <label htmlFor="bgclr1"><h4>background color 1</h4></label>
         <input
           type="color"
@@ -358,6 +246,17 @@ const Header2Edit = () => {
         <h4 style={{color: backgroundColor2}}>{backgroundColor2}</h4>
       </div>
       <div className="color-palette">
+          <label htmlFor="bgclr3"><h4>background color 3</h4></label>
+        <input
+          type="color"
+          value={backgroundColor3}
+          onChange={handleBackgroundColorChange3}
+          style={{ background: 'transparent', border: "none" }}
+          id="bgclr3"
+        />
+        <h4 style={{color: backgroundColor3}}>{backgroundColor3}</h4>
+      </div>
+      <div className="color-palette">
           <label htmlFor="fc1"><h4>font color 1</h4></label>
         <input
           type="color"
@@ -378,18 +277,7 @@ const Header2Edit = () => {
           id="fc2"
         />
         <h4 style={{color: fontColor2}}>{fontColor2}</h4>
-      </div>
-      <div className="color-palette">
-          <label htmlFor="fc3"><h4>font color 3</h4></label>
-        <input
-          type="color"
-          value={fontColor3}
-          onChange={handleFontColorChange3}
-          style={{ background: 'transparent', border: "none" }}
-          id="fc3"
-        />
-        <h4 style={{color: fontColor2}}>{fontColor2}</h4>
-      </div>
+          </div>
       <button type="submit">Set Color</button>
       <button onClick={NextStep}>Next</button>
         </form>
@@ -397,10 +285,9 @@ const Header2Edit = () => {
   {showImages && 
   <div>
   <Addimage1/>
-
   </div>
   }
-        </div>
+          </div>
       </Fragment>
     );
   };

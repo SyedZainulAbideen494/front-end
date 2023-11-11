@@ -838,7 +838,7 @@
     .headernavbar1 {
         padding: 10px 0;
         text-align: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
       
       .navbar1header {
@@ -857,12 +857,11 @@
       
       .imglogonavbar1 {
         width: 80px;
-        height: 80px;
         margin-right: 10px;
       }
       
       .headernavbar1 h2 {
-        color: #333; /* Adjust the text color */
+        color: #ffffff; /* Adjust the text color */
         margin: 0;
         font-size: 24px;
       }
@@ -894,7 +893,6 @@
       /*nav bar 2*/
       .header-navbar2 {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
         background-color: transparent;
@@ -903,13 +901,16 @@
       }
       
       .logo-navbar2 img {
-        width: 100px;
+        width: 80px;
+        margin-left: 50px;
       }
       
       .shop-name-navbar2 {
         font-size: 24px;
         font-weight: bold;
-        color: #333;
+        color: #ffffff;
+        margin-left: 20px;
+        margin-right: 600px;
       }
       
       .nav-navbar2 {
@@ -917,7 +918,7 @@
       }
       
       .nav-button-navbar2 {
-        color: black;
+        color: rgb(255, 255, 255);
         border: none;
         padding: 10px 20px;
         margin: 0 10px;
@@ -925,6 +926,7 @@
         cursor: pointer;
         transition:0.3s;
         background-color: transparent;
+        justify-content: right;
         font-size: medium;
         font-weight: 300;
       }
@@ -1060,7 +1062,7 @@
         display: inline-flex;
       }
       .section1-nav-bar-6 img {
-        width: 50px;
+        width: 40px;
         margin-top: 50px;
       }
       .section2-nav-bar-6 img {
@@ -1070,7 +1072,7 @@
       }
       .section2-nav-bar-6 button {
         border: transparent;
-        color: black;
+        color: rgb(255, 255, 255);
         font-size: medium;
         background-color: transparent;
         font-weight: 500;
@@ -1082,6 +1084,7 @@
       /*nav bar 7*/
       .section1-nav-bar7 h2 {
         font-weight: 600;
+        color: white;
       }
       .nav-bar-7 {
         display: inline-flex;
@@ -1092,7 +1095,7 @@
       }
       .section2-nav-bar-7 button {
         background-color: transparent;
-        color: black;
+        color: rgb(255, 255, 255);
         margin-left: 30px;
         border: transparent;
         font-size: medium;

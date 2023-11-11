@@ -64,7 +64,7 @@ const Section6BuildEditSec4 = () => {
     const params = useParams();
 
     const addShopHandler = () => {
-      Axios.put(
+      Axios.post(
         "http://localhost:8080/section4/data",
         {
           shop_blockhead1: shop_blockhead1,
@@ -338,34 +338,6 @@ const Section6BuildEditSec4 = () => {
               required
               placeholder="Text 1"
               onChange={e => setShop_block1(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
-              placeholder="Heading 2"
-              onChange={e => setShop_blockhead2(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
-              placeholder="Text 2"
-              onChange={e => setShop_block2(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
-              placeholder="Heading 3"
-              onChange={e => setShop_blockhead3(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
-              placeholder="Text 3"
-              onChange={e => setShop_block3(e.target.value)}
             />
           </div>
           </div>

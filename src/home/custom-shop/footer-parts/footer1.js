@@ -1,10 +1,10 @@
 import React,{Fragment, useCallback, useState, useEffect} from "react";
 import './footers.css'
-import insta from '../../header/images/instagram_logo.png'
-import facebook from '../../header/images/facebook_logo.png'
-import linkdin from '../../header/images/linkdin_logo.png'
-import x from '../../header/images/x.png'
-import whatsapp from '../../header/images/@amo_amigurumis _ Linktree.jpg'
+import insta from '../../header/images/icons8-instagram-50.png'
+import facebook from '../../header/images/icons8-facebook-logo-50.png'
+import linkdin from '../../header/images/icons8-linkedin-logo-50.png'
+import x from '../../header/images/icons8-x-50.png'
+import whatsapp from '../../header/images/icons8-whatsapp-50.png'
 import { useParams } from "react-router-dom";
 
 const Footer1 = () => {

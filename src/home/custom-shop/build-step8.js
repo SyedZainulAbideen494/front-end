@@ -44,7 +44,7 @@ const Step8build =() => {
       <Fragment>
         <div className="step1buildheader">
           <header>
-            <h1>Select Header</h1>
+            <h1>Select Sections</h1>
             <Link to='/custom/shop/build/page1'>
               <button>Back</button>
             </Link>

@@ -1,7 +1,7 @@
 import React,{Fragment, useState, useCallback, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import './nav-bars.css'
-import logo from '../../header/images/Dropment (2).png'
+import logo from '../../header/images/drop2_logo.png'
 
 const NavBar1 = () => {
   const [items, setItems] = useState([]);

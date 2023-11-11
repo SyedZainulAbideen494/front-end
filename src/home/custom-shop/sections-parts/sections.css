@@ -2632,6 +2632,7 @@
         width: 300px;
         margin-left: 100px;
         text-align: center;
+        color: white;
     }
     .imgrightsection1build img {
         width: 400px;
@@ -2645,6 +2646,7 @@
     .section1-buildleft {
         display: inline-flex;
         margin-top: 100px;
+        color: white;
     }
     .section1buildlefttext {
         width: 300px;
@@ -3110,6 +3112,7 @@
         font-size: 30px;
         font-weight: 400;
         margin-bottom: 50px;
+        color: white;
     }
     .section-3-build-products-img img {
         width: 200px;
@@ -3118,6 +3121,7 @@
         width: 200px;
         list-style: none;
         margin-left: 50px;
+        color: white;
     }
     .section-3-build-prods-details {
         text-align: center;
@@ -3152,6 +3156,7 @@
         display: inline-flex;
         text-align: center;
         margin-left: 50px;
+        color: white;
     }
     .section-5-build-main-div-prods li {
         margin-left: 80px;
@@ -3165,31 +3170,32 @@
     }
     .section-5-build-prods-details button {
         width: 200px;
-        border: 2px solid black;
+        border: 2px solid rgb(255, 255, 255);
         background-color: transparent;
         padding-top: 10px;
         padding-bottom: 10px;
+        color: white;
         font-family: 30px;
     }
     .section-5-build-prods-details button:hover {
-        background-color: black;
+        background-color: rgb(255, 255, 255);
         transition: 0.3s;
-        color: white;
+        color: rgb(0, 0, 0);
         cursor: pointer;
     }
     /*section 6*/
    .section-6-build-main-div {
-    background-color: #020202;
+    background-color: #ffffff;
     text-align: center;
     padding: 50px;
    }
    .section-6-build-main-div h1 {
     font-size: 60px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: 200;
    }
    .section-6-build-main-div p {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-left: 300px;
     margin-right: 300px;
     font-weight: 200;
@@ -3197,8 +3203,8 @@
    }
    .section-6-build-main-div button {
     font-size: 20px;
-    color: white;
-    border: 2px solid white;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 5px;
     background-color: transparent;
     padding: 10px 20px;
@@ -3224,7 +3230,7 @@
     background-position: center;
     height: 400px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     background-blend-mode: multiply;
     display: flex;
     flex-direction: column;
@@ -3358,8 +3364,8 @@
   
   .section-9-build-section1, .section-9-build-section2 {
     width: 300px;
-    color: black;
-    border: 2px solid black;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 9px;
     padding: 30px;
     text-align: center;
@@ -3372,9 +3378,9 @@
   }
   
   .section-9-build-section1 button, .section-9-build-section2 button {
-    background-color: white;
-    border: 2px solid black;
-    color: black;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     padding: 10px 60px;
     border-radius: 9px;
   }
@@ -3399,7 +3405,7 @@
     cursor: pointer;
   }
   .section-9-build-section1 button:hover {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     color: white;
     transition: 0.3s;
     cursor: pointer;

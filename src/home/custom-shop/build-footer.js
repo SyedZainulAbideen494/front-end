@@ -39,6 +39,7 @@ const StepFooterBuild =() => {
   
     return (
       <Fragment>
+        <div className="main-div-builder">
         <div className="step1buildheader">
           <header>
             <h1>Select Header</h1>
@@ -51,6 +52,7 @@ const StepFooterBuild =() => {
         <div className="allHeaders">
           <Footer1/>
           <button onClick={() => addShopHandler(1)} className="select-nav-bar-build-shop">select</button>
+        </div>
         </div>
       </Fragment>
     );

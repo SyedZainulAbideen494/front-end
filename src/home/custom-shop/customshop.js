@@ -61,7 +61,8 @@ import Section9BuildSec5 from "./sections-parts/section5 parts/section9-sec5";
 import Section10BuildSec5 from "./sections-parts/section5 parts/section10-sec5";
 import Section11BuildSec5 from "./sections-parts/section5 parts/section11-sec5";
 import Section12BuildSec5 from "./sections-parts/section5 parts/section12-sec5";
-import { Axios } from "axios";
+import  Axios  from "axios";
+import Footer1Footer from "./footer-parts/footer1-footer";
 
 const CustomShop = () => {
   const [items, setItems] = useState([]);
@@ -248,7 +249,7 @@ const CustomShop = () => {
 
   const Section13 = () => {
     if (items[0]?.section13 === '1') {
-      return <Footer1 />
+      return <Footer1Footer />
     } else {
       return
     }

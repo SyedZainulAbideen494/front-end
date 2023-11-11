@@ -44,9 +44,10 @@ const Step2build =() => {
   
     return (
       <Fragment>
+        <div className="main-div-builder">
         <div className="step1buildheader">
           <header>
-            <h1>Select Header</h1>
+            <h1>Select Hero Section</h1>
             <Link to='/custom/shop/build/page1'>
               <button>Back</button>
             </Link>
@@ -54,8 +55,6 @@ const Step2build =() => {
           <hr />
         </div>
         <div className="allHeaders">
-          <Header1Preview/>
-          <button onClick={() => addShopHandler(1)} className="select-nav-bar-build-shop">select</button>
           <Header2Preview/>
           <button onClick={() => addShopHandler(2)} className="select-nav-bar-build-shop">select</button>
           <Header3Preview/>
@@ -64,6 +63,7 @@ const Step2build =() => {
           <button onClick={() => addShopHandler(4)} className="select-nav-bar-build-shop">select</button>
           <Header5preview/>
           <button onClick={() => addShopHandler(5)} className="select-nav-bar-build-shop">select</button>
+        </div>
         </div>
       </Fragment>
     );

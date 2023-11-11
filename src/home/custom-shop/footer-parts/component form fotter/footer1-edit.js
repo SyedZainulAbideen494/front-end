@@ -5,7 +5,7 @@ import facebook from '../../../header/images/facebook_logo.png'
 import linkdin from '../../../header/images/linkdin_logo.png'
 import x from '../../../header/images/x.png'
 import whatsapp from '../../../header/images/@amo_amigurumis _ Linktree.jpg'
-import { Axios } from "axios";
+import  Axios  from "axios";
 import { useParams } from "react-router-dom";
 
 const Footer1Edit = () => {
@@ -24,15 +24,6 @@ const Footer1Edit = () => {
   const [showContent, setShowContent] = useState(true)
   const [showColors, setShowColors] = useState(false)
   const [showImages, setShowImages] = useState(false)
-  const [insta, setinsta] = useState('')
-  const [facebook, setfacebook] = useState('')
-  const [twiter, settwiter] = useState('')
-  const [linkdin, setlinkdin] = useState('')
-  const [phone, setphone] = useState('')
-  const [whatsapp, setwhatsapp] = useState('')
-  const [slogan, setslogan] = useState('')
-  const [companyname, setcompanyname] = useState('')
-  const [email, setemail] = useState('')
   const token = localStorage.getItem("token");
   const params = useParams();
 
@@ -61,29 +52,35 @@ const Footer1Edit = () => {
     } catch (error) {
       console.error('Error:', error);
     }
-  }, [params.shop_id]);
+  }, [token]);
 
   useEffect(() => {
     fetchProductsHandler();
   }, [fetchProductsHandler]);
 
   const EditMenu = () => {
+    const [companyname, setcompanyname] = useState('');
+    const [slogan, setslogan] = useState('');
+    const [insta, setinsta] = useState('');
+    const [facebook, setfacebook] = useState('');
+    const [x, setx] = useState('');
+    const [linkdin, setlinkdin] = useState('');
+    const [phone, setphone] = useState('');
+    const [email, setemail] = useState('');
     const params = useParams();
 
     const addShopHandler = () => {
-      Axios.put(
-        "http://localhost:8080/footer/data/insert",
+      Axios.post(
+        "http://localhost:8080/section4/data",
         {
-         companyname: companyname,
-         slogan: slogan,
-          insta:insta,
+          companyname: companyname,
+          slogan: slogan,
+          insta: insta,
           facebook: facebook,
-          twiter: twiter,
           linkdin: linkdin,
+          x: x,
           phone: phone,
-          email: email,
-          whatsapp: whatsapp,
-
+          email: email
         },
         {
           headers: {
@@ -104,43 +101,6 @@ const Footer1Edit = () => {
     };
     
   
-
-    const NextStep = () => {
-        window.location.href = `/profile`;
-    };
-
-    const addColorsHandler = () => {
-      Axios.post(
-        "http://localhost:8080/color/selection/section/footer/color",
-        {
-          backgroundColor1: backgroundColor1,
-          backgroundColor2: backgroundColor2,
-          backgroundColor3: backgroundColor3,
-          fontColor1: fontColor1,
-          fontColor2: fontColor2,
-          fontColor3: fontColor3,
-          fontColor4: fontColor4,
-          fontColor5: fontColor5,
-          fontColor6: fontColor6 
-        },
-        {
-          headers: {
-            Authorization: params.shop_id
-          }
-        }
-      )
-      .then(response => {
-        if (response.status === 200) {
-          console.log('Operation succeeded');
-        } else {
-          console.log('Operation failed');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    };
-
     const handleBackgroundColorChange1 = (event) => {
       setbackgorundColor1(event.target.value);
     };
@@ -169,6 +129,45 @@ const Footer1Edit = () => {
       setfontColor6(event.target.value);
     };
 
+    const NextStep = () => {
+      if (params.build === '4') {
+        window.location.href = `/build/${params.build}/footer/${params.shop_id}/${params.build}`;
+      } else {
+        window.location.href = `/build/${params.build}/step5/${params.shop_id}/${params.build}`;
+      }
+    };
+
+    const addColorsHandler = () => {
+      Axios.post(
+        "http://localhost:8080/color/selection/section/4",
+        {
+          backgroundColor1: backgroundColor1,
+          backgroundColor2: backgroundColor2,
+          backgroundColor3: backgroundColor3,
+          fontColor1: fontColor1,
+          fontColor2: fontColor2,
+          fontColor3: fontColor3,
+          fontColor4: fontColor4,
+          fontColor5: fontColor5,
+          fontColor6: fontColor6 
+        },
+        {
+          headers: {
+            Authorization: params.shop_id
+          }
+        }
+      )
+      .then(response => {
+        if (response.status === 200) {
+          console.log('Operation succeeded');
+        } else {
+          console.log('Operation failed');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    };
 
     const handleShowColors = () => {
       setShowColors(true)
@@ -200,7 +199,7 @@ const Footer1Edit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg1", formData, {
+        Axios.post("http://localhost:8080/addshopimg4", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -245,7 +244,7 @@ const Footer1Edit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg2", formData, {
+        Axios.post("http://localhost:8080/addshopimg5", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -290,7 +289,7 @@ const Footer1Edit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg3", formData, {
+        Axios.post("http://localhost:8080/addshopimg6", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -330,6 +329,7 @@ const Footer1Edit = () => {
         <h2>Component Edit menu</h2>
         <button onClick={handleShowContent} className="edit-conten-btn-edit-component">Edit Content</button>
         <button onClick={handleShowColors}>Edit colors</button>
+        <button onClick={handleShowImages}>Add Images</button>
         </header>
         {showContent &&
         <form onSubmit={addShopHandler}>
@@ -337,63 +337,56 @@ const Footer1Edit = () => {
           <div className="edit-section-input">
             <input
               required
-              placeholder="comapany name"
+              placeholder="Heading 1"
               onChange={e => setcompanyname(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="slogan"
+              placeholder="Text 1"
               onChange={e => setslogan(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="instgram link"
+              placeholder="Heading 2"
               onChange={e => setinsta(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="facebook link"
+              placeholder="Text 2"
               onChange={e => setfacebook(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="twiter link"
-              onChange={e => settwiter(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
-              placeholder="Linkdin link"
+              placeholder="Heading 3"
               onChange={e => setlinkdin(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="hpone number"
+              placeholder="Text 3"
+              onChange={e => setx(e.target.value)}
+            />
+          </div>
+          <div className="edit-section-input">
+            <input
+              required
+              placeholder="Text 3"
               onChange={e => setphone(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="whatsapp number"
-              onChange={e => setwhatsapp(e.target.value)}
-            />
-          </div>
-          <div className="edit-section-input">
-            <input
-              required
-              placeholder="email"
+              placeholder="Text 3"
               onChange={e => setemail(e.target.value)}
             />
           </div>
@@ -404,7 +397,7 @@ const Footer1Edit = () => {
   }
         {showColors && 
         <form onSubmit={addColorsHandler}>
-           <div className="color-palette">
+        <div className="color-palette">
           <label htmlFor="bgclr1"><h4>background color 1</h4></label>
         <input
           type="color"
@@ -425,6 +418,17 @@ const Footer1Edit = () => {
           id="bgclr2"
         />
         <h4 style={{color: backgroundColor2}}>{backgroundColor2}</h4>
+      </div>
+      <div className="color-palette">
+          <label htmlFor="bgclr3"><h4>background color 3</h4></label>
+        <input
+          type="color"
+          value={backgroundColor3}
+          onChange={handleBackgroundColorChange3}
+          style={{ background: 'transparent', border: "none" }}
+          id="bgclr3"
+        />
+        <h4 style={{color: backgroundColor3}}>{backgroundColor3}</h4>
       </div>
       <div className="color-palette">
           <label htmlFor="fc1"><h4>font color 1</h4></label>
@@ -470,15 +474,44 @@ const Footer1Edit = () => {
         />
         <h4 style={{color: fontColor4}}>{fontColor4}</h4>
       </div>
+      <div className="color-palette">
+          <label htmlFor="fc5"><h4>font color 5</h4></label>
+        <input
+          type="color"
+          value={fontColor5}
+          onChange={handleFontColorChange5}
+          style={{ background: 'transparent', border: "none" }}
+          id="fc5"
+        />
+        <h4 style={{color: fontColor5}}>{fontColor5}</h4>
+      </div>
+      <div className="color-palette">
+          <label htmlFor="fc6"><h4>font color 6</h4></label>
+        <input
+          type="color"
+          value={fontColor6}
+          onChange={handleFontColorChange6}
+          style={{ background: 'transparent', border: "none" }}
+          id="fc6"
+        />
+        <h4 style={{color: fontColor6}}>{fontColor6}</h4>
+      </div>
       <button type="submit">Set Color</button>
       <button onClick={NextStep}>Next</button>
         </form>
+  }
+  {showImages && 
+  <div>
+  <Addimage1/>
+  <Addimage2/>
+  <Addimage3/>
+  </div>
   }
         </div>
       </Fragment>
     );
   };
-
+    
 
     return<Fragment>
       <EditMenu/>

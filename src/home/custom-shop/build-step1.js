@@ -50,6 +50,7 @@ const Step1build = () => {
 
   return (
     <Fragment>
+      <div className="main-div-builder">
       <div className="step1buildheader">
         <header>
           <h1>Select Navigation bar</h1>
@@ -68,13 +69,11 @@ const Step1build = () => {
         </button>
         <NavBar2Preview />
         <button onClick={() => addShopHandler(2)} className="select-nav-bar-build-shop">Select</button>
-        <NavBar3Preview/>
-        <button onClick={() => addShopHandler(3)} className="select-nav-bar-build-shop">Select</button>
         <NavBar6Preview/>
         <button onClick={() => addShopHandler(6)} className="select-nav-bar-build-shop">Select</button>
-        <NavBar7Preview/>
-        <button onClick={() => addShopHandler(7)} className="select-nav-bar-build-shop">Select</button>
       </div>
+      </div>
+      <p>- - - -</p>
     </Fragment>
   );
 };

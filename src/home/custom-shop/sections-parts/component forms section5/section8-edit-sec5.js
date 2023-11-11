@@ -68,7 +68,7 @@ const Section8BuildEditSec5 = () => {
     const params = useParams();
 
     const addShopHandler = () => {
-      Axios.put(
+      Axios.post(
         "http://localhost:8080/section5/data",
         {
           shop_blockhead1: shop_blockhead1,
