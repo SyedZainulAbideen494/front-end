@@ -71,7 +71,7 @@ const Footer1Edit = () => {
 
     const addShopHandler = () => {
       Axios.post(
-        "http://localhost:8080/section4/data",
+        "http://localhost:8080/footer/data/insert",
         {
           companyname: companyname,
           slogan: slogan,
@@ -139,7 +139,7 @@ const Footer1Edit = () => {
 
     const addColorsHandler = () => {
       Axios.post(
-        "http://localhost:8080/color/selection/section/4",
+        "http://localhost:8080/color/selection/section/footer/color",
         {
           backgroundColor1: backgroundColor1,
           backgroundColor2: backgroundColor2,

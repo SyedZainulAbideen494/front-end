@@ -608,5 +608,8 @@
 }
 .btnwebstore-addproducts button{
     color: white;
-    background-color: #38b000;
+    background-color: transparent;
+    border: 2px solid #8ac926;
+    padding: 10px 20px;
+    border-radius: 25px;
 }

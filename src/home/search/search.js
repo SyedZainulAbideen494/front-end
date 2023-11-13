@@ -173,7 +173,7 @@ const Products = ({ searchResults }) => {
   return (
     <div>
   {searchResults.map((result) => (
-    <Link  to={`/products/${result.id}`}>
+    <Link  to={`/products/${result.id}/${result.shop_id}`}>
     <div className="PRoducts-card-search-result" key={result.id}>
       <div className="product-img-search-result">
         <img

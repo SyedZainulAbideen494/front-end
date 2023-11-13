@@ -1,4 +1,4 @@
-import React,{useCallback, useEffect, useState} from 'react';
+import React,{useCallback, useEffect, useState, useRef} from 'react';
 import './nav-bars.css';
 import { useParams } from 'react-router-dom';
 import logo from '../../header/images/drop2_logo.png';
@@ -69,6 +69,28 @@ function NavBar3() {
   useEffect(() => {
     fetchColorHandler();
   }, [fetchColorHandler]);
+
+  
+  const itemsRef = useRef(null)
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
+
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="navbar3" style={{backgroundColor: color[0]?.background_colour1}}>
       <div className="navbar3-logo">
@@ -77,8 +99,8 @@ function NavBar3() {
       <div className="navbar3-content">
         <h1 className="navbar3-shopname" style={{color: color[0]?.font_colour1}}>{ items[0]?.shop_name || 'Shop name' }</h1>
         <nav className="navbar3-buttons">
-          <button className="navbar3-button" style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>{ items[0]?.button1 || 'Button 1' }</button>
-          <button className="navbar3-button" style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>About us</button>
+          <button onClick={scrollToItems} className="navbar3-button" style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>{ items[0]?.button1 || 'Button 1' }</button>
+          <button onClick={scrollToaboutus} className="navbar3-button" style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>About us</button>
           <button className="navbar3-button" style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>Contact us</button>
         </nav>
       </div>

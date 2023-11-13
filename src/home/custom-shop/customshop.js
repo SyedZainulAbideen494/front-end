@@ -1301,12 +1301,6 @@ const CustomShop = () => {
                       <button>Add Products +</button>
                       </Link>
                     </span>
-                    <span className="btnwebstore">
-                      <button onClick={showimghandler}>Add custom images</button>
-                    </span>
-                    <span className="btnwebstore">
-                      
-                    </span>
                   </div>
                 </div>
               </header>

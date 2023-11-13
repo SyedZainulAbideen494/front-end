@@ -1,13 +1,320 @@
 @media (min-width: 312px) and (max-width: 480px) {
-
+  .maindivefordropmentmainpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dropmentmainheader {
+    width: 100%;
+    background-color: #ffffff; /* Adjust background color as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    color: black;
+  }
+  
+  .dropmentlogomainpage {
+    margin-right: 0px;
+  }
+  
+  .dropmentlogomainpage img {
+    max-height: 80px; /* Adjust as needed */
+  }
+  
+  .dropmentmainbtns {
+    display: flex;
+    flex-wrap: wrap; /* Allow button wrapping */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dropmentmainbtns button {
+    margin: 5px; /* Add some spacing between buttons */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: medium;
+    color: black;
+  }
+  
+  .section1inmainpage {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on small screens */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on small screens */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+  }
+  
+  .left-content,
+  .middle-content,
+  .right-content {
+    flex: 1;
+    width: 100%; /* Occupy full width on small screens */
+    max-width: none; /* Reset max-width for full width */
+    margin: 0; /* Remove margin on small screens */
+  }
+  
+  .recomprofilemainpagetxtp,
+  .recomprofilemainpagetxt {
+    text-align: center;
+    margin: 0 10px; /* Add some margin to improve readability on small screens */
+  }
+  .blinkfeed-btn-main-pg button {
+    background-color: #3A0299;
+    color: white;
+    border: 2px solid #3A0299;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+  .blinkfeed-btn-main-pg button:hover {
+    background-color: transparent;
+    color: #3A0299;
+    border: 2px solid #3A0299;
+    transition: 0.3s;
+  }
+  .add-shop-btn-main-page-dropment button {
+    color: white;
+    background-color: #3A0299;
+    border: 2px solid #3A0299;
+    border-radius: 9px;
+    padding: 10px 20px;
+    margin-left: 100px;
+    align-items: center;
+  }
+  
+  
   }
   
   @media (min-width: 481px) and (max-width: 768px) {
-
+    .blinkfeed-btn-main-pg button {
+      background-color: #3A0299;
+      color: white;
+      border: 2px solid #3A0299;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+    .blinkfeed-btn-main-pg button:hover {
+      background-color: transparent;
+      color: #3A0299;
+      border: 2px solid #3A0299;
+      transition: 0.3s;
+    }
+    .add-shop-btn-main-page-dropment button {
+      color: white;
+      background-color: #3A0299;
+      border: 2px solid #3A0299;
+      border-radius: 9px;
+      padding: 10px 20px;
+      margin-left: 100px;
+      align-items: center;
+    }
+    .maindivefordropmentmainpage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .dropmentmainheader {
+      width: 100%;
+      background-color: #ffffff; /* Adjust background color as needed */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      color: black;
+    }
+    
+    .dropmentlogomainpage {
+      margin-right: 0px;
+    }
+    
+    .dropmentlogomainpage img {
+      max-height: 80px; /* Adjust as needed */
+    }
+    
+    .dropmentmainbtns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .dropmentmainbtns button {
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: medium;
+      color: black;
+    }
+    
+    .section1inmainpage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px;
+    }
+    
+    .content-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1200px; /* Adjust as needed */
+    }
+    
+    .left-content {
+      flex: 1;
+      max-width: 300px; /* Adjust as needed */
+      margin-right: 20px;
+    }
+    
+    .middle-content {
+      flex: 3;
+    }
+    
+    .right-content {
+      flex: 1;
+      max-width: 300px; /* Adjust as needed */
+      margin-left: 20px;
+    }
+    
+    .recomprofilemainpagetxtp,
+    .recomprofilemainpagetxt {
+      color: grey;
+      text-align: center;
+    }
+    
+    /* Media Query for tablets */
+      .dropmentmainbtns button {
+        margin-left: 5px; /* Adjust button spacing for tablets */
+      }
+    
+      .left-content,
+      .right-content {
+        max-width: 100%; /* Occupy full width on tablets */
+        margin: 0; /* Remove margin on tablets */
   }
-  
+  }
   @media (min-width: 769px) and (max-width: 1024px) {
-
+    .blinkfeed-btn-main-pg button {
+      background-color: #3A0299;
+      color: white;
+      border: 2px solid #3A0299;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+    .blinkfeed-btn-main-pg button:hover {
+      background-color: transparent;
+      color: #3A0299;
+      border: 2px solid #3A0299;
+      transition: 0.3s;
+    }
+    .add-shop-btn-main-page-dropment button {
+      color: white;
+      background-color: #3A0299;
+      border: 2px solid #3A0299;
+      border-radius: 9px;
+      padding: 10px 20px;
+      margin-left: 100px;
+      align-items: center;
+    }
+    .maindivefordropmentmainpage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .dropmentmainheader {
+      width: 100%;
+      background-color: #ffffff; /* Adjust background color as needed */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      color: black;
+    }
+    
+    .dropmentlogomainpage {
+      margin-right: 0px;
+    }
+    
+    .dropmentlogomainpage img {
+      max-height: 80px; /* Adjust as needed */
+    }
+    
+    .dropmentmainbtns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .dropmentmainbtns button {
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: medium;
+      color: black;
+    }
+    
+    .section1inmainpage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px;
+    }
+    
+    .content-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1200px; /* Adjust as needed */
+    }
+    
+    .left-content {
+      flex: 1;
+      max-width: 300px; /* Adjust as needed */
+      margin-right: 20px;
+    }
+    
+    .middle-content {
+      flex: 3;
+    }
+    
+    .right-content {
+      flex: 1;
+      max-width: 300px; /* Adjust as needed */
+      margin-left: 20px;
+    }
+    
+    .recomprofilemainpagetxtp,
+    .recomprofilemainpagetxt {
+      color: grey;
+      text-align: center;
+    }
+    
+    /* Media Query for tablets */
+      .dropmentmainbtns button {
+        margin-left: 5px; /* Adjust button spacing for tablets */
+      }
+    
+      .left-content,
+      .right-content {
+        max-width: 100%; /* Occupy full width on tablets */
+        margin: 0; /* Remove margin on tablets */
+  }
   }
   
   @media (min-width: 1025px) {
@@ -92,5 +399,28 @@
       text-align: left;
       margin-left: 19px;
     }
+    .blinkfeed-btn-main-pg button {
+      background-color: #3A0299;
+      color: white;
+      border: 2px solid #3A0299;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+    .blinkfeed-btn-main-pg button:hover {
+      background-color: transparent;
+      color: #3A0299;
+      border: 2px solid #3A0299;
+      transition: 0.3s;
+    }
+    .add-shop-btn-main-page-dropment button {
+      color: white;
+      background-color: #3A0299;
+      border: 2px solid #3A0299;
+      border-radius: 9px;
+      padding: 10px 20px;
+      align-items: center;
+    }
+    
+    
   }
-  

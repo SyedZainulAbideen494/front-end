@@ -1,7 +1,12 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Fragment, useState, useEffect, useCallback } from "react";
 import Axios from "axios";
+import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from 'react-share';
 import Productsapp from "../items.js/productsApp";
+import Linkdin from '../../home/header/images/icons8-linkedin-logo-50.png'
+import instagram from '../header/images/icons8-facebook-logo-50.png'
+import twitter from '../../home/header/images/icons8-x-50.png'
+
 const Editbtndisplay = () => {
   const nav = useNavigate();
   const params = useParams();
@@ -100,15 +105,14 @@ const Editbtndisplay = () => {
     ) {
       return <button onClick={showedit}>Edit</button>;
     } else {
-      return <h2>|</h2>;
+      return <h2></h2>;
     }
   };
 
   return (
     <div>
       {!loading ? <EEditbtn /> : <p>Loading...</p>}
-      {showedititem && <Edititemform />}
-        <Addimges/>
+      {showedititem && <div><Edititemform /><Addimges/></div>}
     </div>
   );
 };
@@ -874,7 +878,66 @@ function Prodsright() {
       return "/mystore8";
     } 
   };
-
+  const currentUrl = window.location.href;
+  const ShareButton = ({ url, title, description, imageUrl }) => {
+    return (
+      <div className="sharing-prods-socials">
+        <header>
+      {/* Share on LinkedIn */}
+      <LinkedinShareButton
+        url={`Link to buy: ${url}`}
+        title={`Check out: ${title}`}
+        summary={description}
+        source={imageUrl}
+      >
+        <img src={Linkdin}/>
+      </LinkedinShareButton>
+    
+      {/* Share on Facebook */}
+      <FacebookShareButton
+        url={`Link to buy: ${url}`}
+        quote={`Check out: ${title}. Buy now!`}
+        hashtag="#YourHashtag"
+        image={imageUrl}
+      >
+        <img src={instagram}/>
+      </FacebookShareButton>
+    
+      {/* Share on Twitter */}
+      <TwitterShareButton
+        url={`Link to buy: ${url}`}
+        title={`Check out: ${title}. Buy now!`}
+        hashtags={['product', 'dropment', 'dropmentStores']}
+        via="SyedZain_saz"
+        image={imageUrl}
+      >
+        <img src={twitter}/>
+      </TwitterShareButton>
+      </header>
+    </div>
+    );
+  };
+  
+  const YourComponent = () => {
+    const currentUrl = window.location.href;
+  
+    // Assuming `items` is now populated
+    const product = {
+      url: currentUrl,
+      title: items[0]?.title,
+      description: items[0]?.description,
+      imageUrl: items[0]?.images,
+    };
+  
+    return (
+      <div className="header-social-share-prods-2">
+        <header>
+        <h3>Share this product</h3>
+        <ShareButton {...product} />
+        </header>
+      </div>
+    );
+  };
   return (
     <Fragment>
   <div className="product-page">
@@ -887,6 +950,7 @@ function Prodsright() {
               <button className="back-button">Back</button>
             </Link>
           </span>
+          <YourComponent/>
         </div>
       </header>
     </div>

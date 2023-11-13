@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import './nav-bars.css';
 import logo from '../../header/images/drop2_logo.png';
 import { useParams } from 'react-router-dom';
@@ -69,6 +69,27 @@ function NavBar5() {
     fetchColorHandler();
   }, [fetchColorHandler]);
 
+  
+  const itemsRef = useRef(null)
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
+
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 
   return (
     <div className='nav-bar5-header'>
@@ -77,8 +98,8 @@ function NavBar5() {
             <h2 style={{color: color[0]?.font_colour1}}>{items[0]?.shop_name || 'Shop name'}</h2>
         </div>
         <div className='nav-bar5-btns'>
-            <button style={{color: color[0]?.font_colour2, border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3}}>{items[0]?.button1 || 'button1'}</button>
-            <button style={{color: color[0]?.font_colour2, border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3}}>About us</button>
+            <button onClick={scrollToItems} style={{color: color[0]?.font_colour2, border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3}}>{items[0]?.button1 || 'button1'}</button>
+            <button onClick={scrollToaboutus} style={{color: color[0]?.font_colour2, border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3}}>About us</button>
             <button style={{color: color[0]?.font_colour2, border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3}}>Contact us</button>
         </div>
     </header>

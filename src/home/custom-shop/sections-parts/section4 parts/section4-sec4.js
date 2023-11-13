@@ -1,4 +1,4 @@
-import React,{Fragment, useCallback, useState, useEffect} from "react";
+import React,{Fragment, useCallback, useState, useEffect, useRef} from "react";
 import '../sections.css'
 import { useParams, Link } from "react-router-dom";
 
@@ -312,9 +312,12 @@ const Section4BuildSec4 = () => {
           </div>
         );
       };
+
+
+      const itemsRef = useRef(null)
      
     return<Fragment>
-        <div className="section-4-build-main-div">
+        <div className="section-4-build-main-div" ref={itemsRef}>
             <div className="section-4-build-top-txt">
                 <h1 style={{color: color[0]?.font_colour1}}>
                     NEW ARRILVALS 

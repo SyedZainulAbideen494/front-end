@@ -27,7 +27,7 @@ const Footer1Footer = () => {
         slogan: itemsdata.slogan,
         insta: itemsdata.insta,
         facebook: itemsdata.facebook,
-        twiter: itemsdata.twiter,
+        twitter: itemsdata.twitter,
         linkdin: itemsdata.linkdin,
         phone: itemsdata.phone,
         email: itemsdata.email,
@@ -77,6 +77,14 @@ const Footer1Footer = () => {
     fetchColorHandler();
   }, [fetchColorHandler]);
 
+  const whatsappNumber = 7760372901 || items[0]?.phone; // Removed extra single quote
+
+  const message = ''; // Replace with your desired message
+
+  const handleWhatsAppClick = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
 
     return<Fragment>
         <footer>
@@ -99,15 +107,18 @@ const Footer1Footer = () => {
             <a href={items[0]?.facebook}>
             <img src={facebook}/>
             </a>
-            
+            <a href={items[0]?.twitter}>
             <img src={x}/>
+            </a>
+            <a href={items[0]?.linkdin}>
             <img src={linkdin}/>
+            </a>
           </div>
           <div className="footer-1-section-4">
             <h4 style={{color: color[0]?.font_colour1}}>Contact us</h4>
             <p style={{color: color[0]?.font_colour2}}>Email: {items[0]?.email}</p>
             <p style={{color: color[0]?.font_colour2}}>Phone: {items[0]?.phone}</p>
-            <img src={whatsapp}/>
+            <img src={whatsapp} onClick={handleWhatsAppClick}/>
           </div>
           </div>
           <div style={{backgroundColor: color[0]?.background_colour2}}><p style={{color: color[0]?.font_colour3}}>&copy; {new Date().getFullYear()} {items[0]?.companyname}. All rights reserved.</p></div>

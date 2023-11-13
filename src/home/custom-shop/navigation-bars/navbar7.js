@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import './nav-bars.css';
 import logo from '../../header/images/drop2_logo.png';
 import { useParams } from 'react-router-dom';
@@ -79,6 +79,28 @@ function NavBar7() {
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
+  
+  const itemsRef = useRef(null)
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
+
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
   return (
     <div className='nav-bar7-header' style={{backgroundColor: color[0]?.background_colour1}}>
       <header className='nav-bar-7'>
@@ -86,8 +108,8 @@ function NavBar7() {
             <h2 style={{color: color[0]?.font_colour1}}>{items[0]?.shop_name || 'Shop name'}</h2>
         </section>
         <section className='section2-nav-bar-7'>
-            <button style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>{items[0]?.button1 || 'Button 1'}</button>
-            <button style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>About us</button>
+            <button onClick={scrollToItems} style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>{items[0]?.button1 || 'Button 1'}</button>
+            <button onClick={scrollToaboutus} style={{backgroundColor: color[0]?.background_colour2, border: `2px solid ${color[0]?.background_colour3}`, color: color[0]?.font_colour2}}>About us</button>
         </section>
         <section className='section3-nav-bar-7'>
             <button onClick={handleWhatsAppClick} style={{backgroundColor: color[0]?.background_colour, border: `2ps solid ${color[0]?.background_colour4}`, color: color[0]?.font_colour3}}>Contact us</button>

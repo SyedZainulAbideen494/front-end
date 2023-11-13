@@ -26,9 +26,9 @@ const Section2Build = () => {
           shop_block2: itemsdata.shop_block2,
           shop_blockhead3: itemsdata.shop_blockhead3,
           shop_block3: itemsdata.shop_block3,
+          images1: `http://localhost:8080/images/${itemsdata.images1}`,
           images2: `http://localhost:8080/images/${itemsdata.images2}`,
-          images3: `http://localhost:8080/images/${itemsdata.images3}`,
-          images4: `http://localhost:8080/images/${itemsdata.images4}`
+          images3: `http://localhost:8080/images/${itemsdata.images3}`
         };
       });
       setItems(transformedItems);
@@ -75,15 +75,15 @@ const Section2Build = () => {
 
 
     const heroStyle1 = {
-        backgroundImage: `url(${items.length > 0 ? items[0].images2 : ''})`,
+        backgroundImage: `url(${items.length > 0 ? items[0].images1 : ''})`,
       };
 
       const heroStyle2 = {
-        backgroundImage: `url(${items.length > 0 ? items[0].images3 : ''})`,
+        backgroundImage: `url(${items.length > 0 ? items[0].images2 : ''})`,
       };
 
       const heroStyle3 = {
-        backgroundImage: `url(${items.length > 0 ? items[0].images4 : ''})`,
+        backgroundImage: `url(${items.length > 0 ? items[0].images3 : ''})`,
       };
     return<Fragment>
         <div className="section2-buildright">

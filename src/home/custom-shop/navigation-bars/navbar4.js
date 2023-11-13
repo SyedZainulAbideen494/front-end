@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import './nav-bars.css';
 import logo from '../../header/images/drop2_logo.png';
 import { useParams } from 'react-router-dom';
@@ -68,13 +68,34 @@ function NavBar4() {
   useEffect(() => {
     fetchColorHandler();
   }, [fetchColorHandler]);
+  
+  const itemsRef = useRef(null)
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
+
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 
   return (
     <header className="header-navbar4" style={{backgroundColor: color[0]?.background_colour1}}>
       <nav>
         <ul className="nav-list-navbar4">
-          <button className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>{ items[0]?.button1 || 'button 1' }</button>
-          <button className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>About us</button>
+          <button onClick={scrollToItems} className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>{ items[0]?.button1 || 'button 1' }</button>
+          <button onClick={scrollToaboutus} className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>About us</button>
           <button className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>contact us</button>
         </ul>
       </nav>

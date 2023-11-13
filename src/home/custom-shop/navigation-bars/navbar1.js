@@ -1,4 +1,4 @@
-import React,{Fragment, useState, useCallback, useEffect} from "react";
+import React,{Fragment, useState, useCallback, useEffect, useRef} from "react";
 import { useParams } from "react-router-dom";
 import './nav-bars.css'
 import logo from '../../header/images/drop2_logo.png'
@@ -70,6 +70,26 @@ const NavBar1 = () => {
   }, [fetchColorHandler]);
 
 
+  const itemsRef = useRef(null)
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
+
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
     return<Fragment>
 <div class="headernavbar1"  style={{backgroundColor: color[0]?.background_colour1}}>
   <header class="navbar1header">
@@ -78,8 +98,8 @@ const NavBar1 = () => {
       <h2 style={{color: color[0]?.font_colour1}}>{ items[0]?.shop_name || 'Shop name' }</h2>
     </div>
     <nav class="button-container">
-      <button style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>{ items[0]?.button1 || 'Button 1' }</button>
-      <button style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>About us</button>
+      <button onClick={scrollToItems} style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>{ items[0]?.button1 || 'Button 1' }</button>
+      <button onClick={scrollToaboutus} style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>About us</button>
       <button style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>Contact us</button>
     </nav>
   </header>

@@ -389,3 +389,34 @@
     width: 300px;
   }
 }  
+.sharing-prods-socials img {
+  width: 30px;
+  margin-top: 5px;
+}
+
+.header-social-share-prods-2 header {
+  background-color: black;
+  display: inline-flex;
+  color: white;
+  margin-left: 50px;
+}
+
+.product-header header {
+  background-color: black;
+  background-size: cover;
+  padding: 10px;
+}
+
+.product-header {
+  text-align: center; /* Adjust text alignment as needed */
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-btn {
+  margin-right: 10px; /* Adjust margin as needed */
+}

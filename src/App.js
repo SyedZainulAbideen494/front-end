@@ -179,7 +179,8 @@ const router = createBrowserRouter([
   {path: '/build/:build/footer/:shop_id/:build', element: <StepFooterBuild/>},
   {path: '/build/:build/footer/form/:shop_id/:number', element: <Footerform/>},
   {path: '/build/:build/:shop_id/form/custom', element: <CustomShopForm/>},
-  {path: '/mystore/:shop_id/:shop_name', element: <CustomShop/>}
+  {path: '/mystore/:shop_id/:shop_name', element: <CustomShop/>},
+  {path: '/subdomain', element: <StripeApp/>}
 ]);
 function App() {
   return (

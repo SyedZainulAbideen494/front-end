@@ -57,10 +57,17 @@ const Mainpage = () => {
               </Link>
             )}
           </div>
+          <div className="add-shop-btn-main-page-dropment">
+          <Link to="/Addshoppage1">
+              <button>add shop +</button>
+            </Link>
+            </div>
         </header>
       </div>
       <Link to="/add/BlinkFeed">
+        <span className="blinkfeed-btn-main-pg">
             <button>Add a BlinkFeed</button>
+            </span>
             </Link>
       <Storiesapp/>
       <div className="section1inmainpage">

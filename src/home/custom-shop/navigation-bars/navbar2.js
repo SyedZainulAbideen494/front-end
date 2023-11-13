@@ -1,4 +1,4 @@
-import React,{useCallback, useEffect, useState, Fragment} from 'react';
+import React,{useCallback, useEffect, useState, Fragment, useRef} from 'react';
 import './nav-bars.css';
 import { useParams } from 'react-router-dom';
 import logo from '../../header/images/drop2_logo.png'
@@ -69,6 +69,28 @@ const NavBar2 = () => {
     fetchColorHandler();
   }, [fetchColorHandler]);
 
+  
+  const itemsRef = useRef(null)
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
+
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
     return<Fragment>
         <div className="nav-bar-2-in-build" style={{background: color[0]?.backgroundColor1}}>
         <header className="header-navbar2">
@@ -77,8 +99,8 @@ const NavBar2 = () => {
       </div>
       <div className="shop-name-navbar2" style={{color: color[0]?.font_colour1}}>{ items[0]?.shop_name || 'Shop name' }</div>
       <nav className="nav-navbar2">
-        <button className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>{ items[0]?.button1 || 'Button 1' }</button>
-        <button className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>About us</button>
+        <button onClick={scrollToItems} className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>{ items[0]?.button1 || 'Button 1' }</button>
+        <button onClick={scrollToaboutus} className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>About us</button>
         <button className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Contact us</button>
       </nav>
     </header>
