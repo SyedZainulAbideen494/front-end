@@ -11,6 +11,20 @@ import star from '../header/images/Untitled design (18).png'
 const Editbtndisplay = () => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
+  const shopId = params.shop_id; // Replace with actual shop ID
+  const userId = 123; // Replace with actual user ID
+
+  useEffect(() => {
+    Axios.post(`http://localhost:8080/updateVisits/${shopId}`)
+      .then((response) => {
+        console.log(response.data);
+        // Handle success, maybe show a success message or update state
+      })
+      .catch((error) => {
+        console.error('Error updating shop visits: ', error);
+        // Handle error, maybe show an error message
+      });
+  }, [shopId]);
 
   const showformhandler = () => {
     setshowform(true);
@@ -1106,10 +1120,10 @@ const Editbtndisplay1 = () => {
                     </Link>
                   </span>
                   <span className="btnwebstore">
-                  <Link to={`/sales/report/${params.shop_id}`}>
-                    <button>Sales</button>
-                    </Link>
-                  </span>
+                      <Link to={`/admin/${params.shop_id}`}>
+                      <button>Admin Menu</button>
+                      </Link>
+                    </span>
                   <span className="btnwebstore">
                     <button onClick={showformhandler}>Add Item</button>
                   </span>

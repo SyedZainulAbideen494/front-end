@@ -31,7 +31,20 @@ const Editstoreform = () => {
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
   const [message, setMessage] = useState("");
+  const shopId = params.shop_id; // Replace with actual shop ID
+  const userId = 123; // Replace with actual user ID
 
+  useEffect(() => {
+    Axios.post(`http://localhost:8080/updateVisits/${shopId}`)
+      .then((response) => {
+        console.log(response.data);
+        // Handle success, maybe show a success message or update state
+      })
+      .catch((error) => {
+        console.error('Error updating shop visits: ', error);
+        // Handle error, maybe show an error message
+      });
+  }, [shopId]);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -937,10 +950,10 @@ const Editbtndisplay1 = () => {
                     </Link>
                   </span>
                   <span className="btnwebstore">
-                  <Link to={`/sales/report/${params.shop_id}`}>
-                    <button>Sales</button>
-                    </Link>
-                  </span>
+                      <Link to={`/admin/${params.shop_id}`}>
+                      <button>Admin Menu</button>
+                      </Link>
+                    </span>
                   <span className="btnwebstore">
                     <button onClick={showformhandler}>Add Item</button>
                   </span>
