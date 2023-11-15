@@ -22,6 +22,7 @@ const Addtemplate4form = (props) => {
   const [shop_phone, setshop_phone] = useState("");
   const [insta, setinsta] = useState('')
   const [temp4, settemp4] = useState('')
+  const [uniqueIdentifier, setUniqueIdentifier] = useState('');
 
   const addshophandler = () => {
     const token = localStorage.getItem("token");
@@ -42,6 +43,7 @@ const Addtemplate4form = (props) => {
         shop_phone: shop_phone,
         insta: insta,
         temp4: 'temp4',
+        uniqueIdentifier: uniqueIdentifier
       },
       {
         headers: {
@@ -72,6 +74,19 @@ const Addtemplate4form = (props) => {
             placeholder="Enter Shop Name"
             onChange={(e) => {
               setname(e.target.value);
+            }}
+          />
+        </div>
+        <div className="inp">
+          <label>
+            <h3>Enter Shop domain (unique)</h3>
+          </label>
+          <br />
+          <input
+            required
+            placeholder="Enter Shop domain (unique)"
+            onChange={(e) => {
+              setUniqueIdentifier(e.target.value);
             }}
           />
         </div>

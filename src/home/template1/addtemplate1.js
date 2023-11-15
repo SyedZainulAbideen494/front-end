@@ -23,6 +23,7 @@ const Addtemplate1form = (props) => {
   const [temp1, settemp1]= useState('')
   const [insta, setinsta] = useState("")
   const [salestext, setsalestext] = useState('')
+  const [uniqueIdentifier, setUniqueIdentifier] = useState('');
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
@@ -48,6 +49,7 @@ const Addtemplate1form = (props) => {
         insta: insta,
         salestext: salestext,
         temp: 'temp1',
+        uniqueIdentifier: uniqueIdentifier
       },
       {
         headers: {
@@ -78,6 +80,19 @@ const Addtemplate1form = (props) => {
             placeholder="Enter Shop Name"
             onChange={(e) => {
               setname(e.target.value);
+            }}
+          />
+        </div>
+        <div className="inp">
+          <label>
+            <h3>Enter Shop domain (unique)</h3>
+          </label>
+          <br />
+          <input
+            required
+            placeholder="Enter Shop domain (unique)"
+            onChange={(e) => {
+              setUniqueIdentifier(e.target.value);
             }}
           />
         </div>

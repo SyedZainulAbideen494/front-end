@@ -7,6 +7,7 @@ const NavBar2Preview = () => {
 
 
     return<Fragment>
+      <div className="headernavbar1-preview">
         <div className="nav-bar-2-in-build">
         <header className="header-navbar2">
       <div className="logo-navbar2">
@@ -19,6 +20,7 @@ const NavBar2Preview = () => {
         <button className="nav-button-navbar2">Contact us</button>
       </nav>
     </header>
+        </div>
         </div>
     </Fragment>
 }

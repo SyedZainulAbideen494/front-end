@@ -6,6 +6,7 @@ import Productsapp from "../items.js/productsApp";
 import Linkdin from '../../home/header/images/icons8-linkedin-logo-50.png'
 import instagram from '../header/images/icons8-facebook-logo-50.png'
 import twitter from '../../home/header/images/icons8-x-50.png'
+import pinterst from '../header/images/icons8-pinterest-logo-50 (2).png'
 
 const Editbtndisplay = () => {
   const nav = useNavigate();
@@ -928,12 +929,67 @@ function Prodsright() {
       description: items[0]?.description,
       imageUrl: items[0]?.images,
     };
-  
+    const ProductWithPinterestButton = () => {
+      const currentUrl = window.location.href;
+    
+      const itemss = [
+        {
+          title: items[0]?.title,
+      description: items[0]?.description,
+      images: items[0]?.images,
+        },
+      ];
+    
+      const handlePinterestShare = () => {
+        if (window.PinUtils) {
+          window.PinUtils.pinOne({
+            url: currentUrl,
+            title: itemss[0]?.title,
+            description: itemss[0]?.description,
+            imageUrl: itemss[0]?.images,
+          });
+        } else {
+          console.error('Pinterest SDK not loaded');
+        }
+      };
+    
+      useEffect(() => {
+        // Load Pinterest JavaScript SDK dynamically
+        const script = document.createElement('script');
+        script.defer = true;
+        script.async = true;
+        script.src = 'https://assets.pinterest.com/js/pinit.js';
+    
+        script.onload = () => {
+          console.log('Pinterest SDK loaded');
+        };
+    
+        script.onerror = () => {
+          console.error('Failed to load Pinterest SDK');
+        };
+    
+        document.head.appendChild(script);
+    
+        return () => {
+          // Remove the script element only if it was successfully appended
+          if (document.head.contains(script)) {
+            document.head.removeChild(script);
+          }
+        };
+      }, []); // Empty dependency array ensures the effect runs only once
+    
+      return (
+        <div className="sharing-prods-socials">
+          <img onClick={handlePinterestShare} src={pinterst}/>
+        </div>
+      );
+    };
     return (
       <div className="header-social-share-prods-2">
         <header>
         <h3>Share this product</h3>
         <ShareButton {...product} />
+        <ProductWithPinterestButton/>
         </header>
       </div>
     );

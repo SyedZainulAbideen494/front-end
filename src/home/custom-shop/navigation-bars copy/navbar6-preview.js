@@ -17,6 +17,7 @@ function NavBar6Preview() {
   };
 
   return (
+    <div className="headernavbar1-preview">
     <div className='nav-bar6-header'>
       <header className='nav-bar6'>
         <section className='section1-nav-bar-6'>
@@ -31,6 +32,7 @@ function NavBar6Preview() {
             <button>About us</button>
         </section>
       </header>
+    </div>
     </div>
   );
 }

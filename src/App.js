@@ -93,6 +93,12 @@ import Section4Form from "./home/custom-shop/sections-parts/sectionsform-section
 import Section5Form from "./home/custom-shop/sections-parts/sectionsform-section5";
 import Section6Form from "./home/custom-shop/sections-parts/sectionsform-section6";
 import SubscriptionFormInner from "./home/payment/payment";
+import BotApp from "./home/chatbot/botapp";
+import CustomShopPreview from "./home/custom-shop/preview-custom-build";
+import FinishCustomShopBuild from "./home/custom-shop/finish-page-custom-shop-";
+import Dashboard from "./home/adminview/adminview";
+import AdminProducts from "./home/adminview/admin-orders";
+import AdminProduct from "./home/adminview/admin-products";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -177,10 +183,16 @@ const router = createBrowserRouter([
   {path: '/build/:build/step11/:shop_id/:build', element: <Step11build/>},
   {path: '/build/:build/step12/:shop_id/:build', element: <Step12build/>},
   {path: '/build/:build/footer/:shop_id/:build', element: <StepFooterBuild/>},
+  {path: '/build/:build/preview/:shop_id/', element: <CustomShopPreview/>},
   {path: '/build/:build/footer/form/:shop_id/:number', element: <Footerform/>},
+  {path: '/preview/:build/:shop_id/shop/congratulations', element: <FinishCustomShopBuild/>},
   {path: '/build/:build/:shop_id/form/custom', element: <CustomShopForm/>},
   {path: '/mystore/:shop_id/:shop_name', element: <CustomShop/>},
-  {path: '/subdomain', element: <StripeApp/>}
+  {path: '/subdomain', element: <StripeApp/>},
+  {path: '/support', element: <BotApp/>},
+  {path: '/admin/:shop_id', element: <Dashboard/>},
+  {path: '/admin/Orders/:shop_id', element: <AdminProducts/>},
+  {path: '/admin/products/:shop_id', element: <AdminProduct/>},
 ]);
 function App() {
   return (

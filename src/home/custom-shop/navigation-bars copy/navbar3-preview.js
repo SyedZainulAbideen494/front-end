@@ -7,6 +7,7 @@ import { Colors } from 'chart.js';
 function NavBar3Preview() {
 
   return (
+    <div className="headernavbar1-preview">
     <header className="navbar3" >
       <div className="navbar3-logo">
         <img src={logo} alt="Logo" />
@@ -20,6 +21,7 @@ function NavBar3Preview() {
         </nav>
       </div>
     </header>
+    </div>
   );
 }
 

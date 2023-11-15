@@ -1,16 +1,263 @@
 @media (min-width: 312px) and (max-width: 480px) {
+    .shop-finish-custom-header-1 header {
+        background-color: black;
+        display: inline-flex;
+    }
+    
+    .sharing-prods-socials {
+        cursor: pointer;
+    }
+    
+    .maindiv-finish-page-custom-shop {
+        background-color: black;
+        color: white;
+    }
+    
+    .finish-shop-custom-build-dropment-logo {
+        width: 60px;
+    }
+    
+    .middle-content-finish-custom-build-shop {
+        text-align: center;
+        margin-top: 70px;
+    }
+    
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 60px;
+    }
+    
+    .middle-content-finish-custom-build-shop p {
+        font-size: 20px;
+    }
+    
+    .middle-content-finish-custom-build-shop button {
+        font-size: 30px;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    .middle-content-finish-custom-build-shop button:hover {
+        background-color: white;
+        color: black;
+        transition: 0.3s;
+    }
+    .middle-content-finish-custom-build-shop {
+        margin-top: 30px; /* Adjust margin for smaller screens */
+    }
 
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 40px; /* Adjust font size for smaller screens */
+    }
+
+    .middle-content-finish-custom-build-shop p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .middle-content-finish-custom-build-shop button {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        margin-top: 15px; /* Adjust margin for smaller screens */
+    }
 }
 
 @media (min-width: 481px) and (max-width: 769px) {
+    .shop-finish-custom-header-1 header {
+        background-color: black;
+        display: inline-flex;
+    }
+    
+    .sharing-prods-socials {
+        cursor: pointer;
+    }
+    
+    .maindiv-finish-page-custom-shop {
+        background-color: black;
+        color: white;
+    }
+    
+    .finish-shop-custom-build-dropment-logo {
+        width: 60px;
+    }
+    
+    .middle-content-finish-custom-build-shop {
+        text-align: center;
+        margin-top: 70px;
+    }
+    
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 60px;
+    }
+    
+    .middle-content-finish-custom-build-shop p {
+        font-size: 20px;
+    }
+    
+    .middle-content-finish-custom-build-shop button {
+        font-size: 30px;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    .middle-content-finish-custom-build-shop button:hover {
+        background-color: white;
+        color: black;
+        transition: 0.3s;
+    }
+    .middle-content-finish-custom-build-shop {
+        margin-top: 50px; /* Adjust margin for tablet screens */
+    }
 
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 40px; /* Adjust font size for tablet screens */
+    }
+
+    .middle-content-finish-custom-build-shop p {
+        font-size: 18px; /* Adjust font size for tablet screens */
+    }
+
+    .middle-content-finish-custom-build-shop button {
+        font-size: 26px; /* Adjust font size for tablet screens */
+        padding: 8px 16px; /* Adjust padding for tablet screens */
+        margin-top: 15px; /* Adjust margin for tablet screens */
+    }
 }
-@media (min-width: 769) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+    .shop-finish-custom-header-1 header {
+        background-color: black;
+        display: inline-flex;
+    }
+    
+    .sharing-prods-socials {
+        cursor: pointer;
+    }
+    
+    .maindiv-finish-page-custom-shop {
+        background-color: black;
+        color: white;
+    }
+    
+    .finish-shop-custom-build-dropment-logo {
+        width: 60px;
+    }
+    
+    .middle-content-finish-custom-build-shop {
+        text-align: center;
+        margin-top: 70px;
+    }
+    
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 60px;
+    }
+    
+    .middle-content-finish-custom-build-shop p {
+        font-size: 20px;
+    }
+    
+    .middle-content-finish-custom-build-shop button {
+        font-size: 30px;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    .middle-content-finish-custom-build-shop button:hover {
+        background-color: white;
+        color: black;
+        transition: 0.3s;
+    }
+    .middle-content-finish-custom-build-shop {
+        margin-top: 50px; /* Adjust margin for tablet screens */
+    }
 
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 40px; /* Adjust font size for tablet screens */
+    }
+
+    .middle-content-finish-custom-build-shop p {
+        font-size: 18px; /* Adjust font size for tablet screens */
+    }
+
+    .middle-content-finish-custom-build-shop button {
+        font-size: 26px; /* Adjust font size for tablet screens */
+        padding: 8px 16px; /* Adjust padding for tablet screens */
+        margin-top: 15px; /* Adjust margin for tablet screens */
+    }
+    .middle-content-finish-custom-build-shop {
+        margin-top: 30px; /* Adjust margin for smaller screens */
+    }
+
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 32px; /* Adjust font size for smaller screens */
+    }
+
+    .middle-content-finish-custom-build-shop p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .middle-content-finish-custom-build-shop button {
+        font-size: 22px; /* Adjust font size for smaller screens */
+        padding: 8px 14px; /* Adjust padding for smaller screens */
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
 }
 
 @media (min-width: 1025px) {
     .parts-custom-shop-main {
         margin-bottom: 50px;
+    }
+    .shop-finish-custom-header-1 header {
+        background-color: black;
+    }
+    .sharing-prods-socials {
+        cursor: pointer;
+    }
+    .maindiv-finish-page-custom-shop {
+        background-color: black;
+        color: white;
+    }
+    .shop-finish-custom-header-1 header {
+        display: inline-flex;
+    }
+    .finish-shop-custom-build-dropment-logo {
+        width: 60px;
+    }
+    .middle-content-finish-custom-build-shop {
+        text-align: center;
+        margin-top: 70px;
+    }
+    .middle-content-finish-custom-build-shop h1 {
+        font-size: 60px;
+    }
+    .middle-content-finish-custom-build-shop p {
+        font-size: 20px;
+    }
+    .middle-content-finish-custom-build-shop button {
+        font-size: 30px;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    .middle-content-finish-custom-build-shop button:hover {
+        background-color: white;
+        color: black;
+        transition: 0.3s;
     }
 }

@@ -1,67 +1,69 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from 'react-share';
+import React, { useState } from 'react';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe('pk_test_51LoS3iSGyKMMAZwsaj8KZX4Sqqffth0eo9jyTSElpu9UG8M815kZdSIg1huPtPgke75vqtymOLDXtwosJrEYBWPh001ecyI5aW');
 
-const ShareButton = ({ url, title, description }) => {
-  return (
-    <div>
-      <FacebookShareButton url={url} quote={title}>
-        Share on Facebook
-      </FacebookShareButton>
 
-      <TwitterShareButton url={url} title={title}>
-        Share on Twitter
-      </TwitterShareButton>
+const StripeAppa = () => {
+  const stripe = useStripe();
+  const elements = useElements();
 
-      <LinkedinShareButton url={url} title={title} summary={description}>
-        Share on LinkedIn
-      </LinkedinShareButton>
-    </div>
-  );
-};
-function StripeApp() {
-  const [items, setItems] = useState([]);
-  const [params, setParams] = useState({ id: 'yourAuthorizationTokenHere' });
+  const [error, setError] = useState(null);
 
-  const fetchProdsHandler = useCallback(async () => {
-    try {
-      const response = await fetch(`http://localhost:8080/imgprods/`, {
-        headers: {
-          Authorization: params.id,
-        },
-      });
-      const data = await response.json();
-      const transformedItems = data.img.map((itemsdata) => ({
-        images: `http://localhost:8080/images/${itemsdata.images}`,
-        title: itemsdata.title,
-        product_description: itemsdata.product_description,
-        id: itemsdata.id,
-        shop_id: itemsdata.shop_id,
-      }));
-      setItems(transformedItems);
-    } catch (error) {
-      console.error(error);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!stripe || !elements) {
+      return;
     }
-  }, [params.id]);
 
-  useEffect(() => {
-    fetchProdsHandler();
-  }, [fetchProdsHandler]);
+    const cardElement = elements.getElement(CardElement);
 
-  const currentUrl = window.location.href;
+    try {
+      const { error, token } = await stripe.createToken(cardElement);
 
+      if (error) {
+        setError(error.message);
+        console.error('Stripe Error:', error);
+      } else {
+        // Send token to your server
+        const response = await fetch('http://localhost:8080/charge', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            amount: '10', // Ensure paymentAmount is defined
+            token: token.id
+          })
+        });
 
-  // Assuming `items` is now populated
-  const product = {
-    url: currentUrl,
-    title: items[0]?.title,
-    description: items[0]?.product_description,
+        const data = await response.json();
+        console.log(data); // Handle response from server
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setError('Error processing payment. Please try again.');
+    }
   };
 
   return (
-    <div>
-      <h1>Your Product Details</h1>
-      <ShareButton {...product} />
-    </div>
+    <form onSubmit={handleSubmit}>
+      <CardElement />
+      <button type="submit" disabled={!stripe}>
+        Pay Now
+      </button>
+      {error && <div>{error}</div>}
+    </form>
+  );
+};
+
+const StripeApp = () => {
+  return (
+    <Elements stripe={stripePromise}>
+      <StripeAppa />
+    </Elements>
   );
 };
 

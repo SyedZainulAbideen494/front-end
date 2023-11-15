@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 function NavBar4Preview() {
 
   return (
+    <div className="headernavbar1-preview">
     <header className="header-navbar4" >
       <nav>
         <ul className="nav-list-navbar4">
@@ -15,6 +16,7 @@ function NavBar4Preview() {
         </ul>
       </nav>
     </header>
+    </div>
   );
 }
 

@@ -1064,7 +1064,9 @@ const Editbtndisplay1 = () => {
                     <button onClick={showimghandler}>Add custom images</button>
                   </span>
                   <span className="btnwebstore">
-                    
+                    <Link to={`/admin/${params.shop_id}`}>
+                    <button>Admin view</button>
+                    </Link>
                   </span>
                 </div>
               </div>

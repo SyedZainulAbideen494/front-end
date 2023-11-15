@@ -128,6 +128,22 @@ const Orderform = (props) => {
     console.log("name2:", name2);
     console.log("items:", items);
     console.log("shop_id:", shop_id);
+    const currentDate = new Date(); // Get current date and time
+
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding leading zero if needed
+    const day = String(currentDate.getDate()).padStart(2, '0'); // Adding leading zero if needed
+    
+    const hours = String(currentDate.getHours()).padStart(2, '0'); // Adding leading zero if needed
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0'); // Adding leading zero if needed
+    const seconds = String(currentDate.getSeconds()).padStart(2, '0'); // Adding leading zero if needed
+    
+    const formattedDate = `${year}-${month}-${day}`;
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+    
+    // Combine date and time in ISO format
+    const dateTimeISO = `${formattedDate}T${formattedTime}`;
+    
     Axios.post(
       "http://localhost:8080/place/order",
       {
@@ -145,6 +161,7 @@ const Orderform = (props) => {
         occupation: name2[0]?.occupation,
         age: name2[0]?.age,
         sender_id: name2[0]?.user_id,
+        orderDateTime: dateTimeISO, // Adding current date and time to the order data
       },
       {
         headers: {
@@ -155,8 +172,7 @@ const Orderform = (props) => {
       // Open the payment link in a new tab or window
       window.open(items[0]?.payment, "_blank");
     });
-  };
-
+  }
   return (
     <div className="formorder">
       <form onSubmit={orderhandler}>

@@ -93,6 +93,19 @@ const Addtemplate3form = (props) => {
         </div>
         <div className="inp">
           <label>
+            <h3>Enter Shop domain (unique)</h3>
+          </label>
+          <br />
+          <input
+            required
+            placeholder="Enter Shop domain (unique)"
+            onChange={(e) => {
+              setUniqueIdentifier(e.target.value);
+            }}
+          />
+        </div>
+        <div className="inp">
+          <label>
             <h3>Enter Tagline</h3>
           </label>
           <br />

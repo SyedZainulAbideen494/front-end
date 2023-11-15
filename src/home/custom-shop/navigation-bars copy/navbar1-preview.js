@@ -7,6 +7,7 @@ const NavBar1Preview = () => {
 
 
     return<Fragment>
+      <div className="headernavbar1-preview">
 <div class="headernavbar1">
   <header class="navbar1header">
     <div class="logo-container">
@@ -19,6 +20,7 @@ const NavBar1Preview = () => {
       <button>Contact us</button>
     </nav>
   </header>
+</div>
 </div>
     </Fragment>
 }

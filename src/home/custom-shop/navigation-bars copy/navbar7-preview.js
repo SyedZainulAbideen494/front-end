@@ -16,6 +16,7 @@ function NavBar7Preview() {
   };
 
   return (
+    <div className="headernavbar1-preview">
     <div className='nav-bar7-header'>
       <header className='nav-bar-7'>
         <section className='section1-nav-bar7'>
@@ -29,6 +30,7 @@ function NavBar7Preview() {
             <button onClick={handleWhatsAppClick} >Contact us</button>
         </section>
       </header>
+    </div>
     </div>
   );
 }

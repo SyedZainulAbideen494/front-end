@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import Axios from 'axios'; // Changed import statement
+import './salesreport.css'
 
 function SalesReportApp() {
   const [salesData, setSalesData] = useState([]);
@@ -298,66 +299,46 @@ function SalesReportApp() {
   };
 
   return (
-    <div className="sales-report-app">
-      <h1>Sales Statistics</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <table className="sales-table">
-          <thead>
-            <tr>
-              <th>Country</th>
-              <th>Product</th>
-              <th>Street</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zipcode</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Age</th>
-              <th>Occupation</th>
-              <th>Chat</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {salesData.map((item) => (
-              <tr key={item.id}>
-                <td>{item.country}</td>
-                <td>{item.product}</td>
-                <td>{item.streetadrs}</td>
-                <td>{item.city}</td>
-                <td>{item.state}</td>
-                <td>{item.zipcode}</td>
-                <td>{item.name}</td>
-                <td>{item.Email}</td>
-                <td>{item.Phone}</td>
-                <td>{item.age}</td>
-                <td>{item.occupation}</td>
-                <td>
-                <button onClick={() => chatHandler(item.sender_id, item.name)}>Chat</button>
-                </td>
-                <td>
-                  <div>
-                    <h2>Order Status: {orderStatus}</h2>
-                    <button onClick={() => updateOrderStatus("packed", item.orders_id)}>
-                      Mark as Packed
-                    </button>
-                    <button onClick={() => updateOrderStatus("shipped", item.orders_id)}>
-                      Mark as Shipped
-                    </button>
-                    <button onClick={() => updateOrderStatus("success", item.orders_id)}>
-                      Mark as Success
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+<div className="sales-report-app">
+  <h1>Sales Statistics</h1>
+  {loading ? (
+    <p>Loading...</p>
+  ) : (
+    <div className="sales-container">
+      {salesData.map((item) => (
+        <div className="sales-item" key={item.id}>
+          <div>
+            <h2>Country: {item.country}</h2>
+            <p>Product: {item.product}</p>
+            <p>Address: {item.streetadrs}, {item.city}, {item.state}, {item.zipcode}</p>
+          </div>
+          <div>
+            <p>Name: {item.name}</p>
+            <p>Email: {item.Email}</p>
+            <p>Phone: {item.Phone}</p>
+            <p>Age: {item.age}</p>
+            <p>Occupation: {item.occupation}</p>
+          </div>
+          <div>
+            <button onClick={() => chatHandler(item.sender_id, item.name)} className='action-buttons'>Chat</button>
+            <div>
+              <h3>Order Status: {orderStatus}</h3>
+              <button onClick={() => updateOrderStatus("packed", item.orders_id)} className='action-buttons'>
+                Mark as Packed
+              </button>
+              <button onClick={() => updateOrderStatus("shipped", item.orders_id)} className='action-buttons'>
+                Mark as Shipped
+              </button>
+              <button onClick={() => updateOrderStatus("success", item.orders_id)} className='action-buttons'>
+                Mark as Success
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
+  )}
+</div>
   );
 }
 

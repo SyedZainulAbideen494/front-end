@@ -69,7 +69,21 @@ const CustomShop = () => {
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem("token");
   const params = useParams();
-  
+  const shopId = params.shop_id; // Replace with actual shop ID
+  const userId = 123; // Replace with actual user ID
+
+  useEffect(() => {
+    axios.post(`http://localhost:8080/updateVisits/${shopId}`)
+      .then((response) => {
+        console.log(response.data);
+        // Handle success, maybe show a success message or update state
+      })
+      .catch((error) => {
+        console.error('Error updating shop visits: ', error);
+        // Handle error, maybe show an error message
+      });
+  }, [shopId]);
+
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
     const response = await fetch(`http://localhost:8080/custom/shop/display`, {
@@ -86,7 +100,8 @@ const CustomShop = () => {
         section4: itemsdata.section4,
         section5: itemsdata.section5,
         section6: itemsdata.section6,
-        section13: itemsdata.section13
+        section13: itemsdata.section13,
+        background_clr: itemsdata.background_clr
       };
     });
     setItems(transformedItems);
@@ -1292,8 +1307,8 @@ const CustomShop = () => {
                       </Link>
                     </span>
                     <span className="btnwebstore">
-                      <Link to={`/sales/report/${params.shop_id}`}>
-                      <button>Sales</button>
+                      <Link to={`/admin/${params.shop_id}`}>
+                      <button>Admin Menu</button>
                       </Link>
                     </span>
                     <span className="btnwebstore-addproducts">
@@ -1324,30 +1339,32 @@ const CustomShop = () => {
   
 
   return (
-    <Fragment>
+       <>
       <Editbtndisplay1/>
-      <section className="parts-custom-shop-main">
+  <div style={{ backgroundColor: items[0]?.background_clr }}>
+    <section className="parts-custom-shop-main">
       <Section1 />
-      </section>
-      <section className="parts-custom-shop-main">
+    </section>
+    <section className="parts-custom-shop-main">
       <Section2 />
-      </section>
-      <section className="parts-custom-shop-main">
+    </section>
+    <section className="parts-custom-shop-main">
       <Section3 />
-      </section>
-      <section className="parts-custom-shop-main">
+    </section>
+    <section className="parts-custom-shop-main">
       <Section4 />
-      </section>
-      <section className="parts-custom-shop-main">
+    </section>
+    <section className="parts-custom-shop-main">
       <Section5 />
-      </section>
-      <section className="parts-custom-shop-main">
+    </section>
+    <section className="parts-custom-shop-main">
       <Section6 />
-      </section>
-      <section className="parts-custom-shop-main">
+    </section>
+    <section className="parts-custom-shop-main">
       <Section13 />
-      </section>
-    </Fragment>
+    </section>
+  </div>
+</>
   );
 }
 
