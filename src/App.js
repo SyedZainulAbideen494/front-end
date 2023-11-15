@@ -63,8 +63,6 @@ import Userdisplay from "./home/user/userdisplay";
 import Usersindetails from "./home/user/usersdetails";
 import Mainpage from "./home/mainpage/mainpage";
 import ChatMessageapp from "./home/chat/mainchat";
-import Stripform from "./home/payment/payment2";
-import StripeApp from "./home/payment/paymentapp";
 import SalesReportApp from "./home/sales/chatsreport";
 import AddProductsForm from "./home/additemsform/additemsform";
 import AddStories from "./home/stories/addstories";
@@ -188,7 +186,6 @@ const router = createBrowserRouter([
   {path: '/preview/:build/:shop_id/shop/congratulations', element: <FinishCustomShopBuild/>},
   {path: '/build/:build/:shop_id/form/custom', element: <CustomShopForm/>},
   {path: '/mystore/:shop_id/:shop_name', element: <CustomShop/>},
-  {path: '/subdomain', element: <StripeApp/>},
   {path: '/support', element: <BotApp/>},
   {path: '/admin/:shop_id', element: <Dashboard/>},
   {path: '/admin/Orders/:shop_id', element: <AdminProducts/>},
