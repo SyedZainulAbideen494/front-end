@@ -182,8 +182,9 @@ const Home = () => {
           </div>
           <div className="ourapp">
             <div className="ourapptext">
-              <h1>Introducing Our App</h1>
-              <p>Dropment is your gateway to a world of e-commerce possibilities. Imagine creating a beautifully designed online store within minutes, without the headaches of technical complexities. Our app is meticulously crafted to bring your vision to life, offering:</p>
+              <h1>About Dropment</h1>
+              <p>Dropment is your gateway to a world of endless e-commerce possibilities. From setting up your store to making sales online, we make your experience seamless and hassle-free. With Dropment, now set up an aesthetically pleasing online store without any technical complexities and investment. 
+</p>
             </div>
             <div className="ourappblock1">
               <div className="imgblock1ourapp">

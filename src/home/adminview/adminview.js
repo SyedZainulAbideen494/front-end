@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import SalesReportApp from '../sales/chatsreport';
 import './adminview.css'
 import logo from '../header/images/Dropment (2).png'
+import { Bar } from 'react-chartjs-2';
 
 const TotalInventory = () => {
   const [totalInventory, setTotalInventory] = useState(0);
@@ -31,7 +32,7 @@ const SalesComponent7dayData = () => {
   const [filteredSales, setFilteredSales] = useState([]);
   const params = useParams();
   const shopId = params.shop_id;
-  const filters = ["1year", "6months", "1month", "7days", "1day"];
+  const filters = ["this year", "6 months", "this month", "this week", "1 day"];
 
   const fetchFilteredSales = async (filter) => {
     try {
@@ -221,6 +222,7 @@ const OrdersComponent = () => {
       </div>
   );
 };
+
 const Dashboard = () => {
   const [totalVisits, setTotalVisits] = useState(0);
   const params = useParams();

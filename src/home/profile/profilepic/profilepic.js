@@ -97,7 +97,6 @@ const Profilepic = (props) => {
           className="profile-pic"
         />  
       )}
-      <Addimage6/>
     </Fragment>
   );
 };

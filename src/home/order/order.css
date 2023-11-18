@@ -74,8 +74,20 @@
   transition: background-color 0.3s ease;
 }
 
+.status-dot-cancel {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
 .status-dot.active {
   background-color: #4caf50; /* Green color for active status */
+}
+.status-dot-cancel.active{
+  background-color: red;
 }
 
 .order-progress {

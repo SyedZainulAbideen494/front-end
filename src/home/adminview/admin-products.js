@@ -58,10 +58,10 @@ const Products = () => {
           {products.map((product) => (
             <div key={product.id} class='table-row'>
               <div><img src={`http://localhost:8080/images/${product.images}`} alt={product.title} class='product-image'/></div>
-              <div>{product.id}</div>
+              <div className='mobile-deleted'>{product.id}</div>
               <div>{product.title}</div>
               <div>${product.usd}</div>
-              <div>{product.amount}</div>
+              <div className='mobile-inventroy'><p>Quantity:</p>{product.amount}</div>
               <div>
           <button class='delete-button' onClick={() => handleDelete(product.id)}>Delete</button>
           <div>

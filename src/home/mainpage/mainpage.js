@@ -1,6 +1,6 @@
 import React,{Fragment, useState, useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
-import dropment from '../header/images/Dropment.png'
+import dropment from '../header/images/drop2_logo.png'
 import './mainpage.css'
 import AllTemplate1app from "./template1/template1app";
 import Users from "../user/userapp";

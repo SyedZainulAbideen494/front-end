@@ -9,6 +9,33 @@ function Order() {
   const [name2, setName2] = useState([]);
   const params = useParams();
 
+  const cancelOrder = async (orderId) => {
+    const token = localStorage.getItem('token');
+    try {
+      const response = await Axios.put(
+        `http://localhost:8080/order/${orderId}/cancel`,
+        { status: 'cancel' },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      if (response.status === 200) {
+        // Order canceled successfully, update the status locally
+        setSalesData((prevSalesData) =>
+          prevSalesData.map((item) =>
+            item.orders_id === orderId ? { ...item, status: 'cancel' } : item
+          )
+        );
+      } else {
+        console.error('Failed to cancel order:', response.data);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  };
+
   const fetchMessages = useCallback(async () => {
     setLoading(true);
     const token = localStorage.getItem('token');
@@ -134,10 +161,13 @@ function Order() {
         return '60%';
       case 'success':
         return '100%';
+      case 'cancel':
+        return '0%'; // Set the color to red for 'cancel' status
       default:
         return '0%';
     }
   };
+  
 
   return (
     <div className="order-container-customer-side-all-order-main-div">
@@ -160,6 +190,12 @@ function Order() {
               <div className="status-label">Delivered</div>
               <div className={`status-dot ${item.status === 'success' ? 'active' : ''}`} />
             </div>
+            {item.status === 'cancel' && (
+            <div className="order-status">
+              <div className="status-label">Canceled</div>
+              <div className={`status-dot-cancel ${item.status === 'cancel' ? 'active' : ''}`} />
+            </div>
+            )}
             <div className="order-progress">
               <div
                 className="order-progress-bar"
@@ -182,6 +218,14 @@ function Order() {
           >
             Chat
           </button>
+          {item.status !== 'cancel' && ( // Show cancel button only if status is not 'cancel'
+            <button
+              className="order-details-button cancel-button"
+              onClick={() => cancelOrder(item.orders_id)}
+            >
+              Cancel Order
+            </button>
+          )}
         </div>
       ))
     )}

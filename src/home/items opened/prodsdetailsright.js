@@ -881,6 +881,11 @@ function Prodsright() {
   };
   const currentUrl = window.location.href;
   const ShareButton = ({ url, title, description, imageUrl }) => {
+    const shareOnInstagram = () => {
+      const instagramShareURL = `https://www.instagram.com/?url=${encodeURIComponent(imageUrl)}&caption=${encodeURIComponent(title + ' - ' + description)}`;
+      
+      window.open(instagramShareURL, '_blank');
+    };
     return (
       <div className="sharing-prods-socials">
         <header>

@@ -6,6 +6,8 @@ import './adminview.css'
 import logo from '../header/images/Dropment (2).png'
 const Orders = () => {
     const [orders, setOrders] = useState([]);
+    const [loading, setLoading] = useState(false)
+    const [orderStatus, setOrderStatus] = useState([])
     const [selectedInterval, setSelectedInterval] = useState(null);
     const params = useParams();
     const shopId = params.shop_id;
@@ -29,6 +31,30 @@ const Orders = () => {
     const handleFilterChange = (interval) => {
       setSelectedInterval(interval);
     };
+    const updateOrderStatus = async (newStatus, orders_id) => {
+      setLoading(true);
+      try {
+        const token = localStorage.getItem('token');
+        const response = await axios.put(
+          `http://localhost:8080/api/update-order-status/${orders_id}`,
+          {
+            newStatus: newStatus,
+          },
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        if (response.status === 200) {
+          setOrderStatus(newStatus);
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
   
     return (
       <div className='orders-admin-prods'>
@@ -46,38 +72,59 @@ const Orders = () => {
             </select>
           </label>
         </div>
-        <table>
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Country</th>
-      <th>State</th>
-      <th>City</th>
-      <th>Street Address</th>
-      <th>Zipcode</th>
-      <th>Order Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    {orders.map((order) => (
-      <tr key={order.id}>
-        <td>{order.product}</td>
-        <td>{order.name}</td>
-        <td>{order.Email}</td>
-        <td>{order.Phone}</td>
-        <td>{order.country}</td>
-        <td>{order.state}</td>
-        <td>{order.city}</td>
-        <td>{order.streetadrs}</td>
-        <td>{order.zipcode}</td>
-        <td>{order.orderDatetime}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+          <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Street Address</th>
+            <th>Zipcode</th>
+            <th>Order Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map((order) => (
+            <tr key={order.orders_id}>
+              <td>{order.product}</td>
+              <td>{order.name}</td>
+              <td>{order.Email}</td>
+              <td>{order.Phone}</td>
+              <td>{order.country}</td>
+              <td>{order.state}</td>
+              <td>{order.city}</td>
+              <td>{order.streetadrs}</td>
+              <td>{order.zipcode}</td>
+              <td>{order.orderDatetime}</td>
+              <td>
+              <div>
+      {order.status !== 'cancel' ? (
+        <div>
+          <h3>Order Status: {order.status}</h3>
+          <button onClick={() => updateOrderStatus('packed', order.orders_id)} className='action-buttons'>
+            Mark as Packed
+          </button>
+          <button onClick={() => updateOrderStatus('shipped', order.orders_id)} className='action-buttons'>
+            Mark as Shipped
+          </button>
+          <button onClick={() => updateOrderStatus('success', order.orders_id)} className='action-buttons'>
+            Mark as Success
+          </button>
+        </div>
+      ) : (
+        <h3>This order has been canceled.</h3>
+      )}
+    </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       </div>
     );
   };

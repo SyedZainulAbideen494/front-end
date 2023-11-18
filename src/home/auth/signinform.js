@@ -83,9 +83,35 @@ const Signinform = () => {
   };
   const nav = useNavigate();
 
+  const verifyEmail = async (email) => {
+    try {
+      const response = await Axios.get(
+        `https://api.quickemailverification.com/v1/verify?email=${email}&apikey=YOUR_API_KEY`
+      );
+      if (response.data.result === "valid") {
+        console.log("Email is valid!");
+        return true;
+      } else {
+        console.log("Email is not valid!");
+        return false;
+      }
+    } catch (error) {
+      console.error("Error verifying email:", error);
+      return false;
+    }
+  };
+
   const register = async () => {
     try {
-      const response = await Axios.post("http://localhost:8080/addUser", {
+      const isEmailValid = await verifyEmail(email);
+
+      if (!isEmailValid) {
+        console.log("Invalid email. Registration failed!");
+        // Handle invalid email address, display error message, etc.
+        return;
+      }
+
+      const userData = {
         first_name: first_name,
         last_name: last_name,
         email: email,
@@ -99,12 +125,13 @@ const Signinform = () => {
         state: state,
         zipcode: zipcode,
         country: country,
-        bio: bio
-      });
+        bio: bio,
+      };
+
+      const response = await Axios.post("http://localhost:8080/addUser", userData);
 
       if (response.status === 200) {
         console.log("User registration successful!");
-        // assuming you have a navigate function from react-router-dom
         nav("/login");
       } else {
         console.log("User registration failed!");
@@ -116,21 +143,6 @@ const Signinform = () => {
     }
   };
 
-  const userData = {
-    first_name: first_name,
-    last_name: last_name,
-    email: email,
-    password: password,
-    unique_id: unique_id,
-    occupation: occupation,
-    age: age,
-    phoneno: phoneno,
-    streetadrs: streetadrs,
-    city: city,
-    state: state,
-    zipcode: zipcode,
-    country: country,
-  };
 
   return (
     <Fragment>
