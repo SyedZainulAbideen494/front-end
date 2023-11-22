@@ -30,8 +30,8 @@ const Section7BuildSec4 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
 
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
@@ -95,7 +95,7 @@ const Section7BuildSec4 = () => {
 
 
     const heroStyle1 = {
-        backgroundImage: `url(${items.length > 0 ? img[0].images2 : ''})`,
+        backgroundImage: `url(${img.length > 0 ? img[0].images2 : ''})`,
       };
 
     return<Fragment>

@@ -58,9 +58,6 @@ const Mainpage = () => {
             )}
           </div>
           <div className="add-shop-btn-main-page-dropment">
-          <Link to="/Addshoppage1">
-              <button>add shop +</button>
-            </Link>
             </div>
         </header>
       </div>

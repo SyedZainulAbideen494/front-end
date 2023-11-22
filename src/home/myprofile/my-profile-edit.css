@@ -1,0 +1,32 @@
+.profile-edit-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .profile-edit-form label {
+    margin-bottom: 8px;
+  }
+  
+  .profile-edit-form input[type="text"],
+  .profile-edit-form textarea {
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .profile-edit-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .profile-edit-form button:hover {
+    background-color: #0056b3;
+  }

@@ -177,9 +177,9 @@ const CustomShopPreview = () => {
           />
           <h4 style={{ color: backgroundColor1 }}>{backgroundColor1}</h4>
         </div>
-        <button type="submit">Set Color</button>
-        <button type="button" onClick={shopFinishHandler}>
-          Next
+        <button type="submit" className="st-bg-clr-previrew-custom-shop">Set Color</button>
+        <button type="button" onClick={shopFinishHandler} className="publish-web-btn">
+          Publish
         </button>
       </form>
     );

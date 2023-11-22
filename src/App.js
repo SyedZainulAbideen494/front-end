@@ -97,6 +97,8 @@ import FinishCustomShopBuild from "./home/custom-shop/finish-page-custom-shop-";
 import Dashboard from "./home/adminview/adminview";
 import AdminProducts from "./home/adminview/admin-orders";
 import AdminProduct from "./home/adminview/admin-products";
+import MyProfile from "./home/myprofile/myprofile";
+import EditMyProfile from "./home/myprofile/edit-my-profile";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -106,7 +108,7 @@ const router = createBrowserRouter([
   { path: "/aboutus", element: <Storeabout /> },
   { path: "/shop-products", element: <Myshopproducts /> },
   { path: "/orders/:id/:shop_id/:title", element: <Orderform /> },
-  { path: "/profile", element: <Profile /> },
+  { path: "/profile", element: <MyProfile /> },
   { path: "/Plansss", element: <Plans /> },
   { path: "/Addshoppage1", element: <Addshopniche /> },
   { path: "/Dropshipping", element: <Dropshipping /> },
@@ -190,6 +192,7 @@ const router = createBrowserRouter([
   {path: '/admin/:shop_id', element: <Dashboard/>},
   {path: '/admin/Orders/:shop_id', element: <AdminProducts/>},
   {path: '/admin/products/:shop_id', element: <AdminProduct/>},
+  {path: '/edit/myprofile', element: <EditMyProfile/>},
 ]);
 function App() {
   return (

@@ -31,35 +31,10 @@ const Section4BuildSec5 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
 
-  const fetchProductsHandler = useCallback(async () => {
-    setLoading(true);
-    const response = await fetch(`http://localhost:8080/section5/display`, {
-      headers: {
-        Authorization: params.shop_id, // Set the token in the Authorization header
-      },
-    });
-    const data = await response.json();
-    const transformedItems = data.shops.map((itemsdata) => {
-      return {
-        shop_blockhead1: itemsdata.shop_blockhead1,
-        shop_block1: itemsdata.shop_block1,
-        shop_blockhead2: itemsdata.shop_blockhead2,
-        shop_block2: itemsdata.shop_block2,
-        shop_blockhead3: itemsdata.shop_blockhead3,
-        shop_block3: itemsdata.shop_block3,
-      };
-    });
-    setItems(transformedItems);
-    setLoading(false);
-  }, [params.shop_id]);
 
-  useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
-        
     const fetchColorHandler = useCallback(async () => {
       setLoading(true);
       const response = await fetch(`http://localhost:8080/custom/shop/coloring/display/section5`, {
@@ -219,7 +194,7 @@ const Section4BuildSec5 = () => {
           const token = localStorage.getItem("token");
           
           try {
-            const response = await fetch("http://localhost:8080/users/", {
+            const response = await fetch("http://localhost:8080/users", {
               headers: {
                 Authorization: token,
               },
