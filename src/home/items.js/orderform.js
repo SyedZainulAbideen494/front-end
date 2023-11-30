@@ -1,6 +1,6 @@
 import { Fragment, useState, useCallback, useEffect } from "react";
 import "./items.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Placeorder from "./placeorder";
 import Axios from "axios"; // Change this line to import Axios properly
 
@@ -22,31 +22,39 @@ const Orderform = (props) => {
   const [loading, setLoading] = useState(false);
   const [name2, setName2] = useState([]);
 
-  const fetchProdshandler = useCallback(async () => {
-    try {
-      const response = await fetch(`http://localhost:8080/prods/details/orders/for/details`, {
-        headers: {
-          Authorization: params.id,
-        },
-      });
-      const data = await response.json();
-      const transformedItems = data.products.map((itemsdata) => ({
-        images: `http://localhost:8080/images/${itemsdata.images}`,
-        images2: `http://localhost:8080/images/${itemsdata.images2}`,
-        images3: `http://localhost:8080/images/${itemsdata.images3}`,
-        images4: `http://localhost:8080/images/${itemsdata.images4}`,
-        images5: `http://localhost:8080/images/${itemsdata.images5}`,
-        images6: `http://localhost:8080/images/${itemsdata.images6}`,
-        title: itemsdata.title,
-        price: itemsdata.price,
-        description: itemsdata.description,
-        id: itemsdata.id,
-        shop_id: itemsdata.shop_id,
-        payment: itemsdata.payment
-      }));
-      setItems(transformedItems);
-    } catch (error) {
-      console.error(error);
+  useEffect(() => {
+    const fetchProdshandler = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/prods/details/orders/for/details`, {
+          headers: {
+            Authorization: params.id,
+          },
+        });
+        const data = await response.json();
+        const transformedItems = data.products.map((itemsdata) => ({
+          images: `http://localhost:8080/images/${itemsdata.images}`,
+          images2: `http://localhost:8080/images/${itemsdata.images2}`,
+          images3: `http://localhost:8080/images/${itemsdata.images3}`,
+          images4: `http://localhost:8080/images/${itemsdata.images4}`,
+          images5: `http://localhost:8080/images/${itemsdata.images5}`,
+          images6: `http://localhost:8080/images/${itemsdata.images6}`,
+          title: itemsdata.title,
+          description: itemsdata.description,
+          id: itemsdata.id,
+          shop_id: itemsdata.shop_id,
+          payment: itemsdata.payment
+        }));
+        setItems(transformedItems);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    fetchProdshandler(); // Initial fetch
+  
+    // Fetch when params.id changes
+    if (params.id) {
+      fetchProdshandler();
     }
   }, [params.id]);
 
@@ -121,35 +129,37 @@ const Orderform = (props) => {
 
   console.log(items)
 
-  const orderhandler = () => {
-    console.log("Order Handler Called");
-    console.log("user:", user);
-    console.log("phoneno:", phoneno);
-    console.log("name2:", name2);
-    console.log("items:", items);
-    console.log("shop_id:", shop_id);
-    const currentDate = new Date(); // Get current date and time
-
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding leading zero if needed
-    const day = String(currentDate.getDate()).padStart(2, '0'); // Adding leading zero if needed
-    
-    const hours = String(currentDate.getHours()).padStart(2, '0'); // Adding leading zero if needed
-    const minutes = String(currentDate.getMinutes()).padStart(2, '0'); // Adding leading zero if needed
-    const seconds = String(currentDate.getSeconds()).padStart(2, '0'); // Adding leading zero if needed
-    
-    const formattedDate = `${year}-${month}-${day}`;
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
-    
-    // Combine date and time in ISO format
-    const dateTimeISO = `${formattedDate}T${formattedTime}`;
-    
-    Axios.post(
-      "http://localhost:8080/place/order",
-      {
-        name: user,
-        Phone: phoneno,
-        Email: name2[0]?.email,
+  const orderhandler = async () => {
+    try {
+      console.log("Order Handler Called");
+      console.log("user:", user);
+      console.log("phoneno:", phoneno);
+      console.log("name2:", name2);
+      console.log("items:", items);
+      console.log("shop_id:", shop_id);
+  
+      const currentDate = new Date(); // Get current date and time
+  
+      const year = currentDate.getFullYear();
+      const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding leading zero if needed
+      const day = String(currentDate.getDate()).padStart(2, '0'); // Adding leading zero if needed
+      
+      const hours = String(currentDate.getHours()).padStart(2, '0'); // Adding leading zero if needed
+      const minutes = String(currentDate.getMinutes()).padStart(2, '0'); // Adding leading zero if needed
+      const seconds = String(currentDate.getSeconds()).padStart(2, '0'); // Adding leading zero if needed
+      
+      const formattedDate = `${year}-${month}-${day}`;
+      const formattedTime = `${hours}:${minutes}:${seconds}`;
+      
+      // Combine date and time in ISO format
+      const dateTimeISO = `${formattedDate} ${formattedTime}`;
+  
+      const response = await Axios.post(
+        "http://localhost:8080/place/order",
+        {
+          name: user,
+          Phone: phoneno,
+          Email: name2[0]?.email,
         streetadrs: streetadrs,
         city: city,
         state: state,
@@ -161,55 +171,72 @@ const Orderform = (props) => {
         occupation: name2[0]?.occupation,
         age: name2[0]?.age,
         sender_id: name2[0]?.user_id,
-        orderDateTime: dateTimeISO, // Adding current date and time to the order data
+        orderDateTime: dateTimeISO,
       },
       {
         headers: {
           Authorization: token,
         },
       }
-    ).then(() => {
-      // Open the payment link in a new tab or window
-      window.open(items[0]?.payment, "_blank");
-    });
+    );
+  } catch (error) {
+    console.error("Error placing order or opening payment link:", error);
+    // Handle error scenarios
   }
+};
+
+  const openPaymentLink = () => {
+    const paymentLink = items?.[0]?.payment;
+    if (paymentLink) {
+      window.open(paymentLink, "_blank");
+    } else {
+      console.error("Payment link not available");
+      // Handle scenario where payment link is not available
+    }
+  };
   return (
     <div className="formorder">
       <form onSubmit={orderhandler}>
         <h2>{items[0]?.title}</h2>
         <label>Name</label>
-        <input type="text" value={user} onChange={nameHandler} />
+        <input type="text" value={user} onChange={nameHandler} required/>
         <label>Phone number</label>
-        <input type="number" value={phoneno} onChange={phoneNohandler} />
+        <input type="number" value={phoneno} onChange={phoneNohandler} required/>
         <label>Address</label>
         <input
           type="text"
           placeholder="Street Address"
           value={streetadrs}
           onChange={streetaddress}
+          required
         />
-        <input type="text" placeholder="City" value={city} onChange={cityadrs} />
+        <input type="text" placeholder="City" value={city} onChange={cityadrs} required/>
         <input
           type="text"
           placeholder="State/Province"
           value={state}
           onChange={stateadrs}
+          required
         />
         <input
           type="number"
           placeholder="Zip Code/Postal"
           value={zipcode}
           onChange={zipcodeadrs}
+          required
         />
         <input
           type="text"
           placeholder="Country"
           value={country}
           onChange={counrtyadrs}
+          required
         />
         <div className="btn">
-          <button onClick={props.onhidehanlder}>Close</button>
-          <button type="submit">Place Order</button>
+          <button type="submit" onClick={() => {
+            
+    openPaymentLink();
+}}>Next</button>
         </div>
       </form>
     </div>

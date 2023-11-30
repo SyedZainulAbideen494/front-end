@@ -1,0 +1,55 @@
+.notifications-container {
+  position: absolute;
+  top: 60px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  width: 300px; /* Adjust as needed */
+  max-height: 400px; /* Set your maximum height */
+  overflow-y: auto; /* Enable vertical scrollbar when content exceeds max height */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 350px; /* Adjust as needed */
+  overflow-y: auto; /* Enable scrollbar for the list */
+}
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-message {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.notification-time {
+  color: #999;
+  font-size: 12px;
+}

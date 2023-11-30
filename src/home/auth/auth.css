@@ -1,3 +1,178 @@
+.signup_form {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.sign-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input container */
+.signup_info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Individual input styles */
+.inp {
+  flex: 0 0 calc(50% - 10px);
+  margin-bottom: 15px;
+}
+
+.inp label {
+  display: block;
+  font-weight: bold;
+}
+
+.inp input[type='text'],
+.inp input[type='email'],
+.inp input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.inp input[type='text']:focus,
+.inp input[type='email']:focus,
+.inp input[type='password']:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px #66afe9;
+}
+
+/* Submit button */
+.submit-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Already have an account section */
+.already {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.already p {
+  font-size: 14px;
+}
+
+.already a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.already a:hover {
+  text-decoration: underline;
+}
+.loginform {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for .emailinp */
+.emailinp {
+  margin-bottom: 20px;
+}
+
+.emailinp label {
+  font-weight: bold;
+}
+
+.emailinp input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Styles for .password */
+.password {
+  margin-bottom: 20px;
+}
+
+.password label {
+  font-weight: bold;
+}
+
+.password input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Styles for .error-message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Styles for .btnloginform */
+.btnloginform {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for .loginbtn */
+.loginbtn button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginbtn button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for .logintt */
+.logintt p {
+  margin-bottom: 10px;
+}
+
+/* Styles for .loginct */
+.loginct p {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.loginct p:hover {
+  text-decoration: underline;
+}
 .loginbtn button {
   background-color: #ffb703;
   padding: 8px 40px;

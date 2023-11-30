@@ -7,6 +7,8 @@ import Users from "../user/userapp";
 import ChatMessageapp from "../chat/chat";
 import Stories from "../stories/stories";
 import Storiesapp from "../stories/storiesdisplay";
+import NotificationComponent from "../notifications/notifications";
+import userPic from '../header/images/icons8-male-user-30 (1).png'
 
 const Mainpage = () => {
     const [auth, setauth] = useState(false);
@@ -29,7 +31,10 @@ const Mainpage = () => {
   if (auth === false) {
     nav("/login");
   }
-  
+  const [showNotifications, setShowNotifications] = useState(false);
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+  };
 
     return<Fragment>
     
@@ -41,14 +46,21 @@ const Mainpage = () => {
           </div>
           <div className="dropmentmainbtns">
             <Link to="/profile">
-              <button>My profile</button>
+              <button>Profile</button>
             </Link>
             <Link to="/orders">
-              <button>My orders</button>
+              <button>My Orders</button>
             </Link>
             <Link to="/search">
               <button>Search</button>
             </Link>
+            <button onClick={toggleNotifications}>
+  Notifications
+</button>
+<Link to="/Addshoppage1" style={{textDecoration: 'none'}}>
+<p className="add-shop-btn-home-header">Add Shop +</p>
+</Link>
+<button className="mboile-btn-display-home-headre">Messages</button>
             {auth ? (
               <button onClick={handleLogout}>Logout</button>
             ) : (
@@ -60,7 +72,10 @@ const Mainpage = () => {
           <div className="add-shop-btn-main-page-dropment">
             </div>
         </header>
-      </div>
+      </div>         
+      {showNotifications && (
+        <NotificationComponent closeNotifications={toggleNotifications} />
+      )}
       <Link to="/add/BlinkFeed">
         <span className="blinkfeed-btn-main-pg">
             <button>Add a BlinkFeed</button>

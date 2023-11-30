@@ -243,7 +243,7 @@ const Signinform = () => {
             />
           </div>
           <div className="inp">
-            <label htmlFor="bio">Bio</label>
+            <label htmlFor="bio">Bio</label><br/>
             <input
               type="text"
               id="bio"
@@ -320,7 +320,7 @@ const Signinform = () => {
             />
           </div>
           <div className="inp">
-            <label htmlFor="country">Country</label>
+            <label htmlFor="country">Country</label><br/>
             <input
               type="text"
               id="country"

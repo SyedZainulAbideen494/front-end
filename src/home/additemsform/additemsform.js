@@ -70,7 +70,7 @@ const AddProductsForm = () => {
           })
             .then((response) => {
               console.log(response.data);
-              // Handle success
+              window.location.href = `/admin/products/${params.shop_id}`
             })
             .catch((error) => {
               console.error("Error adding product:", error);
@@ -107,7 +107,7 @@ const AddProductsForm = () => {
           
                 <label for="amount">Product Quantity</label>
                 <input
-                  type="text"
+                  type="number"
                   id="amount"
                   name="amount"
                   placeholder="Product Quantity"
@@ -115,12 +115,17 @@ const AddProductsForm = () => {
                   onChange={(e) => setAmount(e.target.value)}
                 /><br />
           
-                <label for="payment">Stripe Payment URL</label>
+                <label for="payment">Payment Gateway URL</label>
+                <div class="note-payment-gateway-explain" style={{backgroundColor: '#f9f9f9', borderLeft: '6px solid #007bff', padding: '10px', marginBottom: '20px'}}>
+    <p style={{fontStyle: 'italic'}}>
+    <strong>Note:</strong> Add your payment gateway URL to stay in control! Secure direct transactions with your customers. At Dropment, your autonomy and security in managing payments matter most.(you can use popular payment gatways like Stripe, paypal, etc)<a href='https://l.instagram.com/?u=https%3A%2F%2Fyoutu.be%2FvdKINdsmC_Y&e=AT0RLUqaSPeRKJt871fFXD3rfWVTXfADccRt3Pb2sRbBdUXIGINnt9Pw40pa1VlbxX2NbBwYXI_BGUkSGYIPvqcoaaPB2bQryh_1h5VsTpBWdQbKFZqLuSDKvht4n3mcezKKDTg'>Video tutorial</a>
+    </p>
+</div>
                 <input
                   type="text"
                   id="payment"
                   name="payment"
-                  placeholder="Enter your stripe payment URL"
+                  placeholder="Payment Gateway URL"
                   value={payment}
                   onChange={(e) => setpayment(e.target.value)}
                 /><br />
@@ -141,7 +146,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="usd">USD</label>
     <input
-      type="text"
+      type="number"
       id="usd"
       name="usd"
       placeholder="USD"
@@ -153,7 +158,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="eur">EUR</label>
     <input
-      type="text"
+      type="number"
       id="eur"
       name="eur"
       placeholder="EUR"
@@ -165,7 +170,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="gbp">GBP</label>
     <input
-      type="text"
+      type="number"
       id="gbp"
       name="gbp"
       placeholder="GBP"
@@ -177,7 +182,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="jpy">JPY</label>
     <input
-      type="text"
+      type="number"
       id="jpy"
       name="jpy"
       placeholder="JPY"
@@ -189,7 +194,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="cad">CAD</label>
     <input
-      type="text"
+      type="number"
       id="cad"
       name="cad"
       placeholder="CAD"
@@ -201,7 +206,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="aud">AUD</label>
     <input
-      type="text"
+      type="number"
       id="aud"
       name="aud"
       placeholder="AUD"
@@ -213,7 +218,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="chf">CHF</label>
     <input
-      type="text"
+      type="number"
       id="chf"
       name="chf"
       placeholder="CHF"
@@ -225,7 +230,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="cny">CNY</label>
     <input
-      type="text"
+      type="number"
       id="cny"
       name="cny"
       placeholder="CNY"
@@ -237,7 +242,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="inr">INR</label>
     <input
-      type="text"
+      type="number"
       id="inr"
       name="inr"
       placeholder="INR"
@@ -249,7 +254,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="brl">BRL</label>
     <input
-      type="text"
+      type="number"
       id="brl"
       name="brl"
       placeholder="BRL"
@@ -261,7 +266,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="rub">RUB</label>
     <input
-      type="text"
+      type="number"
       id="rub"
       name="rub"
       placeholder="RUB"
@@ -273,7 +278,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="krw">Price in KRW</label>
     <input
-      type="text"
+      type="number"
       id="krw"
       name="krw"
       placeholder="Price in KRW"
@@ -285,7 +290,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="sgd">Price in SGD</label>
     <input
-      type="text"
+      type="number"
       id="sgd"
       name="sgd"
       placeholder="Price in SGD"
@@ -297,7 +302,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="nzd">Price in NZD</label>
     <input
-      type="text"
+      type="number"
       id="nzd"
       name="nzd"
       placeholder="Price in NZD"
@@ -309,7 +314,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="mxn">Price in MXN</label>
     <input
-      type="text"
+      type="number"
       id="mxn"
       name="mxn"
       placeholder="Price in MXN"
@@ -321,7 +326,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="hkd">Price in HKD</label>
     <input
-      type="text"
+      type="number"
       id="hkd"
       name="hkd"
       placeholder="Price in HKD"
@@ -333,7 +338,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="try">Price in TRY</label>
     <input
-      type="text"
+      type="number"
       id="try"
       name="try"
       placeholder="Price in TRY"
@@ -345,7 +350,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="sek">Price in SEK</label>
     <input
-      type="text"
+      type="number"
       id="sek"
       name="sek"
       placeholder="Price in SEK"
@@ -357,7 +362,7 @@ const AddProductsForm = () => {
   <div class="currency-section">
     <label for="nok">Price in NOK</label>
     <input
-      type="text"
+      type="number"
       id="nok"
       name="nok"
       placeholder="Price in NOK"

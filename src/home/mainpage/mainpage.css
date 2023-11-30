@@ -4,6 +4,12 @@
     flex-direction: column;
     align-items: center;
   }
+  .left-content   {
+    display: none;
+  }
+  .right-content {
+    display: none;
+  }
   
   .dropmentmainheader {
     width: 100%;
@@ -55,9 +61,7 @@
     max-width: 1200px; /* Adjust as needed */
   }
   
-  .left-content,
-  .middle-content,
-  .right-content {
+  .middle-content {
     flex: 1;
     width: 100%; /* Occupy full width on small screens */
     max-width: none; /* Reset max-width for full width */
@@ -104,6 +108,12 @@
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
+    }
+    .left-content   {
+      display: none;
+    }
+    .right-content {
+      display: none;
     }
     .blinkfeed-btn-main-pg button:hover {
       background-color: transparent;
@@ -331,6 +341,7 @@
       z-index: 1;
       color: black;
       padding: 10px 0; /* Adjust padding as needed */
+      border-radius: 15px;
     }
     
     .dropmentlogomainpage img {
@@ -411,4 +422,13 @@
       border-radius: 9px;
       padding: 10px 20px;
     }
+    .mboile-btn-display-home-headre {
+      display: none;
+    }
   }
+.add-shop-btn-home-header {
+  background-color: #aacc00;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 9px;
+}

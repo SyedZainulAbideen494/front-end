@@ -8,6 +8,7 @@ import React, {
 import { Link } from "react-router-dom";
 import "./StoryUpload.css";
 import Stories from "./stories";
+import users from '../header/images/profiledef.png'
 
 function Storiesapp() {
   const [items, setitems] = useState([]);
@@ -24,7 +25,7 @@ function Storiesapp() {
     const data = await response.json();
     const transformedItems = data.order.map((itemsdata) => {
       return {
-        porfilepic: itemsdata.porfilepic,
+        profilePic: itemsdata.porfilepic ? `http://localhost:8080/images/${itemsdata.porfilepic}` : null,
         user_id: itemsdata.user_id,
         first_name: itemsdata.first_name,
         last_name: itemsdata.last_name,
@@ -58,7 +59,7 @@ const StoriesUserList = (props) => {
               user_id={item.user_id}
               first_name={item.first_name}
               last_name={item.last_name}
-              porfilepic={item.porfilepic}
+              profilePic={item.profilePic}
             />
           ))}
         </ul>
@@ -79,7 +80,11 @@ const Template1inprofile = (props) => {
     <Fragment>
       <div className="maindivforstoriesuserdisplay">
         <Link to={`/story/${props.user_id}`}>
-          <img src={`http://localhost:8080/images/${props.porfilepic}`} className="storiesuserprofilepicuser" />
+        <img
+  src={props[0]?.profilepic || users} // Use default image if profile picture is not available
+  alt="User Profile"
+  className="storiesuserprofilepicuser" 
+/>
         </Link>
         <Link to={`/user/${props.user_id}`} style={{ textDecoration: "none", color: "black" }}>
           <p>{props.first_name} {props.last_name}</p>
