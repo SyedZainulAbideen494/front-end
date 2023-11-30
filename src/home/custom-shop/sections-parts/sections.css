@@ -3,6 +3,7 @@
     .section1buildlefttext {
         width: 300px;
         margin-left: 100px;
+        color: white;
         text-align: center;
     }
     
@@ -793,6 +794,7 @@
         width: 200px;
         margin-left: 10px;
         text-align: center;
+        color: white;
     }
     .imgrightsection1build img {
         width: 200px;
@@ -812,6 +814,7 @@
         width: 200px;
         margin-left: 30px;
         text-align: center;
+        color: white;
     }
     .imgleftsection1build img {
         width: 200px;
@@ -1690,6 +1693,7 @@
         width: 300px;
         margin-left: 10px;
         text-align: center;
+        color: white;
     }
     .imgrightsection1build img {
         width: 350px;
@@ -1708,6 +1712,7 @@
         width: 300px;
         margin-left: 10px;
         text-align: center;
+        color: white;
     }
     .imgleftsection1build img {
         width: 350px;
