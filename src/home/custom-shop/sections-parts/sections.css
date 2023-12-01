@@ -62,6 +62,8 @@
             background-color: #fefae0;
             margin-right: 100px;
             margin-left: 100px;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
         }
         
         .section1-section-1build-text-preview h2,
@@ -88,6 +90,8 @@
             text-align: center;
             background-color: #fefae0;
             margin-right: 100px;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
         }
         
         .section2-section-1build-text-preview h2,
@@ -134,6 +138,8 @@
                 display: flex;
                 flex-direction: column;
                 margin-top: 30px;
+                border-bottom-left-radius: 50%;
+                border-bottom-right-radius: 50%;
             }
 
             /*section 3*/
@@ -379,6 +385,7 @@
                 font-size: 30px;
                 font-weight: 400;
                 margin-bottom: 50px;
+                color: white;
             }
             .section-3-build-products-img img {
                 width: 90px;
@@ -394,9 +401,11 @@
             .section-3-build-prods-details h3 {
                 font-size: 17px;
                 font-weight: 100;
+                color: white;
             }
             .section-3-build-prods-details p {
                 font-size: 25px;
+                color: white;
             }
             .section-4-build-main-div-prods {
                 display: inline-flex;
@@ -411,34 +420,39 @@
             .section-5-build-txt-top h1 {
                 font-size: 40px;
                 font-weight: 300;
+                color: white;
             }
             .section-5-build-txt-top p {
                 font-size: 20px;
                 font-weight: 100;
+                color: white;
             }
             .section-5-build-main-div-prods {
                 list-style: none;
                 display: inline-flex;
                 text-align: center;
                 margin-left: 50px;
+                color: white;
             }
             .section-5-build-main-div-prods li {
                 margin-left: 80px;
             }
             .section-5-build-products-img img {
-                width: 90px;
+                width: 120px;
             }
             .section-5-build-prods-details p {
                 font-size: 25px;
+                color: white;
                 font-weight: 400;
             }
             .section-5-build-prods-details button {
-                width: 200px;
-                border: 2px solid black;
+                width: 120px;
+                border: 2px solid rgb(255, 255, 255);
                 background-color: transparent;
                 padding-top: 10px;
                 padding-bottom: 10px;
                 font-family: 30px;
+                color: white;
             }
             .section-5-build-prods-details button:hover {
                 background-color: black;
@@ -592,8 +606,7 @@
     padding: 20px;
 }
 
-.section-9-build-section1,
-.section-9-build-section2 {
+.section-9-build-section1 {
     width: 100%;
     color: black;
     border: 2px solid black;
@@ -601,6 +614,7 @@
     padding: 20px;
     text-align: center;
     margin: 20px 0;
+    background-color: white;
 }
 
 .section-9-build-section1 h1,
@@ -1280,6 +1294,7 @@
                     font-size: 30px;
                     font-weight: 400;
                     margin-bottom: 50px;
+                    color: white;
                 }
                 .section-3-build-products-img img {
                     width: 150px;
@@ -1288,6 +1303,7 @@
                     width: 200px;
                     list-style: none;
                     margin-left: 20px;
+                    color: white;
                 }
                 .section-3-build-prods-details {
                     text-align: center;
@@ -1322,6 +1338,7 @@
                     display: inline-flex;
                     text-align: center;
                     margin-left: 50px;
+                    color: white;
                 }
                 .section-5-build-main-div-prods li {
                     margin-left: 80px;
@@ -1335,11 +1352,12 @@
                 }
                 .section-5-build-prods-details button {
                     width: 150px;
-                    border: 2px solid black;
+                    border: 2px solid rgb(255, 255, 255);
                     background-color: transparent;
                     padding-top: 10px;
                     padding-bottom: 10px;
                     font-family: 30px;
+                    color: white;
                 }
                 .section-5-build-prods-details button:hover {
                     background-color: black;
@@ -1503,6 +1521,9 @@
         text-align: center;
         margin: 20px 0;
     }
+    .section-9-build-section1{
+        background-color: white;
+    }
     
     .section-9-build-section1 h1,
     .section-9-build-section2 h1 {
@@ -1521,7 +1542,7 @@
     }
     
     .section-9-build-section2 {
-        background-color: black;
+        background-color: rgb(0, 0, 0);
         color: white;
     }
     
@@ -2182,6 +2203,7 @@
     .section-4-build-main-div-prods {
         width: 200px;
         list-style: none;
+        color: white;
         margin-left: 50px;
     }
     .section-3-build-prods-details {
@@ -2217,6 +2239,7 @@
         display: inline-flex;
         text-align: center;
         margin-left: 50px;
+        color: white;
     }
     .section-5-build-main-div-prods li {
         margin-left: 80px;
@@ -2230,11 +2253,12 @@
     }
     .section-5-build-prods-details button {
         width: 200px;
-        border: 2px solid black;
+        border: 2px solid rgb(255, 255, 255);
         background-color: transparent;
         padding-top: 10px;
         padding-bottom: 10px;
         font-family: 30px;
+        color: white;
     }
     .section-5-build-prods-details button:hover {
         background-color: black;
@@ -2433,6 +2457,9 @@
   .section-9-build-section1 h1, .section-9-build-section2 h1 {
     font-size: 50px;
     font-weight: 300;
+  }
+  .section-9-build-section1 {
+    background-color: white;
   }
   
   .section-9-build-section1 button, .section-9-build-section2 button {
