@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback, Fragment } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Axios from 'axios';
 import './order.css'
+import styled from 'styled-components';
 
 function Order() {
   const [salesData, setSalesData] = useState([]);
@@ -168,10 +169,54 @@ function Order() {
     }
   };
   
+ 
 
+  const HeaderContainer = styled.header`
+    background-color: #37474f;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  `;
+  
+  const Title = styled.h1`
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+  `;
+  
+  const Subtitle = styled.p`
+    font-size: 18px;
+    margin: 10px 0;
+  `;
+  
+  const Button = styled.button`
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9800;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #f57c00;
+    }
+  `;
   return (
     <div className="order-container-customer-side-all-order-main-div">
-    <h1>Your Orders</h1>
+      <HeaderContainer>
+      <Title>Your Orders</Title>
+      <Subtitle>View and manage your orders here</Subtitle>
+      <div>
+        <Link to='/'>
+        <Button>Home</Button>
+        </Link>
+      </div>
+    </HeaderContainer>
     {loading ? (
       <p>Loading...</p>
     ) : (
