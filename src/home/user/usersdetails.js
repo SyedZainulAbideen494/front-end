@@ -141,6 +141,7 @@ function UserProfile() {
         last_name: itemsdata.last_name,
         bio: itemsdata.bio,
         unique_id: itemsdata.unique_id,
+        profilepic: `http://localhost:8080/images/${itemsdata.porfilepic}`,
       };
     });
     setUserInfo(transformeduserinfo);
@@ -207,7 +208,7 @@ function UserProfile() {
 <div className='profilesectionusers'>
   <section>
   <div className='imgprof'>
-    <img src={pic}/>
+    <img src={userInfo[0]?.profilepic}/>
   </div>
   </section>
   <section>

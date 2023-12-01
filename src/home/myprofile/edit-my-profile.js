@@ -1,6 +1,7 @@
 import React,{useCallback, useState} from "react";
 import axios from "axios";
 import './my-profile-edit.css'
+import Addimage1 from "./profilepicupdate";
 
 const EditMyProfile = () => {
     const [formData, setFormData] = useState({
@@ -46,6 +47,7 @@ const EditMyProfile = () => {
       return (
         <div className="profile-edit-form">
           {successMessage && <p>{successMessage}</p>}
+          <Addimage1/>
         <form onSubmit={handleSubmit} >
           <label>
             Unique ID:

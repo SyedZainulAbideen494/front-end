@@ -1,14 +1,10 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  Fragment,
-  axios,
-} from "react";
+import React, { useState, useEffect, useCallback, Fragment } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios"; // Fixed import statement
+
 import "./StoryUpload.css";
 import Stories from "./stories";
-import users from '../header/images/profiledef.png'
+import users from '../header/images/profiledef.png';
 
 function Storiesapp() {
   const [items, setitems] = useState([]);
@@ -17,33 +13,37 @@ function Storiesapp() {
 
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/api/stories/users/display", {
-      headers: {
-        Authorization: token,
-      },
-    });
-    const data = await response.json();
-    const transformedItems = data.order.map((itemsdata) => {
-      return {
-        profilePic: itemsdata.porfilepic ? `http://localhost:8080/images/${itemsdata.porfilepic}` : null,
-        user_id: itemsdata.user_id,
-        first_name: itemsdata.first_name,
-        last_name: itemsdata.last_name,
-      };
-    });
-    setitems(transformedItems);
-    setloading(false);
-  }, []);
+    try {
+      const response = await axios.get("http://localhost:8080/api/stories/users/display", {
+        headers: {
+          Authorization: token,
+        },
+      });
+      const data = response.data; // Retrieve data directly from axios response
+      const transformedItems = data.order.map((itemsdata) => {
+        return {
+          profilePic: `http://localhost:8080/images/${itemsdata.porfilepic}`, // Fixed typo 'porfilepic'
+          user_id: itemsdata.user_id,
+          first_name: itemsdata.first_name,
+          last_name: itemsdata.last_name,
+        };
+      });
+      setitems(transformedItems);
+    } catch (error) {
+      console.error("Error fetching stories:", error);
+    } finally {
+      setloading(false);
+    }
+  }, [token]);
 
   useEffect(() => {
     fetchprodshandler();
-  }, []);
+  }, [fetchprodshandler]);
 
   return (
     <Fragment>
       <section>
-        {!loading && <StoriesUserList users={items} />}
-        {loading && <p>Loading..</p>}
+        {!loading ? <StoriesUserList users={items} /> : <p>Loading..</p>}
       </section>
     </Fragment>
   );
@@ -54,8 +54,9 @@ const StoriesUserList = (props) => {
     <Fragment>
       <div className="storysmodelul-container">
         <ul className="storysmodelul">
-          {props.users.map((item) => (
+          {props.users.map((item, index) => (
             <Template1inprofile
+              key={index}
               user_id={item.user_id}
               first_name={item.first_name}
               last_name={item.last_name}
@@ -70,21 +71,24 @@ const StoriesUserList = (props) => {
 
 const Template1inprofile = (props) => {
   const [showStory, setShowStory] = useState(false);
+
   const showStoryHandler = () => {
     setShowStory(true);
   };
-  const hiseStoryHandler = () => {
+
+  const hideStoryHandler = () => {
     setShowStory(false);
   };
+
   return (
     <Fragment>
       <div className="maindivforstoriesuserdisplay">
         <Link to={`/story/${props.user_id}`}>
-        <img
-  src={props[0]?.profilepic || users} // Use default image if profile picture is not available
-  alt="User Profile"
-  className="storiesuserprofilepicuser" 
-/>
+          <img
+            src={props.profilePic} // Use default image if profile picture is not available
+            alt="User Profile"
+            className="storiesuserprofilepicuser" 
+          />
         </Link>
         <Link to={`/user/${props.user_id}`} style={{ textDecoration: "none", color: "black" }}>
           <p>{props.first_name} {props.last_name}</p>
