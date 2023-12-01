@@ -284,7 +284,9 @@
     .product-image {
       width: 100%; /* Adjust image width to fit the container */
     }
-  
+  .header-overview-shop img {
+    width: 50px;
+  }
     .delete-button {
       margin-top: 5px;
       background-color: #ff4d4f;
@@ -297,6 +299,9 @@
     .total-visits {
       text-align: center;
       margin: 20px;
+    }
+    .header-overview-shop img {
+      width: 50px;
     }
     .total-visits {
       margin: 10px;
@@ -426,6 +431,9 @@
       padding: 10px;
       border-radius: 8px;
       width: fit-content;
+    }
+    .header-overview-shop img {
+      width: 50px;
     }
     
     .SalesReportApp {
