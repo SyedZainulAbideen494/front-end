@@ -171,6 +171,13 @@
       text-align: center;
       margin: 20px;
     }
+    .header-overview-shop button {
+      background-color: transparent;
+      font-size: 18px;
+      border: transparent;
+      margin: 10px 30px;
+      cursor: pointer;
+    }
     .total-visits {
       margin: 10px;
       /* Adjust styles for smaller screens */
@@ -299,6 +306,13 @@
     .total-visits {
       text-align: center;
       margin: 20px;
+    }
+    .header-overview-shop button {
+      background-color: transparent;
+      font-size: 18px;
+      border: transparent;
+      margin: 10px 30px;
+      cursor: pointer;
     }
     .header-overview-shop img {
       width: 50px;
@@ -431,6 +445,13 @@
       padding: 10px;
       border-radius: 8px;
       width: fit-content;
+    }
+    .header-overview-shop button {
+      background-color: transparent;
+      font-size: 18px;
+      border: transparent;
+      margin: 10px 30px;
+      cursor: pointer;
     }
     .header-overview-shop img {
       width: 50px;
