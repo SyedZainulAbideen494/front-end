@@ -2,6 +2,7 @@ import React,{useCallback, useState} from "react";
 import axios from "axios";
 import './my-profile-edit.css'
 import Addimage1 from "./profilepicupdate";
+import { Link } from "react-router-dom";
 
 const EditMyProfile = () => {
     const [formData, setFormData] = useState({
@@ -46,6 +47,12 @@ const EditMyProfile = () => {
     
       return (
         <div className="profile-edit-form">
+          <div className="header-edit-my-profile">
+            <h2>Edit Profile</h2>
+          <Link to="/profile">
+          <button>Back</button>
+          </Link>
+          </div>
           {successMessage && <p>{successMessage}</p>}
           <Addimage1/>
         <form onSubmit={handleSubmit} >
