@@ -97,10 +97,6 @@ const EditMyProfile = () => {
             <textarea name="bio" value={formData.bio} onChange={handleInputChange} />
           </label>
           <label>
-            Profile Picture:
-            <input type="text" name="profilepic" value={formData.profilepic} onChange={handleInputChange} />
-          </label>
-          <label>
             Phone Number:
             <input type="text" name="phoneno" value={formData.phoneno} onChange={handleInputChange} />
           </label>
