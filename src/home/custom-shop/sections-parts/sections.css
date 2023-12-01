@@ -431,11 +431,10 @@
                 list-style: none;
                 display: inline-flex;
                 text-align: center;
-                margin-left: 50px;
                 color: white;
             }
             .section-5-build-main-div-prods li {
-                margin-left: 80px;
+                margin-left: 40px;
             }
             .section-5-build-products-img img {
                 width: 120px;

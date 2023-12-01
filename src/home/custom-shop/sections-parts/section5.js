@@ -297,7 +297,7 @@ const Section5Build = () => {
       const DummyProducts = () => {
         return (
             <div className="section-5-build-main-div-prods">
-                <li>
+                <li style={{marginLeft: '0px'}}>
                   <div className="section-5-build-products-img">
                     <img src={img1} alt="Product Image" />
                   </div>
