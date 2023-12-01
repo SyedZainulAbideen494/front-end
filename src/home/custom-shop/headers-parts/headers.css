@@ -245,17 +245,19 @@
   margin-top: 50px;
 }
 .hero-section2-header5-preview h1 {
-  font-size: 80px;
+  font-size: 40px;
   font-weight: 200;
+  color: white;
 }
 .hero-section2-header5-preview p {
   font-size: 20px;
+  color: white;
 }
 .hero-section2-header5-preview button {
   background-color: black;
   color: #fff;
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid white;
   padding: 15px 20px;
   margin-left: 30px;
   margin-right: 30px;
@@ -263,8 +265,8 @@
   margin-top: 10px;
 }
 .hero-section2-header5-preview button:hover {
-  border: 2px solid black;
-  color: black;
+  border: 2px solid white;
+  color: white;
   transition: 0.3s;
   border-radius: 25px;
   background-color: transparent;
@@ -289,15 +291,16 @@
 .hero-section2-header5 h1 {
   font-size: 80px;
   font-weight: 200;
+  color: white;
 }
 .hero-section2-header5 p {
   font-size: 20px;
 }
 .hero-section2-header5 button {
-  background-color: black;
+  background-color: white;
   color: #fff;
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid white;
   padding: 15px 20px;
   margin-left: 30px;
   margin-right: 30px;
@@ -305,8 +308,8 @@
   margin-top: 10px;
 }
 .hero-section2-header5 button:hover {
-  border: 2px solid black;
-  color: black;
+  border: 2px solid white;
+  color: white;
   transition: 0.3s;
   border-radius: 25px;
   background-color: transparent;
@@ -561,25 +564,27 @@
   margin-top: 50px;
 }
 .hero-section2-header5-preview h1 {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: 200;
+  color: white;
 }
 .hero-section2-header5-preview p {
   font-size: 20px;
+  color: white;
 }
 .hero-section2-header5-preview button {
   background-color: black;
   color: #fff;
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   padding: 15px 20px;
   margin-left: 30px;
   margin-right: 30px;
   font-size: medium;
 }
 .hero-section2-header5-preview button:hover {
-  border: 2px solid black;
-  color: black;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   transition: 0.3s;
   border-radius: 25px;
   background-color: transparent;
@@ -599,25 +604,27 @@
   margin-top: 50px;
 }
 .hero-section2-header5 h1 {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: 200;
+  color: white;
 }
 .hero-section2-header5 p {
   font-size: 20px;
+  color: white;
 }
 .hero-section2-header5 button {
   background-color: black;
   color: #fff;
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid white;
   padding: 15px 20px;
   margin-left: 30px;
   margin-right: 30px;
   font-size: medium;
 }
 .hero-section2-header5 button:hover {
-  border: 2px solid black;
-  color: black;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   transition: 0.3s;
   border-radius: 25px;
   background-color: transparent;
@@ -879,23 +886,25 @@
 .hero-section2-header5-preview h1 {
   font-size: 50px;
   font-weight: 200;
+  color: white;
 }
 .hero-section2-header5-preview p {
   font-size: 20px;
+  color: white;
 }
 .hero-section2-header5-preview button {
   background-color: black;
   color: #fff;
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   padding: 10px 15px;
   margin-left: 30px;
   margin-right: 30px;
   font-size: medium;
 }
 .hero-section2-header5-preview button:hover {
-  border: 2px solid black;
-  color: black;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   transition: 0.3s;
   border-radius: 25px;
   background-color: transparent;
@@ -929,15 +938,15 @@
   background-color: black;
   color: #fff;
   border-radius: 15px;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   padding: 12px 15px;
   margin-left: 30px;
   margin-right: 30px;
   font-size: medium;
 }
 .hero-section2-header5 button:hover {
-  border: 2px solid black;
-  color: black;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   transition: 0.3s;
   border-radius: 25px;
   background-color: transparent;
