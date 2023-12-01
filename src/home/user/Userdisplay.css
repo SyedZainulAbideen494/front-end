@@ -1,14 +1,12 @@
 .headerforprofiles {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px 20px;
   background-color: #121212;
   border-bottom: 1px solid #333;
 }
 
-.btnprofiles a {
+.btnprofiles {
   text-decoration: none;
+  display: inline-flex;
 }
 
 .homebtnprofilesusrs {
@@ -24,19 +22,24 @@
 .followunfollowbtns button {
   padding: 8px 16px;
   margin-right: 10px;
-  border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .unfollowbtn {
-  background-color: #ed4956;
+  background-color: transparent;
+  border: 1px solid #ed4956;
   color: #fff;
+  border-radius: 3px;
+  margin-right: 10px;
 }
 
 .followbtn {
   background-color: #3897f0;
   color: #fff;
+  border: 1px solid #3897f0;
+  border-radius: 3px;
+  margin-right: 10px;
 }
 
 /* Profile Section Styles */

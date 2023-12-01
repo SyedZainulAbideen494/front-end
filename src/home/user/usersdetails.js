@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment, useCallback, } from 'react';
 import { Link, useParams, } from 'react-router-dom';
 import Axios from 'axios';
-import './user.css'
+import './Userdisplay.css'
 import pic from '../header/images/profiledef.png'
 import Template1userapp from './template1/template1app';
 import Template2userapp from './template2/template2app';
@@ -190,18 +190,15 @@ function UserProfile() {
     <div className='btnprofiles'>
     <Link to='/'>
     <button className='homebtnprofilesusrs'>Home</button>
-    
     </Link>
-  <div className='followunfollowbtns'>
     {isFollowing === null ? (
       'Loading...'
     ) : isFollowing ? (
       <button onClick={toggleunFollow} className='unfollowbtn'>unlink</button>
     ) : (
       <button onClick={toggleFollow} className='followbtn'>Link</button>
-    )}
-    <button onClick={chatHandler}>Chat</button>
-  </div>
+    )} 
+  <button onClick={chatHandler}>Chat</button>
   </div>
   </header>
 </div>
