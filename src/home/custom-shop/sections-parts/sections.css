@@ -1413,7 +1413,9 @@
         padding: 20px;
         height: auto;
     }
-    
+    .section-7-build-section-preview {
+        background-image: url('../../header/images/Untitled\ design\ \(6\).png');
+    }
     .section-7-build-section,
     .section-7-build-section-preview {
         background-size: cover;
@@ -1446,7 +1448,7 @@
     
     .section-7-build-section button:hover,
     .section-7-build-section-preview button:hover {
-        background-color: rgb(243, 237, 237);
+        background-color: rgb(0, 0, 0);
         color: white;
         transition: 0.3s;
         cursor: pointer;
@@ -2327,7 +2329,9 @@
     font-size: 50px;
     color: #edede9;
   }
-  
+  .section-7-build-section-preview {
+    background-image: url('../../header/images/Untitled\ design\ \(6\).png');
+}
   .section-7-build-section button {
     background-color: transparent;
     color: #ffffff;
