@@ -4,13 +4,14 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: black;
 }
 
 .chat-main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background-color: #f2f2f2;
+  background-color: #000000;
   border-radius: 15px;
   margin: 10px;
   padding: 0;
@@ -58,6 +59,7 @@
   text-align: right; /* Align text to the left within the message */
   margin-left: auto;
   word-wrap: break-word; /* Allow long messages to wrap */
+  color: white;
 }
 
 .current-user {
@@ -77,10 +79,10 @@
 
 .footerforchat {
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: transparent;
   border-radius: 15px;
   margin: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid transparent;
 }
 
 .inputforchat form {
@@ -93,15 +95,16 @@
   flex-grow: 1;
   padding: 15px;
   border: none;
-  border-radius: 25px;
-  margin-right: 10px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 .inputforchat button {
   background-color: #6f42c1; /* Purple color */
   color: #fff; /* White text */
   border: none;
-  border-radius: 5px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
   padding: 15px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
