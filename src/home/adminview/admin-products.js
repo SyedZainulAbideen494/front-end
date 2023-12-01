@@ -90,6 +90,9 @@ const AdminProduct = () => {
           <Link to={`/admin/${params.shop_id}`}>
             <button>Overview</button>
             </Link>
+            <Link to='/'>
+            <button>Products</button>
+            </Link>
           </div>
         </header>
       </div>

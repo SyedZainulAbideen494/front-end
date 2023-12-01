@@ -257,6 +257,9 @@ const Dashboard = () => {
             <Link to={`/admin/products/${params.shop_id}`}>
             <button>Products</button>
             </Link>
+            <Link to='/'>
+            <button>Products</button>
+            </Link>
       </div>
     </header>
   </div>

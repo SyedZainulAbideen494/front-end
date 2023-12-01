@@ -23,19 +23,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #6f42c1; /* Purple color */
+  background-color: #000000; /* Purple color */
   color: #fff; /* White text */
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for a nice effect */
+  box-shadow: 0 2px 4px rgb(255, 255, 255); /* Add shadow for a nice effect */
   z-index: 1; /* Ensure it's above other content */
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+
 }
 
 .header button {
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 8px;
   height: 40px;
   margin-left: 10px;
