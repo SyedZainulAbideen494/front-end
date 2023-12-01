@@ -1,389 +1,112 @@
-@media (min-width: 312px) and (max-width: 480px) {
-  .user-card {
-    max-width: 400px;
-    margin: 16px auto; /* Add some spacing around the box */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    border-radius: 8px;
-  }
-  
-  .user-post {
-    display: flex;
+.headerforprofiles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #121212;
+  border-bottom: 1px solid #333;
+}
+
+.btnprofiles a {
+  text-decoration: none;
+}
+
+.homebtnprofilesusrs {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  background-color: #3897f0;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.followunfollowbtns button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.unfollowbtn {
+  background-color: #ed4956;
+  color: #fff;
+}
+
+.followbtn {
+  background-color: #3897f0;
+  color: #fff;
+}
+
+/* Profile Section Styles */
+.profilesectionusers {
+  display: flex;
+  padding: 20px;
+}
+
+.imgprof img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #555;
+}
+
+.detailsaboutusersection {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.nameofuser h2 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+.lastnameuserdetails {
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.folloiwngandunfloowingbtn button {
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  background-color: #3897f0;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Shops Section Styles */
+.shopssecuserporfileinusers {
+  padding: 20px;
+}
+
+.shopssecuserporfileinusers h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+.biouserdetils {
+  width: 400px;
+}
+
+/* Media Query for Screen Optimization */
+@media screen and (max-width: 768px) {
+  .profilesectionusers {
     flex-direction: column;
-  }
-  
-  .user-post-header {
-    display: flex;
     align-items: center;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-username {
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    margin-left: 12px;
-  }
-  
-  .user-unique-id {
-    font-size: 14px;
-    color: #999;
-    margin-top: 4px;
-  }
-  
-  .user-profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .user-bio {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-actions {
-    margin-bottom: 12px;
-  }
-  
-  .profile-link-button {
-    color: #3897f0; /* Change text color */
-    text-decoration: none;
-    padding: 5px 10px; /* Adjust padding for a smaller button */
-    border: 1px solid #3897f0; /* Add a border */
-    border-radius: 6px;
     text-align: center;
-    font-weight: bold;
-  }
-  
-  .user-post-footer {
-    display: flex;
-    justify-content: space-between;
-    color: #333;
-  }
-  
-  .heart-icon,
-  .comment-icon {
-    margin-right: 4px;
-  }
-  .user-card {
-    width: 100%; /* Make the card full width on small screens */
   }
 
-  .user-post-username {
-    font-size: 14px; /* Reduce font size for username */
+  .imgprof img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
   }
 
-  .user-unique-id {
-    font-size: 12px; /* Reduce font size for unique ID */
+  .detailsaboutusersection {
+    padding: 0;
   }
-
-  .user-profile-pic {
-    width: 60px;
-    height: 60px;
-  }
-
-  .user-bio {
-    font-size: 14px; /* Reduce font size for bio */
-  }
-
-  .profile-link-button {
-    padding: 3px 8px; /* Adjust padding for a smaller button on mobile */
-  }  
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .user-card {
-    max-width: 400px;
-    margin: 16px auto; /* Add some spacing around the box */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    border-radius: 8px;
-  }
-  
-  .user-post {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .user-post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-username {
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    margin-left: 12px;
-  }
-  
-  .user-unique-id {
-    font-size: 14px;
-    color: #999;
-    margin-top: 4px;
-  }
-  
-  .user-profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .user-bio {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-actions {
-    margin-bottom: 12px;
-  }
-  
-  .profile-link-button {
-    color: #3897f0; /* Change text color */
-    text-decoration: none;
-    padding: 5px 10px; /* Adjust padding for a smaller button */
-    border: 1px solid #3897f0; /* Add a border */
-    border-radius: 6px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .user-post-footer {
-    display: flex;
-    justify-content: space-between;
-    color: #333;
-  }
-  
-  .heart-icon,
-  .comment-icon {
-    margin-right: 4px;
-  }
-  .user-card {
-    width: 80%; /* Adjust the width for tablets */
-    margin: 16px auto; /* Add some spacing around the box */
-  }
-
-  .user-profile-pic {
-    width: 60px;
-    height: 60px;
-  }
-
-  .user-post-username {
-    font-size: 14px; /* Adjust font size for tablets */
-  }
-
-  .user-unique-id {
-    font-size: 12px; /* Adjust font size for tablets */
-  }
-
-  .user-bio {
-    font-size: 14px; /* Adjust font size for tablets */
-  }
-
-  .profile-link-button {
-    padding: 3px 8px; /* Adjust padding for a smaller button on tablets */
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px){
-  .user-card {
-    max-width: 400px;
-    margin: 16px auto; /* Add some spacing around the box */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    border-radius: 8px;
-  }
-  
-  .user-post {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .user-post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-username {
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    margin-left: 12px;
-  }
-  
-  .user-unique-id {
-    font-size: 14px;
-    color: #999;
-    margin-top: 4px;
-  }
-  
-  .user-profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .user-bio {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-actions {
-    margin-bottom: 12px;
-  }
-  
-  .profile-link-button {
-    color: #3897f0; /* Change text color */
-    text-decoration: none;
-    padding: 5px 10px; /* Adjust padding for a smaller button */
-    border: 1px solid #3897f0; /* Add a border */
-    border-radius: 6px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .user-post-footer {
-    display: flex;
-    justify-content: space-between;
-    color: #333;
-  }
-  
-  .heart-icon,
-  .comment-icon {
-    margin-right: 4px;
-  }
-  .user-card {
-    width: 80%; /* Adjust the width for tablets */
-    margin: 16px auto; /* Add some spacing around the box */
-  }
-
-  .user-profile-pic {
-    width: 60px;
-    height: 60px;
-  }
-
-  .user-post-username {
-    font-size: 14px; /* Adjust font size for tablets */
-  }
-
-  .user-unique-id {
-    font-size: 12px; /* Adjust font size for tablets */
-  }
-
-  .user-bio {
-    font-size: 14px; /* Adjust font size for tablets */
-  }
-
-  .profile-link-button {
-    padding: 3px 8px; /* Adjust padding for a smaller button on tablets */
-  }
-}
-
-@media (min-width: 1025px) {
-  .user-card {
-    max-width: 400px;
-    margin: 16px auto; /* Add some spacing around the box */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    border-radius: 8px;
-  }
-  
-  .user-post {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .user-post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-username {
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    margin-left: 12px;
-  }
-  
-  .user-unique-id {
-    font-size: 14px;
-    color: #999;
-    margin-top: 4px;
-  }
-  
-  .user-profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .user-bio {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 12px;
-  }
-  
-  .user-post-actions {
-    margin-bottom: 12px;
-  }
-  
-  .profile-link-button {
-    color: #3897f0; /* Change text color */
-    text-decoration: none;
-    padding: 5px 10px; /* Adjust padding for a smaller button */
-    border: 1px solid #3897f0; /* Add a border */
-    border-radius: 6px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .user-post-footer {
-    display: flex;
-    justify-content: space-between;
-    color: #333;
-  }
-  
-  .heart-icon,
-  .comment-icon {
-    margin-right: 4px;
-  }
-}
-
-
-.usermodelmainpage {
-  max-height: 500px; /* Adjust the height as needed */
-  overflow-y: auto; /* Enable vertical scrollbar */ /* Right-to-left direction to move scrollbar to the left */
-}
-
-/* Styling the scrollbar */
-.usermodelmainpage::-webkit-scrollbar {
-  width: 10px; /* Set the width of the scrollbar */
-}
-
-.usermodelmainpage::-webkit-scrollbar-thumb {
-  background-color: #888; /* Color of the scrollbar thumb */
-  border-radius: 5px; /* Rounded corners for the thumb */
-}
-
-.usermodelmainpage::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Color of the thumb on hover */
 }
