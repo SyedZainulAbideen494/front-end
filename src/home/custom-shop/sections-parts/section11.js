@@ -285,13 +285,11 @@ const Section11Build = () => {
       
       const ProductList = (props) => {
         return (
-          <div className="productmodelul">
-            <ul>
+          <div className="productmodelul" style={{ overflowX: 'auto' }}>
+            <ul style={{ display: 'flex', padding: 0, margin: 0, listStyle: 'none' }}>
               {props.items.map((item) => (
-                <div key={item.id}>
-                  <Link
-                   to={`/products/${item.id}/${item.shop_id}`}
-                  >
+                <div key={item.id} style={{ margin: '0 5px' }}>
+                  <Link to={`/products/${item.id}/${item.shop_id}`}>
                     <Products
                       id={item.id}
                       title={item.title}
@@ -328,6 +326,7 @@ const Section11Build = () => {
           </div>
         );
       };
+      
       const DummyProducts = () => {
         return (
           <div className="section-11-build-main-div-prods">
@@ -344,16 +343,6 @@ const Section11Build = () => {
           <li className="main-main-div-prods-section-11-build">
             <div className="section-11-build-products-img">
               <img src={img2} alt="Product Image" />
-            </div>
-            <div className="section-11-build-prods-details">
-              <p>Title</p>
-              
-              <button>$434 Buy Now</button>
-            </div>
-          </li>
-          <li className="main-main-div-prods-section-11-build">
-            <div className="section-11-build-products-img">
-              <img src={img3} alt="Product Image" />
             </div>
             <div className="section-11-build-prods-details">
               <p>Title</p>

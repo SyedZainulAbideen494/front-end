@@ -253,13 +253,11 @@ const Section4Build = () => {
       
       const ProductList = (props) => {
         return (
-          <div className="productmodelul">
-            <ul>
+          <div className="productmodelul" style={{ overflowX: 'auto' }}>
+            <ul style={{ display: 'flex', padding: 0, margin: 0, listStyle: 'none' }}>
               {props.items.map((item) => (
-                <div key={item.id}>
-                  <Link
-                   to={`/products/${item.id}/${item.shop_id}`}
-                  >
+                <div key={item.id} style={{ margin: '0 5px' }}>
+                  <Link to={`/products/${item.id}/${item.shop_id}`}>
                     <Products
                       id={item.id}
                       title={item.title}
@@ -296,6 +294,7 @@ const Section4Build = () => {
           </div>
         );
       };
+      
       const DummyProducts = () => {
         return (
             <div className="section-4-build-main-div-prods">

@@ -216,13 +216,11 @@ const Section8Build = () => {
       
       const ProductList = (props) => {
         return (
-          <div className="productmodelul">
-            <ul>
+          <div className="productmodelul" style={{ overflowX: 'auto' }}>
+            <ul style={{ display: 'flex', padding: 0, margin: 0, listStyle: 'none' }}>
               {props.items.map((item) => (
-                <div key={item.id}>
-                  <Link
-                   to={`/products/${item.id}/${item.shop_id}`}
-                  >
+                <div key={item.id} style={{ margin: '0 5px' }}>
+                  <Link to={`/products/${item.id}/${item.shop_id}`}>
                     <Products
                       id={item.id}
                       title={item.title}
@@ -259,10 +257,11 @@ const Section8Build = () => {
           </div>
         );
       };
+      
       const DummyProducts = () => {
         return (
           <div className="section-8-build-main-div-prods">
-          <li className="main-main-div-prods-section-8-build">
+          <li className="main-main-div-prods-section-8-build" style={{marginLeft: '0px'}}>
             <div className="section-8-build-products-img">
               <img src={img1} alt="Product Image" />
             </div>
@@ -275,16 +274,6 @@ const Section8Build = () => {
           <li className="main-main-div-prods-section-8-build">
             <div className="section-8-build-products-img">
               <img src={img2} alt="Product Image" />
-            </div>
-            <div className="section-8-build-prods-details">
-              <p>Title</p>
-              <h3>$434</h3>
-              <button>Buy Now</button>
-            </div>
-          </li>
-          <li className="main-main-div-prods-section-8-build">
-            <div className="section-8-build-products-img">
-              <img src={img3} alt="Product Image" />
             </div>
             <div className="section-8-build-prods-details">
               <p>Title</p>
