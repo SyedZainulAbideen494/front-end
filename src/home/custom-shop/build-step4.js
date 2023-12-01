@@ -234,8 +234,7 @@ const Step4build =() => {
           <hr />
         </div>
         <div className="allHeaders">
-        <Section1Buildpreview />
-        <Btn1/>
+
         <Section2Buildpreview />
         <Btn2/>
         <Section3Buildpreview/>
