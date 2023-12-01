@@ -225,7 +225,10 @@ function UserProfile() {
 </div>
 <section className='shopssecuserporfileinusers'>
 <hr/>
+<div className='all-shop-profile'>
   <h2>Stores owned by {userInfo[0]?.first_name}</h2>
+  </div>
+<hr/>
     <div className='allshopsecuser'>
       <Template1userapp/>
     </div>
