@@ -258,7 +258,7 @@ const Dashboard = () => {
             <button>Products</button>
             </Link>
             <Link to='/'>
-            <button>Products</button>
+            <button>back</button>
             </Link>
       </div>
     </header>
