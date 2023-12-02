@@ -78,52 +78,51 @@
     }
     .dropment-main-blog-page-section1 h1 {
         font-size: 40px;
+        margin-top: 50px;
     }
     .dropment-main-blog-page-section2 {
         margin-top: 100px;
-        display: flex;
-        justify-content: center; /* Start from the left */
-        overflow-x: auto; /* Allow horizontal scrolling */
-        padding-bottom: 20px; /* Add some bottom padding to accommodate scrollbar */
-        width: calc(100% - 100px); /* Adjust the width to accommodate margins and prevent horizontal scrolling of the entire page */
-        margin-left: 50px;
+        text-align: center;
+    }
+    
+    .dropment-main-blog-page-section2 > * {
+        display: inline-block;
+        /* Additional styles for child elements if needed */
     }
     
     .dropment-main-blog-page-section2-section1 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 250px;
         text-align: center;
+        margin-bottom: 40px;
     }
-
     .dropment-main-blog-page-section2-section2 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 250px;
         text-align: center;
+        margin-bottom: 40px;
     }
     .dropment-main-blog-page-section2-section3 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 250px;
         text-align: center;
+        margin-bottom: 40px;
     }
 
     .dropment-main-blog-page-section2-section4 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 250px;
         text-align: center;
+        margin-bottom: 40px;
     }
-
     .dropment-main-blog-page-section2 h3 {
         font-size: 25px;
         font-weight: 300;
@@ -131,6 +130,7 @@
     .dropment-main-blog-page-section2 p {
         font-size: 17px;
     }
+    
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -220,49 +220,47 @@
     }
     .dropment-main-blog-page-section2 {
         margin-top: 100px;
-        display: flex;
-        justify-content: center; /* Start from the left */
-        overflow-x: auto; /* Allow horizontal scrolling */
-        padding-bottom: 20px; /* Add some bottom padding to accommodate scrollbar */
-        width: calc(100% - 100px); /* Adjust the width to accommodate margins and prevent horizontal scrolling of the entire page */
-        margin-left: 50px;
+        text-align: center;
+    }
+    
+    .dropment-main-blog-page-section2 > * {
+        display: inline-block;
+        /* Additional styles for child elements if needed */
     }
     
     .dropment-main-blog-page-section2-section1 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 400px;
         text-align: center;
+        margin-bottom: 40px;
     }
-
     .dropment-main-blog-page-section2-section2 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 400px;
         text-align: center;
+        margin-bottom: 40px;
     }
     .dropment-main-blog-page-section2-section3 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 400px;
         text-align: center;
+        margin-bottom: 40px;
     }
 
     .dropment-main-blog-page-section2-section4 {
         border-top: 4px solid;
         border-image: linear-gradient(to right, #0077b3, #8cffba);
         border-image-slice: 1;
-        width: 200px;
-        margin-left: 50px;
+        width: 400px;
         text-align: center;
+        margin-bottom: 40px;
     }
-
     .dropment-main-blog-page-section2 h3 {
         font-size: 25px;
         font-weight: 300;
@@ -365,7 +363,6 @@
         overflow-x: auto; /* Allow horizontal scrolling */
         padding-bottom: 20px; /* Add some bottom padding to accommodate scrollbar */
         width: calc(100% - 100px); /* Adjust the width to accommodate margins and prevent horizontal scrolling of the entire page */
-        margin-left: 50px;
     }
     
     .dropment-main-blog-page-section2-section1 {
