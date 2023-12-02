@@ -218,6 +218,58 @@
     .dropment-main-blog-page-section1 h1 {
         font-size: 40px;
     }
+    .dropment-main-blog-page-section2 {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center; /* Start from the left */
+        overflow-x: auto; /* Allow horizontal scrolling */
+        padding-bottom: 20px; /* Add some bottom padding to accommodate scrollbar */
+        width: calc(100% - 100px); /* Adjust the width to accommodate margins and prevent horizontal scrolling of the entire page */
+        margin-left: 50px;
+    }
+    
+    .dropment-main-blog-page-section2-section1 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+
+    .dropment-main-blog-page-section2-section2 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+    .dropment-main-blog-page-section2-section3 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+
+    .dropment-main-blog-page-section2-section4 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+
+    .dropment-main-blog-page-section2 h3 {
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .dropment-main-blog-page-section2 p {
+        font-size: 17px;
+    }
   }
   
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -305,6 +357,71 @@
     }
     .dropment-main-blog-page-section1 h1 {
         font-size: 50px;
+    }
+    .dropment-main-blog-page-section2 {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center; /* Start from the left */
+        overflow-x: auto; /* Allow horizontal scrolling */
+        padding-bottom: 20px; /* Add some bottom padding to accommodate scrollbar */
+        width: calc(100% - 100px); /* Adjust the width to accommodate margins and prevent horizontal scrolling of the entire page */
+        margin-left: 50px;
+    }
+    
+    .dropment-main-blog-page-section2-section1 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+    .dropment-main-blog-page-section2-section1:hover {
+        transition: 0.3s;
+        margin-top: 20px;
+    }
+    .dropment-main-blog-page-section2-section2 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+    .dropment-main-blog-page-section2-section2:hover {
+        transition: 0.3s;
+        margin-top: 20px;
+    }
+    .dropment-main-blog-page-section2-section3 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+    .dropment-main-blog-page-section2-section3:hover {
+        transition: 0.3s;
+        margin-top: 20px;
+    }
+    .dropment-main-blog-page-section2-section4 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+    .dropment-main-blog-page-section2-section4:hover {
+        transition: 0.3s;
+        margin-top: 20px;
+    }
+    .dropment-main-blog-page-section2 h3 {
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .dropment-main-blog-page-section2 p {
+        font-size: 17px;
     }
   }
   @media (min-width: 1025px) {
