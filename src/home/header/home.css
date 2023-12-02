@@ -73,6 +73,64 @@
         transition: 0.4s;
         cursor: pointer;
       }
+      .dropment-main-blog-page-section1 {
+        text-align: center;
+    }
+    .dropment-main-blog-page-section1 h1 {
+        font-size: 40px;
+    }
+    .dropment-main-blog-page-section2 {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center; /* Start from the left */
+        overflow-x: auto; /* Allow horizontal scrolling */
+        padding-bottom: 20px; /* Add some bottom padding to accommodate scrollbar */
+        width: calc(100% - 100px); /* Adjust the width to accommodate margins and prevent horizontal scrolling of the entire page */
+        margin-left: 50px;
+    }
+    
+    .dropment-main-blog-page-section2-section1 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+
+    .dropment-main-blog-page-section2-section2 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+    .dropment-main-blog-page-section2-section3 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+
+    .dropment-main-blog-page-section2-section4 {
+        border-top: 4px solid;
+        border-image: linear-gradient(to right, #0077b3, #8cffba);
+        border-image-slice: 1;
+        width: 200px;
+        margin-left: 50px;
+        text-align: center;
+    }
+
+    .dropment-main-blog-page-section2 h3 {
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .dropment-main-blog-page-section2 p {
+        font-size: 17px;
+    }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -154,6 +212,12 @@
         transition: 0.4s;
         cursor: pointer;
       }
+      .dropment-main-blog-page-section1 {
+        text-align: center;
+    }
+    .dropment-main-blog-page-section1 h1 {
+        font-size: 40px;
+    }
   }
   
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -236,6 +300,12 @@
         transition: 0.4s;
         cursor: pointer;
       }
+      .dropment-main-blog-page-section1 {
+        text-align: center;
+    }
+    .dropment-main-blog-page-section1 h1 {
+        font-size: 50px;
+    }
   }
   @media (min-width: 1025px) {
    .dropment-branding-main-page img {
@@ -347,7 +417,89 @@
     transition: 0.4s;
     cursor: pointer;
   }
-  }
+.dropment-main-blog-page-section1 {
+    text-align: center;
+}
+.dropment-main-blog-page-section1 h1 {
+    font-size: 50px;
+    margin-top: 100px;
+}
+.dropment-main-blog-page-section2 {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center; /* Start from the left */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding-bottom: 20px; /* Add some bottom padding to accommodate scrollbar */
+    width: calc(100% - 100px); /* Adjust the width to accommodate margins and prevent horizontal scrolling of the entire page */
+    margin-left: 50px;
+}
+
+.dropment-main-blog-page-section2-section1 {
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #0077b3, #8cffba);
+    border-image-slice: 1;
+    width: 200px;
+    margin-left: 50px;
+    text-align: center;
+}
+.dropment-main-blog-page-section2-section1:hover {
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.dropment-main-blog-page-section2-section2 {
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #0077b3, #8cffba);
+    border-image-slice: 1;
+    width: 200px;
+    margin-left: 50px;
+    text-align: center;
+}
+.dropment-main-blog-page-section2-section2:hover {
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.dropment-main-blog-page-section2-section3 {
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #0077b3, #8cffba);
+    border-image-slice: 1;
+    width: 200px;
+    margin-left: 50px;
+    text-align: center;
+}
+.dropment-main-blog-page-section2-section3:hover {
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.dropment-main-blog-page-section2-section4 {
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #0077b3, #8cffba);
+    border-image-slice: 1;
+    width: 200px;
+    margin-left: 50px;
+    text-align: center;
+}
+.dropment-main-blog-page-section2-section4:hover {
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.dropment-main-blog-page-section2 h3 {
+    font-size: 25px;
+    font-weight: 300;
+}
+.dropment-main-blog-page-section2 p {
+    font-size: 17px;
+}
+}
+
+
+
+
+
+
+
+
+
+
   body {
     margin: 0px;
 }

@@ -83,6 +83,30 @@ const Home = () => {
               </div>
           </header>
         </div>
+        <div className="dropment-main-blog-page-section1">
+        <h1>All-in-one Platform<br/>To Sell Online</h1>
+        </div>
+        <div className="dropment-main-blog-page-section2">
+          <section className="dropment-main-blog-page-section2-section1">
+            <h3>Store Analytics</h3>
+            <p>We provide you full report on how your online store is doing</p>
+          </section>
+          <section className="dropment-main-blog-page-section2-section2">
+            <h3>Customer Data</h3>
+            <p>We grant you full access to your customer data so you can improve your marketing efforts.</p>
+          </section>
+          <section className="dropment-main-blog-page-section2-section3">
+            <h3>Social Features</h3>
+            <p>You can collaborate with others and embark
+               on a new business venture together using 
+               our social features such as Blinkfeed and 
+               linking with friends.</p>
+          </section>
+          <section className="dropment-main-blog-page-section2-section4">
+            <h3>User-Friendly</h3>
+            <p>Thanks to Dropment's user-friendly interface, setting up your online store takes just minutes.</p>
+          </section>
+        </div>
       </div>
     </Fragment>
   );
