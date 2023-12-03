@@ -216,8 +216,8 @@
         border: 1px solid #661AC6;
     }
     .dropment-main-blog-page-section5 {
-        background-color: black;
-        background-size: cover;
+        background: linear-gradient(to right, #0077b3, #8cffba);
+        background-size: 100% 100%;
         padding: 40px;
         text-align: center;
         display: flex;
@@ -489,8 +489,8 @@
         border: 1px solid #661AC6;
     }
     .dropment-main-blog-page-section5 {
-        background-color: black;
-        background-size: cover;
+        background: linear-gradient(to right, #0077b3, #8cffba);
+        background-size: 100% 100%;
         padding: 40px;
         text-align: center;
         display: flex;
@@ -772,8 +772,8 @@
         border: 1px solid #661AC6;
     }
     .dropment-main-blog-page-section5 {
-        background-color: black;
-        background-size: cover;
+        background: linear-gradient(to right, #0077b3, #8cffba);
+        background-size: 100% 100%;
         padding: 40px;
         text-align: center;
         display: flex;
@@ -1096,15 +1096,15 @@
     border: 1px solid #661AC6;
 }
 .dropment-main-blog-page-section5 {
-    background-color: black;
-    background-size: cover;
+    background: linear-gradient(to right, #0077b3, #8cffba);
+    background-size: 100% 100%;
     padding: 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+  }
 
 .dropment-main-blog-page-section5 h1 {
     color: white;
