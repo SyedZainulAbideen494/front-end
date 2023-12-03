@@ -392,6 +392,49 @@
         margin-top: 30px;
         cursor: pointer;
       }
+      .dropment-main-blog-page-footer footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 150px;
+        padding: 20px;
+        background-color: #E7FFF1;
+      }
+      
+      .dropment-main-blog-page-footer footer section {
+        width: 200px;
+        margin: 0 10px;
+        text-align: center;
+      }
+      
+      .dropment-main-blog-page-footer-follow-section img {
+        width: 40px;
+      }
+      
+      .dropment-main-blog-page-footer footer h2 {
+        margin-bottom: 10px;
+        font-size: 17px;
+      }
+      
+      .dropment-main-blog-page-footer footer p {
+        margin: 8px 0;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .dropment-main-blog-page-footer footer p:hover {
+        text-decoration: underline;
+      }
+      .dropment-main-blog-page-footer footer {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+      }
+    
+      .dropment-main-blog-page-footer footer section {
+        width: 100%;
+        margin: 10px 0;
+      }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -789,6 +832,49 @@
         color: black;
         transition: 0.3s;
         border: 2px solid black;
+      }
+      .dropment-main-blog-page-footer footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 150px;
+        padding: 20px;
+        background-color: #E7FFF1;
+      }
+      
+      .dropment-main-blog-page-footer footer section {
+        width: 200px;
+        margin: 0 10px;
+        text-align: center;
+      }
+      
+      .dropment-main-blog-page-footer-follow-section img {
+        width: 40px;
+      }
+      
+      .dropment-main-blog-page-footer footer h2 {
+        margin-bottom: 10px;
+        font-size: 17px;
+      }
+      
+      .dropment-main-blog-page-footer footer p {
+        margin: 8px 0;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .dropment-main-blog-page-footer footer p:hover {
+        text-decoration: underline;
+      }
+      .dropment-main-blog-page-footer footer {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+      }
+    
+      .dropment-main-blog-page-footer footer section {
+        width: 100%;
+        margin: 10px 0;
       }
   }
   
@@ -1199,6 +1285,36 @@
         color: black;
         transition: 0.3s;
         border: 2px solid black;
+      }
+      .dropment-main-blog-page-footer footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 150px;
+        padding: 20px;
+        background-color: #E7FFF1;
+      }
+      
+      .dropment-main-blog-page-footer footer section {
+        width: 100px;
+        text-align: center;
+      }
+      .dropment-main-blog-page-footer-follow-section img {
+        width: 40px;
+      }
+      
+      .dropment-main-blog-page-footer footer h2 {
+        margin-bottom: 10px;
+        font-size: 17px;
+      }
+      
+      .dropment-main-blog-page-footer footer p {
+        margin: 8px 0;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .dropment-main-blog-page-footer footer p:hover {
+        text-decoration: underline;
       }
   }
   @media (min-width: 1025px) {
@@ -1660,6 +1776,37 @@
     color: black;
     transition: 0.3s;
     border: 2px solid black;
+  }
+  .dropment-main-blog-page-footer footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: #E7FFF1;
+  }
+  
+  .dropment-main-blog-page-footer footer section {
+    width: 200px;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .dropment-main-blog-page-footer-follow-section img {
+    width: 40px;
+  }
+  
+  .dropment-main-blog-page-footer footer h2 {
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+  
+  .dropment-main-blog-page-footer footer p {
+    margin: 8px 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .dropment-main-blog-page-footer footer p:hover {
+    text-decoration: underline;
   }
 }
 

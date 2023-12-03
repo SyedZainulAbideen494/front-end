@@ -9,6 +9,9 @@ import step from './images/Step 1.png'
 import stats from './images/Untitled design (18) (1).png'
 import sales from './images/Untitled design (23) (1).png'
 import orders from './images/Untitled design (24) (1).png'
+import facebook from './images/icons8-facebook-logo-50 (1).png'
+import instagram from './images/icons8-instagram-logo-50.png'
+import x from './images/icons8-twitterx-50.png'
 
 const ImageSlider = () => {
   const [currentImage, setCurrentImage] = useState(1);
@@ -310,6 +313,38 @@ const Home = () => {
         <div className="dropment-main-blog-page-section9">
           <h1>Start Your Success Journey Now<br/> With Droment!</h1>
           <button>Get Started for free</button>
+        </div>
+        <div className="dropment-main-blog-page-footer">
+         <footer>
+              <section className="dropment-main-blog-page-footer-links-section">
+                <h2>Links</h2>
+                <p>About us</p>
+                <p>Login</p>
+                <p>Sign up</p>
+                <p>Pricing</p>
+                <p>Get started</p>
+              </section>
+              <section className="dropment-main-blog-page-footer-follow-section">
+                <h2>Social media</h2>
+                <a href="https://www.instagram.com/dropment.online/">
+                <img src={instagram}/>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100087377832094">
+                <img src={facebook}/>
+                </a>
+                <a href="https://twitter.com/SyedZain_saz">
+                <img src={x}/>
+                </a>
+              </section>
+              <section className="dropment-main-blog-page-footer-resources-section">
+                <h2>Resources</h2>
+                <p>FAQs</p>
+              </section>
+              <section className="dropment-main-blog-page-footer-contact-section">
+                <h2>contact</h2>
+                <p>Email: dropment.saz@gmail.com</p>
+              </section>
+         </footer>
         </div>
       </div>
     </Fragment>
