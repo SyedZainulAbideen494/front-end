@@ -130,7 +130,32 @@
     .dropment-main-blog-page-section2 p {
         font-size: 17px;
     }
-    
+    .dropment-main-blog-page-section3 {
+        margin-top: 150px;
+        background-color: #E7FFF1;
+        padding: 20px;
+        border-radius: 25px;
+        margin:150px 40px;
+    }
+    .dropment-main-blog-page-section3-img {
+        background-image: url('./images/Untitled design (18) (1).png');
+        height: 50vh;
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .dropment-main-blog-page-section3-txt {
+        text-align: center;
+    }
+    .dropment-main-blog-page-section3-txt h2 {
+        color: #242E47;
+        font-size: 30px;
+    }
+    .dropment-main-blog-page-section3-txt h4 {
+        color: #7B88A8;
+        font-size: 12px;
+        font-weight: 600;
+    }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -268,6 +293,32 @@
     }
     .dropment-main-blog-page-section2 p {
         font-size: 17px;
+    }
+    .dropment-main-blog-page-section3 {
+        margin-top: 150px;
+        background-color: #E7FFF1;
+        padding: 20px;
+        border-radius: 25px;
+        margin:150px 40px;
+    }
+    .dropment-main-blog-page-section3-img {
+        background-image: url('./images/Untitled design (18) (1).png');
+        height: 50vh;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .dropment-main-blog-page-section3-txt {
+        text-align: center;
+    }
+    .dropment-main-blog-page-section3-txt h2 {
+        color: #242E47;
+        font-size: 30px;
+    }
+    .dropment-main-blog-page-section3-txt h4 {
+        color: #7B88A8;
+        font-size: 15px;
+        font-weight: 600;
     }
   }
   
@@ -421,6 +472,32 @@
     }
     .dropment-main-blog-page-section2 p {
         font-size: 17px;
+    }
+    .dropment-main-blog-page-section3 {
+        margin-top: 150px;
+        background-color: #E7FFF1;
+        padding: 20px;
+        border-radius: 25px;
+        margin:150px 40px;
+    }
+    .dropment-main-blog-page-section3-img {
+        background-image: url('./images/Untitled design (18) (1).png');
+        height: 100vh;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .dropment-main-blog-page-section3-txt {
+        text-align: center;
+    }
+    .dropment-main-blog-page-section3-txt h2 {
+        color: #242E47;
+        font-size: 40px;
+    }
+    .dropment-main-blog-page-section3-txt h4 {
+        color: #7B88A8;
+        font-size: 15px;
+        font-weight: 600;
     }
   }
   @media (min-width: 1025px) {
@@ -616,6 +693,31 @@
 }
 .dropment-main-blog-page-section2 p {
     font-size: 17px;
+}
+.dropment-main-blog-page-section3 {
+    margin-top: 150px;
+    background-color: #E7FFF1;
+    padding: 20px;
+    border-radius: 25px;
+    margin:150px 40px;
+}
+.dropment-main-blog-page-section3-img {
+    background-image: url('./images/Untitled design (18) (1).png');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.dropment-main-blog-page-section3-txt {
+    text-align: center;
+}
+.dropment-main-blog-page-section3-txt h2 {
+    color: #242E47;
+    font-size: 40px;
+}
+.dropment-main-blog-page-section3-txt h4 {
+    color: #7B88A8;
+    font-size: 15px;
+    font-weight: 600;
 }
 }
 

@@ -2,22 +2,24 @@ import { Fragment, useEffect } from "react";
 import Header from "../dummyfiles/dummheader";
 import React, { useState } from "react";
 import { Router, Link, useNavigate } from "react-router-dom";
-import Homedisplay from "../display on home screen/displayonhome";
-import Cartprovider from "./cart/cartprovider";
-import Mobleheader from "./header/header";
-import Mycart from "./cart/mycart";
-import Order from "../order/order";
-import Shopsright from "../shopsowner/shopsright";
-import Addshopform1 from "../addnewshop/addshopform1";
-import Tempsabout from "../tempsabout/tempsabout";
-import Contact from "../dropmentcontacts/contackts";
 import './home.css'
-import Displayshoponhome from "../display on home screen/displayshop";
 import logo from './images/drop2_logo.png'
 import nocode from './images/Dropment (7).png'
 import step from './images/Step 1.png'
-import Users from "../user/userapp";
+import stats from './images/Untitled design (18) (1).png'
 
+
+const ImageSlider = () => {
+  const [currentImage, setCurrentImage] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(prevImage => (prevImage % 3) + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+}
 const Home = () => {
   const [auth, setauth] = useState(false);
 
@@ -106,6 +108,13 @@ const Home = () => {
             <h3>User-Friendly</h3>
             <p>Thanks to Dropment's user-friendly interface, setting up your online store takes just minutes.</p>
           </section>
+        </div>
+        <div className="dropment-main-blog-page-section3">
+          <section className="dropment-main-blog-page-section3-txt">
+          <h2>Discover Comprehensive Store Insights</h2>
+<h4>Elevate your business with our in-depth shop analytics</h4>
+          </section>
+          <section className="dropment-main-blog-page-section3-img"></section>
         </div>
       </div>
     </Fragment>
