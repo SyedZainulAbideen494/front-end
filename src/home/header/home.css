@@ -316,7 +316,47 @@
         border-radius: 15px;
         cursor: pointer;
     }
+    .dropment-main-blog-page-section7 {
+        margin: 80px 10px;
+      }
+      
+      .dropment-main-blog-page-section7-heading {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .dropment-main-blog-page-section7-dots {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      
+      .dropment-main-blog-page-section7-dot {
+        border-bottom: 2px solid black;
+        width: 250px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+      
+      .dropment-main-blog-page-section7-dot h2 {
+        margin-top: 10px;
+        font-size: 1.5em;
+      }
+      
+      .dropment-main-blog-page-section7-dot p {
+        margin-top: 15px;
+        font-size: 0.9em;
+      }
+      .dropment-main-blog-page-section7 {
+        margin: 50px 5px; /* Adjusted margin for smaller screens */
+      }
     
+      .dropment-main-blog-page-section7-dot {
+        width: 100%; /* Full width for better mobile display */
+        padding: 20px 10px; /* Adjusted padding for better spacing */
+        margin-bottom: 30px; /* Space between sections */
+      }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -641,6 +681,38 @@
         border-radius: 15px;
         cursor: pointer;
     }
+    .dropment-main-blog-page-section7 {
+        margin: 80px 10px; /* Reduced margin for better spacing */
+      }
+      
+      .dropment-main-blog-page-section7-heading {
+        text-align: center;
+        margin-bottom: 70px; /* Added margin for separation */
+      }
+      
+      .dropment-main-blog-page-section7-dots {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+        gap: 30px; /* Spacing between sections */
+      }
+      
+      .dropment-main-blog-page-section7-dot {
+        border-bottom: 2px solid black;
+        width: 250px; /* Increased width for better readability */
+        padding-bottom: 20px; /* Added padding for content separation */
+        text-align: center;
+      }
+      
+      .dropment-main-blog-page-section7-dot h2 {
+        margin-top: 10px; /* Space between title and content */
+        font-size: 1.5em; /* Adjusted font size for headings */
+      }
+      
+      .dropment-main-blog-page-section7-dot p {
+        margin-top: 15px; /* Space between content and border */
+        font-size: 0.9em; /* Adjusted font size for content */
+      }
   }
   
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -978,6 +1050,38 @@
         transition: 0.3s;
         border: 1px solid #661AC6;
     }
+    .dropment-main-blog-page-section7 {
+        margin: 80px 10px; /* Reduced margin for better spacing */
+      }
+      
+      .dropment-main-blog-page-section7-heading {
+        text-align: center;
+        margin-bottom: 70px; /* Added margin for separation */
+      }
+      
+      .dropment-main-blog-page-section7-dots {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+        gap: 30px; /* Spacing between sections */
+      }
+      
+      .dropment-main-blog-page-section7-dot {
+        border-bottom: 2px solid black;
+        width: 250px; /* Increased width for better readability */
+        padding-bottom: 20px; /* Added padding for content separation */
+        text-align: center;
+      }
+      
+      .dropment-main-blog-page-section7-dot h2 {
+        margin-top: 10px; /* Space between title and content */
+        font-size: 1.5em; /* Adjusted font size for headings */
+      }
+      
+      .dropment-main-blog-page-section7-dot p {
+        margin-top: 15px; /* Space between content and border */
+        font-size: 0.9em; /* Adjusted font size for content */
+      }
   }
   @media (min-width: 1025px) {
    .dropment-branding-main-page img {
@@ -1360,6 +1464,38 @@
     transition: 0.3s;
     border: 1px solid #91BC42;
 }
+.dropment-main-blog-page-section7 {
+    margin: 80px 10px; /* Reduced margin for better spacing */
+  }
+  
+  .dropment-main-blog-page-section7-heading {
+    text-align: center;
+    margin-bottom: 70px; /* Added margin for separation */
+  }
+  
+  .dropment-main-blog-page-section7-dots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 30px; /* Spacing between sections */
+  }
+  
+  .dropment-main-blog-page-section7-dot {
+    border-bottom: 2px solid black;
+    width: 250px; /* Increased width for better readability */
+    padding-bottom: 20px; /* Added padding for content separation */
+    text-align: center;
+  }
+  
+  .dropment-main-blog-page-section7-dot h2 {
+    margin-top: 10px; /* Space between title and content */
+    font-size: 1.5em; /* Adjusted font size for headings */
+  }
+  
+  .dropment-main-blog-page-section7-dot p {
+    margin-top: 15px; /* Space between content and border */
+    font-size: 0.9em; /* Adjusted font size for content */
+  }
 }
 
 

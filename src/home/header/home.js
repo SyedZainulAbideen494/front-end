@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import Header from "../dummyfiles/dummheader";
 import React, { useState } from "react";
 import { Router, Link, useNavigate } from "react-router-dom";
@@ -59,7 +59,25 @@ const Home = () => {
   const hidecarthandler = () => {
     setshowcart(false);
   };
+  const itemsRef = useRef(null);
+  const aboutusRef = useRef(null);
+  const contactusRef = useRef(null);
 
+  const scrollToItems = () => {
+    if (itemsRef.current) {
+      itemsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollToaboutus = () => {
+    if (aboutusRef.current) {
+      aboutusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const scrollTocontactus = () => {
+    if (contactusRef.current) {
+      contactusRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <Fragment>
       <div className="main-div-dropment">
@@ -70,7 +88,7 @@ const Home = () => {
                 <img src={logo} alt="Dropment logo"/>
               </div>
               <div className="dropment-button-nav-main-page-dropment">
-              <button className="aboutus-btn-main-page-dropment">About us</button>
+              <button className="aboutus-btn-main-page-dropment" onClick={scrollToaboutus}>About us</button>
                 <button className="pricing-btn-main-page-dropment">Pricing</button>
                 <button className="login-btn-dropment-main-page">Login</button>
                 <button className="signinbtn-dropment-main-page">Sign up</button>
@@ -111,7 +129,7 @@ const Home = () => {
             <p>Thanks to Dropment's user-friendly interface, setting up your online store takes just minutes.</p>
           </section>
         </div>
-        <div className="dropment-main-blog-page-section5">
+        <div className="dropment-main-blog-page-section5" ref={aboutusRef}>
           <h1>What is Dropment?</h1>
           <p className="dropment-main-blog-page-section5-p">Dropment is your gateway to a 
             world of endless e-commerce 
@@ -153,6 +171,67 @@ const Home = () => {
            <p>Our user-friendly tools make order management easy.</p>
             <button>Get Started For Free</button>
           </section>
+        </div>
+        <div className="dropment-main-blog-page-section7">
+          <div className="dropment-main-blog-page-section7-heading">
+            <h1>We Provide</h1>
+          </div>
+          <div className="dropment-main-blog-page-section7-dots">
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>Simplicity</h2>
+              <p>Our platform equips you with the 
+                finest tools to efficiently manage
+                 and expand your business.</p>
+            </section>
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>Best Pricing</h2>
+              <p>We offer the best pricing to help
+                 elevate your business to new heights.</p>
+            </section>
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>User-Friendly Interface</h2>
+              <p>We offer the most user-friendly 
+                interface for setting up and managing
+                 your store.</p>
+            </section>
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>Collaborative Features</h2>
+              <p>Collaborate with others and embark on new
+                 business ventures together, with our collab feature</p>
+            </section>
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>Customizable Templates</h2>
+              <p>You have the option to create a personalized 
+                shop or select from our range of templates</p>
+            </section>
+        
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>Engagement Tools</h2>
+              <p>
+              We offer a variety of engaging
+               tools like Blinkfeed, Link, Chat,
+                and Follow to help you stay connected
+                 with customers and friends.
+              </p>
+            </section>
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>Comprehensive Analytics</h2>
+              <p>
+              Provides in-depth shop data and analytics, 
+              empowering users with valuable insights into
+               their business performance, sales trends,
+                and customer behavior.
+              </p>
+            </section>
+            <section className="dropment-main-blog-page-section7-dot">
+              <h2>Performance Optimization</h2>
+              <p>
+              Helps users improve their product offerings 
+              and services based on analytics, aiming for
+               continuous improvement and customer satisfaction.
+              </p>
+            </section>
+          </div>
         </div>
       </div>
     </Fragment>
