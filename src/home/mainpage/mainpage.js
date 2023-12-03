@@ -28,9 +28,11 @@ const Mainpage = () => {
       setauth(false);
     }
   }, []);
+  useEffect(() => {
   if (auth === false) {
     nav("/login");
   }
+})
   const [showNotifications, setShowNotifications] = useState(false);
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);

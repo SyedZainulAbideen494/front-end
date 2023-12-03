@@ -113,10 +113,18 @@ const Home = () => {
               </div>
               <div className="dropment-button-nav-main-page-dropment">
               <button className="aboutus-btn-main-page-dropment" onClick={scrollToaboutus}>About us</button>
+              <Link to="/Plans" style={{color: 'black', textDecoration: 'none'}}>
                 <button className="pricing-btn-main-page-dropment">Pricing</button>
+                </Link>
+                <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                 <button className="login-btn-dropment-main-page">Login</button>
+                </Link>
+                <Link to="/signin" style={{color: 'black', textDecoration: 'none'}}>
                 <button className="signinbtn-dropment-main-page">Sign up</button>
+                </Link>
+                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
                 <button className="strtffreebtn">Start for free</button>
+                </Link>
               </div>
             </div>
             <div className="herosection-text-dropment-main">
@@ -124,7 +132,9 @@ const Home = () => {
                   <h1>Build, Sell,<br/> Succeed!<br/> The Easy Way</h1>
                 </div>
                 <div className="hero-section-get-started-button-main-page-dropment">
+                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
                   <button>Start For Free</button>
+                  </Link>
                 </div>
               </div>
           </header>
@@ -164,7 +174,9 @@ const Home = () => {
             now set up an aesthetically pleasing
             online store without any technical
             complexities and investment.</p>
+            <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
             <button class="get-started-button">Get started For Free</button>
+            </Link>
         </div>
         <div className="dropment-main-blog-page-section3">
           <section className="dropment-main-blog-page-section3-txt">
@@ -180,7 +192,9 @@ const Home = () => {
                for your online store. Easily organize 
                and track your products with intuitive
                 tools designed to streamline your operations.</p>
+                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
                 <button>Get Started For Free</button>
+                </Link>
           </section>
           <section className="dropment-main-blog-page-section4-img">
             <img src={sales}/>
@@ -194,7 +208,9 @@ const Home = () => {
            <h2>Effortlessly Manage Your Orders</h2>
            <p>Simplify order handling effortlessly using our intuitive tools, 
             ensuring streamlined and efficient management for your convenience</p>
+            <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
             <button>Get Started For Free</button>
+            </Link>
           </section>
         </div>
         <div className="dropment-main-blog-page-section7">
@@ -258,7 +274,7 @@ const Home = () => {
             </section>
           </div>
         </div>
-        <div className="dropment-main-blog-page-section8">
+        <div className="dropment-main-blog-page-section8" ref={contactusRef}>
           <div className="heading-main-dropment-blog-page-section8">
             <h2>FAQs</h2>
           </div>
@@ -312,17 +328,27 @@ const Home = () => {
         </div>
         <div className="dropment-main-blog-page-section9">
           <h1>Start Your Success Journey Now<br/> With Droment!</h1>
+          <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
           <button>Get Started for free</button>
+          </Link>
         </div>
         <div className="dropment-main-blog-page-footer">
          <footer>
               <section className="dropment-main-blog-page-footer-links-section">
                 <h2>Links</h2>
-                <p>About us</p>
+                <p onClick={scrollToaboutus}>About us</p>
+                <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                 <p>Login</p>
+                </Link>
+                <Link to="/signin" style={{color: 'black', textDecoration: 'none'}}>
                 <p>Sign up</p>
+                </Link>
+                <Link to="/Plans" style={{color: 'black', textDecoration: 'none'}}>
                 <p>Pricing</p>
+                </Link>
+                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
                 <p>Get started</p>
+                </Link>
               </section>
               <section className="dropment-main-blog-page-footer-follow-section">
                 <h2>Social media</h2>
@@ -338,7 +364,7 @@ const Home = () => {
               </section>
               <section className="dropment-main-blog-page-footer-resources-section">
                 <h2>Resources</h2>
-                <p>FAQs</p>
+                <p onClick={scrollTocontactus}>FAQs</p>
               </section>
               <section className="dropment-main-blog-page-footer-contact-section">
                 <h2>contact</h2>
