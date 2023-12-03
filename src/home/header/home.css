@@ -1466,11 +1466,15 @@
 }
 .dropment-main-blog-page-section7 {
     margin: 80px 10px; /* Reduced margin for better spacing */
+    background-color: #F9FAFB;
   }
   
   .dropment-main-blog-page-section7-heading {
     text-align: center;
     margin-bottom: 70px; /* Added margin for separation */
+    font-size: 26px;
+    padding: 20px;
+    color: #000000;
   }
   
   .dropment-main-blog-page-section7-dots {
@@ -1490,11 +1494,13 @@
   .dropment-main-blog-page-section7-dot h2 {
     margin-top: 10px; /* Space between title and content */
     font-size: 1.5em; /* Adjusted font size for headings */
+    color: #52525B;
   }
   
   .dropment-main-blog-page-section7-dot p {
     margin-top: 15px; /* Space between content and border */
-    font-size: 0.9em; /* Adjusted font size for content */
+    font-size: 16px; /* Adjusted font size for content */
+    color: #242E47;
   }
 }
 
