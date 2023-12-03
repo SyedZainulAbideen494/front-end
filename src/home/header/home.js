@@ -8,7 +8,7 @@ import nocode from './images/Dropment (7).png'
 import step from './images/Step 1.png'
 import stats from './images/Untitled design (18) (1).png'
 import sales from './images/Untitled design (23) (1).png'
-import orders from './images/Untitled design (20) (1).png'
+import orders from './images/Untitled design (24) (1).png'
 
 
 const ImageSlider = () => {
@@ -142,6 +142,16 @@ const Home = () => {
           </section>
           <section className="dropment-main-blog-page-section4-img">
             <img src={sales}/>
+          </section>
+        </div>
+        <div className="dropment-main-blog-page-section6">
+          <section className="dropment-main-blog-page-section6-img">
+            <img src={orders}/>
+          </section>
+          <section className="dropment-main-blog-page-section6-txt">
+           <h2>Effortlessly Manage Your Orders</h2>
+           <p>Our user-friendly tools make order management easy.</p>
+            <button>Get Started For Free</button>
           </section>
         </div>
       </div>
