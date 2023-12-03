@@ -357,6 +357,24 @@
         padding: 20px 10px; /* Adjusted padding for better spacing */
         margin-bottom: 30px; /* Space between sections */
       }
+      .dropment-main-blog-page-section8 {
+        padding: 20px;
+        margin: 150px 30px;
+        border-radius: 15px;
+      }
+      .heading-main-dropment-blog-page-section8 {
+        text-align: center;
+      }
+      .heading-main-dropment-blog-page-section8 h2 {
+        font-size: 30px;
+      }
+      .dropment-main-blog-page-section8-q {
+        text-align: center;
+        border: 1px solid black;
+      }
+      .dropment-main-blog-page-section8-q h2 {
+        font-weight: 200;
+      }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -712,6 +730,24 @@
       .dropment-main-blog-page-section7-dot p {
         margin-top: 15px; /* Space between content and border */
         font-size: 0.9em; /* Adjusted font size for content */
+      }
+      .dropment-main-blog-page-section8 {
+        padding: 20px;
+        margin: 150px 30px;
+        border-radius: 15px;
+      }
+      .heading-main-dropment-blog-page-section8 {
+        text-align: center;
+      }
+      .heading-main-dropment-blog-page-section8 h2 {
+        font-size: 30px;
+      }
+      .dropment-main-blog-page-section8-q {
+        text-align: center;
+        border: 1px solid black;
+      }
+      .dropment-main-blog-page-section8-q h2 {
+        font-weight: 200;
       }
   }
   
@@ -1081,6 +1117,24 @@
       .dropment-main-blog-page-section7-dot p {
         margin-top: 15px; /* Space between content and border */
         font-size: 0.9em; /* Adjusted font size for content */
+      }
+      .dropment-main-blog-page-section8 {
+        padding: 20px;
+        margin: 150px 30px;
+        border-radius: 15px;
+      }
+      .heading-main-dropment-blog-page-section8 {
+        text-align: center;
+      }
+      .heading-main-dropment-blog-page-section8 h2 {
+        font-size: 30px;
+      }
+      .dropment-main-blog-page-section8-q {
+        text-align: center;
+        border: 1px solid black;
+      }
+      .dropment-main-blog-page-section8-q h2 {
+        font-weight: 200;
       }
   }
   @media (min-width: 1025px) {
@@ -1504,21 +1558,21 @@
   }
   .dropment-main-blog-page-section8 {
     padding: 20px;
-    background-color: #000000;
-    margin: 150px 0px;
+    margin: 150px 30px;
+    border-radius: 15px;
   }
   .heading-main-dropment-blog-page-section8 {
     text-align: center;
   }
   .heading-main-dropment-blog-page-section8 h2 {
-    color: white;
     font-size: 30px;
   }
   .dropment-main-blog-page-section8-q {
-    color: white;
     text-align: center;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
+    border: 1px solid black;
+  }
+  .dropment-main-blog-page-section8-q h2 {
+    font-weight: 200;
   }
 }
 

@@ -39,11 +39,28 @@ const Home = () => {
   const [order, setorder] = useState([]);
   const [loading, setloading] = useState(false);
   const [q1, setq1] = useState(false)
+  const [q2, setq2] = useState(false)
+  const [q3, setq3] = useState(false)
+  const [q4, setq4] = useState(false)
+  const [q5, setq5] = useState(false)
+
+  const toggleQ5 = () => {
+    setq5(!q5); // Toggles the state of q1
+  };
+
+  const toggleQ4 = () => {
+    setq4(!q4); // Toggles the state of q1
+  };
 
   const toggleQ1 = () => {
     setq1(!q1); // Toggles the state of q1
   };
-
+  const toggleQ2 = () => {
+    setq2(!q2); // Toggles the state of q1
+  };
+  const toggleQ3 = () => {
+    setq3(!q3); // Toggles the state of q1
+  };
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setauth(true);
@@ -244,13 +261,50 @@ const Home = () => {
           </div>
           <div className="dropment-main-blog-page-section8-q">
             <h2 onClick={toggleQ1}>How Do I Setup My Store?</h2>
-            {q1 && <p>Seting up your shop on 
+            {q1 && <p onClick={toggleQ1}>Seting up your shop on 
               dropment is very simple first 
               you click on the add shop button 
               on the navigation menu then you 
               will be redirected to a page there
                you can build a custom shop or choose
                 from our templates.</p>}
+          </div>
+          <div className="dropment-main-blog-page-section8-q">
+            <h2 onClick={toggleQ2}>How Do I Add Products?</h2>
+            {q2 && <p onClick={toggleQ2}>Adding products is a straightforward process.
+               First, navigate to your shop where you'd like to add
+                products. Within the admin panel, locate the "Add 
+                Products" button. Clicking this will redirect you 
+                to a form page where you'll need to input specific
+                details. The form requires 5 images, a title, quantity,
+                and a link to your chosen payment gateway (as we don't
+                offer an integrated payment gateway, you have the
+                flexibility to select from various options available 
+                for collecting payments from your customers). For a 
+               guide on adding a payment gateway, you can watch this <a href="https://youtu.be/vdKINdsmC_Y?si=pKb2u8v8DHOccHx_">video</a>.
+                      Additionally, you'll need to set pricing for your product in 
+                      different currencies (USD is mandatory; if no pricing is
+                       entered in any other currency, USD pricing will be displayed).
+                        Finally, click on "Add Product," and voila! Congratulations
+                        , your product has been successfully added.</p>}
+          </div>
+          <div className="dropment-main-blog-page-section8-q">
+            <h2 onClick={toggleQ3}>Do I Need Coding To Setup My Online Shop?</h2>
+            {q3 && <p onClick={toggleQ3}>No, you don't require any coding skills to setup your online shop.</p>}
+          </div>
+          <div className="dropment-main-blog-page-section8-q">
+            <h2 onClick={toggleQ4}>Is Dropment free?</h2>
+            {q4 && <p onClick={toggleQ4}>Yes, there is a free plan available, but you will be restricted to certain features</p>}
+          </div>
+          <div className="dropment-main-blog-page-section8-q">
+            <h2 onClick={toggleQ5}>Is Dropment a website builder?</h2>
+            {q5 && <p onClick={toggleQ5}>Dropment isn't just a website builder; it's an
+               ecosystem of online shops. Here, people come together 
+               to create shops, observe others' activities via profiles,
+                collaborate on shop development, and draw inspiration from 
+                different shops for their next business ventures. Overall,
+                 Droplement serves as an ecosystem for enthusiastic entrepreneurs
+                 , fostering collaboration and creativity</p>}
           </div>
         </div>
       </div>
