@@ -131,6 +131,19 @@ const Home = () => {
             <img src={sales}/>
           </section>
         </div>
+        <div className="dropment-main-blog-page-section5">
+          <h1>What is Dropment?</h1>
+          <p className="dropment-main-blog-page-section5-p">Dropment is your gateway to a 
+            world of endless e-commerce 
+            possibilities. From setting up
+            your store to making sales online,
+            we make your experience seamless
+            and hassle-free. With Dropment, 
+            now set up an aesthetically pleasing
+            online store without any technical
+            complexities and investment.</p>
+            <button class="get-started-button">Get started For Free</button>
+        </div>
       </div>
     </Fragment>
   );

@@ -215,6 +215,56 @@
         transition: 0.3s;
         border: 1px solid #661AC6;
     }
+    .dropment-main-blog-page-section5 {
+        background-color: black;
+        background-size: cover;
+        padding: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .dropment-main-blog-page-section5 h1 {
+        color: white;
+        font-size: 30px;
+        width: 300px;
+    }
+    
+    .dropment-main-blog-page-section5 p {
+        color: white;
+        width: 300px;
+        font-size: 15px;
+    }
+    .get-started-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        position: relative;
+        transition: padding-left 0.3s ease; /* Transition effect for padding change */
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+      
+      .get-started-button::after {
+        content: '\2192'; /* Unicode for right arrow */
+        position: absolute;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease; /* Transition effect for opacity change */
+        
+      }
+      
+      .get-started-button:hover::after {
+        opacity: 1; /* Show arrow on hover */
+      }
+      
+      .get-started-button:hover {
+        padding-left: 15px; /* Shift text to the left on hover */
+        text-decoration: underline;
+      }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -438,6 +488,56 @@
         transition: 0.3s;
         border: 1px solid #661AC6;
     }
+    .dropment-main-blog-page-section5 {
+        background-color: black;
+        background-size: cover;
+        padding: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .dropment-main-blog-page-section5 h1 {
+        color: white;
+        font-size: 36px;
+        width: 400px;
+    }
+    
+    .dropment-main-blog-page-section5 p {
+        color: white;
+        width: 420px;
+        font-size: 17px;
+    }
+    .get-started-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        position: relative;
+        transition: padding-left 0.3s ease; /* Transition effect for padding change */
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+      
+      .get-started-button::after {
+        content: '\2192'; /* Unicode for right arrow */
+        position: absolute;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease; /* Transition effect for opacity change */
+        
+      }
+      
+      .get-started-button:hover::after {
+        opacity: 1; /* Show arrow on hover */
+      }
+      
+      .get-started-button:hover {
+        padding-left: 15px; /* Shift text to the left on hover */
+        text-decoration: underline;
+      }
   }
   
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -671,6 +771,56 @@
         transition: 0.3s;
         border: 1px solid #661AC6;
     }
+    .dropment-main-blog-page-section5 {
+        background-color: black;
+        background-size: cover;
+        padding: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .dropment-main-blog-page-section5 h1 {
+        color: white;
+        font-size: 36px;
+        width: 400px;
+    }
+    
+    .dropment-main-blog-page-section5 p {
+        color: white;
+        width: 420px;
+        font-size: 17px;
+    }
+    .get-started-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        position: relative;
+        transition: padding-left 0.3s ease; /* Transition effect for padding change */
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+      
+      .get-started-button::after {
+        content: '\2192'; /* Unicode for right arrow */
+        position: absolute;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease; /* Transition effect for opacity change */
+        
+      }
+      
+      .get-started-button:hover::after {
+        opacity: 1; /* Show arrow on hover */
+      }
+      
+      .get-started-button:hover {
+        padding-left: 15px; /* Shift text to the left on hover */
+        text-decoration: underline;
+      }
   }
   @media (min-width: 1025px) {
    .dropment-branding-main-page img {
@@ -945,6 +1095,56 @@
     transition: 0.3s;
     border: 1px solid #661AC6;
 }
+.dropment-main-blog-page-section5 {
+    background-color: black;
+    background-size: cover;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropment-main-blog-page-section5 h1 {
+    color: white;
+    font-size: 40px;
+    width: 500px;
+}
+
+.dropment-main-blog-page-section5 p {
+    color: white;
+    width: 700px;
+    font-size: 20px;
+}
+.get-started-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    position: relative;
+    transition: padding-left 0.3s ease; /* Transition effect for padding change */
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  
+  .get-started-button::after {
+    content: '\2192'; /* Unicode for right arrow */
+    position: absolute;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Transition effect for opacity change */
+    
+  }
+  
+  .get-started-button:hover::after {
+    opacity: 1; /* Show arrow on hover */
+  }
+  
+  .get-started-button:hover {
+    padding-left: 15px; /* Shift text to the left on hover */
+    text-decoration: underline;
+  }
 }
 
 
