@@ -156,6 +156,58 @@
         font-size: 12px;
         font-weight: 600;
     }
+    .dropment-main-blog-page-section4 {
+        padding: 20px;
+        background-color: #F9FAFB;
+        background-size: cover;
+        background-position: center;
+        border-radius: 25px;
+        margin: 100px 6px;
+    }
+    
+    .dropment-main-blog-page-section4-img {
+        margin-right: 20px; /* Add space between image and text */
+    }
+    
+    .dropment-main-blog-page-section4-img img {
+        width: 300px; /* Ensure the image doesn't exceed its container */
+        border-radius: 25px;
+    }
+    
+    .dropment-main-blog-page-section4-txt {
+        text-align: center;
+        width: 300px;
+        margin-top: 50px;
+    }
+    
+    .dropment-main-blog-page-section4-txt h2 {
+        color: #242E47;
+        font-size: 30px;
+        margin-bottom: 10px; /* Add space between heading and paragraph */
+    }
+    
+    .dropment-main-blog-page-section4-txt p {
+        color: #7B88A8;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    .dropment-main-blog-page-section4-txt button {
+        font-size: 15px;
+        color: white;
+        background-color: #661AC6;
+        padding: 12px 13px;
+        border: 1px solid #661AC6;
+        margin-bottom: 50px;margin-top: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    .dropment-main-blog-page-section4-txt button:hover {
+        background-color: transparent;
+        color: black;
+        border-radius: 15px;
+        transition: 0.3s;
+        border: 1px solid #661AC6;
+    }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -718,6 +770,59 @@
     color: #7B88A8;
     font-size: 15px;
     font-weight: 600;
+}
+.dropment-main-blog-page-section4 {
+    padding: 20px;
+    background-color: #F9FAFB;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    display: flex;
+    margin: 150px 40px;
+}
+
+.dropment-main-blog-page-section4-img {
+    margin-right: 20px; /* Add space between image and text */
+}
+
+.dropment-main-blog-page-section4-img img {
+    width: 700px; /* Ensure the image doesn't exceed its container */
+    border-radius: 25px;
+}
+
+.dropment-main-blog-page-section4-txt {
+    text-align: center;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.dropment-main-blog-page-section4-txt h2 {
+    color: #242E47;
+    font-size: 30px;
+    margin-bottom: 10px; /* Add space between heading and paragraph */
+}
+
+.dropment-main-blog-page-section4-txt p {
+    color: #7B88A8;
+    font-size: 16px;
+    margin-top: 30px;
+}
+.dropment-main-blog-page-section4-txt button {
+    font-size: 19px;
+    color: white;
+    background-color: #661AC6;
+    padding: 12px 20px;
+    border: 1px solid #661AC6;
+    margin-top: 50px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.dropment-main-blog-page-section4-txt button:hover {
+    background-color: transparent;
+    color: black;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid #661AC6;
 }
 }
 

@@ -7,6 +7,8 @@ import logo from './images/drop2_logo.png'
 import nocode from './images/Dropment (7).png'
 import step from './images/Step 1.png'
 import stats from './images/Untitled design (18) (1).png'
+import sales from './images/Untitled design (23) (1).png'
+import orders from './images/Untitled design (20) (1).png'
 
 
 const ImageSlider = () => {
@@ -115,6 +117,19 @@ const Home = () => {
 <h4>Elevate your business with our in-depth shop analytics</h4>
           </section>
           <section className="dropment-main-blog-page-section3-img"></section>
+        </div>
+        <div className="dropment-main-blog-page-section4">
+        <section className="dropment-main-blog-page-section4-txt">
+            <h2>Manage Inventory</h2>
+            <p>Our app simplifies inventory management
+               for your online store. Easily organize 
+               and track your products with intuitive
+                tools designed to streamline your operations.</p>
+                <button>Get Started For Free</button>
+          </section>
+          <section className="dropment-main-blog-page-section4-img">
+            <img src={sales}/>
+          </section>
         </div>
       </div>
     </Fragment>
