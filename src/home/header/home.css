@@ -242,11 +242,12 @@
         font-size: 16px;
         position: relative;
         transition: padding-left 0.3s ease; /* Transition effect for padding change */
-        background-color: transparent;
+        background-color: black;
         color: white;
         border: none;
         cursor: pointer;
         margin-top: 30px;
+        border-radius: 25px;
       }
       
       .get-started-button::after {
@@ -263,7 +264,6 @@
       
       .get-started-button:hover {
         padding-left: 15px; /* Shift text to the left on hover */
-        text-decoration: underline;
       }
 }
     
@@ -515,10 +515,11 @@
         font-size: 16px;
         position: relative;
         transition: padding-left 0.3s ease; /* Transition effect for padding change */
-        background-color: transparent;
+        background-color: black;
         color: white;
         border: none;
         cursor: pointer;
+        border-radius: 25px;
         margin-top: 30px;
       }
       
@@ -536,7 +537,6 @@
       
       .get-started-button:hover {
         padding-left: 15px; /* Shift text to the left on hover */
-        text-decoration: underline;
       }
   }
   
@@ -798,10 +798,11 @@
         font-size: 16px;
         position: relative;
         transition: padding-left 0.3s ease; /* Transition effect for padding change */
-        background-color: transparent;
+        background-color: black;
         color: white;
         border: none;
         cursor: pointer;
+        border-radius: 25px;
         margin-top: 30px;
       }
       
@@ -819,7 +820,6 @@
       
       .get-started-button:hover {
         padding-left: 15px; /* Shift text to the left on hover */
-        text-decoration: underline;
       }
   }
   @media (min-width: 1025px) {
