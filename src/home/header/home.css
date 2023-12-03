@@ -375,6 +375,23 @@
       .dropment-main-blog-page-section8-q h2 {
         font-weight: 200;
       }
+      .dropment-main-blog-page-section9 {
+        padding: 20px;
+        text-align: center;
+      }
+      .dropment-main-blog-page-section9 h1 {
+        font-size: 30px;
+      }
+      .dropment-main-blog-page-section9 button {
+        background-color: black;
+        padding: 12px;
+        border-radius: 25px;
+        border: 2px solid black;
+        color: white;
+        font-size: 15px;
+        margin-top: 30px;
+        cursor: pointer;
+      }
 }
     
   @media (min-width: 481px) and (max-width: 768px) {
@@ -748,6 +765,30 @@
       }
       .dropment-main-blog-page-section8-q h2 {
         font-weight: 200;
+      }
+      .dropment-main-blog-page-section9 {
+        padding: 20px;
+        text-align: center;
+        margin: 0px 40px;
+      }
+      .dropment-main-blog-page-section9 h1 {
+        font-size: 32px;
+      }
+      .dropment-main-blog-page-section9 button {
+        background-color: black;
+        padding: 12px 15px;
+        border-radius: 25px;
+        border: 2px solid black;
+        color: white;
+        font-size: 16px;
+        margin-top: 30px;
+        cursor: pointer;
+      }
+      .dropment-main-blog-page-section9 button:hover {
+        background-color: transparent;
+        color: black;
+        transition: 0.3s;
+        border: 2px solid black;
       }
   }
   
@@ -1135,6 +1176,29 @@
       }
       .dropment-main-blog-page-section8-q h2 {
         font-weight: 200;
+      }
+      .dropment-main-blog-page-section9 {
+        padding: 20px;
+        text-align: center;
+      }
+      .dropment-main-blog-page-section9 h1 {
+        font-size: 40px;
+      }
+      .dropment-main-blog-page-section9 button {
+        background-color: black;
+        padding: 12px 15px;
+        border-radius: 25px;
+        border: 2px solid black;
+        color: white;
+        font-size: 22px;
+        margin-top: 30px;
+        cursor: pointer;
+      }
+      .dropment-main-blog-page-section9 button:hover {
+        background-color: transparent;
+        color: black;
+        transition: 0.3s;
+        border: 2px solid black;
       }
   }
   @media (min-width: 1025px) {
@@ -1574,17 +1638,34 @@
   .dropment-main-blog-page-section8-q h2 {
     font-weight: 200;
   }
+  .dropment-main-blog-page-section9 {
+    padding: 20px;
+    text-align: center;
+  }
+  .dropment-main-blog-page-section9 h1 {
+    font-size: 40px;
+  }
+  .dropment-main-blog-page-section9 button {
+    background-color: black;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: 2px solid black;
+    color: white;
+    font-size: 22px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  .dropment-main-blog-page-section9 button:hover {
+    background-color: transparent;
+    color: black;
+    transition: 0.3s;
+    border: 2px solid black;
+  }
 }
 
 
 
 
-
-
-
-
-
-
-  body {
+body {
     margin: 0px;
 }

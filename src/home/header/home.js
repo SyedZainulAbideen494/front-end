@@ -303,9 +303,13 @@ const Home = () => {
                to create shops, observe others' activities via profiles,
                 collaborate on shop development, and draw inspiration from 
                 different shops for their next business ventures. Overall,
-                 Droplement serves as an ecosystem for enthusiastic entrepreneurs
-                 , fostering collaboration and creativity</p>}
+                 Droplement serves as an ecosystem for enthusiastic entrepreneurs,
+                  fostering collaboration and creativity</p>}
           </div>
+        </div>
+        <div className="dropment-main-blog-page-section9">
+          <h1>Start Your Success Journey Now<br/> With Droment!</h1>
+          <button>Get Started for free</button>
         </div>
       </div>
     </Fragment>
