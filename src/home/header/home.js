@@ -10,7 +10,6 @@ import stats from './images/Untitled design (18) (1).png'
 import sales from './images/Untitled design (23) (1).png'
 import orders from './images/Untitled design (24) (1).png'
 
-
 const ImageSlider = () => {
   const [currentImage, setCurrentImage] = useState(1);
 
@@ -39,6 +38,11 @@ const Home = () => {
     const nav = useNavigate();
   const [order, setorder] = useState([]);
   const [loading, setloading] = useState(false);
+  const [q1, setq1] = useState(false)
+
+  const toggleQ1 = () => {
+    setq1(!q1); // Toggles the state of q1
+  };
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -168,7 +172,8 @@ const Home = () => {
           </section>
           <section className="dropment-main-blog-page-section6-txt">
            <h2>Effortlessly Manage Your Orders</h2>
-           <p>Our user-friendly tools make order management easy.</p>
+           <p>Simplify order handling effortlessly using our intuitive tools, 
+            ensuring streamlined and efficient management for your convenience</p>
             <button>Get Started For Free</button>
           </section>
         </div>
@@ -231,6 +236,21 @@ const Home = () => {
                continuous improvement and customer satisfaction.
               </p>
             </section>
+          </div>
+        </div>
+        <div className="dropment-main-blog-page-section8">
+          <div className="heading-main-dropment-blog-page-section8">
+            <h2>FAQs</h2>
+          </div>
+          <div className="dropment-main-blog-page-section8-q">
+            <h2 onClick={toggleQ1}>How Do I Setup My Store?</h2>
+            {q1 && <p>Seting up your shop on 
+              dropment is very simple first 
+              you click on the add shop button 
+              on the navigation menu then you 
+              will be redirected to a page there
+               you can build a custom shop or choose
+                from our templates.</p>}
           </div>
         </div>
       </div>
