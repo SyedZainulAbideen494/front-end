@@ -7,6 +7,12 @@
     border-radius: 8px;
     width: fit-content;
   }
+  .header-overview-shop header {
+    display: inline-flex;
+  }
+  .header-overview-shop header {
+    display: inline-flex;
+  }
   
   .SalesReportApp {
     background-color: #333;
@@ -58,11 +64,12 @@
     .total-visits h2 {
       margin-top: 0;
       font-size: 20px;
-      color: #333333;
+      color: #000000;
     }
     .total-visits h4 {
       margin-bottom: 0;
       font-size: 36px;
+      font-weight: 100;
       color: #007bff;
       text-align: center;
     }
@@ -175,7 +182,7 @@
       background-color: transparent;
       font-size: 18px;
       border: transparent;
-      margin: 10px 30px;
+      margin: 10px 10px;
       cursor: pointer;
     }
     .total-visits {
@@ -300,6 +307,25 @@
       color: white;
       margin-left: 4px;
       border: transparent;
+    }
+    .dashboard-container h1 {
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+    .dashboard-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .header-overview-shop {
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-overview-shop header {
+      display: inline-flex;
     }
   }
   @media (min-width: 481px) and (max-width: 768px) {
@@ -437,6 +463,26 @@
       margin-left: 4px;
       border: transparent;
     }
+    .dashboard-container h1 {
+      font-size: 30px;
+    }
+    .dashboard-container {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+    }
+    .header-overview-shop {
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-overview-shop header {
+      display: inline-flex;
+    }
   }
   @media (min-width: 769px) and (max-width: 1024px){
     .OrdersComponent {
@@ -445,6 +491,17 @@
       padding: 10px;
       border-radius: 8px;
       width: fit-content;
+    }
+    .header-overview-shop {
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-overview-shop header {
+      display: inline-flex;
     }
     .header-overview-shop button {
       background-color: transparent;

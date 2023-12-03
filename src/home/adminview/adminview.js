@@ -111,7 +111,7 @@ const OrdersComponentMostSoldProduct = () => {
           <div class="total-visits">
             <h2>Most sold Item</h2>
           
-          <h4>{productsUsd[0]} * {mostOccurredID.id_count}</h4>
+          <h4>{productsUsd[0]}<br/>  {mostOccurredID.id_count} sold</h4>
         </div>
         ) : (
           <p>Loading...</p>
@@ -268,7 +268,7 @@ const Dashboard = () => {
     <div class="data-components">
       <div class="total-visits">
         <h2>Total Shop Visits</h2>
-        <h4>{totalVisits}</h4>
+        <h4></h4>
       </div>
       <OrdersComponent/>
       <OrdersComponentMostSoldProduct/>

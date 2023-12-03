@@ -561,6 +561,9 @@
 .dropment-main-blog-page-section2-section1:hover {
     transition: 0.3s;
     margin-top: 20px;
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #8cffba, #0077b3);
+    border-image-slice: 1;
 }
 .dropment-main-blog-page-section2-section2 {
     border-top: 4px solid;
@@ -573,6 +576,9 @@
 .dropment-main-blog-page-section2-section2:hover {
     transition: 0.3s;
     margin-top: 20px;
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #8cffba, #0077b3);
+    border-image-slice: 1;
 }
 .dropment-main-blog-page-section2-section3 {
     border-top: 4px solid;
@@ -585,6 +591,9 @@
 .dropment-main-blog-page-section2-section3:hover {
     transition: 0.3s;
     margin-top: 20px;
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #8cffba, #0077b3);
+    border-image-slice: 1;
 }
 .dropment-main-blog-page-section2-section4 {
     border-top: 4px solid;
@@ -597,6 +606,9 @@
 .dropment-main-blog-page-section2-section4:hover {
     transition: 0.3s;
     margin-top: 20px;
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #8cffba, #0077b3);
+    border-image-slice: 1;
 }
 .dropment-main-blog-page-section2 h3 {
     font-size: 25px;
