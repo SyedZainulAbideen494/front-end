@@ -211,14 +211,14 @@ function UserProfile() {
   <section>
     <div className='detailsaboutusersection'>
       <div className='nameofuser'>
-      <h2>Syed Zainul</h2><h2 className='lastnameuserdetails'>Abideen</h2><br/>
-      <h3>Syed_saz_pvt_ltd</h3>
+      <h2>{userInfo[0]?.first_name}</h2><h2 className='lastnameuserdetails'>{userInfo[0]?.last_name}</h2><br/>
+      <h3>{userInfo[0]?.unique_id}</h3>
       </div>
       <div className='folloiwngandunfloowingbtn'>
-        <button><h3>Linked</h3><h3>1042</h3></button>
+        <button><h3>Linked</h3><h3>{followerCount}</h3></button>
       </div>
       <div className='biouserdetils'>
-        <h3>Owner and founder of dropment</h3>
+        <h3>{userInfo[0]?.bio}</h3>
       </div>
     </div>
   </section> 
@@ -226,7 +226,7 @@ function UserProfile() {
 <section className='shopssecuserporfileinusers'>
 <hr/>
 <div className='all-shop-profile'>
-  <h2>Stores owned by Syed Zain</h2>
+  <h2>Stores owned by {userInfo[0]?.first_name}</h2>
   </div>
 <hr/>
     <div className='allshopsecuser'>
