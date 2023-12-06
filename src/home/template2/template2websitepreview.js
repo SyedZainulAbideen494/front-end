@@ -10,7 +10,9 @@ import logo from '../header/images/Dropment.png'
 import r1 from  '../header/images/Untitled design (1).png'
 import r4  from '../header/images/Untitled design (4).png'
 import r6 from '../header/images/Untitled design (6).png'
-
+import facebook from '../header/images/icons8-facebook-logo-50 (1).png'
+import instagram from '../header/images/icons8-instagram-logo-50.png'
+import x from '../header/images/icons8-twitterx-50.png'
 
 const Editstoreform = () => {
   const params = useParams();
@@ -1105,10 +1107,10 @@ const Template2websitepreview = (props) => {
               <img src={banner}/>
             </div>
             <div className="product__titletemp2">
-              <h2>title</h2>
+              <p>title</p>
             </div>
             <div className="product__amounttemp2">
-              <h3>$30</h3> 
+              <p>$30</p> 
             </div>
           </li>
         </div>
@@ -1117,83 +1119,79 @@ const Template2websitepreview = (props) => {
 
   return (
     <Fragment>
-      <div className="maindivfortemp2">
-      <div className="header1temp2">
-        <header>
-          <img src={logo}/>
-          <h2>Shop Name</h2>
-          <ul>
-            <li><button>Products</button></li>
-            <li><button>about us</button></li>
-            <li><button>contact us</button></li>
-          </ul>
-        </header>
-      </div>
-      <div className="header2temp2">
-        <header>
-          <img src={banner}/>
-        </header>
-      </div>
-      <div className="keystemp2">
-        <div className="key1temp2">
-          <section className="key1temp2text">
-            <h2>Key head1</h2>
-            <p>key 1</p>
+      <div className="main-div-template2">
+        <div className="header-template2">
+        <div class="header-nav-section-template2">
+         <h2>Shop name</h2>
+          <div class="button-container-template2">
+           <button>Products</button>
+           <button>About us</button>
+           <button>Contact us</button>
+          </div>
+        </div>
+          <header>
+            <div className="temp2-header-text">
+              <h1>Welcome to the future of selling online</h1>
+              <h4>Sell your products effortlessly with dropment</h4>
+              <button>Shop Now</button>
+            </div>
+          </header>
+        </div>
+        <div className="section2-template2">
+        <section className="section2-template-2-no-1">
+            <h2>Trends</h2>
+            <button>View</button>
           </section>
-          <section>
-            <img src={r6}/>
+          <section className="section2-template-2-no-2">
+            <h2>Men's</h2>
+            <button>View</button>
+          </section>
+          <section className="section2-template-2-no-3">
+            <h2>Women's</h2>
+            <button>View</button>
           </section>
         </div>
-        <div className="key1temp2">
-          <section className="key1temp2text">
-            <h2>Key head1</h2>
-            <p>key 1</p>
-          </section>
-          <section>
-            <img src={r4}/>
-          </section>
-        </div>
-        <div className="key1temp2">
-          <section className="key1temp2text">
-            <h2>Key head1</h2>
-            <p>key 1</p>
-          </section>
-          <section>
-            <img src={r4}/>
-          </section>
-        </div>
-      </div>
-      <div className="aboutustemp2">
-        <div className="abt1temp2">
-          <section className="abt1no1temp2text">
-            <h1>Block 1 heading</h1>
-            <p>Block 1 details about above heading some random text its a checking by dropment developer 123 text 123</p>
-          </section>
-          <section className="abt1no1temp2img">
-            <img src={r6}/>
-          </section>
-        </div>
-      </div>
-      <div className="temp2prodsection">
-        <div className="prodstexttem2">
-          <h1>Our products</h1>
-        </div>
-        <div className="prodstemp2">
+        <div className="section3-template2">
+          <h2>Our featured products</h2>
+          <p>view from our latest collection</p>
           <TestProducts/>
         </div>
-      </div>
-      <div className="footertemp2">
-        <footer>
-          <div className="contactstemp2">
-            <h2>Contact us</h2>
-            <ul>
-              <li>@instagram</li>
-              <li>77665544</li>
-              <li>You@gmail.com</li>
-            </ul>
+        <div class="section4-template2">
+  <section class="section4-no1-template2">
+    <img src={r4} alt="Your Image Description" class="section4-image-template2"/>  
+  </section>
+  <section class="section4-no2-template2">
+    <h2>Our New collection</h2>
+    <p>Latest Collection</p>
+    <button>View</button>
+  </section>
+</div>
+<footer>
+          <div className="footer-1-">
+          <div className="footer-1-section-1">
+            <h4>Our company</h4>
+            <p>Company name</p>
+            <p>Slogan</p>
           </div>
+          <div className="footer-1-section-2">
+          <h4>Sections</h4>
+            <p>About us</p>
+            <p>Products</p>
+          </div>
+          <div className="footer-1-section-3">
+            <h4>Follow us</h4>
+            <img src={instagram}/>
+            <img src={facebook}/>
+            <img src={x}/>
+          </div>
+          <div className="footer-1-section-4">
+            <h4>Contact us</h4>
+            <p>Email: you@gmail.com</p>
+            <p>Phone: (123) 456-7890</p>
+          </div>
+          </div>
+          <div><p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
         </footer>
-      </div>
       </div>
     </Fragment>
   );

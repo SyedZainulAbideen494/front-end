@@ -32,7 +32,7 @@ import Order from "./home/order/order";
 import Template3website from "./home/template3/template3website";
 import Temp1rpeview from "./home/preview templates/temp1";
 import Addtemplate3form from "./home/template3/addtemplate3";
-import Temp2preview from "./home/preview templates/temp2";
+import Template2websitepreview from "./home/template2/template2websitepreview";
 import Template3preview from "./home/preview templates/temp3";
 import Template5websitepreview from "./home/template5/template5websitepreview";
 import Template5website from "./home/template5/template5website";
@@ -47,7 +47,6 @@ import Addtemplate6form from "./home/template5 copy/addtemplate5";
 import Template6website from "./home/template5 copy/template6website";
 import Addtemplate1form from "./home/template1/addtemplate1";
 import Template1website from "./home/template1/template1website";
-import Template2websitepreview from "./home/template2/template2websitepreview";
 import Addtemplate2form from "./home/template2/addtemplate2";
 import Template3websitepreview from "./home/template3/template3websitepreview";
 import Template2website from "./home/template2/template2website";
@@ -134,7 +133,7 @@ const router = createBrowserRouter([
     path: "/mystore3/:shop_id/:shop_name/",
     element: <Template3website />,
   },
-  { path: "/temp2preview", element: <Temp2preview /> },
+  { path: "/temp2preview", element: <Template2websitepreview /> },
   {path: "/temp5preview", element: <Template5websitepreview /> },
   {path: '/Add/temp5/form', element: <Addtemplate5form/>},
   {path: '/mystore5/:shop_id/:shop_name', element: <Template5website/>},

@@ -1,437 +1,765 @@
 @media (min-width: 312px) and (max-width: 480px){ 
-   .header1temp2 header {
-      display: inline-flex;
-     }
-     .header1temp2 ul {
-      display: inline-flex;
-     }
-     .header1temp2 img {
-          width: 50px;
-          height: 50px;
-     }
-     .header1temp2 {
-      background-color: #fefae0;
-     }
-     .header1temp2 {
-      color: #283618;
-     }
-     .header1temp2 button {
-      background-color: transparent;
-      border: transparent;
-      color: #283618;
-     }
-     .header1temp2 h2 {
-      font-size: small;
-     }
-     .header1temp2 li {
-      list-style: none;
-     }
-     .header2temp2 img {
-      width: 380px;
-      height: 320px;
-     }
-     .key1temp2 img {
-      width: 200px;
-      height: 200px;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
-      border-bottom: 2px solid #fefae0;
-      border-left: 2px solid #fefae0;
-      margin-left: 10px;
-      border-right: 2px solid #fefae0;
-     }
-     .key1temp2text {
-      background-color: #fefae0;
-      width: 200px;
-      height: 200px;
-      color: #606c38;
-      margin-left: 10px;
+   .header-template2 header {
+      background-image: url('../header/images/Untitled design (6).png');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      border-top: 2px solid #fefae0;
-      border-left: 2px solid #fefae0;
-      border-right: 2px solid #fefae0;
-      margin-top: 50px;
-     }
-     .keystemp2 {
-      margin-top: 150px;
-      margin-left: 50px;
-     }
-     .abt1temp2 {
-      margin-top: 150px;
-     }
-     .abt1temp2 img {
-      width: 300px;
-      height: 250px;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
-      border: 1px solid #fefae0;
-     }
-     .abt1no1temp2text {
-      width: 250px;
-      color: #283618;
-      text-align: center;
-      margin-left: 25px;
-     }
-     .productimgtemp2  img{
-        width: 180px;
-        height: 160px;
-        border-radius: 25px;
-        border: 2px solid black;
-        margin-left: 10px;
-     }
-     .productmodeltemp2 {
-        margin-top: 50px;
-        margin-left: 30px;
-        border: 2px solid black;
-        border-radius: 25px;
-        padding: 20px;
-        width: 200px;
-        height: 290px;
-        list-style: none;
-     }
-     .prodstexttem2 {
-        margin-top: 150px;
-        text-align: center;
-     }
-     .footertemp2 footer {
-        background-color: #fefae0;
-        color: #606c38;
-        padding: 40px;
-        margin-left: 20px;
-        margin-right: 20px;
-        border-radius: 25px;
-        margin-top: 150px;
-     }
+      color: white;
+      flex-direction: column;
+    }
+    
+    .temp2-header-text {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    
+    .temp2-header-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    .temp2-header-text h4 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    .temp2-header-text button {
+      padding: 10px 15px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff; /* Update this color to your desired button background */
+      color: #333; /* Update this color to your desired button text color */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .temp2-header-text button:hover {
+      background-color: #ddd; /* Change this to the hover color you prefer */
+    }
+.header-nav-section-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .button-container-template2 {
+   text-align: center;
+ }
+.header-nav-section-template2 button {
+   background-color: transparent;
+   font-size: 15px;
+   border: 2px solid transparent;
+   cursor: pointer;
+}
+.section2-template2 {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   background-color: #f0f0f0;
+   padding: 20px;
+   margin-top: 150px;
+   color: white;
+ }
+ 
+ .section2-template2 section {
+   flex: 1;
+   margin: 10px;
+   padding: 20px;
+   border-radius: 10px;
+   height: 300px;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center; /* Center content vertically */
+   align-items: center; /* Center content horizontally */
+   text-align: center;
+ }
+
+.section2-template2 .section2-template-2-no-1 {
+   background-image: url('../header/images/Untitled\ design\ \(9\).png'); /* URL for Trends background */
+}
+
+.section2-template2 .section2-template-2-no-2 {
+   background-image: url('../header/images/Untitled\ design\ \(2\).png'); /* URL for Men's background */
+}
+
+.section2-template2 .section2-template-2-no-3 {
+   background-image: url('../header/images/Untitled\ design\ \(4\).png'); /* URL for Women's background */
+}
+
+.section2-template2 h2 {
+   font-size: 1.2em; /* Adjust font size */
+   margin-bottom: 5px; /* Adjust spacing */
+}
+
+.section2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db; /* Adjust colors */
+   color: white;
+   cursor: pointer;
+   font-size: 1em; /* Adjust font size */
+}
+
+.section2-template2 button:hover {
+   background-color: #2980b9; /* Adjust hover color */
+}
+.productmodeltemp2 {
+   width: 250px;
+   text-align: center;
+   height: 300px;
+   list-style: none;
+   margin-top: 40px;
+}
+.productmodeltemp2 img {
+   width: 250px;
+   border-radius: 9px;
+   margin: 20px;
+}
+.section3-template2 {
+   text-align: center;
+   margin-top: 150px;
+}
+.section3-template2 h2 {
+   font-size: 40px;
+   font-weight: 300;
+}
+.section4-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   margin-top: 150px;
+ }
+ 
+ /* Style for the image */
+ .section4-no1-template2 {
+   flex: 0 0 30%; /* Adjust as needed */
+   margin-right: 20px;
+ }
+ 
+ /* Ensure the image doesn't exceed its container */
+ .section4-image-template2 {
+   width: 200px;
+   height: auto;
+   display: block;
+   border-radius: 9px;
+ }
+ 
+ /* Style for the content */
+ .section4-no2-template2 {
+   flex: 1;
+   text-align: center; /* Align text content to the center */
+ }
+ 
+ /* Adjust width and spacing for text content */
+ .section4-no2-template2 h2 {
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 10px;
+ }
+ 
+ /* Adjust button styles */
+ .section4-no2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db;
+   color: white;
+   cursor: pointer;
+   border-radius: 9px;
+   font-size: 17px;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .section4-no2-template2 button:hover {
+   background-color: #2980b9;
+ }
+ .footer-1- {
+   margin-top: 150px;
+ }
+ .footer-1- h4, p {
+   color: black;
+ }
 }
 @media (min-width: 481px) and (max-width: 768px) {
-   .header1temp2 header {
-      display: inline-flex;
-     }
-     .header1temp2 ul {
-      display: inline-flex;
-     }
-     .header1temp2 img {
-          width: 80px;
-          height: 80px;
-     }
-     .header1temp2 {
-      background-color: #fefae0;
-     }
-     .header1temp2 {
-      color: #283618;
-     }
-     .header1temp2 button {
-      background-color: transparent;
-      border: transparent;
-      color: #283618;
-     }
-     .header1temp2 h2 {
-      font-size: medium;
-     }
-     .header1temp2 li {
-      list-style: none;
-     }
-     .header2temp2 img {
-      width: 481px;
-      height: 300px;
-     }
-     .key1temp2 img {
-      width: 300px;
-      height: 250px;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
-      border-bottom: 2px solid #fefae0;
-      border-left: 2px solid #fefae0;
-      margin-left: 10px;
-      border-right: 2px solid #fefae0;
-     }
-     .key1temp2text {
-      background-color: #fefae0;
-      width: 300px;
-      height: 250px;
-      color: #606c38;
-      margin-left: 10px;
+   .header-template2 header {
+      background-image: url('../header/images/Untitled design (6).png');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      border-top: 2px solid #fefae0;
-      border-left: 2px solid #fefae0;
-      border-right: 2px solid #fefae0;
-      margin-top: 50px;
-     }
-     .keystemp2 {
-      margin-top: 150px;
-      margin-left: 80px;
-     }
-     .abt1temp2 {
-      margin-top: 150px;
-      margin-left: 80px;
-     }
-     .abt1temp2 img {
-      width: 300px;
-      height: 250px;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
-      border: 1px solid #fefae0;
-     }
-     .abt1no1temp2text {
-      width: 250px;
-      color: #283618;
-      text-align: center;
-      margin-left: 25px;
-     }
-     .productimgtemp2  img{
-        width: 180px;
-        height: 160px;
-        border-radius: 25px;
-        border: 2px solid black;
-        margin-left: 10px;
-     }
-     .productmodeltemp2 {
-        margin-top: 50px;
-        margin-left: 30px;
-        border: 2px solid black;
-        border-radius: 25px;
-        padding: 20px;
-        width: 200px;
-        height: 290px;
-        list-style: none;
-     }
-     .prodstexttem2 {
-        margin-top: 150px;
-        text-align: center;
-     }
-     .footertemp2 footer {
-        background-color: #fefae0;
-        color: #606c38;
-        padding: 40px;
-        margin-left: 20px;
-        margin-right: 20px;
-        border-radius: 25px;
-        margin-top: 150px;
-     }
+      color: white;
+      flex-direction: column;
+    }
+    
+    .temp2-header-text {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    
+    .temp2-header-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    .temp2-header-text h4 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    .temp2-header-text button {
+      padding: 10px 15px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff; /* Update this color to your desired button background */
+      color: #333; /* Update this color to your desired button text color */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .temp2-header-text button:hover {
+      background-color: #ddd; /* Change this to the hover color you prefer */
+    }
+.header-nav-section-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .button-container-template2 {
+   text-align: center;
+ }
+.header-nav-section-template2 button {
+   background-color: transparent;
+   font-size: 15px;
+   border: 2px solid transparent;
+   cursor: pointer;
+}
+.section2-template2 {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   background-color: #f0f0f0;
+   padding: 20px;
+   margin-top: 150px;
+   color: white;
+ }
+ 
+ .section2-template2 section {
+   flex: 1;
+   margin: 10px;
+   padding: 20px;
+   border-radius: 10px;
+   height: 300px;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center; /* Center content vertically */
+   align-items: center; /* Center content horizontally */
+   text-align: center;
+ }
+
+.section2-template2 .section2-template-2-no-1 {
+   background-image: url('../header/images/Untitled\ design\ \(9\).png'); /* URL for Trends background */
+}
+
+.section2-template2 .section2-template-2-no-2 {
+   background-image: url('../header/images/Untitled\ design\ \(2\).png'); /* URL for Men's background */
+}
+
+.section2-template2 .section2-template-2-no-3 {
+   background-image: url('../header/images/Untitled\ design\ \(4\).png'); /* URL for Women's background */
+}
+
+.section2-template2 h2 {
+   font-size: 1.2em; /* Adjust font size */
+   margin-bottom: 5px; /* Adjust spacing */
+}
+
+.section2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db; /* Adjust colors */
+   color: white;
+   cursor: pointer;
+   font-size: 1em; /* Adjust font size */
+}
+
+.section2-template2 button:hover {
+   background-color: #2980b9; /* Adjust hover color */
+}
+.productmodeltemp2 {
+   width: 250px;
+   text-align: center;
+   height: 300px;
+   list-style: none;
+   margin-top: 40px;
+}
+.productmodeltemp2 img {
+   width: 250px;
+   border-radius: 9px;
+   margin: 20px;
+}
+.section3-template2 {
+   text-align: center;
+   margin-top: 150px;
+}
+.section3-template2 h2 {
+   font-size: 40px;
+   font-weight: 300;
+}
+.section4-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   margin-top: 150px;
+ }
+ 
+ /* Style for the image */
+ .section4-no1-template2 {
+   flex: 0 0 30%; /* Adjust as needed */
+   margin-right: 20px;
+ }
+ 
+ /* Ensure the image doesn't exceed its container */
+ .section4-image-template2 {
+   width: 400px;
+   height: auto;
+   display: block;
+   border-radius: 9px;
+ }
+ 
+ /* Style for the content */
+ .section4-no2-template2 {
+   flex: 1;
+   text-align: center; /* Align text content to the center */
+ }
+ 
+ /* Adjust width and spacing for text content */
+ .section4-no2-template2 h2 {
+   font-size: 30px;
+   font-weight: 500;
+   margin-bottom: 10px;
+ }
+ 
+ /* Adjust button styles */
+ .section4-no2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db;
+   color: white;
+   cursor: pointer;
+   border-radius: 9px;
+   font-size: 17px;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .section4-no2-template2 button:hover {
+   background-color: #2980b9;
+ }
+ .footer-1- {
+   margin-top: 150px;
+ }
+ .footer-1- h4, p {
+   color: black;
+ }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-       .header1temp2 header {
-    display: inline-flex;
-   }
-   .header1temp2 ul {
-    display: inline-flex;
-    margin-left: 90px;
-   }
-   .header1temp2 img {
-        width: 100px;
-        height: 100px;
-   }
-   .header1temp2 {
-    background-color: #fefae0;
-   }
-   .header1temp2 {
-    color: #283618;
-   }
-   .header1temp2 button {
-    background-color: transparent;
-    border: transparent;
-    margin-top: 30px;
-    color: #283618;
-    font-size: medium;
-    margin-left: 40px;
-   }
-   .header1temp2 h2 {
-    margin-top: 40px;
-    margin-left: 20px;
-   }
-   .header1temp2 li {
-    list-style: none;
-   }
-   .header2temp2 img {
-    width: 769px;
-    height: 400px;
-   }
-   .key1temp2 img {
-    width: 200px;
-    height: 200px;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    margin-left: 30px;
-    border-bottom: 2px solid #fefae0;
-    border-left: 2px solid #fefae0;
-    border-right: 2px solid #fefae0;
-   }
-   .key1temp2text {
-    background-color: #fefae0;
-    width: 200px;
-    height: 200px;
-    color: #606c38;
-    text-align: center;
-    margin-left: 30px;
-    border-top: 2px solid #fefae0;
-    border-left: 2px solid #fefae0;
-    border-right: 2px solid #fefae0;
-   }
-   .keystemp2 {
-    display: inline-flex;
-    margin-top: 150px;
-    margin-left: 30px;
-   }
-   .abt1temp2 {
-    display: inline-flex;
-    margin-top: 150px;
-   }
-   .abt1temp2 img {
-    width: 300px;
-    height: 250px;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border: 1px solid #fefae0;
-   }
-   .abt1no1temp2text {
-    width: 400px;
-    color: #283618;
-    text-align: center;
-   }
-   .productimgtemp2  img{
-      width: 180px;
-      height: 160px;
-      border-radius: 25px;
-      border: 2px solid black;
-      margin-left: 10px;
-   }
-   .productmodeltemp2 {
-      margin-top: 50px;
-      margin-left: 30px;
-      border: 2px solid black;
-      border-radius: 25px;
-      padding: 20px;
-      width: 200px;
-      height: 290px;
-      list-style: none;
-   }
-   .prodstexttem2 {
-      margin-top: 150px;
+   .header-template2 header {
+      background-image: url('../header/images/Untitled design (6).png');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-   }
-   .footertemp2 footer {
-      background-color: #fefae0;
-      color: #606c38;
-      padding: 40px;
-      margin-left: 20px;
-      margin-right: 20px;
-      border-radius: 25px;
-      margin-top: 150px;
-   }
+      color: white;
+      flex-direction: column;
+    }
+    
+    .temp2-header-text {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    
+    .temp2-header-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    .temp2-header-text h4 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    .temp2-header-text button {
+      padding: 10px 15px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff; /* Update this color to your desired button background */
+      color: #333; /* Update this color to your desired button text color */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .temp2-header-text button:hover {
+      background-color: #ddd; /* Change this to the hover color you prefer */
+    }
+.header-nav-section-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .button-container-template2 {
+   text-align: center;
+ }
+.header-nav-section-template2 button {
+   background-color: transparent;
+   font-size: 15px;
+   border: 2px solid transparent;
+   cursor: pointer;
+}
+.section2-template2 {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   background-color: #f0f0f0;
+   padding: 20px;
+   margin-top: 150px;
+   color: white;
+ }
+ 
+ .section2-template2 section {
+   flex: 1;
+   margin: 10px;
+   padding: 20px;
+   border-radius: 10px;
+   height: 300px;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center; /* Center content vertically */
+   align-items: center; /* Center content horizontally */
+   text-align: center;
+ }
+
+.section2-template2 .section2-template-2-no-1 {
+   background-image: url('../header/images/Untitled\ design\ \(9\).png'); /* URL for Trends background */
+}
+
+.section2-template2 .section2-template-2-no-2 {
+   background-image: url('../header/images/Untitled\ design\ \(2\).png'); /* URL for Men's background */
+}
+
+.section2-template2 .section2-template-2-no-3 {
+   background-image: url('../header/images/Untitled\ design\ \(4\).png'); /* URL for Women's background */
+}
+
+.section2-template2 h2 {
+   font-size: 1.2em; /* Adjust font size */
+   margin-bottom: 5px; /* Adjust spacing */
+}
+
+.section2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db; /* Adjust colors */
+   color: white;
+   cursor: pointer;
+   font-size: 1em; /* Adjust font size */
+}
+
+.section2-template2 button:hover {
+   background-color: #2980b9; /* Adjust hover color */
+}
+.productmodeltemp2 {
+   width: 250px;
+   text-align: center;
+   height: 300px;
+   list-style: none;
+   margin-top: 40px;
+}
+.productmodeltemp2 img {
+   width: 250px;
+   border-radius: 9px;
+   margin: 20px;
+}
+.section3-template2 {
+   text-align: center;
+   margin-top: 150px;
+}
+.section3-template2 h2 {
+   font-size: 40px;
+   font-weight: 300;
+}
+.section4-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   margin-top: 150px;
+ }
+ 
+ /* Style for the image */
+ .section4-no1-template2 {
+   flex: 0 0 30%; /* Adjust as needed */
+   margin-right: 20px;
+ }
+ 
+ /* Ensure the image doesn't exceed its container */
+ .section4-image-template2 {
+   width: 400px;
+   height: auto;
+   display: block;
+   border-radius: 9px;
+ }
+ 
+ /* Style for the content */
+ .section4-no2-template2 {
+   flex: 1;
+   text-align: center; /* Align text content to the center */
+ }
+ 
+ /* Adjust width and spacing for text content */
+ .section4-no2-template2 h2 {
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 10px;
+ }
+ 
+ /* Adjust button styles */
+ .section4-no2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db;
+   color: white;
+   cursor: pointer;
+   border-radius: 9px;
+   font-size: 17px;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .section4-no2-template2 button:hover {
+   background-color: #2980b9;
+ }
+ .footer-1- {
+   margin-top: 150px;
+ }
+ .footer-1- h4, p {
+   color: black;
+ }
 }
 
 @media (min-width: 1025px){
-   .header1temp2 header {
-    display: inline-flex;
-   }
-   .header1temp2 ul {
-    display: inline-flex;
-    margin-left: 90px;
-   }
-   .header1temp2 img {
-        width: 100px;
-        height: 100px;
-   }
-   .header1temp2 {
-    background-color: #fefae0;
-   }
-   .header1temp2 {
-    color: #283618;
-   }
-   .header1temp2 button {
-    background-color: transparent;
-    border: transparent;
-    margin-top: 30px;
-    color: #283618;
-    font-size: medium;
-    margin-left: 40px;
-   }
-   .header1temp2 h2 {
-    margin-top: 40px;
-    margin-left: 20px;
-   }
-   .header1temp2 li {
-    list-style: none;
-   }
-   .header2temp2 img {
-    width: 1245px;
-    height: 600px;
-   }
-   .key1temp2 img {
-    width: 300px;
-    height: 300px;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    margin-left: 50px;
-    border-bottom: 2px solid #fefae0;
-    border-left: 2px solid #fefae0;
-    border-right: 2px solid #fefae0;
-   }
-   .key1temp2text {
-    background-color: #fefae0;
-    width: 300px;
-    height: 200px;
-    color: #606c38;
-    text-align: center;
-    margin-left: 50px;
-    border-top: 2px solid #fefae0;
-    border-left: 2px solid #fefae0;
-    border-right: 2px solid #fefae0;
-   }
-   .keystemp2 {
-    display: inline-flex;
-    margin-top: 150px;
-    margin-left: 80px;
-   }
-   .abt1temp2 {
-    display: inline-flex;
-    margin-top: 150px;
-   }
-   .abt1temp2 img {
-    width: 400px;
-    height: 350px;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border: 1px solid #fefae0;
-   }
-   .abt1no1temp2text {
-    width: 400px;
-    color: #283618;
-    margin-left: 100px;
-    margin-right: 200px;
-    text-align: center;
-   }
-   .productimgtemp2  img{
-      width: 180px;
-      height: 160px;
-      border-radius: 25px;
-      border: 2px solid black;
-      margin-left: 10px;
-   }
-   .productmodeltemp2 {
-      margin-top: 50px;
-      margin-left: 30px;
-      border: 2px solid black;
-      border-radius: 25px;
-      padding: 20px;
-      width: 200px;
-      height: 290px;
-      list-style: none;
-   }
-   .prodstexttem2 {
-      margin-top: 150px;
+   .header-template2 header {
+      background-image: url('../header/images/Untitled design (6).png');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-   }
-   .footertemp2 footer {
-      background-color: #fefae0;
-      color: #606c38;
-      padding: 40px;
-      margin-left: 20px;
-      margin-right: 20px;
-      border-radius: 25px;
-      margin-top: 150px;
-   }
+      color: white;
+      flex-direction: column;
+    }
+    
+    .temp2-header-text {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    
+    .temp2-header-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    .temp2-header-text h4 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    .temp2-header-text button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff; /* Update this color to your desired button background */
+      color: #333; /* Update this color to your desired button text color */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .temp2-header-text button:hover {
+      background-color: #ddd; /* Change this to the hover color you prefer */
+    }
+.header-nav-section-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .button-container-template2 {
+   text-align: center;
+ }
+.header-nav-section-template2 button {
+   background-color: transparent;
+   font-size: 15px;
+   border: 2px solid transparent;
+   margin: 0px 30px;
+   cursor: pointer;
+}
+.section2-template2 {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   background-color: #f0f0f0;
+   padding: 20px;
+   margin-top: 150px;
+   color: white;
+ }
+ 
+ .section2-template2 section {
+   flex: 1;
+   margin: 10px;
+   padding: 20px;
+   border-radius: 10px;
+   height: 300px;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center; /* Center content vertically */
+   align-items: center; /* Center content horizontally */
+   text-align: center;
+ }
+
+.section2-template2 .section2-template-2-no-1 {
+   background-image: url('../header/images/Untitled\ design\ \(9\).png'); /* URL for Trends background */
+}
+
+.section2-template2 .section2-template-2-no-2 {
+   background-image: url('../header/images/Untitled\ design\ \(2\).png'); /* URL for Men's background */
+}
+
+.section2-template2 .section2-template-2-no-3 {
+   background-image: url('../header/images/Untitled\ design\ \(4\).png'); /* URL for Women's background */
+}
+
+.section2-template2 h2 {
+   font-size: 1.2em; /* Adjust font size */
+   margin-bottom: 5px; /* Adjust spacing */
+}
+
+.section2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db; /* Adjust colors */
+   color: white;
+   cursor: pointer;
+   font-size: 1em; /* Adjust font size */
+}
+
+.section2-template2 button:hover {
+   background-color: #2980b9; /* Adjust hover color */
+}
+.productmodeltemp2 {
+   width: 250px;
+   text-align: center;
+   height: 300px;
+   list-style: none;
+   margin-top: 40px;
+}
+.productmodeltemp2 img {
+   width: 250px;
+   border-radius: 9px;
+   margin: 20px;
+}
+.section3-template2 {
+   text-align: center;
+   margin-top: 150px;
+}
+.section3-template2 h2 {
+   font-size: 40px;
+   font-weight: 300;
+}
+.section4-template2 {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   margin-top: 150px;
+ }
+ 
+ /* Style for the image */
+ .section4-no1-template2 {
+   flex: 0 0 30%; /* Adjust as needed */
+   margin-right: 20px;
+ }
+ 
+ /* Ensure the image doesn't exceed its container */
+ .section4-image-template2 {
+   width: 700px;
+   height: auto;
+   display: block;
+   border-radius: 9px;
+ }
+ 
+ /* Style for the content */
+ .section4-no2-template2 {
+   flex: 1;
+   text-align: center; /* Align text content to the center */
+ }
+ 
+ /* Adjust width and spacing for text content */
+ .section4-no2-template2 h2 {
+   font-size: 40px;
+   font-weight: 500;
+   margin-bottom: 10px;
+ }
+ 
+ .section4-no2-template2 p {
+   margin-bottom: 15px;
+ }
+ 
+ /* Adjust button styles */
+ .section4-no2-template2 button {
+   padding: 8px 16px;
+   border: none;
+   background-color: #3498db;
+   color: white;
+   cursor: pointer;
+   border-radius: 9px;
+   font-size: 17px;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .section4-no2-template2 button:hover {
+   background-color: #2980b9;
+ }
+ .footer-1- {
+   margin-top: 150px;
+ }
+ .footer-1- h4, p {
+   color: black;
+ }
 }
 
 
