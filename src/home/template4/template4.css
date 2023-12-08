@@ -1000,6 +1000,45 @@
         font-size: 17px;
       }
 }
-.footer-1- h4, p {
+/* Base styles for the footer */
+.footer-1-section-3-temp4 img {
+  width: 30px;
+}
+.footer-1-temp4 {
+  display: inline-flex;
+}
+.footer-1-section-4-temp4 img {
+  width: 30px;
+}
+.footer-1-section-1-temp4,
+.footer-1-section-2-temp4,
+.footer-1-section-3-temp4,
+.footer-1-section-4-temp4{
+  width: 200px;
+  text-align: center;
+  margin-left: 25px;
+}
+
+.footer-1-temp4 {
+  display: flex;
+  justify-content: center;
   color: white;
+  margin-top: 150px;
+}
+
+.footer-1-temp4 h4, p {
+  color: white;
+}
+
+.footer-1-section-1-temp4,
+.footer-1-section-2-temp4,
+.footer-1-section-3-temp4,
+.footer-1-section-4-temp4 {
+  width: 200px;
+  text-align: center;
+  margin-left: 25px;
+}
+
+.footer-1-temp4 h4 {
+  text-decoration: underline grey 3px solid;
 }

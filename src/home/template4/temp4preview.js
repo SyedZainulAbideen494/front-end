@@ -722,32 +722,36 @@ const Template4websitepreview = (props) => {
     <button>View</button>
   </section>
 </div>
-<div className="footer-temp4">
-<footer>
-          <div className="footer-1-">
-          <div className="footer-1-section-1">
-            <h4>Our company</h4>
-            <p>shop_name</p>
-          </div>
-          <div className="footer-1-section-2">
-          <h4>Sections</h4>
-            <p>About us</p>
-            <p>Products</p>
-          </div>
-          <div className="footer-1-section-3">
-            <h4>Follow us</h4>
-            <img src={instagram}/>
-            <img src={facebook}/>
-            <img src={x}/>
-          </div>
-          <div className="footer-1-section-4">
-            <h4>Contact us</h4>
-            <p>Email: shop_email</p>
-            <p>Phone:shop_phone</p>
-          </div>
-          </div>
-          <div><p>&copy; {new Date().getFullYear()} shop_name. All rights reserved.</p></div>
-        </footer>
+<div class="footer-temp4">
+  <footer>
+    <div class="footer-1-temp4">
+      <div class="footer-1-section-1-temp4">
+        <h4>Our company</h4>
+        <p>shop_name</p>
+      </div>
+      <div class="footer-1-section-2-temp4">
+        <h4>Sections</h4>
+        <p>About us</p>
+        <p>Products</p>
+      </div>
+      <div class="footer-1-section-3-temp4">
+        <h4>Follow us</h4>
+        <div class="social-icons">
+          <img src={instagram} alt="Instagram"/>
+          <img src={facebook} alt="Facebook"/>
+          <img src={x} alt="Other"/>
+        </div>
+      </div>
+      <div class="footer-1-section-4-temp4">
+        <h4>Contact us</h4>
+        <p>Email: shop_email</p>
+        <p>Phone:shop_phone</p>
+      </div>
+    </div>
+    <div>
+      <p>&copy; {new Date().getFullYear()} shop_name. All rights reserved.</p>
+    </div>
+  </footer>
 </div>
 </div>
     </Fragment>
