@@ -100,38 +100,6 @@ const Addshopniche = () => {
               </Link>
             </span>
           </div>
-          <div className="template">
-            <Link to="/Add/temp6/form">
-              <button className="button button-primary template-button">Dropment template 6</button>
-            </Link>
-            <span className="preview-span">
-              <Link to="/temp6preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
-              </Link>
-            </span>
-          </div>
-          <div className="template">
-            <Link to="/Add/temp7/form">
-              <button className="button button-primary template-button">Dropment template 7</button>
-            </Link>
-            <span className="preview-span">
-              <Link to="/temp7preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
-              </Link>
-            </span>
-          </div>
-          <div className="template">
-            <Link to="/Add/temp8/form">
-              <button className="button button-primary template-button">Dropment template 8</button>
-            </Link>
-            <span className="preview-span">
-              <Link to="/temp8preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
-              </Link>
-            </span>
-          </div>
-
-          {/* Add more templates as needed */}
         </div>
       </div>
     </Fragment>
