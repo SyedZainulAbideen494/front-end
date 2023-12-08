@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import Template4websitepreview from "./temp4preview";
 
 const Addtemplate4form = (props) => {
   const [shop_name, setname] = useState("");
@@ -92,19 +93,6 @@ const Addtemplate4form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter owner name</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter owner name"
-            onChange={(e) => {
-              setowner(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
             <h3>Enter Shop key point heading 1</h3>
           </label>
           <br />
@@ -183,19 +171,6 @@ const Addtemplate4form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter a heading for deatil block number 2</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter a heading for deatil block number 2"
-            onChange={(e) => {
-              setshop_blockheading2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
             <h3>Enter deatils some deatils about your shop for block 2</h3>
           </label>
           <br />
@@ -222,19 +197,6 @@ const Addtemplate4form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter deatils some deatils about your shop for block 3</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter deatils some deatils about your shop for block 3"
-            onChange={(e) => {
-              setshop_block3(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
             <h3>Enter Your instagram Id</h3>
           </label>
           <br />
@@ -246,24 +208,12 @@ const Addtemplate4form = (props) => {
             }}
           />
         </div>
-        <div className="inp">
-          <label>
-            <h3>Enter some text to confirm</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter some text to confirm"
-            onChange={(e) => {
-              settemp4(e.target.value);
-            }}
-          />
-        </div>
         <hr />
         <div className="addnewstorebtn">
           <button onClick={addshophandler}>Add new store</button>
         </div>
       </div>
+      <Template4websitepreview/>
     </Fragment>
   );
 };

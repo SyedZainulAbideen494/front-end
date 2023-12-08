@@ -675,32 +675,32 @@ const Template4websitepreview = (props) => {
   <div class="header-temp4">
     <header>
       <div class="middle-content-hero-section-temp4">
-        <h1>Welcome to the future of E-commerce</h1>
-        <p>Make your own online shop in minutes hassle-free</p>
+        <h1>Welcome to the future of E-commerce(sales text)</h1>
+        <p>Make your own online shop in minutes hassle-free(tagline)</p>
         <button>Shop now</button>
       </div>
     </header>
   </div>
   <div class="section1-temp4">
   <div class="section1-temp4-1">
-    <img src={img1} alt="Shop Collection Image"/>
+    <img src={img2} alt="Shop Collection Image"/>
   </div>
   <div class="section1-temp4-2">
-    <h1>Our Shop Collection 2023</h1>
+    <h1>Our Shop Collection 2023(shop blockhead 1)</h1>
     <p>
       We had our best collection in 2023, view all the trending ones from us in 2023.
-      We had just the prime year in sales and the best collection. View now by clicking the button below.
+      We had just the prime year in sales and the best collection. View now by clicking the button below.(shop block1)
     </p>
     <button class="view-button-temp4">View Collection</button>
   </div>
 </div>
 <div className="section2-temp4">
-  <section className="section2-temp4-1">
-    <h2>Rings</h2>
+  <section className="section2-temp4-1" >
+    <h2>Rings(key head 1)</h2>
     <button>Show now</button>
   </section>
   <section className="section2-temp4-2">
-    <h2>Watches</h2>
+    <h2>Watches(key 1)</h2>
     <button>Show now</button>
   </section>
 </div>
@@ -717,7 +717,7 @@ const Template4websitepreview = (props) => {
     <p>
       We are a well established e-commerce brand in terms of premium clothing. 
       We have been providing value since 1888. We were first established in 1850
-      in London. 
+      in London. (shop block 2)
     </p>
     <button>View</button>
   </section>

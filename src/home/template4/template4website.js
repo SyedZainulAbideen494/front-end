@@ -11,6 +11,15 @@ import img4 from '../header/images/Untitled design (6).png'
 import img5 from '../header/images/Untitled design (7).png'
 import img6 from '../header/images/Untitled design (8).png'
 import img7 from '../header/images/Untitled design (9).png'
+import banner from '../header/images/Untitled design (2).png'
+import logo from '../header/images/Dropment.png'
+import r1 from  '../header/images/Untitled design (1).png'
+import r4  from '../header/images/Untitled design (4).png'
+import r6 from '../header/images/Untitled design (6).png'
+import facebook from '../header/images/icons8-facebook-logo-50 (1).png'
+import instagram from '../header/images/icons8-instagram-logo-50.png'
+import x from '../header/images/icons8-twitterx-50.png'
+
 
 const Editstoreform = () => {
   const params = useParams();
@@ -1569,8 +1578,9 @@ const params = useParams();
           shop_key3: itemsdata.shop_key3,
           shop_email: itemsdata.shop_email,
           shop_phone: itemsdata.shop_phone,
-          temp4: itemsdata.temp4,
-          insta: itemsdata.insta
+          temp2: itemsdata.temp2,
+          insta: itemsdata.insta,
+          salestext: itemsdata.salestext
         };
       });
       setItems(transformedItems);
@@ -1617,11 +1627,104 @@ const params = useParams();
     }
   };
 
+  const heroStyle = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images1 : ''})`,
+  };
 
+  const heroStyle2 = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images3 : ''})`,
+  };
+
+  const heroStyle3 = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images4 : ''})`,
+  };
+
+  const heroStyle4 = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images5 : ''})`,
+  };
   return (
     <Fragment>
       <Editbtndisplay1/>
-      
+      <div class="main-div-temp4">
+  <div class="header-temp4">
+    <header style={heroStyle}>
+      <div class="middle-content-hero-section-temp4">
+        <h1>{items[0]?.salestext}</h1>
+        <p>{items[0]?.shop_tagline}</p>
+        <button>Shop now</button>
+      </div>
+    </header>
+  </div>
+  <div class="section1-temp4">
+  <div class="section1-temp4-1">
+    <img src={items[0]?.images2} alt="Shop Collection Image"/>
+  </div>
+  <div class="section1-temp4-2">
+    <h1>{items[0]?.shop_blockhead1}</h1>
+    <p>
+     {items[0]?.shop_block1}
+    </p>
+    <button class="view-button-temp4">View Collection</button>
+  </div>
+</div>
+<div className="section2-temp4">
+  <section className="section2-temp4-1" style={heroStyle2}>
+    <h2>{items[0]?.shop_keyhead1}</h2>
+    <button>Show now</button>
+  </section>
+  <section className="section2-temp4-2" style={heroStyle3}>
+    <h2>{items[0]?.shop_key1}</h2>
+    <button>Show now</button>
+  </section>
+</div>
+<div className="section3-temp4">
+  <div className="section3-temp4-txt">
+    <h2>Our Collection</h2>
+  </div>
+  <Productsinshopapp/>
+</div>
+<div className="section4-temp4">
+  <section className="section4-temp4-1" style={heroStyle4}></section>
+  <section className="section4-temp4-2">
+    <h1>About us</h1>
+    <p>
+      {items[0]?.shop_block2}
+    </p>
+    <button>View</button>
+  </section>
+</div>
+<div class="footer-temp4">
+  <footer>
+    <div class="footer-1-temp4">
+      <div class="footer-1-section-1-temp4">
+        <h4>Our company</h4>
+        <p>{items[0]?.shop_name}</p>
+      </div>
+      <div class="footer-1-section-2-temp4">
+        <h4>Sections</h4>
+        <p>About us</p>
+        <p>Products</p>
+      </div>
+      <div class="footer-1-section-3-temp4">
+        <h4>Follow us</h4>
+        <div class="social-icons">
+          <img src={instagram} alt="Instagram"/>
+          <img src={facebook} alt="Facebook"/>
+          <img src={x} alt="Other"/>
+        </div>
+      </div>
+      <div class="footer-1-section-4-temp4">
+        <h4>Contact us</h4>
+        <p>Email: {items[0]?.shop_email}</p>
+        <p>Phone :{items[0]?.shop_phone}</p>
+      </div>
+    </div>
+    <div>
+      <p>&copy; {new Date().getFullYear()} {items[0]?.shop_name}. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+</div>
     </Fragment>
   );
 };
