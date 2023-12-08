@@ -1531,7 +1531,8 @@ const params = useParams()
           shop_email: itemsdata.shop_email,
           shop_phone: itemsdata.shop_phone,
           temp5: itemsdata.temp5,
-          insta: itemsdata.insta
+          insta: itemsdata.insta,
+          salestext: itemsdata.salestext
         };
       });
       setItems(transformedItems);
@@ -1575,8 +1576,8 @@ const params = useParams()
 </div>
 <div className="temp5-hero-section">
   <header>
-    <h2>Shop From The Most Trending Items</h2>
-    <p>We Provide Quality</p>
+    <h2>{items[0]?.shop_tagline}</h2>
+    <p>{items[0]?.salestext}</p>
     <button>Shop Now</button>
   </header>
 </div>
@@ -1592,16 +1593,16 @@ const params = useParams()
   </div>
   <div className="keypoints-temp5">
     <div className="keypint-1-temp5">
-      <h2>Quick delevery</h2>
-      <p>We Delevery your orders in less than 3 Days. Depends on your location</p>
+      <h2>{items[0]?.shop_keyhead1}</h2>
+      <p>{items[0]?.shop_key1}</p>
     </div>
     <div className="keypint-1-temp5">
-      <h2>10 days retrun perios</h2>
-      <p>We take returns if you don't like the product or you recived it damaged</p>
+    <h2>{items[0]?.shop_keyhead2}</h2>
+      <p>{items[0]?.shop_key2}</p>
     </div>
     <div className="keypint-1-temp5">
-      <h2>Free delevery up to 3 products</h2>
-      <p>We Delevery your orders in for free if it is more than 3</p>
+    <h2>{items[0]?.shop_keyhead3}</h2>
+      <p>{items[0]?.shop_key3}</p>
     </div>
   </div>
 </div>
@@ -1610,9 +1611,7 @@ const params = useParams()
   <section className="temp5-section3-2">
     <h2>About us</h2>
     <p>
-    We are a well established e-commerce brand in terms of premium clothing. 
-      We have been providing value since 1888. We were first established in 1850
-      in London.
+      {items[0]?.shop_block1}
     </p>
     <button>View Items</button>
   </section>
@@ -1622,7 +1621,7 @@ const params = useParams()
     <div class="footer-1-temp5">
       <div class="footer-1-section-1-temp5">
         <h4>Our company</h4>
-        <p>shop_name</p>
+        <p>{items[0]?.shop_name}</p>
       </div>
       <div class="footer-1-section-2-temp5">
         <h4>Sections</h4>
@@ -1639,12 +1638,12 @@ const params = useParams()
       </div>
       <div class="footer-1-section-4-temp5">
         <h4>Contact us</h4>
-        <p>Email: shop_email</p>
-        <p>Phone:shop_phone</p>
+        <p>Email: {items[0]?.shop_email}</p>
+        <p>Phone: {items[0]?.shop_phone}</p>
       </div>
     </div>
     <div>
-      <p>&copy; {new Date().getFullYear()} shop_name. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} {items[0]?.shop_name}. All rights reserved.</p>
     </div>
   </footer>
 </div>
