@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import Template2websitepreview from "./template2websitepreview";
 
 const Addtemplate1form = (props) => {
   const [shop_name, setname] = useState("");
@@ -208,6 +209,7 @@ const Addtemplate1form = (props) => {
           <button onClick={addshophandler}>Add new store</button>
         </div>
       </div>
+      <Template2websitepreview/>
     </Fragment>
   );
 };
