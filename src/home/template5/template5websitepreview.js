@@ -1187,8 +1187,8 @@ const Template5websitepreview = (props) => {
 </div>
 <div className="temp5-hero-section">
   <header>
-    <h2>Shop From The Most Trending Items</h2>
-    <p>We Provide Quality</p>
+    <h2>Shop From The Most Trending Items(tagline)</h2>
+    <p>We Provide Quality(sales text)</p>
     <button>Shop Now</button>
   </header>
 </div>
@@ -1204,16 +1204,16 @@ const Template5websitepreview = (props) => {
   </div>
   <div className="keypoints-temp5">
     <div className="keypint-1-temp5">
-      <h2>Quick delevery</h2>
-      <p>We Delevery your orders in less than 3 Days. Depends on your location</p>
+      <h2>Quick delevery(key head 1)</h2>
+      <p>We Delevery your orders in less than 3 Days. Depends on your location(key 1)</p>
     </div>
     <div className="keypint-1-temp5">
-      <h2>10 days retrun perios</h2>
-      <p>We take returns if you don't like the product or you recived it damaged</p>
+      <h2>10 days retrun perios(key head 2)</h2>
+      <p>We take returns if you don't like the product or you recived it damaged(key 2)</p>
     </div>
     <div className="keypint-1-temp5">
-      <h2>Free delevery up to 3 products</h2>
-      <p>We Delevery your orders in for free if it is more than 3</p>
+      <h2>Free delevery up to 3 products(key head 3)</h2>
+      <p>We Delevery your orders in for free if it is more than 3(key 3)</p>
     </div>
   </div>
 </div>
@@ -1224,7 +1224,7 @@ const Template5websitepreview = (props) => {
     <p>
     We are a well established e-commerce brand in terms of premium clothing. 
       We have been providing value since 1888. We were first established in 1850
-      in London.
+      in London.(block 1)
     </p>
     <button>View Items</button>
   </section>
