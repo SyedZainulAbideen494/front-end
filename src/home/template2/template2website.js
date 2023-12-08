@@ -10,7 +10,9 @@ import logo from '../header/images/Dropment.png'
 import r1 from  '../header/images/Untitled design (1).png'
 import r4  from '../header/images/Untitled design (4).png'
 import r6 from '../header/images/Untitled design (6).png'
-
+import facebook from '../header/images/icons8-facebook-logo-50 (1).png'
+import instagram from '../header/images/icons8-instagram-logo-50.png'
+import x from '../header/images/icons8-twitterx-50.png'
 
 const Editstoreform = () => {
  
@@ -853,13 +855,13 @@ const Addproductstodatabase = (props) => {
   }, [fetchUsersHandler]);
 
   return (
-    <div className="productmodeltemp3">
+    <div className="productmodeltemp2">
       {name.map((user, index) => (
         <li key={index}>
-          <div className="productimgtemp3">
+          <div className="productimgtemp2">
             <img src={props.images} alt="Product Image" />
           </div>
-          <div className="product__titletemp3">
+          <div className="product__titletemp2">
             <h2>{props.title}</h2>
           </div>
           <Pricing country={user.country} />
@@ -1547,12 +1549,98 @@ const params = useParams()
     setRatingform(false)
   }
 
-    
+  const heroStyle = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images1 : ''})`,
+  };
+
+  const heroStyle2 = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images2 : ''})`,
+  };
+
+  const heroStyle3 = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images3 : ''})`,
+  };
+
+  const heroStyle4 = {
+    backgroundImage: `url(${items.length > 0 ? items[0].images4 : ''})`,
+  };
 
   return (
     <Fragment>
       <Editbtndisplay1/>
-      
+      <div className="main-div-template2">
+        <div className="header-template2">
+        <div class="header-nav-section-template2">
+         <h2>{items[0]?.shop_name}</h2>
+          <div class="button-container-template2">
+           <button>Products</button>
+           <button>About us</button>
+           <button>Contact us</button>
+          </div>
+        </div>
+          <header style={heroStyle}>
+            <div className="temp2-header-text">
+              <h1>{items[0]?.salestext}</h1>
+              <h4>{items[0]?.shop_tagline}</h4>
+              <button>Shop Now</button>
+            </div>
+          </header>
+        </div>
+        <div className="section2-template2">
+        <section className="section2-template-2-no-1" style={heroStyle2}>
+            <h2>{items[0]?.shop_keyhead1}</h2>
+            <button>View</button>
+          </section>
+          <section className="section2-template-2-no-2" style={heroStyle3}>
+            <h2>{items[0]?.shop_keyhead2}</h2>
+            <button>View</button>
+          </section>
+          <section className="section2-template-2-no-3" style={heroStyle4}>
+            <h2>{items[0]?.shop_keyhead3}</h2>
+            <button>View</button>
+          </section>
+        </div>
+        <div className="section3-template2">
+          <h2>Our featured products</h2>
+          <p>view from our latest collection</p>
+          <Productsinshopapp/>
+        </div>
+        <div class="section4-template2">
+  <section class="section4-no1-template2">
+    <img src={items[0]?.images5} alt="Your Image Description" class="section4-image-template2"/>  
+  </section>
+  <section class="section4-no2-template2">
+    <h2>Our New collection</h2>
+    <p>Latest Collection</p>
+    <button>View</button>
+  </section>
+</div>
+<footer>
+          <div className="footer-1-">
+          <div className="footer-1-section-1">
+            <h4>Our company</h4>
+            <p>{items[0]?.shop_name}</p>
+          </div>
+          <div className="footer-1-section-2">
+          <h4>Sections</h4>
+            <p>About us</p>
+            <p>Products</p>
+          </div>
+          <div className="footer-1-section-3">
+            <h4>Follow us</h4>
+            <img src={instagram}/>
+            <img src={facebook}/>
+            <img src={x}/>
+          </div>
+          <div className="footer-1-section-4">
+            <h4>Contact us</h4>
+            <p>Email: {items[0]?.shop_email}</p>
+            <p>Phone:{items[0]?.shop_phone}</p>
+          </div>
+          </div>
+          <div><p>&copy; {new Date().getFullYear()} {items[0]?.shop_name}. All rights reserved.</p></div>
+        </footer>
+      </div>
     </Fragment>
   );
 };

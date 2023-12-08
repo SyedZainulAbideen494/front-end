@@ -732,12 +732,17 @@ const Template3websitepreview = (props) => {
           </section>
         </div>
       </div>
-      <div className="testimonialtemp3">
-
-        <section className="testimonial1temp3">30M+<br/>Clients</section>
-        <section className="testimonial1temp3">4.5<img src={star}/><br/>Rating</section>
-        <section className="testimonial1temp3">3 Days<br/> response time</section>
-      </div>
+      <div class="testimonialtemp3">
+  <section class="testimonial1temp3">
+    30M+<br/>Clients
+  </section>
+  <section class="testimonial1temp3">
+    4.5 <img class="star" src={star} alt="star"/><br/>Rating
+  </section>
+  <section class="testimonial1temp3">
+    3 Days<br/>Response Time
+  </section>
+</div>
       <div className="footerfortemp3">
         <footer>
           <h2>Contact us</h2>

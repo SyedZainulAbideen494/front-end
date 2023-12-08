@@ -66,21 +66,27 @@
     height: 150px;
     border-radius: 25px;
   }
-  .testimonialtemp3  {
+  .testimonialtemp3 {
     background-color: #5e17eb;
-    padding: 10px;
-    display: inline-flex;
-    width: 340px;
-    margin-top: 150px;
+    padding: 20px; /* Increased padding for better spacing */
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: space-around; /* Align items */
+    width: 90%; /* Adjusted width for better responsiveness */
+    margin: 50px auto; /* Center the section */
     border-radius: 25px;
   }
-  .testimonialtemp3 img {
+  
+  .testimonialtemp3 section {
+    text-align: center; /* Center align text */
+    color: white;
+    font-size: 18px; /* Increased font size for better readability */
+  }
+  
+  .testimonialtemp3 img.star {
     width: 15px;
     height: 15px;
-  }
-  .testimonial1temp3 {
-    margin-left: 8px;
-    color: white;
+    vertical-align: middle; /* Align the star icon with text */
+    margin-left: 5px; /* Add margin for separation */
   }
   .footerfortemp3 footer {
     background-color: #5e17eb;
@@ -170,21 +176,27 @@
     margin-right: 5px;
     border-radius: 25px;
   }
-  .testimonialtemp3  {
+  .testimonialtemp3 {
     background-color: #5e17eb;
-    padding: 10px;
-    display: inline-flex;
-    width: 450px;
-    margin-top: 150px;
+    padding: 20px; /* Increased padding for better spacing */
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: space-around; /* Align items */
+    width: 90%; /* Adjusted width for better responsiveness */
+    margin: 50px auto; /* Center the section */
     border-radius: 25px;
   }
-  .testimonialtemp3 img {
+  
+  .testimonialtemp3 section {
+    text-align: center; /* Center align text */
+    color: white;
+    font-size: 18px; /* Increased font size for better readability */
+  }
+  
+  .testimonialtemp3 img.star {
     width: 15px;
     height: 15px;
-  }
-  .testimonial1temp3 {
-    margin-left: 80px;
-    color: white;
+    vertical-align: middle; /* Align the star icon with text */
+    margin-left: 5px; /* Add margin for separation */
   }
   .footerfortemp3 footer {
     background-color: #5e17eb;
@@ -273,21 +285,27 @@
     height: 250px;
     border-radius: 25px;
   }
-  .testimonialtemp3  {
+  .testimonialtemp3 {
     background-color: #5e17eb;
-    display: inline-flex;
-    width: 750px;
-    margin-top: 150px;
+    padding: 20px; /* Increased padding for better spacing */
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: space-around; /* Align items */
+    width: 90%; /* Adjusted width for better responsiveness */
+    margin: 50px auto; /* Center the section */
     border-radius: 25px;
   }
-  .testimonialtemp3 img {
+  
+  .testimonialtemp3 section {
+    text-align: center; /* Center align text */
+    color: white;
+    font-size: 18px; /* Increased font size for better readability */
+  }
+  
+  .testimonialtemp3 img.star {
     width: 15px;
     height: 15px;
-  }
-  .testimonial1temp3 {
-    margin-left: 140px;
-    font-size: x-large;
-    color: white;
+    vertical-align: middle; /* Align the star icon with text */
+    margin-left: 5px; /* Add margin for separation */
   }
   .footerfortemp3 footer {
     background-color: #5e17eb;
@@ -378,23 +396,27 @@
     border-radius: 25px;
     margin-left: 100px;
   }
-  .testimonialtemp3  {
+  .testimonialtemp3 {
     background-color: #5e17eb;
-    padding: 70px;
-    display: inline-flex;
-    width: 1045px;
-    margin-top: 150px;
-    margin-left: 50px;
+    padding: 20px; /* Increased padding for better spacing */
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: space-around; /* Align items */
+    width: 90%; /* Adjusted width for better responsiveness */
+    margin: 50px auto; /* Center the section */
     border-radius: 25px;
   }
-  .testimonialtemp3 img {
+  
+  .testimonialtemp3 section {
+    text-align: center; /* Center align text */
+    color: white;
+    font-size: 18px; /* Increased font size for better readability */
+  }
+  
+  .testimonialtemp3 img.star {
     width: 15px;
     height: 15px;
-  }
-  .testimonial1temp3 {
-    margin-left: 200px;
-    font-size: x-large;
-    color: white;
+    vertical-align: middle; /* Align the star icon with text */
+    margin-left: 5px; /* Add margin for separation */
   }
   .footerfortemp3 footer {
     background-color: #5e17eb;

@@ -111,20 +111,7 @@ const Addtemplate1form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter owner name</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter owner name"
-            onChange={(e) => {
-              setowner(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter sales text</h3>
+            <h3>Hero section text 1</h3>
           </label>
           <br />
           <input
@@ -137,7 +124,7 @@ const Addtemplate1form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter Tagline</h3>
+            <h3>Hero section text 2</h3>
           </label>
           <br />
           <input
@@ -150,82 +137,46 @@ const Addtemplate1form = (props) => {
         </div>
         <div className="inp">
           <label>
-            <h3>Enter Shop key point heading 1</h3>
+            <h3>Catogary 1</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point heading 1"
+            placeholder="Catogary 1"
             onChange={(e) => {
               setshp_keyhead1(e.target.value);
             }}
           />
         </div>
+      
         <div className="inp">
           <label>
-            <h3>Enter Shop key point 1</h3>
+            <h3>Catogary 2</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point 1"
-            onChange={(e) => {
-              setshop_key1(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter Shop key point heading 2</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter Shop key point heading 2"
+            placeholder="Catogary 2"
             onChange={(e) => {
               setshop_keyhead2(e.target.value);
             }}
           />
         </div>
+       
         <div className="inp">
           <label>
-            <h3>Enter Shop key point 2</h3>
+            <h3>Catogary 3</h3>
           </label>
           <br />
           <input
             required
-            placeholder="Enter Shop key point 2"
-            onChange={(e) => {
-              setshop_key2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter Shop key point heading 3</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter Shop key point heading 3"
+            placeholder="Catogary 3"
             onChange={(e) => {
               setshop_keyhead3(e.target.value);
             }}
           />
         </div>
-        <div className="inp">
-          <label>
-            <h3>Enter Shop key point 3</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter Shop key point 3"
-            onChange={(e) => {
-              setshop_key3(e.target.value);
-            }}
-          />
-        </div>
+       
         <div className="inp">
           <label>
             <h3>Enter Shop email</h3>
@@ -249,97 +200,6 @@ const Addtemplate1form = (props) => {
             placeholder="Enter Shop phone number"
             onChange={(e) => {
               setshop_phone(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter first step</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter first step"
-            onChange={(e) => {
-              setshop_blockheading1(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter your 2nd step</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter your 2nd step"
-            onChange={(e) => {
-              setshop_block1(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter your 3rd step</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter your 3rd step"
-            onChange={(e) => {
-              setshop_blockheading2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter your 4rt step</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter your 4rt step"
-            onChange={(e) => {
-              setshop_block2(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>What type of a comapny is it(example agency)</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="What type of a comapny is it(example agency)"
-            onChange={(e) => {
-              setshop_blockheading3(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter some details about your company</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter some details about your company"
-            onChange={(e) => {
-              setshop_block3(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter any text to confirm</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter any text to confirm"
-            onChange={(e) => {
-              settemp2(e.target.value);
             }}
           />
         </div>
