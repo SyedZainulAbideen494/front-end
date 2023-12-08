@@ -8,6 +8,9 @@ import './template5.css'
 import head2img from '../../home/header/images/The Indian Gent.jpg'
 import key1img from '../../home/header/images/10 Outfit Ideas from Men Fashion Influencers - The Indian Gent.png'
 import key2img from '../../home/header/images/key2img.jpg'
+import facebook from '../header/images/icons8-facebook-logo-50 (1).png'
+import instagram from '../header/images/icons8-instagram-logo-50.png'
+import x from '../header/images/icons8-twitterx-50.png'
 
 
 const Editstoreform = () => {
@@ -1558,93 +1561,93 @@ const params = useParams()
   return (
     <Fragment>
       <Editbtndisplay1/>
-      <div className="maintemp5">
-        <div className="temp5head1">
-          <header>
-            <div className="storenametemp5">
-              <h1>{items[0]?.shop_name}</h1>
-            </div>
-            <div className="btnhead1temp5">
-              <button onClick={scrollToItems}>Our products</button>
-              <button onClick={scrollToaboutus}>About us</button>
-              <button onClick={scrollTocontactus}>Contact us</button>
-            </div>
-          </header>
-          </div>
-          <div className="temp5head2">
-            <header>
-              <div className="head2imgtem5">
-                <img src={items[0]?.images1} alt="image 1"/>
-              </div>
-            </header>
-          </div>
-        <div className="abt1temp1">
-          <div className="abt1temp5text">
-            <h2>{items[0]?.shop_keyhead1}</h2>
-            <h4>{items[0]?.shop_key1}</h4>
-          </div>
-          <div className="inilineimgtemp5abt1">
-          <div className="abt1key1">
-            <img src={items[0]?.images2} alt="image 2"/>
-          </div>
-          <div className="abt1key1">
-            <img src={items[0]?.images3}/>
-          </div>
-          <div className="abt1key1">
-            <img src={items[0]?.images4}/>
-          </div>
-          </div>
+      <div className="main-div-temp5">
+      <div class="nav-bar-temp5">
+  <div class="nav-buttons-left-temp5">
+    <button>Products</button>
+    <button>Shop Now</button>
+  </div>
+  <h2>Shop Name</h2>
+  <div class="nav-buttons-right-temp5">
+    <button>About us</button>
+    <button>Contact us</button>
+  </div>
+</div>
+<div className="temp5-hero-section">
+  <header>
+    <h2>Shop From The Most Trending Items</h2>
+    <p>We Provide Quality</p>
+    <button>Shop Now</button>
+  </header>
+</div>
+<div className="temp5-section1">
+  <div className="sction1-temp5-txt">
+    <h2>Our Products</h2>
+  </div>
+  <TestProducts/>
+</div>
+<div className="section2-temp5">
+  <div className="section2-temp5-heading">
+    <h2>Our Advantages</h2>
+  </div>
+  <div className="keypoints-temp5">
+    <div className="keypint-1-temp5">
+      <h2>Quick delevery</h2>
+      <p>We Delevery your orders in less than 3 Days. Depends on your location</p>
+    </div>
+    <div className="keypint-1-temp5">
+      <h2>10 days retrun perios</h2>
+      <p>We take returns if you don't like the product or you recived it damaged</p>
+    </div>
+    <div className="keypint-1-temp5">
+      <h2>Free delevery up to 3 products</h2>
+      <p>We Delevery your orders in for free if it is more than 3</p>
+    </div>
+  </div>
+</div>
+<div className="temp5-section3">
+  <section className="temp5-section3-1"></section>
+  <section className="temp5-section3-2">
+    <h2>About us</h2>
+    <p>
+    We are a well established e-commerce brand in terms of premium clothing. 
+      We have been providing value since 1888. We were first established in 1850
+      in London.
+    </p>
+    <button>View Items</button>
+  </section>
+</div>
+<div class="footer-temp5">
+  <footer>
+    <div class="footer-1-temp5">
+      <div class="footer-1-section-1-temp5">
+        <h4>Our company</h4>
+        <p>shop_name</p>
+      </div>
+      <div class="footer-1-section-2-temp5">
+        <h4>Sections</h4>
+        <p>About us</p>
+        <p>Products</p>
+      </div>
+      <div class="footer-1-section-3-temp5">
+        <h4>Follow us</h4>
+        <div class="social-icons">
+          <img src={instagram} alt="Instagram"/>
+          <img src={facebook} alt="Facebook"/>
+          <img src={x} alt="Other"/>
         </div>
-        <div className="prodstemp5section" ref={itemsRef}>
-          <div className='propdstexttemp5'>
-            <h1>Our products</h1>
-            <p><h4>Our latest and best selling  products</h4></p>
-          </div>
-          <div className="prodstemp5">
-            <Productsinshopapp/>
-          </div>
-        </div>
-        <div className="abt2temp5" ref={aboutusRef}>
-          <div className="abt2no1temp5">
-            <span className="imgtemp5abt2no1">
-              <img src={items[0]?.images5}/>
-            </span>
-            <span className="texttemp5abt2no1"><h2>{items[0]?.shop_blockhead1}</h2>
-            <p>{items[0]?.block1}</p></span>
-          </div>
-          <div className="abt2no2temp5">
-          <span className="texttemp5abt2no2"><h2>{items[0]?.shop_blockhead2}</h2>
-            <p>{items[0]?.shop_block2}</p></span>
-            <span className="imgtemp5abt2no2">
-              <img src={items[0]?.images6}/>
-            </span>
-          </div>
-          <div className="abt2no1temp5">
-            <span className="imgtemp5abt2no1">
-              <img src={items[0]?.images7}/>
-            </span>
-            <span className="texttemp5abt2no1"><h2>{items[0]?.shop_blockhead3}</h2>
-            <p>{items[0]?.shop_block3}</p></span>
-          </div>
-        </div>
-        <div className="contacttemp5" ref={contactusRef}>
-          <footer>
-            <div className="contactheadtemp5"> 
-              <h2>Contact us</h2>
-            </div>
-            <div className="conytactstmep5">
-              <ul>
-                <li>{items[0]?.insta}</li>
-                <li>{items[0]?.shop_phone}</li>
-                <li>{items[0]?.shop_email}</li>
-              </ul>
-              <button onClick={showratingform}>Rate shop</button>
-            <div className="review">
-          {ratingform && <RatingForm onClick={hideratingform} />}
-          </div>
-            </div>
-          </footer>
-        </div>
+      </div>
+      <div class="footer-1-section-4-temp5">
+        <h4>Contact us</h4>
+        <p>Email: shop_email</p>
+        <p>Phone:shop_phone</p>
+      </div>
+    </div>
+    <div>
+      <p>&copy; {new Date().getFullYear()} shop_name. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
       </div>
     </Fragment>
   );
