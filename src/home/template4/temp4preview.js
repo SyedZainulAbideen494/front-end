@@ -679,35 +679,35 @@ const Template4websitepreview = (props) => {
           <img src={img1}/>
           </header>
         </div>
-        <div className="abtustemp4" ref={aboutusRef}>
-          <div className="abtusno1part1">
-            <span>
-              <img src={img2}/>
-            </span>
-            <span>
-              <h2>Heading 1</h2>
-              <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
-            </span>
-          </div>
-          <div className="abt1part2temp4">
-          <span>
-              <h2>heading 2</h2>
-              <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
-            </span>
-            <span>
-              <img src={img3}/>
-            </span>
-          </div>
-          <div className="abt1temp4part3">
-            <span>
-              <img src={img4}/>
-            </span>
-            <span>
-              <h2>heading 3</h2>
-              <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
-            </span>
-          </div>
-        </div>
+        <div class="abtustemp4" ref={aboutusRef}>
+  <div class="abtusno1part1">
+    <span class="abtusno1part1-img">
+      <img src={img2}/>
+    </span>
+    <span class="abtusno1part1-content">
+      <h2>Heading 1</h2>
+      <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
+    </span>
+  </div>
+  <div class="abt1part2temp4">
+    <span class="abt1part2temp4-content">
+      <h2>heading 2</h2>
+      <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
+    </span>
+    <span class="abt1part2temp4-img">
+      <img src={img3}/>
+    </span>
+  </div>
+  <div class="abt1temp4part3">
+    <span class="abt1temp4part3-img">
+      <img src={img4}/>
+    </span>
+    <span class="abt1temp4part3-content">
+      <h2>heading 3</h2>
+      <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
+    </span>
+  </div>
+</div>
         <div className="ourprodstemp4" ref={itemsRef}>
           <div className="prodstemp4text">
             <h1>Our Products</h1>
