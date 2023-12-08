@@ -1026,10 +1026,12 @@
   margin-top: 150px;
 }
 
-.footer-1-temp4 h4, p {
+.footer-1-temp4 h4 {
   color: white;
 }
-
+.footer-1-temp4 p {
+  color: white;
+}
 .footer-1-section-1-temp4,
 .footer-1-section-2-temp4,
 .footer-1-section-3-temp4,
