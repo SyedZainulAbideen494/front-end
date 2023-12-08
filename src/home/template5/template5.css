@@ -1,411 +1,820 @@
 @media (min-width: 312px) and (max-width: 480px){ 
-    .head2imgtem5 img {
-        width: 300px;
-        height: 250px;
-    }
-    .temp5head1 {
-        display: inline-flex;
-    }
-    .btnhead1temp5 button {
+    .nav-bar-temp5 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .nav-buttons-left-temp5,
+      .nav-buttons-right-temp5 {
+        display: flex;
+        gap: 10px; /* Adjust the spacing between buttons */
+      }
+      
+      /* Optional styling */
+      .nav-bar-temp5 h2 {
+        margin: 0; /* Remove default margin */
+        font-size: 20px;
+        font-weight: 500;
+        display: none;
+      }
+      .nav-bar-temp5 button {
         background-color: transparent;
-        border: transparent;
-        margin-left: 10px;
-    }
-    .abt1temp1 img {
+        border: none;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .temp5-hero-section {
+        background-image: url('../header/images/Untitled\ design\ \(2\).png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust this value as needed */
+      }
+      .temp5-hero-section {
+        text-align: center;
+      }
+      .temp5-hero-section h2 {
+        color: white;
+        font-weight: 500;
+        font-size: 30px;
         width: 200px;
+      }    
+      .temp5-hero-section p {
+        color: white;
+        font-size: 17px;
+        width: 200px;
+        font-weight: 600;
+      }
+      .temp5-hero-section button {
+        background-color: white;
+        color: black;
+        padding: 15px 25px;
+        border-radius: 9px;
+        cursor: pointer;
+        border: 2px solid white;
+        font-size: 20px;
         margin-top: 50px;
-        margin-left: 50px;
-        border-radius: 25px;
-    }
-    .abt1temp5text {
-        text-align: center;
-        margin-top: 50px;
-    }
-    .prodstemp5 {
-        margin-top: 80px;
-    }
-    .prodstemp5section h1 ,p{
-        text-align: center;
-    }
-    .productimgtemp5 img {
-        width: 180px;
-        height: 150px;
-        border-radius: 25px;
-    }
-    .productmodeltemp5 {
-        border: 2px solid black;
-        padding: 20px;
-        border-radius: 25px;
-        height: 240px;
-        width: 180px;
-    }
-    .productmodeltemp5 li {
+      }
+      .temp5-hero-section button:hover {
+        transition: 0.3s;
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+      .productmodeltemp5 {
+        width: 230px;
         list-style: none;
-    }
-    .prodstemp5section {
-        margin-top: 80px;
-    }
-    .imgtemp5abt2no1 img {
-        border-bottom-left-radius: 50%;
-        border-top-left-radius: 50%;
-        width: 150px;
-        height: 150px;
-        margin-right: 7px;
-    }
-    .abt2no1temp5  {
-        display: inline-flex;
-        width: 312px;
-        font-size: small;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-    }
-    .imgtemp5abt2no2 img {
-        border-bottom-right-radius: 50%;
-        border-top-right-radius: 50%;
-        width: 150px;
-        height: 150px;
-    }
-    .abt2no2temp5  {
-        display: inline-flex;
-        font-size: small;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-    }
-    .storenametemp5 h1 {
-        margin-left: 50px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    .contacttemp5 {
-        margin-top: 100px;
-        margin-left: 50px;
-        background-color: #6b705c;
-        color: #ffe8d6;
-        margin-right: 50px;
-        border-radius: 15px;
+        margin-left: 30px;
+        text-align: center;
+      }
+      .productimgtemp5 img {
+        width: 230px;
+        border-radius: 9px;
+      }
+      .product__titletemp5 h2 {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .product__amounttemp5 h3 {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .temp5-section1 {
+        margin-top: 150px;
+      }
+      .sction1-temp5-txt {
+        text-align: center;
+      }
+      .sction1-temp5-txt h2 {
+        color: black;
+        font-size: 30px;
+        font-weight: 100;
+      }
+      .section2-temp5 {
+        text-align: center;
+        background-color: #eeeeee;
+        padding: 40px;
+        border-radius: 9px;
+        margin-top: 150px;
+      }
+      
+      .section2-temp5-heading {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      
+      .keypoints-temp5 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .keypint-1-temp5 {
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 10px;
         padding: 20px;
-    }
+        width: 300px;
+        color: black;
+        max-width: 300px; /* Add maximum width */
+      }
+      
+      .keypint-1-temp5 h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        width: 300px;
+      }
+      
+      /* Optional: Adjust styles for paragraphs */
+      .keypint-1-temp5 p {
+        font-size: 0.9em;
+        color: #555;
+        max-width: 300px; /* Add maximum width */
+      }
+      .temp5-section3 {
+        display: flex;
+        align-items: center;
+        margin-top: 150px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .temp5-section3-1 {
+        width: 50%;
+        height: 60vh;
+        background-image: url('../header/images/Korea’s\ Most\ Popular\ Beauty\ Brand\ Is\ Finally\ Coming\ Stateside.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+      
+      .temp5-section3-2 {
+        max-width: 600px;
+        text-align: center;
+      }
+      
+      .temp5-section3-2 h2 {
+        color: black;
+        font-size: 37px;
+        width: 100%; /* Adjust width to fit smaller screens */
+        text-align: center;
+      }
+      
+      .temp5-section3-2 p {
+        color: black;
+        width: 100%; /* Adjust width to fit smaller screens */
+      }
+      
+      .temp5-section3-2 button {
+        text-align: center;
+        color: white;
+        border-radius: 9px;
+        padding: 12px 20px;
+        cursor: pointer;
+        border: 2px solid black;
+        background-color: black;
+        width: 200px; /* Adjust button width */
+        margin: 20px auto; /* Center button */
+      }
+      
+      /* Media query for mobile devices */
+        .temp5-section3 {
+          flex-direction: column; /* Stack sections vertically on small screens */
+          align-items: center;
+          text-align: center;
+        }
+      
+        .temp5-section3-1 {
+          width: 80%; /* Adjust image width for smaller screens */
+          height: 40vh; /* Adjust image height for smaller screens */
+          margin-right: 0;
+          margin-bottom: 20px; /* Add space between image and content */
+        }
+      
+        .temp5-section3-2 {
+          max-width: 80%;
+        }
+      
+        .temp5-section3-2 h2,
+        .temp5-section3-2 p {
+          width: 100%; /* Adjust text width for smaller screens */
+        }
 }
 @media (min-width: 481px) and (max-width: 768px) {
-    .head2imgtem5 img {
-        width: 481px ;
-        height: 400px;
-    }
-    .temp5head1  header{
-        display: inline-flex;
-    }
-    .btnhead1temp5 button {
-        margin-top: 30px;
-        margin-left: 20px;
+    .nav-bar-temp5 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .nav-buttons-left-temp5,
+      .nav-buttons-right-temp5 {
+        display: flex;
+        gap: 10px; /* Adjust the spacing between buttons */
+      }
+      
+      /* Optional styling */
+      .nav-bar-temp5 h2 {
+        margin: 0; /* Remove default margin */
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .nav-bar-temp5 button {
         background-color: transparent;
-        border: transparent;
-    }
-    .abt1temp1 img {
-        width: 140px;
-        margin-top: 50px;
-        border-radius: 25px;
-        margin-left: 5px;
-        height: 220px;
-    }
-    .abt1temp5text {
+        border: none;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .temp5-hero-section {
+        background-image: url('../header/images/Untitled\ design\ \(2\).png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust this value as needed */
+      }
+      .temp5-hero-section {
         text-align: center;
+      }
+      .temp5-hero-section h2 {
+        color: white;
+        font-weight: 500;
+        font-size: 30px;
+        width: 200px;
+      }    
+      .temp5-hero-section p {
+        color: white;
+        font-size: 17px;
+        width: 200px;
+        font-weight: 600;
+      }
+      .temp5-hero-section button {
+        background-color: white;
+        color: black;
+        padding: 15px 25px;
+        border-radius: 9px;
+        cursor: pointer;
+        border: 2px solid white;
+        font-size: 20px;
         margin-top: 50px;
-    }
-    .inilineimgtemp5abt1 {
-        display: inline-flex;
-        margin-left: 20px;
-    }
-    .prodstemp5 {
-        margin-top: 80px;
-    }
-    .prodstemp5section h1 ,p{
-        text-align: center;
-    }
-    .productimgtemp5 img {
-        width: 240px;
-        height: 180px;
-        border-radius: 25px;
-    }
-    .productmodeltemp5 {
-        border: 2px solid black;
-        padding: 20px;
-        border-radius: 25px;
-        height: 300px;
-        width: 240px;
-    }
-    .productmodeltemp5 li {
+      }
+      .temp5-hero-section button:hover {
+        transition: 0.3s;
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+      .productmodeltemp5 {
+        width: 230px;
         list-style: none;
-    }
-    .imgtemp5abt2no1 img {
-        border-bottom-left-radius: 50%;
-        border-top-left-radius: 50%;
-        width: 200px;
-        height: 200px;
-    }
-    .abt2no1temp5  {
-        display: inline-flex;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-        width: 470px;
-    }
-    .imgtemp5abt2no2 img {
-        border-bottom-right-radius: 50%;
-        border-top-right-radius: 50%;
-        width: 200px;
-        height: 200px;
-        margin-left: 100px;
-    }
-    .abt2no2temp5  {
-        display: inline-flex;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-    }
-    .texttemp5abt2no1 {
-        margin-left: 80px;
-    }
-    .storenametemp5 h1 {
-        margin-left: 50px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    .abt1temp1 {
-        background-color: #6b705c;
-        color: #ffe8d6;
-        border-radius: 25px;
-        padding-bottom: 20px;
-    }
-    .contacttemp5 {
-        margin-top: 100px;
-        margin-left: 50px;
-        background-color: #6b705c;
-        color: #ffe8d6;
-        margin-right: 50px;
-        border-radius: 15px;
+        margin-left: 30px;
+        text-align: center;
+      }
+      .productimgtemp5 img {
+        width: 230px;
+        border-radius: 9px;
+      }
+      .product__titletemp5 h2 {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .product__amounttemp5 h3 {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .temp5-section1 {
+        margin-top: 150px;
+      }
+      .sction1-temp5-txt {
+        text-align: center;
+      }
+      .sction1-temp5-txt h2 {
+        color: black;
+        font-size: 30px;
+        font-weight: 100;
+      }
+      .section2-temp5 {
+        text-align: center;
+        background-color: #eeeeee;
+        padding: 40px;
+        border-radius: 9px;
+        margin-top: 150px;
+      }
+      
+      .section2-temp5-heading {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      
+      .keypoints-temp5 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .keypint-1-temp5 {
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 10px;
         padding: 20px;
-    }
+        width: 300px;
+        color: black;
+        max-width: 300px; /* Add maximum width */
+      }
+      
+      .keypint-1-temp5 h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        width: 300px;
+      }
+      
+      /* Optional: Adjust styles for paragraphs */
+      .keypint-1-temp5 p {
+        font-size: 0.9em;
+        color: #555;
+        max-width: 300px; /* Add maximum width */
+      }
+      .temp5-section3 {
+        display: flex;
+        align-items: center;
+        margin-top: 150px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .temp5-section3-1 {
+        width: 50%;
+        height: 80vh;
+        background-image: url('../header/images/Korea’s\ Most\ Popular\ Beauty\ Brand\ Is\ Finally\ Coming\ Stateside.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+      
+      .temp5-section3-2 {
+        max-width: 600px;
+        text-align: center;
+      }
+      
+      .temp5-section3-2 h2 {
+        color: black;
+        font-size: 37px;
+        width: 100%; /* Adjust width to fit smaller screens */
+        text-align: center;
+      }
+      
+      .temp5-section3-2 p {
+        color: black;
+        width: 100%; /* Adjust width to fit smaller screens */
+      }
+      
+      .temp5-section3-2 button {
+        text-align: center;
+        color: white;
+        border-radius: 9px;
+        padding: 12px 20px;
+        cursor: pointer;
+        border: 2px solid black;
+        background-color: black;
+        width: 200px; /* Adjust button width */
+        margin: 20px auto; /* Center button */
+      }
+      
+      /* Media query for mobile devices */
+        .temp5-section3 {
+          flex-direction: column; /* Stack sections vertically on small screens */
+          align-items: center;
+          text-align: center;
+        }
+      
+        .temp5-section3-1 {
+          width: 80%; /* Adjust image width for smaller screens */
+          height: 40vh; /* Adjust image height for smaller screens */
+          margin-right: 0;
+          margin-bottom: 20px; /* Add space between image and content */
+        }
+      
+        .temp5-section3-2 {
+          max-width: 80%;
+        }
+      
+        .temp5-section3-2 h2,
+        .temp5-section3-2 p {
+          width: 100%; /* Adjust text width for smaller screens */
+        }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .head2imgtem5 img {
-        width: 769px ;
-        height: 600px;
-    }
-    .temp5head1  header{
-        display: inline-flex;
-    }
-    .btnhead1temp5 button {
-        margin-top: 30px;
-        margin-left: 60px;
+    .nav-bar-temp5 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .nav-buttons-left-temp5,
+      .nav-buttons-right-temp5 {
+        display: flex;
+        gap: 10px; /* Adjust the spacing between buttons */
+      }
+      
+      /* Optional styling */
+      .nav-bar-temp5 h2 {
+        margin: 0; /* Remove default margin */
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .nav-bar-temp5 button {
         background-color: transparent;
-        border: transparent;
-        font-size: medium;
-    }
-    .abt1temp1 img {
-        width: 240px;
-        margin-top: 50px;
-        border-radius: 25px;
-        margin-left: 5px;
-        height: 270px;
-    }
-    .abt1temp5text {
+        border: none;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .temp5-hero-section {
+        background-image: url('../header/images/Untitled\ design\ \(2\).png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust this value as needed */
+      }
+      .temp5-hero-section {
         text-align: center;
+      }
+      .temp5-hero-section h2 {
+        color: white;
+        font-weight: 500;
+        font-size: 40px;
+        width: 400px;
+      }    
+      .temp5-hero-section p {
+        color: white;
+        font-size: 17px;
+        width: 400px;
+        font-weight: 600;
+      }
+      .temp5-hero-section button {
+        background-color: white;
+        color: black;
+        padding: 15px 25px;
+        border-radius: 9px;
+        cursor: pointer;
+        border: 2px solid white;
+        font-size: 20px;
         margin-top: 50px;
-    }
-    .inilineimgtemp5abt1 {
-        display: inline-flex;
-        margin-left: 20px;
-    }
-    .prodstemp5 {
-        margin-top: 80px;
-    }
-    .prodstemp5section h1 ,p{
-        text-align: center;
-    }
-    .productimgtemp5 img {
-        width: 240px;
-        height: 180px;
-        border-radius: 25px;
-    }
-    .productmodeltemp5 {
-        border: 2px solid black;
-        padding: 20px;
-        border-radius: 25px;
-        height: 300px;
-        width: 240px;
-    }
-    .productmodeltemp5 li {
+      }
+      .temp5-hero-section button:hover {
+        transition: 0.3s;
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+      .productmodeltemp5 {
+        width: 230px;
         list-style: none;
-    }
-    .imgtemp5abt2no1 img {
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-        width: 300px;
-        height: 300px;
-    }
-    .abt2no1temp5  {
-        display: inline-flex;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-    }
-    .imgtemp5abt2no2 img {
-        border-bottom-right-radius: 50%;
-        border-top-right-radius: 50%;
-        width: 300px;
-        height: 300px;
-        margin-left: 250px;
-    }
-    .abt2no2temp5  {
-        display: inline-flex;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-        width: 769px;
-    }
-    .texttemp5abt2no1 {
-        margin-left: 80px;
-    }
-    .storenametemp5 h1 {
-        margin-left: 50px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    .abt1temp1 {
-        background-color: #6b705c;
-        color: #ffe8d6;
-        border-radius: 25px;
-        padding-bottom: 20px;
-    }
-    .contacttemp5 {
-        margin-top: 100px;
-        margin-left: 50px;
-        background-color: #6b705c;
-        color: #ffe8d6;
-        margin-right: 50px;
-        border-radius: 15px;
+        margin-left: 30px;
+        text-align: center;
+      }
+      .productimgtemp5 img {
+        width: 230px;
+        border-radius: 9px;
+      }
+      .product__titletemp5 h2 {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .product__amounttemp5 h3 {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .temp5-section1 {
+        margin-top: 150px;
+      }
+      .sction1-temp5-txt {
+        text-align: center;
+      }
+      .sction1-temp5-txt h2 {
+        color: black;
+        font-size: 30px;
+        font-weight: 100;
+      }
+      .section2-temp5 {
+        text-align: center;
+        background-color: #eeeeee;
+        padding: 40px;
+        border-radius: 9px;
+        margin-top: 150px;
+      }
+      
+      .section2-temp5-heading {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      
+      .keypoints-temp5 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .keypint-1-temp5 {
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 10px;
         padding: 20px;
-    }
+        width: 300px;
+        color: black;
+        max-width: 300px; /* Add maximum width */
+      }
+      
+      .keypint-1-temp5 h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        width: 300px;
+      }
+      
+      /* Optional: Adjust styles for paragraphs */
+      .keypint-1-temp5 p {
+        font-size: 0.9em;
+        color: #555;
+        max-width: 300px; /* Add maximum width */
+      }
+      .temp5-section3 {
+        display: flex;
+        align-items: center;
+        margin-top: 150px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Set the container height to the full viewport height */
+      }
+      
+      .temp5-section3-1 {
+        width: 50%;
+        height: 60vh;
+        background-image: url('../header/images/Korea’s\ Most\ Popular\ Beauty\ Brand\ Is\ Finally\ Coming\ Stateside.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+      
+      .temp5-section3-2 {
+        max-width: 600px;
+      }
+      .temp5-section3-2 h2 {
+        color: black;
+        font-size: 37px;
+        width: 400px;
+        text-align: center;
+      }
+      .temp5-section3-2 p {
+        color: black;
+        width: 400px;
+      }
+      .temp5-section3-2 button {
+        text-align: center;
+        color: white;
+        border-radius: 9px;
+        padding: 12px 20px;
+        cursor: pointer;
+        border: 2px solid black;
+        background-color: black;
+      }
 }
 
 @media (min-width: 1025px){
-    .head2imgtem5 img {
-        width: 1150px ;
-        height: 700px;
-        margin-left: 40px;
-    }
-    .temp5head1  header{
-        display: inline-flex;
-    }
-    .btnhead1temp5 button {
-        margin-top: 30px;
-        margin-left: 60px;
+    .nav-bar-temp5 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .nav-buttons-left-temp5,
+      .nav-buttons-right-temp5 {
+        display: flex;
+        gap: 10px; /* Adjust the spacing between buttons */
+      }
+      
+      /* Optional styling */
+      .nav-bar-temp5 h2 {
+        margin: 0; /* Remove default margin */
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .nav-bar-temp5 button {
         background-color: transparent;
-        border: transparent;
-        font-size: medium;
-    }
-    .btnhead1temp5 {
-        margin-left: 150px;
-    }
-    .abt1temp1 img {
-        width: 340px;
-        margin-top: 50px;
-        border-radius: 25px;
-        margin-left: 5px;
-        height: 380px;
-    }
-    .abt1temp5text {
+        border: none;
+        font-size: 17px;
+        cursor: pointer;
+      }
+      .temp5-hero-section {
+        background-image: url('../header/images/Untitled\ design\ \(2\).png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust this value as needed */
+      }
+      .temp5-hero-section {
         text-align: center;
+      }
+      .temp5-hero-section h2 {
+        color: white;
+        font-weight: 500;
+        font-size: 50px;
+        width: 500px;
+      }    
+      .temp5-hero-section p {
+        color: white;
+        font-size: 17px;
+        width: 500px;
+        font-weight: 600;
+      }
+      .temp5-hero-section button {
+        background-color: white;
+        color: black;
+        padding: 15px 25px;
+        border-radius: 9px;
+        cursor: pointer;
+        border: 2px solid white;
+        font-size: 20px;
         margin-top: 50px;
-    }
-    .inilineimgtemp5abt1 {
-        display: inline-flex;
-        margin-left: 80px;
-    }
-    .prodstemp5section {
-        margin-top: 80px;
-    }
-    .prodstemp5section h1 ,p{
-        text-align: center;
-    }
-    .productimgtemp5 img {
-        width: 240px;
-        height: 180px;
-        border-radius: 25px;
-    }
-    .productmodeltemp5 {
-        border: 2px solid black;
-        padding: 20px;
-        border-radius: 25px;
-        height: 300px;
-        width: 240px;
-    }
-    .productmodeltemp5 li {
+      }
+      .temp5-hero-section button:hover {
+        transition: 0.3s;
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+      .productmodeltemp5 {
+        width: 230px;
         list-style: none;
-    }
-    .imgtemp5abt2no1 img {
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-        width: 400px;
-        height: 400px;
-    }
-    .abt2no1temp5  {
-        display: inline-flex;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-    }
-    .texttemp5abt2no1 {
-        margin-left: 80px;
-    }
-    .abt2no1temp5 {
-        margin-left: 200px;
-    }
-    .imgtemp5abt2no2 img {
-        border-bottom-right-radius: 50%;
-        border-top-right-radius: 50%;
-        width: 400px;
-        height: 400px;
-        margin-left: 250px;
-    }
-    .abt2no2temp5  {
-        display: inline-flex;
-    }
-    .abt2temp5 {
-        margin-top: 100px;
-    }
-    .texttemp5abt2no1 {
-        margin-left: 80px;
-    }
-    .abt2no2temp5 {
-        margin-left: 200px;
-    }
-    .storenametemp5 h1 {
-        margin-left: 50px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    .abt1temp1 {
-        background-color: #6b705c;
-        color: #ffe8d6;
-        margin: 40px;
-        border-radius: 25px;
-        padding-bottom: 20px;
-    }
-    .contacttemp5 {
-        margin-top: 100px;
-        margin-left: 50px;
-        background-color: #6b705c;
-        color: #ffe8d6;
-        margin-right: 50px;
-        border-radius: 15px;
+        margin-left: 30px;
+        text-align: center;
+      }
+      .productimgtemp5 img {
+        width: 230px;
+        border-radius: 9px;
+      }
+      .product__titletemp5 h2 {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .product__amounttemp5 h3 {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .temp5-section1 {
+        margin-top: 150px;
+      }
+      .sction1-temp5-txt {
+        text-align: center;
+      }
+      .sction1-temp5-txt h2 {
+        color: black;
+        font-size: 30px;
+        font-weight: 100;
+      }
+      .section2-temp5 {
+        text-align: center;
+        background-color: #eeeeee;
+        padding: 40px;
+        border-radius: 9px;
+        margin-top: 150px;
+      }
+      
+      .section2-temp5-heading {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      
+      .keypoints-temp5 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .keypint-1-temp5 {
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 10px;
         padding: 20px;
-    }
+        width: 300px;
+        color: black;
+        max-width: 300px; /* Add maximum width */
+      }
+      
+      .keypint-1-temp5 h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        width: 300px;
+      }
+      
+      /* Optional: Adjust styles for paragraphs */
+      .keypint-1-temp5 p {
+        font-size: 0.9em;
+        color: #555;
+        max-width: 300px; /* Add maximum width */
+      }
+      
+      .temp5-section3 {
+        display: flex;
+        align-items: center;
+        margin-top: 150px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Set the container height to the full viewport height */
+      }
+      
+      .temp5-section3-1 {
+        width: 50%;
+        height: 60vh;
+        background-image: url('../header/images/Korea’s\ Most\ Popular\ Beauty\ Brand\ Is\ Finally\ Coming\ Stateside.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+      
+      .temp5-section3-2 {
+        max-width: 600px;
+      }
+      .temp5-section3-2 h2 {
+        color: black;
+        font-size: 37px;
+        width: 400px;
+        text-align: center;
+      }
+      .temp5-section3-2 p {
+        color: black;
+        width: 400px;
+      }
+      .temp5-section3-2 button {
+        text-align: center;
+        color: white;
+        border-radius: 9px;
+        padding: 12px 20px;
+        cursor: pointer;
+        border: 2px solid black;
+        background-color: black;
+      }
 }
 
-
-.form1 h3 {
-    color: white;
-}
-
-
-
+.footer-1-section-3-temp5 img {
+    width: 30px;
+  }
+  .footer-1-temp4 {
+    display: inline-flex;
+  }
+  .footer-1-section-4-temp5 img {
+    width: 30px;
+  }
+  .footer-1-section-1-temp5,
+  .footer-1-section-2-temp5,
+  .footer-1-section-3-temp5,
+  .footer-1-section-4-temp5{
+    width: 200px;
+    text-align: center;
+    margin-left: 25px;
+  }
+  
+  .footer-1-temp5 {
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    margin-top: 150px;
+  }
+  
+  .footer-1-temp5 h4, p {
+    color: rgb(0, 0, 0);
+  }
+  .footer-1-temp5 p {
+    color: black;
+  }
+  .footer-1-section-1-temp5,
+  .footer-1-section-2-temp5,
+  .footer-1-section-3-temp5,
+  .footer-1-section-4-temp5 {
+    width: 200px;
+    text-align: center;
+    margin-left: 25px;
+  }
+  
+  .footer-1-temp5 h4 {
+    text-decoration: underline grey 3px solid;
+  }
