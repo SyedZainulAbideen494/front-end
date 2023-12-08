@@ -75,7 +75,7 @@ const MyProfile = () => {
             <div className="profile-details">
               <h2>{`${img[0]?.first_name} ${img[0]?.last_name}`}</h2>
               <p>ID: {img[0]?.unique_id}</p>
-              <p>Followers: {followerCount}</p>
+              <p>Links: {followerCount}</p>
               <p>Bio: {img[0]?.bio}</p>
               {/* Additional necessary details can be displayed here */}
             </div>
