@@ -11,6 +11,14 @@ import img4 from '../header/images/Untitled design (6).png'
 import img5 from '../header/images/Untitled design (7).png'
 import img6 from '../header/images/Untitled design (8).png'
 import img7 from '../header/images/Untitled design (9).png'
+import banner from '../header/images/Untitled design (2).png'
+import logo from '../header/images/Dropment.png'
+import r1 from  '../header/images/Untitled design (1).png'
+import r4  from '../header/images/Untitled design (4).png'
+import r6 from '../header/images/Untitled design (6).png'
+import facebook from '../header/images/icons8-facebook-logo-50 (1).png'
+import instagram from '../header/images/icons8-instagram-logo-50.png'
+import x from '../header/images/icons8-twitterx-50.png'
 
 const Editstoreform = () => {
   const params = useParams();
@@ -605,13 +613,16 @@ const TestProducts = (props) => {
     <div className="productmodel4">
       <li>
         <div className="productimg4">
-          <img src={img4} alt="Product Image" />
+          <img src={img1} alt="Product Image" />
         </div>
         <div className="product__title4">
-          <h2>Name of the product</h2>
+          <h2>product</h2>
         </div>
         <div className="product__amount4">
           <h3>$23</h3>
+        </div>
+        <div className="products-temp4-button">
+          <button>Buy Now</button>
         </div>
       </li>
     </div>
@@ -660,98 +671,85 @@ const Template4websitepreview = (props) => {
   const params = useParams();
   return (
     <Fragment>
-      <div className="maintemp4">
-        <main>
-        <div className="temp4header1">
-          <header>
-            <h1>Shop Name</h1>
-            <div className="btnstemp4head1">
-              <ul>
-                <li><button onClick={scrollToItems}>Products</button></li>
-                <li><button onClick={scrollToaboutus}>About us</button></li>
-                <li><button onClick={scrollTocontactus}>Contact us</button></li>
-              </ul>
-            </div>
-          </header>
-        </div>
-        <div className="img2header2temp4">
-          <header>
-          <img src={img1}/>
-          </header>
-        </div>
-        <div class="abtustemp4" ref={aboutusRef}>
-  <div class="abtusno1part1">
-    <span class="abtusno1part1-img">
-      <img src={img2}/>
-    </span>
-    <span class="abtusno1part1-content">
-      <h2>Heading 1</h2>
-      <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
-    </span>
+      <div class="main-div-temp4">
+  <div class="header-temp4">
+    <header>
+      <div class="middle-content-hero-section-temp4">
+        <h1>Welcome to the future of E-commerce</h1>
+        <p>Make your own online shop in minutes hassle-free</p>
+        <button>Shop now</button>
+      </div>
+    </header>
   </div>
-  <div class="abt1part2temp4">
-    <span class="abt1part2temp4-content">
-      <h2>heading 2</h2>
-      <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
-    </span>
-    <span class="abt1part2temp4-img">
-      <img src={img3}/>
-    </span>
+  <div class="section1-temp4">
+  <div class="section1-temp4-1">
+    <img src={img1} alt="Shop Collection Image"/>
   </div>
-  <div class="abt1temp4part3">
-    <span class="abt1temp4part3-img">
-      <img src={img4}/>
-    </span>
-    <span class="abt1temp4part3-content">
-      <h2>heading 3</h2>
-      <p>Some details about above heading test 123 text etc hello this is dropment test template.</p>
-    </span>
+  <div class="section1-temp4-2">
+    <h1>Our Shop Collection 2023</h1>
+    <p>
+      We had our best collection in 2023, view all the trending ones from us in 2023.
+      We had just the prime year in sales and the best collection. View now by clicking the button below.
+    </p>
+    <button class="view-button-temp4">View Collection</button>
   </div>
 </div>
-        <div className="ourprodstemp4" ref={itemsRef}>
-          <div className="prodstemp4text">
-            <h1>Our Products</h1>
-            <h4>Our latest and best selling products</h4>
+<div className="section2-temp4">
+  <section className="section2-temp4-1">
+    <h2>Rings</h2>
+    <button>Show now</button>
+  </section>
+  <section className="section2-temp4-2">
+    <h2>Watches</h2>
+    <button>Show now</button>
+  </section>
+</div>
+<div className="section3-temp4">
+  <div className="section3-temp4-txt">
+    <h2>Our Collection</h2>
+  </div>
+  <TestProducts/>
+</div>
+<div className="section4-temp4">
+  <section className="section4-temp4-1"></section>
+  <section className="section4-temp4-2">
+    <h1>About us</h1>
+    <p>
+      We are a well established e-commerce brand in terms of premium clothing. 
+      We have been providing value since 1888. We were first established in 1850
+      in London. 
+    </p>
+    <button>View</button>
+  </section>
+</div>
+<div className="footer-temp4">
+<footer>
+          <div className="footer-1-">
+          <div className="footer-1-section-1">
+            <h4>Our company</h4>
+            <p>shop_name</p>
           </div>
-          <div className="ourprodstemp4section">
-            <TestProducts/>
+          <div className="footer-1-section-2">
+          <h4>Sections</h4>
+            <p>About us</p>
+            <p>Products</p>
           </div>
-        </div>
-        <div className="maindivforgrtimgtemp4">
-          <div className="temp4textgrtimg">
-            <h2>Some text here(key1 head)</h2>
-            <h4>some text here too(key1)</h4>
+          <div className="footer-1-section-3">
+            <h4>Follow us</h4>
+            <img src={instagram}/>
+            <img src={facebook}/>
+            <img src={x}/>
           </div>
-        <div className="greateimgtemp4">
-          <section>
-            <div className="grtimgtemp41">
-            <img src={img5}/>
-            </div>
-          </section>
-          <section>
-          <div className="grtimgtemp42">
-            <img src={img6}/>
-            </div>
-          </section>
-          <section>
-          <div className="grtimgtemp43">
-            <img src={img7}/>
-            </div>
-          </section>
-        </div>
-        </div>
-        <div className="footertemp4" ref={contactusRef}>
-          <footer>
-            <h2>Contact us</h2>
-            <ul>
-              <li>@instagram</li>
-              <li>7760372911</li>
-              <li>You@gmail.com</li>
-            </ul>
-          </footer>
-        </div>
-        </main>
-      </div>
+          <div className="footer-1-section-4">
+            <h4>Contact us</h4>
+            <p>Email: shop_email</p>
+            <p>Phone:shop_phone</p>
+          </div>
+          </div>
+          <div><p>&copy; {new Date().getFullYear()} shop_name. All rights reserved.</p></div>
+        </footer>
+</div>
+</div>
     </Fragment>
   );
 };

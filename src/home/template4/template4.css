@@ -1,544 +1,1005 @@
 @media (min-width: 312px) and (max-width: 480px){ 
-    
-    .btnstemp4head1  li{
-        display: inline-flex;
-        list-style: none;
-        margin-top: 15px;
-    }
-    .temp4header1 header {
-        display: inline-flex;
-    }
-    .btnstemp4head1 button {
-        background-color: transparent;
-        color: #fffcf2;
-        border: transparent;
-        margin-top: 5px;
-    }
-    .temp4header1 h1 {
-        color: #fffcf2;
-    }
-    .maintemp4 main {
-        background: black;
-    }
-    .img2header2temp4 img {
-        width: 100%;
-    }
-  
-    .abtustemp4 h2, p {
-    color: white;
-    text-align: center;
-    font-weight: 300;
-  }
-  
-  /* Consistent image styling */
-  .abtusno1part1 img,
-  .abt1part2temp4 img,
-  .abt1temp4part3 img {
-    width: 200px;
-    border-radius: 15px;
-  }
-  
-  /* Flexbox layout for sections */
-  .abtustemp4 > div {
+  .main-div-temp4 {
+    background-color: black;
+    padding: 10px;
+}
+.header-temp4 {
+    background-image: url('../header/images/Untitled design (7).png');
+    background-size: cover;
+    background-position: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px; /* Adjust as needed */
+    height: 80vh; /* Adjust this value as needed */
   }
-  .abtustemp4 > div {
-    flex-direction: column;
+
+  .middle-content-hero-section-temp4 {
     text-align: center;
   }
-
-  .abtustemp4 h2, p {
-    width: auto; /* Reset width */
+  .middle-content-hero-section-temp4 h1 {
+    color: white;
+    font-size: 30px;
+    width: 250px;
+  }
+  .middle-content-hero-section-temp4 p {
+    width: 250px;
+    color: white;
+    font-size: 17px;
+  }
+  .middle-content-hero-section-temp4 button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 9px 15px;
+    font-size: 16px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+  .middle-content-hero-section-temp4 button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
   }
 
-  /* Adjust image size for smaller screens */
-  .abtusno1part1 img,
-  .abt1part2temp4 img,
-  .abt1temp4part3 img {
-    width: 100%;
+  
+  .section1-temp4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    margin-top: 50px; /* Decrease margin for mobile */
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center; /* Center items on mobile */
   }
-    .productimg4 img {
-        width: 180px;
-        margin-left: 10px;
-        border-radius: 25px;
-    }
-    .prodstemp4text {
-        text-align: center;
-        color: white;
-    }
+  
+  .section1-temp4-1 img {
+    /* Your existing styles */
+    width: 80%; /* Adjust image width for mobile */
+    max-width: 300px; /* Limit image width for smaller screens */
+    border-radius: 25px;
+    margin-bottom: 20px; /* Add margin below image on mobile */
+    display: block; /* Ensure the image is centered */
+    margin-left: auto; /* Center the image */
+    margin-right: auto; /* Center the image */
+  }
+  
+  .section1-temp4-2 {
+    /* Your existing styles */
+    color: white;
+    padding: 0 20px; /* Add padding to text on mobile */
+    text-align: center;
+    width: 80%; /* Adjust width for mobile */
+    margin-left: 0; /* Reset margin for mobile */
+  }
+  
+  .section1-temp4-2 h1 {
+    /* Your existing styles */
+    color: white;
+    font-size: 24px; /* Adjust heading font size for mobile */
+  }
+  
+  .section1-temp4-2 p {
+    /* Your existing styles */
+    color: white;
+    font-size: 16px; /* Adjust paragraph font size for mobile */
+  }
+  
+  .view-button-temp4 {
+    /* Your existing styles */
+    color: white;
+    background-color: #000000;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px; /* Adjust margin for mobile */
+  }
+  
+  /* Additional styling for button hover/focus effects */
+  .view-button-temp4:hover {
+    /* Your existing styles */
+    transition: 0.3s;
+    background-color: white;
+    color: black;
+    border-radius: 9px;
+  }
+  .section2-temp4-1,
+.section2-temp4-2 {
+  flex: 1;
+  text-align: center;
+  height: 300px;
+  color: white;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-    .ourprodstemp4 {
-        margin-top: 150px;
-    }
-    .product__title4 h2 {
-        color: white;
-        width: 180px;
-        font-weight: 100;
-    }
-    .product__amount4 {
-        color: white;
-        width: 180px;
-    }
-    .productmodel4 {
-        width: 200px;
-        height: 280px;
-        border-radius: 25px;
-        border: 1px solid white;
-        margin-left: 30px;
-        padding: 5px;
-        margin-top: 30px;
-    }
-    .greateimgtemp4 img {
-        width: 200px;
-        height: 200px;
-        border-radius: 25px;
-        margin-left: 50px;
-    }
-    .grtimgtemp41 img {
-        margin-top: 10px;
-    }
-    .grtimgtemp42 img {
-        margin-top: 30px;
-    }
-    .grtimgtemp43 img {
-        margin-top: 90px;
-    }
-    .temp4textgrtimg {
-        color: #fffcf2;
-        text-align: center;
-    }
-    .maindivforgrtimgtemp4 {
-        margin-top: 150px;
-    }
-    .footertemp4 {
-        color: white;
-        margin-left: 30px;
-        padding: 40px;
-    }
-    .footertemp4 li {
-        margin-top: 20px;
-        list-style: none;
-    }
+/* Additional styles for buttons */
+.section2-temp4-1 button,
+.section2-temp4-2 button {
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 15px 20px;
+  font-size: 17px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Optional hover effect */
+.section2-temp4-1 button:hover,
+.section2-temp4-2 button:hover {
+  background-color: #555;
+}
+
+/* Common mobile optimization for both sections */
+  .section2-temp4-1,
+  .section2-temp4-2 {
+    height: auto;
+    margin: 10px 0;
+    border-radius: 9px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .section2-temp4-1 {
+    background-image: url('../header/images/Untitled design (7).png');
+    /* Additional specific styles for section 1 */
+  }
+  
+  .section2-temp4-2 {
+    background-image: url('../header/images/Untitled design (9).png');
+    /* Additional specific styles for section 2 */
+  }
+  .productmodel4 {
+    width: 230px;
+    margin-left: 30px;
+    text-align: center;
+    list-style: none;
+    color: white;
+  }
+  .productimg4 img {
+    width: 230px;
+  }
+  .product__title4 h2 {
+    font-size: 17px;
+    font-weight: 100;
+  }
+  .product__amount4 h3 {
+    font-size: 15px;
+    font-weight: 100;
+  }
+  .products-temp4-button button {
+    width: 190px;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border-radius: 0px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  .products-temp4-button button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+  }
+  .section3-temp4 {
+   margin-top: 150px;
+    text-align: center;
+  }
+  .section3-temp4-txt h2 {
+    color: white;
+    font-size: 40px;
+  }
+  .section4-temp4 {
+    margin-top: 50px;
+  }
+  
+  .section4-temp4-1,
+  .section4-temp4-2 {
+    flex: 1;
+    text-align: center;
+    height: 300px;
+    color: white;
+    margin: 10px; /* Add margin between sections */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Additional styles for buttons */
+  .section4-temp4-1 button,
+  .section4-temp4-2 button {
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 17px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* Optional hover effect */
+  .section4-temp4-1 button:hover,
+  .section4-temp4-2 button:hover {
+    background-color: #555;
+  }
+  
+  .section4-temp4-1 {
+    border-radius: 9px;
+    background-image: url('../header/images/Untitled design (7).png');
+    /* Additional specific styles for section 1 */
+  }
+  
+  .section4-temp4-2 {
+    color: white;
+  }
+  .section4-temp4-2 h1 {
+    color: white;
+    font-size: 40px;
+  }
+  .section4-temp4-2 p {
+    color: white;
+    width: 300px;
+    font-size: 17px;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
-    
-    .btnstemp4head1  li{
-        display: inline-flex;
-        list-style: none;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-    .temp4header1 header {
-        display: inline-flex;
-    }
-    .btnstemp4head1 button {
-        background-color: transparent;
-        color: #fffcf2;
-        border: transparent;
-        margin-top: 5px;
-    }
-    .temp4header1 h1 {
-        color: #fffcf2;
-    }
-    .maintemp4 main {
-        background: black;
-    }
-    .img2header2temp4 img {
-        width: 100%;
-    }
-    .abtustemp4 h2, p {
-        color: white;
-        text-align: center;
-        font-weight: 300;
-      }
+  .main-div-temp4 {
+    background-color: black;
+    padding: 10px;
+}
+.header-temp4 {
+    background-image: url('../header/images/Untitled design (7).png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust this value as needed */
+  }
 
-      
-      /* Flexbox layout for sections */
-      .abtustemp4 > div {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 50px; /* Adjust as needed */
-      }
-      .abtustemp4 > div {
-        flex-direction: column;
-        text-align: center;
-      }
-    
-      .abtustemp4 h2, p {
-        width: auto; /* Reset width */
-      }
-    
-      /* Adjust image size for smaller screens */
-      .abtusno1part1 img,
-      .abt1part2temp4 img,
-      .abt1temp4part3 img {
-        width: 90%;
-        border-radius: 25px;
-      }
-    .productimg4 img {
-        width: 180px;
-        margin-left: 10px;
-        border-radius: 25px;
-    }
-    .prodstemp4text {
-        text-align: center;
-        color: white;
-    }
+  .middle-content-hero-section-temp4 {
+    text-align: center;
+  }
+  .middle-content-hero-section-temp4 h1 {
+    color: white;
+    font-size: 30px;
+    width: 250px;
+  }
+  .middle-content-hero-section-temp4 p {
+    width: 250px;
+    color: white;
+    font-size: 17px;
+  }
+  .middle-content-hero-section-temp4 button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 9px 15px;
+    font-size: 16px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+  .middle-content-hero-section-temp4 button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+  }
 
-    .ourprodstemp4 {
-        margin-top: 150px;
+  
+  .section1-temp4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    margin-top: 50px; /* Decrease margin for mobile */
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center; /* Center items on mobile */
+  }
+  
+  .section1-temp4-1 img {
+    /* Your existing styles */
+    width: 80%; /* Adjust image width for mobile */
+    border-radius: 25px;
+    margin-bottom: 20px; /* Add margin below image on mobile */
+    display: block; /* Ensure the image is centered */
+    margin-left: auto; /* Center the image */
+    margin-right: auto; /* Center the image */
+  }
+  
+  .section1-temp4-2 {
+    /* Your existing styles */
+    color: white;
+    padding: 0 20px; /* Add padding to text on mobile */
+    text-align: center;
+    width: 80%; /* Adjust width for mobile */
+    margin-left: 0; /* Reset margin for mobile */
+  }
+  
+  .section1-temp4-2 h1 {
+    /* Your existing styles */
+    color: white;
+    font-size: 24px; /* Adjust heading font size for mobile */
+  }
+  
+  .section1-temp4-2 p {
+    /* Your existing styles */
+    color: white;
+    font-size: 16px; /* Adjust paragraph font size for mobile */
+  }
+  
+  .view-button-temp4 {
+    /* Your existing styles */
+    color: white;
+    background-color: #000000;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px; /* Adjust margin for mobile */
+  }
+  
+  /* Additional styling for button hover/focus effects */
+  .view-button-temp4:hover {
+    /* Your existing styles */
+    transition: 0.3s;
+    background-color: white;
+    color: black;
+    border-radius: 9px;
+  }
+  .section2-temp4-1,
+  .section2-temp4-2 {
+    flex: 1;
+    text-align: center;
+    height: 400px;
+    color: white;
+    padding: 40px 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Additional styles for buttons */
+  .section2-temp4-1 button,
+  .section2-temp4-2 button {
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 17px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* Optional hover effect */
+  .section2-temp4-1 button:hover,
+  .section2-temp4-2 button:hover {
+    background-color: #555;
+  }
+  
+  /* Common mobile optimization for both sections */
+    .section2-temp4-1,
+    .section2-temp4-2 {
+      height: auto;
+      margin: 10px 0;
+      border-radius: 9px;
+      background-size: cover;
+      background-position: center;
     }
-    .product__title4 h2 {
-        color: white;
-        width: 180px;
-        font-weight: 100;
+    
+    .section2-temp4-1 {
+      background-image: url('../header/images/Untitled design (7).png');
+      /* Additional specific styles for section 1 */
     }
-    .product__amount4 {
-        color: white;
-        width: 180px;
+    
+    .section2-temp4-2 {
+      background-image: url('../header/images/Untitled design (9).png');
+      /* Additional specific styles for section 2 */
     }
     .productmodel4 {
-        width: 200px;
-        height: 280px;
-        border-radius: 25px;
-        border: 1px solid white;
-        margin-left: 30px;
-        padding: 5px;
-        margin-top: 30px;
+      width: 230px;
+      margin-left: 30px;
+      text-align: center;
+      list-style: none;
+      color: white;
     }
-    .greateimgtemp4 img {
-        width: 150px;
-        height: 100px;
-        border-radius: 25px;
-        margin-left: 5px;
-        
+    .productimg4 img {
+      width: 230px;
     }
-    .greateimgtemp4 {
-        display: inline-flex;
+    .product__title4 h2 {
+      font-size: 17px;
+      font-weight: 100;
     }
-    
-    .grtimgtemp41 img {
-        margin-top: 10px;
+    .product__amount4 h3 {
+      font-size: 15px;
+      font-weight: 100;
     }
-    .grtimgtemp42 img {
-        margin-top: 30px;
+    .products-temp4-button button {
+      width: 190px;
+      text-align: center;
+      color: white;
+      background-color: transparent;
+      border-radius: 0px;
+      border: 1px solid white;
+      padding: 10px 15px;
+      cursor: pointer;
     }
-    .grtimgtemp43 img {
-        margin-top: 90px;
+    .products-temp4-button button:hover {
+      background-color: white;
+      color: black;
+      transition: 0.3s;
     }
-    .temp4textgrtimg {
-        color: #fffcf2;
-        text-align: center;
+    .section3-temp4 {
+     margin-top: 150px;
+      text-align: center;
     }
-    .maindivforgrtimgtemp4 {
-        margin-top: 150px;
+    .section3-temp4-txt h2 {
+      color: white;
+      font-size: 40px;
     }
-    .footertemp4 {
-        color: white;
-        padding: 40px;
-        margin-top: 100px;
-    }
-    .footertemp4 li {
-        margin-top: 20px;
-        list-style: none;
-    }
+    .section3-temp4 {
+      margin-top: 150px;
+       text-align: center;
+     }
+     .section3-temp4-txt h2 {
+       color: white;
+       font-size: 40px;
+     }
+     .section4-temp4 {
+       margin-top: 50px;
+     }
+     
+     .section4-temp4-1,
+     .section4-temp4-2 {
+       flex: 1;
+       text-align: center;
+       height: 300px;
+       color: white;
+       margin: 10px; /* Add margin between sections */
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       position: relative;
+     }
+     
+     /* Additional styles for buttons */
+     .section4-temp4-1 button,
+     .section4-temp4-2 button {
+       color: white;
+       border: 2px solid white;
+       border-radius: 5px;
+       padding: 15px 20px;
+       font-size: 17px;
+       background-color: transparent;
+       cursor: pointer;
+     }
+     
+     /* Optional hover effect */
+     .section4-temp4-1 button:hover,
+     .section4-temp4-2 button:hover {
+       background-color: #555;
+     }
+     
+     .section4-temp4-1 {
+       border-radius: 9px;
+       background-image: url('../header/images/Untitled design (7).png');
+       /* Additional specific styles for section 1 */
+     }
+     
+     .section4-temp4-2 {
+       color: white;
+     }
+     .section4-temp4-2 h1 {
+       color: white;
+       font-size: 40px;
+     }
+     .section4-temp4-2 p {
+       color: white;
+       width: 400px;
+       font-size: 17px;
+     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    
-    .btnstemp4head1  li{
-        display: inline-flex;
-        list-style: none;
-        margin-top: 15px;
-        margin-left: 50px;
-    }
-    .temp4header1 header {
-        display: inline-flex;
-    }
-    .btnstemp4head1 button {
-        background-color: transparent;
-        color: #fffcf2;
-        border: transparent;
-        margin-left: 5px;
-        margin-top: 5px;
-    }
-    .temp4header1 h1 {
-        color: #fffcf2;
-    }
-    .maintemp4 main {
-        background: black;
-    }
-    .img2header2temp4 img {
-        width: 100%;
-    }
-    .abtustemp4 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .abtusno1part1,
-      .abt1part2temp4,
-      .abt1temp4part3 {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 100px;
-        align-items: center;
-      }
-      
-      .abtusno1part1 img,
-      .abt1part2temp4 img,
-      .abt1temp4part3 img {
-        width: 300px;
-        border-radius: 25px;
-      }
-      
-      .abtusno1part1 h2,
-      .abt1part2temp4 h2,
-      .abt1temp4part3 h2 {
-        color: white;
-        font-size: xx-large;
-        font-weight: 300;
-        text-align: center;
-        width: 200px; /* Adjust as needed */
-      }
-      
-      .abtusno1part1 p,
-      .abt1part2temp4 p,
-      .abt1temp4part3 p {
-        color: white;
-        width: 200px; /* Adjust as needed */
-        text-align: center;
-      }
-      
-      .abt1part2temp4 img {
-        margin-left: 100px;
-      }
-      
-      .abt1temp4part3 img {
-        margin-left: 200px;
-      }
-      
-      .abt1temp4part3 {
-        margin-top: 130px;
-      }
-      
-      .abt1temp4part3 h2,
-      .abt1temp4part3 p {
-        width: 300px;
-        text-align: center;
-      }
-    .productimg4 img {
-        width: 180px;
-        margin-left: 10px;
-        border-radius: 25px;
-    }
-    .prodstemp4text {
-        text-align: center;
-        color: white;
-    }
-
-    .ourprodstemp4 {
-        margin-top: 150px;
-    }
-    .product__title4 h2 {
-        color: white;
-        width: 180px;
-        font-weight: 100;
-    }
-    .product__amount4 {
-        color: white;
-        width: 180px;
-    }
-    .productmodel4 {
-        width: 200px;
-        height: 280px;
-        border-radius: 25px;
-        border: 1px solid white;
-        margin-left: 30px;
-        padding: 5px;
-        margin-top: 30px;
-    }
-    .greateimgtemp4 {
-        display: inline-flex;
-        margin-left: 50px;
-    }
-    .greateimgtemp4 img {
-        width: 200px;
-        height: 200px;
-        border-radius: 25px;
-        margin-left: 10px;
-    }
-    .grtimgtemp41 img {
-        margin-top: 10px;
-    }
-    .grtimgtemp42 img {
-        margin-top: 30px;
-    }
-    .grtimgtemp43 img {
-        margin-top: 90px;
-    }
-    .temp4textgrtimg {
-        color: #fffcf2;
-        text-align: center;
-    }
-    .maindivforgrtimgtemp4 {
-        margin-top: 150px;
-    }
-    .footertemp4 {
-        color: white;
-        margin-left: 30px;
-        padding: 40px;
-    }
-    .footertemp4 li {
-        margin-top: 20px;
-        list-style: none;
-    }
+  .main-div-temp4 {
+    background-color: black;
+    padding: 10px;
 }
+.header-temp4 {
+    background-image: url('../header/images/Untitled design (7).png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this value as needed */
+  }
+
+  .middle-content-hero-section-temp4 {
+    text-align: center;
+  }
+  .middle-content-hero-section-temp4 h1 {
+    color: white;
+    font-size: 40px;
+    width: 500px;
+  }
+  .middle-content-hero-section-temp4 p {
+    width: 450px;
+    color: white;
+    font-size: 17px;
+  }
+  .middle-content-hero-section-temp4 button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: 15px 20px;
+    font-size: 20px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+  .middle-content-hero-section-temp4 button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+  }
+  
+  .section1-temp4 {
+    margin-top: 150px;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .section1-temp4-1 img {
+    /* Your existing styles */
+    width: 500px;
+    border-radius: 25px;
+  }
+  
+  .section1-temp4-2 {
+    /* Your existing styles */
+    color: white;
+    padding-left: 20px; /* Add padding for space between image and text */
+    width: 40%;
+    text-align: center;
+    margin-left: 5%;
+  }
+  
+  .section1-temp4-2 h1 {
+    /* Your existing styles */
+    color: white;
+  }
+  
+  .section1-temp4-2 p {
+    /* Your existing styles */
+    color: white;
+  }
+  
+  .view-button-temp4 {
+    /* Your existing styles */
+    color: white;
+    background-color: #000000;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 50px;
+  }
+  
+  /* Additional styling for button hover/focus effects */
+  .view-button-temp4:hover {
+    /* Your existing styles */
+    transition: 0.3s;
+    background-color: white;
+    color: black;
+    border-radius: 9px;
+  }
+  .section2-temp4 {
+    display: flex;
+  }
+  
+  .section2-temp4-1,
+  .section2-temp4-2 {
+    flex: 1;
+    text-align: center;
+    height: 300px;
+    color: white;
+    margin: 10px; /* Add margin between sections */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Additional styles for buttons */
+  .section2-temp4-1 button,
+  .section2-temp4-2 button {
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 17px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* Optional hover effect */
+  .section2-temp4-1 button:hover,
+  .section2-temp4-2 button:hover {
+    background-color: #555;
+  }
+  
+  .section2-temp4-1 {
+    border-radius: 9px;
+    background-image: url('../header/images/Untitled design (7).png');
+    /* Additional specific styles for section 1 */
+  }
+  
+  .section2-temp4-2 {
+    border-radius: 9px;
+    background-image: url('../header/images/Untitled design (9).png');
+    /* Additional specific styles for section 2 */
+  }
+  .productmodel4 {
+    width: 230px;
+    margin-left: 30px;
+    text-align: center;
+    list-style: none;
+    color: white;
+  }
+  .productimg4 img {
+    width: 230px;
+  }
+  .product__title4 h2 {
+    font-size: 17px;
+    font-weight: 100;
+  }
+  .product__amount4 h3 {
+    font-size: 15px;
+    font-weight: 100;
+  }
+  .products-temp4-button button {
+    width: 190px;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border-radius: 0px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  .products-temp4-button button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+  }
+  .section3-temp4 {
+   margin-top: 150px;
+    text-align: center;
+  }
+  .section3-temp4-txt h2 {
+    color: white;
+    font-size: 40px;
+  }
+  .section4-temp4 {
+    display: flex;
+    margin-top: 150px;
+  }
+  
+  .section4-temp4-1,
+  .section4-temp4-2 {
+    flex: 1;
+    text-align: center;
+    height: 300px;
+    color: white;
+    margin: 10px; /* Add margin between sections */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Additional styles for buttons */
+  .section4-temp4-1 button,
+  .section4-temp4-2 button {
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 17px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* Optional hover effect */
+  .section4-temp4-1 button:hover,
+  .section4-temp4-2 button:hover {
+    background-color: #555;
+  }
+  
+  .section4-temp4-1 {
+    border-radius: 9px;
+    background-image: url('../header/images/Untitled design (7).png');
+    /* Additional specific styles for section 1 */
+  }
+  
+  .section4-temp4-2 {
+    color: white;
+  }
+  .section4-temp4-2 h1 {
+    color: white;
+    font-size: 40px;
+  }
+  .section4-temp4-2 p {
+    color: white;
+    width: 400px;
+    font-size: 17px;
+  }
+  }
 
 @media (min-width: 1025px){
-    
-    .btnstemp4head1  li{
-        display: inline-flex;
-        list-style: none;
-        margin-top: 15px;
-        margin-left: 50px;
+    .main-div-temp4 {
+        background-color: black;
+        padding: 10px;
     }
-    .temp4header1 header {
-        display: inline-flex;
-    }
-    .btnstemp4head1 button {
+    .header-temp4 {
+        background-image: url('../header/images/Untitled design (7).png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust this value as needed */
+      }
+  
+      .middle-content-hero-section-temp4 {
+        text-align: center;
+      }
+      .middle-content-hero-section-temp4 h1 {
+        color: white;
+        font-size: 40px;
+        width: 500px;
+      }
+      .middle-content-hero-section-temp4 p {
+        width: 450px;
+        color: white;
+        font-size: 17px;
+      }
+      .middle-content-hero-section-temp4 button {
         background-color: transparent;
-        color: #fffcf2;
-        border: transparent;
-        margin-left: 5px;
-        margin-top: 5px;
-    }
-    .temp4header1 h1 {
-        color: #fffcf2;
-    }
-    .maintemp4 main {
-        background: black;
-    }
-    .img2header2temp4 img {
-        width: 100%;
-    }
-        .abtustemp4 {
+        color: white;
+        border: 2px solid white;
+        border-radius: 9px;
+        padding: 15px 20px;
+        font-size: 20px;
+        margin-top: 40px;
+        cursor: pointer;
+      }
+      .middle-content-hero-section-temp4 button:hover {
+        background-color: white;
+        color: black;
+        transition: 0.3s;
+      }
+      
+      .section1-temp4 {
+        margin-top: 150px;
+        display: flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      
+      .section1-temp4-1 img {
+        /* Your existing styles */
+        width: 500px;
+        border-radius: 25px;
+      }
+      
+      .section1-temp4-2 {
+        /* Your existing styles */
+        color: white;
+        padding-left: 20px; /* Add padding for space between image and text */
+        width: 40%;
+        text-align: center;
+        margin-left: 5%;
+      }
+      
+      .section1-temp4-2 h1 {
+        /* Your existing styles */
+        color: white;
+      }
+      
+      .section1-temp4-2 p {
+        /* Your existing styles */
+        color: white;
+      }
+      
+      .view-button-temp4 {
+        /* Your existing styles */
+        color: white;
+        background-color: #000000;
+        border: 2px solid white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 50px;
+      }
+      
+      /* Additional styling for button hover/focus effects */
+      .view-button-temp4:hover {
+        /* Your existing styles */
+        transition: 0.3s;
+        background-color: white;
+        color: black;
+        border-radius: 9px;
+      }
+      .section2-temp4 {
+        display: flex;
+      }
+      
+      .section2-temp4-1,
+      .section2-temp4-2 {
+        flex: 1;
+        text-align: center;
+        height: 300px;
+        color: white;
+        margin: 10px; /* Add margin between sections */
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+        position: relative;
       }
       
-      .abtusno1part1,
-      .abt1part2temp4,
-      .abt1temp4part3 {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 100px;
-        align-items: center;
+      /* Additional styles for buttons */
+      .section2-temp4-1 button,
+      .section2-temp4-2 button {
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 15px 20px;
+        font-size: 17px;
+        background-color: transparent;
+        cursor: pointer;
       }
       
-      .abtusno1part1 img,
-      .abt1part2temp4 img,
-      .abt1temp4part3 img {
-        width: 50%;
-        border-radius: 25px;
+      /* Optional hover effect */
+      .section2-temp4-1 button:hover,
+      .section2-temp4-2 button:hover {
+        background-color: #555;
       }
       
-      .abtusno1part1 h2,
-      .abt1part2temp4 h2,
-      .abt1temp4part3 h2 {
-        color: white;
-        font-size: xx-large;
-        font-weight: 300;
-        text-align: center;
-        width: 200px; /* Adjust as needed */
+      .section2-temp4-1 {
+        border-radius: 9px;
+        background-image: url('../header/images/Untitled design (7).png');
+        /* Additional specific styles for section 1 */
       }
       
-      .abtusno1part1 p,
-      .abt1part2temp4 p,
-      .abt1temp4part3 p {
-        color: white;
-        width: 50%; /* Adjust as needed */
-        text-align: center;
-      }  
-      .abt1temp4part3 {
-        margin-top: 130px;
+      .section2-temp4-2 {
+        border-radius: 9px;
+        background-image: url('../header/images/Untitled design (9).png');
+        /* Additional specific styles for section 2 */
       }
-      
-      .abt1temp4part3 h2,
-      .abt1temp4part3 p {
-        width: 300px;
-        text-align: center;
-      }
-    .productimg4 img {
-        width: 180px;
-        margin-left: 10px;
-        border-radius: 25px;
-    }
-    .prodstemp4text {
-        text-align: center;
-        color: white;
-    }
-
-    .ourprodstemp4 {
-        margin-top: 150px;
-    }
-    .product__title4 h2 {
-        color: white;
-        width: 180px;
-        font-weight: 100;
-    }
-    .product__amount4 {
-        color: white;
-        width: 180px;
-    }
-    .productmodel4 {
-        width: 200px;
-        height: 280px;
-        border-radius: 25px;
-        border: 1px solid white;
+      .productmodel4 {
+        width: 230px;
         margin-left: 30px;
-        padding: 5px;
-        margin-top: 30px;
-    }
-    .greateimgtemp4 {
-        display: inline-flex;
-        margin-left: 50px;
-    }
-    .greateimgtemp4 img {
-        width: 300px;
-        height: 300px;
-        border-radius: 25px;
-        margin-left: 50px;
-    }
-    .grtimgtemp41 img {
-        margin-top: 10px;
-    }
-    .grtimgtemp42 img {
-        margin-top: 30px;
-    }
-    .grtimgtemp43 img {
-        margin-top: 90px;
-    }
-    .temp4textgrtimg {
-        color: #fffcf2;
         text-align: center;
-    }
-    .maindivforgrtimgtemp4 {
-        margin-top: 150px;
-    }
-    .footertemp4 {
-        color: white;
-        margin-left: 30px;
-        padding: 40px;
-    }
-    .footertemp4 li {
-        margin-top: 20px;
         list-style: none;
-    }
+        color: white;
+      }
+      .productimg4 img {
+        width: 230px;
+      }
+      .product__title4 h2 {
+        font-size: 17px;
+        font-weight: 100;
+      }
+      .product__amount4 h3 {
+        font-size: 15px;
+        font-weight: 100;
+      }
+      .products-temp4-button button {
+        width: 190px;
+        text-align: center;
+        color: white;
+        background-color: transparent;
+        border-radius: 0px;
+        border: 1px solid white;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      .products-temp4-button button:hover {
+        background-color: white;
+        color: black;
+        transition: 0.3s;
+      }
+      .section3-temp4 {
+       margin-top: 150px;
+        text-align: center;
+      }
+      .section3-temp4-txt h2 {
+        color: white;
+        font-size: 40px;
+      }
+      .section4-temp4 {
+        display: flex;
+        margin-top: 150px;
+      }
+      
+      .section4-temp4-1,
+      .section4-temp4-2 {
+        flex: 1;
+        text-align: center;
+        height: 300px;
+        color: white;
+        margin: 10px; /* Add margin between sections */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      
+      /* Additional styles for buttons */
+      .section4-temp4-1 button,
+      .section4-temp4-2 button {
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 15px 20px;
+        font-size: 17px;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      
+      /* Optional hover effect */
+      .section4-temp4-1 button:hover,
+      .section4-temp4-2 button:hover {
+        background-color: #555;
+      }
+      
+      .section4-temp4-1 {
+        border-radius: 9px;
+        background-image: url('../header/images/Untitled design (7).png');
+        /* Additional specific styles for section 1 */
+      }
+      
+      .section4-temp4-2 {
+        color: white;
+      }
+      .section4-temp4-2 h1 {
+        color: white;
+        font-size: 40px;
+      }
+      .section4-temp4-2 p {
+        color: white;
+        width: 400px;
+        font-size: 17px;
+      }
+}
+.footer-1- h4, p {
+  color: white;
 }
