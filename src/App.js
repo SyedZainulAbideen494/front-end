@@ -98,6 +98,7 @@ import AdminProducts from "./home/adminview/admin-orders";
 import AdminProduct from "./home/adminview/admin-products";
 import MyProfile from "./home/myprofile/myprofile";
 import EditMyProfile from "./home/myprofile/edit-my-profile";
+import MainBlog from "./home/blog/main-blog";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -192,6 +193,7 @@ const router = createBrowserRouter([
   {path: '/admin/Orders/:shop_id', element: <AdminProducts/>},
   {path: '/admin/products/:shop_id', element: <AdminProduct/>},
   {path: '/edit/myprofile', element: <EditMyProfile/>},
+  {path: '/blog', element: <MainBlog/>}
 ]);
 function App() {
   return (

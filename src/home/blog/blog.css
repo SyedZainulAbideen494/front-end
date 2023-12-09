@@ -1,0 +1,36 @@
+.nav-blog {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #000000;
+}
+
+.logo {
+    width: 60px; /* Adjust as needed */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    font-size: 16px;
+    padding: 14px 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.startforfree-blog-btn {
+    background-color: black;
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 14px 20px;
+}

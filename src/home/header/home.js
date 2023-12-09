@@ -365,6 +365,9 @@ const Home = () => {
               <section className="dropment-main-blog-page-footer-resources-section">
                 <h2>Resources</h2>
                 <p onClick={scrollTocontactus}>FAQs</p>
+                <Link to='/blog' style={{textDecoration: 'none', color: 'black'}}>
+                <p>Blog</p>
+                </Link>
               </section>
               <section className="dropment-main-blog-page-footer-contact-section">
                 <h2>contact</h2>

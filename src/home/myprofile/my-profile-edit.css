@@ -1,61 +1,89 @@
-.profile-edit-form form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .profile-edit-form label {
-    margin-bottom: 8px;
-  }
-  
-  .profile-edit-form input[type="text"],
-  .profile-edit-form textarea {
-    padding: 8px;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    border: 2px solid #000000;
-    width: 100%;
-  }
-  
-  .profile-edit-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .profile-edit-form button:hover {
-    background-color: #0056b3;
-  }
-  .header-edit-my-profile {
-    padding: 20px;
-    background-color: #f2f2f2;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .header-edit-my-profile h2 {
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .header-edit-my-profile a button {
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    background-color: transparent;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .header-edit-my-profile a button:hover {
-    background-color: transparent;
-  }
+.profile-edit-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.header-edit-my-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-edit-my-profile h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.back-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3897f0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #2684e3;
+}
+
+.success-message {
+  margin: 10px 0;
+  color: green;
+}
+
+.form-container {
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-container input[type='text'],
+.form-container textarea {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container textarea {
+  height: 100px;
+}
+
+.update-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3897f0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.update-button:hover {
+  background-color: #2684e3;
+}
+.remove-button {
+  background-color: #d62828;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.remove-button:hover {
+  background-color: #ff6e6e;
+  transition: 0.3s;
+}
+

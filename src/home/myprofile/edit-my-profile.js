@@ -44,22 +44,52 @@ const EditMyProfile = () => {
           console.error("Error updating profile:", error);
         }
       };
+
+
+
+      const handleRemoveprofilepic = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
+    
+      const HandleSubmitremoveProfilePic = async (e) => {
+        e.preventDefault();
+        try {
+          await axios.put(`http://localhost:8080/api/remove/profile/picture`, {
+            headers: {
+              Authorization: token // Include the token in the request headers
+            }
+          });
+          setSuccessMessage("Profile updated successfully!");
+        } catch (error) {
+          // Handle error
+          console.error("Error updating profile:", error);
+        }
+      };
+      
+
+
     
       return (
-        <div className="profile-edit-form">
-          <div className="header-edit-my-profile">
-            <h2>Edit Profile</h2>
+        <div className="profile-edit-container">
+        <div className="header-edit-my-profile">
+          <h2>Edit Profile</h2>
           <Link to="/profile">
-          <button>Back</button>
+            <button className="back-button">Back</button>
           </Link>
-          </div>
-          {successMessage && <p>{successMessage}</p>}
-          <Addimage1/>
-        <form onSubmit={handleSubmit} >
-          <label>
-            Unique ID:
-            <input type="text" name="unique_id" value={formData.unique_id} onChange={handleInputChange} />
-          </label>
+        </div>
+        {successMessage && <p className="success-message">{successMessage}</p>}
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="unique_id">Unique ID:</label>
+            <input
+              type="text"
+              id="unique_id"
+              name="unique_id"
+              value={formData.unique_id}
+              onChange={handleInputChange}
+            />
+  
           <label>
             First Name:
             <input type="text" name="first_name" value={formData.first_name} onChange={handleInputChange} />
@@ -100,9 +130,16 @@ const EditMyProfile = () => {
             Phone Number:
             <input type="text" name="phoneno" value={formData.phoneno} onChange={handleInputChange} />
           </label>
-          <button type="submit">Update Profile</button>
+          <button type="submit" className="update-button">Update Profile</button>
         </form>
+
+        <div className="remove-profile-container">
+          <p>Remove Profile Picture:</p>
+          <button onClick={HandleSubmitremoveProfilePic} className="remove-button">Remove</button>
+          {successMessage && <p className="success-message">{successMessage}</p>}
         </div>
+      </div>
+    </div>
       );
 }
 

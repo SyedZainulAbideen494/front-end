@@ -74,9 +74,9 @@
     margin: 0 10px; /* Add some margin to improve readability on small screens */
   }
   .blinkfeed-btn-main-pg button {
-    background-color: #16895A;
+    background-color: #6184D8;
     color: white;
-    border: 2px solid #16895A;
+    border: 2px solid #6184D8;
     border-radius: 25px;
     padding: 10px 20px;
     margin-top: 10px;
@@ -84,13 +84,13 @@
   .blinkfeed-btn-main-pg button:hover {
     background-color: transparent;
     color: #ffffff;
-    border: 2px solid #16895A;
+    border: 2px solid #6184D8;
     transition: 0.3s;
   }
   .add-shop-btn-main-page-dropment button {
     color: white;
-    background-color: #16895A;
-    border: 2px solid #16895A;
+    background-color: #6184D8;
+    border: 2px solid #6184D8;
     border-radius: 9px;
     padding: 10px 20px;
     margin-left: 100px;
@@ -102,9 +102,9 @@
   
   @media (min-width: 481px) and (max-width: 768px) {
     .blinkfeed-btn-main-pg button {
-      background-color: #16895A;
+      background-color: #6184D8;
       color: white;
-      border: 2px solid #16895A;
+      border: 2px solid #6184D8;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
@@ -117,8 +117,8 @@
     }
     .blinkfeed-btn-main-pg button:hover {
       background-color: transparent;
-      color: #16895A;
-      border: 2px solid #16895A;
+      color: #6184D8;
+      border: 2px solid #6184D8;
       transition: 0.3s;
     }
     .add-shop-btn-main-page-dropment button {
@@ -218,17 +218,17 @@
   }
   @media (min-width: 769px) and (max-width: 1024px) {
     .blinkfeed-btn-main-pg button {
-      background-color: #16895A;
+      background-color: #6184D8;
       color: white;
-      border: 2px solid #16895A;
+      border: 2px solid #6184D8;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
     }
     .blinkfeed-btn-main-pg button:hover {
       background-color: transparent;
-      color: #16895A;
-      border: 2px solid #16895A;
+      color: #6184D8;
+      border: 2px solid #6184D8;
       transition: 0.3s;
     }
     .add-shop-btn-main-page-dropment button {
@@ -401,9 +401,9 @@
     }
     
     .blinkfeed-btn-main-pg button {
-      background-color: #16895A;
+      background-color: #6184D8;
       color: white;
-      border: 2px solid #16895A;
+      border: 2px solid #6184D8;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
@@ -413,7 +413,7 @@
     
     .blinkfeed-btn-main-pg button:hover {
       background-color: transparent;
-      color: #16895A;
+      color: #6184D8;
     }
     
     .add-shop-btn-main-page-dropment button {

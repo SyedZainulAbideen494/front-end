@@ -65,7 +65,6 @@ const MyProfile = () => {
           <Link to='/Addshoppage1'>
           <button className="add-shop-button">Add Shop</button>
           </Link>
-          {/* Other buttons or elements */}
         </div>
   
         {/* Main Profile Section */}
