@@ -34,3 +34,100 @@
     border: 2px solid white;
     padding: 14px 20px;
 }
+.blog-post {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-blog-page {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .main-blog-images img {
+    width: 100%; /* Adjust image width */
+    border-radius: 8px;
+  }
+  
+  .main-blog-text h4 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .main-blog-text p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    text-decoration: underline;
+  }
+  
+  /* Hover effect */
+  .blog-post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .site-header {
+    background-color: #fff;
+    padding: 20px;
+    /* Add more styles for the header */
+  }
+  
+  .site-header nav {
+    /* Add styles for navigation */
+  }
+  
+  /* Main Content Styles */
+  .site-content {
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  
+  .blog-post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-section-blog1 img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .hero-section-blog1 h1 {
+    font-size: 2em;
+    margin-top: 20px;
+    color: #444;
+  }
+  
+  .blog-section-1-blog1-heading h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .blog-section-1-blog1-txt1 p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+  
+  /* Rest of the styles for other elements within the article */
+  
+  /* Footer Styles */
+  .site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    /* Add more styles for the footer */
+  }

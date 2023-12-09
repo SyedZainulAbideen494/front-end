@@ -1,6 +1,7 @@
 import React,{Fragment, useCallback} from "react";
 import './blog.css'
 import logo from '../header/images/drop2_logo.png'
+import blog1 from '../header/images/The Guide to Customer Experience Optimization - Growth Hackers.png'
 import { Link } from "react-router-dom";
 
 const MainBlog = () => {
@@ -28,12 +29,19 @@ const MainBlog = () => {
         </header>
     </div>
     <div className="section1-blog">
-        <div className="main-blog-page">
-            <section className="main-blog-images"></section>
-            <section className="main-blog-text">
-                <h4>Unlocking Success: Leveraging Customer Data to Optimize Your Dropment Store</h4>
-            </section>
-        </div>
+        <Link to='/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store' style={{textDecoration: 'none', color: 'black'}}>
+    <a class="blog-post">
+  <div class="main-blog-page">
+    <section class="main-blog-images">
+      <img src={blog1} alt="Blog Post Image"/>
+    </section>
+    <section class="main-blog-text">
+      <h4>Unlocking Success: Leveraging Customer Data to Optimize Your Dropment Store</h4>
+      <p>Read more...</p>
+    </section>
+  </div>
+</a>
+</Link>
     </div>
 </div>
     </Fragment>
