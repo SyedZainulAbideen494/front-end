@@ -100,6 +100,7 @@ import MyProfile from "./home/myprofile/myprofile";
 import EditMyProfile from "./home/myprofile/edit-my-profile";
 import MainBlog from "./home/blog/main-blog";
 import Blog1 from "./home/blog/blog1";
+import Blog2 from "./home/blog/blog2";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -195,8 +196,11 @@ const router = createBrowserRouter([
   {path: '/admin/products/:shop_id', element: <AdminProduct/>},
   {path: '/edit/myprofile', element: <EditMyProfile/>},
   {path: '/blog', element: <MainBlog/>},
-  {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>}
+  {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
+  {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>}
 ]);
+
+
 function App() {
   return (
     <div>
