@@ -48,18 +48,13 @@
     }
   
     .nav-links {
-      display: none;
-    }
-  
-    .nav-links.active {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 100%;
       margin-top: 20px;
     }
   
-    .nav-links.active li {
+    .nav-links li {
       padding: 10px 0;
     }
   
