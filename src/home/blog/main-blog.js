@@ -4,6 +4,7 @@ import logo from '../header/images/drop2_logo.png'
 import blog1 from '../header/images/The Guide to Customer Experience Optimization - Growth Hackers.png'
 import { Link } from "react-router-dom";
 import blog2 from '../header/images/Get like on your social media.png'
+import blog3 from '../header/images/Levels_ Successful business.png'
 
 const MainBlog = () => {
     return<Fragment>
@@ -51,6 +52,19 @@ const MainBlog = () => {
     </section>
     <section class="main-blog-text">
       <h4>Mastering Social Media: Proven Marketing Tips for Dropment Shop Owners</h4>
+      <p>Read more...</p>
+    </section>
+  </div>
+</a>
+</Link>
+<Link to='/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store' style={{textDecoration: 'none', color: 'black'}}>
+    <a class="blog-post">
+  <div class="main-blog-page">
+    <section class="main-blog-images">
+      <img src={blog3} alt="Blog Post Image"/>
+    </section>
+    <section class="main-blog-text">
+      <h4>The Power of Storytelling: Crafting Irresistible Blinkfeeds for Your Dropment Store</h4>
       <p>Read more...</p>
     </section>
   </div>
