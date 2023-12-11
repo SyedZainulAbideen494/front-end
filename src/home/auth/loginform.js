@@ -23,7 +23,7 @@ const Loginform = () => {
 
   const login = () => {
     setError(""); // Clear any previous errors
-    Axios.post("http://localhost:8080/login", {
+    Axios.post("https://apifordropment.online/login", {
       email: email,
       password: password,
     }).then((response) => {
@@ -39,7 +39,7 @@ const Loginform = () => {
   };
 
   const userAuth = () => {
-    Axios.get("http://localhost:8080/isUserAuth");
+    Axios.get("https://apifordropment.online/isUserAuth");
   };
 
   return (
