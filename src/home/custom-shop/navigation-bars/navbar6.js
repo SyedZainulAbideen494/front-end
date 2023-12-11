@@ -14,7 +14,7 @@ function NavBar6() {
   
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8080/custom/shop/display`, {
+    const response = await fetch(`https://apifordropment.online/custom/shop/display`, {
       headers: {
         Authorization: params.shop_id, // Set the token in the Authorization header
       },
@@ -26,7 +26,7 @@ function NavBar6() {
         button2: itemsdata.button2,
         button3: itemsdata.button3,
         shop_name: itemsdata.shop_name,
-        logo: `http://localhost:8080/images/${itemsdata.logo}`
+        logo: `https://apifordropment.online/images/${itemsdata.logo}`
       };
     });
     setItems(transformedItems);
@@ -39,7 +39,7 @@ function NavBar6() {
 
   const fetchColorHandler = useCallback(async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8080/custom/shop/coloring/display/section1`, {
+    const response = await fetch(`https://apifordropment.online/custom/shop/coloring/display/section1`, {
       headers: {
         Authorization: params.shop_id, // Set the token in the Authorization header
       },

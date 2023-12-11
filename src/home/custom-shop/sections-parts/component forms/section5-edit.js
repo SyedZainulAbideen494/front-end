@@ -36,7 +36,7 @@ const Section5BuildEdit = () => {
 
     const addShopHandler = () => {
       Axios.put(
-        `http://localhost:8080/section1/data`,
+        `https://apifordropment.online/section1/data`,
         {
           shop_blockhead1,
           shop_block1,
@@ -101,7 +101,7 @@ const Section5BuildEdit = () => {
 
     const addColorsHandler = () => {
       Axios.post(
-        'http://localhost:8080/color/selection/section/3',
+        'https://apifordropment.online/color/selection/section/3',
         {
           backgroundColor1,
           backgroundColor2,
@@ -161,7 +161,7 @@ const Section5BuildEdit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg1", formData, {
+        Axios.post("https://apifordropment.online/addshopimg1", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -206,7 +206,7 @@ const Section5BuildEdit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg2", formData, {
+        Axios.post("https://apifordropment.online/addshopimg2", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -470,7 +470,7 @@ const Section5BuildEdit = () => {
           setLoading(true);
       
           try {
-            const response = await fetch("http://localhost:8080/use/shops/products", {
+            const response = await fetch("https://apifordropment.online/use/shops/products", {
               headers: {
                 Authorization: params.shop_id,
               },
@@ -488,7 +488,7 @@ const Section5BuildEdit = () => {
                 price: itemsData.price,
                 amount: itemsData.quantity,
                 shop_id: itemsData.shop_id,
-                images: `http://localhost:8080/images/${itemsData.images}`,
+                images: `https://apifordropment.online/images/${itemsData.images}`,
                 usd: itemsData.usd,
                 EUR: itemsData.EUR,
                 GBP: itemsData.GBP,
