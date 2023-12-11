@@ -12,7 +12,7 @@ const Loginform = () => {
   const navigate = useNavigate();
 
   const userauthentication = () => {
-    Axios.get("https://apifordropment.online//userAuth", {
+    Axios.get("https://apifordropment.online/userAuth", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
