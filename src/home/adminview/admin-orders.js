@@ -13,7 +13,7 @@ const Orders = () => {
     const shopId = params.shop_id;
   
     const fetchOrders = (interval) => {
-      let url = `http://localhost:8080/orders/product/admin/data/${shopId}`;
+      let url = `https://apifordropment.online/orders/product/admin/data/${shopId}`;
       if (interval) {
         url += `?timeInterval=${interval}`;
       }
@@ -36,7 +36,7 @@ const Orders = () => {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.put(
-          `http://localhost:8080/api/update-order-status/${orders_id}`,
+          `https://apifordropment.online/api/update-order-status/${orders_id}`,
           {
             newStatus: newStatus,
           },

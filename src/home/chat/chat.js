@@ -15,7 +15,7 @@ function ChatMessageapp() {
     setloading(true);
     const token = localStorage.getItem("token");
     setloading(true);
-    const response = await fetch("http://localhost:8080/chat/users/display", {
+    const response = await fetch("https://apifordropment.online/chat/users/display", {
       headers: {
         Authorization: token,
       },
@@ -80,7 +80,7 @@ const Orderproduct = (props) => {
 
   const fetchusershandler1 = useCallback(async () => {
     const token = localStorage.getItem("token");
-    const response = await fetch("http://localhost:8080/user/chat/details/1", {
+    const response = await fetch("https://apifordropment.online/user/chat/details/1", {
       headers: {
         Authorization: user1,
       },
@@ -90,7 +90,7 @@ const Orderproduct = (props) => {
       return {
         first_name: userdata.first_name,
         last_name: userdata.last_name,
-        profilepic: `http://localhost:8080/images/${userdata.porfilepic}`,
+        profilepic: `https://apifordropment.online/images/${userdata.porfilepic}`,
       };
     });
     setUser1Id(transformeduser);
@@ -102,7 +102,7 @@ const Orderproduct = (props) => {
 
   const fetchusershandler2 = useCallback(async () => {
     const token = localStorage.getItem("token");
-    const response = await fetch("http://localhost:8080/user/chat/details/2", {
+    const response = await fetch("https://apifordropment.online/user/chat/details/2", {
       headers: {
         Authorization: user2,
       },
@@ -112,7 +112,7 @@ const Orderproduct = (props) => {
       return {
         first_name: userdata.first_name,
         last_name: userdata.last_name,
-        profilepic: `http://localhost:8080/images/${userdata.porfilepic}`,
+        profilepic: `https://apifordropment.online/images/${userdata.porfilepic}`,
       };
     });
     setUser2Id(transformeduser);

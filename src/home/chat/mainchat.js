@@ -13,7 +13,7 @@ const MainChatMessageSystem = () => {
   const fetchChatHandler = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/chat/messages/display/api", {
+      const response = await fetch("https://apifordropment.online/chat/messages/display/api", {
         headers: {
           Authorization: params.chat_id,
         },
@@ -43,7 +43,7 @@ const MainChatMessageSystem = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
+          "https://apifordropment.online/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -83,7 +83,7 @@ const MainChatMessageSystem = () => {
   const addMessageHandler = async () => {
     try {
       const response = await Axios.post(
-        "http://localhost:8080/send/message/sender",
+        "https://apifordropment.online/send/message/sender",
         {
           message_text: message,
           user_id_1: params.user_id_1,

@@ -15,7 +15,7 @@ function ChatMessageapp() {
     setloading(true);
     const token = localStorage.getItem("token");
     setloading(true);
-    const response = await fetch("http://localhost:8080/chat/users/display", {
+    const response = await fetch("https://apifordropment.online/chat/users/display", {
       headers: {
         Authorization: token,
       },

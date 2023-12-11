@@ -12,7 +12,7 @@ const TotalInventory = () => {
   const shopId = params.shop_id;
   useEffect(() => {
     // Replace 'YOUR_BACKEND_URL' with your actual backend URL
-    axios.get(`http://localhost:8080/products/total_inventory/${shopId}`)
+    axios.get(`https://apifordropment.online/products/total_inventory/${shopId}`)
       .then(response => {
         setTotalInventory(response.data);
       })
@@ -36,7 +36,7 @@ const SalesComponent7dayData = () => {
 
   const fetchFilteredSales = async (filter) => {
     try {
-      const response = await axios.get(`http://localhost:8080/sales/data/for/date/${shopId}?filter=${filter}`);
+      const response = await axios.get(`https://apifordropment.online/sales/data/for/date/${shopId}?filter=${filter}`);
       setFilteredSales(response.data); // Update state with fetched data
     } catch (error) {
       console.error('Error fetching sales:', error);
@@ -79,7 +79,7 @@ const OrdersComponentMostSoldProduct = () => {
   useEffect(() => {
     const fetchMostOccurredID = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/mostOccurredID/shop/stats/${shopId}`);
+        const response = await axios.get(`https://apifordropment.online/mostOccurredID/shop/stats/${shopId}`);
         setMostOccurredID(response.data[0]);
       } catch (error) {
         console.error(error);
@@ -93,7 +93,7 @@ const OrdersComponentMostSoldProduct = () => {
     const fetchUsdValues = async () => {
       try {
         if (mostOccurredID) {
-          const response = await axios.get(`http://localhost:8080/orders/dashboard/data/products/title/${mostOccurredID.id}`);
+          const response = await axios.get(`https://apifordropment.online/orders/dashboard/data/products/title/${mostOccurredID.id}`);
           setProductsUsd([response.data[0]?.title]);
         }
       } catch (error) {
@@ -131,7 +131,7 @@ const TotalMoneyMade = () => {
   useEffect(() => {
     const fetchTotalOrders = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/totalMoneyMade/${shopId}`);
+        const response = await axios.get(`https://apifordropment.online/totalMoneyMade/${shopId}`);
         setTotalOrders(response.data.totalOrders);
       } catch (error) {
         console.error('Error fetching data: ', error);
@@ -158,7 +158,7 @@ const OrdersComponent = () => {
   useEffect(() => {
     const fetchTotalValues = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/orders/dashboard/data/${params.shop_id}`);
+        const response = await axios.get(`https://apifordropment.online/orders/dashboard/data/${params.shop_id}`);
         setProductsId(response.data);
       } catch (error) {
         console.error(error);
@@ -173,7 +173,7 @@ const OrdersComponent = () => {
       try {
         const usdValues = await Promise.all(
           productsId.map(async product => {
-            const response = await axios.get(`http://localhost:8080/orders/dashboard/data/products/usd/${product.id}`);
+            const response = await axios.get(`https://apifordropment.online/orders/dashboard/data/products/usd/${product.id}`);
             return response.data[0]?.usd || 0; // Extract usd value from response data
           })
         );
@@ -193,7 +193,7 @@ const OrdersComponent = () => {
       try {
         const idCounts = await Promise.all(
           productsId.map(async product => {
-            const response = await axios.get(`http://localhost:8080/countOrdersById/${product.id}`);
+            const response = await axios.get(`https://apifordropment.online/countOrdersById/${product.id}`);
             return response.data[0]?.id_count || 0;
           })
         );
@@ -229,7 +229,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/visitors/${params.shop_id}`);
+        const response = await axios.get(`https://apifordropment.online/visitors/${params.shop_id}`);
         const visitsData = response.data;
 
         // Calculate total visits

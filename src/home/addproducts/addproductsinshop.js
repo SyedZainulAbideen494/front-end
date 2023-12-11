@@ -10,7 +10,7 @@ const Addproductstodatabas = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8080/addProducts", {
+    fetch("https://apifordropment.online/addProducts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

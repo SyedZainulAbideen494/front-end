@@ -70,7 +70,7 @@ const Header5Edit = () => {
 
     const addColorsHandler = () => {
       Axios.post(
-        "http://localhost:8080/color/selection/section/2",
+        "https://apifordropment.online/color/selection/section/2",
         {
           backgroundColor1: backgroundColor1,
           backgroundColor2: backgroundColor2,
@@ -130,7 +130,7 @@ const Header5Edit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/add/shop/logo5", formData, {
+        Axios.post("https://apifordropment.online/add/shop/logo5", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -166,7 +166,7 @@ const Header5Edit = () => {
 
      const addShopHandler = () => {
       Axios.put(
-        "http://localhost:8080/header/data",
+        "https://apifordropment.online/header/data",
         {
          salestext: salestext,
          tagline: tagline

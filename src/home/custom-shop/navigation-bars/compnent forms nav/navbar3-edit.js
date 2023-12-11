@@ -70,7 +70,7 @@ function NavBar3Edit() {
 
     const addColorsHandler = () => {
       Axios.post(
-        "http://localhost:8080/color/selection/section/1",
+        "https://apifordropment.online/color/selection/section/1",
         {
           backgroundColor1: backgroundColor1,
           backgroundColor2: backgroundColor2,
@@ -130,7 +130,7 @@ function NavBar3Edit() {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/add/shop/logo5", formData, {
+        Axios.post("https://apifordropment.online/add/shop/logo5", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -166,7 +166,7 @@ function NavBar3Edit() {
 
      const addShopHandler = () => {
       Axios.put(
-        "http://localhost:8080/nav/bar/data",
+        "https://apifordropment.online/nav/bar/data",
         {
          shop_name: shop_name,
          btn1: btn1,

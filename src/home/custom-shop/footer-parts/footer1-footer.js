@@ -16,7 +16,7 @@ const Footer1Footer = () => {
 
   const fetchProductsHandler = useCallback(async () => {
     try {
-      const response = await Axios.get(`http://localhost:8080/custom/shop/display/footer`, {
+      const response = await Axios.get(`https://apifordropment.online/custom/shop/display/footer`, {
         headers: {
           Authorization: params.shop_id, // Use the 'token' variable here
         },
@@ -45,7 +45,7 @@ const Footer1Footer = () => {
 
   const fetchColorHandler = useCallback(async () => {
     try {
-      const response = await Axios.get(`http://localhost:8080/custom/shop/coloring/display/footer`, {
+      const response = await Axios.get(`https://apifordropment.online/custom/shop/coloring/display/footer`, {
         headers: {
           Authorization: params.shop_id, // Use the 'token' variable here
         },

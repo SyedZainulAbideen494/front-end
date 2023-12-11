@@ -12,7 +12,7 @@ function BotApp() {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
+          "https://apifordropment.online/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -40,7 +40,7 @@ function BotApp() {
 
   const sendMessage = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/messages', { userId, message });
+      const response = await axios.post('https://apifordropment.online/api/messages', { userId, message });
       setBotResponse(response.data.botResponse);
     } catch (error) {
       console.error('Error sending message:', error);

@@ -11,14 +11,14 @@ const Products = () => {
   
     useEffect(() => {
       // Fetch products based on shopId
-      fetch(`http://localhost:8080/products/admin/products/data/${shopId}`)
+      fetch(`https://apifordropment.online/products/admin/products/data/${shopId}`)
         .then((response) => response.json())
         .then((data) => setProducts(data))
         .catch((error) => console.error('Error fetching products:', error));
     }, [shopId]);
     const handleDelete = (productId) => {
         // Delete product from backend
-        fetch(`http://localhost:8080/products/delete/admin/data/${productId}`, {
+        fetch(`https://apifordropment.online/products/delete/admin/data/${productId}`, {
           method: 'DELETE'
         })
           .then((response) => {
@@ -33,7 +33,7 @@ const Products = () => {
           .catch((error) => console.error('Error deleting product:', error));
       };
      const handleInventoryUpdate = (productId, action) => {
-        axios.put('http://localhost:8080/update/inventory/admin/data/products', { productId, action })
+        axios.put('https://apifordropment.online/update/inventory/admin/data/products', { productId, action })
           .then(response => {
             console.log(response.data);
             // Optionally, update state or perform other actions on successful update
@@ -57,7 +57,7 @@ const Products = () => {
           </div>
           {products.map((product) => (
             <div key={product.id} class='table-row'>
-              <div><img src={`http://localhost:8080/images/${product.images}`} alt={product.title} class='product-image'/></div>
+              <div><img src={`https://apifordropment.online/images/${product.images}`} alt={product.title} class='product-image'/></div>
               <div className='mobile-deleted'>{product.id}</div>
               <div>{product.title}</div>
               <div>${product.usd}</div>

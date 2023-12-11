@@ -63,7 +63,7 @@ const AddProductsForm = () => {
           formData.append("NOK", NOK);
           formData.append("product_description", product_description)
        
-          Axios.post("http://localhost:8080/addProduct", formData, {
+          Axios.post("https://apifordropment.online/addProduct", formData, {
             headers: {
               Authorization: params.shop_id,
             },

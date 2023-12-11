@@ -11,7 +11,7 @@ const Header2 = () => {
   
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8080/custom/shop/display`, {
+    const response = await fetch(`https://apifordropment.online/custom/shop/display`, {
       headers: {
         Authorization: params.shop_id, // Set the token in the Authorization header
       },
@@ -21,7 +21,7 @@ const Header2 = () => {
       return {
         salestext: itemsdata.salestext,
         shop_tagline: itemsdata.shop_tagline,
-        images1: `http://localhost:8080/images/${itemsdata.images1}`
+        images1: `https://apifordropment.online/images/${itemsdata.images1}`
       };
     });
     setItems(transformedItems);
@@ -34,7 +34,7 @@ const Header2 = () => {
 
   const fetchColorHandler = useCallback(async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8080/custom/shop/coloring/display/section2`, {
+    const response = await fetch(`https://apifordropment.online/custom/shop/coloring/display/section2`, {
       headers: {
         Authorization: params.shop_id, // Set the token in the Authorization header
       },

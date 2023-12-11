@@ -8,7 +8,7 @@ const Addshopniche = () => {
   const addCustomShopHandler = () => {
     const token = localStorage.getItem('token');
     Axios.post(
-      "http://localhost:8080/add/custom/shop",
+      "https://apifordropment.online/add/custom/shop",
       null,  // Request body should be null or an empty object if there's no data to send
       {
         headers: {

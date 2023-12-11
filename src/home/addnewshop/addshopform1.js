@@ -15,7 +15,7 @@ const Addshopform1 = (props) => {
 
   const addshophandler = () => {
     Axios.post(
-      "http://localhost:8080/addShops",
+      "https://apifordropment.online/addShops",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,
