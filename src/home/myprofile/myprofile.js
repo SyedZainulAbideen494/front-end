@@ -56,39 +56,40 @@ const MyProfile = () => {
       fetchFollowerCount();
     }, []);
       return (
-        <div className="profile-container">
-        {/* Header Section */}
-        <div className="header">
-          <Link to="/edit/myprofile">
-          <button className="edit-button">Edit</button>
-          </Link>
-          <Link to='/Addshoppage1'>
-          <button className="add-shop-button">Add Shop</button>
-          </Link>
-        </div>
-  
-        {/* Main Profile Section */}
-        <div className="main-section">
-          <div className="profile-info">
-            <img src={img[0]?.profilePic} alt="Profile" className="profile-image" />
-            <div className="profile-details">
-              <h2>{`${img[0]?.first_name} ${img[0]?.last_name}`}</h2>
-              <p>ID: {img[0]?.unique_id}</p>
-              <p>Links: {followerCount}</p>
-              <p>Bio: {img[0]?.bio}</p>
-              {/* Additional necessary details can be displayed here */}
-            </div>
-          </div>
-  
-          {/* Shops Section */}
-          <div className="shops">
-            <h3>All Shops</h3>
-            <div className="shop-list">
-              <Template1app/>
-            </div>
-          </div>
-        </div>
+<div className="profile-container">
+  {/* Header Section */}
+  <div className="header-edit-profile">
+    <Link to="/edit/myprofile">
+      <button className="edit-button">Edit</button>
+    </Link>
+    <Link to="/Addshoppage1">
+      <button className="add-shop-button">Add Shop</button>
+    </Link>
+  </div>
+
+  {/* Main Profile Section */}
+  <div className="main-section">
+    <div className="profile-info">
+      <img src={img[0]?.profilePic} alt="Profile" className="profile-image" />
+      <div className="profile-details">
+        <h2>{`${img[0]?.first_name} ${img[0]?.last_name}`}</h2>
+        <p>ID: {img[0]?.unique_id}</p>
+        <p>Links: {followerCount}</p>
+        <p>Bio: {img[0]?.bio}</p>
+        {/* Additional necessary details can be displayed here */}
       </div>
+    </div>
+
+    {/* Shops Section */}
+    <div className="shops">
+      <h3>All Shops</h3>
+      <div className="shop-list">
+        <Template1app />
+        {/* Consider how you're displaying shops */}
+      </div>
+    </div>
+  </div>
+</div>
       );
     };
 
