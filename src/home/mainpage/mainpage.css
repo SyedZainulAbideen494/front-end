@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: black;
   }
   .left-content   {
     display: none;
@@ -13,10 +14,18 @@
   
   .dropmentmainheader {
     width: 100%;
-    background-color: #ffffff; /* Adjust background color as needed */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #000000;
+    box-shadow: 0 1px 1px rgb(255, 255, 255);
     z-index: 1;
     color: black;
+    padding: 10px 0; /* Adjust padding as needed */
+    border-radius: 15px;
+  }
+  .add-shop-btn-home-header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 8px 12px;
+    border-radius: 9px;
   }
   
   .dropmentlogomainpage {
@@ -24,7 +33,7 @@
   }
   
   .dropmentlogomainpage img {
-    max-height: 80px; /* Adjust as needed */
+    max-height: 50px; /* Adjust as needed */
   }
   
   .dropmentmainbtns {
@@ -40,7 +49,7 @@
     border: none;
     cursor: pointer;
     font-size: medium;
-    color: black;
+    color: rgb(253, 253, 253);
   }
   
   .section1inmainpage {
@@ -74,11 +83,11 @@
     margin: 0 10px; /* Add some margin to improve readability on small screens */
   }
   .blinkfeed-btn-main-pg button {
-    background-color: #6184D8;
-    color: white;
-    border: 2px solid #6184D8;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid #ffffff;
     border-radius: 25px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin-top: 10px;
   }
   .blinkfeed-btn-main-pg button:hover {
@@ -217,117 +226,6 @@
   }
   }
   @media (min-width: 769px) and (max-width: 1024px) {
-    .blinkfeed-btn-main-pg button {
-      background-color: #6184D8;
-      color: white;
-      border: 2px solid #6184D8;
-      border-radius: 25px;
-      padding: 10px 20px;
-      margin-top: 10px;
-    }
-    .blinkfeed-btn-main-pg button:hover {
-      background-color: transparent;
-      color: #6184D8;
-      border: 2px solid #6184D8;
-      transition: 0.3s;
-    }
-    .add-shop-btn-main-page-dropment button {
-      color: white;
-      background-color: #16895A;
-      border: 2px solid #16895A;
-      border-radius: 9px;
-      padding: 10px 20px;
-      margin-left: 100px;
-      align-items: center;
-    }
-    .maindivefordropmentmainpage {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .dropmentmainheader {
-      width: 100%;
-      background-color: #ffffff; /* Adjust background color as needed */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      color: black;
-    }
-    
-    .dropmentlogomainpage {
-      margin-right: 0px;
-    }
-    
-    .dropmentlogomainpage img {
-      max-height: 80px; /* Adjust as needed */
-    }
-    
-    .dropmentmainbtns {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .dropmentmainbtns button {
-      margin-left: 10px;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      font-size: medium;
-      color: black;
-    }
-    
-    .section1inmainpage {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      width: 100%;
-      padding: 20px;
-    }
-    
-    .content-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      width: 100%;
-      max-width: 1200px; /* Adjust as needed */
-    }
-    
-    .left-content {
-      flex: 1;
-      max-width: 300px; /* Adjust as needed */
-      margin-right: 20px;
-    }
-    
-    .middle-content {
-      flex: 3;
-    }
-    
-    .right-content {
-      flex: 1;
-      max-width: 300px; /* Adjust as needed */
-      margin-left: 20px;
-    }
-    
-    .recomprofilemainpagetxtp,
-    .recomprofilemainpagetxt {
-      color: grey;
-      text-align: center;
-    }
-    
-    /* Media Query for tablets */
-      .dropmentmainbtns button {
-        margin-left: 5px; /* Adjust button spacing for tablets */
-      }
-    
-      .left-content,
-      .right-content {
-        max-width: 100%; /* Occupy full width on tablets */
-        margin: 0; /* Remove margin on tablets */
-  }
-  }
-  
-  @media (min-width: 1025px) {
     .maindivefordropmentmainpage {
       display: flex;
       flex-direction: column;
@@ -335,6 +233,7 @@
       background-color: black;
     }
     
+    /* Header styles */
     .dropmentmainheader {
       width: 100%;
       background-color: #000000;
@@ -345,10 +244,12 @@
       border-radius: 15px;
     }
     
+    /* Logo styles */
     .dropmentlogomainpage img {
       max-height: 60px; /* Adjust as needed */
     }
     
+    /* Button container styles */
     .dropmentmainbtns {
       display: flex;
       justify-content: center;
@@ -356,6 +257,7 @@
       margin-top: 10px; /* Adjust margin as needed */
     }
     
+    /* Buttons styles */
     .dropmentmainbtns button {
       margin: 0 8px; /* Adjust margin as needed */
       background-color: transparent;
@@ -365,10 +267,12 @@
       color: rgb(255, 255, 255);
     }
     
+    /* Style for specific element */
     .createstorebtnmainpg {
       /* Style for ChatMessageapp */
     }
     
+    /* Section 1 styles */
     .section1inmainpage {
       display: flex;
       justify-content: center;
@@ -377,6 +281,7 @@
       padding: 20px 0; /* Adjust padding as needed */
     }
     
+    /* Content container styles */
     .content-container {
       display: flex;
       justify-content: space-around; /* Adjust as needed */
@@ -385,6 +290,7 @@
       max-width: 1200px;
     }
     
+    /* Content columns */
     .left-content,
     .right-content {
       flex: 1;
@@ -396,11 +302,13 @@
       flex: 3;
     }
     
+    /* Recommended profile text */
     .recomprofilemainpagetxtp {
       color: grey;
       text-align: center;
     }
     
+    /* Button styles for main page */
     .blinkfeed-btn-main-pg button {
       background-color: #6184D8;
       color: white;
@@ -412,11 +320,13 @@
       cursor: pointer;
     }
     
+    /* Button hover effect */
     .blinkfeed-btn-main-pg button:hover {
       background-color: transparent;
       color: #6184D8;
     }
     
+    /* Add shop button on main page */
     .add-shop-btn-main-page-dropment button {
       color: white;
       background-color: #3a0299;
@@ -424,13 +334,132 @@
       border-radius: 9px;
       padding: 10px 20px;
     }
+    
+    /* Mobile button display in header */
     .mboile-btn-display-home-headre {
       display: none;
     }
   }
-.add-shop-btn-home-header {
-  background-color: #aacc00;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 9px;
-}
+  
+  @media (min-width: 1025px) {
+    .maindivefordropmentmainpage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: black;
+    }
+    
+    /* Header styles */
+    .dropmentmainheader {
+      width: 100%;
+      background-color: #000000;
+      box-shadow: 0 1px 1px rgb(255, 255, 255);
+      z-index: 1;
+      color: black;
+      padding: 10px 0; /* Adjust padding as needed */
+      border-radius: 15px;
+    }
+    
+    /* Logo styles */
+    .dropmentlogomainpage img {
+      max-height: 60px; /* Adjust as needed */
+    }
+    
+    /* Button container styles */
+    .dropmentmainbtns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px; /* Adjust margin as needed */
+    }
+    
+    /* Buttons styles */
+    .dropmentmainbtns button {
+      margin: 0 8px; /* Adjust margin as needed */
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: medium;
+      color: rgb(255, 255, 255);
+    }
+    
+    /* Style for specific element */
+    .createstorebtnmainpg {
+      /* Style for ChatMessageapp */
+    }
+    
+    /* Section 1 styles */
+    .section1inmainpage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px 0; /* Adjust padding as needed */
+    }
+    
+    /* Content container styles */
+    .content-container {
+      display: flex;
+      justify-content: space-around; /* Adjust as needed */
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1200px;
+    }
+    
+    /* Content columns */
+    .left-content,
+    .right-content {
+      flex: 1;
+      max-width: 300px; /* Adjust as needed */
+      margin: 0 10px; /* Adjust margin as needed */
+    }
+    
+    .middle-content {
+      flex: 3;
+    }
+    
+    /* Recommended profile text */
+    .recomprofilemainpagetxtp {
+      color: grey;
+      text-align: center;
+    }
+    
+    /* Button styles for main page */
+    .blinkfeed-btn-main-pg button {
+      background-color: #6184D8;
+      color: white;
+      border: 2px solid #6184D8;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      cursor: pointer;
+    }
+    
+    /* Button hover effect */
+    .blinkfeed-btn-main-pg button:hover {
+      background-color: transparent;
+      color: #6184D8;
+    }
+    
+    /* Add shop button on main page */
+    .add-shop-btn-main-page-dropment button {
+      color: white;
+      background-color: #3a0299;
+      border: 2px solid #3a0299;
+      border-radius: 9px;
+      padding: 10px 20px;
+    }
+    
+    /* Mobile button display in header */
+    .mboile-btn-display-home-headre {
+      display: none;
+    }
+    .add-shop-btn-home-header {
+      background-color: #aacc00;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 9px;
+    }
+    
+  }
