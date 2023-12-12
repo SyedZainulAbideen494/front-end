@@ -4,14 +4,15 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: rgb(255, 248, 248);
+  color: white;
+  background-color: rgb(0, 0, 0);
 }
 
 .chat-main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #000000;
   border-radius: 15px;
   margin: 10px;
   padding: 0;
@@ -26,7 +27,9 @@
   background-color: #000000; /* Purple color */
   color: #fff; /* White text */
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgb(255, 255, 255); /* Add shadow for a nice effect */
+  border: 1px solid white;
+  margin: 0px 20px;
+  border-radius: 9px;
   z-index: 1; /* Ensure it's above other content */
 
 }
@@ -51,19 +54,19 @@
   padding: 10px;
   margin-right: 10px; /* Adjust the right margin */
   border-radius: 8px;
-  background-color: #00b4d8;
+  background-color: #f5f5f5;
   margin-top: 10px;
   max-width: 70%; /* Adjust as needed */
   width: 400px;
   text-align: right; /* Align text to the left within the message */
   margin-left: auto;
   word-wrap: break-word; /* Allow long messages to wrap */
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .current-user {
-  background-color: #6f42c1; /* Purple color */
-  color: #fff; /* White text */
+  background-color: #000000; /* Purple color */
+  color: #ffffff; /* White text */
   margin-right: auto; /* Adjust the right margin for current user messages */
   margin-left: 10px; /* Add some space on the left */
   padding-left: 10px; /* Add padding to the left to move messages more to the left */
@@ -77,11 +80,9 @@
 }
 
 .footerforchat {
-  padding: 20px;
   background-color: transparent;
   border-radius: 15px;
   margin: 10px;
-  border-top: 1px solid transparent;
 }
 
 .inputforchat form {
@@ -99,9 +100,9 @@
 }
 
 .inputforchat button {
-  background-color: #6f42c1; /* Purple color */
-  color: #fff; /* White text */
-  border: 1px solid #6f42c1;
+  background-color: #000000; /* Purple color */
+  color: #ffffff; /* White text */
+  border: 1px solid #ffffff;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   padding: 15px 20px;
@@ -118,7 +119,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: #000000;
   padding: 15px;
   margin-bottom: 15px;
   border: 1px solid #e0e0e0; /* Light border color */
@@ -151,19 +152,19 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: white;
 }
 
 .user-names {
   margin: 0;
-  font-weight: bold;
-  color: #333; /* Dark gray text color */
+  color: #ffffff; /* Dark gray text color */
 }
 
 .chat-button {
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #007bff; /* Instagram blue color */
-  color: #fff;
+  background-color: #ffffff; /* Instagram blue color */
+  color: #000000;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -171,7 +172,7 @@
 }
 
 .chat-button:hover {
-  background-color: #0056b3; /* Slightly darker blue on hover */
+  background-color: #88929c; /* Slightly darker blue on hover */
 }
 
 

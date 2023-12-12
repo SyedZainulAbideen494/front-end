@@ -1,9 +1,10 @@
 .user-card {
-    background-color: #fff;
+    background-color: #000000;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 15px;
+    color: white;
   }
   
   .user-post {
@@ -33,13 +34,12 @@
   }
   
   .user-post-username {
-    font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
   }
   
   .user-unique-id {
-    color: #555;
+    color: #ffffff;
     margin-top: 2px;
     font-size: 14px;
   }
@@ -47,7 +47,8 @@
   /* User Bio Styles */
   .user-bio {
     margin-bottom: 10px;
-    color: #333;
+    color: #ffffff;
+    display: none;
   }
   
   /* User Post Actions Styles */
@@ -58,8 +59,8 @@
   .profile-link-button {
     padding: 8px 16px;
     border: none;
-    background-color: #3897f0;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
@@ -68,7 +69,7 @@
   /* User Post Footer Styles */
   .user-post-footer {
     display: flex;
-    color: #555;
+    color: #ffffff;
   }
   
   .user-post-footer div {
