@@ -290,7 +290,7 @@
       
       .shop-card {
         border: 1px solid #ccc;
-        background-color: #fff;
+        background-color: #000000;
         border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         width: 300px;
@@ -327,7 +327,7 @@
       }
       
       .shop-owner {
-        color: #555;
+        color: #ffffff;
         font-size: 0.9rem;
       }
       
@@ -342,13 +342,14 @@
         display: flex;
         justify-content: flex-end;
         padding: 10px;
-        background-color: #f2f2f2;
+        background-color: #000000;
         border-top: 1px solid #ddd;
+        color: white;
       }
       
       .follow-button {
-        background-color: #0095f6;
-        color: #fff;
+        background-color: #ffffff;
+        color: #000000;
         border: none;
         border-radius: 5px;
         padding: 5px 15px;
@@ -357,14 +358,16 @@
       }
       
       .follow-button.following {
-        background-color: #ccc;
+        background-color: #000000;
+        color: white;
       }
       
       .shop-footer {
         display: flex;
         justify-content: space-between;
         padding: 10px;
-        background-color: #fff;
+        color: white;
+        background-color: #000000;
         border-top: 1px solid #ddd;
       }
       

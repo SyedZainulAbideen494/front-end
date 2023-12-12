@@ -53,6 +53,7 @@
   color: white;
   border-radius: 9px;
   padding: 12px 15px;
+  cursor: pointer;
   margin-left: 10px;
 }
 .profile-details {
