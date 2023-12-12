@@ -61,15 +61,15 @@ const Addtemplate5form = (props) => {
 
   return (
     <Fragment>
-      <div className="form1">
-        <div className="backbtn">
-          <Link to="/">
-            <button>Back</button>
-          </Link>
-        </div>
-        <div className="formtxthead">
-          <h2>Add a new shop</h2>
-        </div>
+    <div className="form1 dark-theme">
+      <div className="backbtn">
+        <Link to="/">
+          <button>Back</button>
+        </Link>
+      </div>
+      <div className="formtxthead">
+        <h2>Add a new shop</h2>
+      </div>
         <div className="inp">
           <label>
             <h3>Enter Shop Name</h3>
@@ -231,7 +231,29 @@ const Addtemplate5form = (props) => {
           <button onClick={addshophandler}>Add new store</button>
         </div>
       </div>
-      <Template5websitepreview/>
+      <Template5websitepreview />
+      <style>
+        {`
+          /* CSS for dark theme */
+          .dark-theme {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 20px;
+            /* Add more styles as needed */
+          }
+          .dark-theme input {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            /* Add more styles as needed */
+          }
+          /* Add more specific styles for labels, buttons, etc. */
+        `}
+      </style>
     </Fragment>
   );
 };

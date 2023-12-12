@@ -61,8 +61,8 @@ const Addtemplate1form = (props) => {
   };
 
   return (
-    <Fragment>
-      <div className="form1">
+      <Fragment>
+      <div className="form1 dark-theme">
         <div className="backbtn">
           <Link to="/">
             <button>Back</button>
@@ -349,7 +349,29 @@ const Addtemplate1form = (props) => {
           <button onClick={addshophandler}>Add new store</button>
         </div>
       </div>
-      <Template1websitepreview/>
+      <Template1websitepreview />
+      <style>
+        {`
+          /* CSS for dark theme */
+          .dark-theme {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 20px;
+            /* Add more styles as needed */
+          }
+          .dark-theme input {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            /* Add more styles as needed */
+          }
+          /* Add more specific styles for labels, buttons, etc. */
+        `}
+      </style>
     </Fragment>
   );
 };
