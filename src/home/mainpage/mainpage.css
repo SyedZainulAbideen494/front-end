@@ -137,12 +137,13 @@
     
     .dropmentmainheader {
       width: 100%;
-      background-color: #ffffff; /* Adjust background color as needed */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      background-color: #000000;
+      box-shadow: 0 1px 1px rgb(255, 255, 255);
       z-index: 1;
       color: black;
+      padding: 10px 0; /* Adjust padding as needed */
+      border-radius: 15px;
     }
-    
     .dropmentlogomainpage {
       margin-right: 0px;
     }
@@ -163,7 +164,7 @@
       border: none;
       cursor: pointer;
       font-size: medium;
-      color: black;
+      color: rgb(255, 255, 255);
     }
     
     .section1inmainpage {
@@ -214,6 +215,13 @@
         max-width: 100%; /* Occupy full width on tablets */
         margin: 0; /* Remove margin on tablets */
   }
+  .add-shop-btn-home-header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 9px;
+  }
+  
   }
   @media (min-width: 769px) and (max-width: 1024px) {
     .maindivefordropmentmainpage {
@@ -300,9 +308,9 @@
     
     /* Button styles for main page */
     .blinkfeed-btn-main-pg button {
-      background-color: #6184D8;
-      color: white;
-      border: 2px solid #6184D8;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border: 2px solid #ffffff;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
@@ -329,6 +337,13 @@
     .mboile-btn-display-home-headre {
       display: none;
     }
+    .add-shop-btn-home-header {
+      background-color: #aacc00;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 9px;
+    }
+    
   }
   
   @media (min-width: 1025px) {
@@ -446,8 +461,8 @@
       display: none;
     }
     .add-shop-btn-home-header {
-      background-color: #aacc00;
-      color: white;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
       padding: 10px 25px;
       border-radius: 9px;
     }
