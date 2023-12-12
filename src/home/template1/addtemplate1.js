@@ -21,7 +21,7 @@ const Addtemplate1form = (props) => {
   const [shop_keyhead3, setshop_keyhead3] = useState("");
   const [shop_email, setshop_email] = useState("");
   const [shop_phone, setshop_phone] = useState("");
-  const [temp1, settemp1]= useState('')
+  const [temp1, settemp1]= useState('temp1')
   const [insta, setinsta] = useState("")
   const [salestext, setsalestext] = useState('')
   const [uniqueIdentifier, setUniqueIdentifier] = useState('');
@@ -60,17 +60,19 @@ const Addtemplate1form = (props) => {
     );
   };
 
+ 
+
   return (
-      <Fragment>
-      <div className="form1 dark-theme">
-        <div className="backbtn">
-          <Link to="/">
-            <button>Back</button>
-          </Link>
-        </div>
-        <div className="formtxthead">
-          <h2>Add a new shop</h2>
-        </div>
+    <Fragment>
+    <div className="form1 dark-theme">
+      <div className="backbtn">
+        <Link to="/">
+          <button>Back</button>
+        </Link>
+      </div>
+      <div className="formtxthead">
+        <h2>Add a new shop</h2>
+      </div>
         <div className="inp">
           <label>
             <h3>Enter Shop Name</h3>
@@ -328,19 +330,6 @@ const Addtemplate1form = (props) => {
             placeholder="Enter some details about your company"
             onChange={(e) => {
               setshop_block3(e.target.value);
-            }}
-          />
-        </div>
-        <div className="inp">
-          <label>
-            <h3>Enter any text to confirm</h3>
-          </label>
-          <br />
-          <input
-            required
-            placeholder="Enter any text to confirm"
-            onChange={(e) => {
-              settemp1(e.target.value);
             }}
           />
         </div>
