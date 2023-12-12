@@ -46,7 +46,7 @@ const Editstoreform = () => {
   const userId = 123; // Replace with actual user ID
 
   useEffect(() => {
-    Axios.post(`http://localhost:8080/updateVisits/${shopId}`)
+    Axios.post(`https://apifordropment.online/updateVisits/${shopId}`)
       .then((response) => {
         console.log(response.data);
         // Handle success, maybe show a success message or update state
@@ -61,7 +61,7 @@ const Editstoreform = () => {
 
     try {
       const response = await Axios.put(
-        "http://localhost:8080/updateshop1",
+        "https://apifordropment.online/updateshop1",
         {
           shop_name: shop_name,
           shop_owner: shop_owner,
@@ -217,7 +217,7 @@ const Editbtndisplay = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:8080/user/id/editbtnstoredisplay1`,
+          `https://apifordropment.online/user/id/editbtnstoredisplay1`,
           {
             headers: {
               Authorization: params.id,
@@ -247,7 +247,7 @@ const Editbtndisplay = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtnstoredisplay2",
+          "https://apifordropment.online/user/id/editbtnstoredisplay2",
           {
             headers: {
               Authorization: token,
@@ -308,7 +308,7 @@ const Sales = (props) => {
     setloading(true);
 
     setloading(true);
-    const response = await fetch("http://localhost:8080/myorders", {
+    const response = await fetch("https://apifordropment.online/myorders", {
       headers: {
         Authorization: params.shop_id,
       },
@@ -499,7 +499,7 @@ const Editbtndisplay1 = () => {
       setloading(true);
       try {
         const response = await fetch(
-          `http://localhost:8080/user/id/editbtndiaplay1`,
+          `https://apifordropment.online/user/id/editbtndiaplay1`,
           {
             headers: {
               Authorization: params.shop_id,
@@ -529,7 +529,7 @@ const Editbtndisplay1 = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
+          "https://apifordropment.online/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -631,7 +631,7 @@ function Productsinshopapp() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/use/shops/products", {
+      const response = await fetch("https://apifordropment.online/use/shops/products", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -649,7 +649,7 @@ function Productsinshopapp() {
           price: itemsData.price,
           amount: itemsData.quantity,
           shop_id: itemsData.shop_id,
-          images: `http://localhost:8080/images/${itemsData.images}`,
+          images: `https://apifordropment.online/images/${itemsData.images}`,
           usd: itemsData.usd,
           EUR: itemsData.EUR,
           GBP: itemsData.GBP,
@@ -754,7 +754,7 @@ const Addproductstodatabase = (props) => {
     formData.append("NOK", NOK);
     formData.append("product_description", product_description)
  
-    Axios.post("http://localhost:8080/addProduct", formData, {
+    Axios.post("https://apifordropment.online/addProduct", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1013,7 +1013,7 @@ const Addproductstodatabase = (props) => {
     const token = localStorage.getItem("token");
     
     try {
-      const response = await fetch("http://localhost:8080/users/", {
+      const response = await fetch("https://apifordropment.online/users/", {
         headers: {
           Authorization: token,
         },
@@ -1120,7 +1120,7 @@ const AddLogo = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/add/shop/logo5", formData, {
+    Axios.post("https://apifordropment.online/add/shop/logo5", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1168,7 +1168,7 @@ const Addimage1 = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/addshopimg1", formData, {
+    Axios.post("https://apifordropment.online/addshopimg1", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1213,7 +1213,7 @@ const Addimage1 = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/addshopimg2", formData, {
+    Axios.post("https://apifordropment.online/addshopimg2", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1258,7 +1258,7 @@ const Addimage1 = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/addshopimg3", formData, {
+    Axios.post("https://apifordropment.online/addshopimg3", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1303,7 +1303,7 @@ const Addimage1 = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/addshopimg4", formData, {
+    Axios.post("https://apifordropment.online/addshopimg4", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1348,7 +1348,7 @@ const Addimage1 = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/addshopimg5", formData, {
+    Axios.post("https://apifordropment.online/addshopimg5", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1393,7 +1393,7 @@ const Addimage1 = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/addshopimg6", formData, {
+    Axios.post("https://apifordropment.online/addshopimg6", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1438,7 +1438,7 @@ const Addimage1 = (props) => {
     const formData = new FormData();
     formData.append("image", image);
  
-    Axios.post("http://localhost:8080/addshopimg7", formData, {
+    Axios.post("https://apifordropment.online/addshopimg7", formData, {
       headers: {
         Authorization: params.shop_id,
       },
@@ -1483,7 +1483,7 @@ const Addimage1 = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Axios.post('http://localhost:8080/api/ratings', { shop_id, rating, user_id });
+      await Axios.post('https://apifordropment.online/api/ratings', { shop_id, rating, user_id });
       // Add logic to update UI or show success message
     } catch (error) {
       console.error(error);
@@ -1544,7 +1544,7 @@ const params = useParams();
 
   const fetchProdshandler = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:8080/custom/img/shop", {
+      const response = await fetch("https://apifordropment.online/custom/img/shop", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -1552,13 +1552,13 @@ const params = useParams();
       const data = await response.json();
       const transformedItems = data.img.map((itemsdata) => {
         return {
-          images1: `http://localhost:8080/images/${itemsdata.images1}`,
-          images2: `http://localhost:8080/images/${itemsdata.images2}`,
-          images3: `http://localhost:8080/images/${itemsdata.images3}`,
-          images4: `http://localhost:8080/images/${itemsdata.images4}`,
-          images5: `http://localhost:8080/images/${itemsdata.images5}`,
-          images6: `http://localhost:8080/images/${itemsdata.images6}`,
-          images7: `http://localhost:8080/images/${itemsdata.images7}`,
+          images1: `https://apifordropment.online/images/${itemsdata.images1}`,
+          images2: `https://apifordropment.online/images/${itemsdata.images2}`,
+          images3: `https://apifordropment.online/images/${itemsdata.images3}`,
+          images4: `https://apifordropment.online/images/${itemsdata.images4}`,
+          images5: `https://apifordropment.online/images/${itemsdata.images5}`,
+          images6: `https://apifordropment.online/images/${itemsdata.images6}`,
+          images7: `https://apifordropment.online/images/${itemsdata.images7}`,
           shop_id: itemsdata.shop_id,
           shop_name: itemsdata.shop_name,
           shop_owner: itemsdata.shop_owner,

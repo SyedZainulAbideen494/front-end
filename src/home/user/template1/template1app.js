@@ -16,7 +16,7 @@ function Template1userapp() {
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/user/template1", {
+    const response = await fetch("https://apifordropment.online/user/template1", {
       headers: {
         Authorization: params.user_id,
       },

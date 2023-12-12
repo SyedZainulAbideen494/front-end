@@ -14,7 +14,7 @@ import Userslist from "./userlist";
     const token = localStorage.getItem("token");
     const fetchprodshandler = useCallback(async () => {
       setloading(true);
-      const response = await fetch("http://localhost:8080/all/users", {
+      const response = await fetch("https://apifordropment.online/all/users", {
         headers: {
           Authorization: token,
         },

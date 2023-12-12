@@ -20,7 +20,7 @@ const shop_id = props.shop_id
 useEffect(() => {
   const fetchAverageRating = async () => {
     try {
-      const response = await Axios.get(`http://localhost:8080/api/average-rating/${shop_id}`);
+      const response = await Axios.get(`https://apifordropment.online/api/average-rating/${shop_id}`);
       const averageRating = response.data.averageRating.toFixed(1); // Format to one decimal place
       setAverageRating(averageRating);
     } catch (error) {
@@ -36,7 +36,7 @@ const toggleFollow = async () => {
   const token = localStorage.getItem("token");
   try {
     await Axios.post(
-      "http://localhost:8080/followpage",
+      "https://apifordropment.online/followpage",
       {
         shop_id: props.shop_id,
       },
@@ -48,7 +48,7 @@ const toggleFollow = async () => {
     );
 
     // After following, check the updated follow status
-    const response = await fetch(`http://localhost:8080/check-followpage/${followerId}/${followedId}`);
+    const response = await fetch(`https://apifordropment.online/check-followpage/${followerId}/${followedId}`);
     const data = await response.json();
     setIsFollowing(data.isFollowing);
   } catch (error) {
@@ -60,7 +60,7 @@ const toggleunFollow = async () => {
   const token = localStorage.getItem("token");
   try {
     await Axios.post(
-      "http://localhost:8080/unfollowpage",
+      "https://apifordropment.online/unfollowpage",
       {
         id: props.shop_id,
       },
@@ -72,7 +72,7 @@ const toggleunFollow = async () => {
     );
 
     // After unfollowing, check the updated follow status
-    const response = await fetch(`http://localhost:8080/check-followpage/${followerId}/${followedId}`);
+    const response = await fetch(`https://apifordropment.online/check-followpage/${followerId}/${followedId}`);
     const data = await response.json();
     setIsFollowing(data.isFollowing);
   } catch (error) {
@@ -86,7 +86,7 @@ useEffect(() => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:8080/user/id/editbtndiaplay2",
+        "https://apifordropment.online/user/id/editbtndiaplay2",
         {
           headers: {
             Authorization: token,
@@ -115,7 +115,7 @@ const followerId = name2[0]?.user_id;
 
 useEffect(() => {
   // Fetch data from the server to check if the profile is following
-  fetch(`http://localhost:8080/check-followpage/${followerId}/${followedId}`)
+  fetch(`https://apifordropment.online/check-followpage/${followerId}/${followedId}`)
     .then((response) => response.json())
     .then((data) => setIsFollowing(data.isFollowing))
     .catch((error) => console.error('Error:', error));
@@ -124,7 +124,7 @@ useEffect(() => {
 
   const fetchprodshandler = useCallback(async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:8080/main/shop/logo", {
+    const response = await fetch("https://apifordropment.online/main/shop/logo", {
       headers: {
         Authorization: props.shop_id,
       },
@@ -132,7 +132,7 @@ useEffect(() => {
     const data = await response.json();
     const transformedItems = data.shops.map((itemsdata) => {
       return {
-        logo: `http://localhost:8080/images/${itemsdata.logo}`,
+        logo: `https://apifordropment.online/images/${itemsdata.logo}`,
       };
     });
     setItems(transformedItems);
@@ -170,7 +170,7 @@ useEffect(() => {
   
   const fetchuserdetails = useCallback(async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:8080/shop/main/user/details/profile", {
+    const response = await fetch("https://apifordropment.online/shop/main/user/details/profile", {
       headers: {
         Authorization: props.user_id,
       },
@@ -178,7 +178,7 @@ useEffect(() => {
     const data = await response.json();
     const transformedItems = data.shops.map((itemsdata) => {
       return {
-        porfilepic: `http://localhost:8080/images/${itemsdata.porfilepic}`,
+        porfilepic: `https://apifordropment.online/images/${itemsdata.porfilepic}`,
         first_name: itemsdata.first_name,
         last_name: itemsdata.last_name
       };
@@ -195,7 +195,7 @@ useEffect(() => {
   useEffect(() => {
     const fetchFollowerCount = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/products-count/${shop_id}`);
+        const response = await fetch(`https://apifordropment.online/products-count/${shop_id}`);
         const data = await response.json();
         setFollowerCount(data.followerCount);
       } catch (error) {

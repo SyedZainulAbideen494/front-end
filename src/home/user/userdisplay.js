@@ -15,7 +15,7 @@ const Userdisplay = (props) => {
 
   const fetchuserdetails = useCallback(async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:8080/shop/main/user/details/profile", {
+    const response = await fetch("https://apifordropment.online/shop/main/user/details/profile", {
       headers: {
         Authorization: props.user_id,
       },
@@ -23,7 +23,7 @@ const Userdisplay = (props) => {
     const data = await response.json();
     const transformedItems = data.shops.map((itemsdata) => {
       return {
-        profilepic: `http://localhost:8080/images/${itemsdata.porfilepic}`,
+        profilepic: `https://apifordropment.online/images/${itemsdata.porfilepic}`,
         first_name: itemsdata.first_name,
         last_name: itemsdata.last_name,
         unique_id: itemsdata.unique_id,
@@ -41,7 +41,7 @@ const Userdisplay = (props) => {
   useEffect(() => {
     const fetchFollowerCount = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/follower-count/${props.user_id}`);
+        const response = await fetch(`https://apifordropment.online/follower-count/${props.user_id}`);
         const data = await response.json();
         setFollowerCount(data.followerCount);
       } catch (error) {
@@ -57,7 +57,7 @@ const Userdisplay = (props) => {
   useEffect(() => {
     const fetchFollowerCount = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/shops-count/${props.user_id}`);
+        const response = await fetch(`https://apifordropment.online/shops-count/${props.user_id}`);
         const data = await response.json();
         setShopsCount(data.followerCount);
       } catch (error) {
@@ -74,7 +74,7 @@ const Userdisplay = (props) => {
     try {
       // Send a request to your backend to follow the user
       await Axios.post(
-        "http://localhost:8080/followdis",
+        "https://apifordropment.online/followdis",
         {
           user_id: props.user_id,
         },
@@ -97,7 +97,7 @@ const Userdisplay = (props) => {
     try {
       // Send a request to your backend to unfollow the user
       await Axios.post(
-        "http://localhost:8080/unfollowdis",
+        "https://apifordropment.online/unfollowdis",
         {
           user_id: props.user_id,
         },
@@ -121,7 +121,7 @@ const Userdisplay = (props) => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
+          "https://apifordropment.online/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -150,7 +150,7 @@ const Userdisplay = (props) => {
   
   useEffect(() => {
     // Fetch data from the server to check if the profile is following
-    fetch(`http://localhost:8080/check-follow/${followerId}/${followedId}`)
+    fetch(`https://apifordropment.online/check-follow/${followerId}/${followedId}`)
       .then((response) => response.json())
       .then((data) => setIsFollowing(data.isFollowing))
       .catch((error) => console.error('Error:', error));

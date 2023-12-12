@@ -1570,7 +1570,7 @@ const params = useParams()
 
     const fetchProdshandler = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:8080/custom/img/shop", {
+      const response = await fetch("https://apifordropment.online/custom/img/shop", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -1578,13 +1578,13 @@ const params = useParams()
       const data = await response.json();
       const transformedItems = data.img.map((itemsdata) => {
         return {
-          images1: `http://localhost:8080/images/${itemsdata.images1}`,
-          images2: `http://localhost:8080/images/${itemsdata.images2}`,
-          images3: `http://localhost:8080/images/${itemsdata.images3}`,
-          images4: `http://localhost:8080/images/${itemsdata.images4}`,
-          images5: `http://localhost:8080/images/${itemsdata.images5}`,
-          images6: `http://localhost:8080/images/${itemsdata.images6}`,
-          images7: `http://localhost:8080/images/${itemsdata.images7}`,
+          images1: `https://apifordropment.online/images/${itemsdata.images1}`,
+          images2: `https://apifordropment.online/images/${itemsdata.images2}`,
+          images3: `https://apifordropment.online/images/${itemsdata.images3}`,
+          images4: `https://apifordropment.online/images/${itemsdata.images4}`,
+          images5: `https://apifordropment.online/images/${itemsdata.images5}`,
+          images6: `https://apifordropment.online/images/${itemsdata.images6}`,
+          images7: `https://apifordropment.online/images/${itemsdata.images7}`,
           shop_id: itemsdata.shop_id,
           shop_name: itemsdata.shop_name,
           shop_owner: itemsdata.shop_owner,

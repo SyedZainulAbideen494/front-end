@@ -28,7 +28,7 @@ const Addtemplate4form = (props) => {
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
-      "http://localhost:8080/addShops/template4",
+      "https://apifordropment.online/addShops/template4",
       {
         shop_name: shop_name,
         shop_owner: shop_owner,

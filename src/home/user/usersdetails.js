@@ -25,7 +25,7 @@ function UserProfile() {
     const token = localStorage.getItem("token");
     try {
       await Axios.post(
-        "http://localhost:8080/follow",
+        "https://apifordropment.online/follow",
         {
           id: params.user_id,
         },
@@ -37,7 +37,7 @@ function UserProfile() {
       );
 
       // After following, check the updated follow status
-      const response = await fetch(`http://localhost:8080/check-follow/${followerId}/${followedId}`);
+      const response = await fetch(`https://apifordropment.online/check-follow/${followerId}/${followedId}`);
       const data = await response.json();
       setIsFollowing(data.isFollowing);
     } catch (error) {
@@ -49,7 +49,7 @@ function UserProfile() {
     const token = localStorage.getItem("token");
     try {
       await Axios.post(
-        "http://localhost:8080/unfollow",
+        "https://apifordropment.online0/unfollow",
         {
           id: params.user_id,
         },
@@ -61,7 +61,7 @@ function UserProfile() {
       );
 
       // After unfollowing, check the updated follow status
-      const response = await fetch(`http://localhost:8080/check-follow/${followerId}/${followedId}`);
+      const response = await fetch(`https://apifordropment.online/check-follow/${followerId}/${followedId}`);
       const data = await response.json();
       setIsFollowing(data.isFollowing);
     } catch (error) {
@@ -75,7 +75,7 @@ function UserProfile() {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/id/editbtndiaplay2",
+          "https://apifordropment.online/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -105,7 +105,7 @@ function UserProfile() {
 
   useEffect(() => {
     // Fetch data from the server to check if the profile is following
-    fetch(`http://localhost:8080/check-follow/${followerId}/${followedId}`)
+    fetch(`https://apifordropment.online/check-follow/${followerId}/${followedId}`)
       .then((response) => response.json())
       .then((data) => setIsFollowing(data.isFollowing))
       .catch((error) => console.error('Error:', error));
@@ -115,7 +115,7 @@ function UserProfile() {
   useEffect(() => {
     const fetchFollowerCount = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/follower-count/${params.user_id}`);
+        const response = await fetch(`https://apifordropment.online/follower-count/${params.user_id}`);
         const data = await response.json();
         setFollowerCount(data.followerCount);
       } catch (error) {
@@ -128,7 +128,7 @@ function UserProfile() {
 
   const fetchuserdetails = useCallback(async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:8080/user/profile/details", {
+    const response = await fetch("https://apifordropment.online/user/profile/details", {
       headers: {
         Authorization: params.user_id,
       },
@@ -141,7 +141,7 @@ function UserProfile() {
         last_name: itemsdata.last_name,
         bio: itemsdata.bio,
         unique_id: itemsdata.unique_id,
-        profilepic: `http://localhost:8080/images/${itemsdata.porfilepic}`,
+        profilepic: `https://apifordropment.online/images/${itemsdata.porfilepic}`,
       };
     });
     setUserInfo(transformeduserinfo);
@@ -156,7 +156,7 @@ function UserProfile() {
     const token = localStorage.getItem("token");
     try {
       const response = await Axios.post(
-        "http://localhost:8080/start/chat",
+        "https://apifordropment.online/start/chat",
         {
           user_id: params.user_id,
           first_name1: name2[0]?.first_name,
