@@ -95,7 +95,7 @@
 .storysmodelul-container {
   overflow-x: auto; /* Enable horizontal scrolling */
   white-space: nowrap; /* Prevent line breaks for list items */
-  max-width: 600px; /* Adjust the maximum width as needed */
+  max-width: 100%; /* Adjust the maximum width as needed */
 }
 
 .storysmodelul {
