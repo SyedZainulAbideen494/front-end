@@ -89,7 +89,9 @@
     border-top: 1px solid #ddd;
     color: white;
   }
-  
+  .shop-header- p {
+    color: white;
+  }
   .star-icon {
     color: gold;
     margin-right: 3px;
@@ -187,7 +189,9 @@
     border-top: 1px solid #ddd;
     color: white;
   }
-  
+  .shop-header- p {
+    color: white;
+  }
   .star-icon {
     color: gold;
     margin-right: 3px;
@@ -290,6 +294,9 @@
     color: gold;
     margin-right: 3px;
   }
+  .shop-header- p {
+    color: white;
+  }
 }
 
 @media (min-width: 1025px){
@@ -298,10 +305,15 @@
         justify-content: center;
         align-items: center;
         min-height: 35vh;
+        color: #ffffff;
+      }
+      .shop-header- p {
+        color: white;
       }
       
       .shop-card {
         border: 1px solid #ccc;
+        color: #ffffff;
         background-color: #000000;
         border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -333,7 +345,7 @@
       .shop-name {
         font-weight: bold;
         text-decoration: none;
-        color: #333;
+        color: #ffffff;
         margin-bottom: 5px;
         font-size: 1.2rem;
       }
