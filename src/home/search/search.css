@@ -211,4 +211,40 @@
 }
 
   
- 
+@media screen and (max-width: 768px) {
+  /* Adjust the width of .user-post-search-result and other elements */
+  .user-post-search-result,
+  .shop-container-search-result,
+  .PRoducts-card-search-result {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Adjust shop card margin */
+  .shop-card-search-result {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* Adjust the width of .shop-image-pic-search-result */
+  .shop-image-pic-search-result {
+    width: 100%;
+  }
+
+  /* Modify flex-basis for user-shop-section */
+  .user-shop-section {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1200px) {
+  /* Adjust the width of .user-post-search-result and other elements */
+  .user-post-search-result,
+  .shop-container-search-result,
+  .PRoducts-card-search-result {
+    width: 300px;
+    margin: 10px;
+  }
+}

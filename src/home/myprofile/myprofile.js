@@ -60,10 +60,10 @@ const MyProfile = () => {
   {/* Header Section */}
   <div className="header-edit-profile">
     <Link to="/edit/myprofile">
-      <button className="edit-button">Edit</button>
+      <button className="btn-myporfile-main-div">Edit</button>
     </Link>
     <Link to="/Addshoppage1">
-      <button className="add-shop-button">Add Shop</button>
+      <button className="btn-myporfile-main-div">Add Shop</button>
     </Link>
   </div>
 
