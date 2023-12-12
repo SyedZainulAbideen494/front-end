@@ -83,67 +83,39 @@ const Signinform = () => {
   };
   const nav = useNavigate();
 
-  const verifyEmail = async (email) => {
-    try {
-      const response = await Axios.get(
-        `https://api.quickemailverification.com/v1/verify?email=${email}&apikey=YOUR_API_KEY`
-      );
-      if (response.data.result === "valid") {
-        console.log("Email is valid!");
-        return true;
-      } else {
-        console.log("Email is not valid!");
-        return false;
-      }
-    } catch (error) {
-      console.error("Error verifying email:", error);
-      return false;
-    }
-  };
-
   const register = async () => {
+    const userData = {
+      first_name: first_name,
+      last_name: last_name,
+      email: email,
+      password: password,
+      unique_id: unique_id,
+      occupation: occupation,
+      age: age,
+      phoneno: phoneno,
+      streetadrs: streetadrs,
+      city: city,
+      state: state,
+      zipcode: zipcode,
+      country: country,
+      bio: bio,
+    };
+  
     try {
-      const isEmailValid = await verifyEmail(email);
-
-      if (!isEmailValid) {
-        console.log("Invalid email. Registration failed!");
-        // Handle invalid email address, display error message, etc.
-        return;
-      }
-
-      const userData = {
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
-        password: password,
-        unique_id: unique_id,
-        occupation: occupation,
-        age: age,
-        phoneno: phoneno,
-        streetadrs: streetadrs,
-        city: city,
-        state: state,
-        zipcode: zipcode,
-        country: country,
-        bio: bio,
-      };
-
       const response = await Axios.post("http://localhost:8080/addUser", userData);
-
+  
       if (response.status === 200) {
         console.log("User registration successful!");
         nav("/login");
       } else {
-        console.log("User registration failed!");
-        // Handle registration failure, display error message, etc.
+        console.log("User registration failed with status:", response.status);
+        // Handle other status codes here
       }
     } catch (error) {
-      console.error("An error occurred during registration:", error);
-      // Handle other types of errors, such as network errors or server errors.
+      console.error("User registration failed:", error);
+      // Handle other types of errors (e.g., network issues)
     }
   };
-
-
   return (
     <Fragment>
       <form className="signup_form">
