@@ -172,11 +172,12 @@ function Order() {
  
 
   const HeaderContainer = styled.header`
-    background-color: #37474f;
+    background-color: black;
     padding: 20px;
     text-align: center;
-    color: #fff;
+    color: white;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid white;
   `;
   
   const Title = styled.h1`
