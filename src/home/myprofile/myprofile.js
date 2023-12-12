@@ -12,7 +12,7 @@ const MyProfile = () => {
       setloading(true);
       const token = localStorage.getItem("token");
       setloading(true);
-      const response = await fetch("http://localhost:8080/users/", {
+      const response = await fetch("https://apifordropment.online/users/", {
         headers: {
           Authorization: token,
         },
@@ -20,7 +20,7 @@ const MyProfile = () => {
       const data = await response.json();
       const transformeduser = data.user.map((userdata) => {
         return {
-          profilePic: `http://localhost:8080/images/${userdata.porfilepic}`,
+          profilePic: `https://apifordropment.online/images/${userdata.porfilepic}`,
           first_name: userdata.first_name,
           last_name: userdata.last_name,
           unique_id: userdata.unique_id,
@@ -41,7 +41,7 @@ const MyProfile = () => {
     useEffect(() => {
       async function fetchFollowerCount() {
         try {
-          const response = await fetch(`http://localhost:8080/follower-count/${img[0]?.user_id}`);
+          const response = await fetch(`https://apifordropment.online/follower-count/${img[0]?.user_id}`);
           if (response.ok) {
             const data = await response.json();
             setFollowerCount(data.followerCount);

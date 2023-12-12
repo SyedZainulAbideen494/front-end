@@ -14,7 +14,7 @@ function AllTemplate1app() {
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/all/shops/main/page", {
+    const response = await fetch("https://apifordropment.online/all/shops/main/page", {
       headers: {
         Authorization: token,
       },
@@ -25,7 +25,7 @@ function AllTemplate1app() {
         shop_id: itemsdata.shop_id,
         shop_name: itemsdata.shop_name,
         temp: itemsdata.temp,
-        logo: `http://localhost:8080/images/${itemsdata.logo}`,
+        logo: `https://apifordropment.online/images/${itemsdata.logo}`,
         shop_owner: itemsdata.shop_owner,
         user_id: itemsdata.user_id
       };

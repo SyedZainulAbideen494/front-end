@@ -13,7 +13,7 @@ function Storiesapp() {
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
     try {
-      const response = await axios.get("http://localhost:8080/api/stories/users/display", {
+      const response = await axios.get("https://apifordropment.online/api/stories/users/display", {
         headers: {
           Authorization: token,
         },
@@ -21,7 +21,7 @@ function Storiesapp() {
       const data = response.data; // Retrieve data directly from axios response
       const transformedItems = data.order.map((itemsdata) => {
         return {
-          profilePic: `http://localhost:8080/images/${itemsdata.porfilepic}`, // Fixed typo 'porfilepic'
+          profilePic: `https://apifordropment.online/images/${itemsdata.porfilepic}`, // Fixed typo 'porfilepic'
           user_id: itemsdata.user_id,
           first_name: itemsdata.first_name,
           last_name: itemsdata.last_name,

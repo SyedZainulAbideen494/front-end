@@ -8,7 +8,7 @@ const NotificationComponent = ({ closeNotifications }) => {
     // Fetch notifications
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('http://localhost:8080/api/notifications', {
+      fetch('https://apifordropment.online/api/notifications', {
         method: 'GET',
         headers: {
           Authorization: token,

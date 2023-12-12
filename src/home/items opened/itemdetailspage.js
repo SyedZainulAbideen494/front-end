@@ -35,7 +35,7 @@ export default Productsdeatilspage;
 export async function loader({ request, params }) {
   const id = params.id;
 
-  const response = await fetch("http://localhost:8080/products/product" + id);
+  const response = await fetch("https://apifordropment.online/products/product" + id);
 
   if (!response.ok) {
     throw json(

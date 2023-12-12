@@ -14,7 +14,7 @@ function Order() {
     const token = localStorage.getItem('token');
     try {
       const response = await Axios.put(
-        `http://localhost:8080/order/${orderId}/cancel`,
+        `https://apifordropment.online/order/${orderId}/cancel`,
         { status: 'cancel' },
         {
           headers: {
@@ -41,7 +41,7 @@ function Order() {
     setLoading(true);
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:8080/user/order/display`, {
+      const response = await fetch(`https://apifordropment.online/user/order/display`, {
         headers: {
           Authorization: token,
         },
@@ -90,7 +90,7 @@ function Order() {
     const token = localStorage.getItem("token");
     try {
       const response = await Axios.post(
-        "http://localhost:8080/start/chat",
+        "https://apifordropment.online/start/chat",
         {
           user_id: user_id,
           first_name1: name2[0]?.first_name,
@@ -125,7 +125,7 @@ function Order() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:8080/user/id/editbtndiaplay2",
+        "https://apifordropment.online/user/id/editbtndiaplay2",
         {
           headers: {
             Authorization: token,

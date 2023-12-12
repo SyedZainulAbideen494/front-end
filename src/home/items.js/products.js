@@ -57,7 +57,7 @@ const Products = (props) => {
     const token = localStorage.getItem("token");
     
     try {
-      const response = await fetch("http://localhost:8080/users/", {
+      const response = await fetch("https://apifordropment.online/users/", {
         headers: {
           Authorization: token,
         },

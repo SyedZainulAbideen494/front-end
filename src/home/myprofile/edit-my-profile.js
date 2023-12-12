@@ -33,7 +33,7 @@ const EditMyProfile = () => {
         e.preventDefault();
         try {
           const profileId = "profile_id"; // Replace with actual profile ID
-          await axios.put(`http://localhost:8080/edit/profile/my`, formData, {
+          await axios.put(`https://apifordropment.online/edit/profile/my`, formData, {
             headers: {
               Authorization: token // Include the token in the request headers
             }
@@ -55,7 +55,7 @@ const EditMyProfile = () => {
       const HandleSubmitremoveProfilePic = async (e) => {
         e.preventDefault();
         try {
-          await axios.put(`http://localhost:8080/api/remove/profile/picture`, {
+          await axios.put(`https://apifordropment.online/api/remove/profile/picture`, {
             headers: {
               Authorization: token // Include the token in the request headers
             }

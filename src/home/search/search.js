@@ -9,18 +9,18 @@ const Search = () => {
   const [searchResultsShop, setSearchResultsShop] = useState([]);
 
   const handleSearch = () => {
-    fetch(`http://localhost:8080/api/search?query=${searchTerm}`)
+    fetch(`https://apifordropment.online/api/search?query=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
         setSearchResults(data);
 
-        fetch(`http://localhost:8080/api/shops/search?query=${searchTerm}`)
+        fetch(`https://apifordropment.online/api/shops/search?query=${searchTerm}`)
           .then((response) => response.json())
           .then((userData) => {
             setSearchResultsShop(userData); // Assuming userData is an array of shop results
           });
 
-        fetch(`http://localhost:8080/api/user/search?query=${searchTerm}`)
+        fetch(`https://apifordropment.online/api/user/search?query=${searchTerm}`)
           .then((response) => response.json())
           .then((userData) => {
             setSearchResultsUser(userData); // Assuming userData is an array of user results
@@ -72,7 +72,7 @@ const User = ({ searchResultsUser }) => {
       <div className="user-post-header-search-result">
         <div className="user-post-image-search-result">
           <img
-            src={`http://localhost:8080/images/${result.porfilepic}`}
+            src={`https://apifordropment.online/images/${result.porfilepic}`}
             alt="User Profile"
             className="user-profile-pic-search-result"
           />
@@ -141,7 +141,7 @@ const Shop = ({ searchResultsShop }) => {
         <div className="shop-card-search-result">
           <div className="shop-header-search-result">
             <img
-              src={`http://localhost:8080/images/${result.logo}`}
+              src={`https://apifordropment.online/images/${result.logo}`}
               alt={result.shop_name}
               className="shop-logo-search-result"
             />
@@ -157,7 +157,7 @@ const Shop = ({ searchResultsShop }) => {
           </div>
           <div className="shop-image-search-result">
             <img
-              src={`http://localhost:8080/images/${result.logo}`}
+              src={`https://apifordropment.online/images/${result.logo}`}
               alt={result.shop_name}
               className="shop-image-pic-search-result"
             />
@@ -180,7 +180,7 @@ const Products = ({ searchResults }) => {
     <div className="PRoducts-card-search-result" key={result.id}>
       <div className="product-img-search-result">
         <img
-          src={`http://localhost:8080/images/${result.images}`}
+          src={`https://apifordropment.online/images/${result.images}`}
           alt="Product Image"
         />
       </div>

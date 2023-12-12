@@ -20,7 +20,7 @@ const AddStories = () => {
     formData.append('media', media);
 
     try {
-      await axios.post('http://localhost:8080/api/stories', formData);
+      await axios.post('https://apifordropment.online/api/stories', formData);
       // After a successful upload, redirect to /home
       window.location.href = '/home';
     } catch (error) {

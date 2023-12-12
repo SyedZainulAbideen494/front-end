@@ -14,7 +14,7 @@ function Stories() {
     async function fetchStories() {
       const token = localStorage.getItem('token');
       try {
-        const response = await axios.get('http://localhost:8080/api/stories', {
+        const response = await axios.get('https://apifordropment.online/api/stories', {
           headers: {
             Authorization: params.user_id, // Replace yourToken with the actual token
           },
@@ -77,7 +77,7 @@ function Stories() {
 
   const fetchusershandler1 = useCallback(async () => {
     const token = localStorage.getItem("token");
-    const response = await fetch("http://localhost:8080/user/chat/details/1", {
+    const response = await fetch("https://apifordropment.online/user/chat/details/1", {
       headers: {
         Authorization: params.user_id,
       },
@@ -87,7 +87,7 @@ function Stories() {
       return {
         first_name: userdata.first_name,
         last_name: userdata.last_name,
-        profilepic: `http://localhost:8080/images/${userdata.porfilepic}`,
+        profilepic: `https://apifordropment.online/images/${userdata.porfilepic}`,
         user_id: userdata.user_id
       };
     });
@@ -109,7 +109,7 @@ function Stories() {
             </Link>
             {currentStory.media_type === 'image' && (
               <img
-                src={`http://localhost:8080/images/${currentStory.media_path}`}
+                src={`https://apifordropment.online/images/${currentStory.media_path}`}
                 alt="Story Media"
                 className="story-image"
               />
@@ -121,7 +121,7 @@ function Stories() {
                 loop
                 className="story-video"
               >
-                <source src={`http://localhost:8080/videos/${currentStory.media_path}`} type="video/mp4" />
+                <source src={`https://apifordropment.online/videos/${currentStory.media_path}`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             )}

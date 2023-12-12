@@ -25,19 +25,19 @@ const Orderform = (props) => {
   useEffect(() => {
     const fetchProdshandler = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/prods/details/orders/for/details`, {
+        const response = await fetch(`https://apifordropment.online/prods/details/orders/for/details`, {
           headers: {
             Authorization: params.id,
           },
         });
         const data = await response.json();
         const transformedItems = data.products.map((itemsdata) => ({
-          images: `http://localhost:8080/images/${itemsdata.images}`,
-          images2: `http://localhost:8080/images/${itemsdata.images2}`,
-          images3: `http://localhost:8080/images/${itemsdata.images3}`,
-          images4: `http://localhost:8080/images/${itemsdata.images4}`,
-          images5: `http://localhost:8080/images/${itemsdata.images5}`,
-          images6: `http://localhost:8080/images/${itemsdata.images6}`,
+          images: `https://apifordropment.online/images/${itemsdata.images}`,
+          images2: `https://apifordropment.online/images/${itemsdata.images2}`,
+          images3: `https://apifordropment.online/images/${itemsdata.images3}`,
+          images4: `https://apifordropment.online/images/${itemsdata.images4}`,
+          images5: `https://apifordropment.online/images/${itemsdata.images5}`,
+          images6: `https://apifordropment.online/images/${itemsdata.images6}`,
           title: itemsdata.title,
           description: itemsdata.description,
           id: itemsdata.id,
@@ -100,7 +100,7 @@ const Orderform = (props) => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:8080/user/details/orders/for/details",
+          "https://apifordropment.online/user/details/orders/for/details",
           {
             headers: {
               Authorization: token,
@@ -155,7 +155,7 @@ const Orderform = (props) => {
       const dateTimeISO = `${formattedDate} ${formattedTime}`;
   
       const response = await Axios.post(
-        "http://localhost:8080/place/order",
+        "https://apifordropment.online/place/order",
         {
           name: user,
           Phone: phoneno,

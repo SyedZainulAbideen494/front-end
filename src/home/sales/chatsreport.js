@@ -13,7 +13,7 @@ function SalesReportApp() {
     setLoading(true);
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:8080/sales/stats/shop`, {
+      const response = await fetch(`https://apifordropment.online/sales/stats/shop`, {
         headers: {
           Authorization: params.shop_id,
         },
@@ -97,7 +97,7 @@ function SalesReportApp() {
       const token = localStorage.getItem('token');
       try {
         const response = await fetch(
-          `http://localhost:8080/prods/details/orders/for/details`,
+          `https://apifordropment.online/prods/details/orders/for/details`,
           {
             headers: {
               Authorization: salesData[0]?.id, // Corrected this line

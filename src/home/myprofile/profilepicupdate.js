@@ -11,7 +11,7 @@ const Addimage1 = (props) => {
       const formData = new FormData();
       formData.append("image", image);
    
-      axios.post("http://localhost:8080/add/profile/pic", formData, {
+      axios.post("https://apifordropment.online/add/profile/pic", formData, {
         headers: {
           Authorization: token
         },
