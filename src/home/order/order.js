@@ -209,18 +209,21 @@ function Order() {
   return (
     <div className="order-container-customer-side-all-order-main-div">
       <HeaderContainer>
-      <Title>Your Orders</Title>
-      <Subtitle>View and manage your orders here</Subtitle>
-      <div>
-        <Link to='/'>
-        <Button>Home</Button>
-        </Link>
-      </div>
-    </HeaderContainer>
-    {loading ? (
-      <p>Loading...</p>
-    ) : (
-      salesData.map((item) => (
+        <Title>Your Orders</Title>
+        <Subtitle>View and manage your orders here</Subtitle>
+        <div>
+          <Link to='/'>
+            <Button>Home</Button>
+          </Link>
+        </div>
+      </HeaderContainer>
+  
+      {loading ? (
+        <p>Loading...</p>
+      ) : salesData.length === 0 ? (
+        <h1 style={{textAlign: 'center'}}>Are you broke? Go and order something!</h1>
+      ) : (
+        salesData.map((item) => (
         <div className="order-details-card" key={item.orders_id}>
            <div className="order-tracking-bar" key={item.orders_id}>
             <div className="order-status">
