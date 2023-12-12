@@ -337,8 +337,8 @@
     
     .dropmentmainheader {
       width: 100%;
-      background-color: #ffffff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      background-color: #000000;
+      box-shadow: 0 1px 1px rgb(255, 255, 255);
       z-index: 1;
       color: black;
       padding: 10px 0; /* Adjust padding as needed */
@@ -362,7 +362,7 @@
       border: none;
       cursor: pointer;
       font-size: medium;
-      color: black;
+      color: rgb(255, 255, 255);
     }
     
     .createstorebtnmainpg {
