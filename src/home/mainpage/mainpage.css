@@ -431,9 +431,9 @@
     
     /* Button styles for main page */
     .blinkfeed-btn-main-pg button {
-      background-color: #6184D8;
+      background-color: #000000;
       color: white;
-      border: 2px solid #6184D8;
+      border: 2px solid #000000;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
@@ -444,7 +444,7 @@
     /* Button hover effect */
     .blinkfeed-btn-main-pg button:hover {
       background-color: transparent;
-      color: #6184D8;
+      color: #ffffff;
     }
     
     /* Add shop button on main page */
@@ -474,6 +474,15 @@ body {
 p{
   color: white;
 }
-h1, h2, h3, h4 {
+h1 {
+  color: white;
+}
+h4 {
+  color: white;
+}
+h3 {
+  color: white;
+}
+ h2 {
   color: white;
 }
