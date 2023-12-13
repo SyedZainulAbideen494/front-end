@@ -30,7 +30,7 @@ const Section11BuildEdit = () => {
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await Axios.get(`http://localhost:8080/custom/shop/display`, {
+      const response = await Axios.get(`https://apifordropment.online/custom/shop/display`, {
         headers: {
           Authorization: params.shop_id,
         },
@@ -43,9 +43,9 @@ const Section11BuildEdit = () => {
         shop_block2: itemsdata.shop_block2,
         shop_blockhead3: itemsdata.shop_blockhead3,
         shop_block3: itemsdata.shop_block3,
-        images2: `http://localhost:8080/images/${itemsdata.images2}`,
-        images3: `http://localhost:8080/images/${itemsdata.images3}`,
-        images4: `http://localhost:8080/images/${itemsdata.images4}`,
+        images2: `https://apifordropment.online/images/${itemsdata.images2}`,
+        images3: `https://apifordropment.online/images/${itemsdata.images3}`,
+        images4: `https://apifordropment.online/images/${itemsdata.images4}`,
       }));
       setItems(transformedItems);
       setLoading(false);

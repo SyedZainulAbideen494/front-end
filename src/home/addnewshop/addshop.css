@@ -1,0 +1,40 @@
+.nicheheaderbtn button {
+    background-color: transparent;
+    border: 1px solid grey;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 9px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.templates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    align-items: center;
+  }
+  
+  .template {
+    margin: 10px;
+    text-align: center;
+  }
+  .button-button-primary-template-button {
+    background-color: white;
+    color: black;
+    padding: 8px 80px;
+    border-radius: 9px;
+    cursor: pointer;
+    border: 2px solid white;
+  }
+  .button-button-secondary-preview-button {
+    padding: 8px 30px;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 9px;
+    margin-top: 10px;
+    background-color: transparent;
+  }
+
+  

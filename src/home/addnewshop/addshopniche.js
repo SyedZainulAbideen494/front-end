@@ -38,65 +38,60 @@ const Addshopniche = () => {
         </header>
       </div>
       <div className="niches">
-        <div className="txt2121">
-          <h1>PLEASE SELECT A TEMPLATE</h1>
-        </div>
         <div className="templates">
         <div className="template">
           <Link to='/custom/shop/build/page1'>
-              <button className="button button-primary template-button">Custom shop</button>
+              <button className="button-button-primary-template-button">Custom shop</button>
               </Link>
           </div>
           {/* Template 1 */}
           <div className="template">
             <Link to="/Add/temp1/form">
-              <button className="button button-primary template-button">Dropment template 1</button>
+              <button className="button-button-primary-template-button">Dropment template 1</button><br/>
             </Link>
             <span>
               <Link to="/temp1preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
+                <button className="button-button-secondary-preview-button">Preview</button>
               </Link>
             </span>
           </div>
-
-          {/* Template 2 */}
           <div className="template">
             <Link to="/Add/temp2/form">
-              <button className="button button-primary template-button">Dropment template 2</button>
+              <button className="button-button-primary-template-button">Dropment template 2</button><br/>
             </Link>
             <span className="preview-span">
               <Link to="/temp2preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
+                <button className="button-button-secondary-preview-button">Preview</button>
               </Link>
             </span>
           </div>
           <div className="template">
             <Link to="/Add/temp3/form">
-              <button className="button button-primary template-button">Dropment template 3</button>
+              <button className="button-button-primary-template-button">Dropment template 3</button><br/>
             </Link>
             <span className="preview-span">
               <Link to="/temp3preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
+                <button className="button-button-secondary-preview-button">Preview</button>
               </Link>
             </span>
           </div>
           <div className="template">
             <Link to="/Add/temp4/form">
-              <button className="button button-primary template-button">Dropment template 4</button>
+              <button className="button-button-primary-template-button">Dropment template 4</button><br/>
             </Link>
             <span className="preview-span">
               <Link to="/temp4preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
+                <button className="button-button-secondary-preview-button">Preview</button>
               </Link>
             </span>
           </div>
           <div className="template">
             <Link to="/Add/temp5/form">
-              <button className="button button-primary template-button">Dropment template 5</button>
+              <button className="button-button-primary-template-button">Dropment template 5</button><br/>
             </Link>
             <span className="preview-span">
               <Link to="/temp5preview" className="preview-link">
-                <button className="button button-secondary preview-button">Preview</button>
+                <button className="button-button-secondary-preview-button">Preview</button>
               </Link>
             </span>
           </div>
