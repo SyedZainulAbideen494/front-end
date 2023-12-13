@@ -29,10 +29,9 @@ const Addshopniche = () => {
         <header>
           <div className="nicheheaderbtns">
             <span className="nicheheaderbtn">
+            <Link to='/home'style={{textDecoration: 'none'}}>
               <button>Back</button>
-            </span>
-            <span className="nicheheaderbtn">
-              <button>Home</button>
+            </Link>
             </span>
           </div>
         </header>
