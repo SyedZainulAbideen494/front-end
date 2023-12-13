@@ -29,3 +29,13 @@
     width: 200px;
     margin-top: 9px;
   }
+
+  .nicheheaderbtn button {
+    border: 1px solid #14181d;
+    padding: 9px 17px;
+    border-radius: 9px;
+    margin: 0px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+  }
