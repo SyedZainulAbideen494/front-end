@@ -12,6 +12,7 @@ const Productlist = (props) => {
           {props.items.map((item) => (
             <Link
               to={`/products/${item.id}/${item.title}/${item.price}/${item.shop_id}`}
+              style={{listStyle: 'none', textDecoration: 'none'}}
             >
               <Products
                 id={item.id}
