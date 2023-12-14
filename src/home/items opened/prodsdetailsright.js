@@ -1110,16 +1110,6 @@ function Prodsright() {
         </div>
       </div>
     </div>
-    
-    <div className="product-related-products">
-      <hr />
-      <div className="product-like-text">
-        <h3>More products you might like</h3>
-      </div>
-      <hr />
-      {/* Assuming Productsapp is a component */}
-      <Productsapp />
-    </div>
   </div>
 </Fragment>
   );
