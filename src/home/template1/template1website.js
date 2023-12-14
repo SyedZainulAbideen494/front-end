@@ -41,7 +41,7 @@ const Editstoreform = () => {
   useEffect(() => {
     const updateVisits = async () => {
       try {
-        const response = await axios.post(`https://apifordropment.online/updateVisits/${shopId}`);
+        const response = await Axios.post(`https://apifordropment.online/updateVisits/${shopId}`);
         console.log(response.data);
         // Handle success, update state or show a success message
       } catch (error) {
