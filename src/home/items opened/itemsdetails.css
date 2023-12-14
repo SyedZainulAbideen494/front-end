@@ -17,6 +17,7 @@
   color: #000;
   border: none;
   padding: 10px 20px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -71,6 +72,7 @@
   color: #000;
   border: none;
   padding: 12px 24px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -97,7 +99,9 @@
   background-color: #232323;
   color: #fff;
 }
-
+.buy-button button {
+  width: 100%;
+}
 /* Additional classes for specific elements */
 .loading-image {
   /* Styles for loading image */
