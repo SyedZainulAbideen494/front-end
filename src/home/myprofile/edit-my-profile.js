@@ -67,7 +67,30 @@ const EditMyProfile = () => {
         }
       };
       
-
+        const [image, setImage] = useState(null);
+       
+       
+        const Addimage1Handler = (e) => {
+          e.preventDefault();
+       
+          const formData = new FormData();
+          formData.append("image", image);
+       
+          axios.post("https://apifordropment.online/add/profile/pic", formData, {
+            headers: {
+              Authorization: token
+            },
+          })
+            .then((response) => {
+              console.log(response.data);
+              // Handle success
+            })
+            .catch((error) => {
+              console.error("Error adding product:", error);
+              // Handle error
+            });
+        };
+       
 
     
       return (
@@ -88,54 +111,67 @@ const EditMyProfile = () => {
               name="unique_id"
               value={formData.unique_id}
               onChange={handleInputChange}
+              placeholder="Unique ID"
             />
   
           <label>
             First Name:
-            <input type="text" name="first_name" value={formData.first_name} onChange={handleInputChange} />
+            <input type="text" placeholder="First Name" name="first_name" value={formData.first_name} onChange={handleInputChange} />
           </label>
           <label>
             Last Name:
-            <input type="text" name="last_name" value={formData.last_name} onChange={handleInputChange} />
+            <input type="text" name="last_name" placeholder="Last Name" value={formData.last_name} onChange={handleInputChange} />
           </label>
           <label>
             Country:
-            <input type="text" name="country" value={formData.country} onChange={handleInputChange} />
+            <input type="text" name="country" placeholder="Country" value={formData.country} onChange={handleInputChange} />
           </label>
           <label>
             State:
-            <input type="text" name="state" value={formData.state} onChange={handleInputChange} />
+            <input type="text" name="state" placeholder="State" value={formData.state} onChange={handleInputChange} />
           </label>
           <label>
             City:
-            <input type="text" name="city" value={formData.city} onChange={handleInputChange} />
+            <input type="text" name="city" placeholder="City" value={formData.city} onChange={handleInputChange} />
           </label>
           <label>
             Street Address:
-            <input type="text" name="street_address" value={formData.street_address} onChange={handleInputChange} />
+            <input type="text" name="street_address" placeholder="Street Address" value={formData.street_address} onChange={handleInputChange} />
           </label>
           <label>
             Zipcode:
-            <input type="text" name="zipcode" value={formData.zipcode} onChange={handleInputChange} />
+            <input type="text" name="zipcode" placeholder="Zipcode" value={formData.zipcode} onChange={handleInputChange} />
           </label>
           <label>
             Occupation:
-            <input type="text" name="occupation" value={formData.occupation} onChange={handleInputChange} />
+            <input type="text" name="occupation" placeholder="Occupation" value={formData.occupation} onChange={handleInputChange} />
           </label>
           <label>
             Bio:
-            <textarea name="bio" value={formData.bio} onChange={handleInputChange} />
+            <textarea name="bio" value={formData.bio} placeholder="Bio" onChange={handleInputChange} />
           </label>
           <label>
             Phone Number:
-            <input type="text" name="phoneno" value={formData.phoneno} onChange={handleInputChange} />
+            <input type="text" name="phoneno" placeholder="Phone Number" value={formData.phoneno} onChange={handleInputChange} />
           </label>
-          <button type="submit" className="update-button">Update Profile</button>
+          <button type="submit" className="remove-button">Update Profile</button>
         </form>
 
         <div className="remove-profile-container">
-          <p>Remove Profile Picture:</p>
-          <button onClick={HandleSubmitremoveProfilePic} className="remove-button">Remove</button>
+        <div className="ImagesEditsectionElement">
+        <button onClick={HandleSubmitremoveProfilePic} className="remove-button">Remove Profile Picture</button>
+    <form onSubmit={Addimage1Handler} className="add-profile-pic-area">
+
+      <label>Add Profile Picture</label>
+      <input
+        type="file"
+        placeholder="Logo"
+        onChange={(e) => setImage(e.target.files[0])}
+      />
+
+      <button type="submit" className="remove-button">Add Image</button>
+    </form>
+  </div>
           {successMessage && <p className="success-message">{successMessage}</p>}
         </div>
       </div>

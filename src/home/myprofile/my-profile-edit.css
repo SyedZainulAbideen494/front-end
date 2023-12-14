@@ -1,12 +1,11 @@
 .profile-edit-container {
+  padding: 20px;
+  border-radius: 8px;
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
 }
 
+/* Header section */
 .header-edit-my-profile {
   display: flex;
   justify-content: space-between;
@@ -18,72 +17,67 @@
   font-size: 24px;
   margin: 0;
 }
-
+.add-profile-pic-area {
+  margin: 20px auto;
+}
 .back-button {
-  padding: 8px 16px;
+  background-color: #333;
+  color: white;
   border: none;
+  padding: 8px 12px;
   border-radius: 5px;
-  background-color: #3897f0;
-  color: #fff;
   cursor: pointer;
 }
 
-.back-button:hover {
-  background-color: #2684e3;
+/* Form container */
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: white;
 }
 
-.success-message {
-  margin: 10px 0;
-  color: green;
+.form-container input[type="text"],
+.form-container input[type="file"],
+.form-container textarea {
+  width: calc(100% - 24px); /* Adjusted width to accommodate padding */
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.form-container {
+.form-container textarea {
+  height: 100px; /* Adjust height for textarea */
+  background-color: #333;
+}
+
+.form-container button[type="submit"],
+.form-container .remove-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container input {
+  background-color: #333;
+  border: 1px solid white;
+}
+
+.ImagesEditsectionElement {
   margin-bottom: 20px;
 }
 
-.form-container label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+/* Success message */
+.success-message {
+  color: green;
+  margin-top: 10px;
 }
 
-.form-container input[type='text'],
-.form-container textarea {
-  width: calc(100% - 16px);
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.form-container {
+  background-color: black;
+  text-align: center;
 }
-
-.form-container textarea {
-  height: 100px;
-}
-
-.update-button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #3897f0;
-  color: #fff;
-  cursor: pointer;
-}
-
-.update-button:hover {
-  background-color: #2684e3;
-}
-.remove-button {
-  background-color: #d62828;
-  color: white;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.remove-button:hover {
-  background-color: #ff6e6e;
-  transition: 0.3s;
-}
-
