@@ -49,7 +49,7 @@ function UserProfile() {
     const token = localStorage.getItem("token");
     try {
       await Axios.post(
-        "https://apifordropment.online0/unfollow",
+        "https://apifordropment.online/unfollow",
         {
           id: params.user_id,
         },
@@ -199,6 +199,9 @@ function UserProfile() {
       <button onClick={toggleFollow} className='followbtn'>Link</button>
     )} 
   <button onClick={chatHandler}>Chat</button>
+  <div className='folloiwngandunfloowingbtn'>
+        <button><h3>Linked {followerCount}</h3></button>
+      </div>
   </div>
   </header>
 </div>
@@ -214,13 +217,11 @@ function UserProfile() {
       <h2>{userInfo[0]?.first_name}</h2><h2 className='lastnameuserdetails'>{userInfo[0]?.last_name}</h2><br/>
       <h3>{userInfo[0]?.unique_id}</h3>
       </div>
-      <div className='folloiwngandunfloowingbtn'>
-        <button><h3>Linked</h3><h3>{followerCount}</h3></button>
-      </div>
       <div className='biouserdetils'>
         <h3>{userInfo[0]?.bio}</h3>
       </div>
     </div>
+   
   </section> 
 </div>
 <section className='shopssecuserporfileinusers'>

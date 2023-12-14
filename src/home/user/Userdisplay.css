@@ -28,7 +28,7 @@
 
 .unfollowbtn {
   background-color: transparent;
-  border: 1px solid #ed4956;
+  border: 1px solid #273139;
   color: #fff;
   border-radius: 3px;
   margin-right: 10px;
@@ -39,9 +39,9 @@
 }
 
 .followbtn {
-  background-color: #3897f0;
+  background-color: #000000;
   color: #fff;
-  border: 1px solid #3897f0;
+  border: 1px solid #000000;
   border-radius: 3px;
   margin-right: 10px;
 }
@@ -77,10 +77,8 @@
 }
 
 .folloiwngandunfloowingbtn button {
-  padding: 8px 16px;
-  margin-top: 10px;
   border: none;
-  background-color: #3897f0;
+  background-color: #000000;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;

@@ -40,6 +40,7 @@
     background-color: transparent;
     border-radius: 9px;
     padding: 12px 20px;
+    cursor: pointer;
     width: 200px;
     margin-top: 9px;
   }
