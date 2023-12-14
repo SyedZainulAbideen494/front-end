@@ -237,6 +237,9 @@ const Orderform = (props) => {
             
     openPaymentLink();
 }}>Next</button>
+<Link to='/home'>
+<button>Cancel</button>
+</Link>
         </div>
       </form>
     </div>

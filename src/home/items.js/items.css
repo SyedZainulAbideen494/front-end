@@ -93,9 +93,15 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+.btn {
+  display: inline-flex;
+}
+.btn button {
+  margin-left: 5px;
+}
 /* Style for form headings */
 .formorder h2 {
   font-size: 24px;
@@ -125,15 +131,17 @@
 .formorder button {
   padding: 10px 20px;
   margin-top: 10px;
-  border: none;
+  border: 1px solid white;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #000000;
   color: #fff;
   cursor: pointer;
 }
 
 .formorder button:hover {
-  background-color: #0056b3;
+  background-color: #ffffff;
+  color: black;
+  transition: 0.3s;
 }
 
 /* Style for form buttons */
