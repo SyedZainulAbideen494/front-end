@@ -1,124 +1,59 @@
+/* Style for the signup form container */
 .signup_form {
-  max-width: 500px;
-  margin: 50px auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Headings */
-.sign-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Input container */
-.signup_info {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* Black background color */
+  padding: 20px;
+  border: 2px solid #555; /* Greyish outline */
+  border-radius: 8px;
+  max-width: 400px; /* Set a maximum width to fit content */
+  margin: 0 auto; /* Center horizontally */
 }
 
-/* Individual input styles */
-.inp {
-  flex: 0 0 calc(50% - 10px);
-  margin-bottom: 15px;
+/* Style for labels */
+.signup_form label {
+  color: white; /* White text color for labels */
+  margin-bottom: 5px;
 }
 
-.inp label {
-  display: block;
-  font-weight: bold;
-}
-
-.inp input[type='text'],
-.inp input[type='email'],
-.inp input[type='password'] {
+/* Style for input fields */
+.signup_form input[type="text"],
+.signup_form input[type="email"],
+.signup_form input[type="password"],
+.signup_form button {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.inp input[type='text']:focus,
-.inp input[type='email']:focus,
-.inp input[type='password']:focus {
-  outline: none;
-  border-color: #66afe9;
-  box-shadow: 0 0 5px #66afe9;
-}
-
-/* Submit button */
-.submit-btn {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
+  margin-bottom: 15px;
   border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  background-color: #333; /* Darker background for inputs */
+  color: white; /* White text color for inputs */
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+/* Style for placeholder text in inputs */
+.signup_form input::placeholder {
+  color: #bbb; /* Placeholder text color */
+}
+.signup_form button {
+  margin-left: 6px;
 }
 
-/* Already have an account section */
-.already {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.already p {
-  font-size: 14px;
-}
-
-.already a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.already a:hover {
-  text-decoration: underline;
-}
-
-.signinbtn button {
-  padding: 8px 40px;
-  border-radius: 25px;
-  background-color: #06d6a0;
-  border: 2px solid #06d6a0;
-  color: white;
-}
-
-.signinformbtn span {
-  display: inline-block;
-}
-
-.signinform {
+/* Style for submit button */
+.signup_form .submit-btn {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  margin-left: 5px;
 }
 
-.inp input {
-  padding: 13px 150px;
-  border-radius: 15px;
+/* Style for "Already have an account?" section */
+.signup_form .already {
+  color: white; /* White text color for the text */
 }
 
-.opt select {
-  padding: 8px 40px;
-  border-radius: 15px;
-}
-
-.loginct p {
-  text-decoration: underline;
-  color: #06d6a0;
+/* Style for the Cancel button (assuming it has a class of Cancelbtn) */
+.Cancelbtn {
+  /* Your styles for the Cancel button */
 }
