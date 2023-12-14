@@ -56,7 +56,15 @@ const Addtemplate5form = (props) => {
           Authorization: token,
         },
       }
-    );
+    )
+    .then(response => {
+      console.log("Response:", response.data);
+      window.open.href = '/profile'
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      // Handle error if needed
+    });
   };
 
   return (
