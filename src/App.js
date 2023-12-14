@@ -102,6 +102,7 @@ import MainBlog from "./home/blog/main-blog";
 import Blog1 from "./home/blog/blog1";
 import Blog2 from "./home/blog/blog2";
 import Blog3 from "./home/blog/blog3";
+import ChatPage from "./home/mainpage/chat-page";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -197,6 +198,7 @@ const router = createBrowserRouter([
   {path: '/admin/products/:shop_id', element: <AdminProduct/>},
   {path: '/edit/myprofile', element: <EditMyProfile/>},
   {path: '/blog', element: <MainBlog/>},
+  {path: '/chats', element:<ChatPage/>},
   {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
   {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>},
   {path: '/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store', element: <Blog3/>}

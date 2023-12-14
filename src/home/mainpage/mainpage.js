@@ -60,7 +60,9 @@ const Mainpage = () => {
 <Link to="/Addshoppage1" style={{textDecoration: 'none'}}>
 <p className="add-shop-btn-home-header">Add Shop +</p>
 </Link>
+<Link to='/chats'>
 <button className="mboile-btn-display-home-headre">Messages</button>
+</Link>
             {auth ? (
               <button onClick={handleLogout}>Logout</button>
             ) : (
