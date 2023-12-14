@@ -39,7 +39,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   .main-blog-text h4 {
-    color: black;
+    color: white;
   }
   
   /* Mobile Optimization */
@@ -98,7 +98,7 @@
   .main-blog-text p {
     margin-top: 20px;
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     text-align: center;
     text-decoration: underline;
   }
