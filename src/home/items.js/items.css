@@ -93,7 +93,6 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f7f7f7;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -101,7 +100,6 @@
 .formorder h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #333;
 }
 
 /* Style for labels */
@@ -109,7 +107,7 @@
   font-weight: bold;
   display: block;
   margin-top: 10px;
-  color: #555;
+  color: white;
 }
 
 /* Style for input fields */
@@ -146,7 +144,4 @@
 /* Style for the form fields */
 .formorder > form > div {
   margin-bottom: 20px;
-}
-.productmodeltemp3 {
-  border: 1px solid white;
 }
