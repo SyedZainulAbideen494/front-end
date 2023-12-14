@@ -2,7 +2,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
- text-align: center;
   color: white;
 }
 
@@ -91,6 +90,9 @@
   .product-images {
     margin-right: 0;
     margin-bottom: 20px;
+  }
+  .product-page {
+    text-align: center;
   }
 }
 
