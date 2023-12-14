@@ -39,16 +39,20 @@ const Editstoreform = () => {
   const userId = 123; // Replace with actual user ID
 
   useEffect(() => {
-    Axios.post(`https://apifordropment.online/updateVisits/${shopId}`)
-      .then((response) => {
+    const updateVisits = async () => {
+      try {
+        const response = await axios.post(`https://apifordropment.online/updateVisits/${shopId}`);
         console.log(response.data);
-        // Handle success, maybe show a success message or update state
-      })
-      .catch((error) => {
-        console.error('Error updating shop visits: ', error);
-        // Handle error, maybe show an error message
-      });
+        // Handle success, update state or show a success message
+      } catch (error) {
+        console.error('Error updating shop visits:', error);
+        // Handle error, show an error message
+      }
+    };
+
+    updateVisits();
   }, [shopId]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
