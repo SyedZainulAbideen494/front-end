@@ -39,6 +39,7 @@ const Search = () => {
       <div className="inpsearchbar">
         <input
           type="text"
+          placeholder="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -151,16 +152,9 @@ const Shop = ({ searchResultsShop }) => {
                 style={{ textDecoration: "none", color: "black" }}
                 className="shop-name-link-search-result"
               >
-                {result.shop_name}
+                <p>{result.shop_name}</p>
               </Link>
             </div>
-          </div>
-          <div className="shop-image-search-result">
-            <img
-              src={`https://apifordropment.online/images/${result.logo}`}
-              alt={result.shop_name}
-              className="shop-image-pic-search-result"
-            />
           </div>
         </div>
       </div>
@@ -176,7 +170,7 @@ const Products = ({ searchResults }) => {
   return (
     <div>
   {searchResults.map((result) => (
-    <Link  to={`/products/${result.id}/${result.shop_id}`}>
+    <Link  to={`/products/${result.id}/${result.shop_id}`} style={{textDecoration: 'none'}}>
     <div className="PRoducts-card-search-result" key={result.id}>
       <div className="product-img-search-result">
         <img
@@ -186,6 +180,7 @@ const Products = ({ searchResults }) => {
       </div>
       <div className="product-title-search-result">
         <h2>{result.title}</h2>
+        <p>{result.usd}</p>
       </div>
     </div>
     </Link>

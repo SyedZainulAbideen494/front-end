@@ -2,7 +2,6 @@
       border: 1px solid #ccc;
       padding: 10px;
       margin: 10px;
-      background-color: #f9f9f9;
       width: 280px;
       border-radius: 8px;
     }
@@ -50,42 +49,40 @@
     
     /* Style the profile link button */
     .profile-link-button-search-result {
-      background-color: #007bff;
+      background-color: transparent;
       color: #fff;
       padding: 5px 10px;
       text-decoration: none;
       border-radius: 5px;
       display: inline-block;
       margin-top: 10px;
+      border: 1px solid #333;
     }
     
     .profile-link-button-search-result:hover {
-      background-color: #0056b3;
+      background-color: black;
+      border: 1px solid black;
+      color: white;
+      transition: 0.2s;
     }
 
 /* Define styles for the shop-container */
 .shop-container-search-result {
   width: 300px; /* Adjust the width as per your preference */
-  margin: 10px;
-  background-color: #fff;
 }
 
 /* Style the shop-card */
 .shop-card-search-result {
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #333;
   border-radius: 12px;
-  margin-left: 30px;
-  margin-right: 50px;
+  color: white;
 }
 
 /* Style the shop-header */
 .shop-header-search-result {
   display: flex;
-  align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
 }
 
 /* Style the shop logo */
@@ -127,7 +124,6 @@
 
 /* Styles for the outer container of search results */
 .PRoducts-card-search-result {
-  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
@@ -152,44 +148,38 @@
   color: #333;
 }
 
-.outer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-}
 
 /* Style for the search bar */
 .inpsearchbar {
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .inpsearchbar input {
   padding: 8px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   border-radius: 4px;
-  margin-right: 8px;
+  width: 80%;
+  background-color: black;
 }
 
 .inpsearchbar button {
   padding: 8px 16px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: transparent;
   color: #fff;
-  border: none;
+  border: 1px solid #333;
   border-radius: 4px;
   cursor: pointer;
 }
-
+.user-shop-section {
+  text-align: center;
+}
 /* Style for the three sections */
 
 /* Add specific styles for each section */
 /* For the Products section */
 .products-section {
-  background-color: #f5f5f5;
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -213,12 +203,6 @@
   
 @media screen and (max-width: 768px) {
   /* Adjust the width of .user-post-search-result and other elements */
-  .user-post-search-result,
-  .shop-container-search-result,
-  .PRoducts-card-search-result {
-    width: 100%;
-    margin: 10px 0;
-  }
 
   /* Adjust shop card margin */
   .shop-card-search-result {
@@ -231,20 +215,49 @@
     width: 100%;
   }
 
-  /* Modify flex-basis for user-shop-section */
-  .user-shop-section {
-    flex-basis: 100%;
-    margin-bottom: 20px;
+
+
+
+  .outer-container {
+    padding: 10px; /* Adjust padding */
   }
+
+  /* Remove inline display for sections */
+  .user-shop-sections {
+    flex-direction: column;
+  }
+
+  /* Adjust width and margin for elements */
+  .user-post-search-result,
+  .shop-container-search-result,
+  .PRoducts-card-search-result {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+  }
+
 }
 
 /* For larger screens */
 @media screen and (min-width: 1200px) {
   /* Adjust the width of .user-post-search-result and other elements */
+  .outer-container {
+    max-width: 1200px; /* Limit container width for readability */
+    margin: 0 auto; /* Center align on larger screens */
+  }
+
+  /* Adjust display for sections */
+  .user-shop-sections {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Adjust width and margin for elements */
   .user-post-search-result,
   .shop-container-search-result,
   .PRoducts-card-search-result {
-    width: 300px;
     margin: 10px;
+    text-align: center;
+    color: white;
   }
+
 }
