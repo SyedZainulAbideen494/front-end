@@ -99,9 +99,7 @@
   background-color: #232323;
   color: #fff;
 }
-.buy-button button {
-  width: 100%;
-}
+
 /* Additional classes for specific elements */
 .loading-image {
   /* Styles for loading image */
