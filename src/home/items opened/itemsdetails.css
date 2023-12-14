@@ -104,3 +104,85 @@
 .loading-image {
   /* Styles for loading image */
 }
+/* Assuming fixed image sizes */
+
+/* Container for social share buttons */
+.sharing-prods-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Styling for individual social media icons */
+.sharing-prods-socials img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  /* Additional styling for individual icons */
+}
+
+/* Container for the header */
+.header-social-share-prods-2 {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Header title style */
+.header-social-share-prods-2 h3 {
+  margin-bottom: 15px;
+}
+
+/* Style for the header icons */
+.header-social-share-prods-2 img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  /* Additional styling for individual icons */
+}
+
+.product-buttons {
+  display: inline-flex;
+}
+
+.product-buttons span {
+  margin-left: 10px;
+}
+.url-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.url-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.copy-button {
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #cc0000;
+}
+
+.copy-button.copied {
+  background-color: #00cc00;
+}
+
+.copy-button.copied:hover {
+  background-color: #00aa00;
+}

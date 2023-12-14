@@ -991,11 +991,45 @@ function Prodsright() {
     };
     return (
       <div className="header-social-share-prods-2">
-        <header>
+      <header>
         <h3>Share this product</h3>
         <ShareButton {...product} />
-        <ProductWithPinterestButton/>
-        </header>
+        <ProductWithPinterestButton />
+        <CopyURL/>
+      </header>
+    </div>
+    );
+  };
+  const [showShare, setShowShare] = useState(false);
+
+  const toggleShare = () => {
+    setShowShare(!showShare);
+  };
+  const CopyURL = () => {
+    const [copied, setCopied] = useState(false);
+    const currentUrl = window.location.href;
+  
+    const copyCurrentURL = () => {
+      navigator.clipboard.writeText(currentUrl)
+        .then(() => setCopied(true))
+        .catch((err) => console.error('Failed to copy: ', err));
+  
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    };
+  
+    return (
+      <div className="url-container">
+        <input
+          type="text"
+          value={currentUrl}
+          readOnly
+          className="url-input"
+        />
+        <button onClick={copyCurrentURL} className={`copy-button ${copied ? 'copied' : ''}`}>
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
       </div>
     );
   };
@@ -1011,7 +1045,12 @@ function Prodsright() {
               <button className="back-button">Back</button>
             </Link>
           </span>
-          
+          <span>
+      <button onClick={toggleShare} className="back-button">
+        Share
+      </button>
+      {showShare && <YourComponent />}
+    </span>
         </div>
       </header>
     </div>
