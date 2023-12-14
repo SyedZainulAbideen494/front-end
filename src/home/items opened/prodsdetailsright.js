@@ -1011,7 +1011,7 @@ function Prodsright() {
               <button className="back-button">Back</button>
             </Link>
           </span>
-          <YourComponent/>
+          
         </div>
       </header>
     </div>
@@ -1061,6 +1061,7 @@ function Prodsright() {
           <h3>Price:</h3>
           <p>{items[0]?.price}</p>
         </div>
+        <div className="product-description">{items[0]?.description}</div>
         <div className="product-buttons">
           <Link to={`/orders/${params.id}/${params.shop_id}/${items[0]?.title}`}>
           <button className="buy-button">
@@ -1068,7 +1069,6 @@ function Prodsright() {
           </button>
           </Link>
         </div>
-        <div className="product-description">{items[0]?.description}</div>
       </div>
     </div>
     

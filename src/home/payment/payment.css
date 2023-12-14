@@ -27,7 +27,7 @@
     max-width: 300px; /* Adjust the max-width as needed */
     height: auto;
     box-shadow: 5px 5px 10px rgba(1, 1, 1, 0.1);
-    background-color: #fff;
+ 
     border-radius: 5px;
     padding: 15px;
     margin: 0 auto 20px; /* Center the card horizontally */
@@ -95,7 +95,6 @@
       max-width: 400px; /* Adjust the max-width as needed */
       height: auto;
       box-shadow: 15px 15px 15px rgba(1, 1, 1, 0.1);
-      background-color: #fff;
       border-radius: 5px;
       padding: 20px;
       margin: 0 auto 20px; /* Center the card horizontally */
@@ -163,7 +162,6 @@
       max-width: 400px; /* Adjust the max-width as needed */
       height: auto;
       box-shadow: 15px 15px 15px rgba(1, 1, 1, 0.1);
-      background-color: #fff;
       border-radius: 5px;
       padding: 20px;
       margin: 0 auto 20px; /* Center the card horizontally */
@@ -229,7 +227,6 @@
       height: 400px;
       box-shadow: 15px 15px 15px rgba(1, 1, 1, 0.1);
       margin-left: 80px;
-      background-color: #fff;
       border-radius: 5px;
       padding: 20px;
     }
@@ -258,4 +255,8 @@
     .plan1 button:hover {
       background-color: #5011b3; /* Darker shade on hover */
     }
+  }
+
+  .plan1 {
+    color: white;
   }
