@@ -198,9 +198,9 @@ function UserProfile() {
     ) : (
       <button onClick={toggleFollow} className='followbtn'>Link</button>
     )} 
-  <button onClick={chatHandler}>Chat</button>
+  <button onClick={chatHandler} className='chat-btn-user-profile'>Chat</button>
   <div className='folloiwngandunfloowingbtn'>
-        <button><h3>Linked {followerCount}</h3></button>
+        <button>Linked {followerCount}</button>
       </div>
   </div>
   </header>

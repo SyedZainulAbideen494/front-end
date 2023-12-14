@@ -12,8 +12,8 @@
 .homebtnprofilesusrs {
   padding: 8px 16px;
   margin-right: 10px;
-  border: none;
-  background-color: #3897f0;
+  border: 1px solid #333;
+  background-color: transparent;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -22,16 +22,22 @@
 .followunfollowbtns button {
   padding: 8px 16px;
   margin-right: 10px;
-  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .unfollowbtn {
-  background-color: transparent;
-  border: 1px solid #273139;
-  color: #fff;
-  border-radius: 3px;
+  padding: 3px 12px;
   margin-right: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  height: 34px;
+  cursor: pointer;
 }
 
 .all-shop-profile {
@@ -39,11 +45,14 @@
 }
 
 .followbtn {
-  background-color: #000000;
-  color: #fff;
-  border: 1px solid #000000;
-  border-radius: 3px;
+  padding: 3px 12px;
   margin-right: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  height: 34px;
+  cursor: pointer;
 }
 
 /* Profile Section Styles */
@@ -77,10 +86,13 @@
 }
 
 .folloiwngandunfloowingbtn button {
-  border: none;
-  background-color: #000000;
+  padding: 3px 12px;
+  margin-right: 10px;
+  border: 1px solid #333;
+  background-color: transparent;
   color: #fff;
   border-radius: 5px;
+  height: 34px;
   cursor: pointer;
 }
 
@@ -96,7 +108,16 @@
 .biouserdetils {
   width: 400px;
 }
-
+.chat-btn-user-profile {
+  padding: 3px 12px;
+  margin-right: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  height: 34px;
+  cursor: pointer;
+}
 /* Media Query for Screen Optimization */
 @media screen and (max-width: 768px) {
   .profilesectionusers {
