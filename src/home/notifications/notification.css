@@ -43,6 +43,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.close-btn-noti {
+  background-color: #333;
+  border: none;
+ padding: 12px 17px;
+ border-radius: 9px;
+ cursor: pointer;
+  color: white;
+}
 
 .notification-message {
   margin-bottom: 5px;
