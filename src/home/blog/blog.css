@@ -38,6 +38,9 @@
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+  .main-blog-text h4 {
+    color: black;
+  }
   
   /* Mobile Optimization */
   @media screen and (max-width: 768px) {
@@ -66,7 +69,7 @@
   
 .blog-post {
     text-decoration: none;
-    color: inherit;
+    color: white;
     display: block;
     max-width: 600px; /* Adjust the width as needed */
     margin: 50px auto;
@@ -107,7 +110,6 @@
   }
 
   .site-header {
-    background-color: #fff;
     padding: 20px;
     /* Add more styles for the header */
   }
@@ -123,7 +125,6 @@
   }
   
   .blog-post {
-    background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -137,7 +138,7 @@
   .hero-section-blog1 h1 {
     font-size: 2em;
     margin-top: 20px;
-    color: #444;
+    color: #ffffff;
   }
   
   .blog-section-1-blog1-heading h2 {
