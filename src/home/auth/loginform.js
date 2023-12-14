@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import Cancelbtn from "./cancelbtn";
-import "./auth.css";
+import "./login.css";
 import Axios from "axios";
 const Loginform = () => {
   const [email, setemail] = useState("");
