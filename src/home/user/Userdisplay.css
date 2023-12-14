@@ -60,7 +60,12 @@
   display: flex;
   padding: 20px;
 }
-
+.profilesectionusers h2 {
+  font-weight: 100;
+}
+.profilesectionusers h3 {
+  font-weight: 100;
+}
 .imgprof img {
   width: 200px;
   height: 200px;
@@ -77,6 +82,9 @@
 .nameofuser h2 {
   margin: 5px 0;
   font-size: 24px;
+}
+.all-shop-profile h2 {
+  font-weight: 100;
 }
 
 .lastnameuserdetails {
