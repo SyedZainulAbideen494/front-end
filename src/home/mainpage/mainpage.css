@@ -85,12 +85,14 @@
     margin: 0 10px; /* Add some margin to improve readability on small screens */
   }
   .blinkfeed-btn-main-pg button {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #333;
     border-radius: 25px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    cursor: pointer;
   }
   .blinkfeed-btn-main-pg button:hover {
     background-color: transparent;
@@ -103,12 +105,14 @@
   
   @media (min-width: 481px) and (max-width: 768px) {
     .blinkfeed-btn-main-pg button {
-      background-color: #f0f0f0;
-      color: rgb(0, 0, 0);
-      border: 2px solid #fdfdfd;
+      background-color: transparent;
+      color: white;
+      border: 2px solid #333;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      cursor: pointer;
     }
     .left-content   {
       display: none;
@@ -311,9 +315,9 @@
     
     /* Button styles for main page */
     .blinkfeed-btn-main-pg button {
-      background-color: #ffffff;
-      color: rgb(0, 0, 0);
-      border: 2px solid #ffffff;
+      background-color: transparent;
+      color: white;
+      border: 2px solid #333;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;
@@ -435,9 +439,9 @@
     
     /* Button styles for main page */
     .blinkfeed-btn-main-pg button {
-      background-color: #ffffff;
-      color: rgb(14, 0, 0);
-      border: 2px solid #fcfcfc;
+      background-color: transparent;
+      color: white;
+      border: 2px solid #333;
       border-radius: 25px;
       padding: 10px 20px;
       margin-top: 10px;

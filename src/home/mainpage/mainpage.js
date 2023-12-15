@@ -75,7 +75,7 @@ const Mainpage = () => {
       )}
       <Link to="/add/BlinkFeed">
         <span className="blinkfeed-btn-main-pg">
-            <button>Add a BlinkFeed</button>
+            <button>Add BlinkFeed</button>
             </span>
             </Link>
       <Storiesapp/>
