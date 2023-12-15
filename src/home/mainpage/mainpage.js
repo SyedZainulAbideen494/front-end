@@ -23,9 +23,6 @@ const Mainpage = () => {
         setauth(false);
       }
     }, []);
-    if (auth === false) {
-      nav("/login");
-    }
   const [showNotifications, setShowNotifications] = useState(false);
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
