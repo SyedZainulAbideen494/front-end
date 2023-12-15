@@ -333,56 +333,56 @@ const Footer1Edit = () => {
           <div className="edit-section-input">
             <input
               required
-              placeholder="Heading 1"
+              placeholder="Company Name"
               onChange={e => setcompanyname(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 1"
+              placeholder="Slogan"
               onChange={e => setslogan(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Heading 2"
+              placeholder="Instagram link"
               onChange={e => setinsta(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 2"
+              placeholder="Facebook link"
               onChange={e => setfacebook(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Heading 3"
+              placeholder="Linkdin Link"
               onChange={e => setlinkdin(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 3"
+              placeholder="Twitter Link"
               onChange={e => setx(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 3"
+              placeholder="phone number"
               onChange={e => setphone(e.target.value)}
             />
           </div>
           <div className="edit-section-input">
             <input
               required
-              placeholder="Text 3"
+              placeholder="Email"
               onChange={e => setemail(e.target.value)}
             />
           </div>

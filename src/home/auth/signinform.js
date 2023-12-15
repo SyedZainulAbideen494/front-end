@@ -96,11 +96,6 @@ const Signinform = () => {
       !occupation ||
       !age ||
       !phoneno ||
-      !streetadrs ||
-      !city ||
-      !state ||
-      !zipcode ||
-      !country ||
       !bio
     ) {
       console.log("Please fill in all fields");
@@ -116,11 +111,6 @@ const Signinform = () => {
       occupation: occupation,
       age: age,
       phoneno: phoneno,
-      streetadrs: streetadrs,
-      city: city,
-      state: state,
-      zipcode: zipcode,
-      country: country,
       bio: bio,
     };
 
@@ -261,71 +251,6 @@ const Signinform = () => {
               required
             />
           </div>
-          <div className="inp">
-            <label htmlFor="streetadrs">Street Address</label>
-            <br />
-            <input
-              type="text"
-              id="streetadrs"
-              name="streetadrs"
-              value={streetadrs}
-              onChange={streetaddress}
-              placeholder="Enter Street Address"
-              required
-            />
-          </div>
-          <div className="inp">
-            <label htmlFor="city">City</label>
-            <br />
-            <input
-              type="text"
-              id="city"
-              name="city"
-              value={city}
-              onChange={cityadrs}
-              placeholder="Enter City"
-              required
-            />
-          </div>
-          <div className="inp">
-            <label htmlFor="state">State</label>
-            <br />
-            <input
-              type="text"
-              id="state"
-              name="state"
-              value={state}
-              onChange={stateadrs}
-              placeholder="Enter State"
-              required
-            />
-          </div>
-          <div className="inp">
-            <label htmlFor="zipcode">Zip Code</label>
-            <br />
-            <input
-              type="text"
-              id="zipcode"
-              name="zipcode"
-              value={zipcode}
-              onChange={zipcodeadrs}
-              placeholder="Enter Zip Code"
-              required
-            />
-          </div>
-          <div className="inp">
-            <label htmlFor="country">Country</label><br/>
-            <input
-              type="text"
-              id="country"
-              name="country"
-              value={country}
-              onChange={counrtyadrs}
-              placeholder="Enter Country"
-              required
-            />
-          </div>
-        </div>
         <div className="submit-btn">
           <button type="submit" className="btn btn-primary">
             Sign Up
