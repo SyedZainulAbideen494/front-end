@@ -30,7 +30,7 @@ const Loginform = () => {
       if (!response.data.auth) {
         setError(response.data.message || "An error occurred"); // Display the error message from the server, or a generic error message
       } else {
-        navigate("/login/success");
+        navigate("/home");
         localStorage.setItem("token", response.data.token);
       }
     }).catch((error) => {
