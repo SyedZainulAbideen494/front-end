@@ -828,6 +828,16 @@ const ProductList = (props) => {
 const Editbtndisplay1 = () => {
   const [showform, setshowform] = useState(false);
   const [showsales, setshowsales] = useState(false);
+  const [showimg, setshowimg] = useState(false);
+  const [ratingform, setRatingform] = useState(false)
+
+  const showratingform = () => {
+    setRatingform(true)
+  }
+
+  const hideratingform = () => {
+    setRatingform(false)
+  }
 
   const showformhandler = () => {
     setshowform(true);
@@ -835,6 +845,14 @@ const Editbtndisplay1 = () => {
 
   const hideformhandler = () => {
     setshowform(false);
+  };
+
+  const showimghandler = () => {
+    setshowimg(true);
+  };
+
+  const hideimghandler = () => {
+    setshowimg(false);
   };
 
   const showsaleshandler = () => {
@@ -941,50 +959,65 @@ const Editbtndisplay1 = () => {
     ) {
       return (
         <Fragment>
-          <div className="profile-header-owner">
-            <header>
-              <div className="shop_owner_view">
-                <h2>Control panel</h2>
-                <div className="shopownerbtn">
-                  <span className="edit_store_btn"></span>
-                  <span className="btnwebstore">
-                    <Link to="/">
-                      <button>Home</button>
-                    </Link>
-                  </span>
-                  <span className="btnwebstore">
-                      <Link to={`/admin/${params.shop_id}`}>
-                      <button>Admin Menu</button>
-                      </Link>
-                    </span>
-                  <span className="btnwebstore">
-                    <button onClick={showformhandler}>Add Item</button>
-                  </span>
-                </div>
+        <div className="profile-header-owner">
+          <header>
+            <div className="shop_owner_view">
+              <h2>Control panel</h2>
+              <div className="shopownerbtn">
+                <span className="edit_store_btn"></span>
+                <span className="btnwebstore">
+                  <Link to="/">
+                    <button>Home</button>
+                  </Link>
+                </span>
+                <span className="btnwebstore-addproducts">
+                  <Link to={`/add/product/${params.shop_id}`}>
+                  <button>Add Products +</button>
+                  </Link>
+                </span>
+                <span className="btnwebstore">
+                  <button onClick={showimghandler}>Add images</button>
+                </span>
+                <span className="btnwebstore">
+                  <Link to={`/admin/${params.shop_id}`}>
+                  <button>Admin view</button>
+                  </Link>
+                </span>
               </div>
-            </header>
-          </div>
-          <div className="sales">
-            {showsales && <Sales onClick={hidesaleshandler} />}
-          </div>
-          <div className="addshopform">
-            {showform && <Addproductstodatabase onClick={hideformhandler} />}
-          </div>
-          <AddLogo/>
-          <Addimage1/>
-          <Addimage2/>
-          <Addimage3/>
-          <Addimage4/>
-          <Addimage5/>
-          <Addimage6/>
-          <Addimage7/>
-        </Fragment>
+            </div>
+          </header>
+        </div>
+        <div className="sales">
+          {showsales && <Sales onClick={hidesaleshandler} />}
+        </div>
+        <div className="addshopform">
+          {showform && <Addproductstodatabase onClick={hideformhandler} />}
+        </div>
+        <div className="addshopform">
+          {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
+        </div>
+        
+      </Fragment>
       );
     } else {
       return;
     }
   };
-
+  const Addimgsectionwithimgs= (props) => {
+    return<Fragment>
+      <div className='closebtnimgsec'>
+      <button onClick={props.onClick}>Close</button>
+      </div>
+      <AddLogo/>
+  <Addimage1/>
+            <Addimage2/>
+            <Addimage3/>
+            <Addimage4/>
+            <Addimage5/>
+            <Addimage6/>
+            <Addimage7/>
+    </Fragment>
+  }
   return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
 
