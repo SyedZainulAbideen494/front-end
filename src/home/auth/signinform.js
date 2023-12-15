@@ -251,6 +251,7 @@ const Signinform = () => {
               required
             />
           </div>
+          </div>
         <div className="submit-btn">
           <button type="submit" className="btn btn-primary">
             Sign Up
