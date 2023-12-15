@@ -129,61 +129,42 @@ const Orderform = (props) => {
 
   console.log(items)
 
-  const orderhandler = async () => {
+  const orderhandler = async (event) => {
+    event.preventDefault();
     try {
-      console.log("Order Handler Called");
-      console.log("user:", user);
-      console.log("phoneno:", phoneno);
-      console.log("name2:", name2);
-      console.log("items:", items);
-      console.log("shop_id:", shop_id);
-  
-      const currentDate = new Date(); // Get current date and time
-  
-      const year = currentDate.getFullYear();
-      const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding leading zero if needed
-      const day = String(currentDate.getDate()).padStart(2, '0'); // Adding leading zero if needed
-      
-      const hours = String(currentDate.getHours()).padStart(2, '0'); // Adding leading zero if needed
-      const minutes = String(currentDate.getMinutes()).padStart(2, '0'); // Adding leading zero if needed
-      const seconds = String(currentDate.getSeconds()).padStart(2, '0'); // Adding leading zero if needed
-      
-      const formattedDate = `${year}-${month}-${day}`;
-      const formattedTime = `${hours}:${minutes}:${seconds}`;
-      
-      // Combine date and time in ISO format
-      const dateTimeISO = `${formattedDate} ${formattedTime}`;
-  
+      const currentDate = new Date();
+      const formattedDate = currentDate.toISOString(); // Using ISO format directly
       const response = await Axios.post(
         "https://apifordropment.online/place/order",
         {
           name: user,
           Phone: phoneno,
           Email: name2[0]?.email,
-        streetadrs: streetadrs,
-        city: city,
-        state: state,
-        zipcode: zipcode,
-        country: country,
-        id: params.id,
-        product: params.title,
-        shop_id: params.shop_id,
-        occupation: name2[0]?.occupation,
-        age: name2[0]?.age,
-        sender_id: name2[0]?.user_id,
-        orderDateTime: dateTimeISO,
-      },
-      {
-        headers: {
-          Authorization: token,
+          streetadrs: streetadrs,
+          city: city,
+          state: state,
+          zipcode: zipcode,
+          country: country,
+          id: params.id,
+          product: items[0]?.title,
+          shop_id: params.shop_id,
+          occupation: name2[0]?.occupation,
+          age: name2[0]?.age,
+          orderDateTime: formattedDate,
         },
-      }
-    );
-  } catch (error) {
-    console.error("Error placing order or opening payment link:", error);
-    // Handle error scenarios
-  }
-};
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      console.log("Order placed successfully:", response.data);
+      openPaymentLink(items);
+    } catch (error) {
+      console.error("Error placing order:", error);
+      // Handle error scenarios
+    }
+  };
 
   const openPaymentLink = () => {
     const paymentLink = items?.[0]?.payment;

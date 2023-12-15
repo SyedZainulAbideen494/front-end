@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import SalesReportApp from '../sales/chatsreport';
 import './adminview.css'
-import logo from '../header/images/Dropment (2).png'
+import logo from '../header/images/drop2_logo.png'
 const Products = () => {
     const [products, setProducts] = useState([]);
     const params = useParams()
@@ -58,10 +58,10 @@ const Products = () => {
           {products.map((product) => (
             <div key={product.id} class='table-row'>
               <div><img src={`https://apifordropment.online/images/${product.images}`} alt={product.title} class='product-image'/></div>
-              <div className='mobile-deleted'>{product.id}</div>
-              <div>{product.title}</div>
+              <div className='mobile-deleted' style={{color: 'white'}}>{product.id}</div>
+              <div style={{color: 'white'}}>{product.title}</div>
               <div>${product.usd}</div>
-              <div className='mobile-inventroy'><p>Quantity:</p>{product.amount}</div>
+              <div className='mobile-inventroy' style={{color: 'white'}}><p style={{color: 'white'}}>Quantity:</p>{product.amount}</div>
               <div>
           <button class='delete-button' onClick={() => handleDelete(product.id)}>Delete</button>
           <div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import SalesReportApp from '../sales/chatsreport';
 import './adminview.css'
-import logo from '../header/images/Dropment (2).png'
+import logo from '../header/images/drop2_logo.png'
 const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(false)
@@ -91,7 +91,7 @@ const Orders = () => {
         <tbody>
           {orders.map((order) => (
             <tr key={order.orders_id}>
-              <td>{order.product}</td>
+              <td style={{color: 'white'}}>{order.product}</td>
               <td>{order.name}</td>
               <td>{order.Email}</td>
               <td>{order.Phone}</td>
