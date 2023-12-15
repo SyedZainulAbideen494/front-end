@@ -4,6 +4,8 @@
 .storysmodelul-container {
     overflow-x: auto;
     white-space: nowrap;
+    max-width: 90vw; /* Set your desired maximum width */
+    margin: 0 auto; /* Center the container */
   }
   
   /* List styles */
@@ -25,6 +27,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    border: 2px solid #ffcc00; /* Change color to suit your preference */
     transition: border 0.3s ease-in-out;
   }
   
