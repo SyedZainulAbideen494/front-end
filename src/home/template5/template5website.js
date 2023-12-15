@@ -1563,17 +1563,6 @@ const params = useParams()
     <Fragment>
       <Editbtndisplay1/>
       <div className="main-div-temp5">
-      <div class="nav-bar-temp5">
-  <div class="nav-buttons-left-temp5">
-    <button>Products</button>
-    <button>Shop Now</button>
-  </div>
-  <h2>Shop Name</h2>
-  <div class="nav-buttons-right-temp5">
-    <button>About us</button>
-    <button>Contact us</button>
-  </div>
-</div>
 <div className="temp5-hero-section">
   <header>
     <h2>{items[0]?.shop_tagline}</h2>
@@ -1609,8 +1598,8 @@ const params = useParams()
 <div className="temp5-section3">
   <section className="temp5-section3-1"></section>
   <section className="temp5-section3-2">
-    <h2>About us</h2>
-    <p>
+    <h2 style={{color: 'white'}}>About us</h2>
+    <p style={{color: 'white'}}>
       {items[0]?.shop_block1}
     </p>
     <button>View Items</button>
@@ -1620,16 +1609,16 @@ const params = useParams()
   <footer>
     <div class="footer-1-temp5">
       <div class="footer-1-section-1-temp5">
-        <h4>Our company</h4>
-        <p>{items[0]?.shop_name}</p>
+        <h4 style={{color: 'white'}}>Our company</h4>
+        <p style={{color: 'white'}}>{items[0]?.shop_name}</p>
       </div>
       <div class="footer-1-section-2-temp5">
-        <h4>Sections</h4>
-        <p>About us</p>
-        <p>Products</p>
+        <h4 style={{color: 'white'}}>Sections</h4>
+        <p style={{color: 'white'}}>About us</p>
+        <p style={{color: 'white'}}>Products</p>
       </div>
       <div class="footer-1-section-3-temp5">
-        <h4>Follow us</h4>
+        <h4 style={{color: 'white'}}>Follow us</h4>
         <div class="social-icons">
           <img src={instagram} alt="Instagram"/>
           <img src={facebook} alt="Facebook"/>
@@ -1637,12 +1626,12 @@ const params = useParams()
         </div>
       </div>
       <div class="footer-1-section-4-temp5">
-        <h4>Contact us</h4>
-        <p>Email: {items[0]?.shop_email}</p>
-        <p>Phone: {items[0]?.shop_phone}</p>
+        <h4 style={{color: 'white'}}>Contact us</h4>
+        <p style={{color: 'white'}}>Email: {items[0]?.shop_email}</p>
+        <p style={{color: 'white'}}>Phone: {items[0]?.shop_phone}</p>
       </div>
     </div>
-    <div>
+    <div style={{textAlign: 'center'}}>
       <p>&copy; {new Date().getFullYear()} {items[0]?.shop_name}. All rights reserved.</p>
     </div>
   </footer>

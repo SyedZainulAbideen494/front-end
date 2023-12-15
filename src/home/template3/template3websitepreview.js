@@ -7,6 +7,7 @@ import banner from '../header/images/Dropment (1).png'
 import logo from '../header/images/Dropment.png'
 import abt1 from '../header/images/ffri (1).png'
 import star from '../header/images/Untitled design (18).png'
+import { Colors } from "chart.js";
 
 const Editbtndisplay = () => {
   const [showform, setshowform] = useState(false);
@@ -660,7 +661,7 @@ const TestProducts = (props) => {
           <img src={banner} alt="Product Image" />
         </div>
         <div className="product__titletemp3">
-          <h2>Title</h2>
+          <h2 style={{color: 'black'}}>Title</h2>
         </div>
       </li>
     </div>

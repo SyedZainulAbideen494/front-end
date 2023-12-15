@@ -798,6 +798,8 @@
   }
   .footer-1-temp4 {
     display: inline-flex;
+    text-align: center;
+    color: white;
   }
   .footer-1-section-4-temp5 img {
     width: 30px;
@@ -814,7 +816,7 @@
   .footer-1-temp5 {
     display: flex;
     justify-content: center;
-    color: rgb(0, 0, 0);
+    text-align: center;
     margin-top: 150px;
   }
   

@@ -1174,17 +1174,6 @@ const Template5websitepreview = (props) => {
   return (
     <Fragment>
       <div className="main-div-temp5">
-      <div class="nav-bar-temp5">
-  <div class="nav-buttons-left-temp5">
-    <button>Products</button>
-    <button>Shop Now</button>
-  </div>
-  <h2>Shop Name</h2>
-  <div class="nav-buttons-right-temp5">
-    <button>About us</button>
-    <button>Contact us</button>
-  </div>
-</div>
 <div className="temp5-hero-section">
   <header>
     <h2>Shop From The Most Trending Items(tagline)</h2>
@@ -1220,8 +1209,8 @@ const Template5websitepreview = (props) => {
 <div className="temp5-section3">
   <section className="temp5-section3-1"></section>
   <section className="temp5-section3-2">
-    <h2>About us</h2>
-    <p>
+    <h2 style={{color: 'white'}}>About us</h2>
+    <p style={{color: 'white'}}>
     We are a well established e-commerce brand in terms of premium clothing. 
       We have been providing value since 1888. We were first established in 1850
       in London.(block 1)
@@ -1233,16 +1222,16 @@ const Template5websitepreview = (props) => {
   <footer>
     <div class="footer-1-temp5">
       <div class="footer-1-section-1-temp5">
-        <h4>Our company</h4>
-        <p>shop_name</p>
+        <h4 style={{color: 'white'}}>Our company</h4>
+        <p style={{color: 'white'}}>shop_name</p>
       </div>
       <div class="footer-1-section-2-temp5">
-        <h4>Sections</h4>
-        <p>About us</p>
-        <p>Products</p>
+        <h4 style={{color: 'white'}}>Sections</h4>
+        <p style={{color: 'white'}}>About us</p>
+        <p style={{color: 'white'}}>Products</p>
       </div>
       <div class="footer-1-section-3-temp5">
-        <h4>Follow us</h4>
+        <h4 style={{color: 'white'}}>Follow us</h4>
         <div class="social-icons">
           <img src={instagram} alt="Instagram"/>
           <img src={facebook} alt="Facebook"/>
@@ -1250,12 +1239,12 @@ const Template5websitepreview = (props) => {
         </div>
       </div>
       <div class="footer-1-section-4-temp5">
-        <h4>Contact us</h4>
-        <p>Email: shop_email</p>
-        <p>Phone:shop_phone</p>
+        <h4 style={{color: 'white'}}>Contact us</h4>
+        <p style={{color: 'white'}}>Email: shop_email</p>
+        <p style={{color: 'white'}}>Phone:shop_phone</p>
       </div>
     </div>
-    <div>
+    <div style={{textAlign: 'center'}}>
       <p>&copy; {new Date().getFullYear()} shop_name. All rights reserved.</p>
     </div>
   </footer>

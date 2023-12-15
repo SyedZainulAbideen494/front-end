@@ -359,7 +359,7 @@
     margin-left: 300px;
     border-radius: 25px;
   }
-  .salestexttemp3 {
+  .salestexttemp3  h1 {
     color: #480ca8;
     font-size: xx-large;
   }
@@ -384,6 +384,12 @@
   .abt1no1part1temp3 {
      display: inline-flex;
      margin-top: 150px;
+  }
+  .abt1no1part1temp3 h2 {
+    color: black;
+  }
+  .abt1no1part1temp3 p {
+    color: black;
   }
   .textsectemp3abt1part1 {
     width: 500px;
@@ -434,4 +440,21 @@
   .footerfortemp3 li {
     margin-top: 8px;
   }
+}
+.maindivfortemplate3 {
+  background-color: white;
+}
+
+.salestexttemp3 h1 {
+  color: #480ca8;
+}
+
+.taglinetemp3 h1 {
+  color: black;
+}
+.abt1no1part1temp3 h2 {
+  color: black;
+}
+.abt1no1part1temp3 p {
+  color: black;
 }
