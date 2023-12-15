@@ -72,7 +72,7 @@ const Home = () => {
     }
   }, []);
   if (auth === true) {
-    nav("/home");
+    nav("/login");
   }
 
   const [showcart, setshowcart] = useState(false);
@@ -122,7 +122,7 @@ const Home = () => {
                 <Link to="/signin" style={{color: 'black', textDecoration: 'none'}}>
                 <button className="signinbtn-dropment-main-page">Sign up</button>
                 </Link>
-                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
+                <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                 <button className="strtffreebtn">Start for free</button>
                 </Link>
               </div>
@@ -132,7 +132,7 @@ const Home = () => {
                   <h1>Build, Sell,<br/> Succeed!<br/> The Easy Way</h1>
                 </div>
                 <div className="hero-section-get-started-button-main-page-dropment">
-                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
+                <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                   <button>Start For Free</button>
                   </Link>
                 </div>
@@ -174,7 +174,7 @@ const Home = () => {
             now set up an aesthetically pleasing
             online store without any technical
             complexities and investment.</p>
-            <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
+            <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
             <button class="get-started-button">Get started For Free</button>
             </Link>
         </div>
@@ -192,7 +192,7 @@ const Home = () => {
                for your online store. Easily organize 
                and track your products with intuitive
                 tools designed to streamline your operations.</p>
-                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
+                <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                 <button>Get Started For Free</button>
                 </Link>
           </section>
@@ -208,7 +208,7 @@ const Home = () => {
            <h2>Effortlessly Manage Your Orders</h2>
            <p>Simplify order handling effortlessly using our intuitive tools, 
             ensuring streamlined and efficient management for your convenience</p>
-            <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
+            <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
             <button>Get Started For Free</button>
             </Link>
           </section>
@@ -328,7 +328,7 @@ const Home = () => {
         </div>
         <div className="dropment-main-blog-page-section9">
           <h1 style={{color: 'black'}}>Start Your Success Journey Now<br/> With Droment!</h1>
-          <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
+          <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
           <button>Get Started for free</button>
           </Link>
         </div>
@@ -346,7 +346,7 @@ const Home = () => {
                 <Link to="/Plans" style={{color: 'black', textDecoration: 'none'}}>
                 <p>Pricing</p>
                 </Link>
-                <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
+                <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                 <p>Get started</p>
                 </Link>
               </section>

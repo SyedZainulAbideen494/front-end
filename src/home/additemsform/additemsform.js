@@ -117,7 +117,7 @@ const AddProductsForm = () => {
           
                 <label for="payment">Payment Gateway URL</label>
                 <div class="note-payment-gateway-explain" style={{backgroundColor: '#f9f9f9', borderLeft: '6px solid #007bff', padding: '10px', marginBottom: '20px'}}>
-    <p style={{fontStyle: 'italic'}}>
+    <p style={{fontStyle: 'italic', color: 'black'}}>
     <strong>Note:</strong> Add your payment gateway URL to stay in control! Secure direct transactions with your customers. At Dropment, your autonomy and security in managing payments matter most.(you can use popular payment gatways like Stripe, paypal, etc)<a href='https://l.instagram.com/?u=https%3A%2F%2Fyoutu.be%2FvdKINdsmC_Y&e=AT0RLUqaSPeRKJt871fFXD3rfWVTXfADccRt3Pb2sRbBdUXIGINnt9Pw40pa1VlbxX2NbBwYXI_BGUkSGYIPvqcoaaPB2bQryh_1h5VsTpBWdQbKFZqLuSDKvht4n3mcezKKDTg'>Video tutorial</a>
     </p>
 </div>
@@ -371,8 +371,9 @@ const AddProductsForm = () => {
     /><br />
   </div>
 </section>
-          
-              <button type="submit">Add Product</button>
+          <div className="add-product-form-btn">
+              <button type="submit" className="add-product-btn-add-product-form">Add Product</button>
+          </div>
             </form>
           </div>
         );
