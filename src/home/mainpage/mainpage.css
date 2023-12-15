@@ -34,6 +34,7 @@
   
   .dropmentlogomainpage img {
     max-height: 50px; /* Adjust as needed */
+    display: none;
   }
   
   .dropmentmainbtns {
