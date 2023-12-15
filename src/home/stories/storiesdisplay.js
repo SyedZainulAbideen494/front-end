@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"; // Fixed import statement
-import "./StoryUpload.css";
+import "./stories-display.css";
 import Stories from "./stories";
 import users from '../header/images/profiledef.png';
 

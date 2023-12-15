@@ -1,0 +1,39 @@
+/* stories-display.css */
+
+/* Overall container styles */
+.storysmodelul-container {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  /* List styles */
+  .storysmodelul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Individual story item styles */
+  .maindivforstoriesuserdisplay {
+    margin: 10px;
+    text-align: center;
+    display: inline-block; /* Ensure inline block for horizontal layout */
+  }
+  
+  .storiesuserprofilepicuser {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  .storiesuserprofilepicuser:hover {
+    border-color: #ff6633; /* Change to a darker color on hover */
+    cursor: pointer;
+  }
+  
+  /* Loading animation styles */
+  .loading-spinner {
+    /* Add your loading spinner styles here */
+  }
