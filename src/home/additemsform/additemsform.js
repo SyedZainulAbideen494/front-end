@@ -372,7 +372,7 @@ const AddProductsForm = () => {
   </div>
 </section>
           <div className="add-product-form-btn">
-              <button type="submit" className="add-product-btn-add-product-form">Add Product</button>
+              <button type="submit">Add Product</button>
           </div>
             </form>
           </div>

@@ -13,6 +13,7 @@ import key1img from '../header/images/Dropment (10).png'
 import arrow from '../header/images/Untitled design (16).png'
 import keyimg from '../header/images/Dropment (10).png'
 import '../addnewshop/addshop.css'
+import './addshopfrom.css'
 
 const Editstoreform = () => {
   const params = useParams();
@@ -1067,18 +1068,13 @@ const Editbtndisplay1 = () => {
                       <button>Home</button>
                     </Link>
                   </span>
-                  <span className="btnwebstore">
-                    <Link to={`/sales/report/${params.shop_id}`}>
-                    <button>Sales</button>
-                    </Link>
-                  </span>
                   <span className="btnwebstore-addproducts">
                     <Link to={`/add/product/${params.shop_id}`}>
                     <button>Add Products +</button>
                     </Link>
                   </span>
                   <span className="btnwebstore">
-                    <button onClick={showimghandler}>Add custom images</button>
+                    <button onClick={showimghandler}>Add images</button>
                   </span>
                   <span className="btnwebstore">
                     <Link to={`/admin/${params.shop_id}`}>

@@ -1,0 +1,43 @@
+.profile-header-owner {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+  }
+  
+  .profile-header-owner header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .shop_owner_view h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .shopownerbtn {
+    display: flex;
+    align-items: center;
+  }
+  
+  .shopownerbtn span {
+    margin-right: 10px;
+  }
+  
+  .shopownerbtn button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+  
+  /* Additional styling for specific buttons */
+  .btnwebstore-addproducts button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #55a630;    
+  }
