@@ -9,7 +9,7 @@ const SubscriptionFormInner = ({ userId }) => {
     const token = localStorage.getItem('token')
   
     try {
-      const response = await fetch('http://localhost:8080/create-checkout-session', {
+      const response = await fetch('https://apifordropment.online/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const SubscriptionFormInner = ({ userId }) => {
     const token = localStorage.getItem('token')
   
     try {
-      const response = await fetch('http://localhost:8080/create-checkout-session2', {
+      const response = await fetch('https://apifordropment.online/create-checkout-session2', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const SubscriptionFormInner = ({ userId }) => {
     const token = localStorage.getItem('token')
   
     try {
-      const response = await fetch('http://localhost:8080/create-checkout-session3', {
+      const response = await fetch('https://apifordropment.online/create-checkout-session3', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

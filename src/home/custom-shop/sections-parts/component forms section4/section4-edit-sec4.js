@@ -320,7 +320,10 @@ const Section4BuildEditSec4 = () => {
           <button onClick={handleShowColors}>Edit colors</button>
         </header>
         {showColors && 
-          <form onSubmit={addColorsHandler}>
+         <form onSubmit={(e) => {
+          e.preventDefault(); // Ensure form doesn't trigger default browser action
+          addColorsHandler(); // Call the function to handle shop data submission
+        }}>
       <div className="color-palette">
           <label htmlFor="fc1"><h4>font color 1</h4></label>
         <input
