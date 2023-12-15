@@ -22,7 +22,7 @@
     width: fit-content;
   }
   .header-overview-shop img {
-    width: 70px;
+    width: 50px;
   }
   .header-overview-shop header {
     padding: 20px;
@@ -31,21 +31,20 @@
 
   /*overview*/
   .header-overview-shop {
-      background-color: #ffffff;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: space-between;
+      color: white;
       align-items: center;
     }
     .header-overview-shop header img {
-      max-width: 200px;
+      max-width: 80px;
       height: auto;
     }
     .dashboard-container {
       margin: 20px;
       padding: 20px;
-      background-color: #ffffff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     .data-components {
@@ -54,7 +53,7 @@
       gap: 20px;
     }
     .total-visits {
-      background-color: #f9fafb;
+      background-color: #18182A;
       padding: 20px;
       text-align: center;
       border-radius: 5px;
@@ -64,13 +63,13 @@
     .total-visits h2 {
       margin-top: 0;
       font-size: 20px;
-      color: #000000;
+      color: #7D6EE1;
     }
     .total-visits h4 {
       margin-bottom: 0;
       font-size: 36px;
       font-weight: 100;
-      color: #007bff;
+      color: white;
       text-align: center;
     }
     .total-result-admin-view {
@@ -196,7 +195,7 @@
       font-size: 18px; /* Adjust subheading size */
     }
     .total-visits {
-      background-color: #f9fafb;
+      background-color: #17182A;
       padding: 20px;
       text-align: center;
       border-radius: 5px;
@@ -206,12 +205,12 @@
     .total-visits h2 {
       margin-top: 0;
       font-size: 20px;
-      color: #333333;
+      color: #7D6EE1;
     }
     .total-visits h4 {
       margin-bottom: 0;
       font-size: 36px;
-      color: #007bff;
+      color: white;
       text-align: center;
     }
     /*order table*/
@@ -317,7 +316,6 @@
       margin-top: 50px;
     }
     .header-overview-shop {
-      background-color: #ffffff;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -354,7 +352,7 @@
       font-size: 18px; /* Adjust subheading size */
     }
     .total-visits {
-      background-color: #f9fafb;
+      background-color: #17182A;
       padding: 20px;
       text-align: center;
       border-radius: 5px;
@@ -364,12 +362,12 @@
     .total-visits h2 {
       margin-top: 0;
       font-size: 20px;
-      color: #333333;
+      color: #7D6EE1;
     }
     .total-visits h4 {
       margin-bottom: 0;
       font-size: 36px;
-      color: #007bff;
+      color: white;
       text-align: center;
     }
     /*order table*/
@@ -473,7 +471,6 @@
 
     }
     .header-overview-shop {
-      background-color: #ffffff;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -493,7 +490,6 @@
       width: fit-content;
     }
     .header-overview-shop {
-      background-color: #ffffff;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -531,7 +527,6 @@
   
     /*overview*/
     .header-overview-shop {
-        background-color: #ffffff;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
@@ -545,7 +540,6 @@
       .dashboard-container {
         margin: 20px;
         padding: 20px;
-        background-color: #ffffff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
       .data-components {
@@ -554,7 +548,7 @@
         gap: 20px;
       }
       .total-visits {
-        background-color: #f9fafb;
+        background-color: #17182A;
         padding: 20px;
         text-align: center;
         border-radius: 5px;
@@ -564,12 +558,12 @@
       .total-visits h2 {
         margin-top: 0;
         font-size: 20px;
-        color: #333333;
+        color: #7D6EE1;
       }
       .total-visits h4 {
         margin-bottom: 0;
         font-size: 36px;
-        color: #007bff;
+        color: #ffffff;
         text-align: center;
       }
       .total-result-admin-view {

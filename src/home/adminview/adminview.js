@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import SalesReportApp from '../sales/chatsreport';
 import './adminview.css'
-import logo from '../header/images/Dropment (2).png'
+import logo from '../header/images/drop2_logo.png'
 import { Bar } from 'react-chartjs-2';
 
 const TotalInventory = () => {
@@ -252,13 +252,13 @@ const Dashboard = () => {
       <img src={logo} alt='Dropment Logo'/>
       <div className='admin-menu-header-btns'>
         <Link to={`/admin/Orders/${params.shop_id}`}>
-            <button>Orders</button>
+            <button style={{color: 'white'}}>Orders</button>
             </Link>
             <Link to={`/admin/products/${params.shop_id}`}>
-            <button>Products</button>
+            <button style={{color: 'white'}}>Products</button>
             </Link>
             <Link to='/'>
-            <button>back</button>
+            <button style={{color: 'white'}}>back</button>
             </Link>
       </div>
     </header>
