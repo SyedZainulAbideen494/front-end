@@ -42,17 +42,18 @@ const Editstoreform = () => {
   useEffect(() => {
     const updateVisits = async () => {
       try {
-        const response = await Axios.post(`https://apifordropment.online/updateVisits/${shopId}`);
+        const response = await Axios.post(`https://apifordropment.online/updateVisits/${params.shop_id}`);
         console.log(response.data);
-        // Handle success, update state or show a success message
+        // Handle success: update state or show a success message
       } catch (error) {
         console.error('Error updating shop visits:', error);
-        // Handle error, show an error message
+        // Handle error: show an error message or retry logic
       }
     };
 
     updateVisits();
   }, [shopId]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -1567,6 +1568,20 @@ const params = useParams()
     setRatingform(false)
   }
     
+  useEffect(() => {
+    const updateVisits = async () => {
+      try {
+        const response = await Axios.post(`https://apifordropment.online/updateVisits/${params.shop_id}`);
+        console.log(response.data);
+        // Handle success: update state or show a success message
+      } catch (error) {
+        console.error('Error updating shop visits:', error);
+        // Handle error: show an error message or retry logic
+      }
+    };
+
+    updateVisits();
+  }, [params.shop_id]);
 
     const fetchProdshandler = useCallback(async () => {
     try {

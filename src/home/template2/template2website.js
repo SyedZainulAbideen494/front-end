@@ -1484,7 +1484,17 @@ const params = useParams()
     }
   };
   
-
+  useEffect(() => {
+    Axios.post(`https://apifordropment.online/updateVisits/${params.shop_id}`)
+      .then((response) => {
+        console.log(response.data);
+        // Handle success, maybe show a success message or update state
+      })
+      .catch((error) => {
+        console.error('Error updating shop visits: ', error);
+        // Handle error, maybe show an error message
+      });
+  }, [params.shop_id]);
 
     const fetchProdshandler = useCallback(async () => {
     try {
