@@ -27,38 +27,38 @@ const Mainpage = () => {
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
   };
-  const MobileView = () => {
-    const isMobile = useMediaQuery({ maxWidth: 767 }); // Define your mobile breakpoint
-  
-    const [showUsers, setShowUsers] = useState(true);
-  
-    const handleUsersClick = () => {
-      setShowUsers(true);
-    };
-  
-    const handleShopsClick = () => {
-      setShowUsers(false);
-    };
-  
-    if (!isMobile) {
-      return null; // Don't render anything if it's not a mobile device
-    }
-  
-    return (
-      <div className="middle-content">
-        <div className="button-container">
-          <button className={showUsers ? 'active' : ''} onClick={handleUsersClick}>
-            Users
-          </button>
-          <button className={!showUsers ? 'active' : ''} onClick={handleShopsClick}>
-            Shops
-          </button>
-        </div>
-  
-        {showUsers ? <Users /> : <AllTemplate1app />}
-      </div>
-    );
+const MobileView = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 }); // Define your mobile breakpoint
+
+  const [showUsers, setShowUsers] = useState(true);
+
+  const handleUsersClick = () => {
+    setShowUsers(true);
   };
+
+  const handleShopsClick = () => {
+    setShowUsers(false);
+  };
+
+  if (!isMobile) {
+    return null; // Don't render anything if it's not a mobile device
+  }
+
+  return (
+    <div className="middle-content">
+      <div className="button-container">
+        <button className={showUsers ? 'active' : ''} onClick={handleUsersClick}>
+          Users
+        </button>
+        <button className={!showUsers ? 'active' : ''} onClick={handleShopsClick}>
+          Shops
+        </button>
+      </div>
+
+      {showUsers ? <Users /> : <AllTemplate1app />}
+    </div>
+  );
+};
   const Pcview = () => {
     const isMobile = useMediaQuery({ minWidth: 768 }); // Define your mobile breakpoint
   
@@ -95,7 +95,7 @@ const Mainpage = () => {
               <button>Profile</button>
             </Link>
             <Link to="/orders">
-              <button>My Orders</button>
+              <button>Orders</button>
             </Link>
             <Link to="/search">
               <button>Search</button>
