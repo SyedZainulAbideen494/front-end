@@ -67,9 +67,9 @@
   }
   
   .follow-button {
-    background-color: hsl(0, 0%, 100%);
-    color: #000000;
-    border: none;
+    background-color: transparent;
+    color: #00FFE0;
+    border: 1px solid #00FFE0;
     border-radius: 5px;
     padding: 5px 15px;
     cursor: pointer;
@@ -78,10 +78,9 @@
   
   .follow-button.following {
     background-color: #000000;
-    color: white;
-    border: 1px solid white;
+    color: #00FFE0;
+    border: 1px solid transparent;
   }
-  
   .shop-footer {
     display: flex;
     justify-content: space-between;
@@ -168,9 +167,9 @@
   }
   
   .follow-button {
-    background-color: #fdfdfd;
-    color: #1f0000;
-    border: none;
+    background-color: transparent;
+    color: #00FFE0;
+    border: 1px solid #00FFE0;
     border-radius: 5px;
     padding: 5px 15px;
     cursor: pointer;
@@ -179,8 +178,8 @@
   
   .follow-button.following {
     background-color: #000000;
-    color: white;
-    border: 1px solid white;
+    color: #00FFE0;
+    border: 1px solid transparent;
   }
   
   .shop-footer {
@@ -269,9 +268,9 @@
   }
   
   .follow-button {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
+    background-color: transparent;
+    color: #00FFE0;
+    border: 1px solid #00FFE0;
     border-radius: 5px;
     padding: 5px 15px;
     cursor: pointer;
@@ -280,8 +279,8 @@
   
   .follow-button.following {
     background-color: #000000;
-    color: white;
-    border: 1px solid white;
+    color: #00FFE0;
+    border: 1px solid transparent;
   }
   
   .shop-footer {
@@ -375,9 +374,9 @@
       }
       
       .follow-button {
-        background-color: #ffffff;
-        color: #000000;
-        border: none;
+        background-color: transparent;
+        color: #00FFE0;
+        border: 1px solid #00FFE0;
         border-radius: 5px;
         padding: 5px 15px;
         cursor: pointer;
@@ -386,8 +385,8 @@
       
       .follow-button.following {
         background-color: #000000;
-        color: white;
-        border: 1px solid white;
+        color: #00FFE0;
+        border: 1px solid transparent;
       }
       
       .shop-footer {

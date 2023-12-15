@@ -30,7 +30,7 @@ const Loginform = () => {
       if (!response.data.auth) {
         setError(response.data.message || "An error occurred"); // Display the error message from the server, or a generic error message
       } else {
-        navigate("/");
+        navigate("/login/success");
         localStorage.setItem("token", response.data.token);
       }
     }).catch((error) => {
@@ -81,7 +81,7 @@ const Loginform = () => {
             </Link>
           </span>
           <span className="loginbtn">
-            <button onClick={login}>Login</button>
+            <button onClick={login} style={{cursor: 'pointer'}}>Login</button>
           </span>
         </div>
         <div className="logintt">

@@ -83,7 +83,30 @@ const Signinform = () => {
   };
   const nav = useNavigate();
 
-  const register = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Check if required fields are empty
+    if (
+      !first_name ||
+      !last_name ||
+      !email ||
+      !password ||
+      !unique_id ||
+      !occupation ||
+      !age ||
+      !phoneno ||
+      !streetadrs ||
+      !city ||
+      !state ||
+      !zipcode ||
+      !country ||
+      !bio
+    ) {
+      console.log("Please fill in all fields");
+      return; // Don't proceed if any required field is empty
+    }
+
     const userData = {
       first_name: first_name,
       last_name: last_name,
@@ -100,13 +123,12 @@ const Signinform = () => {
       country: country,
       bio: bio,
     };
-  
+
     try {
       const response = await Axios.post("https://apifordropment.online/addUser", userData);
-  
+
       if (response.status === 200) {
-        console.log("User registration successful!");
-        nav("/login");
+        nav('/login');
       } else {
         console.log("User registration failed with status:", response.status);
         // Handle other status codes here
@@ -118,7 +140,7 @@ const Signinform = () => {
   };
   return (
     <Fragment>
-      <form className="signup_form">
+      <form className="signup_form" onSubmit={handleSubmit}>
         <h2 className="sign-heading">Sign Up</h2>
         <div className="signup_info">
           <div className="inp">
@@ -305,7 +327,7 @@ const Signinform = () => {
           </div>
         </div>
         <div className="submit-btn">
-          <button type="submit" className="btn btn-primary" onClick={register}>
+          <button type="submit" className="btn btn-primary">
             Sign Up
           </button>
           <Cancelbtn />

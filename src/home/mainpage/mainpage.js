@@ -13,24 +13,19 @@ import userPic from '../header/images/icons8-male-user-30 (1).png'
 const Mainpage = () => {
     const [auth, setauth] = useState(false);
     const nav = useNavigate();
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-  };
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setauth(true);
+    const handleLogout = () => {
+      localStorage.removeItem("token");
+    };
+    useEffect(() => {
+      if (localStorage.getItem("token")) {
+        setauth(true);
+      } else {
+        setauth(false);
+      }
+    }, []);
+    if (auth === false) {
+      nav("/login");
     }
-  }, []);
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setauth(true);
-    } else {
-      setauth(false);
-    }
-  }, []);
-  if (auth === false) {
-    nav("/login");
-  }
   const [showNotifications, setShowNotifications] = useState(false);
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
