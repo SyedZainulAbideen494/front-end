@@ -2,7 +2,6 @@
     border: 2px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    background-color: #fff;
     border-radius: 10px;
     max-width: 400px; /* Adjust the width as needed */
     margin: 0 auto;
@@ -12,7 +11,13 @@
   .header-section {
     margin-bottom: 20px;
   }
-  
+  .header-section button {
+    background-color: black;
+    color: white;
+    border: 1px solid #333;
+    padding: 12px 17px;
+    border-radius: 9px;
+  }
   .back-button {
     background-color: #007BFF;
     color: #fff;
@@ -24,7 +29,7 @@
   
   .section-heading {
     font-size: 24px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
   }
   
@@ -41,7 +46,7 @@
     margin: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
-    margin-left: 160px;
+    margin-left: 150px;
     display: block; /* Display buttons as blocks (one below the other) */
   }
   
