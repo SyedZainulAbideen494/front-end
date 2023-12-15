@@ -324,7 +324,10 @@ const Section1Buildpreview = () => {
         <button onClick={handleShowImages}>Add Images</button>
         </header>
         {showContent &&
-        <form onSubmit={addShopHandler}>
+         <form onSubmit={(e) => {
+          e.preventDefault(); // Ensure form doesn't trigger default browser action
+          addShopHandler(); // Call the function to handle shop data submission
+        }}>
           <div className="edit-section-inp-txt">
           <div className="edit-section-input">
             <input

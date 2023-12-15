@@ -68,7 +68,8 @@ const NavBar1Edit = () => {
         window.location.href = `/build/${params.build}/step2/${params.shop_id}/${params.build}`;  
     };
 
-    const addColorsHandler = () => {
+    const addColorsHandler = (e) => {
+      e.preventDefault();
       Axios.post(
         "https://apifordropment.online/color/selection/section/1",
         {
@@ -164,7 +165,8 @@ const NavBar1Edit = () => {
      };
 
 
-     const addShopHandler = () => {
+     const addShopHandler = (e) => {
+      e.preventDefault();
       Axios.put(
         "https://apifordropment.online/nav/bar/data",
         {
@@ -202,8 +204,11 @@ const NavBar1Edit = () => {
         <button onClick={handleShowImages}>Add Images</button>
         </header>
         {showContent &&
-        <form onSubmit={addShopHandler}>
-          <div className="edit-section-inp-txt">
+       <form onSubmit={(e) => {
+        e.preventDefault(); // Ensure form doesn't trigger default browser action
+        addShopHandler(); // Call the function to handle shop data submission
+      }}>
+        <div className="edit-section-inp-txt">
           <div className="edit-section-input">
             <input
               required
@@ -232,14 +237,17 @@ const NavBar1Edit = () => {
               onChange={e => setInstaLink(e.target.value)}
             />
           </div>
-          </div>
-          <button type="submit">save</button>
-          <button onClick={NextStep}>Next</button>
-        </form>
+        </div>
+        <button type="submit">Save</button>
+        <button onClick={NextStep}>Next</button>
+      </form>
 
   }
         {showColors && 
-        <form onSubmit={addColorsHandler}>
+        <form onSubmit={(e) => {
+          e.preventDefault(); // Ensure form doesn't trigger default browser action
+          addColorsHandler(); // Call the function to handle shop data submission
+        }}>
         <div className="color-palette">
           <label htmlFor="bgclr1"><h4>background color 1</h4></label>
         <input
