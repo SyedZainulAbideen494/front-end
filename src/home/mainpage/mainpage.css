@@ -509,7 +509,7 @@ h3 {
 .button-container button {
   margin: 0 10px; /* Adjust the spacing between buttons */
   padding: 8px 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   border-radius: 5px;
   color: #333;
   background-color: transparent;
