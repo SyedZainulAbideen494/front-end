@@ -104,6 +104,10 @@
       .section2-temp5-heading {
         margin-bottom: 20px;
         font-size: 30px;
+        color: black;
+      }
+      .section2-temp5-heading h2 {
+        color: black;
       }
       
       .keypoints-temp5 {
@@ -125,6 +129,7 @@
       .keypint-1-temp5 h2 {
         font-size: 1.2em;
         margin-bottom: 10px;
+        color: black;
         width: 300px;
       }
       
@@ -319,6 +324,9 @@
         align-items: center;
         flex-wrap: wrap;
       }
+      .section2-temp5-heading h2 {
+        color: black;
+      }
       
       .keypint-1-temp5 {
         flex: 0 0 calc(33.33% - 20px);
@@ -332,6 +340,7 @@
       .keypint-1-temp5 h2 {
         font-size: 1.2em;
         margin-bottom: 10px;
+        color: black;
         width: 300px;
       }
       
@@ -520,6 +529,9 @@
         margin-bottom: 20px;
         font-size: 30px;
       }
+      .section2-temp5-heading h2 {
+        color: black;
+      }
       
       .keypoints-temp5 {
         display: flex;
@@ -541,6 +553,7 @@
         font-size: 1.2em;
         margin-bottom: 10px;
         width: 300px;
+        color: black;
       }
       
       /* Optional: Adjust styles for paragraphs */
@@ -699,6 +712,10 @@
       .section2-temp5-heading {
         margin-bottom: 20px;
         font-size: 30px;
+        color: black;
+      }
+      .section2-temp5-heading h2 {
+        color: black;
       }
       
       .keypoints-temp5 {
@@ -721,6 +738,7 @@
         font-size: 1.2em;
         margin-bottom: 10px;
         width: 300px;
+        color: black;
       }
       
       /* Optional: Adjust styles for paragraphs */
