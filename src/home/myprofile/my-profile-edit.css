@@ -81,3 +81,11 @@
   background-color: black;
   text-align: center;
 }
+.remove-button-rm {
+  padding: 8px 13px;
+  color: white;
+  background-color: #d90429;
+  border: 1px solid #d90429;
+  cursor: pointer;
+  border-radius: 9px;
+}

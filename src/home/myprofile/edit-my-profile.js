@@ -47,23 +47,22 @@ const EditMyProfile = () => {
 
 
 
-      const handleRemoveprofilepic = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-      };
-    
       const HandleSubmitremoveProfilePic = async (e) => {
         e.preventDefault();
         try {
-          await axios.put(`https://apifordropment.online/api/remove/profile/picture`, {
-            headers: {
-              Authorization: token // Include the token in the request headers
+          await axios.put(
+            'https://apifordropment.online/api/remove/profile/picture',
+            null, // Set data as null since it's a PUT request
+            {
+              headers: {
+                Authorization: token // Include the token in the request headers
+              }
             }
-          });
-          setSuccessMessage("Profile updated successfully!");
+          );
+          setSuccessMessage('Profile updated successfully!');
         } catch (error) {
           // Handle error
-          console.error("Error updating profile:", error);
+          console.error('Error updating profile:', error);
         }
       };
       
@@ -159,7 +158,7 @@ const EditMyProfile = () => {
 
         <div className="remove-profile-container">
         <div className="ImagesEditsectionElement">
-        <button onClick={HandleSubmitremoveProfilePic} className="remove-button">Remove Profile Picture</button>
+        <button onClick={HandleSubmitremoveProfilePic} className="remove-button-rm">Remove Profile Picture</button>
     <form onSubmit={Addimage1Handler} className="add-profile-pic-area">
 
       <label>Add Profile Picture</label>
