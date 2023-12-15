@@ -215,7 +215,7 @@ const Home = () => {
         </div>
         <div className="dropment-main-blog-page-section7">
           <div className="dropment-main-blog-page-section7-heading">
-            <h1>We Provide</h1>
+            <h1 style={{color: 'black'}}>We Provide</h1>
           </div>
           <div className="dropment-main-blog-page-section7-dots">
             <section className="dropment-main-blog-page-section7-dot">
@@ -276,10 +276,10 @@ const Home = () => {
         </div>
         <div className="dropment-main-blog-page-section8" ref={contactusRef}>
           <div className="heading-main-dropment-blog-page-section8">
-            <h2>FAQs</h2>
+            <h2 style={{color: 'black'}}>FAQs</h2>
           </div>
           <div className="dropment-main-blog-page-section8-q">
-            <h2 onClick={toggleQ1}>How Do I Setup My Store?</h2>
+            <h2 style={{color: 'black'}} onClick={toggleQ1}>How Do I Setup My Store?</h2>
             {q1 && <p onClick={toggleQ1}>Seting up your shop on 
               dropment is very simple first 
               you click on the add shop button 
@@ -289,7 +289,7 @@ const Home = () => {
                 from our templates.</p>}
           </div>
           <div className="dropment-main-blog-page-section8-q">
-            <h2 onClick={toggleQ2}>How Do I Add Products?</h2>
+            <h2 style={{color: 'black'}} onClick={toggleQ2}>How Do I Add Products?</h2>
             {q2 && <p onClick={toggleQ2}>Adding products is a straightforward process.
                First, navigate to your shop where you'd like to add
                 products. Within the admin panel, locate the "Add 
@@ -308,15 +308,15 @@ const Home = () => {
                         , your product has been successfully added.</p>}
           </div>
           <div className="dropment-main-blog-page-section8-q">
-            <h2 onClick={toggleQ3}>Do I Need Coding To Setup My Online Shop?</h2>
+            <h2 style={{color: 'black'}} onClick={toggleQ3}>Do I Need Coding To Setup My Online Shop?</h2>
             {q3 && <p onClick={toggleQ3}>No, you don't require any coding skills to setup your online shop.</p>}
           </div>
           <div className="dropment-main-blog-page-section8-q">
-            <h2 onClick={toggleQ4}>Is Dropment free?</h2>
+            <h2 style={{color: 'black'}} onClick={toggleQ4}>Is Dropment free?</h2>
             {q4 && <p onClick={toggleQ4}>Yes, there is a free plan available, but you will be restricted to certain features</p>}
           </div>
           <div className="dropment-main-blog-page-section8-q">
-            <h2 onClick={toggleQ5}>Is Dropment a website builder?</h2>
+            <h2 style={{color: 'black'}} onClick={toggleQ5}>Is Dropment a website builder?</h2>
             {q5 && <p onClick={toggleQ5}>Dropment isn't just a website builder; it's an
                ecosystem of online shops. Here, people come together 
                to create shops, observe others' activities via profiles,
@@ -327,7 +327,7 @@ const Home = () => {
           </div>
         </div>
         <div className="dropment-main-blog-page-section9">
-          <h1>Start Your Success Journey Now<br/> With Droment!</h1>
+          <h1 style={{color: 'black'}}>Start Your Success Journey Now<br/> With Droment!</h1>
           <Link to="/home" style={{color: 'black', textDecoration: 'none'}}>
           <button>Get Started for free</button>
           </Link>
@@ -335,7 +335,7 @@ const Home = () => {
         <div className="dropment-main-blog-page-footer">
          <footer>
               <section className="dropment-main-blog-page-footer-links-section">
-                <h2>Links</h2>
+                <h2 style={{color: 'black'}}>Links</h2>
                 <p onClick={scrollToaboutus}>About us</p>
                 <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                 <p>Login</p>
@@ -351,7 +351,7 @@ const Home = () => {
                 </Link>
               </section>
               <section className="dropment-main-blog-page-footer-follow-section">
-                <h2>Social media</h2>
+                <h2 style={{color: 'black'}}>Social media</h2>
                 <a href="https://www.instagram.com/dropment.online/">
                 <img src={instagram}/>
                 </a>
@@ -363,14 +363,14 @@ const Home = () => {
                 </a>
               </section>
               <section className="dropment-main-blog-page-footer-resources-section">
-                <h2>Resources</h2>
+                <h2 style={{color: 'black'}}>Resources</h2>
                 <p onClick={scrollTocontactus}>FAQs</p>
                 <Link to='/blog' style={{textDecoration: 'none', color: 'black'}}>
                 <p>Blog</p>
                 </Link>
               </section>
               <section className="dropment-main-blog-page-footer-contact-section">
-                <h2>contact</h2>
+                <h2 style={{color: 'black'}}>contact</h2>
                 <p>Email: dropment.saz@gmail.com</p>
               </section>
          </footer>

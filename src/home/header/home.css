@@ -1507,6 +1507,7 @@
 .dropment-main-blog-page-section2 h3 {
     font-size: 25px;
     font-weight: 300;
+    color: black;
 }
 .dropment-main-blog-page-section2 p {
     font-size: 17px;
@@ -1818,4 +1819,8 @@ body {
 }
 .main-div-dropment p {
   color: black;
+}
+
+.main-div-dropment {
+  background-color: white;
 }

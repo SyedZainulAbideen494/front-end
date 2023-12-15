@@ -31,40 +31,32 @@ const Addtemplate5form = (props) => {
     Axios.post(
       "https://apifordropment.online/addShops/template5",
       {
-        shop_name,
-        shop_owner,
-        shop_blockhead1,
-        shop_blockhead2,
-        shop_blockhead3,
-        shop_block1,
-        shop_block2,
-        shop_block3,
-        shop_keyhead1,
-        shop_key1,
-        shop_keyhead2,
-        shop_key2,
-        shop_keyhead3,
-        shop_key3,
-        shop_email,
-        shop_phone,
-        insta,
-        temp5, // removed quotes to pass variable instead of string 'temp5'
-        uniqueIdentifier,
+        shop_name: shop_name,
+        shop_owner: shop_owner,
+        shop_blockhead1: shop_blockhead1,
+        shop_blockhead2: shop_blockhead2,
+        shop_blockhead3: shop_blockhead3,
+        shop_block1: shop_block1,
+        shop_block2: shop_block2,
+        shop_block3: shop_block3,
+        shop_keyhead1: shop_keyhead1,
+        shop_key1: shop_key2,
+        shop_keyhead1: shop_keyhead2,
+        shop_key1: shop_key3,
+        shop_keyhead1: shop_keyhead3,
+        shop_key1: shop_key1,
+        shop_email: shop_email,
+        shop_phone: shop_phone,
+        insta: insta,
+        temp5: 'temp5',
+        uniqueIdentifier: uniqueIdentifier
       },
       {
         headers: {
           Authorization: token,
         },
       }
-    )
-    .then(response => {
-      console.log("Response:", response.data);
-      window.open.href = '/profile'
-    })
-    .catch(error => {
-      console.error("Error:", error);
-      // Handle error if needed
-    });
+    );
   };
 
   return (
