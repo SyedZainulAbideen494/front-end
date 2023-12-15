@@ -12,6 +12,7 @@ import orders from './images/Untitled design (24) (1).png'
 import facebook from './images/icons8-facebook-logo-50 (1).png'
 import instagram from './images/icons8-instagram-logo-50.png'
 import x from './images/icons8-twitterx-50.png'
+import { FaLock } from "react-icons/fa";
 
 const ImageSlider = () => {
   const [currentImage, setCurrentImage] = useState(1);
@@ -114,7 +115,7 @@ const Home = () => {
               <div className="dropment-button-nav-main-page-dropment">
               <button className="aboutus-btn-main-page-dropment" onClick={scrollToaboutus}>About us</button>
               <Link to="/Plans" style={{color: 'black', textDecoration: 'none'}}>
-                <button className="pricing-btn-main-page-dropment">Pricing</button>
+                <button className="pricing-btn-main-page-dropment" disabled>Pricing<FaLock/></button>
                 </Link>
                 <Link to="/login" style={{color: 'black', textDecoration: 'none'}}>
                 <button className="login-btn-dropment-main-page">Login</button>
