@@ -42,7 +42,7 @@ const Addshopniche = () => {
         <div className="templates">
         <div className="template">
           <Link to='/custom/shop/build/page1'style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button-custom" disabled>Custom shop<br/>Under maintenance<FaLock/></button>
+              <button className="button-button-primary-template-button-custom" >Custom shop</button>
               </Link>
           </div>
           {/* Template 1 */}
