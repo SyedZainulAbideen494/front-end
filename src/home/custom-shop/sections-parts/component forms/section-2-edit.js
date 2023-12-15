@@ -324,7 +324,10 @@ const Section2BuildEdit = () => {
         <button onClick={handleShowImages}>Add Images</button>
         </header>
         {showContent &&
-        <form onSubmit={addShopHandler}>
+        <form onSubmit={(e) => {
+          e.preventDefault(); // Ensure form doesn't trigger default browser action
+          addShopHandler(); // Call the function to handle shop data submission
+        }}>
           <div className="edit-section-inp-txt">
           <div className="edit-section-input">
             <input
@@ -374,7 +377,10 @@ const Section2BuildEdit = () => {
         </form>
   }
         {showColors && 
-        <form onSubmit={addColorsHandler}>
+      <form onSubmit={(e) => {
+        e.preventDefault(); // Ensure form doesn't trigger default browser action
+        addColorsHandler(); // Call the function to handle shop data submission
+      }}>
         <div className="color-palette">
           <label htmlFor="bgclr1"><h4>background color 1</h4></label>
         <input
