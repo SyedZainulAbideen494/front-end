@@ -1615,9 +1615,9 @@ const params = useParams()
 </div>
 <div className="temp5-section1">
   <div className="sction1-temp5-txt">
-    <h2>Our Products</h2>
+    <h2 style={{color: 'white'}}>Our Products</h2>
   </div>
-  <TestProducts/>
+  <Productsinshopapp/>
 </div>
 <div className="section2-temp5">
   <div className="section2-temp5-heading">
