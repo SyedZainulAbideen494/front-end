@@ -1131,8 +1131,8 @@ const Template2websitepreview = (props) => {
         </div>
           <header>
             <div className="temp2-header-text">
-              <h1>Welcome to the future of selling online</h1>
-              <h4>Sell your products effortlessly with dropment</h4>
+              <h1>Welcome to the future of selling online(sales text)</h1>
+              <h4>Sell your products effortlessly with dropment(Tagline)</h4>
               <button onClick={scrollToItems}>Shop Now</button>
             </div>
           </header>
@@ -1143,16 +1143,16 @@ const Template2websitepreview = (props) => {
             <button onClick={scrollToItems}>View</button>
           </section>
           <section className="section2-template-2-no-2">
-            <h2>Men's</h2>
+            <h2>Men's(key head 1)</h2>
             <button onClick={scrollToItems}>View</button>
           </section>
           <section className="section2-template-2-no-3">
-            <h2>Women's</h2>
+            <h2>Women's(key head 2)</h2>
             <button onClick={scrollToItems}>View</button>
           </section>
         </div>
         <div className="section3-template2" ref={itemsRef}>
-          <h2>Our featured products</h2>
+          <h2>Our featured products(key head 3)</h2>
           <p>view from our latest collection</p>
           <TestProducts/>
         </div>
