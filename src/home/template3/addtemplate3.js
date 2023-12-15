@@ -56,8 +56,17 @@ const Addtemplate3form = (props) => {
           Authorization: token,
         },
       }
-    );
+    )
+      .then(response => {
+        window.location.href = '/profile'
+        console.log(response.data); // Output the success message
+      })
+      .catch(error => {
+        // Handle error, e.g., show an error message
+        console.error('Error adding shop:', error.response.data); // Output the error message
+      });
   };
+ 
 
   return (
     <Fragment>

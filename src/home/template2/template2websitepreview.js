@@ -1190,7 +1190,7 @@ const Template2websitepreview = (props) => {
             <p>Phone: (123) 456-7890</p>
           </div>
           </div>
-          <div><p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
+          <div style={{textAlign: 'center'}}><p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
         </footer>
       </div>
     </Fragment>
