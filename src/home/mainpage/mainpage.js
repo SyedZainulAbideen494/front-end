@@ -46,9 +46,13 @@ const Mainpage = () => {
   
     return (
       <div className="middle-content">
-        <div>
-          <button onClick={handleUsersClick}>Users</button>
-          <button onClick={handleShopsClick}>Shops</button>
+        <div className="button-container">
+          <button className={showUsers ? 'active' : ''} onClick={handleUsersClick}>
+            Users
+          </button>
+          <button className={!showUsers ? 'active' : ''} onClick={handleShopsClick}>
+            Shops
+          </button>
         </div>
   
         {showUsers ? <Users /> : <AllTemplate1app />}
