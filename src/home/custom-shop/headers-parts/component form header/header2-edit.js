@@ -168,8 +168,9 @@ const Header2Edit = () => {
       Axios.put(
         "https://apifordropment.online/header/data",
         {
-         salestext: salestext,
-         tagline: tagline
+          salestext: salestext,
+          tagline: tagline,
+          phone: phone // Make sure 'phone' is defined
         },
         {
           headers: {
@@ -188,7 +189,6 @@ const Header2Edit = () => {
         console.error('Error:', error);
       });
     };
-    
   
     return (
       <Fragment>
