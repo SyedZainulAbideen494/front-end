@@ -46,7 +46,7 @@
   }
   
   .dropmentmainbtns button {
-    margin: 5px; /* Add some spacing between buttons */
+    margin: 3px; /* Add some spacing between buttons */
     background-color: #333;
     border: 1px solid #333;
     cursor: pointer;
