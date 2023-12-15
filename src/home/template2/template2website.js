@@ -1625,25 +1625,25 @@ const params = useParams()
             <div className="temp2-header-text">
               <h1>{items[0]?.salestext}</h1>
               <h4>{items[0]?.shop_tagline}</h4>
-              <button>Shop Now</button>
+              <button onClick={scrollToItems}>Shop Now</button>
             </div>
           </header>
         </div>
         <div className="section2-template2">
         <section className="section2-template-2-no-1" style={heroStyle2}>
             <h2>{items[0]?.shop_keyhead1}</h2>
-            <button>View</button>
+            <button onClick={scrollToItems}>View</button>
           </section>
           <section className="section2-template-2-no-2" style={heroStyle3}>
             <h2>{items[0]?.shop_keyhead2}</h2>
-            <button>View</button>
+            <button onClick={scrollToItems}>View</button>
           </section>
           <section className="section2-template-2-no-3" style={heroStyle4}>
             <h2>{items[0]?.shop_keyhead3}</h2>
-            <button>View</button>
+            <butto onClick={scrollToItems}n>View</butto>
           </section>
         </div>
-        <div className="section3-template2">
+        <div className="section3-template2" ref={itemsRef}>
           <h2>Our featured products</h2>
           <p>view from our latest collection</p>
           <Productsinshopapp/>
@@ -1655,7 +1655,7 @@ const params = useParams()
   <section class="section4-no2-template2">
     <h2>Our New collection</h2>
     <p>Latest Collection</p>
-    <button>View</button>
+    <button onClick={scrollToItems}>View</button>
   </section>
 </div>
 <footer>
@@ -1667,7 +1667,7 @@ const params = useParams()
           <div className="footer-1-section-2">
           <h4>Sections</h4>
             <p>About us</p>
-            <p>Products</p>
+            <p onClick={scrollToItems}>Products</p>
           </div>
           <div className="footer-1-section-3">
             <h4>Follow us</h4>
