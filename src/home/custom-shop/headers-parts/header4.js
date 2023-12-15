@@ -66,7 +66,7 @@ const Header4 = () => {
     fetchColorHandler();
   }, [fetchColorHandler]);
   const heroStyle = {
-    backgroundImage: `url(${items.length > 0 ? items[0].images1 : ''})`,
+    backgroundImage: `url(${items.length > 0 ? items[0]?.images1 : ''})`,
   };
 
   return (

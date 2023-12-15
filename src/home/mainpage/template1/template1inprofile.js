@@ -220,7 +220,7 @@ useEffect(() => {
           to={`${Linkno(props)}/${props.shop_id}/${props.shop_name}`}
           style={{ textDecoration: 'none', color: 'black' }}
         >
-                <p>{props.shop_name}</p>
+                <p style={{color: 'white'}}>{props.shop_name}</p>
               </Link>
               <Link to={`/user/${props.user_id}`}  style={{ textDecoration: 'none', color: 'black' }}> 
               <span className="shop-owner">Shop by {userInfo[0]?.first_name}</span>

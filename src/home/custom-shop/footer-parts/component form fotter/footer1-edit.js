@@ -326,7 +326,6 @@ const Footer1Edit = () => {
         <h2>Component Edit menu</h2>
         <button onClick={handleShowContent} className="edit-conten-btn-edit-component">Edit Content</button>
         <button onClick={handleShowColors}>Edit colors</button>
-        <button onClick={handleShowImages}>Add Images</button>
         </header>
         {showContent &&
         <form onSubmit={addShopHandler}>
