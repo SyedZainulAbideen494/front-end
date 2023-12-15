@@ -42,7 +42,15 @@ function Storiesapp() {
   return (
     <Fragment>
       <section>
-        {!loading ? <StoriesUserList users={items} /> : <p>Loading..</p>}
+        {!loading ? (
+          items.length > 0 ? (
+            <StoriesUserList users={items} />
+          ) : (
+            <p>Link with someone to see their blinkfeeds</p>
+          )
+        ) : (
+          <p>Loading..</p>
+        )}
       </section>
     </Fragment>
   );
