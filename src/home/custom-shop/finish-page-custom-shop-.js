@@ -17,7 +17,7 @@ const FinishCustomShopBuild = () => {
   const token = localStorage.getItem("token");
   const fetchprodshandler = useCallback(async () => {
     setloading(true);
-    const response = await fetch("http://localhost:8080/prods/details/shop/details", {
+    const response = await fetch("https://apifordropment.online/prods/details/shop/details", {
       headers: {
         Authorization: params.shop_id,
       },
@@ -29,7 +29,7 @@ const FinishCustomShopBuild = () => {
         shop_name: itemsdata.shop_name,
         temp: itemsdata.temp,
         build: itemsdata.build,
-        logo: `http://localhost:8080/images/${itemsdata.logo}`,
+        logo: `https://apifordropment.online/images/${itemsdata.logo}`,
       };
     });
     setitems(transformedItems);

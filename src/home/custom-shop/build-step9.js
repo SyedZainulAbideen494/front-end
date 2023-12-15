@@ -13,7 +13,7 @@ const Step9build =() => {
   
       // Make an Axios PUT request to update the navigation bar
       Axios.put(
-        "http://localhost:8080/section9/update",
+        "https://apifordropment.online/section9/update",
         {
           nav: navValue // Use the 'navValue' argument to set the 'nav' value
         },

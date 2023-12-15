@@ -30,7 +30,7 @@ const Section5Form = () => {
   
       // Make an Axios PUT request to update the navigation bar
       Axios.put(
-        "http://localhost:8080/section1/data",
+        "https://apifordropment.online/section1/data",
         {
           shop_blockhead1: shop_blockhead1,
           shop_block1: shop_block1,

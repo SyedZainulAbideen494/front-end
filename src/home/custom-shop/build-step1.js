@@ -25,7 +25,7 @@ const Step1build = () => {
 
     // Make an Axios PUT request to update the navigation bar
     Axios.put(
-      "http://localhost:8080/nav/bar/update",
+      "https://apifordropment.online/nav/bar/update",
       {
         nav: navValue // Use the 'navValue' argument to set the 'nav' value
       },

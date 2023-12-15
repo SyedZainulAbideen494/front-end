@@ -13,7 +13,7 @@ const Section4BuildSec6 = () => {
   
   const fetchImgHandler = useCallback(async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8080/custom/shop/display`, {
+    const response = await fetch(`https://apifordropment.online/custom/shop/display`, {
       headers: {
         Authorization: params.shop_id, // Set the token in the Authorization header
       },
@@ -21,9 +21,9 @@ const Section4BuildSec6 = () => {
     const data = await response.json();
     const transformedItems = data.shops.map((itemsdata) => {
       return {
-        images2: `http://localhost:8080/images/${itemsdata.images10}`,
-        images3: `http://localhost:8080/images/${itemsdata.images11}`,
-        images4: `http://localhost:8080/images/${itemsdata.images12}`
+        images2: `https://apifordropment.online/images/${itemsdata.images10}`,
+        images3: `https://apifordropment.online/images/${itemsdata.images11}`,
+        images4: `https://apifordropment.online/images/${itemsdata.images12}`
       };
     });
     setimg(transformedItems);
@@ -35,7 +35,7 @@ const Section4BuildSec6 = () => {
         
     const fetchColorHandler = useCallback(async () => {
       setLoading(true);
-      const response = await fetch(`http://localhost:8080/custom/shop/coloring/display/section6`, {
+      const response = await fetch(`https://apifordropment.online/custom/shop/coloring/display/section6`, {
         headers: {
           Authorization: params.shop_id, // Set the token in the Authorization header
         },
@@ -78,7 +78,7 @@ const Section4BuildSec6 = () => {
           setLoading(true);
       
           try {
-            const response = await fetch("http://localhost:8080/section/4/new/arrivals", {
+            const response = await fetch("https://apifordropment.online/section/4/new/arrivals", {
               headers: {
                 Authorization: params.shop_id,
               },
@@ -96,7 +96,7 @@ const Section4BuildSec6 = () => {
                 price: itemsData.price,
                 amount: itemsData.quantity,
                 shop_id: itemsData.shop_id,
-                images: `http://localhost:8080/images/${itemsData.images}`,
+                images: `https://apifordropment.online/images/${itemsData.images}`,
                 usd: itemsData.usd,
                 EUR: itemsData.EUR,
                 GBP: itemsData.GBP,
@@ -192,7 +192,7 @@ const Section4BuildSec6 = () => {
           const token = localStorage.getItem("token");
           
           try {
-            const response = await fetch("http://localhost:8080/users/", {
+            const response = await fetch("https://apifordropment.online/users/", {
               headers: {
                 Authorization: token,
               },

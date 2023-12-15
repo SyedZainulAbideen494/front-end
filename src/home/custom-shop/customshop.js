@@ -73,7 +73,7 @@ const CustomShop = () => {
   const userId = 123; // Replace with actual user ID
 
   useEffect(() => {
-    axios.post(`http://localhost:8080/updateVisits/${shopId}`)
+    axios.post(`https://apifordropment.online/updateVisits/${shopId}`)
       .then((response) => {
         console.log(response.data);
         // Handle success, maybe show a success message or update state
@@ -86,7 +86,7 @@ const CustomShop = () => {
 
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8080/custom/shop/display`, {
+    const response = await fetch(`https://apifordropment.online/custom/shop/display`, {
       headers: {
         Authorization: params.shop_id, // Set the token in the Authorization header
       },
@@ -299,7 +299,7 @@ const CustomShop = () => {
   
       try {
         const response = await Axios.put(
-          "http://localhost:8080/updateshop1",
+          "https://apifordropment.online/updateshop1",
           {
             shop_name: shop_name,
             shop_owner: shop_owner,
@@ -455,7 +455,7 @@ const CustomShop = () => {
         setLoading(true);
         try {
           const response = await fetch(
-            `http://localhost:8080/user/id/editbtnstoredisplay1`,
+            `https://apifordropment.online/user/id/editbtnstoredisplay1`,
             {
               headers: {
                 Authorization: params.id,
@@ -485,7 +485,7 @@ const CustomShop = () => {
         try {
           const token = localStorage.getItem("token");
           const response = await fetch(
-            "http://localhost:8080/user/id/editbtnstoredisplay2",
+            "https://apifordropment.online/user/id/editbtnstoredisplay2",
             {
               headers: {
                 Authorization: token,
@@ -546,7 +546,7 @@ const CustomShop = () => {
       setloading(true);
   
       setloading(true);
-      const response = await fetch("http://localhost:8080/myorders", {
+      const response = await fetch("https://apifordropment.online/myorders", {
         headers: {
           Authorization: params.shop_id,
         },
@@ -686,7 +686,7 @@ const CustomShop = () => {
       setLoading(true);
   
       try {
-        const response = await fetch("http://localhost:8080/use/shops/products", {
+        const response = await fetch("https://apifordropment.online/use/shops/products", {
           headers: {
             Authorization: params.shop_id,
           },
@@ -704,7 +704,7 @@ const CustomShop = () => {
             price: itemsData.price,
             amount: itemsData.quantity,
             shop_id: itemsData.shop_id,
-            images: `http://localhost:8080/images/${itemsData.images}`,
+            images: `https://apifordropment.online/images/${itemsData.images}`,
             usd: itemsData.usd,
             EUR: itemsData.EUR,
             GBP: itemsData.GBP,
@@ -809,7 +809,7 @@ const CustomShop = () => {
       formData.append("NOK", NOK);
       formData.append("product_description", product_description)
    
-      Axios.post("http://localhost:8080/addProduct", formData, {
+      Axios.post("https://apifordropment.online/addProduct", formData, {
         headers: {
           Authorization: params.shop_id,
         },
@@ -1068,7 +1068,7 @@ const CustomShop = () => {
       const token = localStorage.getItem("token");
       
       try {
-        const response = await fetch("http://localhost:8080/users/", {
+        const response = await fetch("https://apifordropment.online/users/", {
           headers: {
             Authorization: token,
           },
@@ -1235,7 +1235,7 @@ const CustomShop = () => {
         setloading(true);
         try {
           const response = await fetch(
-            `http://localhost:8080/user/id/editbtndiaplay1`,
+            `https://apifordropment.online/user/id/editbtndiaplay1`,
             {
               headers: {
                 Authorization: params.shop_id,
@@ -1265,7 +1265,7 @@ const CustomShop = () => {
         try {
           const token = localStorage.getItem("token");
           const response = await fetch(
-            "http://localhost:8080/user/id/editbtndiaplay2",
+            "https://apifordropment.online/user/id/editbtndiaplay2",
             {
               headers: {
                 Authorization: token,

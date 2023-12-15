@@ -32,7 +32,7 @@ const CustomShopForm = () => {
   const params = useParams();
 
   const fetchprodshandler = useCallback(async () => {
-    const response = await fetch("http://localhost:8080/custom/shop/sections/form", {
+    const response = await fetch("https://apifordropment.online/custom/shop/sections/form", {
       headers: {
         Authorization: params.shop_id,
       },
@@ -65,7 +65,7 @@ const CustomShopForm = () => {
   const addshophandler = () => {
     const token = localStorage.getItem("token");
     Axios.post(
-      "http://localhost:8080/addShops/custom/shop",
+      "https://apifordropment.online/addShops/custom/shop",
       {
         shop_name: shop_name,  
         shop_blockhead1: shop_blockheading1,

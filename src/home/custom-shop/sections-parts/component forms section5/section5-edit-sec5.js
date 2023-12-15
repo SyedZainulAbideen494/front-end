@@ -36,7 +36,7 @@ const Section5BuildEditSec5 = () => {
 
     const addShopHandler = () => {
       Axios.post(
-        `http://localhost:8080/section5/data`,
+        `https://apifordropment.online/section5/data`,
         {
           shop_blockhead1,
           shop_block1,
@@ -101,7 +101,7 @@ const Section5BuildEditSec5 = () => {
 
     const addColorsHandler = () => {
       Axios.post(
-        'http://localhost:8080/color/selection/section/5',
+        'https://apifordropment.online/color/selection/section/5',
         {
           backgroundColor1,
           backgroundColor2,
@@ -161,7 +161,7 @@ const Section5BuildEditSec5 = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg7", formData, {
+        Axios.post("https://apifordropment.online/addshopimg7", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -206,7 +206,7 @@ const Section5BuildEditSec5 = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg8", formData, {
+        Axios.post("https://apifordropment.online/addshopimg8", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -251,7 +251,7 @@ const Section5BuildEditSec5 = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg9", formData, {
+        Axios.post("https://apifordropment.online/addshopimg9", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -470,7 +470,7 @@ const Section5BuildEditSec5 = () => {
           setLoading(true);
       
           try {
-            const response = await fetch("http://localhost:8080/use/shops/products", {
+            const response = await fetch("https://apifordropment.online/use/shops/products", {
               headers: {
                 Authorization: params.shop_id,
               },
@@ -488,7 +488,7 @@ const Section5BuildEditSec5 = () => {
                 price: itemsData.price,
                 amount: itemsData.quantity,
                 shop_id: itemsData.shop_id,
-                images: `http://localhost:8080/images/${itemsData.images}`,
+                images: `https://apifordropment.online/images/${itemsData.images}`,
                 usd: itemsData.usd,
                 EUR: itemsData.EUR,
                 GBP: itemsData.GBP,
@@ -584,7 +584,7 @@ const Section5BuildEditSec5 = () => {
           const token = localStorage.getItem("token");
           
           try {
-            const response = await fetch("http://localhost:8080/users/", {
+            const response = await fetch("https://apifordropment.online/users/", {
               headers: {
                 Authorization: token,
               },

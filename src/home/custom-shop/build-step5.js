@@ -29,7 +29,7 @@ const Step5build =() => {
   
       // Make an Axios PUT request to update the navigation bar
       Axios.put(
-        "http://localhost:8080/section5/update",
+        "https://apifordropment.online/section5/update",
         {
           nav: navValue // Use the 'navValue' argument to set the 'nav' value
         },
@@ -54,7 +54,7 @@ const Step5build =() => {
     const fetchProductsHandler = useCallback(async () => {
       setLoading(true);
       try {
-        const response = await Axios.get(`http://localhost:8080/custom/shop/display`, {
+        const response = await Axios.get(`https://apifordropment.online/custom/shop/display`, {
           headers: { Authorization: params.shop_id },
         });
         setItems(response.data.shops);

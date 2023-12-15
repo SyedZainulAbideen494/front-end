@@ -9,7 +9,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 4
       }, // POST data here
@@ -39,7 +39,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 5
       }, // POST data here
@@ -69,7 +69,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 6
       }, // POST data here
@@ -99,7 +99,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 7
       }, // POST data here
@@ -129,7 +129,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 8
       }, // POST data here
@@ -159,7 +159,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 9
       }, // POST data here
@@ -189,7 +189,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 10
       }, // POST data here
@@ -219,7 +219,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 11
       }, // POST data here
@@ -249,7 +249,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 12
       }, // POST data here
@@ -279,7 +279,7 @@ const SelectNoSection = () => {
     const token = localStorage.getItem("token");
   
     Axios.post(
-      `http://localhost:8080/add/custom/shop`,
+      `https://apifordropment.online/add/custom/shop`,
       {
         section: 13
       }, // POST data here

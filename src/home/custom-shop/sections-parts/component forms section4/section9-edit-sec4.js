@@ -28,7 +28,7 @@ const Section9BuildEditSec4 = () => {
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await Axios.get(`http://localhost:8080/custom/shop/display`, {
+      const response = await Axios.get(`https://apifordropment.online/custom/shop/display`, {
         headers: {
           Authorization: params.shop_id,
         },
@@ -41,9 +41,9 @@ const Section9BuildEditSec4 = () => {
         shop_block2: itemsdata.shop_block2,
         shop_blockhead3: itemsdata.shop_blockhead3,
         shop_block3: itemsdata.shop_block3,
-        images2: `http://localhost:8080/images/${itemsdata.images2}`,
-        images3: `http://localhost:8080/images/${itemsdata.images3}`,
-        images4: `http://localhost:8080/images/${itemsdata.images4}`,
+        images2: `https://apifordropment.online/images/${itemsdata.images2}`,
+        images3: `https://apifordropment.online/images/${itemsdata.images3}`,
+        images4: `https://apifordropment.online/images/${itemsdata.images4}`,
       }));
       setItems(transformedItems);
       setLoading(false);
@@ -67,7 +67,7 @@ const Section9BuildEditSec4 = () => {
 
     const addShopHandler = () => {
       Axios.post(
-        "http://localhost:8080/section4/data",
+        "https://apifordropment.online/section4/data",
         {
           shop_blockhead1: shop_blockhead1,
           shop_block1: shop_block1,
@@ -139,7 +139,7 @@ const Section9BuildEditSec4 = () => {
 
     const addColorsHandler = () => {
       Axios.post(
-        "http://localhost:8080/color/selection/section/4",
+        "https://apifordropment.online/color/selection/section/4",
         {
           backgroundColor1: backgroundColor1,
           backgroundColor2: backgroundColor2,
@@ -201,7 +201,7 @@ const Section9BuildEditSec4 = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg4", formData, {
+        Axios.post("https://apifordropment.online/addshopimg4", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -246,7 +246,7 @@ const Section9BuildEditSec4 = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg5", formData, {
+        Axios.post("https://apifordropment.online/addshopimg5", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -291,7 +291,7 @@ const Section9BuildEditSec4 = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("http://localhost:8080/addshopimg6", formData, {
+        Axios.post("https://apifordropment.online/addshopimg6", formData, {
           headers: {
             Authorization: params.shop_id,
           },
