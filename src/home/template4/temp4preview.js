@@ -748,7 +748,7 @@ const Template4websitepreview = (props) => {
         <p>Phone:shop_phone</p>
       </div>
     </div>
-    <div>
+    <div style={{textAlign: 'center'}}>
       <p>&copy; {new Date().getFullYear()} shop_name. All rights reserved.</p>
     </div>
   </footer>

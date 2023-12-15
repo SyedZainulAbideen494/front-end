@@ -1135,7 +1135,7 @@ const Template1websitepreview = (props) => {
             <div className="temp1headtextsection">
               <section>
               <h1 className="slaestexttemp1">Sales text goes here</h1>
-              <h1>Your tagline</h1>
+              <h1 className="taglinetemp1">Your tagline</h1>
               </section>
             </div>
             <div className="temp1head1img">

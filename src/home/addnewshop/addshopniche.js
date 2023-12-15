@@ -48,11 +48,11 @@ const Addshopniche = () => {
           {/* Template 1 */}
           <div className="template">
             <Link to="/Add/temp1/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button" disabled>Dropment template 1 <FaLock /></button><br/>
+              <button className="button-button-primary-template-button" disabled>Dropment template 1<br/>Under maintenance<FaLock /></button><br/>
             </Link>
             <span>
               <Link to="/temp1preview" style={{textDecoration: 'none'}} className="preview-link">
-                <button className="button-button-secondary-preview-button">Preview <FaLock /></button>
+                <button className="button-button-secondary-preview-button" disabled>Preview <FaLock /></button>
               </Link>
             </span>
           </div>
@@ -68,11 +68,11 @@ const Addshopniche = () => {
           </div>
           <div className="template">
             <Link to="/Add/temp3/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button" disabled>Dropment template 3 <FaLock /></button><br/>
+              <button className="button-button-primary-template-button" disabled>Dropment template 3<br/>Under maintenance<FaLock/></button><br/>
             </Link>
             <span className="preview-span">
               <Link to="/temp3preview" className="preview-link"style={{textDecoration: 'none'}}>
-                <button className="button-button-secondary-preview-button">Preview</button>
+                <button className="button-button-secondary-preview-button" disabled>Preview</button>
               </Link>
             </span>
           </div>
@@ -88,11 +88,11 @@ const Addshopniche = () => {
           </div>
           <div className="template">
             <Link to="/Add/temp5/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button" disabled>Dropment template 5 <FaLock /></button><br/>
+              <button className="button-button-primary-template-button" >Dropment template 5 </button><br/>
             </Link>
             <span className="preview-span">
               <Link to="/temp5preview" className="preview-link" style={{textDecoration: 'none'}}>
-                <button className="button-button-secondary-preview-button">Preview <FaLock /></button>
+                <button className="button-button-secondary-preview-button">Preview</button>
               </Link>
             </span>
           </div>

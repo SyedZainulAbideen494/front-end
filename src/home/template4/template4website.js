@@ -1719,7 +1719,7 @@ const params = useParams();
         <p>Phone :{items[0]?.shop_phone}</p>
       </div>
     </div>
-    <div>
+    <div style={{textAlign: 'center'}}>
       <p>&copy; {new Date().getFullYear()} {items[0]?.shop_name}. All rights reserved.</p>
     </div>
   </footer>

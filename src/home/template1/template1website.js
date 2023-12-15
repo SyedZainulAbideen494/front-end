@@ -1644,7 +1644,7 @@ const params = useParams()
             <div className="temp1headtextsection">
               <section>
               <h1 className="slaestexttemp1">{items[0]?.salestext}</h1>
-              <h1>{items[0]?.shop_tagline}</h1>
+              <h1 className="taglinetemp1">{items[0]?.shop_tagline}</h1>
               </section>
             </div>
             <div className="temp1head1img">
