@@ -77,27 +77,28 @@ const Footer1Edit = () => {
           slogan: slogan,
           insta: insta,
           facebook: facebook,
-          linkdin: linkdin,
-          x: x,
+          linkedin: linkdin, // Corrected variable name
+          twitter: x, // Make sure these variables are defined in your frontend
           phone: phone,
-          email: email
+          email: email,
+          whatsapp: whatsapp,
         },
         {
           headers: {
-            Authorization: params.shop_id
-          }
+            Authorization: params.shop_id, // Assuming shop_id is available in this scope
+          },
         }
       )
-      .then(response => {
-        if (response.status === 200) {
-          console.log('Operation succeeded');
-        } else {
-          console.log('Operation failed');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+        .then((response) => {
+          if (response.status === 200) {
+            console.log('Operation succeeded');
+          } else {
+            console.log('Operation failed');
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     };
     
   
