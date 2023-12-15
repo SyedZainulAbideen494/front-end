@@ -207,42 +207,46 @@ useEffect(() => {
   }, [params.user_id]);
   
 
-  return (
-    <Fragment>
-   <div className="shop-container">
-      <div className="shop-card">
-        <div className="shop-header">
-          <img src={items[0]?.logo} alt={props.shop_name} className="shop-logo" />
-          <div className="shop-header-details">
-          <Link
-        to={`${Linkno(props)}/${props.shop_id}/${props.shop_name}`}
-        style={{ textDecoration: 'none', color: 'black' }}
-      >
-             <p style={{color: 'white'}}>{props.shop_name}</p> 
-            </Link>
-            <Link to={`/user/${props.user_id}`}  style={{ textDecoration: 'none', color: 'black' }}> 
-            <span className="shop-owner">Shop by {userInfo[0]?.first_name}</span>
-            </Link>
+  if(props.temp === 'incomplete') {
+    return;
+  }else{
+    return (
+      <Fragment>
+     <div className="shop-container">
+        <div className="shop-card">
+          <div className="shop-header">
+            <img src={items[0]?.logo} alt={props.shop_name} className="shop-logo" />
+            <div className="shop-header-details">
+            <Link
+          to={`${Linkno(props)}/${props.shop_id}/${props.shop_name}`}
+          style={{ textDecoration: 'none', color: 'black' }}
+        >
+                <p style={{color: 'white'}}>{props.shop_name}</p>
+              </Link>
+              <Link to={`/user/${props.user_id}`}  style={{ textDecoration: 'none', color: 'black' }}> 
+              <span className="shop-owner">Shop by {userInfo[0]?.first_name}</span>
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="shop-image">
-          <img src={items[0]?.image} alt={items.shop_name} />
-        </div>
-        <div className="shop-actions">
-          <button className={`follow-button ${isFollowing ? 'following' : ''}`} onClick={isFollowing ? toggleunFollow : toggleFollow}>
-            {isFollowing ? 'Following' : 'Follow'}
-          </button>
-        </div>
-        <div className="shop-footer">
-          <div className="shop-rating">
-            <span className="star-icon">⭐</span>
-            {averageRating}
+          <div className="shop-image">
+            <img src={items[0]?.image} alt={items.shop_name} />
           </div>
-          <div className="shop-follower-count">{followerCount} Products</div>
+          <div className="shop-actions">
+            <button className={`follow-button ${isFollowing ? 'following' : ''}`} onClick={isFollowing ? toggleunFollow : toggleFollow}>
+              {isFollowing ? 'Following' : 'Follow'}
+            </button>
+          </div>
+          <div className="shop-footer">
+            <div className="shop-rating">
+              <span className="star-icon">⭐</span>
+              {averageRating}
+            </div>
+            <div className="shop-follower-count">{followerCount} Products</div>
+          </div>
         </div>
       </div>
-    </div>
-  </Fragment>
-  );
+    </Fragment>
+    );
+  }
 }
 export default Template1inmain;
