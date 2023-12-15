@@ -130,7 +130,7 @@ const Header1Edit = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("https://apifordropment.online/add/shop/logo5", formData, {
+        Axios.post("https://apifordropment.online/addshopimg1", formData, {
           headers: {
             Authorization: params.shop_id,
           },
@@ -150,10 +150,10 @@ const Header1Edit = () => {
   
           <form onSubmit={Addimage1Handler}>
      
-            <label>Add your logo</label>
+            <label>Add your Banner</label>
             <input
               type="file"
-              placeholder="Logo"
+              placeholder="Banner"
               onChange={(e) => setImage(e.target.files[0])}
             />
      
