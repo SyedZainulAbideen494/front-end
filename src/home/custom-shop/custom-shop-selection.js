@@ -307,27 +307,32 @@ const SelectNoSection = () => {
   
   
   return (
-    <Fragment>
-      <div className="box-container">
-        <div className="header-section">
-          <Link to="/Addshoppage1">
-            <button>Go Back</button>
-          </Link>
-          <h2 className="section-heading">
-            Choose the Number of Sections for Your Online Store
-          </h2>
-        </div>
-        <div className="section-buttons">
-            <button className="section-button" onClick={addshophandler1}>4 section store</button>
-            <button className="section-button" onClick={addshophandler2}>5 section store</button>
-            <button className="section-button" onClick={addshophandler3}>6 section store</button>
-            <button className="section-button" onClick={addshophandler4}>7 section store</button>
-            <button className="section-button" onClick={addshophandler5}>8 section store</button>
-            <button className="section-button" onClick={addshophandler6}>9 section store</button>
-
-        </div>
-      </div>
-    </Fragment>
+<Fragment>
+  <div className="dark-box-container">
+    <div className="dark-header-section">
+      <Link to="/Addshoppage1">
+        <button className="dark-go-back-button">Go Back</button>
+      </Link>
+      <h2 className="dark-section-heading">
+        Choose the Number of Sections for Your Online Store
+      </h2>
+    </div>
+    <div className="dark-section-buttons">
+      <button className="dark-section-button" onClick={addshophandler1}>
+        4 section store
+      </button>
+      <button className="dark-section-button" onClick={addshophandler2}>
+        5 section store
+      </button>
+      <button className="dark-section-button" onClick={addshophandler3}>
+        6 section store
+      </button>
+      <button className="dark-section-button" onClick={addshophandler4}>
+        7 section store
+      </button>
+    </div>
+  </div>
+</Fragment>
   );
 };
 
