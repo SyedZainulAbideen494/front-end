@@ -124,6 +124,16 @@ const Orderproduct = (props) => {
 
   return (
     <Fragment>
+      <div className="chat-messgae-page-header">
+        <header>
+          <Link to='/profile'>
+          <button>Profile</button>
+          </Link>
+          <Link to='/home'>
+            <button>Home</button>
+          </Link>
+        </header>
+      </div>
     <Link to={`/chat/${chat_id}/${user1}/${user2}`} style={{textDecoration: 'none', color: 'black'}}>
       <div className="mobile-main">
         <div className="user-profiles-mobile">
