@@ -4,6 +4,7 @@ import './myprofile.css';
 import { Link, useNavigate } from "react-router-dom";
 import Template1app from "../template1/template1app";
 import message from '../header/images/icons8-messages-48.png'
+import backarrow from '../header/images/icons8-back-24.png'
 const Spinner = () => {
   return (
     <div className="spinner-container">
@@ -77,13 +78,17 @@ const MyProfile = () => {
       setauth(false);
     }
   }, []);
-
+  const arrowStyle = {
+    color: 'white', // Change color as needed
+    fontSize: '24px', // Change size as needed
+    display: 'inline-block',
+  };
   return (
     <div className="profile-container">
       {/* Header Section */}
       <div className="header-edit-profile">
         <Link to="/home">
-          <button className="btn-myporfile-main-div">Home</button>
+          <button className="btn-myporfile-main-div" style={{padding: '8px'}}><img src={backarrow} style={{width: '20px'}}/></button>
         </Link>
         <Link to='/chats'>
 <button className="mboile-btn-display-home-headre" style={{ backgroundColor: 'transparent', border: 'none'}}><img src={message} style={{width: '30px', backgroundColor: 'transparent', border: 'none'}}/></button>
