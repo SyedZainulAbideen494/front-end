@@ -404,17 +404,6 @@ const Section5BuildEditSec6 = () => {
         />
         <h4 style={{color: fontColor5}}>{fontColor5}</h4>
       </div>
-      <div className="color-palette">
-          <label htmlFor="fc6"><h4>font color 6</h4></label>
-        <input
-          type="color"
-          value={fontColor6}
-          onChange={handleFontColorChange6}
-          style={{ background: 'transparent', border: "none" }}
-          id="fc6"
-        />
-        <h4 style={{color: fontColor6}}>{fontColor6}</h4>
-      </div>
       <button type="submit">Set Color</button>
       <button onClick={NextStep}>Next</button>
         </form>
@@ -658,7 +647,7 @@ const Section5BuildEditSec6 = () => {
                   <div className="section-5-build-prods-details">
                     <p style={{color: fontColor3}}>Title</p>
                   <h3 style={{color: fontColor4}}>$434</h3>
-                  <button>Buy Now</button>
+                  <button style={{border: `1px solid ${backgroundColor1}`}}>Buy Now</button>
                   </div>
                 </li>
                 <li>
@@ -668,7 +657,7 @@ const Section5BuildEditSec6 = () => {
                   <div className="section-5-build-prods-details">
                   <p style={{color: fontColor3}}>Title</p>
                   <h3 style={{color: fontColor4}}>$434</h3>
-                  <button>Buy Now</button>
+                  <button style={{border: `1px solid ${backgroundColor1}`}}>Buy Now</button>
                   </div>
                 </li>
                 <li>
@@ -678,7 +667,7 @@ const Section5BuildEditSec6 = () => {
                   <div className="section-5-build-prods-details">
                   <p style={{color: fontColor3}}>Title</p>
                   <h3 style={{color: fontColor4}}>$434</h3>
-                  <button>Buy Now</button>
+                  <button style={{border: `1px solid ${backgroundColor1}`}}>Buy Now</button>
                   </div>
                 </li>
             </div>

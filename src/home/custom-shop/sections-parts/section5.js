@@ -242,7 +242,7 @@ const Section5Build = () => {
                 <div className="section-5-build-prods-details">
                   <p style={{color: color[0]?.font_colour3}}>{props.title}</p>
                 <Pricing country={user.country}  style={{color: color[0]?.font_colour4}}/>
-                <button>Buy Now</button>
+                <button style={{border: `1px solid ${color[0]?.background_colour1}`}}>Buy Now</button>
                 </div>
               </li>
             ))}

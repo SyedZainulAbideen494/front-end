@@ -453,12 +453,6 @@
                 font-family: 30px;
                 color: white;
             }
-            .section-5-build-prods-details button:hover {
-                background-color: black;
-                transition: 0.3s;
-                color: white;
-                cursor: pointer;
-            }
             
 
             /* Section 6 */
@@ -1361,12 +1355,7 @@
                     font-family: 30px;
                     color: white;
                 }
-                .section-5-build-prods-details button:hover {
-                    background-color: black;
-                    transition: 0.3s;
-                    color: white;
-                    cursor: pointer;
-                }
+
                 
     
                 /* Section 6 */
@@ -2264,12 +2253,7 @@
         font-family: 30px;
         color: white;
     }
-    .section-5-build-prods-details button:hover {
-        background-color: black;
-        transition: 0.3s;
-        color: white;
-        cursor: pointer;
-    }
+
     /*section 6*/
    .section-6-build-main-div {
     background-color: #020202;
@@ -3215,12 +3199,7 @@
         color: white;
         font-family: 30px;
     }
-    .section-5-build-prods-details button:hover {
-        background-color: rgb(255, 255, 255);
-        transition: 0.3s;
-        color: rgb(0, 0, 0);
-        cursor: pointer;
-    }
+
     /*section 6*/
    .section-6-build-main-div {
     background-color: #ffffff;

@@ -652,38 +652,38 @@ const Section5BuildEdit = () => {
       };
       const DummyProducts = () => {
         return (
-            <div className="section-5-build-main-div-prods">
-                <li>
-                  <div className="section-5-build-products-img">
-                    <img src={img1} alt="Product Image" />
-                  </div>
-                  <div className="section-5-build-prods-details">
-                    <p style={{color: fontColor3}}>Title</p>
-                  <h3 style={{color: fontColor4}}>$434</h3>
-                  <button>Buy Now</button>
-                  </div>
-                </li>
-                <li>
-                  <div className="section-5-build-products-img">
-                    <img src={img2} alt="Product Image" />
-                  </div>
-                  <div className="section-5-build-prods-details">
-                  <p style={{color: fontColor3}}>Title</p>
-                  <h3 style={{color: fontColor4}}>$434</h3>
-                  <button>Buy Now</button>
-                  </div>
-                </li>
-                <li>
-                  <div className="section-5-build-products-img">
-                    <img src={img3} alt="Product Image" />
-                  </div>
-                  <div className="section-5-build-prods-details">
-                  <p style={{color: fontColor3}}>Title</p>
-                  <h3 style={{color: fontColor4}}>$434</h3>
-                  <button>Buy Now</button>
-                  </div>
-                </li>
+          <div className="section-5-build-main-div-prods">
+          <li>
+            <div className="section-5-build-products-img">
+              <img src={img1} alt="Product Image" />
             </div>
+            <div className="section-5-build-prods-details">
+              <p style={{color: fontColor3}}>Title</p>
+            <h3 style={{color: fontColor4}}>$434</h3>
+            <button style={{border: `1px solid ${backgroundColor1}`}}>Buy Now</button>
+            </div>
+          </li>
+          <li>
+            <div className="section-5-build-products-img">
+              <img src={img2} alt="Product Image" />
+            </div>
+            <div className="section-5-build-prods-details">
+            <p style={{color: fontColor3}}>Title</p>
+            <h3 style={{color: fontColor4}}>$434</h3>
+            <button style={{border: `1px solid ${backgroundColor1}`}}>Buy Now</button>
+            </div>
+          </li>
+          <li>
+            <div className="section-5-build-products-img">
+              <img src={img3} alt="Product Image" />
+            </div>
+            <div className="section-5-build-prods-details">
+            <p style={{color: fontColor3}}>Title</p>
+            <h3 style={{color: fontColor4}}>$434</h3>
+            <button style={{border: `1px solid ${backgroundColor1}`}}>Buy Now</button>
+            </div>
+          </li>
+      </div>
           );
       }
 
