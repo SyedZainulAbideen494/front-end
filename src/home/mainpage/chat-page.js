@@ -3,7 +3,7 @@ import './chat-page.css';
 import { Link } from "react-router-dom";
   const arrowStyle = {
     color: 'white', // Change color as needed
-    fontSize: '15px', // Change size as needed
+    fontSize: '24px', // Change size as needed
     display: 'inline-block',
   };
 // Spinner component
@@ -57,9 +57,7 @@ function ChatPage() {
       <nav className="navbar-chat-header-nav-chat-page">
         <header>
         <Link to="/">
-          <button>
         <div style={arrowStyle}>&larr;</div>
-        </button>
           </Link>
         <Link to="/profile"><button>profile</button>
         </Link>
