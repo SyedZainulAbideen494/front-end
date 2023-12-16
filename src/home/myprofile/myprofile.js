@@ -87,7 +87,6 @@ const MyProfile = () => {
     <div className="profile-container">
       {/* Header Section */}
       <div className="header-edit-profile">
-        <header>
         <Link to="/home">
           <button className="btn-myporfile-main-div" style={{padding: '8px'}}><img src={backarrow} style={{width: '20px'}}/></button>
         </Link>
@@ -107,7 +106,6 @@ const MyProfile = () => {
                 <button className="login-btn-profilesec">Login</button>
               </Link>
             )}
-            </header>
       </div>
 
       {/* Main Profile Section */}

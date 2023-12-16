@@ -9,7 +9,10 @@
 .header-edit-profile {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 0px 1px rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 9px;
 }
 
 .edit-button,
