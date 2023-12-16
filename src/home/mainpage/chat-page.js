@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import './chat-page.css';
 import { Link } from "react-router-dom";
-const LeftArrow = () => {
   const arrowStyle = {
     color: 'white', // Change color as needed
-    fontSize: '24px', // Change size as needed
-    transform: 'rotate(180deg)', // Rotates the arrow to point left
+    fontSize: '15px', // Change size as needed
     display: 'inline-block',
   };
-}
 // Spinner component
 const Spinner = () => {
   return (
@@ -61,7 +58,7 @@ function ChatPage() {
         <header>
         <Link to="/">
           <button>
-        <div>&larr;</div>
+        <div style={arrowStyle}>&larr;</div>
         </button>
           </Link>
         <Link to="/profile"><button>profile</button>
