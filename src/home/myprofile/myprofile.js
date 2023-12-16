@@ -45,7 +45,7 @@ const MyProfile = () => {
   useEffect(() => {
     fetchimagehandler();
   }, []);
-
+  const isAdmin = img[0]?.user_id === 1;
   useEffect(() => {
     async function fetchFollowerCount() {
       try {
@@ -70,6 +70,13 @@ const MyProfile = () => {
     <div className="profile-container">
       {/* Header Section */}
       <div className="header-edit-profile">
+      {isAdmin && (
+        <Link to='/dropment/admin/for/owner'>
+              <button  className="btn-myporfile-main-div">
+                Admin
+              </button>
+         </Link>
+            )}
         <Link to="/">
           <button className="btn-myporfile-main-div">Home</button>
         </Link>

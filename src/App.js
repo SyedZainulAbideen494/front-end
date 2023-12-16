@@ -104,6 +104,7 @@ import Blog2 from "./home/blog/blog2";
 import Blog3 from "./home/blog/blog3";
 import ChatPage from "./home/mainpage/chat-page";
 import LoginPageSuccess from "./home/auth/successfull-login";
+import DropmentAdminmain from "./home/dropment-admin/dropmentadmin-main";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -201,6 +202,7 @@ const router = createBrowserRouter([
   {path: '/blog', element: <MainBlog/>},
   {path: '/chats', element:<ChatPage/>},
   {path: '/login/success', element: <LoginPageSuccess/>},
+  {path: '/dropment/admin/for/owner', element: <DropmentAdminmain/>},
   {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
   {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>},
   {path: '/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store', element: <Blog3/>}
