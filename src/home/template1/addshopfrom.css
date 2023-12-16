@@ -1,43 +1,71 @@
+/* Profile header container */
 .profile-header-owner {
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgb(255, 255, 255);
-  }
-  
-  .profile-header-owner header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .shop_owner_view h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+/* Header layout */
+.profile-header-owner header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping of buttons */
+}
+
+/* Title styling */
+.shop_owner_view h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* Button container */
+.shopownerbtn {
+  display: flex;
+  align-items: center;
+}
+
+/* Button styling */
+.shopownerbtn span {
+  margin-right: 15px;
+}
+
+.shopownerbtn button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+/* Hover effect for buttons */
+.shopownerbtn button:hover {
+  background-color: #55a630;
+  border: 1px solid #55a630;
+}
+
+/* Specific button style for 'Add Products +' */
+.btnwebstore-addproducts button {
+  background-color: #55a630;
+  border: 1px solid #55a630;
+  transition: background-color 0.3s ease;
+}
+
+.btnwebstore-addproducts button:hover {
+  background-color: #3f7f00;
+  border: 1px solid #3f7f00;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
   .shopownerbtn {
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping of buttons */
   }
-  
+
   .shopownerbtn span {
-    margin-right: 10px;
+    margin-bottom: 10px; /* Add space between buttons when they wrap */
   }
-  
-  .shopownerbtn button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-  }
-  
-  /* Additional styling for specific buttons */
-  .btnwebstore-addproducts button {
-    background-color: transparent;
-    color: white;
-    border: 1px solid #55a630;    
-  }
+}

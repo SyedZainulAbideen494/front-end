@@ -101,7 +101,8 @@ const CustomShop = () => {
         section5: itemsdata.section5,
         section6: itemsdata.section6,
         section13: itemsdata.section13,
-        background_clr: itemsdata.background_clr
+        background_clr: itemsdata.background_clr,
+        live: itemsdata.live
       };
     });
     setItems(transformedItems);
@@ -1302,6 +1303,26 @@ const CustomShop = () => {
   
       fetchUser2sHandler();
     }, []);
+    
+const UpdateShopLiveComponent = () => {
+  const [liveStatus, setLiveStatus] = useState('');
+
+  const handleUpdate = async () => {
+    try {
+      await axios.put(`https://apifordropment.online/updateShopLiveStatus/${params.shop_id}`, { live: 'live' });
+      console.log('Shop updated successfully');
+    } catch (error) {
+      console.error('Error updating shop:', error);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={handleUpdate}>Update Shop</button>
+    </div>
+  );
+};
+
   
     const EEditbtn = () => {
       if (
@@ -1365,6 +1386,16 @@ const CustomShop = () => {
               </button>
             </div>
           );
+        };
+        const handleUpdateClick = async () => {
+          try {
+            // Assuming 'params.shop_id' is available in the scope
+            const response = await axios.put(`https://apifordropment.online/updateShop/live/${params.shop_id}`);
+            console.log(response.data); // Log the response from the backend
+          } catch (error) {
+            console.error('Error updating shop status:', error);
+            // Handle error or display a message to the user
+          }
         };
         return (
           <Fragment>
