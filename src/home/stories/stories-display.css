@@ -1,12 +1,39 @@
 /* stories-display.css */
 
 /* Overall container styles */
+/* Styling for scrollbar */
+/* Hide the default scrollbar for WebKit (Chrome, Safari, etc.) */
+.storysmodelul-container::-webkit-scrollbar {
+  background-color: #555;
+  border: 1px solid #555;
+  border-radius: 25px;
+  width: 10px;
+  height: 4px;
+}
+
+/* Styles for non-WebKit browsers */
 .storysmodelul-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    max-width: 90vw; /* Set your desired maximum width */
-    margin: 0 auto; /* Center the container */
-  }
+  scrollbar-width: none; /* Firefox */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Ensure items stay in a single line */
+  max-width: 90vw; /* Set your desired maximum width */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Track */
+.storysmodelul-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light grey */
+}
+
+/* Handle */
+.storysmodelul-container::-webkit-scrollbar-thumb {
+  background: #888; /* Dark grey */
+}
+
+/* Handle on hover */
+.storysmodelul-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker grey */
+}
   
   /* List styles */
   .storysmodelul {
