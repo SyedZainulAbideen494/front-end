@@ -9,6 +9,12 @@ import Stories from "../stories/stories";
 import Storiesapp from "../stories/storiesdisplay";
 import NotificationComponent from "../notifications/notifications";
 import userPic from '../header/images/icons8-male-user-30 (1).png'
+import notification from '../header/images/icons8-notifications-78.png'
+import message from '../header/images/icons8-messages-48.png'
+import search from '../header/images/icons8-search-50.png'
+import order from '../header/images/icons8-logistics-32.png'
+import profile from '../header/images/icons8-male-user-24.png'
+import addshop from '../header/images/icons8-add-24.png'
 import { useMediaQuery } from 'react-responsive';
 const Mainpage = () => {
     const [auth, setauth] = useState(false);
@@ -92,30 +98,21 @@ const MobileView = () => {
           </div>
           <div className="dropmentmainbtns">
             <Link to="/profile">
-              <button>Profile</button>
+              <button><img src={profile}/></button>
             </Link>
             <Link to="/orders">
-              <button>Orders</button>
+              <button><img src={order}/></button>
             </Link>
             <Link to="/search">
-              <button>Search</button>
+              <button><img src={search}/></button>
             </Link>
             <button onClick={toggleNotifications}>
-  Notifications
+  <img src={notification}/>
 </button>
 <Link to="/Addshoppage1" style={{textDecoration: 'none'}}>
-<p className="add-shop-btn-home-header">Add Shop +</p>
+<button><img src={addshop}/></button>
 </Link>
-<Link to='/chats'>
-<button className="mboile-btn-display-home-headre">Messages</button>
-</Link>
-            {auth ? (
-              <button onClick={handleLogout}>Logout</button>
-            ) : (
-              <Link to="/login">
-                <button>Login</button>
-              </Link>
-            )}
+
           </div>
           <div className="add-shop-btn-main-page-dropment">
             </div>

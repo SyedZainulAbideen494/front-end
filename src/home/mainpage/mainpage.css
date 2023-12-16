@@ -25,7 +25,7 @@
     background-color: transparent;
     color: #06d6a0;
     border: 1px solid #333;
-    padding: 8px 12px;
+    padding: 8px 8px;
     border-radius: 9px;
   }
   
@@ -46,15 +46,16 @@
   }
   
   .dropmentmainbtns button {
-    margin: 3px; /* Add some spacing between buttons */
-    background-color: #333;
-    border: 1px solid #333;
+    margin: 0 8px; /* Adjust margin as needed */
+    background-color: transparent;
+    border: 1px solid transparent;
     cursor: pointer;
-    padding: 8px 12px;
     border-radius: 9px;
-    color: rgb(253, 253, 253);
+    color: rgb(255, 255, 255);
   }
-  
+  .dropmentmainbtns img {
+    width: 30px;
+  }
   .section1inmainpage {
     display: flex;
     flex-direction: column; /* Stack items vertically on small screens */
@@ -166,14 +167,15 @@
     }
     
     .dropmentmainbtns button {
-      margin-left: 10px;
-      background-color: #333;
-      border: 1px solid #333;
+      margin: 0 8px; /* Adjust margin as needed */
+      background-color: transparent;
+      border: 1px solid transparent;
       cursor: pointer;
-      padding: 10px 20px;
-      font-size: medium;
       border-radius: 9px;
       color: rgb(255, 255, 255);
+    }
+    .dropmentmainbtns img {
+      width: 30px;
     }
     
     .section1inmainpage {
@@ -268,13 +270,14 @@
     /* Buttons styles */
     .dropmentmainbtns button {
       margin: 0 8px; /* Adjust margin as needed */
-      background-color: #333;
-      border: #333;
+      background-color: transparent;
+      border: 1px solid transparent;
       cursor: pointer;
       border-radius: 9px;
-      padding: 10px 20px;
-      font-size: medium;
       color: rgb(255, 255, 255);
+    }
+    .dropmentmainbtns img {
+      width: 30px;
     }
     
     /* Style for specific element */
@@ -394,13 +397,14 @@
     /* Buttons styles */
     .dropmentmainbtns button {
       margin: 0 8px; /* Adjust margin as needed */
-      background-color: #333;
-      border: 1px solid #333;
+      background-color: transparent;
+      border: 1px solid transparent;
       cursor: pointer;
-      padding: 8px;
       border-radius: 9px;
-      font-size: medium;
       color: rgb(255, 255, 255);
+    }
+    .dropmentmainbtns img {
+      width: 30px;
     }
     
     /* Style for specific element */

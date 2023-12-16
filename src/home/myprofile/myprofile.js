@@ -1,8 +1,9 @@
 import React, { Fragment, useCallback, useState, useEffect } from "react";
 import dropment from '../header/images/drop2_logo.png';
 import './myprofile.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Template1app from "../template1/template1app";
+import message from '../header/images/icons8-messages-48.png'
 const Spinner = () => {
   return (
     <div className="spinner-container">
@@ -64,6 +65,18 @@ const MyProfile = () => {
 
     fetchFollowerCount();
   }, []);
+  const [auth, setauth] = useState(false);
+  const nav = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+  }, []);
 
   return (
     <div className="profile-container">
@@ -79,12 +92,22 @@ const MyProfile = () => {
         <Link to="/">
           <button className="btn-myporfile-main-div">Home</button>
         </Link>
+        <Link to='/chats'>
+<button className="mboile-btn-display-home-headre"><img src={message}/></button>
+</Link>
         <Link to="/edit/myprofile">
           <button className="btn-myporfile-main-div">Edit</button>
         </Link>
         <Link to="/Addshoppage1">
           <button className="btn-myporfile-main-div">Add Shop</button>
         </Link>
+        {auth ? (
+              <button onClick={handleLogout}>Logout</button>
+            ) : (
+              <Link to="/login">
+                <button>Login</button>
+              </Link>
+            )}
       </div>
 
       {/* Main Profile Section */}
