@@ -93,9 +93,6 @@ const MobileView = () => {
      <div className="maindivefordropmentmainpage">
       <div className="dropmentmainheader">
         <header>
-          <div className="dropmentlogomainpage">
-            <img src={dropment} alt="Dropment Logo" />
-          </div>
           <div className="dropmentmainbtns">
             <Link to="/profile">
               <button><img src={profile}/></button>
