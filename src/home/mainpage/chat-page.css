@@ -49,3 +49,33 @@
       cursor: pointer;
     }
   }
+
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .navbar-chat-header-nav-chat-page button {
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 9px;
+    color: white;
+    padding: 12px 15px;
+    margin-left: 8px;
+  }
+
+  .navbar-chat-header-nav-chat-page header {
+    box-shadow: 0 0 2px rgb(255, 255, 255); /* White box shadow */
+    padding: 10px; /* Add padding */
+    border-radius: 8px; /* Apply border radius */
+  }

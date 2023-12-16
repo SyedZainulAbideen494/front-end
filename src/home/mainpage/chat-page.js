@@ -2,6 +2,16 @@ import React, { useState, useEffect, useCallback, Fragment } from "react";
 import './chat-page.css';
 import { Link } from "react-router-dom";
 
+// Spinner component
+const Spinner = () => {
+  return (
+    <div className="spinner">
+      {/* Use your preferred loading animation here */}
+      Loading...
+    </div>
+  );
+};
+
 function ChatPage() {
   const [tokenId, setTokenId] = useState([]);
   const [user1Id, setUser1Id] = useState([]);
@@ -40,13 +50,24 @@ function ChatPage() {
 
   return (
     <Fragment>
+      {/* Navbar */}
+      <nav className="navbar-chat-header-nav-chat-page">
+        <header>
+        <Link to="/">
+          <button>Home</button>
+          </Link>
+        <Link to="/profile"><button>profile</button>
+        </Link>
+        </header>
+      </nav>
+
       <section>
         {!loading && <Orderslist order={order} />}
-        {loading && <p>Loading..</p>}
+        {loading && <Spinner />} {/* Show the spinner when loading is true */}
       </section>
     </Fragment>
   );
-};
+}
 
 const Orderslist = (props) => {
   return (
@@ -55,6 +76,7 @@ const Orderslist = (props) => {
         <ul>
           {props.order.map((itemdata) => (
               <Orderproduct
+                key={itemdata.chat_id}
                 chat_id={itemdata.chat_id}
                 user1={itemdata.user1}
                 user2={itemdata.user2}
@@ -70,12 +92,8 @@ const Orderslist = (props) => {
 
 const Orderproduct = (props) => {
   const { chat_id, user1, user2, first_name1, first_name2 } = props;
-  const [tokenId, setTokenId] = useState([]);
   const [user1Id, setUser1Id] = useState([]);
   const [user2Id, setUser2Id] = useState([]);
-  const [chatData, setChatData] = useState([]);
-  const [chatData2, setChatData2] = useState([]);
-  const [order, setorder] = useState([]);
   const [loading, setloading] = useState(false);
 
   const fetchusershandler1 = useCallback(async () => {
@@ -124,42 +142,33 @@ const Orderproduct = (props) => {
 
   return (
     <Fragment>
-      <div className="chat-messgae-page-header">
-        <header>
-          <Link to='/profile'>
-          <button>Profile</button>
-          </Link>
-          <Link to='/home'>
-            <button>Home</button>
-          </Link>
-        </header>
-      </div>
-    <Link to={`/chat/${chat_id}/${user1}/${user2}`} style={{textDecoration: 'none', color: 'black'}}>
-      <div className="mobile-main">
-        <div className="user-profiles-mobile">
-          {loading ? (
-            <div className="placeholder-image-mobile" />
-          ) : (
-            <Fragment>
-              <img
-                src={user1Id[0]?.profilepic}
-                alt={`${first_name1}'s Profile`}
-                style={{width: '50px', height: '50px', borderRadius: '50%', marginLeft: '20px'}}
-              />
-              <img
-                src={user2Id[0]?.profilepic}
-                alt={`${first_name2}'s Profile`}
-                style={{width: '50px', height: '50px', borderRadius: '50%', marginLeft: '20px'}}
-              />
-            </Fragment>
-          )}
+      <Link to={`/chat/${chat_id}/${user1}/${user2}`} style={{textDecoration: 'none', color: 'black'}}>
+        <div className="mobile-main">
+          <div className="user-profiles-mobile">
+            {loading ? (
+              <div className="placeholder-image-mobile" />
+            ) : (
+              <Fragment>
+                <img
+                  src={user1Id[0]?.profilepic}
+                  alt={`${first_name1}'s Profile`}
+                  style={{width: '50px', height: '50px', borderRadius: '50%', marginLeft: '20px'}}
+                />
+                <img
+                  src={user2Id[0]?.profilepic}
+                  alt={`${first_name2}'s Profile`}
+                  style={{width: '50px', height: '50px', borderRadius: '50%', marginLeft: '20px'}}
+                />
+              </Fragment>
+            )}
+          </div>
+          <div className="chat-details-mobile">
+            <p className="mobile-user-names">{first_name1} and {first_name2}</p>
+          </div>
         </div>
-        <div className="chat-details-mobile">
-          <p className="mobile-user-names">{first_name1} and {first_name2}</p>
-        </div>
-      </div>
-    </Link>
-  </Fragment>
-);
+      </Link>
+    </Fragment>
+  );
 };
+
 export default ChatPage;
