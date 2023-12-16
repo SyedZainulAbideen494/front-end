@@ -349,6 +349,9 @@ const CustomShopPreview = () => {
     <EditMenu />
     <section className="parts-custom-shop-main">
       <Section1 />
+      <Link to={`/build/${params.build}/step1/${params.shop_id}/${params.build}`}>
+      <button>Edit</button>
+      </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section2 />

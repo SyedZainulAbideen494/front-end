@@ -1318,6 +1318,11 @@ const CustomShop = () => {
                       <button>Add Products +</button>
                       </Link>
                     </span>
+                    <span className="btnwebstore">
+                      <Link to={`/build/${'edit'}/preview/${params.shop_id}/`}>
+                      <button>Edit</button>
+                      </Link>
+                    </span>
                   </div>
                 </div>
               </header>

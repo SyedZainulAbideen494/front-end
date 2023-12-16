@@ -122,8 +122,10 @@ const Section4BuildEditSec5 = () => {
     };
 
     const NextStep = () => {
-      if (params.build === "6") {
+      if (params.build === '6') {
         window.location.href = `/build/${params.build}/footer/${params.shop_id}/${params.build}`;
+      }if  (params.build === 'edit') {
+        window.location.href = `/build/${params.build}/preview/${params.shop_id}/`;
       } else {
         window.location.href = `/build/${params.build}/step6/${params.shop_id}/${params.build}`;
       }

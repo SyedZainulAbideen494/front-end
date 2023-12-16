@@ -120,11 +120,13 @@ const Section10BuildEditSec6 = () => {
     const handleFontColorChange6 = (event) => {
       setfontColor6(event.target.value);
     };
-
     const NextStep = () => {
+      if (params.build === 'edit') {
+        window.location.href = `/build/${params.build}/preview/${params.shop_id}/`;
+      }else {
         window.location.href = `/build/${params.build}/footer/${params.shop_id}/${params.build}`;
     };
-
+  }
     const addColorsHandler = () => {
       Axios.post(
         "https://apifordropment.online/color/selection/section/6",
