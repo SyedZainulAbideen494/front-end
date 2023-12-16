@@ -223,43 +223,98 @@ const Step6build =() => {
   
     return (
       <Fragment>
-        <div className="main-div-builder">
-        <div className="step1buildheader">
-          <header>
-            <h1>Select Sections</h1>
-            <Link to='/custom/shop/build/page1'>
-              <button>Back</button>
-            </Link>
-          </header>
-          <hr />
-        </div>
-        <div className="allHeaders">
+      <div className="main-div-builder">
+      <div className="step1buildheader">
+        <header>
+          <h1>Select Sections</h1>
+          <Link to='/custom/shop/build/page1'>
+            <button>Back</button>
+          </Link>
+        </header>
+        <hr />
+      </div>
+      <div className="allHeaders">
 
-        <Section2Buildpreview />
-        <Btn2/>
-        <Section3Buildpreview/>
-        <Btn3/>
-        <Section4Buildpreview/>
-        <Btn4/>
-        <Section5Buildpreview/>
-        <Btn5/>
-        <Section6Buildpreview/>
-        <Btn6/>
-        <Section7Buildpreview/>
-        <Btn7/>
-        <Section8Buildpreview/>
-        <Btn8/>
-        <Section9Buildpreview/>
-        <Btn9/>
-        <Section10Buildpreview/>
-        <Btn10/>
-        <Section11Buildpreview/>
-        <Btn11/>
-        <Section12Buildpreview/>
-        <Btn12/>
-        </div>
-        </div>
-      </Fragment>
+      <Section2Buildpreview />
+      <button
+      onClick={() => addShopHandler(2)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section3Buildpreview/>
+      <button
+      onClick={() => addShopHandler(3)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section4Buildpreview/>
+      <button
+      onClick={() => addShopHandler(4)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section5Buildpreview/>
+      <button
+      onClick={() => addShopHandler(5)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section6Buildpreview/>
+      <button
+      onClick={() => addShopHandler(6)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section7Buildpreview/>
+      <button
+      onClick={() => addShopHandler(7)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section8Buildpreview/>
+      <button
+      onClick={() => addShopHandler(8)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section9Buildpreview/>
+      <button
+      onClick={() => addShopHandler(9)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section10Buildpreview/>
+      <button
+      onClick={() => addShopHandler(10)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section11Buildpreview/>
+      <button
+      onClick={() => addShopHandler(11)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      <Section12Buildpreview/>
+      <button
+      onClick={() => addShopHandler(12)}
+      className="select-nav-bar-build-shop"
+    >
+      Select
+    </button>
+      </div>
+      </div>
+    </Fragment>
     );
 }  
 
