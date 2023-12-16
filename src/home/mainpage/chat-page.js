@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import './chat-page.css';
 import { Link } from "react-router-dom";
-
+const LeftArrow = () => {
+  const arrowStyle = {
+    color: 'white', // Change color as needed
+    fontSize: '24px', // Change size as needed
+    transform: 'rotate(180deg)', // Rotates the arrow to point left
+    display: 'inline-block',
+  };
+}
 // Spinner component
 const Spinner = () => {
   return (
@@ -47,14 +54,15 @@ function ChatPage() {
   useEffect(() => {
     fetchusershandler();
   }, []);
-
   return (
     <Fragment>
       {/* Navbar */}
       <nav className="navbar-chat-header-nav-chat-page">
         <header>
         <Link to="/">
-          <button>Home</button>
+          <button>
+        <div>&larr;</div>
+        </button>
           </Link>
         <Link to="/profile"><button>profile</button>
         </Link>
