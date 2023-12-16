@@ -59,6 +59,9 @@ const MyProfile = () => {
 <div className="profile-container">
   {/* Header Section */}
   <div className="header-edit-profile">
+  <Link to="/">
+      <button className="btn-myporfile-main-div">Home</button>
+    </Link>
     <Link to="/edit/myprofile">
       <button className="btn-myporfile-main-div">Edit</button>
     </Link>
