@@ -1173,6 +1173,10 @@ const CustomShop = () => {
     const showratingform = () => {
       setRatingform(true)
     }
+
+    const togglesharebtn = () => [
+      setshare(!share)
+    ]
   
     const hideratingform = () => {
       setRatingform(false)
@@ -1391,7 +1395,7 @@ const CustomShop = () => {
                       </Link>
                     </span>
                     <span className="btnwebstore">
-                      <button onClick={showshare}>Share</button>
+                      <button onClick={togglesharebtn}>Share</button>
                       <div className="sales">
               {share && <CopyURL onClick={hidesaleshandler} />}
             </div>
