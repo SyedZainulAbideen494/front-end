@@ -830,6 +830,11 @@ const Editbtndisplay1 = () => {
   const [showsales, setshowsales] = useState(false);
   const [showimg, setshowimg] = useState(false);
   const [ratingform, setRatingform] = useState(false)
+  const [share, setshare] = useState(false)
+
+  const togglesharebtn = () => {
+    setshare(!share)
+  }
 
   const showratingform = () => {
     setRatingform(true)
@@ -957,69 +962,131 @@ const Editbtndisplay1 = () => {
       name2.length > 0 &&
       name[0].user_id === name2[0].user_id
     ) {
+      const CopyURL = () => {
+        const [copied, setCopied] = useState(false);
+        const currentUrl = window.location.href;
+      
+        const copyCurrentURL = () => {
+          navigator.clipboard.writeText(currentUrl)
+            .then(() => setCopied(true))
+            .catch((err) => console.error('Failed to copy: ', err));
+      
+          setTimeout(() => {
+            setCopied(false);
+          }, 2000);
+        };
+      
+        return (
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            width: '100%',
+            maxWidth: '600px',
+            backgroundColor: '#333',
+            padding: '10px',
+            borderRadius: '8px',
+            margin: '0 auto'
+          }}>
+            <input
+              type="text"
+              value={currentUrl}
+              readOnly
+              style={{
+                flex: '1',
+                padding: '8px',
+                border: 'none',
+                backgroundColor: '#444',
+                color: '#fff',
+                borderRadius: '4px'
+              }}
+            />
+            <button
+              onClick={copyCurrentURL}
+              className={`copy-button ${copied ? 'copied' : ''}`}
+              style={{
+                padding: '8px 12px',
+                border: 'none',
+                borderRadius: '4px',
+                marginLeft: '10px',
+                cursor: 'pointer',
+                backgroundColor: '#666',
+                color: '#fff',
+                transition: 'background-color 0.3s ease'
+              }}
+            >
+              {copied ? 'Copied!' : 'Copy'}
+            </button>
+          </div>
+        );
+      };
       return (
         <Fragment>
-        <div className="profile-header-owner">
-          <header>
-            <div className="shop_owner_view">
-              <h2>Control panel</h2>
-              <div className="shopownerbtn">
-                <span className="edit_store_btn"></span>
-                <span className="btnwebstore">
-                  <Link to="/">
-                    <button>Home</button>
-                  </Link>
-                </span>
-                <span className="btnwebstore-addproducts">
-                  <Link to={`/add/product/${params.shop_id}`}>
-                  <button>Add Products +</button>
-                  </Link>
-                </span>
-                <span className="btnwebstore">
-                  <button onClick={showimghandler}>Add images</button>
-                </span>
-                <span className="btnwebstore">
-                  <Link to={`/admin/${params.shop_id}`}>
-                  <button>Admin view</button>
-                  </Link>
-                </span>
+          <div className="profile-header-owner">
+            <header>
+              <div className="shop_owner_view">
+                <h2>Control panel</h2>
+                <div className="shopownerbtn">
+                  <span className="edit_store_btn"></span>
+                  <span className="btnwebstore">
+                    <Link to="/">
+                      <button>Home</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <Link to={`/admin/${params.shop_id}`}>
+                    <button>Admin Menu</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore-addproducts">
+                    <Link to={`/add/product/${params.shop_id}`}>
+                    <button>Add Products +</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <Link to={`/build/${'edit'}/preview/${params.shop_id}/`}>
+                    <button>Edit</button>
+                    </Link>
+                  </span>
+                  <span className="btnwebstore">
+                    <button onClick={togglesharebtn}>Share</button>
+                    <div className="sales">
+            {share && <CopyURL onClick={hidesaleshandler} />}
+          </div>
+                  </span>
+                </div>
               </div>
-            </div>
-          </header>
-        </div>
-        <div className="sales">
-          {showsales && <Sales onClick={hidesaleshandler} />}
-        </div>
-        <div className="addshopform">
-          {showform && <Addproductstodatabase onClick={hideformhandler} />}
-        </div>
-        <div className="addshopform">
-          {showimg && <Addimgsectionwithimgs onClick={hideimghandler} />}
-        </div>
+            </header>
+          </div>
         
-      </Fragment>
+          <div className="addshopform">
+            {showform && <Addproductstodatabase onClick={hideformhandler} />}
+          </div>
+          
+        </Fragment>
       );
     } else {
       return;
     }
   };
-  const Addimgsectionwithimgs= (props) => {
-    return<Fragment>
-      <div className='closebtnimgsec'>
-      <button onClick={props.onClick}>Close</button>
-      </div>
-      <AddLogo/>
-  <Addimage1/>
-            <Addimage2/>
-            <Addimage3/>
-            <Addimage4/>
-            <Addimage5/>
-            <Addimage6/>
-            <Addimage7/>
-    </Fragment>
-  }
+
   return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
+
+const Addimgsectionwithimgs= (props) => {
+  return<Fragment>
+    <div className='closebtnimgsec'>
+    <button onClick={props.onClick}>Close</button>
+    </div>
+    <AddLogo/>
+<Addimage1/>
+          <Addimage2/>
+          <Addimage3/>
+          <Addimage4/>
+          <Addimage5/>
+          <Addimage6/>
+          <Addimage7/>
+  </Fragment>
+}
 
 const AddLogo = (props) => {
   const [image, setImage] = useState(null);
