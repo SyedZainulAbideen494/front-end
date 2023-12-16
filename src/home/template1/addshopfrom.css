@@ -3,6 +3,7 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgb(255, 255, 255);
+  background-color: #6E49F6;
 }
 
 /* Header layout */
@@ -43,21 +44,24 @@
 
 /* Hover effect for buttons */
 .shopownerbtn button:hover {
-  background-color: #55a630;
-  border: 1px solid #55a630;
+  background-color: white;
+  border: 1px solid white;
+  color: black;
 }
 
 /* Specific button style for 'Add Products +' */
 .btnwebstore-addproducts button {
-  background-color: #55a630;
-  border: 1px solid #55a630;
+  background-color: transparent;
+  border: 2px solid #55a630;
   transition: background-color 0.3s ease;
 }
 
 .btnwebstore-addproducts button:hover {
-  background-color: #3f7f00;
-  border: 1px solid #3f7f00;
+  background-color: #55a630;
+  border:2px solid #55a630;
+  color: white;
 }
+
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
