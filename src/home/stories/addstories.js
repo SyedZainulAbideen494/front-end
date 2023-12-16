@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import axios from 'axios';
 import './StoryUpload.css';
+import { Link } from 'react-router-dom';
 
 const AddStories = () => {
   const [content, setContent] = useState('');
@@ -30,6 +31,13 @@ const AddStories = () => {
 
   return (
     <Fragment>
+      <div className='add-blindfeed-header'>
+        <header>
+          <Link to='/home'>
+          <button>Back</button>
+          </Link>
+        </header>
+      </div>
       <div className="story-upload-container">
         <h2>Upload a BlinkShare</h2>
         <form onSubmit={handleSubmit}>

@@ -1169,14 +1169,14 @@ const Template2websitepreview = (props) => {
 <footer>
           <div className="footer-1-">
           <div className="footer-1-section-1">
-            <h4>Our company</h4>
-            <p>Company name</p>
-            <p>Slogan</p>
+            <h4 style={{color: 'white'}}>Our company</h4>
+            <p style={{color: 'white'}}>Company name</p>
+            <p style={{color: 'white'}}>Slogan</p>
           </div>
           <div className="footer-1-section-2">
-          <h4>Sections</h4>
-            <p>About us</p>
-            <p onClick={scrollToItems}>Products</p>
+          <h4 style={{color: 'white'}}>Sections</h4>
+            <p style={{color: 'white'}}>About us</p>
+            <p style={{color: 'white'}} onClick={scrollToItems}>Products</p>
           </div>
           <div className="footer-1-section-3">
             <h4>Follow us</h4>
@@ -1185,9 +1185,9 @@ const Template2websitepreview = (props) => {
             <img src={x}/>
           </div>
           <div className="footer-1-section-4">
-            <h4>Contact us</h4>
-            <p>Email: you@gmail.com</p>
-            <p>Phone: (123) 456-7890</p>
+            <h4 style={{color: 'white'}}>Contact us</h4>
+            <p style={{color: 'white'}}>Email: you@gmail.com</p>
+            <p style={{color: 'white'}}>Phone: (123) 456-7890</p>
           </div>
           </div>
           <div style={{textAlign: 'center'}}><p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>

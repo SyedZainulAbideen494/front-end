@@ -6,7 +6,12 @@
   max-width: 400px;
   margin: 0 auto;
 }
-
+.add-blindfeed-header button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #333;
+  cursor: pointer;
+}
 .story-upload-container h2 {
   font-size: 24px;
   color: #333;

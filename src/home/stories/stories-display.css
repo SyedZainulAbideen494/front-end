@@ -39,3 +39,11 @@
   .loading-spinner {
     /* Add your loading spinner styles here */
   }
+  .add-blindfeed-header button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #333;
+    cursor: pointer;
+    padding: 12px 17px;
+    border-radius: 9px;
+  }
