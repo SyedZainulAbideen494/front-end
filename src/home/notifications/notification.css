@@ -5,8 +5,8 @@
   width: 300px; /* Adjust as needed */
   max-height: 400px; /* Set your maximum height */
   overflow-y: auto; /* Enable vertical scrollbar when content exceeds max height */
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #181B22;
+  border: 1px solid #181B22;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 999;
@@ -54,7 +54,7 @@
 
 .notification-message {
   margin-bottom: 5px;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .notification-time {
