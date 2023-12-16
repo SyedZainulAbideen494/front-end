@@ -11,6 +11,8 @@ import Template5userapp from './template5/template5app';
 import Template6userapp from './template5 copy/template6app';
 import Template7userapp from './template7/template5app';
 import Template8userapp from './template8/template8app';
+import { Spinner } from 'react-bootstrap';
+import Spinnerui from '../UI/spinner';
 
 function UserProfile() {
   const [isFollowing, setIsFollowing] = useState(false);
@@ -192,7 +194,7 @@ function UserProfile() {
     <button className='homebtnprofilesusrs'>Home</button>
     </Link>
     {isFollowing === null ? (
-      'Loading...'
+      <Spinnerui/>
     ) : isFollowing ? (
       <button onClick={toggleunFollow} className='unfollowbtn'>unlink</button>
     ) : (

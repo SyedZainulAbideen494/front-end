@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './user.css'; // Import the CSS file
 import { Link, useParams } from 'react-router-dom'; // Import Link from React Router
 import { Axios } from 'axios';
+import { Spinner } from 'react-bootstrap';
+import Spinnerui from '../UI/spinner';
 
 const Userdisplay = (props) => {
   const [userInfo, setUserInfo] = useState([]);
@@ -85,7 +87,7 @@ const Userdisplay = (props) => {
   return (
     <div className="user-card">
     {loading ? (
-      'Loading...'
+      <Spinnerui/>
     ) : (
       <div className="user-post">
         <div className="user-post-header">

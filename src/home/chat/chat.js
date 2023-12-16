@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import './chat.css';
 import { Link } from "react-router-dom";
+import Spinnerui from "../UI/spinner";
 
 function ChatMessageapp() {
   const [tokenId, setTokenId] = useState([]);
@@ -42,7 +43,7 @@ function ChatMessageapp() {
     <Fragment>
       <section>
         {!loading && <Orderslist order={order} />}
-        {loading && <p>Loading..</p>}
+        {loading && <Spinnerui/>}
       </section>
     </Fragment>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import './chat-page.css';
 import { Link } from "react-router-dom";
+import Spinnerui from "../UI/spinner";
   const arrowStyle = {
     color: 'white', // Change color as needed
     fontSize: '24px', // Change size as needed
@@ -66,7 +67,7 @@ function ChatPage() {
 
       <section>
         {!loading && <Orderslist order={order} />}
-        {loading && <Spinner />} {/* Show the spinner when loading is true */}
+        {loading && <Spinnerui />} {/* Show the spinner when loading is true */}
       </section>
     </Fragment>
   );

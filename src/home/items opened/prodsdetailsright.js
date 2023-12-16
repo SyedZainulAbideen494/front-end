@@ -7,6 +7,7 @@ import Linkdin from '../../home/header/images/icons8-linkedin-logo-50.png'
 import instagram from '../header/images/icons8-facebook-logo-50.png'
 import twitter from '../../home/header/images/icons8-x-50.png'
 import pinterst from '../header/images/icons8-pinterest-logo-50 (2).png'
+import Spinnerui from "../UI/spinner";
 
 const Editbtndisplay = () => {
   const nav = useNavigate();
@@ -1057,7 +1058,7 @@ function Prodsright() {
     <div className="product-details">
       <div className="product-images">
         {loading ? (
-          <div className="loading-image">Loading image...</div>
+          <div className="loading-image"><Spinnerui/></div>
         ) : (
           <>
             <section className="product-image-section">

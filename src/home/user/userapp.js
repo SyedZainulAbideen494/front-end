@@ -6,6 +6,8 @@ import React, {
     axios,
   } from "react";
 import Userslist from "./userlist";
+import { Spinner } from "react-bootstrap";
+import Spinnerui from "../UI/spinner";
 
   
   function Users() {
@@ -42,7 +44,7 @@ import Userslist from "./userlist";
       <Fragment>
         <section>
           {!loading && <Userslist shops={items} />}
-          {loading && <p>Loading..</p>}
+          {loading && <Spinnerui/>}
         </section>
       </Fragment>
     );

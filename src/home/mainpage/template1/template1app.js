@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import Template3list from "./template1list";
 import Template1mainlist from "./template1list";
+import Spinnerui from "../../UI/spinner";
 
 function AllTemplate1app() {
   const [items, setitems] = useState([]);
@@ -42,7 +43,7 @@ function AllTemplate1app() {
     <Fragment>
       <section>
         {!loading && <Template1mainlist shops={items} />}
-        {loading && <p>Loading..</p>}
+        {loading && <Spinnerui/>}
       </section>
     </Fragment>
   );
