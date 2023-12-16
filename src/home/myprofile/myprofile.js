@@ -82,18 +82,11 @@ const MyProfile = () => {
     <div className="profile-container">
       {/* Header Section */}
       <div className="header-edit-profile">
-      {isAdmin && (
-        <Link to='/dropment/admin/for/owner'>
-              <button  className="btn-myporfile-main-div">
-                Admin
-              </button>
-         </Link>
-            )}
-        <Link to="/">
+        <Link to="/home">
           <button className="btn-myporfile-main-div">Home</button>
         </Link>
         <Link to='/chats'>
-<button className="mboile-btn-display-home-headre"><img src={message}/></button>
+<button className="mboile-btn-display-home-headre" style={{ backgroundColor: 'transparent', border: 'none'}}><img src={message} style={{width: '30px', backgroundColor: 'transparent', border: 'none'}}/></button>
 </Link>
         <Link to="/edit/myprofile">
           <button className="btn-myporfile-main-div">Edit</button>
@@ -102,10 +95,10 @@ const MyProfile = () => {
           <button className="btn-myporfile-main-div">Add Shop</button>
         </Link>
         {auth ? (
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={handleLogout} className="logout-btn">Logout</button>
             ) : (
               <Link to="/login">
-                <button>Login</button>
+                <button className="login-btn-profilesec">Login</button>
               </Link>
             )}
       </div>
