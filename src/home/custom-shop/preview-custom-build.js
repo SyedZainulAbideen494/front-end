@@ -355,21 +355,39 @@ const CustomShopPreview = () => {
     </section>
     <section className="parts-custom-shop-main">
       <Section2 />
+      <Link to={`/build/${params.build}/step2/${params.shop_id}/${params.build}`}>
+      <button>Edit</button>
+      </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section3 />
+      <Link to={`/build/${params.build}/step3/${params.shop_id}/${params.build}`}>
+      <button>Edit</button>
+      </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section4 />
+      <Link to={`/build/${params.build}/step4/${params.shop_id}/${params.build}`}>
+      <button>Edit</button>
+      </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section5 />
+      <Link to={`/build/${params.build}/step5/${params.shop_id}/${params.build}`}>
+      <button>Edit</button>
+      </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section6 />
+      <Link to={`/build/${params.build}/step6/${params.shop_id}/${params.build}`}>
+      <button>Edit</button>
+      </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section13 />
+      <Link to={`/build/${params.build}/footer/${params.shop_id}/${params.build}`}>
+      <button>Edit</button>
+      </Link>
     </section>
   </div>
 </>
