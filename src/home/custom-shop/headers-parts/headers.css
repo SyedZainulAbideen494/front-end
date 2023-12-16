@@ -612,13 +612,6 @@
   margin-right: 30px;
   font-size: medium;
 }
-.hero-section2-header5 button:hover {
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
-  transition: 0.3s;
-  border-radius: 25px;
-  background-color: transparent;
-}
 
 }
 @media (min-width: 769px) and (max-width: 1024px) {
