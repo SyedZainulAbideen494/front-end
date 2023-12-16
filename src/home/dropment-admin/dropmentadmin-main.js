@@ -1,37 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
 const OrderCount = () => {
-  const [uniqueOrderCount, setUniqueOrderCount] = useState(null);
+    const [orderCount, setOrderCount] = useState(0);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://apifordropment.online/orderCount/admin/menu'); // Replace with your backend URL
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setUniqueOrderCount(data.totalorders);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        // Handle errors (e.g., show an error message)
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  return (
-    <div>
-      <h2>Unique Orders Count</h2>
-      {uniqueOrderCount !== null ? (
-        <p>Number of unique orders: {uniqueOrderCount}</p>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
-};
+    useEffect(() => {
+      fetch('https://apifordropment.online/orders/count') // Assumes your backend is running on the same host as the frontend
+        .then((response) => response.json())
+        .then((data) => {
+          setOrderCount(data.orderCount);
+        })
+        .catch((error) => {
+          console.error('Error fetching order count: ', error);
+        });
+    }, []);
+  
+    return (
+      <div>
+        <h1>Number of Orders: {orderCount}</h1>
+      </div>
+    );
+  };
 
 const DropmentAdminmain = () => {
   return (

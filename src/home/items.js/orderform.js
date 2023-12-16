@@ -58,8 +58,6 @@ const Orderform = (props) => {
     }
   }, [params.id]);
 
-  console.log(items[0]?.id)
-
   const token = localStorage.getItem("token");
 
   const nameHandler = (event) => {
@@ -127,16 +125,9 @@ const Orderform = (props) => {
     fetchUsers2Handler();
   }, []);
 
-  console.log(items)
 
   const orderhandler = async () => {
     try {
-      console.log("Order Handler Called");
-      console.log("user:", user);
-      console.log("phoneno:", phoneno);
-      console.log("name2:", name2);
-      console.log("items:", items);
-      console.log("shop_id:", shop_id);
   
       const currentDate = new Date(); // Get current date and time
   
@@ -153,37 +144,39 @@ const Orderform = (props) => {
       
       // Combine date and time in ISO format
       const dateTimeISO = `${formattedDate} ${formattedTime}`;
-  
+
+
       const response = await Axios.post(
         "https://apifordropment.online/place/order",
         {
           name: user,
           Phone: phoneno,
           Email: name2[0]?.email,
-        streetadrs: streetadrs,
-        city: city,
-        state: state,
-        zipcode: zipcode,
-        country: country,
-        id: params.id,
-        product: params.title,
-        shop_id: params.shop_id,
-        occupation: name2[0]?.occupation,
-        age: name2[0]?.age,
-        sender_id: name2[0]?.user_id,
-        orderDateTime: dateTimeISO,
-      },
-      {
-        headers: {
-          Authorization: token,
+          streetadrs: streetadrs,
+          city: city,
+          state: state,
+          zipcode: zipcode,
+          country: country,
+          id: params.id,
+          product: items[0]?.title, // Use items instead of params
+          shop_id: items[0]?.shop_id, // Use items instead of params
+          occupation: name2[0]?.occupation,
+          age: name2[0]?.age,
+          sender_id: name2[0]?.user_id,
+          orderDateTime: formattedDate, // Use formatted date
         },
-      }
-    );
-  } catch (error) {
-    console.error("Error placing order or opening payment link:", error);
-    // Handle error scenarios
-  }
-};
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      console.log(response.data); // Log response for debugging
+    } catch (error) {
+      console.error("Error placing order or opening payment link:", error);
+      // Handle error scenarios
+    }
+  };
 
   const openPaymentLink = () => {
     const paymentLink = items?.[0]?.payment;
