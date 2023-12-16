@@ -1,75 +1,66 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import './chat-page.css';
 import { Link } from "react-router-dom";
-import Spinner from 'react-bootstrap/Spinner';
 
 function ChatPage() {
-  const [order, setOrder] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [tokenId, setTokenId] = useState([]);
+  const [user1Id, setUser1Id] = useState([]);
+  const [user2Id, setUser2Id] = useState([]);
+  const [chatData, setChatData] = useState([]);
+  const [chatData2, setChatData2] = useState([]);
+  const [order, setorder] = useState([]);
+  const [loading, setloading] = useState(false);
 
-  const fetchUsersHandler = useCallback(async () => {
-    setLoading(true);
+  const fetchusershandler = useCallback(async () => {
+    setloading(true);
     const token = localStorage.getItem("token");
-    try {
-      const response = await fetch("https://apifordropment.online/chat/users/display", {
-        headers: {
-          Authorization: token,
-        },
-      });
-      const data = await response.json();
-      const transformedUser = data.chat.map((userData) => {
-        return {
-          chat_id: userData.chat_id,
-          user1: userData.user1,
-          user2: userData.user2,
-          first_name1: userData.first_name1,
-          first_name2: userData.first_name2
-        };
-      });
-      setOrder(transformedUser);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-    }
+    setloading(true);
+    const response = await fetch("https://apifordropment.online/chat/users/display", {
+      headers: {
+        Authorization: token,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.chat.map((userdata) => {
+      return {
+        chat_id: userdata.chat_id,
+        user1: userdata.user1,
+        user2: userdata.user2,
+        first_name1: userdata.first_name1,
+        first_name2: userdata.first_name2
+      };
+    });
+    setorder(transformeduser);
+    setloading(false);
   }, []);
 
   useEffect(() => {
-    fetchUsersHandler();
+    fetchusershandler();
   }, []);
 
   return (
     <Fragment>
-      <nav className="navbar">
-        <Link to="/home" className="nav-link">Home</Link>
-        <Link to="/profile" className="nav-link">Profile</Link>
-        {/* Add other navigation links as needed */}
-      </nav>
-
       <section>
-        <div className="progress-bar">
-          {loading && <Spinner animation="border" role="status" />}
-        </div>
-        <OrdersList order={order} />
+        {!loading && <Orderslist order={order} />}
+        {loading && <p>Loading..</p>}
       </section>
     </Fragment>
   );
-}
+};
 
-const OrdersList = (props) => {
+const Orderslist = (props) => {
   return (
     <Fragment>
       <div className="chatinmainpagelist">
         <ul>
-          {props.order.map((itemData) => (
-            <OrderProduct
-              key={itemData.chat_id}
-              chat_id={itemData.chat_id}
-              user1={itemData.user1}
-              user2={itemData.user2}
-              first_name1={itemData.first_name1}
-              first_name2={itemData.first_name2}
-            />
+          {props.order.map((itemdata) => (
+              <Orderproduct
+                chat_id={itemdata.chat_id}
+                user1={itemdata.user1}
+                user2={itemdata.user2}
+                first_name1={itemdata.first_name1}
+                first_name2={itemdata.first_name2}
+              />
           ))}
         </ul>
       </div>
@@ -77,62 +68,62 @@ const OrdersList = (props) => {
   );
 };
 
-const OrderProduct = (props) => {
+const Orderproduct = (props) => {
   const { chat_id, user1, user2, first_name1, first_name2 } = props;
+  const [tokenId, setTokenId] = useState([]);
   const [user1Id, setUser1Id] = useState([]);
   const [user2Id, setUser2Id] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [chatData, setChatData] = useState([]);
+  const [chatData2, setChatData2] = useState([]);
+  const [order, setorder] = useState([]);
+  const [loading, setloading] = useState(false);
 
-  const fetchUsersHandler1 = useCallback(async () => {
-    try {
-      const response = await fetch("https://apifordropment.online/user/chat/details/1", {
-        headers: {
-          Authorization: user1,
-        },
-      });
-      const data = await response.json();
-      const transformedUser = data.user.map((userData) => {
-        return {
-          first_name: userData.first_name,
-          last_name: userData.last_name,
-          profilepic: `https://apifordropment.online/images/${userData.profilepic}`,
-        };
-      });
-      setUser1Id(transformedUser);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [user1]);
-
-  const fetchUsersHandler2 = useCallback(async () => {
-    try {
-      const response = await fetch("https://apifordropment.online/user/chat/details/2", {
-        headers: {
-          Authorization: user2,
-        },
-      });
-      const data = await response.json();
-      const transformedUser = data.user.map((userData) => {
-        return {
-          first_name: userData.first_name,
-          last_name: userData.last_name,
-          profilepic: `https://apifordropment.online/images/${userData.profilepic}`,
-        };
-      });
-      setUser2Id(transformedUser);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [user2]);
-
+  const fetchusershandler1 = useCallback(async () => {
+    const token = localStorage.getItem("token");
+    const response = await fetch("https://apifordropment.online/user/chat/details/1", {
+      headers: {
+        Authorization: user1,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.user.map((userdata) => {
+      return {
+        first_name: userdata.first_name,
+        last_name: userdata.last_name,
+        profilepic: `https://apifordropment.online/images/${userdata.porfilepic}`,
+      };
+    });
+    setUser1Id(transformeduser);
+  }, []);
+  
   useEffect(() => {
-    setLoading(true);
-    fetchUsersHandler1();
-    fetchUsersHandler2();
-    setLoading(false);
-  }, [fetchUsersHandler1, fetchUsersHandler2]);
+    fetchusershandler1();
+  }, []);
+
+  const fetchusershandler2 = useCallback(async () => {
+    const token = localStorage.getItem("token");
+    const response = await fetch("https://apifordropment.online/user/chat/details/2", {
+      headers: {
+        Authorization: user2,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.user.map((userdata) => {
+      return {
+        first_name: userdata.first_name,
+        last_name: userdata.last_name,
+        profilepic: `https://apifordropment.online/images/${userdata.porfilepic}`,
+      };
+    });
+    setUser2Id(transformeduser);
+  }, []);
+  
+  useEffect(() => {
+    fetchusershandler2();
+  }, []);
 
   return (
+    <Fragment>
     <Link to={`/chat/${chat_id}/${user1}/${user2}`} style={{textDecoration: 'none', color: 'black'}}>
       <div className="mobile-main">
         <div className="user-profiles-mobile">
@@ -158,7 +149,7 @@ const OrderProduct = (props) => {
         </div>
       </div>
     </Link>
-  );
+  </Fragment>
+);
 };
-
 export default ChatPage;
