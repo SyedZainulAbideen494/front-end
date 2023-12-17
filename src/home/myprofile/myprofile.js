@@ -66,16 +66,19 @@ const MyProfile = () => {
 
     fetchFollowerCount();
   }, []);
-  const [auth, setauth] = useState(false);
+  const [auth, setAuth] = useState(false);
   const nav = useNavigate();
+
   const handleLogout = () => {
     localStorage.removeItem("token");
+    setAuth(false); // Update auth state after logout
   };
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      setauth(true);
+      setAuth(true);
     } else {
-      setauth(false);
+      setAuth(false);
     }
   }, []);
   const arrowStyle = {
@@ -100,12 +103,14 @@ const MyProfile = () => {
           <button className="btn-myporfile-main-div">Add Shop</button>
         </Link>
         {auth ? (
-              <button onClick={handleLogout} className="logout-btn">Logout</button>
-            ) : (
-              <Link to="/login">
-                <button className="login-btn-profilesec">Login</button>
-              </Link>
-            )}
+        <button onClick={handleLogout} className="logout-btn">
+          Logout
+        </button>
+      ) : (
+        <Link to="/login">
+          <button className="login-btn-profilesec">Login</button>
+        </Link>
+      )}
       </div>
 
       {/* Main Profile Section */}
