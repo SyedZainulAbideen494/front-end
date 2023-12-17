@@ -155,10 +155,7 @@ const Orderform = (props) => {
   };
   return (
     <div className="formorder">
-       <form onSubmit={(e) => {
-                e.preventDefault(); // Ensure form doesn't trigger default browser action
-                orderHandler(); // Call the function to handle shop data submission
-              }}>
+       <form onSubmit={orderHandler}>
         <h2>{items[0]?.title}</h2>
         <label>Name</label>
         <input
