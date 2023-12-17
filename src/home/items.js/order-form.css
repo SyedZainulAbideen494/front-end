@@ -1,0 +1,91 @@
+
+
+.fororder-header header {
+    display: inline-flex;
+}
+
+.formorder-btns {
+    margin-top: 18px;
+}
+
+.formorder-btns img {
+    width: 30px;
+}
+
+.formorder-btns button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 40px;
+}
+.item-details-orderform {
+    padding: 20px;
+    box-shadow: 0px 0px 4px rgb(255, 255, 255); /* Adjust shadow as needed */
+    max-width: 500px; /* Adjurgb(255, 255, 255)th as needed */
+    border-radius: 9px;
+    margin: 20px auto; /* Center the box horizontally */
+  }
+  
+  .product-img-orderform {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures the image doesn't affect the text flow */
+  }
+  
+  .item-details-orderform h2 {
+    /* Styles for the heading */
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-bottom: 10px; /* Adjust spacing */
+  }
+  
+  .item-details-orderform p {
+    /* Styles for the paragraph */
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  .product-img-orderform {
+    width: 150px;
+  }
+  /* Additional styling for the Pricing span if needed */
+.orderform-txt1head {
+    text-align: center;
+}
+.orderform-checkoutinfo {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgb(255, 255, 255);
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .orderform-checkoutinfo input[type="text"],
+  .orderform-checkoutinfoinput[type="tel"],
+  .orderform-checkoutinfo input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .orderform-checkoutinfo button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffb703;
+    border-radius: 5px;
+    background-color: #ffb703;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .orderform-checkoutinfo button:hover {
+    background-color: transparent;
+    border: 1px solid #ffb703;
+    color: white;
+    transition: 0.3s;
+  }

@@ -37,7 +37,6 @@ const Editbtndisplay = () => {
     setshowitem(false);
   };
   const [name, setname] = useState([]);
-  const [name2, setname2] = useState([]);
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
@@ -56,6 +55,7 @@ const Editbtndisplay = () => {
         const transformedUser = data.shops.map((userdata) => {
           return {
             user_id: userdata.user_id,
+            country: userdata.country
           };
         });
         setname(transformedUser);
@@ -88,7 +88,7 @@ const Editbtndisplay = () => {
             user_id: userdata.user_id,
           };
         });
-        setname2(transformedUser2);
+        setname(transformedUser2);
       } catch (error) {
         console.error(error);
       } finally {
@@ -102,8 +102,8 @@ const Editbtndisplay = () => {
   const EEditbtn = () => {
     if (
       name.length > 0 &&
-      name2.length > 0 &&
-      name[0].user_id === name2[0].user_id
+      name.length > 0 &&
+      name[0].user_id === name[0].user_id
     ) {
       return <button onClick={showedit}>Edit</button>;
     } else {
@@ -753,7 +753,27 @@ function Prodsright() {
         price: itemsdata.price,
         description: itemsdata.product_description,
         id: itemsdata.id,
-        shop_id: itemsdata.shop_id
+        shop_id: itemsdata.shop_id,
+        usd: itemsdata.usd,
+        EUR: itemsdata.EUR,
+        GBP: itemsdata.GBP,
+        JPY: itemsdata.JPY,
+        CAD: itemsdata.CAD,
+        AUD: itemsdata.AUD,
+        CHF: itemsdata.CHF,
+        CNY: itemsdata.CNY,
+        INR: itemsdata.INR,
+        BRL: itemsdata.BRL,
+        RUB: itemsdata.RUB,
+        KRW: itemsdata.KRW,
+        SGD: itemsdata.SGD,
+        NZD: itemsdata.NZD,
+        MXN: itemsdata.MXN,
+        HKD: itemsdata.HKD,
+        TRY: itemsdata.TRY,
+        ZAR: itemsdata.ZAR,
+        SEK: itemsdata.SEK,
+        NOK: itemsdata.NOK,
       }));
       setItems(transformedItems);
       setLoading(false);
@@ -1034,6 +1054,86 @@ function Prodsright() {
       </div>
     );
   };
+  const [name, setName] = useState([]);
+  const Pricing = () => {
+    if (name[0]?.country === "India") {
+      return <h3>{items[0]?.INR} ₹</h3>;
+    } else if (name[0]?.country === "europe") {
+      return <h3>{items[0]?.EUR} €</h3>;
+    } else if (name[0]?.country === "united kingdom") {
+      return <h3>{items[0]?.GBP} £</h3>;
+    } else if (name[0]?.country === "japan") {
+      return <h3>{items[0]?.JPY} ¥</h3>;
+    } else if (name[0]?.country === "canada") {
+      return <h3>{items[0]?.CAD} CAD</h3>;
+    } else if (name[0]?.country === "australia") {
+      return <h3>{items[0]?.AUD} AUD</h3>;
+    } else if (name[0]?.country === "switzerland") {
+      return <h3>{items[0]?.CHF} Fr</h3>;
+    } else if (name[0]?.country === "china") {
+      return <h3>{items[0]?.CNY} ¥</h3>;
+    } else if (name[0]?.country === "brazil") {
+      return <h3>{items[0]?.BRL} R$</h3>;
+    } else if (name[0]?.country === "south korea") {
+      return <h3>{items[0]?.KRW} ₩</h3>;
+    } else if (name[0]?.country === "singapore") {
+      return <h3>{items[0]?.SGD} SGD</h3>;
+    } else if (name[0]?.country === "new zealand") {
+      return <h3>{items[0]?.NZD} NZD</h3>;
+    } else if (name[0]?.country === "mexico") {
+      return <h3>{items[0]?.MXN} MXN</h3>;
+    } else if (name[0]?.country === "hong kong") {
+      return <h3>{items[0]?.HKD} HKD</h3>;
+    } else if (name[0]?.country === "turkey") {
+      return <h3>{items[0]?.TRY} ₺</h3>;
+    } else if (name[0]?.country === "south africa") {
+      return <h3>{items[0]?.ZAR} R</h3>;
+    } else if (name[0]?.country === "sweden") {
+      return <h3>{items[0]?.SEK} kr</h3>;
+    } else if (name[0]?.country === "norway") {
+      return <h3>{items[0]?.NOK} kr</h3>;
+    } else {
+      return <h3>{items[0]?.USD} $</h3>;
+    }
+  };
+
+  
+
+  const fetchUsersHandler = useCallback(async () => {
+    setLoading(true);
+    const token = localStorage.getItem("token");
+    
+    try {
+      const response = await fetch("https://apifordropment.online/users/", {
+        headers: {
+          Authorization: token,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch user data.");
+      }
+
+      const data = await response.json();
+      const transformedUsers = data.user.map((userData) => {
+        return {
+          first_name: userData.first_name,
+          last_name: userData.last_name,
+          country: userData.country,
+        };
+      });
+
+      setName(transformedUsers);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchUsersHandler();
+  }, [fetchUsersHandler]);
   return (
     <Fragment>
   <div className="product-page">
@@ -1098,8 +1198,8 @@ function Prodsright() {
       >{users[0]?.first_name}</Link></p>
           
         <div className="product-amount">
-          <h3>Price:</h3>
-          <p>{items[0]?.price}</p>
+          <h3>Price:<Pricing/></h3>
+          
         </div>
         <div className="product-description">{items[0]?.description}</div>
         <div className="product-buttons">
