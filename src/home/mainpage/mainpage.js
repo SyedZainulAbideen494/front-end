@@ -17,18 +17,21 @@ import profile from '../header/images/icons8-male-user-24.png'
 import addshop from '../header/images/icons8-add-24.png'
 import { useMediaQuery } from 'react-responsive';
 const Mainpage = () => {
-    const [auth, setauth] = useState(false);
-    const nav = useNavigate();
-    const handleLogout = () => {
-      localStorage.removeItem("token");
-    };
-    useEffect(() => {
-      if (localStorage.getItem("token")) {
-        setauth(true);
-      } else {
-        setauth(false);
-      }
-    }, []);
+  const [auth, setAuth] = useState(false);
+  const nav = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setAuth(false); // Update auth state after logout
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+  }, []);
   const [showNotifications, setShowNotifications] = useState(false);
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
@@ -132,6 +135,15 @@ const MobileView = () => {
           <Link to='/search' style={{textDecoration: 'none'}}>
             <button>Search <img src={search}/></button>
           </Link>
+          {auth ? (
+        <button onClick={handleLogout} className="logout-btn">
+          Logout
+        </button>
+      ) : (
+        <Link to="/login">
+          <button className="login-btn-profilesec">Login</button>
+        </Link>
+      )}
         </div>
       </header>
     </div>
