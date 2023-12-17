@@ -1,13 +1,13 @@
-/* dropment-admin.css */
-
 /* Specific styles for text inside analytics cards */
-.analytics-cardt h3 {
+.analytics-card h3 {
     color: black;
   }
-  .analytics-cardt {
+  
+  .analytics-card {
     text-align: center;
   }
-  .analytics-cardt h2 {
+  
+  .analytics-card h2 {
     color: black;
   }
   
@@ -16,6 +16,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Add some gap between components */
+    justify-content: center; /* Align the content horizontally in the center */
+    align-items: center; /* Align the content vertically in the center */
   }
   
   /* Styling for individual analytics cards */
