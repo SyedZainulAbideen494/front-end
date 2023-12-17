@@ -307,6 +307,8 @@
       background-color: #ff4d4f;
       color: white;
       margin-left: 4px;
+      padding: 8px;
+      border-radius: 9px;
       border: transparent;
     }
     .dashboard-container h1 {
@@ -461,6 +463,8 @@
       background-color: #ff4d4f;
       color: white;
       margin-left: 4px;
+      padding: 8px;
+      border-radius: 9px;
       border: transparent;
     }
     .dashboard-container h1 {
