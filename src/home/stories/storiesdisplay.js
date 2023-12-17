@@ -4,8 +4,6 @@ import axios from "axios"; // Fixed import statement
 import "./stories-display.css";
 import Stories from "./stories";
 import users from '../header/images/profiledef.png';
-import { Spinner } from "react-bootstrap";
-import Spinnerui from "../UI/spinner";
 
 function Storiesapp() {
   const [items, setitems] = useState([]);
@@ -51,7 +49,7 @@ function Storiesapp() {
             <p>Link with someone to see their blinkfeeds</p>
           )
         ) : (
-          <p><Spinnerui/></p>
+          <p>Loading..</p>
         )}
       </section>
     </Fragment>

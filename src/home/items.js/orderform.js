@@ -60,37 +60,6 @@ const Orderform = (props) => {
 
   const token = localStorage.getItem("token");
 
-  const nameHandler = (event) => {
-    setname(event.target.value);
-  };
-
-  const phoneNohandler = (event) => {
-    setphoneno(event.target.value);
-  };
-
-  const emailhandler = (event) => {
-    setemail(event.target.value);
-  };
-
-  const streetaddress = (event) => {
-    setstreetsdrs(event.target.value);
-  };
-
-  const cityadrs = (event) => {
-    setcity(event.target.value);
-  };
-
-  const stateadrs = (event) => {
-    setstate(event.target.value);
-  };
-
-  const zipcodeadrs = (event) => {
-    setzipcode(event.target.value);
-  };
-
-  const counrtyadrs = (event) => {
-    setcountry(event.target.value);
-  };
 
   useEffect(() => {
     const fetchUsers2Handler = async () => {
@@ -98,7 +67,7 @@ const Orderform = (props) => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "https://apifordropment.online/user/details/orders/for/details",
+          "https://apifordropment.online/user/id/editbtndiaplay2",
           {
             headers: {
               Authorization: token,
@@ -106,7 +75,7 @@ const Orderform = (props) => {
           }
         );
         const data = await response.json();
-        const transformedUser2 = data.products.map((userdata) => {
+        const transformedUser2 = data.user.map((userdata) => {
           return {
             user_id: userdata.user_id,
             email: userdata.email,
@@ -125,12 +94,10 @@ const Orderform = (props) => {
     fetchUsers2Handler();
   }, []);
 
-
-  const orderhandler = async () => {
+  const orderHandler = async (e) => {
+    e.preventDefault();
     try {
-  
-      const currentDate = new Date(); // Get current date and time
-  
+      const currentDate = new Date();
       const year = currentDate.getFullYear();
       const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding leading zero if needed
       const day = String(currentDate.getDate()).padStart(2, '0'); // Adding leading zero if needed
@@ -145,7 +112,7 @@ const Orderform = (props) => {
       // Combine date and time in ISO format
       const dateTimeISO = `${formattedDate} ${formattedTime}`;
 
-
+      
       const response = await Axios.post(
         "https://apifordropment.online/place/order",
         {
@@ -167,14 +134,13 @@ const Orderform = (props) => {
         },
         {
           headers: {
-            Authorization: token,
+            Authorization: localStorage.getItem("token"),
           },
         }
       );
-      console.log(response.data); // Log response for debugging
+      console.log(response.data);
     } catch (error) {
-      console.error("Error placing order or opening payment link:", error);
-      // Handle error scenarios
+      console.error("Error placing order:", error);
     }
   };
 
@@ -189,47 +155,51 @@ const Orderform = (props) => {
   };
   return (
     <div className="formorder">
-      <form onSubmit={orderhandler}>
+       <form onSubmit={(e) => {
+                e.preventDefault(); // Ensure form doesn't trigger default browser action
+                orderHandler(); // Call the function to handle shop data submission
+              }}>
         <h2>{items[0]?.title}</h2>
         <label>Name</label>
-        <input type="text" value={user} onChange={nameHandler} required/>
+        <input
+              required
+              placeholder="name"
+              onChange={e => setname(e.target.value)}
+            />
         <label>Phone number</label>
-        <input type="number" value={phoneno} onChange={phoneNohandler} required/>
+        <input
+              required
+              placeholder="Phone number"
+              onChange={e => setphoneno(e.target.value)}
+            />
         <label>Address</label>
         <input
-          type="text"
-          placeholder="Street Address"
-          value={streetadrs}
-          onChange={streetaddress}
-          required
-        />
-        <input type="text" placeholder="City" value={city} onChange={cityadrs} required/>
+              required
+              placeholder="Street address"
+              onChange={e => setstreetsdrs(e.target.value)}
+            />
         <input
-          type="text"
-          placeholder="State/Province"
-          value={state}
-          onChange={stateadrs}
-          required
-        />
-        <input
-          type="number"
-          placeholder="Zip Code/Postal"
-          value={zipcode}
-          onChange={zipcodeadrs}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Country"
-          value={country}
-          onChange={counrtyadrs}
-          required
-        />
+              required
+              placeholder="City"
+              onChange={e => setcity(e.target.value)}
+            />
+         <input
+              required
+              placeholder="State"
+              onChange={e => setstate(e.target.value)}
+            />
+         <input
+              required
+              placeholder="zipcode"
+              onChange={e => setzipcode(e.target.value)}
+            />
+         <input
+              required
+              placeholder="country"
+              onChange={e => setcountry(e.target.value)}
+            />
         <div className="btn">
-          <button type="submit" onClick={() => {
-            
-    openPaymentLink();
-}}>Next</button>
+          <button type="submit">Next</button>
 <Link to='/home'>
 <button>Cancel</button>
 </Link>
