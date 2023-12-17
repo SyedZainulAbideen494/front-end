@@ -131,8 +131,7 @@ const MobileView = () => {
             <ChatMessageapp />
           </div>
           <div className="middle-content">
-            <MobileView/>
-            <Pcview/>
+            <AllTemplate1app/>
           </div>
           <div className="right-content">
             <p className="recomprofilemainpagetxtp">Featured profiles</p>
