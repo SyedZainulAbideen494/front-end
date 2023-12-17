@@ -585,6 +585,7 @@ h3 {
   background-color: transparent;
   color: white;
   text-align: left;
+  text-decoration: none;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
@@ -620,7 +621,7 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 5px;
   background-color: transparent;
   color: white;
@@ -630,7 +631,8 @@ h3 {
 }
 
 .all-screen-header-menu button:hover {
-  background-color: #555; /* Darken background on hover */
+  border: 1px solid #333;
+  color: white;
 }
 
 .all-screen-header-menu button img {

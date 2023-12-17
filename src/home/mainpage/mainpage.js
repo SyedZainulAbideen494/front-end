@@ -110,20 +110,26 @@ const MobileView = () => {
           </div>
         </div>
         <div className="all-screen-header-menu">
+          <Link to='/profile' style={{textDecoration: 'none'}}>
           <button>My Profile <img src={profile}/></button>
+          </Link>
+          <Link to='/search' style={{textDecoration: 'none'}}>
           <button>Search <img src={search}/></button>
-          <button>Notification <img src={notification}/></button>
+          </Link>
+          <button onClick={toggleNotifications}>Notification <img src={notification}/></button>
+          <Link to='/Addshoppage1' style={{textDecoration: 'none'}}>
           <button>Add Shop +</button>
+          </Link>
         </div>
         <div className={`mobile-menu ${showMenu ? 'show' : ''}`}>
           <button onClick={toggleMenu}>close</button>
-          <Link to="/profile">
+          <Link to="/profile" style={{textDecoration: 'none'}}>
             <button>My profile<img src={profile} alt="Profile" /></button>
           </Link>
-          <Link to="/orders">
+          <Link to="/orders" style={{textDecoration: 'none'}}>
             <button>Orders</button>
           </Link>
-          <Link to='/search'>
+          <Link to='/search' style={{textDecoration: 'none'}}>
             <button>Search <img src={search}/></button>
           </Link>
         </div>
