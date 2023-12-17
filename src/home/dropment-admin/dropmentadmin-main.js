@@ -115,7 +115,7 @@ function StoryCountComponent() {
 
 const DropmentAdminmain = () => {
   return (<Fragment>
-    <h1>Admin Dashboard</h1>
+    <h1 style={{textAlign: 'center'}}>Admin Dashboard</h1>
 
     <div className="admin-dashboard">
       
