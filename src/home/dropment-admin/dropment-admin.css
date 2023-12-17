@@ -1,0 +1,35 @@
+/* dropment-admin.css */
+
+/* Specific styles for text inside analytics cards */
+.analytics-cardt h3 {
+    color: black;
+  }
+  .analytics-cardt {
+    text-align: center;
+  }
+  .analytics-cardt h2 {
+    color: black;
+  }
+  
+  /* Flex container for the dashboard */
+  .admin-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add some gap between components */
+  }
+  
+  /* Styling for individual analytics cards */
+  .analytics-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Set a fixed width for each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Media query for responsive layout */
+  @media screen and (max-width: 600px) {
+    .analytics-card {
+      width: calc(50% - 20px); /* Two cards per row on smaller screens with a bit of gap */
+    }
+  }
