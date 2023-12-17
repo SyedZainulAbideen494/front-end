@@ -88,35 +88,41 @@ const MobileView = () => {
       </div>
     );
   };
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
     return<Fragment>
     
      <div className="maindivefordropmentmainpage">
-      <div className="dropmentmainheader">
-        <header>
-          <div className="dropmentlogomainpage">
-            <img src={dropment}/>
+     <div className="dropmentmainheader">
+      <header>
+        <div className="mobile-menu-icon">
+          <div className="line" onClick={toggleMenu}></div>
+          <div className="line" onClick={toggleMenu}></div>
+          <div className="line" onClick={toggleMenu}></div><br/>
+          <div className="mobile-btns-home-dropment">
+            <button onClick={toggleNotifications} className="mobile-btns-home-dropment-notri">Notifications</button>
+            <Link to='/Addshoppage1'>
+            <button className="add-shop-btn-mobile-btn-home-page-dropment">Add Shop +</button>
+            </Link>
           </div>
-          <div className="dropmentmainbtns">
-            <Link to="/profile">
-              <button><img src={profile}/></button>
-            </Link>
-            <Link to="/orders">
-              <button>Orders</button>
-            </Link>
-            <Link to="/search">
-              <button><img src={search}/></button>
-            </Link>
-            <button onClick={toggleNotifications}>
-  <img src={notification}/>
-</button>
-          </div>
-          <div className="add-shop-btn-main-page-dropment">
-          <Link to="/Addshoppage1" style={{textDecoration: 'none'}}>
-<button className="add-shop-btn-home-header">Add Shop +</button>
-</Link>
-            </div>
-        </header>
-      </div>         
+        </div>
+        <div className={`mobile-menu ${showMenu ? 'show' : ''}`}>
+          <button onClick={toggleMenu}>close</button>
+          <Link to="/profile">
+            <button>My profile<img src={profile} alt="Profile" /></button>
+          </Link>
+          <Link to="/orders">
+            <button>Orders</button>
+          </Link>
+          <Link to='/search'>
+            <button>Search <img src={search}/></button>
+          </Link>
+        </div>
+      </header>
+    </div>
       {showNotifications && (
         <NotificationComponent closeNotifications={toggleNotifications} />
       )}

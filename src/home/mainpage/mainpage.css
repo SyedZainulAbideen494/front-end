@@ -538,3 +538,97 @@ h3 {
 .add-shop-btn-main-page-dropment {
   text-align: center;
 }
+
+
+
+
+
+
+
+/* Hamburger Icon Styles */
+/* Mobile Menu Icon Styles */
+.mobile-menu-icon {
+  display: none; /* Hide by default on larger screens */
+  cursor: pointer;
+}
+
+.mobile-menu-icon .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initial position off the screen */
+  width: 250px;
+  height: 100%;
+  background-color: #333; /* Change as needed */
+  transition: left 0.3s ease; /* Smooth slide transition */
+  z-index: 1000; /* Ensure it's above other content */
+  padding-top: 80px; /* Adjust padding as needed */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Adding a subtle shadow */
+}
+
+.mobile-menu.show {
+  left: 0; /* Slide in when 'showMenu' state is true */
+}
+
+.mobile-menu button {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  text-align: left;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu button:hover {
+  background-color: #555; /* Darken background on hover */
+}
+
+.mobile-menu button img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.add-shop-btn-mobile-btn-home-page-dropment {
+  background-color: transparent;
+  color: #06d6a0;
+  border: 1px solid #06d6a0;
+  cursor: pointer;
+  margin-left: 2px;
+  padding: 8px;
+  border-radius: 9px;
+}
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block; /* Show on smaller screens */
+  }
+
+  /* Hide other header elements on smaller screens */
+  .mobile-btns-home-dropment  {
+    text-align: center;
+  }
+
+  .mobile-btns-home-dropment-notri {
+    background-color: #333;
+    color: white;
+    border-radius: 9px;
+    padding: 8px;
+    margin-right: 2px;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+
+
+  /* Additional styling for mobile menu */
+}
