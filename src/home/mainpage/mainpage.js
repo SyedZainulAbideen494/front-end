@@ -101,7 +101,7 @@ const MobileView = () => {
               <button><img src={profile}/></button>
             </Link>
             <Link to="/orders">
-              <button><img src={order}/></button>
+              <button>Orders</button>
             </Link>
             <Link to="/search">
               <button><img src={search}/></button>
@@ -109,12 +109,11 @@ const MobileView = () => {
             <button onClick={toggleNotifications}>
   <img src={notification}/>
 </button>
-<Link to="/Addshoppage1" style={{textDecoration: 'none'}}>
-<button><img src={addshop}/></button>
-</Link>
-
           </div>
           <div className="add-shop-btn-main-page-dropment">
+          <Link to="/Addshoppage1" style={{textDecoration: 'none'}}>
+<button className="add-shop-btn-home-header">Add Shop +</button>
+</Link>
             </div>
         </header>
       </div>         

@@ -134,6 +134,7 @@
       border-radius: 9px;
       padding: 10px 20px;
       margin-left: 100px;
+      text-align: center;
       align-items: center;
     }
     .maindivefordropmentmainpage {
@@ -533,3 +534,6 @@ h3 {
   color: white;
 }
 
+.add-shop-btn-main-page-dropment {
+  text-align: center;
+}
