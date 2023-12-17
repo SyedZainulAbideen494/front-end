@@ -101,13 +101,19 @@ const MobileView = () => {
         <div className="mobile-menu-icon">
           <div className="line" onClick={toggleMenu}></div>
           <div className="line" onClick={toggleMenu}></div>
-          <div className="line" onClick={toggleMenu}></div><br/>
+          <div className="line" onClick={toggleMenu}></div>
           <div className="mobile-btns-home-dropment">
             <button onClick={toggleNotifications} className="mobile-btns-home-dropment-notri">Notifications</button>
             <Link to='/Addshoppage1'>
             <button className="add-shop-btn-mobile-btn-home-page-dropment">Add Shop +</button>
             </Link>
           </div>
+        </div>
+        <div className="all-screen-header-menu">
+          <button>My Profile <img src={profile}/></button>
+          <button>Search <img src={search}/></button>
+          <button>Notification <img src={notification}/></button>
+          <button>Add Shop +</button>
         </div>
         <div className={`mobile-menu ${showMenu ? 'show' : ''}`}>
           <button onClick={toggleMenu}>close</button>

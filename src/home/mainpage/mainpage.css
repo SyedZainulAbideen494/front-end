@@ -608,6 +608,37 @@ h3 {
   padding: 8px;
   border-radius: 9px;
 }
+.all-screen-header-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.all-screen-header-menu button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.all-screen-header-menu button:hover {
+  background-color: #555; /* Darken background on hover */
+}
+
+.all-screen-header-menu button img {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px; /* Adjust margin as needed */
+  vertical-align: middle;
+}
 /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
   .mobile-menu-icon {
@@ -617,6 +648,9 @@ h3 {
   /* Hide other header elements on smaller screens */
   .mobile-btns-home-dropment  {
     text-align: center;
+  }
+  .all-screen-header-menu {
+    display: none;
   }
 
   .mobile-btns-home-dropment-notri {
