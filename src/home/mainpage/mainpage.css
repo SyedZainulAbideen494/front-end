@@ -468,9 +468,10 @@
     
     /* Add shop button on main page */
     .add-shop-btn-main-page-dropment button {
-      color: white;
-      background-color: #3a0299;
-      border: 2px solid #3a0299;
+      color: #06d6a0;
+      background-color: transparent;
+      border: 2px solid #06d6a0;
+      cursor: pointer;
       border-radius: 9px;
       padding: 10px 20px;
     }
