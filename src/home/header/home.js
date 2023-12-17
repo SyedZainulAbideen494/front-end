@@ -220,35 +220,35 @@ const Home = () => {
           </div>
           <div className="dropment-main-blog-page-section7-dots">
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>Simplicity</h2>
+              <h2 style={{color: 'black'}}>Simplicity</h2>
               <p>Our platform equips you with the 
                 finest tools to efficiently manage
                  and expand your business.</p>
             </section>
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>Best Pricing</h2>
+              <h2 style={{color: 'black'}}>Best Pricing</h2>
               <p>We offer the best pricing to help
                  elevate your business to new heights.</p>
             </section>
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>User-Friendly Interface</h2>
+              <h2 style={{color: 'black'}}>User-Friendly Interface</h2>
               <p>We offer the most user-friendly 
                 interface for setting up and managing
                  your store.</p>
             </section>
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>Collaborative Features</h2>
+              <h2 style={{color: 'black'}}>Collaborative Features</h2>
               <p>Collaborate with others and embark on new
                  business ventures together, with our collab feature</p>
             </section>
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>Customizable Templates</h2>
+              <h2 style={{color: 'black'}}>Customizable Templates</h2>
               <p>You have the option to create a personalized 
                 shop or select from our range of templates</p>
             </section>
         
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>Engagement Tools</h2>
+              <h2 style={{color: 'black'}}>Engagement Tools</h2>
               <p>
               We offer a variety of engaging
                tools like Blinkfeed, Link, Chat,
@@ -257,7 +257,7 @@ const Home = () => {
               </p>
             </section>
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>Comprehensive Analytics</h2>
+              <h2 style={{color: 'black'}}>Comprehensive Analytics</h2>
               <p>
               Provides in-depth shop data and analytics, 
               empowering users with valuable insights into
@@ -266,7 +266,7 @@ const Home = () => {
               </p>
             </section>
             <section className="dropment-main-blog-page-section7-dot">
-              <h2>Performance Optimization</h2>
+              <h2 style={{color: 'black'}}>Performance Optimization</h2>
               <p>
               Helps users improve their product offerings 
               and services based on analytics, aiming for
