@@ -141,6 +141,7 @@ const MobileView = () => {
         </div>
       </div>
     </div>
+
   </Fragment>
 }
 

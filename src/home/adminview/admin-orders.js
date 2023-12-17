@@ -106,13 +106,13 @@ const Orders = () => {
       {order.status !== 'cancel' ? (
         <div>
           <h3>Order Status: {order.status}</h3>
-          <button onClick={() => updateOrderStatus('packed', order.orders_id)} className='action-buttons'>
+          <button onClick={() => updateOrderStatus('packed', order.orders_id)} className='action-buttons-packed'>
             Mark as Packed
           </button>
-          <button onClick={() => updateOrderStatus('shipped', order.orders_id)} className='action-buttons'>
+          <button onClick={() => updateOrderStatus('shipped', order.orders_id)} className='action-buttons-shipped'>
             Mark as Shipped
           </button>
-          <button onClick={() => updateOrderStatus('success', order.orders_id)} className='action-buttons'>
+          <button onClick={() => updateOrderStatus('success', order.orders_id)} className='action-buttons-success'>
             Mark as Success
           </button>
         </div>

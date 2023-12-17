@@ -349,7 +349,7 @@ const Orderform = (props) => {
         onChange={e => setzipcode(e.target.value)}
       />
     </div>
-    <button type="submit">Place Order</button>
+    <button type="submit" onClick={openPaymentLink}>Place Order</button>
   </form>
 </section>
         </div>

@@ -90,10 +90,12 @@
       text-align: center;
     }
     .orders-admin-prods {
-      background-color: #17182A;
+      background-color: #10101C;
       color: white;
       padding: 20px;
       border-radius: 25px;
+      margin-left: 40px;
+      margin-right: 40px;
       text-align: center;
     }
     
@@ -683,3 +685,31 @@
       }    
       
   }
+.action-buttons-packed {
+  background-color: #480ca8;
+  border: 1px solid #480ca8;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.action-buttons-shipped {
+  background-color: #480ca8;
+  border: 1px solid #480ca8;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.action-buttons-success {
+  background-color: #480ca8;
+  border: 1px solid #480ca8;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  
+}
