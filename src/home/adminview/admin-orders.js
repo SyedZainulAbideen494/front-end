@@ -58,7 +58,7 @@ const Orders = () => {
   
     return (
       <div className='orders-admin-prods'>
-        <h1>Orders</h1>
+        <h1>Orders Dashboard</h1>
         <div>
           <label>
             Filter by:
