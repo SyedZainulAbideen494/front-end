@@ -57,7 +57,7 @@ function Stories() {
         // If on the last story, redirect to /home
         window.location.href = '/home';
       }
-    }, 5000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, [currentStoryIndex, stories]);
@@ -70,7 +70,7 @@ function Stories() {
       } else {
         setNoStoriesMessage('');
       }
-    }, 5000);
+    }, 10000);
 
     return () => clearTimeout(messageTimer);
   }, [stories]);

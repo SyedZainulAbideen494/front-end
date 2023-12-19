@@ -14,6 +14,7 @@ import message from '../header/images/icons8-messages-48.png'
 import search from '../header/images/icons8-search-50.png'
 import order from '../header/images/icons8-logistics-32.png'
 import profile from '../header/images/icons8-male-user-24.png'
+import back from '../header/images/icons8-back-24.png'
 import addshop from '../header/images/icons8-add-24.png'
 import { useMediaQuery } from 'react-responsive';
 const Mainpage = () => {
@@ -125,7 +126,7 @@ const MobileView = () => {
           </Link>
         </div>
         <div className={`mobile-menu ${showMenu ? 'show' : ''}`}>
-          <button onClick={toggleMenu}>close</button>
+          <button onClick={toggleMenu}><img src={back} style={{width: '20px'}}/>close</button>
           <Link to="/profile" style={{textDecoration: 'none'}}>
             <button>My profile<img src={profile} alt="Profile" /></button>
           </Link>
