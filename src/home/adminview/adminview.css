@@ -725,12 +725,10 @@
   min-height: 100vh;
 }
 
-
 .main-content {
   display: flex;
   flex: 1;
 }
-
 
 .main {
   flex: 1;
@@ -749,10 +747,10 @@
   margin-bottom: 15px;
 }
 
-
 .chart-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Allow charts to wrap on smaller screens */
 }
 
 .chart {
@@ -764,22 +762,9 @@
   padding-left: 20px;
 }
 
-/* Responsive layout for smaller screens */
+/* Responsive Layout for Smaller Screens */
 @media screen and (max-width: 768px) {
   .main-content {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .main {
-    width: 100%;
-  }
-
-  .chart-container {
     flex-direction: column;
   }
 
@@ -792,6 +777,30 @@
     width: 100%;
   }
 }
+
+/* Responsive Layout for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .chart {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .summary {
+    width: 100%;
+  }
+
+  /* Ensure the chart canvas takes up the full width and doesn't overflow */
+  .chart canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
 @media (max-width: 767px) {
   .main-content {
     flex-direction: column;

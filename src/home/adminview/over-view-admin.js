@@ -132,19 +132,19 @@ const AdminOverview = () => {
 
   return (
     <div className="dashboard">
-    <header className="header" style={{ textAlign: 'center' }}>
-      <h3 style={{ textAlign: 'center' }}>Overview</h3>
+    <header className="header">
+      <h3>Overview</h3>
     </header>
 
-    <div className="main-content" style={{ display: 'flex', justifyContent: 'center' }}>
+    <div className="main-content">
       <main className="main">
         <div className="container">
           <h2 className="section-title">Orders Overview</h2>
           <div className="chart-container">
-            <div className="chart" style={{ textAlign: 'center' }}>
+            <div className="chart">
               <canvas id={`orderChart-${selectedTimeRange}`}></canvas>
             </div>
-            <div className="summary" style={{ textAlign: 'center' }}>
+            <div className="summary">
               <h2 className="summary-title">Order Summary</h2>
               <div className="summary-details">
                 <p className="summary-text">Total Orders</p>
