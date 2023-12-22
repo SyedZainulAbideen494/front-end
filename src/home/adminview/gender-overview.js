@@ -47,10 +47,11 @@ const AdminOverviewgender = () => {
     const labels = genderData.map((data) => data.gender);
     const percentages = genderData.map((data) => data.percentage);
 
-    const ctx = document.getElementById('genderChart').getContext('2d');
     if (window.genderPieChart) {
-      window.genderPieChart.destroy(); // Destroy previous chart if it exists
+      window.genderPieChart.destroy();
     }
+
+    const ctx = document.getElementById('genderChart').getContext('2d');
     window.genderPieChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
@@ -59,15 +60,13 @@ const AdminOverviewgender = () => {
           {
             label: 'Gender Distribution',
             data: percentages,
-            backgroundColor: 'transparent',
-            borderColor: ['#36a2eb', '#ff6384'], // Border colors for different genders
-            borderWidth: 2,
+            backgroundColor: ['#36a2eb', '#7364E2'], // Colors for different genders
+            borderColor: '#333', // Border color for the chart
+            borderWidth: 1,
           },
         ],
       },
       options: {
-        responsive: true,
-        cutout: '80%', // Adjust the cutout size to control the hole in the middle
         plugins: {
           legend: {
             display: false,
@@ -86,9 +85,21 @@ const AdminOverviewgender = () => {
     });
   };
 
+  const renderGenderDetails = () => {
+    return (
+      <div style={{ color: '#fff', textAlign: 'center', marginTop: '10px' }}>
+        {genderPercentages.map((data, index) => (
+          <span key={index}>{`${data.gender}: ${data.percentage}%  `}</span>
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <div>
-      <canvas id="genderChart" width="400" height="400"></canvas>
+    <div style={{ backgroundColor: '#171A2D', padding: '20px', borderRadius: '8px', width: '200px', height: '290px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
+      <h4 style={{textAlign: 'center'}}>Gender</h4>
+      <canvas id="genderChart" width="150" height="150"></canvas>
+      {renderGenderDetails()}
     </div>
   );
 };

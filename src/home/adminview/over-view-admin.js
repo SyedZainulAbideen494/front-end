@@ -132,8 +132,8 @@ const AdminOverview = () => {
 
   return (
     <div className="dashboard">
-    <header className="header">
-      <h1 className="title">Dashboard</h1>
+    <header className="header" style={{textAlign: 'center'}}>
+      <h1 className="title" style={{textAlign: 'center'}}>Overview</h1>
     </header>
 
     <div className="main-content">

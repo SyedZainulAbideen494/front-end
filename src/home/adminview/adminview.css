@@ -725,17 +725,6 @@
   min-height: 100vh;
 }
 
-.header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-.title {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
 
 .main-content {
   display: flex;
@@ -749,7 +738,7 @@
 }
 
 .container {
-  background-color: black;
+  background-color: #171A2D;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
