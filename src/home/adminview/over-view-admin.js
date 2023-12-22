@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Chart, registerables } from 'chart.js/auto';
 import AdminOverviewgender from './gender-overview';
+import { Link } from 'react-router-dom';
+import OrdersNoti from './notifecation-orders';
 
 // Register necessary components for Chart.js
 Chart.register(...registerables);
@@ -133,7 +135,16 @@ const AdminOverview = () => {
   return (
     <div className="dashboard">
     <header className="header">
-      <h3>Overview</h3>
+      <h3 style={{textAlign: 'center'}}>Overview</h3>
+      <Link to='/home'>
+      <button>Home</button>
+      </Link>
+      <Link to='/profile'>
+      <button>Profile</button>
+      </Link>
+      <Link to='/Addshoppage1'>
+      <button>Add shop +</button>
+      </Link>
     </header>
 
     <div className="main-content">
@@ -156,6 +167,7 @@ const AdminOverview = () => {
       </main>
       <AdminOverviewgender />
     </div>
+    <OrdersNoti/>
   </div>
   );
 };
