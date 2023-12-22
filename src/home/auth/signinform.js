@@ -21,11 +21,14 @@ const Signinform = () => {
   const [country, setcountry] = useState("");
   const [unique_id, setunique_id] = useState("");
   const [bio, setbio] = useState("")
+  const [gender, setGender] = useState(""); // State for gender
 
   const firstnameHandler = (event) => {
     setfirstname(event.target.value);
   };
-
+  const genderHandler = (event) => {
+    setGender(event.target.value); // Update gender based on selected option
+  };
   const bioHandler = (event) => {
     setbio(event.target.value);
   };
@@ -96,7 +99,8 @@ const Signinform = () => {
       !occupation ||
       !age ||
       !phoneno ||
-      !bio
+      !bio ||
+      !gender
     ) {
       console.log("Please fill in all fields");
       return; // Don't proceed if any required field is empty
@@ -112,6 +116,7 @@ const Signinform = () => {
       age: age,
       phoneno: phoneno,
       bio: bio,
+      gender: gender
     };
 
     try {
@@ -148,6 +153,20 @@ const Signinform = () => {
               required
             />
           </div>
+          <div className="inp">
+      <label htmlFor="gender">Gender</label><br/>
+      <select
+        id="gender"
+        name="gender"
+        value={gender}
+        onChange={genderHandler}
+        required
+      >
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
           <div className="inp">
             <label htmlFor="fname">First Name</label>
             <br />

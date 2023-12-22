@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Chart, registerables } from 'chart.js/auto';
+import AdminOverviewgender from './gender-overview';
 
 // Register necessary components for Chart.js
 Chart.register(...registerables);
@@ -67,11 +68,10 @@ const AdminOverview = () => {
     const data = generateChartData(selectedTimeRange, ordersData);
     createHourlyBarChart(selectedTimeRange, data);
   };
-
   const createHourlyBarChart = (timeRange, data) => {
     const canvasId = `orderChart-${timeRange}`;
     const canvasElement = document.getElementById(canvasId);
-  
+
     if (canvasElement) {
       new Chart(canvasElement, {
         type: 'bar',
@@ -83,7 +83,7 @@ const AdminOverview = () => {
               const hourData = data.find(([hour]) => parseInt(hour) === i);
               return hourData ? hourData[1] : 0;
             }),
-            backgroundColor: '#5a67d8',
+            backgroundColor: '#7466E1',
             borderWidth: 1,
           }],
         },
@@ -100,7 +100,7 @@ const AdminOverview = () => {
                 display: false,
               },
               ticks: {
-                color: '#333',
+                color: '#fefae0',
                 font: {
                   size: 12,
                 },
@@ -109,7 +109,7 @@ const AdminOverview = () => {
             y: {
               beginAtZero: true,
               ticks: {
-                color: '#333',
+                color: '#fefae0',
                 font: {
                   size: 12,
                 },
@@ -131,32 +131,33 @@ const AdminOverview = () => {
   };
 
   return (
-      <div className="container">
-      <h1 className="title">Orders Overview</h1>
-      <div className="filters">
-      <h2>Time Range Filters</h2>
-        <button onClick={() => handleTimeRangeChange('oneDay')}>One Day</button>
-        <button onClick={() => handleTimeRangeChange('oneMonth')}>One Month</button>
-        <button onClick={() => handleTimeRangeChange('sixMonths')}>Six Months</button>
-        <button onClick={() => handleTimeRangeChange('oneYear')}>One Year</button>
-      </div>
-      <div className="chart-container">
-        <div className="chart">
-          <canvas id={`orderChart-${selectedTimeRange}`}></canvas>
-        </div>
-        <div className="summary">
-          <h2 className="summary-title">Order Summary</h2>
-          <div className="summary-details">
-            <p className="summary-text">Total Orders</p>
-            <p className="summary-value">{orders.length}</p>
+    <div className="dashboard">
+    <header className="header">
+      <h1 className="title">Dashboard</h1>
+    </header>
+
+    <div className="main-content">
+      <main className="main">
+        <div className="container">
+          <h2 className="section-title">Orders Overview</h2>
+          <div className="chart-container">
+            <div className="chart">
+              <canvas id={`orderChart-${selectedTimeRange}`}></canvas>
+              
+            </div>
+            <div className="summary">
+              <h2 className="summary-title" >Order Summary</h2>
+              <div className="summary-details">
+                <p className="summary-text">Total Orders</p>
+                <p className="summary-value">{orders.length}</p>
+              </div>
+            </div>
           </div>
-          <div className="summary-details">
-            <p className="summary-text">Time</p>
-            <p className="summary-value">{new Date().toLocaleString()}</p>
-          </div>
         </div>
-      </div>
+      </main>
+      <AdminOverviewgender/>
     </div>
+  </div>
   );
 };
 

@@ -118,7 +118,8 @@ const Orderform = (props) => {
             email: userdata.email,
             age: userdata.age,
             occupation: userdata.occupation,
-            country: userdata.country
+            country: userdata.country,
+            gender: userdata.gender
           };
         });
         setName2(transformedUser2);
@@ -169,7 +170,8 @@ const Orderform = (props) => {
           age: name2[0]?.age,
           sender_id: name2[0]?.user_id,
           orderDateTime: dateTimeISO, // Use formatted date
-          owner_id: userId
+          owner_id: userId,
+          gender: name2[0]?.gender
         },
         {
           headers: {
