@@ -132,21 +132,20 @@ const AdminOverview = () => {
 
   return (
     <div className="dashboard">
-    <header className="header" style={{textAlign: 'center'}}>
-      <h1 className="title" style={{textAlign: 'center'}}>Overview</h1>
+    <header className="header" style={{ textAlign: 'center' }}>
+      <h3 style={{ textAlign: 'center' }}>Overview</h3>
     </header>
 
-    <div className="main-content">
+    <div className="main-content" style={{ display: 'flex', justifyContent: 'center' }}>
       <main className="main">
         <div className="container">
           <h2 className="section-title">Orders Overview</h2>
           <div className="chart-container">
-            <div className="chart">
+            <div className="chart" style={{ textAlign: 'center' }}>
               <canvas id={`orderChart-${selectedTimeRange}`}></canvas>
-              
             </div>
-            <div className="summary">
-              <h2 className="summary-title" >Order Summary</h2>
+            <div className="summary" style={{ textAlign: 'center' }}>
+              <h2 className="summary-title">Order Summary</h2>
               <div className="summary-details">
                 <p className="summary-text">Total Orders</p>
                 <p className="summary-value">{orders.length}</p>
@@ -155,7 +154,7 @@ const AdminOverview = () => {
           </div>
         </div>
       </main>
-      <AdminOverviewgender/>
+      <AdminOverviewgender />
     </div>
   </div>
   );
