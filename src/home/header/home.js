@@ -73,7 +73,7 @@ const Home = () => {
     }
   }, []);
   if (auth === true) {
-    nav("/overview");
+    nav("/home");
   }
 
   const [showcart, setshowcart] = useState(false);
