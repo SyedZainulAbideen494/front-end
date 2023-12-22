@@ -633,6 +633,50 @@ const Editbtndisplay1 = () => {
     fetchUser2sHandler();
   }, []);
 
+  const [liveStatus, setLiveStatus] = useState(false);
+
+  const [status, setStatus] = useState('offline'); // Assuming default status is 'offline'
+  
+  const getStatus = async () => {
+    try {
+      const response = await fetch(`https://apifordropment.online/status/${params.shop_id}`);
+      const data = await response.json();
+      setStatus(data.status);
+    } catch (error) {
+      console.error('Error fetching status:', error);
+    }
+  };
+  
+  useEffect(() => {
+    getStatus(); // Fetch initial status when component mounts
+  }, [params.shop_id]);
+  
+  
+  const handleStatusChange = async () => {
+    try {
+      const newStatus = 'live';
+      // Update live status in the database
+      await Axios.put(`https://apifordropment.online/updateLiveStatus/live/${params.shop_id}/${newStatus}`);
+      // If the update is successful, update the status state
+      setStatus(newStatus);
+      setLiveStatus(true);
+    } catch (error) {
+      console.error('Error updating live status:', error);
+    }
+  };
+  
+  const handleStatusChangeoffline = async () => {
+    try {
+      const newStatus = 'offline';
+      // Update offline status in the database
+      await Axios.put(`https://apifordropment.online/updateLiveStatus/offline/${params.shop_id}/${newStatus}`);
+      // If the update is successful, update the status state
+      setStatus(newStatus);
+      setLiveStatus(false);
+    } catch (error) {
+      console.error('Error updating offline status:', error);
+    }
+  };
   const EEditbtn = () => {
     if (
       name.length > 0 &&
@@ -698,55 +742,62 @@ const Editbtndisplay1 = () => {
       };
       return (
         <Fragment>
-          <div className="profile-header-owner">
-            <header>
-              <div className="shop_owner_view">
-                <h2>Control panel</h2>
-                <div className="shopownerbtn">
-                  <span className="edit_store_btn"></span>
-                  <span className="btnwebstore">
-                    <Link to="/">
-                      <button>Home</button>
-                    </Link>
-                  </span>
-                  <span className="btnwebstore">
-                    <Link to={`/admin/${params.shop_id}`}>
-                    <button>Admin Menu</button>
-                    </Link>
-                  </span>
-                  <span className="btnwebstore-addproducts">
-                    <Link to={`/add/product/${params.shop_id}`}>
-                    <button>Add Products +</button>
-                    </Link>
-                  </span>
-                  <span className="btnwebstore">
-                    <Link to={`/build/${'edit'}/preview/${params.shop_id}/`}>
-                    <button>Edit</button>
-                    </Link>
-                  </span>
-                  <span className="btnwebstore">
-                    <button onClick={togglesharebtn}>Share</button>
-                    <div className="sales">
-            {share && <CopyURL onClick={hidesaleshandler} />}
-          </div>
-                  </span>
-                </div>
+        <div className="profile-header-owner">
+          <header>
+            <div className="shop_owner_view">
+              <h2>Control panel</h2>
+              <div className="shopownerbtn">
+                <span className="edit_store_btn"></span>
+                <span className="btnwebstore">
+                  <Link to="/">
+                    <button>Home</button>
+                  </Link>
+                </span>
+                <span className="btnwebstore">
+                  <Link to={`/admin/${params.shop_id}`}>
+                  <button>Admin Menu</button>
+                  </Link>
+                </span>
+                <span className="btnwebstore-addproducts">
+                  <Link to={`/add/product/${params.shop_id}`}>
+                  <button>Add Products +</button>
+                  </Link>
+                </span>
+                <span className="btnwebstore">
+                  <Link to={`/build/${'edit'}/preview/${params.shop_id}/`}>
+                  <button>Edit</button>
+                  </Link>
+                </span>
+                <span className="btnwebstore">
+                  <button onClick={togglesharebtn}>Share</button>
+                  <div className="sales">
+          {share && <CopyURL onClick={hidesaleshandler} />}
+        </div>
+                </span>
+                <div>
+      {status === 'live' ? (
+        <button onClick={handleStatusChangeoffline} className="go-offline-btn-shop-header-admin-menu">Go Offline</button>
+      ) : (
+        <button onClick={handleStatusChange}>Go Live</button>
+      )}
+    </div>
               </div>
-            </header>
-          </div>
+            </div>
+          </header>
+        </div>
+      
+        <div className="addshopform">
+          {showform && <Addproductstodatabase onClick={hideformhandler} />}
+        </div>
         
-          <div className="addshopform">
-            {showform && <Addproductstodatabase onClick={hideformhandler} />}
-          </div>
-          
-        </Fragment>
-      );
-    } else {
-      return;
-    }
-  };
+      </Fragment>
+    );
+  } else {
+    return;
+  }
+};
 
-  return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
+return <div>{!loading ? <EEditbtn /> : <p>Loading...</p>}</div>;
 };
 
 
