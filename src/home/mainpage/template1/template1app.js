@@ -28,7 +28,8 @@ function AllTemplate1app() {
         temp: itemsdata.temp,
         logo: `https://apifordropment.online/images/${itemsdata.logo}`,
         shop_owner: itemsdata.shop_owner,
-        user_id: itemsdata.user_id
+        user_id: itemsdata.user_id,
+        live: itemsdata.live
       };
     });
     setitems(transformedItems);

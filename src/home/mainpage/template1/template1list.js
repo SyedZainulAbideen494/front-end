@@ -37,6 +37,7 @@ const Template1mainlist = (props) => {
                 logo={item.logo}
                 shop_owner={item.shop_owner}
                 user_id={item.user_id}
+                live={item.live}
               />
 
           ))}

@@ -206,7 +206,7 @@ useEffect(() => {
     fetchFollowerCount();
   }, [params.user_id]);
   
-  if(props.temp === 'incomplete') {
+  if (props.temp === 'incomplete' || props.live === 'offline') {
     return;
   }else{
     return (

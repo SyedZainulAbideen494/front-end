@@ -92,3 +92,11 @@
   transition: 0.3s;
   border: 1px solid #6E49F6;
  }
+
+ .go-offline-btn-shop-header-admin-menu {
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 9px;
+  cursor: pointer;
+ }

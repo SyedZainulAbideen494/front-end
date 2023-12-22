@@ -1323,6 +1323,50 @@ const UpdateShopLiveComponent = () => {
   );
 };
 
+const [liveStatus, setLiveStatus] = useState(false);
+
+const [status, setStatus] = useState('offline'); // Assuming default status is 'offline'
+
+const getStatus = async () => {
+  try {
+    const response = await fetch(`https://apifordropment.online/status/${shopId}`);
+    const data = await response.json();
+    setStatus(data.status);
+  } catch (error) {
+    console.error('Error fetching status:', error);
+  }
+};
+
+useEffect(() => {
+  getStatus(); // Fetch initial status when component mounts
+}, [shopId]);
+
+
+const handleStatusChange = async () => {
+  try {
+    const newStatus = 'live';
+    // Update live status in the database
+    await axios.put(`https://apifordropment.online/updateLiveStatus/live/${params.shop_id}/${newStatus}`);
+    // If the update is successful, update the status state
+    setStatus(newStatus);
+    setLiveStatus(true);
+  } catch (error) {
+    console.error('Error updating live status:', error);
+  }
+};
+
+const handleStatusChangeoffline = async () => {
+  try {
+    const newStatus = 'offline';
+    // Update offline status in the database
+    await axios.put(`https://apifordropment.online/updateLiveStatus/offline/${params.shop_id}/${newStatus}`);
+    // If the update is successful, update the status state
+    setStatus(newStatus);
+    setLiveStatus(false);
+  } catch (error) {
+    console.error('Error updating offline status:', error);
+  }
+};
   
     const EEditbtn = () => {
       if (
@@ -1431,6 +1475,13 @@ const UpdateShopLiveComponent = () => {
               {share && <CopyURL onClick={hidesaleshandler} />}
             </div>
                     </span>
+                    <div>
+      {status === 'live' ? (
+        <button onClick={handleStatusChangeoffline} className="go-offline-btn-shop-header-admin-menu">Go Offline</button>
+      ) : (
+        <button onClick={handleStatusChange}>Go Live</button>
+      )}
+    </div>
                   </div>
                 </div>
               </header>
