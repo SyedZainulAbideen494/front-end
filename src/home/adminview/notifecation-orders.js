@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function OrdersNoti() {
   const [orders, setOrders] = useState([]);
+  const token = localStorage.getItem('token')
 
   useEffect(() => {
-    fetchOrders();
-  }, []);
-
-  const fetchOrders = async () => {
-    try {
-      const response = await fetch('https://apifordropment.online/orders/notification/details'); // Assumes your backend is running on the same server
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+    const fetchOrders = async () => {
+      try {
+        const response = await axios.post('https://apifordropment.online/api/orders/overview/main', { token });
+        setOrders(response.data.orders);
+      } catch (error) {
+        console.error('Error fetching orders:', error);
       }
-      const data = await response.json();
-      setOrders(data);
-    } catch (error) {
-      console.error('Error fetching orders:', error);
+    };
+
+    if (token) {
+      fetchOrders();
     }
-  };
+  }, [token]);
 
 
 
