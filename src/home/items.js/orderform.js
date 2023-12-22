@@ -80,6 +80,22 @@ const Orderform = (props) => {
   }, [params.id]);
 
   const token = localStorage.getItem("token");
+  const [userId, setUserId] = useState('');
+
+  useEffect(() => {
+    const fetchUserId = async () => {
+      try {
+        const response = await Axios.get(`https://apifordropment.online/api/shops/orders/${params.shop_id}`);
+        if (response.data && response.data.user_id) {
+          setUserId(response.data.user_id);
+        }
+      } catch (error) {
+        console.error('Error fetching user ID:', error);
+      }
+    };
+
+    fetchUserId();
+  }, [params.shop_id]);
 
 
   useEffect(() => {
@@ -152,7 +168,8 @@ const Orderform = (props) => {
           occupation: name2[0]?.occupation,
           age: name2[0]?.age,
           sender_id: name2[0]?.user_id,
-          orderDateTime: formattedDate, // Use formatted date
+          orderDateTime: dateTimeISO, // Use formatted date
+          owner_id: userId
         },
         {
           headers: {
