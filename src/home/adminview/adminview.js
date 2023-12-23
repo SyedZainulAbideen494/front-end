@@ -249,44 +249,49 @@ const Dashboard = () => {
 
   return (
     <Fragment>
-      <div className='main-div-overview-shop-admin'>
-     <div class='header-overview-shop'>
-    <header>
-      <img src={logo} alt='Dropment Logo'/>
-      <div className='admin-menu-header-btns'>
-        <Link to={`/admin/Orders/${params.shop_id}`}>
-            <button style={{color: 'white'}}>Orders</button>
+    {/* Header section */}
+    <div className='main-div-overview-shop-admin'>
+      <div className='header-overview-shop'>
+        <header>
+          <img src={logo} alt='Dropment Logo' />
+          <div className='admin-menu-header-btns'>
+            <Link to={`/admin/Orders/${params.shop_id}`}>
+              <button style={{ color: 'white' }}>Orders</button>
             </Link>
             <Link to={`/admin/products/${params.shop_id}`}>
-            <button style={{color: 'white'}}>Products</button>
+              <button style={{ color: 'white' }}>Products</button>
             </Link>
             <Link to='/'>
-            <button style={{color: 'white'}}>back</button>
+              <button style={{ color: 'white' }}>back</button>
             </Link>
+          </div>
+        </header>
       </div>
-    </header>
-  </div>
-  <div class="dashboard-container">
-    <h1>Shop Overview</h1>
-    <div class="data-components">
-      <div class="total-visits">
-        <h2>Total Shop Visits</h2>
-        <h4>{totalVisits}</h4>
+
+      {/* Main content */}
+      <div className="dashboard-container">
+        <h1>Shop Overview</h1>
+        <AdminOverviewShop />
+        <div className="data-components">
+          <div className="total-visits">
+            <h2>Total Shop Visits</h2>
+            <h4>{totalVisits}</h4>
+          </div>
+          <OrdersComponent />
+          <OrdersComponentMostSoldProduct />
+          <TotalMoneyMade />
+          <SalesComponent7dayData />
+          <TotalInventory />
+        </div>
       </div>
-      <OrdersComponent/>
-      <OrdersComponentMostSoldProduct/>
-      <TotalMoneyMade/>
-      <SalesComponent7dayData/>
-      <TotalInventory/>
-      </div>
-      </div>
-      </div>
-      <div className='charts' style={{alignItems: 'center', textAlign: 'center'}}>
-      <ShopVisitorsChart/>
-        <AdminOverviewShop/>
-        <AdminOverviewgenderShop/>
-        
-      </div>
+    </div>
+
+    {/* Charts section */}
+    <div className='charts' style={{ alignItems: 'center', textAlign: 'center' }}>
+      <ShopVisitorsChart />
+      <AdminOverviewgenderShop />
+      
+    </div>
   </Fragment>
   );
 };
