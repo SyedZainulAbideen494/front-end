@@ -159,7 +159,7 @@ const AdminOverview = () => {
               <h2 className="summary-title">Order Summary</h2>
               <div className="summary-details">
                 <p className="summary-text">Total Orders</p>
-                <p className="summary-value">{orders.length}</p>
+                <h2 className="summary-value">{orders.length}</h2>
               </div>
             </div>
           </div>
