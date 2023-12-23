@@ -271,7 +271,7 @@ const Dashboard = () => {
       {/* Main content */}
       <div className="dashboard-container">
         <h1>Shop Overview</h1>
-        <AdminOverviewShop />
+        <AdminOverviewShop/>
         <div className="data-components">
           <div className="total-visits">
             <h2>Total Shop Visits</h2>
@@ -282,15 +282,9 @@ const Dashboard = () => {
           <TotalMoneyMade />
           <SalesComponent7dayData />
           <TotalInventory />
+          <AdminOverviewgenderShop />
         </div>
       </div>
-    </div>
-
-    {/* Charts section */}
-    <div className='charts' style={{ alignItems: 'center', textAlign: 'center' }}>
-      <ShopVisitorsChart />
-      <AdminOverviewgenderShop />
-      
     </div>
   </Fragment>
   );

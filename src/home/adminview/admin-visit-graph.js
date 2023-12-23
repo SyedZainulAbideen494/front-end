@@ -144,7 +144,7 @@ const shopId = params.shop_id
             <div className="summary">
               <h2 className="summary-title">visits Summary</h2>
               <div className="summary-details">
-                <p className="summary-text">Total visits</p>
+                <p className="summary-text">Total Visits</p>
                 <h2 className="summary-value">{orders.length}</h2>
               </div>
             </div>
