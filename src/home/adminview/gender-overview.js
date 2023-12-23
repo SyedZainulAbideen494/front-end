@@ -96,7 +96,7 @@ const AdminOverviewgender = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#171A2D', padding: '20px', borderRadius: '8px', width: '200px', height: '290px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', marginTop: '20px' }}>
+    <div style={{ backgroundColor: '#171A2D', padding: '20px', borderRadius: '8px', width: '200px', height: '360px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', marginTop: '20px' }}>
       <h4 style={{textAlign: 'center'}}>Gender</h4>
       <div className='charts'>
       <canvas id="genderChart" width="150" height="150"></canvas>
