@@ -246,7 +246,7 @@ const Dashboard = () => {
 
     fetchData();
   }, [params.shop_id]);
-  const [showVisits, setShowVisits] = useState(false);
+  const [showVisits, setShowVisits] = useState(true);
   const [showOrders, setShowOrders] = useState(false);
 
   const handleVisitsClick = () => {
