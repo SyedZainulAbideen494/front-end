@@ -209,10 +209,10 @@ useEffect(() => {
 
   return (
     <Fragment>
-   <div className="shop-container">
-      <div className="shop-card">
-        <div className="shop-header">
-          <img src={items[0]?.logo} alt={props.shop_name || 'custom build in progress'} className="shop-logo" />
+   <div className="shop-container-profile" style={{width: '350px'}}>
+      <div className="shop-card-profile">
+        <div className="shop-header-profile">
+          <img src={items[0]?.logo} alt={props.shop_name || 'custom build in progress'} className="shop-logo-profile" />
           <div className="shop-header-details">
           <Link
         to={`${Linkno(props)}/${props.shop_id}/${props.shop_name || props.build}`}
@@ -222,20 +222,20 @@ useEffect(() => {
             </Link>
           </div>
         </div>
-        <div className="shop-image">
+        <div className="shop-image-profile">
           <img src={items[0]?.image} alt={items.shop_name} />
         </div>
-        <div className="shop-actions">
+        <div className="shop-actions-profile">
           <button className={`follow-button ${isFollowing ? 'following' : ''}`} onClick={isFollowing ? toggleunFollow : toggleFollow}>
             {isFollowing ? 'Following' : 'Follow'}
           </button>
         </div>
-        <div className="shop-footer">
-          <div className="shop-rating">
-            <span className="star-icon">⭐</span>
+        <div className="shop-footer-profile">
+          <div className="shop-rating-profile">
+            <span className="star-icon-profile">⭐</span>
             {averageRating}
           </div>
-          <div className="shop-follower-count">{followerCount} Products</div>
+          <div className="shop-follower-count-profile">{followerCount} Products</div>
         </div>
       </div>
     </div>
