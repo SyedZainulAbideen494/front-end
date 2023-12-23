@@ -281,9 +281,11 @@ const Dashboard = () => {
       </div>
       </div>
       </div>
-      <div className='charts'>
+      <div className='charts' style={{alignItems: 'center', textAlign: 'center'}}>
+      <ShopVisitorsChart/>
         <AdminOverviewShop/>
         <AdminOverviewgenderShop/>
+        
       </div>
   </Fragment>
   );
