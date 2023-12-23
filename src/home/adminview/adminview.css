@@ -838,3 +838,29 @@
     width: 90%;
   }
 }
+
+.dashboard-container-button-dashboard {
+  flex-direction: column;
+  text-align: center;
+  /* Add more styling as needed */
+}
+.visits-button-button-dashboard.active,
+.orders-button-button-dashboard.active {
+  background-color: transparent;
+  color: #333;
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+/* Inactive button styles */
+.visits-button-button-dashboard,
+.orders-button-button-dashboard {
+  background-color: transparent;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 9px;
+  cursor: pointer;
+}

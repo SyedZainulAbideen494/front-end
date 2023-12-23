@@ -246,6 +246,18 @@ const Dashboard = () => {
 
     fetchData();
   }, [params.shop_id]);
+  const [showVisits, setShowVisits] = useState(false);
+  const [showOrders, setShowOrders] = useState(false);
+
+  const handleVisitsClick = () => {
+    setShowVisits(true);
+    setShowOrders(false);
+  };
+
+  const handleOrdersClick = () => {
+    setShowVisits(false);
+    setShowOrders(true);
+  };
 
   return (
     <Fragment>
@@ -271,7 +283,23 @@ const Dashboard = () => {
       {/* Main content */}
       <div className="dashboard-container">
         <h1>Shop Overview</h1>
-        <AdminOverviewShop/>
+        <div className="dashboard-container-button-dashboard">
+      <button
+        className={`visits-button-button-dashboard ${showVisits ? 'active' : ''}`}
+        onClick={handleVisitsClick}
+      >
+        Show Visits
+      </button>
+      <button
+        className={`orders-button-button-dashboard ${showOrders ? 'active' : ''}`}
+        onClick={handleOrdersClick}
+      >
+        Show Orders
+      </button>
+
+      {showVisits && <ShopVisitorsChart className="visits-chart" />}
+      {showOrders && <AdminOverviewShop className="orders-overview" />}
+    </div>
         <div className="data-components">
           <div className="total-visits">
             <h2>Total Shop Visits</h2>
