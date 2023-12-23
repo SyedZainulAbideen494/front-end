@@ -5,6 +5,9 @@ import SalesReportApp from '../sales/chatsreport';
 import './adminview.css'
 import logo from '../header/images/drop2_logo.png'
 import { Bar } from 'react-chartjs-2';
+import AdminOverviewShop from './admin-shop-overview';
+import AdminOverviewgenderShop from './admin-shop-gender-overview';
+import ShopVisitorsChart from './admin-visit-graph';
 
 const TotalInventory = () => {
   const [totalInventory, setTotalInventory] = useState(0);
@@ -277,6 +280,10 @@ const Dashboard = () => {
       <TotalInventory/>
       </div>
       </div>
+      </div>
+      <div className='charts'>
+        <AdminOverviewShop/>
+        <AdminOverviewgenderShop/>
       </div>
   </Fragment>
   );
