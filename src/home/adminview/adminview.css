@@ -817,11 +817,11 @@
 
 .notification-item {
   width: 60%; /* Adjust as needed */
-  background-color: #f0f0f0;
+  background-color: #17182A;
   margin: 10px;
   padding: 20px;
+  color: white;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .notification-content {
