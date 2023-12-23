@@ -35,9 +35,9 @@ const NotificationComponent = ({ closeNotifications }) => {
         {notifications.map((notification) => (
           <li className="notification-item" key={notification.id}>
             <div className="notification-content">
-              <p className="notification-message">{notification.message}</p>
-              <p className="notification-time">{notification.time_created}</p>
+              <p className="notification-message">{notification.message}</p><br/>
             </div>
+            <p className="notification-time">{notification.time_created}</p>
           </li>
         ))}
       </ul>

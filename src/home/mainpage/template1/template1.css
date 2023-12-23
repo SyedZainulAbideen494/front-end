@@ -1,407 +1,104 @@
-@media (min-width: 312px) and (max-width: 480px){ 
-  .shop-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 35vh;
-  }
-  
-  .shop-card {
-    border: 1px solid #ccc;
-    background-color: #000000;
-    border-radius: 5px;
-    width: 100%;
-    color: white;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  
-  .shop-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .shop-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .shop-header-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .shop-name {
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-  }
-  
-  .shop-owner {
-    color: #ffffff;
-    font-size: 0.9rem;
-  }
-  
-  .shop-image img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-  }
-  
-  .shop-actions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    background-color: #000000;
-    border-top: 1px solid #ddd;
-    color: white;
-  }
-  
-  .follow-button {
-    background-color: transparent;
-    color: #00FFE0;
-    border: 1px solid #00FFE0;
-    border-radius: 5px;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .follow-button.following {
-    background-color: #000000;
-    color: #7f7f7f;
-    border: 1px solid transparent;
-  }
-  .shop-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #000000;
-    border-top: 1px solid #ddd;
-    color: white;
-  }
-  .shop-header- p {
-    color: white;
-  }
-  .star-icon {
-    color: gold;
-    margin-right: 3px;
-  }
-/* Additional styling can be added based on your preferences */
-}
-@media (min-width: 481px) and (max-width: 768px) {
-  .shop-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 35vh;
-  }
-  
-  .shop-card {
-    border: 1px solid #ccc;
-    background-color: #000000;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    max-width: 100%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  
-  .shop-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .shop-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .shop-header-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .shop-name {
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-  }
-  
-  .shop-owner {
-    color: #ffffff;
-    font-size: 0.9rem;
-  }
-  
-  .shop-image img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-  }
-  
-  .shop-actions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    background-color: #000000;
-    color: white;
-    border-top: 1px solid #ddd;
-  }
-  
-  .follow-button {
-    background-color: transparent;
-    color: #00FFE0;
-    border: 1px solid #00FFE0;
-    border-radius: 5px;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .follow-button.following {
-    background-color: #000000;
-    color: #7f7f7f;
-    border: 1px solid transparent;
-  }
-  
-  .shop-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #000000;
-    border-top: 1px solid #ddd;
-    color: white;
-  }
-  .shop-header- p {
-    color: white;
-  }
-  .star-icon {
-    color: gold;
-    margin-right: 3px;
-  }
+/* Dark Theme Styles */
+
+/* Common styles for all breakpoints */
+.shop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 35vh;
+  margin-bottom: 30px;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .shop-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 35vh;
-  }
-  
-  .shop-card {
-    border: 1px solid #ccc;
-    background-color: #000000;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    max-width: 100%;
-    display: flex;
-    color: white;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  
-  .shop-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .shop-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .shop-header-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .shop-name {
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-  }
-  
-  .shop-owner {
-    color: #ffffff;
-    font-size: 0.9rem;
-  }
-  
-  .shop-image img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-  }
-  
-  .shop-actions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    background-color: #000000;
-    border-top: 1px solid #ddd;
-    color: white;
-  }
-  
-  .follow-button {
-    background-color: transparent;
-    color: #00FFE0;
-    border: 1px solid #00FFE0;
-    border-radius: 5px;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .follow-button.following {
-    background-color: #000000;
-    color: #7f7f7f;
-    border: 1px solid transparent;
-  }
-  
-  .shop-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #000000;
-    border-top: 1px solid #ddd;
-    color: white;
-  }
-  
-  .star-icon {
-    color: gold;
-    margin-right: 3px;
-  }
-  .shop-header- p {
-    color: white;
-  }
+.shop-card {
+  border: 1px solid #555; /* Darkened border */
+  background-color: #121212; /* Darker background */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+  width: 50%; /* Adjusted width */
+  max-width: 100%;
+  color: #fff; /* White text */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-@media (min-width: 1025px){
-    .shop-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 35vh;
-        color: #ffffff;
-      }
-      .shop-header- p {
-        color: white;
-      }
-      
-      .shop-card {
-        border: 1px solid #ccc;
-        color: #ffffff;
-        background-color: #000000;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        width: 300px;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      }
-      
-      .shop-header {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-      }
-      
-      .shop-logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-      
-      .shop-header-details {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .shop-name {
-        font-weight: bold;
-        text-decoration: none;
-        color: #ffffff;
-        margin-bottom: 5px;
-        font-size: 1.2rem;
-      }
-      
-      .shop-owner {
-        color: #ffffff;
-        font-size: 0.9rem;
-      }
-      
-      .shop-image img {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        object-fit: cover;
-      }
-      
-      .shop-actions {
-        display: flex;
-        justify-content: flex-end;
-        padding: 10px;
-        background-color: #000000;
-        border-top: 1px solid #ddd;
-        color: white;
-      }
-      
-      .follow-button {
-        background-color: transparent;
-        color: #00FFE0;
-        border: 1px solid #00FFE0;
-        border-radius: 5px;
-        padding: 5px 15px;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      
-      .follow-button.following {
-        background-color: #000000;
-        color: #7f7f7f;
-        border: 1px solid transparent;
-      }
-      
-      .shop-footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        color: white;
-        background-color: #000000;
-        border-top: 1px solid #ddd;
-      }
-      
-      .star-icon {
-        color: gold;
-        margin-right: 3px;
-      }
-/* Additional styling can be added based on your preferences */
-    }
+.shop-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
 
+.shop-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
 
+.shop-header-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-name {
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.shop-owner {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.shop-image img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.shop-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: #121212; /* Darker background */
+  border-top: 1px solid #333; /* Darker border */
+  color: #ffffff;
+}
+
+.follow-button {
+  background-color: transparent;
+  color: #00FFE0;
+  border: 1px solid #00FFE0;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.follow-button.following {
+  background-color: #121212; /* Darker background */
+  color: #7f7f7f;
+  border: 1px solid transparent;
+}
+
+.shop-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #121212; /* Darker background */
+  border-top: 1px solid #333; /* Darker border */
+  color: #ffffff;
+}
+
+.shop-header p {
+  color: #ffffff; /* White text */
+}
+
+.star-icon {
+  color: gold;
+  margin-right: 3px;
+}
