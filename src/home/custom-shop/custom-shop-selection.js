@@ -114,7 +114,7 @@ const SelectNoSection = () => {
   
       // Redirect to /custom/shop on success
       if (response.status === 200) { // Adjust the condition based on your API response.
-        window.location.href = `profile`;
+        window.location.href = `/profile`;
       } else {
         // Handle the case where the operation is not successful
         console.log('Operation failed');
