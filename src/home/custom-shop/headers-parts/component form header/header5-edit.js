@@ -305,11 +305,11 @@ const Header5Edit = () => {
   return (
     <Fragment>
       <EditMenu/>
-      <div className="header5">
-      <section className="hero-section-header5"></section>
-      <section className="hero-section2-header5" style={{backgroundColor: backgroundColor1}}>
-        <p style={{color: fontColor1}}>{items[0]?.shop_tagline}</p>
-        <h1 style={{color:fontColor2}}>{items[0]?.salestext}</h1>
+      <div className="header5-preview">
+      <section className="hero-section-header5-preview"></section>
+      <section className="hero-section2-header5-preview" style={{backgroundColor: backgroundColor1}}>
+        <p style={{color: fontColor1}}>Welcome to our store</p>
+        <h1 style={{color:fontColor2}}>Winter sale 25% off</h1>
         <button style={{color: fontColor3, backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`}}>Shop now</button>
         <button style={{color: fontColor3, backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`}}>Learn more</button>
       </section>
