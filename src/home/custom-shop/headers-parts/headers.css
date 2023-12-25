@@ -1070,7 +1070,6 @@
 
     /*header 4*/
     .hero-section-4-preview {
-      background-color: rgba(0, 0, 0, 0.8); /* Background color with some transparency */
       color: #fff; /* Text color */
       text-align: center;
       padding: 100px 0;
@@ -1109,7 +1108,6 @@
     
     .header4-shop-button-preview, .header4-learn-button-preview {
       font-size: 18px;
-      background-color: #000;
       color: #fff;
       border: none;
       padding: 15px 30px;
@@ -1123,14 +1121,12 @@
     }
 
     .hero-section-4 {
-      background-color: rgba(0, 0, 0, 0.8); /* Background color with some transparency */
       color: #fff; /* Text color */
       text-align: center;
       padding: 100px 0;
       background-size: cover;
       background-position: center;
       height: 70vh;
-      background-blend-mode: multiply; /* Blend mode to blend text with background */
     }
     
     .header4-hero-title {

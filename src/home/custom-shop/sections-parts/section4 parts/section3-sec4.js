@@ -20,9 +20,9 @@ const Section3BuildSec4 = () => {
     const data = await response.json();
     const transformedItems = data.shops.map((itemsdata) => {
       return {
-        images2: `https://apifordropment.online/images/${itemsdata.images2}`,
-        images3: `https://apifordropment.online/images/${itemsdata.images3}`,
-        images4: `https://apifordropment.online/images/${itemsdata.images4}`
+        images2: `https://apifordropment.online/images/${itemsdata.images5}`,
+        images3: `https://apifordropment.online/images/${itemsdata.images6}`,
+        images4: `https://apifordropment.online/images/${itemsdata.images7}`
       };
     });
     setimg(transformedItems);
@@ -30,8 +30,8 @@ const Section3BuildSec4 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
 
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
@@ -96,7 +96,7 @@ const Section3BuildSec4 = () => {
 
     
     const heroStyle1 = {
-        backgroundImage: `url(${items.length > 0 ? items[0].images2 : ''})`,
+        backgroundImage: `url(${items.length > 0 ? img[0].images2 : ''})`,
       };
 
       const heroStyle2 = {
