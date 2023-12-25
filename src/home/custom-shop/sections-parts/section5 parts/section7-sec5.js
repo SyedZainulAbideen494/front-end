@@ -30,8 +30,8 @@ const Section7BuildSec5 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
 
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
@@ -94,13 +94,10 @@ const Section7BuildSec5 = () => {
     }, [fetchColorHandler]);
 
 
-    const heroStyle1 = {
-        backgroundImage: `url(${items.length > 0 ? img[0].images2 : ''})`,
-      };
 
     return<Fragment>
        <div className="section-7-build-main-div">
-        <section className="section-7-build-section" style={heroStyle1}>
+        <section className="section-7-build-section" >
             <h1 style={{color: color[0]?.font_colour1}}>{items[0]?.shop_blockhead1 || "Winter sales 25% off"}</h1>
             <button style={{border: `2px solid ${ color[0]?.background_colour1}`, color:  color[0]?.font_colour2}}>Shop Now</button>
         </section>

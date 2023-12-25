@@ -30,8 +30,8 @@ const Section10BuildSec4 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
 
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);

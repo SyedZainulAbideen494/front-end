@@ -65,7 +65,7 @@ const Footer1 = () => {
             <img src={whatsapp}/>
           </div>
           </div>
-          <div><p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
+          <div style={{textAlign: 'center'}}><p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
         </footer>
     </Fragment>
 }

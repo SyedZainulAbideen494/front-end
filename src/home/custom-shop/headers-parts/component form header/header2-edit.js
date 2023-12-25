@@ -174,7 +174,6 @@ const Header2Edit = () => {
         {
           salestext: salestext,
           tagline: tagline,
-          phone: phone // Make sure 'phone' is defined
         },
         {
           headers: {

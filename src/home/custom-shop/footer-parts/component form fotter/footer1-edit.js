@@ -78,14 +78,14 @@ const Footer1Edit = () => {
           insta: insta,
           facebook: facebook,
           linkedin: linkdin, // Corrected variable name
-          twitter: x, // Make sure these variables are defined in your frontend
+          twitter: x,
           phone: phone,
           email: email,
           whatsapp: whatsapp,
         },
         {
           headers: {
-            Authorization: params.shop_id, // Assuming shop_id is available in this scope
+            Authorization: params.shop_id, // Assuming token is available here
           },
         }
       )
@@ -100,6 +100,7 @@ const Footer1Edit = () => {
           console.error('Error:', error);
         });
     };
+  
     
   
     const handleBackgroundColorChange1 = (event) => {
@@ -543,7 +544,7 @@ const Footer1Edit = () => {
             <img src={whatsapp}/>
           </div>
           </div>
-          <div style={{backgroundColor: backgroundColor2}}><p style={{color: fontColor3}}>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
+          <div style={{backgroundColor: backgroundColor2, textAlign: 'center'}}><p style={{color: fontColor3}}>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p></div>
         </footer>
     </Fragment>
 }

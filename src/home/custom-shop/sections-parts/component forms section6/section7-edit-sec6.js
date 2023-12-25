@@ -190,7 +190,7 @@ const Section7BuildEditSec6 = () => {
         const formData = new FormData();
         formData.append("image", image);
      
-        Axios.post("https://apifordropment.online/addshopimg10", formData, {
+        Axios.put("https://apifordropment.online/addshopimg10", formData, {
           headers: {
             Authorization: params.shop_id,
           },

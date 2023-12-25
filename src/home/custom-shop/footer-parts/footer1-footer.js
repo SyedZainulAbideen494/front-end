@@ -121,7 +121,7 @@ const Footer1Footer = () => {
             <img src={whatsapp} onClick={handleWhatsAppClick}/>
           </div>
           </div>
-          <div style={{backgroundColor: color[0]?.background_colour2}}><p style={{color: color[0]?.font_colour3}}>&copy; {new Date().getFullYear()} {items[0]?.companyname}. All rights reserved.</p></div>
+          <div style={{backgroundColor: color[0]?.background_colour2, textAlign: 'center'}}><p style={{color: color[0]?.font_colour3}}>&copy; {new Date().getFullYear()} {items[0]?.companyname}. All rights reserved.</p></div>
         </footer>
     </Fragment>
 }

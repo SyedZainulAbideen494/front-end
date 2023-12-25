@@ -305,7 +305,7 @@ const Header5Edit = () => {
   return (
     <Fragment>
       <EditMenu/>
-      <div className="header5-preview">
+      <div className="header5">
       <section className="hero-section-header5-preview"></section>
       <section className="hero-section2-header5-preview" style={{backgroundColor: backgroundColor1}}>
         <p style={{color: fontColor1}}>Welcome to our store</p>

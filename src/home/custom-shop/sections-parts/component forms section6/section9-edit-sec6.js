@@ -66,7 +66,7 @@ const Section9BuildEditSec6 = () => {
     const params = useParams();
 
     const addShopHandler = () => {
-      Axios.put(
+      Axios.post(
         "https://apifordropment.online/section6/data",
         {
           shop_blockhead1: shop_blockhead1,
@@ -137,7 +137,7 @@ const Section9BuildEditSec6 = () => {
     };
   }
     const addColorsHandler = () => {
-      Axios.post(
+      Axios.put(
         "https://apifordropment.online/color/selection/section/6",
         {
           backgroundColor1: backgroundColor1,

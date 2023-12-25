@@ -41,8 +41,8 @@ const Section10Buildpreview = () => {
         <div className="section-10-main-div-preview">
             <div className="section-10-section1"></div>
             <div className="section-10-section2">
-                <h1>Welcome</h1>
-                <p>Welcome to Dropment, your one-stop solution for 
+                <h1 style={{color: 'black'}}>Welcome</h1>
+                <p style={{color: 'black'}}>Welcome to Dropment, your one-stop solution for 
                     creating and managing online shops with ease.
                      Customize your unique storefront, collaborate 
                      with others, and engage with your customers 

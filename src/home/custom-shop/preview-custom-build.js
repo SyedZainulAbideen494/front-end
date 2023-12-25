@@ -231,6 +231,8 @@ const CustomShopPreview = () => {
       return <Section4Build />
     }if (items[0]?.section3 === '5') {
       return <Section5Build />
+    }if (items[0]?.section3 === '6') {
+      return <Section6Build />
     } if (items[0]?.section3 === '7') {
       return <Section7Build />
     } if (items[0]?.section3 === '8') {
