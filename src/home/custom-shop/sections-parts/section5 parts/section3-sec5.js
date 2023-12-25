@@ -30,8 +30,8 @@ const Section3BuildSec5 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
 
   const fetchProductsHandler = useCallback(async () => {
     setLoading(true);
@@ -96,15 +96,15 @@ const Section3BuildSec5 = () => {
 
     
     const heroStyle1 = {
-        backgroundImage: `url(${items.length > 0 ? items[0].images2 : ''})`,
+        backgroundImage: `url(${img.length > 0 ? img[0].images2 : ''})`,
       };
 
       const heroStyle2 = {
-        backgroundImage: `url(${items.length > 0 ? img[0].images3 : ''})`,
+        backgroundImage: `url(${img.length > 0 ? img[0].images3 : ''})`,
       };
 
       const heroStyle3 = {
-        backgroundImage: `url(${items.length > 0 ? img[0].images4 : ''})`,
+        backgroundImage: `url(${img.length > 0 ? img[0].images4 : ''})`,
       };
     return<Fragment>
        <div className="section-3-build-maindiv" style={{backgroundColor: color[0]?.background_colour3}}>
