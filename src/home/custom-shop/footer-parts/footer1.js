@@ -39,7 +39,7 @@ const Footer1 = () => {
 
 
     return<Fragment>
-        <footer>
+        <footer style={{backgroundColor: 'white'}}>
           <div className="footer-1-">
           <div className="footer-1-section-1">
             <h4>Our company</h4>
