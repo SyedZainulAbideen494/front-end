@@ -171,7 +171,7 @@ const router = createBrowserRouter([
   {path: '/add/BlinkFeed', element: <AddStories/>},
   {path: '/story/:user_id', element: <Stories/>},
   {path: '/custom/shop/build/page1', element:<SelectNoSection/>},
-  {path: '/build/:build/step1/:shop_id/:build', element: <Step1build/>},
+  {path: '/build/:build/step1/:shop_id/', element: <Step1build/>},
   {path: '/build/:build/step1/form/:shop_id/:number', element: <NavBarsForm/>},
   {path: '/build/:build/step2/form/:shop_id/:number', element: <HeadersForm/>},
   {path: '/build/:build/step2/:shop_id/:build', element: <Step2build/>},

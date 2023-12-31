@@ -26,79 +26,38 @@ const Addshopniche = () => {
     });
   };
   return (
-    <Fragment>
-      <div className="nichehead">
-        <header>
-          <div className="nicheheaderbtns">
-            <span className="nicheheaderbtn">
-            <Link to='/home'style={{textDecoration: 'none'}}>
-              <button>Back</button>
+ <div className="container-shop-builder">
+     <div className="header-shop-builder">
+  <div className="headerButtons-shop-builder">
+    <Link to="/profile" style={{ textDecoration: 'none' }}>
+      <button className="navButton-shop-builder">Profile</button>
+    </Link>
+    <Link to="/home" style={{ textDecoration: 'none' }}>
+      <button className="navButton-shop-builder">Home</button>
+    </Link>
+    <Link to="/overview" style={{ textDecoration: 'none' }}>
+      <button className="navButton-shop-builder">Overview</button>
+    </Link>
+    <Link to="/home" style={{ textDecoration: 'none' }}>
+      <button className="backButton-shop-builder">Back</button>
+    </Link>
+  </div>
+</div>
+
+      <div className="content-shop-builder">
+        <div className="quote-shop-builder">
+          <p className="quoteText-shop-builder">Start your journey to success!</p>
+        </div>
+        
+        <div className="templates-shop-builder">
+          <div className="templat-shop-buildere">
+            <Link to="/custom/shop/build/page1" style={{ textDecoration: 'none' }}>
+              <button className="setupButton-shop-builder">Setup Shop</button>
             </Link>
-            </span>
-          </div>
-        </header>
-      </div>
-      <div className="niches">
-        <div className="templates">
-        <div className="template">
-          <Link to='/custom/shop/build/page1'style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button-custom" >Custom shop</button>
-              </Link>
-          </div>
-          {/* Template 1 */}
-          <div className="template">
-            <Link to="/Add/temp1/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button" disabled>Dropment template 1<br/>Under maintenance<FaLock /></button><br/>
-            </Link>
-            <span>
-              <Link to="/temp1preview" style={{textDecoration: 'none'}} className="preview-link">
-                <button className="button-button-secondary-preview-button" disabled>Preview <FaLock /></button>
-              </Link>
-            </span>
-          </div>
-          <div className="template">
-            <Link to="/Add/temp2/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button">Dropment template 2</button><br/>
-            </Link>
-            <span className="preview-span">
-              <Link to="/temp2preview"style={{textDecoration: 'none'}} className="preview-link">
-                <button className="button-button-secondary-preview-button">Preview</button>
-              </Link>
-            </span>
-          </div>
-          <div className="template">
-            <Link to="/Add/temp3/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button" disabled>Dropment template 3<br/>Under maintenance<FaLock/></button><br/>
-            </Link>
-            <span className="preview-span">
-              <Link to="/temp3preview" className="preview-link"style={{textDecoration: 'none'}}>
-                <button className="button-button-secondary-preview-button" disabled>Preview</button>
-              </Link>
-            </span>
-          </div>
-          <div className="template">
-            <Link to="/Add/temp4/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button">Dropment template 4</button><br/>
-            </Link>
-            <span className="preview-span">
-              <Link to="/temp4preview" className="preview-link"style={{textDecoration: 'none'}}>
-                <button className="button-button-secondary-preview-button">Preview</button>
-              </Link>
-            </span>
-          </div>
-          <div className="template">
-            <Link to="/Add/temp5/form"style={{textDecoration: 'none'}}>
-              <button className="button-button-primary-template-button" >Dropment template 5 </button><br/>
-            </Link>
-            <span className="preview-span">
-              <Link to="/temp5preview" className="preview-link" style={{textDecoration: 'none'}}>
-                <button className="button-button-secondary-preview-button">Preview</button>
-              </Link>
-            </span>
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
