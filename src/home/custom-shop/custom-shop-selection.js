@@ -50,7 +50,12 @@ const SelectNoSection = () => {
         <button className="dark-section-button" onClick={() => addShopHandler(5)}>
           5 section store
         </button>
-        {/* Add similar buttons for other sections */}
+        <button className="dark-section-button" onClick={() => addShopHandler(6)}>
+          6 section store
+        </button>
+        <button className="dark-section-button" onClick={() => addShopHandler(7)}>
+          7 section store
+        </button>
       </div>
     </div>
   );
