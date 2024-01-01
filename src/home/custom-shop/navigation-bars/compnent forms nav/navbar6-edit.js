@@ -337,21 +337,15 @@ function NavBar6Edit() {
   return (
     <Fragment>
       <EditMenu/>
-    <div className='nav-bar6-header' style={{backgroundColor: backgroundColor4}}>
-      <header className='nav-bar6'>
-        <section className='section1-nav-bar-6'>
-          <a href={items[0]?.instagram_link || 'https://www.instagram.com/saz_494/'}>
-            <img src={insta} alt="Instagram" />
-          </a>
-          <img src={phonelogo} onClick={handleWhatsAppClick} alt="Phone" />
-        </section>
-        <section className='section2-nav-bar-6'>
-            <button style={{color: fontColor1, border: `2px solid ${backgroundColor2}`, backgroundColor: backgroundColor3}}>{items[0]?.button1 || 'button1'}</button>
-            <img src={items[0]?.logo || logo}/>
-            <button style={{color: fontColor1, border: `2px solid ${backgroundColor2}`, backgroundColor: backgroundColor3}}>About us</button>
-        </section>
-      </header>
-    </div>
+      <header className="header-header-6" style={{backgroundColor: backgroundColor1}}>
+    <nav className="nav-header-6">
+      <ul className="nav-list-header-6">
+        <li className="nav-item-header-6" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Home</li>
+        <li className="nav-item-header-6" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Products</li>
+        <li className="nav-item-header-6" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Login</li>
+      </ul>
+    </nav>
+  </header>
     </Fragment>
   );
 }

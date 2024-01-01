@@ -23,7 +23,7 @@ const SelectNoSection = () => {
           const shop_id = response.data.shop_id;
 
           // Redirect to the shop_id route based on the received shop_id and selected section
-          window.location.href = `/build/${section}/step1/${shop_id}`;
+          window.location.href = `/build/${section}/step1/${shop_id}/${section}`;
         } else {
           console.log("Operation failed or no shop_id received");
         }
@@ -35,29 +35,29 @@ const SelectNoSection = () => {
 
   return (
     <div className="dark-box-container">
-      <div className="dark-header-section">
-        <Link to="/Addshoppage1">
-          <button className="dark-go-back-button">Go Back</button>
-        </Link>
-        <h2 className="dark-section-heading">
-          Choose the Number of Sections for Your Online Store
-        </h2>
-      </div>
-      <div className="dark-section-buttons">
-        <button className="dark-section-button" onClick={() => addShopHandler(4)}>
-          4 section store
-        </button>
-        <button className="dark-section-button" onClick={() => addShopHandler(5)}>
-          5 section store
-        </button>
-        <button className="dark-section-button" onClick={() => addShopHandler(6)}>
-          6 section store
-        </button>
-        <button className="dark-section-button" onClick={() => addShopHandler(7)}>
-          7 section store
-        </button>
-      </div>
+    <div className="dark-header-section">
+      <Link to="/Addshoppage1" className="dark-go-back-button" style={{textDecoration: 'none'}}>
+        Go Back
+      </Link>
+      <h2 className="dark-section-heading">
+        Choose the Number of Sections for Your Online Store
+      </h2>
     </div>
+    <div className="dark-section-buttons">
+      <button className="dark-section-button" onClick={() => addShopHandler(4)}>
+        4 section store
+      </button>
+      <button className="dark-section-button" onClick={() => addShopHandler(5)}>
+        5 section store
+      </button>
+      <button className="dark-section-button" onClick={() => addShopHandler(6)}>
+        6 section store
+      </button>
+      <button className="dark-section-button" onClick={() => addShopHandler(7)}>
+        7 section store
+      </button>
+    </div>
+  </div>
   );
 };
 

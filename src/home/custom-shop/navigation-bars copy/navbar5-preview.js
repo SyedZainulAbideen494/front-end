@@ -7,18 +7,6 @@ function NavBar5Preview() {
 
   return (
     <div className="headernavbar1-preview">
-    <div className='nav-bar5-header'>
-    <header className='nav-bar5'>
-        <div className='name-shop-nav-bars5' >
-            <h2>Shop name</h2>
-        </div>
-        <div className='nav-bar5-btns'>
-            <button >button1</button>
-            <button>About us</button>
-            <button>Contact us</button>
-        </div>
-    </header>
-    </div>
     </div>
   );
 }

@@ -17,23 +17,15 @@ function NavBar6Preview() {
   };
 
   return (
-    <div className="headernavbar1-preview">
-    <div className='nav-bar6-header'>
-      <header className='nav-bar6'>
-        <section className='section1-nav-bar-6'>
-          <a href={'https://www.instagram.com/saz_494/'}>
-            <img src={insta} alt="Instagram" />
-          </a>
-          <img src={phonelogo} onClick={handleWhatsAppClick} alt="Phone" />
-        </section>
-        <section className='section2-nav-bar-6'>
-            <button >button1</button>
-            <img src={logo}/>
-            <button>About us</button>
-        </section>
-      </header>
-    </div>
-    </div>
+    <header className="header-header-6">
+      <nav className="nav-header-6">
+        <ul className="nav-list-header-6">
+          <li className="nav-item-header-6">Home</li>
+          <li className="nav-item-header-6">Products</li>
+          <li className="nav-item-header-6">Login</li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 

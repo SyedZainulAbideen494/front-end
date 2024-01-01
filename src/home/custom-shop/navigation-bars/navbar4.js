@@ -91,15 +91,19 @@ function NavBar4() {
 
 
   return (
-    <header className="header-navbar4" style={{backgroundColor: color[0]?.background_colour1}}>
-      <nav>
-        <ul className="nav-list-navbar4">
-          <button onClick={scrollToItems} className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>{ items[0]?.button1 || 'button 1' }</button>
-          <button onClick={scrollToaboutus} className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>About us</button>
-          <button className="nav-button-navbar4" style={{border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3, color: color[0]?.font_colour1}}>contact us</button>
-        </ul>
-      </nav>
-    </header>
+    <header className="header-header4" style={{background: color[0]?.background_colour1}}>
+    <div className="logo-header4">
+      <h1 style={{background: color[0]?.font_colour1}}>Shop Name</h1>
+    </div>
+    <nav className="nav-header4">
+      <ul className="nav-list-header4">
+        <li className="nav-item-header4" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Products</li>
+        <li className="nav-item-header4" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Login</li>
+        <li className="nav-item-header4" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>home</li>
+        <li className="nav-item-header4" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Contact Us</li>
+      </ul>
+    </nav>
+  </header>
   );
 }
 

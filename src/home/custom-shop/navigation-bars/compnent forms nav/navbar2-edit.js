@@ -320,19 +320,18 @@ const NavBar2Edit = () => {
   };
     return<Fragment>
       <EditMenu/>
-        <div className="nav-bar-2-in-build">
-        <header className="header-navbar2" style={{background: backgroundColor1}}>
-      <div className="logo-navbar2">
-        <img src={logo} alt="Your Logo" />
+      <header className="header-header2" style={{background: backgroundColor1}}>
+      <div className="logo-header2">
+        <h1 style={{color: fontColor1}}>shop name</h1>
       </div>
-      <div className="shop-name-navbar2" style={{color: fontColor1}}>{ items[0]?.shop_name || 'Shop name' }</div>
-      <nav className="nav-navbar2">
-        <button className="nav-button-navbar2" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>{ items[0]?.button1 || 'Button 1' }</button>
-        <button className="nav-button-navbar2" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>About us</button>
-        <button className="nav-button-navbar2" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Contact us</button>
+      <nav className="nav-header2">
+        <ul className="nav-list-header2">
+          <li className="nav-item-header2" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Products</li>
+          <li className="nav-item-header2" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Login</li>
+          <li className="nav-item-header2" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Shop</li>
+        </ul>
       </nav>
     </header>
-        </div>
     </Fragment>
 }
 

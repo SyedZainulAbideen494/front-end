@@ -6,17 +6,19 @@ import { useParams } from 'react-router-dom';
 function NavBar4Preview() {
 
   return (
-    <div className="headernavbar1-preview">
-    <header className="header-navbar4" >
-      <nav>
-        <ul className="nav-list-navbar4">
-          <button className="nav-button-navbar4" >button 1</button>
-          <button className="nav-button-navbar4">About us</button>
-          <button className="nav-button-navbar4">contact us</button>
+   <header className="header-header4">
+      <div className="logo-header4">
+        <h1>Shop Name</h1>
+      </div>
+      <nav className="nav-header4">
+        <ul className="nav-list-header4">
+          <li className="nav-item-header4">Products</li>
+          <li className="nav-item-header4">Login</li>
+          <li className="nav-item-header4">home</li>
+          <li className="nav-item-header4">Contact Us</li>
         </ul>
       </nav>
     </header>
-    </div>
   );
 }
 

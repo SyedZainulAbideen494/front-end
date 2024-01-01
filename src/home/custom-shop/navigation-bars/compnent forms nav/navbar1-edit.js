@@ -322,19 +322,20 @@ const NavBar1Edit = () => {
   };
     return<Fragment>
       <EditMenu/>
-<div class="headernavbar1">
-  <header class="navbar1header"  style={{backgroundColor: backgroundColor1}}>
-    <div class="logo-container">
-      <img src={logo} alt="Logo" class="imglogonavbar1" />
-      <h2 style={{color: fontColor1}}>Shop name</h2>
-    </div>
-    <nav class="button-container">
-      <button style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Button 1</button>
-      <button style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>About us</button>
-      <button style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Contact us</button>
-    </nav>
-  </header>
-</div>
+      <header className="header-header1" style={{background: backgroundColor1}}>
+      <div className="logo-header1">
+        {/* Replace 'Logo' with your logo image or component */}
+        <img src={logo} alt="Logo" />
+      </div>
+      <div className="buttons-header1">
+        <button className="button-header1" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Home</button>
+        <button className="button-header1" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Products</button>
+        <button className="button-header1" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Login</button>
+      </div>
+      <div className="shopName-header1">
+        <h1 style={{color: fontColor1}}>Shop Name</h1>
+      </div>
+    </header>
     </Fragment>
 }
 

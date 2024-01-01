@@ -91,19 +91,20 @@ const NavBar1 = () => {
   };
 
     return<Fragment>
-<div class="headernavbar1"  style={{backgroundColor: color[0]?.background_colour1}}>
-  <header class="navbar1header">
-    <div class="logo-container">
-      <img src={logo} alt="Logo" class="imglogonavbar1" />
-      <h2 style={{color: color[0]?.font_colour1}}>{ items[0]?.shop_name || 'Shop name' }</h2>
-    </div>
-    <nav class="button-container">
-      <button onClick={scrollToItems} style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>{ items[0]?.button1 || 'Button 1' }</button>
-      <button onClick={scrollToaboutus} style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>About us</button>
-      <button style={{backgroundColor: color[0]?.backgroundColor2, border: `2px solid ${color[0]?.backgroundColor3}`, color: color[0]?.fontColor2}}>Contact us</button>
-    </nav>
-  </header>
-</div>
+  <header className="header-header1" style={{background: color[0]?.backgroundColor1}}>
+      <div className="logo-header1">
+        {/* Replace 'Logo' with your logo image or component */}
+        <img src={items[0]?.logo} alt="Logo" />
+      </div>
+      <div className="buttons-header1">
+        <button className="button-header1" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Home</button>
+        <button className="button-header1" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Products</button>
+        <button className="button-header1" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Login</button>
+      </div>
+      <div className="shopName-header1">
+        <h1 style={{color: color[0]?.font_colour1}}>{items[0]?.shop_name}</h1>
+      </div>
+    </header>
     </Fragment>
 }
 

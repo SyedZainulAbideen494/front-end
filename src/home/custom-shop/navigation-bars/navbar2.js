@@ -92,19 +92,18 @@ const NavBar2 = () => {
 
 
     return<Fragment>
-        <div className="nav-bar-2-in-build" style={{background: color[0]?.backgroundColor1}}>
-        <header className="header-navbar2">
-      <div className="logo-navbar2">
-        <img src={logo} alt="Your Logo" />
+        <header className="header-header2" style={{background: color[0]?.backgroundColor1}}>
+      <div className="logo-header2">
+        <h1 style={{color: color[0]?.font_colour1}}>{items[0]?.shop_name}</h1>
       </div>
-      <div className="shop-name-navbar2" style={{color: color[0]?.font_colour1}}>{ items[0]?.shop_name || 'Shop name' }</div>
-      <nav className="nav-navbar2">
-        <button onClick={scrollToItems} className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>{ items[0]?.button1 || 'Button 1' }</button>
-        <button onClick={scrollToaboutus} className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>About us</button>
-        <button className="nav-button-navbar2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Contact us</button>
+      <nav className="nav-header2">
+        <ul className="nav-list-header2">
+          <li className="nav-item-header2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Products</li>
+          <li className="nav-item-header2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Login</li>
+          <li className="nav-item-header2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Shop</li>
+        </ul>
       </nav>
     </header>
-        </div>
     </Fragment>
 }
 

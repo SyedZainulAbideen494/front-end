@@ -8,19 +8,7 @@ function NavBar3Preview() {
 
   return (
     <div className="headernavbar1-preview">
-    <header className="navbar3" >
-      <div className="navbar3-logo">
-        <img src={logo} alt="Logo" />
-      </div>
-      <div className="navbar3-content">
-        <h1 className="navbar3-shopname">Shop name</h1>
-        <nav className="navbar3-buttons">
-          <button className="navbar3-button">Button 1</button>
-          <button className="navbar3-button">About us</button>
-          <button className="navbar3-button">Contact us</button>
-        </nav>
-      </div>
-    </header>
+ 
     </div>
   );
 }

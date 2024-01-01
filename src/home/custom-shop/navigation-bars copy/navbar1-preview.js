@@ -7,21 +7,20 @@ const NavBar1Preview = () => {
 
 
     return<Fragment>
-      <div className="headernavbar1-preview">
-<div class="headernavbar1">
-  <header class="navbar1header">
-    <div class="logo-container">
-      <img src={logo} alt="Logo" class="imglogonavbar1" />
-      <h2>Shop name</h2>
-    </div>
-    <nav class="button-container">
-      <button>Button 1</button>
-      <button>About us</button>
-      <button>Contact us</button>
-    </nav>
-  </header>
-</div>
-</div>
+      <header className="header-header1">
+      <div className="logo-header1">
+        {/* Replace 'Logo' with your logo image or component */}
+        <img src={logo} alt="Logo" />
+      </div>
+      <div className="buttons-header1">
+        <button className="button-header1">Home</button>
+        <button className="button-header1">Products</button>
+        <button className="button-header1">Login</button>
+      </div>
+      <div className="shopName-header1">
+        <h1>Shop Name</h1>
+      </div>
+    </header>
     </Fragment>
 }
 

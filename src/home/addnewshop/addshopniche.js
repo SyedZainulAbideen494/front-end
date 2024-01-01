@@ -28,7 +28,7 @@ const Addshopniche = () => {
   return (
  <div className="container-shop-builder">
      <div className="header-shop-builder">
-  <div className="headerButtons-shop-builder">
+  <div className="headerButtons-shop-builder" style={{textAlign: 'center'}}>
     <Link to="/profile" style={{ textDecoration: 'none' }}>
       <button className="navButton-shop-builder">Profile</button>
     </Link>

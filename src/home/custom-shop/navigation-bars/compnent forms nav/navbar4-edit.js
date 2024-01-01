@@ -310,15 +310,19 @@ function NavBar4Edit() {
   return (
     <Fragment>
       <EditMenu/>
-    <header className="header-navbar4" style={{backgroundColor: backgroundColor1}}>
-      <nav>
-        <ul className="nav-list-navbar4">
-          <button className="nav-button-navbar4" style={{border: `2px solid ${backgroundColor2}`, backgroundColor: backgroundColor3, color: fontColor1}}>{ items[0]?.button1 || 'button 1' }</button>
-          <button className="nav-button-navbar4" style={{border: `2px solid ${backgroundColor2}`, backgroundColor: backgroundColor3, color: fontColor1}}>About us</button>
-          <button className="nav-button-navbar4" style={{border: `2px solid ${backgroundColor2}`, backgroundColor: backgroundColor3, color: fontColor1}}>contact us</button>
-        </ul>
-      </nav>
-    </header>
+      <header className="header-header4" style={{background: backgroundColor1}}>
+    <div className="logo-header4">
+      <h1 style={{background: fontColor1}}>Shop Name</h1>
+    </div>
+    <nav className="nav-header4">
+      <ul className="nav-list-header4">
+        <li className="nav-item-header4" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Products</li>
+        <li className="nav-item-header4" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Login</li>
+        <li className="nav-item-header4" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>home</li>
+        <li className="nav-item-header4" style={{backgroundColor: backgroundColor2, border: `2px solid ${backgroundColor3}`, color: fontColor2}}>Contact Us</li>
+      </ul>
+    </nav>
+  </header>
     </Fragment>
   );
 }

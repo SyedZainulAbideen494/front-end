@@ -102,21 +102,15 @@ function NavBar6() {
 
 
   return (
-    <div className='nav-bar6-header' style={{backgroundColor: color[0]?.background_colour1}}>
-      <header className='nav-bar6'>
-        <section className='section1-nav-bar-6'>
-          <a href={items[0]?.instagram_link || 'https://www.instagram.com/saz_494/'}>
-            <img src={insta} alt="Instagram" />
-          </a>
-          <img src={phonelogo} onClick={handleWhatsAppClick} alt="Phone" />
-        </section>
-        <section className='section2-nav-bar-6'>
-            <button onClick={scrollToItems} style={{color: color[0]?.font_colour1, border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3}}>{items[0]?.button1 || 'button1'}</button>
-            <img src={items[0]?.logo || logo}/>
-            <button onClick={scrollToaboutus} style={{color: color[0]?.font_colour1, border: `2px solid ${color[0]?.background_colour2}`, backgroundColor: color[0]?.background_colour3}}>About us</button>
-        </section>
-      </header>
-    </div>
+    <header className="header-header-6" style={{backgroundColor: color[0]?.background_colour1}}>
+    <nav className="nav-header-6">
+      <ul className="nav-list-header-6">
+        <li className="nav-item-header-6" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Home</li>
+        <li className="nav-item-header-6" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Products</li>
+        <li className="nav-item-header-6" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Login</li>
+      </ul>
+    </nav>
+  </header>
   );
 }
 

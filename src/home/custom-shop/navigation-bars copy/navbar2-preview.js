@@ -7,21 +7,18 @@ const NavBar2Preview = () => {
 
 
     return<Fragment>
-      <div className="headernavbar1-preview">
-        <div className="nav-bar-2-in-build">
-        <header className="header-navbar2">
-      <div className="logo-navbar2">
-        <img src={logo} alt="Your Logo" />
+   <header className="header-header2">
+      <div className="logo-header2">
+        <h1>Shop Name</h1>
       </div>
-      <div className="shop-name-navbar2">Shop name</div>
-      <nav className="nav-navbar2">
-        <button className="nav-button-navbar2">Button 1</button>
-        <button className="nav-button-navbar2">About us</button>
-        <button className="nav-button-navbar2">Contact us</button>
+      <nav className="nav-header2">
+        <ul className="nav-list-header2">
+          <li className="nav-item-header2">Products</li>
+          <li className="nav-item-header2">Login</li>
+          <li className="nav-item-header2">Shop</li>
+        </ul>
       </nav>
     </header>
-        </div>
-        </div>
     </Fragment>
 }
 
