@@ -78,7 +78,10 @@ function NavBar6Edit() {
       }
     };
 
-    const addColorsHandler = () => {
+    const addColorsHandler = (e) => {
+      if (e) {
+        e.preventDefault();
+      }
       Axios.post(
         "https://apifordropment.online/color/selection/section/1",
         {
@@ -175,7 +178,10 @@ function NavBar6Edit() {
      };
 
 
-     const addShopHandler = () => {
+     const addShopHandler = (e) => {
+      if (e) {
+        e.preventDefault();
+      }
       Axios.put(
         "https://apifordropment.online/nav/bar/data",
         {

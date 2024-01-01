@@ -73,7 +73,9 @@ const NavBar1Edit = () => {
     };
 
     const addColorsHandler = (e) => {
-      e.preventDefault();
+      if (e) {
+        e.preventDefault();
+      }
       Axios.post(
         "https://apifordropment.online/color/selection/section/1",
         {
@@ -170,7 +172,9 @@ const NavBar1Edit = () => {
 
 
      const addShopHandler = (e) => {
-      e.preventDefault();
+      if (e) {
+        e.preventDefault();
+      }
       Axios.put(
         "https://apifordropment.online/nav/bar/data",
         {
