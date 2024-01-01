@@ -75,9 +75,6 @@
 
 /* Media Query for smaller screens */
 @media screen and (max-width: 768px) {
-  .container-shop-builder {
-    width: 90%;
-  }
 
   .quoteText-shop-builder {
     font-size: 24px;
