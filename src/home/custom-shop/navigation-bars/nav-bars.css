@@ -1,4 +1,4 @@
-/* Base styles */
+/* Header 1 */
 .header-header1 {
   display: flex;
   justify-content: space-between;
@@ -26,6 +26,12 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.button-header1:hover {
+  background-color: #333; /* Darker color on hover */
+  color: #fff; /* White text on hover */
 }
 
 .shopName-header1 h1 {
@@ -40,6 +46,7 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    transition: padding 0.3s; /* Smoother transition */
   }
 
   .logo-header1 {
@@ -54,8 +61,15 @@
   .button-header1 {
     margin: 5px 0;
   }
+
+  /* Adjusted hover effect for mobile */
+  .button-header1:hover {
+    background-color: transparent; /* Transparent background on hover */
+    color: #333; /* Dark text on hover */
+  }
 }
 
+/* Header 2 */
 .header-header2 {
   display: flex;
   justify-content: space-between;
@@ -82,17 +96,18 @@
 .nav-item-header2 {
   cursor: pointer;
   margin-right: 20px;
-  /* Add other styles for each navigation item */
+  transition: transform 0.3s ease-in-out; /* Smooth transformation */
+}
+
+.nav-item-header2:hover {
+  transform: scale(1.1); /* Slight scaling effect on hover */
 }
 
 @media screen and (max-width: 768px) {
-  .nav-item-header2 {
-    cursor: pointer;
-    margin-right: 2px;
-    /* Add other styles for each navigation item */
-  }
+  /* Adjust styles for mobile if needed */
 }
 
+/* Header 4 */
 .header-header4 {
   display: flex;
   justify-content: space-between;
@@ -109,18 +124,28 @@
   /* Add other styles for your logo */
 }
 
-.nav-list-header4  {
+.nav-list-header4 {
   list-style: none;
   display: flex;
   gap: 20px;
   /* Add any other styles for the navigation */
 }
 
-.nav-item-header4  {
+.nav-item-header4 {
   cursor: pointer;
-  /* Add other styles for each navigation item */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
+.nav-item-header4:hover {
+  background-color: #333; /* Darker color on hover */
+  color: #fff; /* White text on hover */
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust styles for mobile if needed */
+}
+
+/* Header 6 */
 .header-header-6 {
   background-color: #f0f0f0;
   padding: 10px 20px;
@@ -141,5 +166,15 @@
   border-radius: 5px;
   background-color: transparent;
   color: black;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
+.nav-item-header-6:hover {
+  background-color: #333; /* Darker color on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for mobile if needed */
+}
