@@ -22,7 +22,7 @@ const Signinform = () => {
   const [unique_id, setunique_id] = useState("");
   const [bio, setbio] = useState("")
   const [gender, setGender] = useState(""); // State for gender
-
+  const [error, setError] = useState("")
   const firstnameHandler = (event) => {
     setfirstname(event.target.value);
   };
@@ -126,11 +126,13 @@ const Signinform = () => {
         nav('/login');
       } else {
         console.log("User registration failed with status:", response.status);
-        // Handle other status codes here
       }
     } catch (error) {
-      console.error("User registration failed:", error);
-      // Handle other types of errors (e.g., network issues)
+      if (error.response && error.response.status === 409) {
+        setError("User with this email already exists"); // Set error message
+      } else {
+        console.error("User registration failed:", error);
+      }
     }
   };
   return (
@@ -282,6 +284,11 @@ const Signinform = () => {
             Already have an account? <Link to="/login">Log In</Link>
           </p>
         </div>
+        {error && (
+        <div className="error-container">
+          <p className="error-msg">{error}</p>
+        </div>
+      )}
       </form>
     </Fragment>
   );

@@ -7,7 +7,7 @@ const NavBar2Preview = () => {
 
 
     return<Fragment>
-   <header className="header-header2">
+   <header className="header-header2" style={{borderRadius: '15px'}}>
       <div className="logo-header2">
         <h1>Shop Name</h1>
       </div>

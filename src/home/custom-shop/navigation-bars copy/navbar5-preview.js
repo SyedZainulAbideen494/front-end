@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 function NavBar5Preview() {
 
   return (
-    <div className="headernavbar1-preview">
+    <div className="headernavbar1-preview" style={{borderRadius: '15px'}}>
     </div>
   );
 }

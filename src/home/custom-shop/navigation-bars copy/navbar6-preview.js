@@ -17,7 +17,7 @@ function NavBar6Preview() {
   };
 
   return (
-    <header className="header-header-6">
+    <header className="header-header-6" style={{borderRadius: '15px'}}>
       <nav className="nav-header-6">
         <ul className="nav-list-header-6">
           <li className="nav-item-header-6">Home</li>

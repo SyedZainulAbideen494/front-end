@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 function NavBar4Preview() {
 
   return (
-   <header className="header-header4">
+   <header className="header-header4" style={{borderRadius: '15px'}}>
       <div className="logo-header4">
         <h1>Shop Name</h1>
       </div>

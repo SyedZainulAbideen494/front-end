@@ -7,7 +7,7 @@ import { Colors } from 'chart.js';
 function NavBar3Preview() {
 
   return (
-    <div className="headernavbar1-preview">
+    <div className="headernavbar1-preview" style={{borderRadius: '15px'}}>
  
     </div>
   );

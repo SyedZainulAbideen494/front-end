@@ -1,13 +1,13 @@
 import React,{Fragment, useState, useCallback, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import './nav-bars.css'
-import logo from '../../header/images/drop2_logo.png'
+import logo from '../../header/images/dropment_logo.png'
 
 const NavBar1Preview = () => {
 
 
     return<Fragment>
-      <header className="header-header1">
+      <header className="header-header1" style={{borderRadius: '15px'}}>
       <div className="logo-header1">
         {/* Replace 'Logo' with your logo image or component */}
         <img src={logo} alt="Logo" />
