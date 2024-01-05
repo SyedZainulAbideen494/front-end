@@ -310,7 +310,7 @@ const Header3Edit = () => {
       <Fragment>
         <div className="edit-menu-container">
           <header>
-        <h2>Component Edit menu</h2>
+      
         <button onClick={handleShowImages}>Add Images</button>
         </header>
 

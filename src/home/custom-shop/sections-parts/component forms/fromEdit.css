@@ -10,7 +10,8 @@
   }
 
   .edit-section-inp-txt {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .edit-menu-container h2 {
@@ -40,7 +41,7 @@
     background-color: transparent;
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 5px;
     border-radius: 5px;
     cursor: pointer;
   }
@@ -54,7 +55,6 @@
     background-color: #48A9F8; /* Green color for submit button */
     color: white;
     transition: 0.3s;
-    margin-left: 10px;
   }
   .color-palette {
     display: inline-block;
@@ -75,8 +75,7 @@
     display: inline-flex;
   }
 
-  .edit-menu-container header button {
-    margin-left: 40px;
+  .edit-menu-container button {
   }
   .ImagesEditsectionElement {
     margin-top: 15px;

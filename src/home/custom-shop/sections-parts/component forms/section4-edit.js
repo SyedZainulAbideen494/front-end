@@ -318,7 +318,7 @@ const Section4BuildEdit = () => {
       <Fragment>
       <div className="edit-menu-container">
         <header>
-          <h2>Component Edit menu</h2>
+          
           <button onClick={handleShowColors}>Edit colors</button>
         </header>
         {showColors && 
