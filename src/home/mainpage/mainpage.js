@@ -56,6 +56,9 @@ const Mainpage = () => {
       <Link to='/Addshoppage1' style={{textDecoration: 'none'}}>
       <p>Add Shop +</p>
       </Link>
+      <Link to='/secarch' style={{textDecoration: 'none'}}>
+      <p>Search</p>
+      </Link>
       <p onClick={toggleNotification}>Notifications</p>
       {auth ? (
         <button onClick={handleLogout} className="logout-btn-mainpage">
