@@ -56,7 +56,7 @@ const Mainpage = () => {
       <Link to='/Addshoppage1' style={{textDecoration: 'none'}}>
       <p>Add Shop +</p>
       </Link>
-      <Link to='/secarch' style={{textDecoration: 'none'}}>
+      <Link to='/search' style={{textDecoration: 'none'}}>
       <p>Search</p>
       </Link>
       <p onClick={toggleNotification}>Notifications</p>
