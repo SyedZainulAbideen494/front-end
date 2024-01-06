@@ -41,8 +41,8 @@ const Section12BuildSec5 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchColorHandler();
-  }, [fetchColorHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
   
   const fetchImgHandler = useCallback(async () => {
     setLoading(true);

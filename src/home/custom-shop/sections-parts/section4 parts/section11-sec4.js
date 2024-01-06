@@ -30,8 +30,8 @@ const Section11BuildSec4 = () => {
   }, [params.shop_id]);
 
   useEffect(() => {
-    fetchProductsHandler();
-  }, [fetchProductsHandler]);
+    fetchImgHandler();
+  }, [fetchImgHandler]);
   const fetchColorHandler = useCallback(async () => {
     setLoading(true);
     const response = await fetch(`https://apifordropment.online/custom/shop/coloring/display/section4`, {
