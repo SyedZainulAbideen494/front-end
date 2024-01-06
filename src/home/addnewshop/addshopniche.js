@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useCallback, useEffect } from "react";
 import "./addshop.css";
 import { Link } from "react-router-dom";
 import Axios from "axios";
@@ -6,7 +6,9 @@ import { FaLock } from 'react-icons/fa';
 
 
 const Addshopniche = () => {
-
+  const [img, setimage] = useState([]);
+  const [loading, setloading] = useState(false);
+  const [followerCount, setFollowerCount] = useState(0);
   const addCustomShopHandler = () => {
     const token = localStorage.getItem('token');
     Axios.post(
@@ -25,6 +27,35 @@ const Addshopniche = () => {
       // Handle errors here
     });
   };
+
+  const fetchimagehandler = useCallback(async () => {
+    setloading(true);
+    const token = localStorage.getItem("token");
+    setloading(true);
+    const response = await fetch("https://apifordropment.online/users/", {
+      headers: {
+        Authorization: token,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.user.map((userdata) => {
+      return {
+        profilePic: `https://apifordropment.online/images/${userdata.porfilepic}`,
+        first_name: userdata.first_name,
+        last_name: userdata.last_name,
+        unique_id: userdata.unique_id,
+        occupation: userdata.occupation,
+        bio: userdata.bio,
+        user_id: userdata.user_id,
+      };
+    });
+    setimage(transformeduser);
+    setloading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchimagehandler();
+  }, []);
   return (
  <div className="container-shop-builder">
      <div className="header-shop-builder">
@@ -43,7 +74,7 @@ const Addshopniche = () => {
 
       <div className="content-shop-builder">
         <div className="quote-shop-builder">
-          <p className="quoteText-shop-builder">Start your journey to success!</p>
+          <p className="quoteText-shop-builder">Start Your journey {img[0]?.first_name} {img[0]?.last_name}</p>
         </div>
         
         <div className="templates-shop-builder">
