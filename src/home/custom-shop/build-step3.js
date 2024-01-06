@@ -234,14 +234,6 @@ const Step3build =() => {
           <hr />
         </div>
         <div className="allHeaders">
-
-        <Section2Buildpreview />
-        <button
-        onClick={() => addShopHandler(2)}
-        className="select-nav-bar-build-shop"
-      >
-        Select
-      </button>
         <Section3Buildpreview/>
         <button
         onClick={() => addShopHandler(3)}
@@ -249,6 +241,14 @@ const Step3build =() => {
       >
         Select
       </button>
+        <Section2Buildpreview />
+        <button
+        onClick={() => addShopHandler(2)}
+        className="select-nav-bar-build-shop"
+      >
+        Select
+      </button>
+        
         <Section4Buildpreview/>
         <button
         onClick={() => addShopHandler(4)}
