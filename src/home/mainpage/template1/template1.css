@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
-  margin-left: 50px;
 }
 
 .shop-card {
@@ -14,7 +13,7 @@
   background-color: #121212; /* Darker background */
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
-  width: 60%; /* Adjusted width */
+  width: 80%; /* Adjusted width */
   max-width: 100%;
   color: #fff; /* White text */
   display: flex;
