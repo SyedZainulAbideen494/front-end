@@ -65,6 +65,15 @@ const Mainpage = () => {
       <button>Search <img src={search}/></button>
       </Link>
       <button>Notification <img src={notification}/></button>
+      {auth ? (
+        <button onClick={handleLogout}>
+          Logout
+        </button>
+      ) : (
+        <Link to="/login" style={{textDecoration: 'none'}}>
+          <button>Login</button>
+        </Link>
+      )}
     </nav>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <Link to='/profile' style={{textDecoration: 'none'}}>
@@ -80,6 +89,15 @@ const Mainpage = () => {
       <button>Search <img src={search}/></button>
       </Link>
       <button>Notification <img src={notification}/></button>
+      {auth ? (
+        <button onClick={handleLogout}>
+          Logout
+        </button>
+      ) : (
+        <Link to="/login" style={{textDecoration: 'none'}}>
+          <button>Login</button>
+        </Link>
+      )}
       </div>
       <div className="hamburger-dropment-main-page" onClick={toggleMenu}>
         <div className="line"></div>
