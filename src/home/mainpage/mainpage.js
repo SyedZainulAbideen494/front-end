@@ -52,17 +52,33 @@ const Mainpage = () => {
   <nav className="navbar-dropment-main-page">
       <img src={dropment} alt="Dropment" className="logo-dropment-main-page"/> 
       <nav className="big-screen-nav-bar-dropment-main-page">
+      <Link to='/profile'>
       <button>My Profile <img src={profile}/></button>
+      </Link>
+      <Link to='/orders'>
       <button>My Orders <img src={order}/></button>
+      </Link>
+      <Link to='/overview'>
       <button>Overview</button>
+      </Link>
+      <Link to='/search'>
       <button>Search <img src={search}/></button>
+      </Link>
       <button>Notification <img src={notification}/></button>
     </nav>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
+        <Link to='/profile'>
       <button>My Profile <img src={profile}/></button>
+      </Link>
+      <Link to='/orders'>
       <button>My Orders <img src={order}/></button>
+      </Link>
+      <Link to='/overview'>
       <button>Overview</button>
+      </Link>
+      <Link to='/search'>
       <button>Search <img src={search}/></button>
+      </Link>
       <button>Notification <img src={notification}/></button>
       </div>
       <div className="hamburger-dropment-main-page" onClick={toggleMenu}>
