@@ -87,6 +87,7 @@ const Mainpage = () => {
         <div className="line"></div>
       </div>
     </nav>
+    <AllTemplate1app/>
   </Fragment>
 }
 
