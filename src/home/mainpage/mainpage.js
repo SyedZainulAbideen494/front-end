@@ -52,31 +52,31 @@ const Mainpage = () => {
   <nav className="navbar-dropment-main-page">
       <img src={dropment} alt="Dropment" className="logo-dropment-main-page"/> 
       <nav className="big-screen-nav-bar-dropment-main-page">
-      <Link to='/profile'>
+      <Link to='/profile' style={{textDecoration: 'none'}}>
       <button>My Profile <img src={profile}/></button>
       </Link>
-      <Link to='/orders'>
+      <Link to='/orders' style={{textDecoration: 'none'}}>
       <button>My Orders <img src={order}/></button>
       </Link>
-      <Link to='/overview'>
+      <Link to='/overview' style={{textDecoration: 'none'}}>
       <button>Overview</button>
       </Link>
-      <Link to='/search'>
+      <Link to='/search' style={{textDecoration: 'none'}}>
       <button>Search <img src={search}/></button>
       </Link>
       <button>Notification <img src={notification}/></button>
     </nav>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-        <Link to='/profile'>
+        <Link to='/profile' style={{textDecoration: 'none'}}>
       <button>My Profile <img src={profile}/></button>
       </Link>
-      <Link to='/orders'>
+      <Link to='/orders' style={{textDecoration: 'none'}}>
       <button>My Orders <img src={order}/></button>
       </Link>
-      <Link to='/overview'>
+      <Link to='/overview' style={{textDecoration: 'none'}}>
       <button>Overview</button>
       </Link>
-      <Link to='/search'>
+      <Link to='/search' style={{textDecoration: 'none'}}>
       <button>Search <img src={search}/></button>
       </Link>
       <button>Notification <img src={notification}/></button>
