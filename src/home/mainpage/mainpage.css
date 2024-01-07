@@ -73,6 +73,15 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.notification {
+  display: none;
+  /* Additional styles for the notification */
+}
+
+.notification.show {
+  display: block;
+  /* Additional styles for showing the notification */
+}
 
 .menu button img {
   margin-left: 5px; /* Adjust spacing between text and image */
