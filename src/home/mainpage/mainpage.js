@@ -24,7 +24,11 @@ const Mainpage = () => {
   const [auth, setAuth] = useState(false);
   const nav = useNavigate();
   const [showNotification, setShowNotification] = useState(false); // State for showing/hiding notification
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -45,37 +49,28 @@ const Mainpage = () => {
 
 
     return<Fragment>
- <div className="sidebar">
-      <img src={dropment}/>
-      <Link to='/overview' style={{textDecoration: 'none'}}>
-      <p>Overview</p>
-      </Link>
-      <Link to='/profile' style={{textDecoration: 'none'}}>
-      <p>Profile</p>
-      </Link>
-      <Link to='/Addshoppage1' style={{textDecoration: 'none'}}>
-      <p>Add Shop +</p>
-      </Link>
-      <Link to='/search' style={{textDecoration: 'none'}}>
-      <p>Search</p>
-      </Link>
-      <p onClick={toggleNotification}>Notifications</p>
-      {auth ? (
-        <button onClick={handleLogout} className="logout-btn-mainpage">
-          Logout
-        </button>
-      ) : (
-        <Link to="/login" style={{textDecoration: 'none'}}>
-          <button className="login-btn-mainpage">Login</button>
-        </Link>
-      )}
-    </div>
-    <div className="main-section-main-page">
-      <AllTemplate1app/>
-    </div>
-    <div className={`notification-popup ${showNotification ? 'show' : ''}`}>
-        <NotificationComponent/>
+  <nav className="navbar-dropment-main-page">
+      <img src={dropment} alt="Dropment" className="logo-dropment-main-page"/> 
+      <nav className="big-screen-nav-bar-dropment-main-page">
+      <button>My Profile <img src={profile}/></button>
+      <button>My Orders <img src={order}/></button>
+      <button>Overview</button>
+      <button>Search <img src={search}/></button>
+      <button>Notification <img src={notification}/></button>
+    </nav>
+      <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
+      <button>My Profile <img src={profile}/></button>
+      <button>My Orders <img src={order}/></button>
+      <button>Overview</button>
+      <button>Search <img src={search}/></button>
+      <button>Notification <img src={notification}/></button>
       </div>
+      <div className="hamburger-dropment-main-page" onClick={toggleMenu}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
+    </nav>
   </Fragment>
 }
 
