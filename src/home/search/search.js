@@ -36,15 +36,16 @@ const Search = () => {
 
   return (
     <div className="outer-container">
-      <div className="inpsearchbar">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button onClick={handleSearch}>Search</button>
-      </div>
+     <div class="search-container">
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Search"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  <button class="search-button" onClick={handleSearch}>Search</button>
+</div>
 
       <div className="user-shop-sections">
         <span className="user-shop-section">
