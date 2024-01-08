@@ -36,6 +36,13 @@ const Search = () => {
 
   return (
     <div className="outer-container">
+      <div className="header-search">
+        <header>
+          <Link to='/home'>
+          <button>back</button>
+          </Link>
+        </header>
+      </div>
      <div class="search-container">
   <input
     type="text"
