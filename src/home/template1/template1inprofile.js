@@ -161,7 +161,7 @@ useEffect(() => {
     } else if (props.temp === 'temp8') {
       return "/mystore8";
     }else if (props.temp === 'incomplete') {
-      return `/build/${props.build}/step1`;
+      return `/build/${props.build}/preview`;
     }else if (props.temp === 'custom') {
       return `/mystore`;
     }

@@ -126,7 +126,7 @@ const Section11BuildEdit = () => {
     };
 
        const NextStep = () => {
-        window.location.href = `/build/${params.build}/preview/${params.shop_id}`;
+        window.location.href = `/build/${params.build}/preview/${params.shop_id}/${params.build}`;
     };
 
     const addColorsHandler = () => {

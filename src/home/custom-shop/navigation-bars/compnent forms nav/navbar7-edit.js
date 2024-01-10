@@ -70,7 +70,7 @@ function NavBar7Edit() {
       setfontColor6(event.target.value);
     };
     const NextStep = () => {
-      window.location.href = `/build/${params.build}/preview/${params.shop_id}`;
+      window.location.href = `/build/${params.build}/preview/${params.shop_id}/${params.build}`;
   };
 
     const addColorsHandler = () => {

@@ -190,7 +190,7 @@ const router = createBrowserRouter([
   {path: '/build/:build/step11/:shop_id/:build', element: <Step11build/>},
   {path: '/build/:build/step12/:shop_id/:build', element: <Step12build/>},
   {path: '/build/:build/footer/:shop_id/:build', element: <StepFooterBuild/>},
-  {path: '/build/:build/preview/:shop_id/', element: <CustomShopPreview/>},
+  {path: '/build/:build/preview/:shop_id/:build', element: <CustomShopPreview/>},
   {path: '/build/:build/footer/form/:shop_id/:number', element: <Footerform/>},
   {path: '/preview/:build/:shop_id/shop/congratulations', element: <FinishCustomShopBuild/>},
   {path: '/build/:build/:shop_id/form/custom', element: <CustomShopForm/>},

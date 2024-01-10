@@ -122,7 +122,7 @@ const Section1BuildEditSec6 = () => {
     };
 
     const NextStep = () => {
-        window.location.href = `/build/${params.build}/preview/${params.shop_id}`;
+        window.location.href = `/build/${params.build}/preview/${params.shop_id}/${params.build}`;
     };
     const addColorsHandler = () => {
       Axios.post(
