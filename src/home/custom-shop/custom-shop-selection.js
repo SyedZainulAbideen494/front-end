@@ -40,21 +40,12 @@ const SelectNoSection = () => {
         Go Back
       </Link>
       <h2 className="dark-section-heading">
-        Choose the Number of Sections for Your Online Store
+        
       </h2>
     </div>
     <div className="dark-section-buttons">
-      <button className="dark-section-button" onClick={() => addShopHandler(4)}>
-        4 section store
-      </button>
-      <button className="dark-section-button" onClick={() => addShopHandler(5)}>
-        5 section store
-      </button>
-      <button className="dark-section-button" onClick={() => addShopHandler(6)}>
-        6 section store
-      </button>
       <button className="dark-section-button" onClick={() => addShopHandler(7)}>
-        7 section store
+        Custom Shop
       </button>
     </div>
   </div>
