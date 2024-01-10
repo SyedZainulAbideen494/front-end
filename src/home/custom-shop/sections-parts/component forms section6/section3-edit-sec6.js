@@ -120,12 +120,8 @@ const Section3BuildEditSec6 = () => {
     };
 
     const NextStep = () => {
-      if (params.build === 'edit') {
-        window.location.href = `/build/${params.build}/preview/${params.shop_id}/`;
-      }else {
-        window.location.href = `/build/${params.build}/footer/${params.shop_id}/${params.build}`;
+        window.location.href = `/build/${params.build}/preview/${params.shop_id}`;
     };
-  }
 
     const addColorsHandler = () => {
       Axios.post(

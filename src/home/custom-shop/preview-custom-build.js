@@ -67,7 +67,7 @@ import Footer1Footer from "./footer-parts/footer1-footer";
 const CustomShopPreview = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [backgroundColor1, setbackgroundColor1] = useState('#ffffff');
+  const [backgroundColor1, setbackgroundColor1] = useState('#00000');
   const [backgroundColor2, setbackgroundColor2] = useState('#ffffff');
   const [backgroundColor3, setbackgroundColor3] = useState('#ffffff');
   const [fontColor1, setfontColor1] = useState('#000000');
@@ -200,7 +200,9 @@ const CustomShopPreview = () => {
     }else if (items[0]?.section1 === '7') {
       return <NavBar7 />
     } else {
-      return <h2>navigationbar  +</h2>
+      return <Link to={`/build/${params.build}/step1/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
+        <h2>navigationbar  +</h2>
+      </Link>
     }
   }
 
@@ -216,7 +218,9 @@ const CustomShopPreview = () => {
     } if (items[0]?.section2 === '5') {
       return <Header5 />
     }  else {
-      return <h2>Section 2 +</h2>
+      return <Link to={`/build/${params.build}/step2/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
+      <h2>Hero Section  +</h2>
+    </Link>
     }
   }
 
@@ -246,7 +250,9 @@ const CustomShopPreview = () => {
     }if (items[0]?.section3 === '12') {
       return <Section12Build />
     } else {
-      return <h2>Section 3 +</h2>
+      return<Link to={`/build/${params.build}/step3/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
+      <h2>Section 1  +</h2>
+    </Link>
     }
   }
 
@@ -276,7 +282,9 @@ const CustomShopPreview = () => {
     }if (items[0]?.section4 === '12') {
       return <Section12BuildSec4/>
     } else {
-      return <h2>Section 4 +</h2>
+      return<Link to={`/build/${params.build}/step4/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
+      <h2>Section 2  +</h2>
+    </Link>
     }
   }
 
@@ -304,7 +312,9 @@ const CustomShopPreview = () => {
     }if (items[0]?.section5 === '12') {
       return <Section12BuildSec5 />
     } else {
-      return <h2>Section 5 +</h2>
+      return <Link to={`/build/${params.build}/step5/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
+      <h2>Section 3  +</h2>
+    </Link>
     }
   }
 
@@ -332,7 +342,9 @@ const CustomShopPreview = () => {
     }if (items[0]?.section6 === '12') {
       return <Section12BuildSec6 />
     } else {
-      return <h2>Section 6 +</h2>
+      return<Link to={`/build/${params.build}/step6/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
+      <h2>Section 4  +</h2>
+    </Link>
     }
   }
 
@@ -341,7 +353,9 @@ const CustomShopPreview = () => {
     if (items[0]?.section13 === '1') {
       return <Footer1Footer />
     } else {
-      return<h2>Footer +</h2>
+      return<Link to={`/build/${params.build}/footer/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
+      <h2>footer  +</h2>
+    </Link>
     }
   }
 

@@ -114,13 +114,8 @@ const Header3Edit = () => {
     };
 
     const NextStep = () => {
-      if (params.build === 'edit') {
-        window.location.href = `/build/${params.build}/preview/${params.shop_id}/`;
-      } else {
-        window.location.href = `/build/${params.build}/step3/${params.shop_id}/${params.build}`;  
-      }  
-    };
-
+      window.location.href = `/build/${params.build}/preview/${params.shop_id}`;
+  };
     const addColorsHandler = () => {
       Axios.post(
         "https://apifordropment.online/color/selection/section/2",

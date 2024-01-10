@@ -65,12 +65,8 @@ function NavBar4Edit() {
     };
 
     const NextStep = () => {
-      if (params.build === 'edit') {
-        window.location.href = `/build/${params.build}/preview/${params.shop_id}/`;
-      } else {
-        window.location.href = `/build/${params.build}/step2/${params.shop_id}/${params.build}`;  
-      }
-    };
+      window.location.href = `/build/${params.build}/preview/${params.shop_id}`;
+  };
 
     const addColorsHandler = () => {
       Axios.post(

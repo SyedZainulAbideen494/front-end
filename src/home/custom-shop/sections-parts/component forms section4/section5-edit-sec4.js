@@ -91,14 +91,8 @@ const Section5BuildEditSec4 = () => {
       setFontColor6(event.target.value);
     };
 
-    const NextStep = () => {
-      if (params.build === '5') {
-        window.location.href = `/build/${params.build}/footer/${params.shop_id}/${params.build}`;
-      }if  (params.build === 'edit') {
-        window.location.href = `/build/${params.build}/preview/${params.shop_id}/`;
-      } else {
-        window.location.href = `/build/${params.build}/step5/${params.shop_id}/${params.build}`;
-      }
+       const NextStep = () => {
+        window.location.href = `/build/${params.build}/preview/${params.shop_id}`;
     };
 
     const addColorsHandler = () => {
