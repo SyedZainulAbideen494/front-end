@@ -218,7 +218,7 @@ useEffect(() => {
         to={`${Linkno(props)}/${props.shop_id}/${props.shop_name || props.build}`}
         style={{ textDecoration: 'none', color: 'black' }}
       >
-              <p style={{color: 'white'}}>{props.shop_name || 'custom build in progress'}</p>
+              <p style={{color: 'white'}}>{props.shop_name || 'Incomplete!'}</p>
             </Link>
           </div>
         </div>
