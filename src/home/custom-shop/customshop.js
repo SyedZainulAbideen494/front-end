@@ -1465,7 +1465,7 @@ const handleStatusChangeoffline = async () => {
                       </Link>
                     </span>
                     <span className="btnwebstore">
-                      <Link to={`/build/${'edit'}/preview/${params.shop_id}/`}>
+                      <Link to={`/build/${'edit'}/preview/${params.shop_id}/${'edit'}`}>
                       <button>Edit</button>
                       </Link>
                     </span>
