@@ -27,7 +27,7 @@ const TotalInventory = () => {
   return (
     <div class="total-visits">
       <h2>Total Inventory</h2>
-      <h4>133357</h4>
+      <h4>{totalInventory}</h4>
     </div>
   );
 };
@@ -67,7 +67,7 @@ const SalesComponent7dayData = () => {
   {filteredSales.map((product) => (
     <div key={product.id}>
       <h2>Revenue</h2>
-      <h4>$3,582,567</h4>
+      <h4>${product.totalUSD}</h4>
     </div>
   ))}
 </div>
@@ -114,7 +114,7 @@ const OrdersComponentMostSoldProduct = () => {
           <div class="total-visits">
             <h2>Most sold Item</h2>
           
-          <h4>T-Shirts<br/>  10,489 sold</h4>
+          <h4>{productsUsd[0]}<br/>  {mostOccurredID.id_count} sold</h4>
         </div>
         ) : (
           <p>Loading...</p>
@@ -147,7 +147,7 @@ const TotalMoneyMade = () => {
   return (
       <div class="total-visits">
       <h2>Total items sold</h2>
-      <h4>351,381</h4>
+      <h4>{totalOrders}</h4>
     </div>
   );
 };
@@ -221,7 +221,7 @@ const OrdersComponent = () => {
   return (
     <div class="total-visits">
         <h2>Total revenue</h2>
-        <h4>$28,673,713</h4>
+        <h4>${totalResult}</h4>
       </div>
   );
 };
