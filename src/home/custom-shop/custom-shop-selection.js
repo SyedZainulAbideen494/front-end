@@ -23,7 +23,7 @@ const SelectNoSection = () => {
           const shop_id = response.data.shop_id;
 
           // Redirect to the shop_id route based on the received shop_id and selected section
-          window.location.href = `/build/${section}/preview/${shop_id}`;
+          window.location.href = `/build/${section}/preview/${shop_id}/${section}`;
         } else {
           console.log("Operation failed or no shop_id received");
         }
