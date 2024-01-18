@@ -12,7 +12,6 @@ import host from '../header/images/Dropment (8).png'
 import keyimg from '../header/images/Dropment (10).png'
 import arrow from '../header/images/Untitled design (16).png'
 
-
 const Editstoreform = () => {
   const params = useParams();
 

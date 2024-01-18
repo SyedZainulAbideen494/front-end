@@ -8,6 +8,9 @@ import notification from '../header/images/icons8-notifications-78.png'
 import order from '../header/images/icons8-logistics-32.png'
 import profile from '../header/images/icons8-male-user-24.png'
 import search from '../header/images/icons8-search-50.png'
+import ChatMessageapp from "../chat/chat";
+import Storiesapp from "../stories/storiesdisplay";
+import Users from "../user/userapp";
 
 const Mainpage = () => {
   const [auth, setAuth] = useState(false);
@@ -36,6 +39,16 @@ const Mainpage = () => {
     setShowNotification(prevState => !prevState);
   };
 
+  
+const Shops = () => <AllTemplate1app/>;
+const Messages = () => <ChatMessageapp/>;
+const Blinkfeeds = () => <Storiesapp/>;
+const User = () => <Users/>;
+const [activeComponent, setActiveComponent] = useState(<Shops />);
+
+const handleButtonClick = (component) => {
+  setActiveComponent(component);
+};
   return (
     <Fragment>
       <nav className="navbar-dropment-main-page">
@@ -91,7 +104,18 @@ const Mainpage = () => {
       <div className={`notification ${showNotification ? 'show' : 'hide'}`}>
         <NotificationComponent/>
       </div>
-      <AllTemplate1app/>
+      <div className="App-main-page-dropment-home">
+      <div className="buttons-container-main-page-dropment-home">
+        <button onClick={() => handleButtonClick(<Shops />)} className={activeComponent.type === Shops ? 'active' : ''}>Shops</button>
+        <button onClick={() => handleButtonClick(<Messages />)} className={activeComponent.type === Messages ? 'active' : ''}>Messages</button>
+        <button onClick={() => handleButtonClick(<Blinkfeeds />)} className={activeComponent.type === Blinkfeeds ? 'active' : ''}>Blinkfeeds</button>
+        <button onClick={() => handleButtonClick(<User />)} className={activeComponent.type === User ? 'active' : ''}>Users</button>
+      </div>
+
+      <div className="component-container-page-dropment-home">
+        {activeComponent}
+      </div>
+      </div>
     </Fragment>
   );
 };

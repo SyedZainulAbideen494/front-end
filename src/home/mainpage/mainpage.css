@@ -120,6 +120,34 @@
 .hamburger-dropment-main-page.open .line:nth-child(3) {
   transform: translateY(-5px) rotate(-45deg);
 }
+.App-main-page-dropment-home {
+  text-align: center;
+  padding: 20px;
+}
+
+.buttons-container-main-page-dropment-home {
+  margin-bottom: 20px;
+}
+
+.buttons-container-main-page-dropment-home button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.component-container-main-page-dropment-home {
+  border: 1px solid #ccc;
+  padding: 20px;
+  min-height: 200px;
+}
 
 @media (max-width: 768px) {
   .menu {

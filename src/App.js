@@ -164,7 +164,7 @@ const router = createBrowserRouter([
   {path: '/Add/temp8/form', element: <Addtemplate8form/>},
   {path: '/mystore8/:shop_id/:shop_name/', element: <Template8website/>},
   {path: '/user/:user_id', element: <Usersindetails/>},
-  {path: '/home', element: <Mainpage/>},
+  {path: '/home', element:  <AdminOverview/>},
   {path: '/chat/:chat_id/:user1/:user2/', element: <ChatMessageapp/>},
   {path: '/sales/report/:shop_id', element: <SalesReportApp/>},
   {path: '/add/product/:shop_id', element: <AddProductsForm/>},
@@ -204,7 +204,6 @@ const router = createBrowserRouter([
   {path: '/chats', element:<ChatPage/>},
   {path: '/login/success', element: <LoginPageSuccess/>},
   {path: '/dropment/admin/for/owner', element: <DropmentAdminmain/>},
-  {path: '/overview', element: <AdminOverview/>},
   {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
   {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>},
   {path: '/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store', element: <Blog3/>}

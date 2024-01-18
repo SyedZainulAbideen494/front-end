@@ -136,14 +136,17 @@ const AdminOverview = () => {
     <div className="dashboard">
     <header className="header">
       <h3 style={{textAlign: 'center'}}>Overview</h3>
-      <Link to='/home'>
-      <button>Home</button>
-      </Link>
       <Link to='/profile'>
-      <button>Profile</button>
+      <button style={{cursor: 'pointer'}}>Profile</button>
       </Link>
       <Link to='/Addshoppage1'>
-      <button>Add shop +</button>
+      <button style={{cursor: 'pointer'}}>Add shop +</button>
+      </Link>
+      <Link to='/search'>
+      <button style={{cursor: 'pointer'}}>Search</button>
+      </Link>
+      <Link to='/orders'>
+      <button style={{cursor: 'pointer'}}>Orders</button>
       </Link>
     </header>
 
@@ -165,7 +168,6 @@ const AdminOverview = () => {
           </div>
         </div>
       </main>
-      <AdminOverviewgender />
     </div>
     <OrdersNoti/>
   </div>
