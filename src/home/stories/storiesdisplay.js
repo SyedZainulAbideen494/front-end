@@ -46,7 +46,7 @@ function Storiesapp() {
           items.length > 0 ? (
             <StoriesUserList users={items} />
           ) : (
-            <p>Link with someone to see their blinkfeeds</p>
+            <p></p>
           )
         ) : (
           <p>Loading..</p>

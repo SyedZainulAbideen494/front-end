@@ -4,6 +4,7 @@ import { Chart, registerables } from 'chart.js/auto';
 import AdminOverviewgender from './gender-overview';
 import { Link } from 'react-router-dom';
 import OrdersNoti from './notifecation-orders';
+import Storiesapp from '../stories/storiesdisplay';
 
 // Register necessary components for Chart.js
 Chart.register(...registerables);
@@ -148,8 +149,13 @@ const AdminOverview = () => {
       <Link to='/orders'>
       <button style={{cursor: 'pointer'}}>Orders</button>
       </Link>
+      <Link to='/add/Blinkfeed'>
+      <button style={{cursor: 'pointer'}}>Add Blinkfeed</button>
+      </Link>
     </header>
-
+    <div className='stories-dropment-main-page' style={{margin: '20px 20px'}}>
+        <Storiesapp/>
+      </div>
     <div className="main-content">
       <main className="main">
         <div className="container">
