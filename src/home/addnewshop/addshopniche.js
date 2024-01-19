@@ -66,9 +66,6 @@ const Addshopniche = () => {
     <Link to="/home" style={{ textDecoration: 'none' }}>
       <button className="navButton-shop-builder">Home</button>
     </Link>
-    <Link to="/overview" style={{ textDecoration: 'none' }}>
-      <button className="navButton-shop-builder">Overview</button>
-    </Link>
   </div>
 </div>
 
