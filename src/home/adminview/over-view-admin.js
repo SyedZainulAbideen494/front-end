@@ -136,7 +136,6 @@ const AdminOverview = () => {
   return (
     <div className="dashboard">
     <header className="header">
-      <h3 style={{textAlign: 'center'}}>Overview</h3>
       <Link to='/profile'>
       <button style={{cursor: 'pointer'}}>Profile</button>
       </Link>
