@@ -165,8 +165,15 @@ const CustomShopPreview = () => {
     };
   
     return (
-      <form onSubmit={addColorsHandler}>
+      <form onSubmit={addColorsHandler} style={{
+        border: '1px solid',
+        borderImage: 'linear-gradient(to right, white 50%, black 50%) 1',
+        margin: '10px 20px',
+        borderRadius: '25px',
+        padding: '20px'
+      }}>
         <div className="color-palette">
+          <h2>Customize Menu</h2>
           <label htmlFor="fc6"><h4>background Color</h4></label>
           <input
             type="color"
@@ -201,7 +208,7 @@ const CustomShopPreview = () => {
       return <NavBar7 />
     } else {
       return <Link to={`/build/${params.build}/step1/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
-        <h2>navigationbar  +</h2>
+        <p>navigationbar  +</p>
       </Link>
     }
   }
@@ -219,7 +226,7 @@ const CustomShopPreview = () => {
       return <Header5 />
     }  else {
       return <Link to={`/build/${params.build}/step2/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
-      <h2>Hero Section  +</h2>
+      <p>Hero Section  +</p>
     </Link>
     }
   }
@@ -251,7 +258,7 @@ const CustomShopPreview = () => {
       return <Section12Build />
     } else {
       return<Link to={`/build/${params.build}/step3/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
-      <h2>Section 1  +</h2>
+      <p>Section 1  +</p>
     </Link>
     }
   }
@@ -283,7 +290,7 @@ const CustomShopPreview = () => {
       return <Section12BuildSec4/>
     } else {
       return<Link to={`/build/${params.build}/step4/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
-      <h2>Section 2  +</h2>
+      <p>Section 2  +</p>
     </Link>
     }
   }
@@ -313,7 +320,7 @@ const CustomShopPreview = () => {
       return <Section12BuildSec5 />
     } else {
       return <Link to={`/build/${params.build}/step5/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
-      <h2>Section 3  +</h2>
+      <p>Section 3  +</p>
     </Link>
     }
   }
@@ -343,7 +350,7 @@ const CustomShopPreview = () => {
       return <Section12BuildSec6 />
     } else {
       return<Link to={`/build/${params.build}/step6/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
-      <h2>Section 4  +</h2>
+      <p>Section 4  +</p>
     </Link>
     }
   }
@@ -354,7 +361,7 @@ const CustomShopPreview = () => {
       return <Footer1Footer />
     } else {
       return<Link to={`/build/${params.build}/footer/${params.shop_id}/${params.build}`} style={{textAlign:' center', textDecoration: 'none'}}>
-      <h2>footer  +</h2>
+      <p>footer  +</p>
     </Link>
     }
   }
@@ -366,43 +373,43 @@ const CustomShopPreview = () => {
     <section className="parts-custom-shop-main">
       <Section1 />
       <Link to={`/build/${params.build}/step1/${params.shop_id}/${params.build}`}>
-      <button>Edit</button>
+      <button style={{backgroundColor:'transparent', border:'1px solid transparent', color: 'white', cursor:'pointer'}}>Edit</button>
       </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section2 />
       <Link to={`/build/${params.build}/step2/${params.shop_id}/${params.build}`}>
-      <button>Edit</button>
+      <button style={{backgroundColor:'transparent', border:'1px solid transparent', color: 'white', cursor:'pointer'}}>Edit</button>
       </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section3 />
       <Link to={`/build/${params.build}/step3/${params.shop_id}/${params.build}`}>
-      <button>Edit</button>
+      <button style={{backgroundColor:'transparent', border:'1px solid transparent', color: 'white', cursor:'pointer'}}>Edit</button>
       </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section4 />
       <Link to={`/build/${params.build}/step4/${params.shop_id}/${params.build}`}>
-      <button>Edit</button>
+      <button style={{backgroundColor:'transparent', border:'1px solid transparent', color: 'white', cursor:'pointer'}}>Edit</button>
       </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section5 />
       <Link to={`/build/${params.build}/step5/${params.shop_id}/${params.build}`}>
-      <button>Edit</button>
+      <button style={{backgroundColor:'transparent', border:'1px solid transparent', color: 'white', cursor:'pointer'}}>Edit</button>
       </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section6 />
       <Link to={`/build/${params.build}/step6/${params.shop_id}/${params.build}`}>
-      <button>Edit</button>
+      <button style={{backgroundColor:'transparent', border:'1px solid transparent', color: 'white', cursor:'pointer'}}>Edit</button>
       </Link>
     </section>
     <section className="parts-custom-shop-main">
       <Section13 />
       <Link to={`/build/${params.build}/footer/${params.shop_id}/${params.build}`}>
-      <button>Edit</button>
+      <button style={{backgroundColor:'transparent', border:'1px solid transparent', color: 'white', cursor:'pointer'}}>Edit</button>
       </Link>
     </section>
   </div>
