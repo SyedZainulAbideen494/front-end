@@ -146,26 +146,32 @@ const Shop = ({ searchResultsShop }) => {
   return (
     <div>
     {searchResultsShop.map((result) => (
-      <div className="shop-container-search-result" key={result.shop_id}>
-        <div className="shop-card-search-result">
-          <div className="shop-header-search-result">
-            <img
-              src={`https://apifordropment.online/images/${result.logo}`}
-              alt={result.shop_name}
-              className="shop-logo-search-result"
-            />
-            <div className="shop-header-details-search-result">
-              <Link
-                to={`${Linkno(result)}/${result.shop_id}/${result.shop_name}`}
-                style={{ textDecoration: "none", color: "black" }}
-                className="shop-name-link-search-result"
-              >
-                <p>{result.shop_name}</p>
-              </Link>
+      result.temp !== 'incomplete' ? (
+        <div className="shop-container-search-result" key={result.shop_id}>
+          <div className="shop-card-search-result">
+            <div className="shop-header-search-result">
+              <>
+                <img
+                  src={`https://apifordropment.online/images/${result.logo}`}
+                  alt={result.shop_name}
+                  className="shop-logo-search-result"
+                />
+                <div className="shop-header-details-search-result">
+                  <Link
+                    to={`${Linkno(result)}/${result.shop_id}/${result.shop_name}`}
+                    style={{ textDecoration: "none", color: "black" }}
+                    className="shop-name-link-search-result"
+                  >
+                    <p>{result.shop_name}</p>
+                  </Link>
+                </div>
+              </>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div key={result.shop_id} style={{ backgroundColor: 'black' }}></div>
+      )
     ))}
   </div>
   );
