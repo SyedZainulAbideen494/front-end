@@ -207,7 +207,7 @@ const router = createBrowserRouter([
   {path: '/login/success', element: <LoginPageSuccess/>},
   {path: '/dropment/admin/for/owner', element: <DropmentAdminmain/>},
   {path: '/forgot-password', element: <Passwordreset/>},
-  {path: '/resetpassword', element: <ResetPassword/>},
+  {path: '/resetpassword/:email', element: <ResetPassword/>},
   {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
   {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>},
   {path: '/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store', element: <Blog3/>}
