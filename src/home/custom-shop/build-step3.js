@@ -15,6 +15,7 @@ import Section9Buildpreview from "./sections-parts/section9-preview";
 import Section10Buildpreview from "./sections-parts/section10-preview";
 import Section11Buildpreview from "./sections-parts/section11-preview";
 import Section12Buildpreview from "./sections-parts/section12-preview";
+import Section13Buildpreview from "./sections-parts/section13-preview";
 
 
 const Step3build =() => {
@@ -308,6 +309,13 @@ const Step3build =() => {
         <Section12Buildpreview/>
         <button
         onClick={() => addShopHandler(12)}
+        className="select-nav-bar-build-shop"
+      >
+        Select
+      </button>
+      <Section13Buildpreview/>
+        <button
+        onClick={() => addShopHandler(13)}
         className="select-nav-bar-build-shop"
       >
         Select
