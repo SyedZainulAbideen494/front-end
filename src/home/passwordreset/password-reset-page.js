@@ -11,7 +11,7 @@ const ResetPassword = () => {
   const handlePasswordReset = async () => {
     try {
       // Make a request to your server to update the password
-      const response = await axios.post('/api/reset-password', { email, newPassword });
+      const response = await axios.post('https://apifordropment.online/api/reset-password', { email, newPassword });
 
       // Assuming your server sends a success message
       setMessage(response.data.message);
