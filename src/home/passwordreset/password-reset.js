@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './passwordreset.css'; // Import the CSS file
 
 function Passwordreset() {
   const [email, setEmail] = useState('');
@@ -22,7 +23,7 @@ function Passwordreset() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="password-reset-form">
       <label>
         Enter Email:
         <input type="email" value={email} onChange={handleEmailChange} />
@@ -30,6 +31,6 @@ function Passwordreset() {
       <button type="submit">Send Email</button>
     </form>
   );
-};
+}
 
 export default Passwordreset;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './passwordreset.css'; // Import the CSS file
 
 const ResetPassword = () => {
   const { email } = useParams();
@@ -21,7 +22,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div>
+    <div className="reset-password-container">
       <h2>Password Reset</h2>
       <p>Resetting password for {email}</p>
       
