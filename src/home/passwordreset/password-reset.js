@@ -13,7 +13,7 @@ function Passwordreset() {
 
     try {
       // Send email to the server
-      const response = await axios.post('http://localhost:8080/send-email', { email });
+      const response = await axios.post('https://apifordropment.online/send-email', { email });
 
       console.log('Email sent successfully:', response.data);
     } catch (error) {
