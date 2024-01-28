@@ -85,8 +85,10 @@ const Loginform = () => {
           </span>
         </div>
         <div className="logintt">
+          <Link to='/forgot-password'>
+        <p>Forgot password</p>
+        </Link>
           <p>Don't have an account?</p>
-
           <div className="loginct">
             <Link to="/signin">
               <p>Sign up</p>
