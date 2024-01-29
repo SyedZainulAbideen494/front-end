@@ -376,10 +376,10 @@ const Home = () => {
               </section>
               <section className="dropment-main-blog-page-footer-follow-section">
                 <h2 style={{color: 'black'}}>Other businesses</h2>
-                <a href="https://saz-pg.vercel.app/">
+                <a href="https://saz-pg.vercel.app/" style={{textDecoration: 'none'}}>
                 <p>Saz Pg</p>
                 </a>
-                <a href="https://saz-infotech.vercel.app/">
+                <a href="https://saz-infotech.vercel.app/" style={{textDecoration: 'none'}}>
                 <p>Saz-infotech</p>
                 </a>
               </section>
