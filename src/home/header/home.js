@@ -374,6 +374,15 @@ const Home = () => {
                 <h2 style={{color: 'black'}}>contact</h2>
                 <p>Email: dropment.saz@gmail.com</p>
               </section>
+              <section className="dropment-main-blog-page-footer-follow-section">
+                <h2 style={{color: 'black'}}>Other businesses</h2>
+                <a href="https://saz-pg.vercel.app/">
+                <p>Saz Pg</p>
+                </a>
+                <a href="https://saz-infotech.vercel.app/">
+                <p>Saz-infotech</p>
+                </a>
+              </section>
          </footer>
         </div>
       </div>
