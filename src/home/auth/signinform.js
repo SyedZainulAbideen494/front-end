@@ -140,21 +140,7 @@ const Signinform = () => {
       <form className="signup_form" onSubmit={handleSubmit}>
         <h2 className="sign-heading">Sign Up</h2>
         <div className="signup_info">
-          <div className="inp">
-            <label htmlFor="unique_id">
-              unique id
-              <br />
-            </label>
-            <input
-              type="text"
-              id="unique_id"
-              name="unique_id"
-              value={unique_id}
-              onChange={unique_idHandler}
-              placeholder="Enter Unique ID"
-              required
-            />
-          </div>
+         
           <div className="inp">
       <label htmlFor="gender">Gender</label><br/>
       <select

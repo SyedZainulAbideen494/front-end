@@ -98,7 +98,7 @@ const Userdisplay = (props) => {
             <Link to={`/user/${props.user_id}`} className="user-post-username">
               {userInfo[0]?.first_name} {userInfo[0]?.last_name}
             </Link>
-            <p className="user-unique-id">{userInfo[0]?.unique_id}</p>
+    
           </div>
         </div>
         <p className="user-bio">{userInfo[0]?.bio}</p>
