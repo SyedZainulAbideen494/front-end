@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import dropment from '../header/images/drop2_logo.png'
 import './mainpage.css'
+import Axios from "axios";
 import AllTemplate1app from "./template1/template1app";
 import NotificationComponent from "../notifications/notifications";
 import notification from '../header/images/icons8-notifications-78.png'
@@ -11,6 +12,39 @@ import search from '../header/images/icons8-search-50.png'
 import ChatMessageapp from "../chat/chat";
 import Storiesapp from "../stories/storiesdisplay";
 import Users from "../user/userapp";
+import { PieController } from "chart.js";
+
+
+const App = () => {
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (token) {
+      Axios.post('https://apifordropment.online/login/user/check', { token })
+        .then(response => {
+          setMessage(response.data.message);
+        })
+        .catch(error => {
+          setMessage(error.response.data.message);
+        });
+    }
+  }, [token]);
+
+  const handleLogin = () => {
+    // Logic to handle login
+  };
+
+  return (
+    <div>
+      <h1>HEllo</h1>
+      {message && <p style={{color: 'white'}}>{message}</p>}
+      {token ? null : <button onClick={handleLogin}>Login</button>}
+    </div>
+  );
+};
+
+
 
 const Mainpage = () => {
   const [auth, setAuth] = useState(false);
@@ -51,6 +85,7 @@ const handleButtonClick = (component) => {
 };
   return (
     <Fragment>
+      <App/>
       <nav className="navbar-dropment-main-page">
         <img src={dropment} alt="Dropment" className="logo-dropment-main-page"/> 
         <nav className="big-screen-nav-bar-dropment-main-page">

@@ -6,6 +6,34 @@ import { Link } from 'react-router-dom';
 import OrdersNoti from './notifecation-orders';
 import Storiesapp from '../stories/storiesdisplay';
 
+const App = () => {
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (token) {
+      axios.post('https://apifordropment.online/login/user/check', { token })
+        .then(response => {
+          setMessage(response.data.message);
+        })
+        .catch(error => {
+          setMessage(error.response.data.message);
+        });
+    }
+  }, [token]);
+
+  const handleLogin = () => {
+    // Logic to handle login
+  };
+
+  return (
+    <div>
+      {message && <p style={{color: 'white'}}>{message}</p>}
+      {token ? null : <button onClick={handleLogin}>Login</button>}
+    </div>
+  );
+};
+
 // Register necessary components for Chart.js
 Chart.register(...registerables);
 
@@ -135,6 +163,7 @@ const AdminOverview = () => {
 
   return (
     <div className="dashboard">
+      <App/>
     <header className="header">
       <Link to='/profile'>
       <button style={{cursor: 'pointer'}}>Profile</button>
