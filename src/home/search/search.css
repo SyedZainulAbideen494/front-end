@@ -1,8 +1,7 @@
-
 /* Filter buttons styles */
 .filter-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center the buttons horizontally */
   margin-bottom: 20px;
 }
 
@@ -25,6 +24,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: center; /* Center the results vertically */
+  align-items: center; /* Center the results horizontally */
 }
 
 /* User styles */
@@ -32,9 +33,11 @@
   padding: 20px;
   width: 300px;
   border: 1px solid white;
+  margin: 0 auto; /* Center the box horizontally */
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center user content */
 }
 
 .user-post-header-search-result {
@@ -84,6 +87,8 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the box horizontally */
+  text-align: center; /* Center shop content */
 }
 
 .shop-header-search-result {
@@ -111,6 +116,8 @@
   width: 300px;
   border: 2px solid white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the box horizontally */
+  text-align: center; /* Center product content */
 }
 
 .product-img-search-result img {
@@ -140,7 +147,7 @@
 
 .header-search header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; /* Center the header content horizontally */
   align-items: center;
 }
 
