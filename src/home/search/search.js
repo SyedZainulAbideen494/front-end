@@ -7,6 +7,8 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchResultsUser, setSearchResultsUser] = useState([]);
   const [searchResultsShop, setSearchResultsShop] = useState([]);
+  const [filter, setFilter] = useState("users"); // Default filter is "users"
+
 
   const handleSearch = () => {
     fetch(`https://apifordropment.online/api/search?query=${searchTerm}`)
@@ -34,36 +36,64 @@ const Search = () => {
       });
   };
 
+  
+
+  const filteredResults = () => {
+    if (filter === "users") {
+      return <User searchResultsUser={searchResultsUser} />;
+    } else if (filter === "shops") {
+      return <Shop searchResultsShop={searchResultsShop} />;
+    } else if (filter === "products") {
+      return <Products searchResults={searchResults} />;
+    }
+  };
+
   return (
     <div className="outer-container">
       <div className="header-search">
         <header>
           <Link to='/home'>
-          <button>back</button>
+            <button>back</button>
           </Link>
         </header>
+      
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button className="search-button" onClick={handleSearch}>Search</button>
       </div>
-     <div class="search-container">
-  <input
-    type="text"
-    class="search-input"
-    placeholder="Search"
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-  />
-  <button class="search-button" onClick={handleSearch}>Search</button>
-</div>
+      </div>
 
+      {/* Filter buttons */}
+      <div className="filter-buttons">
+        <button
+          className={filter === "users" ? "active" : ""}
+          onClick={() => setFilter("users")}
+        >
+          Users
+        </button>
+        <button
+          className={filter === "shops" ? "active" : ""}
+          onClick={() => setFilter("shops")}
+        >
+          Shops
+        </button>
+        <button
+          className={filter === "products" ? "active" : ""}
+          onClick={() => setFilter("products")}
+        >
+          Products
+        </button>
+      </div>
+
+      {/* Display filtered results */}
       <div className="user-shop-sections">
-        <span className="user-shop-section">
-          <User searchResultsUser={searchResultsUser} />
-        </span>
-        <span className="user-shop-section">
-          <Shop searchResultsShop={searchResultsShop} />
-        </span>
-        <span>
-          <Products searchResults={searchResults} />
-        </span>
+        {filteredResults()}
       </div>
     </div>
   );
@@ -76,42 +106,40 @@ const User = ({ searchResultsUser }) => {
 
   return (
     <div>
-  {searchResultsUser.map((result) => (
-    <div className="user-post-search-result" key={result.user_id}>
-      <div className="user-post-header-search-result">
-        <div className="user-post-image-search-result">
-          <img
-            src={`https://apifordropment.online/images/${result.porfilepic}`}
-            alt="User Profile"
-            className="user-profile-pic-search-result"
-          />
+      {searchResultsUser.map((result) => (
+        <div className="user-post-search-result" key={result.user_id}>
+          <div className="user-post-header-search-result">
+            <div className="user-post-image-search-result">
+              <img
+                src={`https://apifordropment.online/images/${result.porfilepic}`}
+                alt="User Profile"
+                className="user-profile-pic-search-result"
+              />
+            </div>
+            <div className="user-post-details-search-result">
+              <Link
+                to={`/user/${result.user_id}`}
+                className="user-post-username-search-result"
+              >
+                {result.first_name} {result.last_name}
+              </Link>
+              <h4 className="user-unique-id-search-result">{result.unique_id}</h4>
+            </div>
+          </div>
+          <h4 className="user-bio-search-result">{result.bio}</h4>
+          <div className="user-post-actions-search-result">
+            <Link
+              to={`/user/${result.user_id}`}
+              className="profile-link-button-search-result"
+            >
+              Visit Profile
+            </Link>
+          </div>
         </div>
-        <div className="user-post-details-search-result">
-          <Link
-            to={`/user/${result.user_id}`}
-            className="user-post-username-search-result"
-          >
-            {result.first_name} {result.last_name}
-          </Link>
-          <h4 className="user-unique-id-search-result">{result.unique_id}</h4>
-        </div>
-      </div>
-      <h4 className="user-bio-search-result">{result.bio}</h4>
-      <div className="user-post-actions-search-result">
-        <Link
-          to={`/user/${result.user_id}`}
-          className="profile-link-button-search-result"
-        >
-          Visit Profile
-        </Link>
-      </div>
+      ))}
     </div>
-  ))}
-</div>
   );
 };
-
-
 
 const Shop = ({ searchResultsShop }) => {
   if (!searchResultsShop || !Array.isArray(searchResultsShop)) {
@@ -142,38 +170,37 @@ const Shop = ({ searchResultsShop }) => {
     }
   };
 
-
   return (
     <div>
-    {searchResultsShop.map((result) => (
-      result.temp !== 'incomplete' ? (
-        <div className="shop-container-search-result" key={result.shop_id}>
-          <div className="shop-card-search-result">
-            <div className="shop-header-search-result">
-              <>
-                <img
-                  src={`https://apifordropment.online/images/${result.logo}`}
-                  alt={result.shop_name}
-                  className="shop-logo-search-result"
-                />
-                <div className="shop-header-details-search-result">
-                  <Link
-                    to={`${Linkno(result)}/${result.shop_id}/${result.shop_name}`}
-                    style={{ textDecoration: "none", color: "black" }}
-                    className="shop-name-link-search-result"
-                  >
-                    <p>{result.shop_name}</p>
-                  </Link>
-                </div>
-              </>
+      {searchResultsShop.map((result) => (
+        result.temp !== 'incomplete' ? (
+          <div className="shop-container-search-result" key={result.shop_id}>
+            <div className="shop-card-search-result">
+              <div className="shop-header-search-result">
+                <>
+                  <img
+                    src={`https://apifordropment.online/images/${result.logo}`}
+                    alt={result.shop_name}
+                    className="shop-logo-search-result"
+                  />
+                  <div className="shop-header-details-search-result">
+                    <Link
+                      to={`${Linkno(result)}/${result.shop_id}/${result.shop_name}`}
+                      style={{ textDecoration: "none", color: "black" }}
+                      className="shop-name-link-search-result"
+                    >
+                      <p>{result.shop_name}</p>
+                    </Link>
+                  </div>
+                </>
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div key={result.shop_id} style={{ backgroundColor: 'black' }}></div>
-      )
-    ))}
-  </div>
+        ) : (
+          <div key={result.shop_id} style={{ backgroundColor: 'black' }}></div>
+        )
+      ))}
+    </div>
   );
 };
 
@@ -183,23 +210,23 @@ const Products = ({ searchResults }) => {
   }
   return (
     <div>
-  {searchResults.map((result) => (
-    <Link  to={`/products/${result.id}/${result.shop_id}`} style={{textDecoration: 'none'}}>
-    <div className="PRoducts-card-search-result" key={result.id}>
-      <div className="product-img-search-result">
-        <img
-          src={`https://apifordropment.online/images/${result.images}`}
-          alt="Product Image"
-        />
-      </div>
-      <div className="product-title-search-result">
-        <h2>{result.title}</h2>
-        <p>{result.usd}</p>
-      </div>
+      {searchResults.map((result) => (
+        <Link  to={`/products/${result.id}/${result.shop_id}`} style={{textDecoration: 'none'}}>
+          <div className="PRoducts-card-search-result" key={result.id}>
+            <div className="product-img-search-result">
+              <img
+                src={`https://apifordropment.online/images/${result.images}`}
+                alt="Product Image"
+              />
+            </div>
+            <div className="product-title-search-result">
+              <h2>{result.title}</h2>
+              <p>{result.usd}</p>
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
-    </Link>
-  ))}
-</div>
   );
 };
 
