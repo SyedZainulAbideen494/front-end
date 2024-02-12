@@ -20,7 +20,9 @@ function OrdersNoti() {
     }
   }, [token]);
 
-
+  const initiateWhatsAppChat = (phoneNumber) => {
+    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+};
 
   return (
 <div class='notification-container'>
@@ -35,6 +37,19 @@ function OrdersNoti() {
         <p style={{color: 'white'}}>
           <span className='dashboard-admin-overview-order-noti-name'>Name:</span> {order.name}
         </p>
+        <button 
+    onClick={() => initiateWhatsAppChat(order.Phone)} 
+    style={{
+        backgroundColor: '#25D366', // WhatsApp green color
+        color: 'white',
+        border: 'none',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        cursor: 'pointer'
+    }}
+>
+    Chat on WhatsApp
+</button>
       </div>
     </div>
   ))}
