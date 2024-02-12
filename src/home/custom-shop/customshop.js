@@ -1273,7 +1273,13 @@ const CustomShop = () => {
   
       fetchUsersHandler();
     }, [params.shop_id]);
-  
+    const deleteShop = async () => {
+      try {
+        const response = await axios.delete(`https://apifordropment.online/shops/delete/${params.shop_id}`);
+      } catch (error) {
+        console.error(error);
+      }
+    };
     useEffect(() => {
       const fetchUser2sHandler = async () => {
         setloading(true);
@@ -1482,6 +1488,7 @@ const handleStatusChangeoffline = async () => {
         <button onClick={handleStatusChange}>Go Live</button>
       )}
     </div>
+    <button onClick={deleteShop}>Delete Shop</button>
                   </div>
                 </div>
               </header>
