@@ -9,6 +9,7 @@ const Search = () => {
   const [searchResultsShop, setSearchResultsShop] = useState([]);
   const [filter, setFilter] = useState("users"); // Default filter is "users"
 
+
   const handleSearch = () => {
     fetch(`https://apifordropment.online/api/search?query=${searchTerm}`)
       .then((response) => response.json())
@@ -64,6 +65,11 @@ const Search = () => {
   }, []);
 
   useEffect(() => {
+    fetchimagehandler();
+  }, []);
+
+  useEffect(() => {
+    handleSearch(); // Automatically search when the component mounts
     fetchimagehandler();
   }, []);
 
