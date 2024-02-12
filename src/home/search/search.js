@@ -257,7 +257,7 @@ const Products = ({ searchResults }) => {
     <div>
       {searchResults.map((result) => (
         <Link  to={`/products/${result.id}/${result.shop_id}`} style={{textDecoration: 'none'}}>
-          <div className="PRoducts-card-search-result" key={result.id}>
+          <div className="products-card-search-result" key={result.id}>
             <div className="product-img-search-result">
               <img
                 src={`https://apifordropment.online/images/${result.images}`}

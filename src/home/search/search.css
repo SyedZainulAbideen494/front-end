@@ -98,6 +98,7 @@
   border: 2px solid #333; /* Darker border */
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Invert box shadow */
   margin: 0 auto; /* Center the box horizontally */
+  margin-bottom: 10px;
   text-align: center; /* Center product content */
 }
 .product-img-search-result img {
