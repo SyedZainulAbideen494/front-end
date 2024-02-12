@@ -30,7 +30,6 @@ function OrdersNoti() {
   {orders.map((order, index) => (
     <div class='notification-item' key={index}>
       <div class='notification-content'>
-        <p className='dashboard-admin-overview-order-noti-txt-head' style={{color: 'white'}}>New Order</p>
         <p style={{color: 'white'}}>
           <span className='dashboard-admin-overview-order-noti-product'>Product:</span> {order.product}
         </p>
