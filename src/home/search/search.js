@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./search.css";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,6 @@ const Search = () => {
   const [searchResultsUser, setSearchResultsUser] = useState([]);
   const [searchResultsShop, setSearchResultsShop] = useState([]);
   const [filter, setFilter] = useState("users"); // Default filter is "users"
-
 
   const handleSearch = () => {
     fetch(`https://apifordropment.online/api/search?query=${searchTerm}`)
@@ -36,7 +35,37 @@ const Search = () => {
       });
   };
 
-  
+  const [img, setimage] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  const fetchimagehandler = useCallback(async () => {
+    setloading(true);
+    const token = localStorage.getItem("token");
+    setloading(true);
+    const response = await fetch("https://apifordropment.online/users/", {
+      headers: {
+        Authorization: token,
+      },
+    });
+    const data = await response.json();
+    const transformeduser = data.user.map((userdata) => {
+      return {
+        profilePic: `https://apifordropment.online/images/${userdata.porfilepic}`,
+        first_name: userdata.first_name,
+        last_name: userdata.last_name,
+        unique_id: userdata.unique_id,
+        occupation: userdata.occupation,
+        bio: userdata.bio,
+        user_id: userdata.user_id,
+      };
+    });
+    setimage(transformeduser);
+    setloading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchimagehandler();
+  }, []);
 
   const filteredResults = () => {
     if (filter === "users") {
@@ -47,26 +76,33 @@ const Search = () => {
       return <Products searchResults={searchResults} />;
     }
   };
-
   return (
     <div className="outer-container">
-      <div className="header-search">
-        <header>
-          <Link to='/home'>
-            <button>back</button>
-          </Link>
-        </header>
-      
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button className="search-button" onClick={handleSearch}>Search</button>
-      </div>
+  <div className="header-search">
+  <header>
+    <div className="header-left">
+      <Link to='/home'>
+        <button>back</button>
+      </Link>
+    </div>
+    <div className="header-right">
+      <img src={img[0]?.profilePic}/>
+    </div>
+    </header>
+    </div>
+    <div className="search-container">
+      <input
+        type="text"
+        className="search-input"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <button className="search-button" onClick={handleSearch}>Search</button>
+    </div>
+
+
+    <div className="filter-buttons">
       </div>
 
       {/* Filter buttons */}
