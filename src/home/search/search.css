@@ -63,9 +63,10 @@
 }
 
 .profile-link-button-search-result {
-  background-color: #0056b3; /* Changed background color */
+  background-color: #14213d; /* Changed background color */
   color: #fff;
   padding: 8px 16px;
+  margin-top: 5px;
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -170,7 +171,7 @@
 .search-button {
   background-color: white; /* Changed background color */
   color: black;
-  margin-bottom: 5px;
+  margin-bottom: 11px;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
