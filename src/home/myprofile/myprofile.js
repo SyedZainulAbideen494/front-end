@@ -99,14 +99,8 @@ const MyProfile = () => {
         <Link to="/home">
           <button className="btn-myporfile-main-div" style={{padding: '8px'}}><img src={backarrow} style={{width: '20px'}}/></button>
         </Link>
-        <Link to='/chats'>
-<button className="mboile-btn-display-home-headre" style={{ backgroundColor: 'transparent', border: 'none'}}><img src={message} style={{width: '30px', backgroundColor: 'transparent', border: 'none'}}/></button>
-</Link>
         <Link to="/edit/myprofile">
           <button className="btn-myporfile-main-div">Edit</button>
-        </Link>
-        <Link to="/Addshoppage1">
-          <button className="btn-myporfile-main-div">Add Shop</button>
         </Link>
         <button  className="btn-myporfile-main-div" onClick={toggleNotification} style={{ cursor: 'pointer' }}>Notifications</button>
         {auth ? (
