@@ -80,13 +80,16 @@ const Search = () => {
     <div className="outer-container">
   <div className="header-search">
   <header>
-    <div className="header-left">
+    <div className="header-left" style={{display: 'inline-flex'}}>
       <Link to='/home'>
-        <button>back</button>
+        <button style={{marginTop: '12px', marginRight: '9px'}}>back</button>
       </Link>
+      <h3>Search</h3>
     </div>
     <div className="header-right">
+      <Link to='/profile'>
       <img src={img[0]?.profilePic}/>
+      </Link>
     </div>
     </header>
     </div>
@@ -94,7 +97,7 @@ const Search = () => {
       <input
         type="text"
         className="search-input"
-        placeholder="Search"
+        placeholder="What Are You Looking For?"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
