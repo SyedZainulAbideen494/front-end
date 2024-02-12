@@ -98,14 +98,23 @@ const Editbtndisplay = () => {
 
     fetchUser2sHandler();
   }, []);
-
+  const deleteproduct = async () => {
+    try {
+      const response = await Axios.delete(`https://apifordropment.online/product/delete/${params.id}`);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const EEditbtn = () => {
     if (
       name.length > 0 &&
       name.length > 0 &&
       name[0].user_id === name[0].user_id
     ) {
-      return <button onClick={showedit}>Edit</button>;
+      return<Fragment>
+        <button onClick={showedit}>Edit</button>
+        <button onClick={deleteproduct}>Delete Product</button>
+        </Fragment> ;
     } else {
       return <h2></h2>;
     }
