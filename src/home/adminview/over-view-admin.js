@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div>
-      {message && <p style={{color: 'white'}}>{message}</p>}
+      {message && <p style={{color: 'white', textAlign: 'center'}}>{message}</p>}
       {token ? null : <button onClick={handleLogin}>Login</button>}
     </div>
   );
