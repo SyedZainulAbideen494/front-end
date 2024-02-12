@@ -5,6 +5,7 @@ import AdminOverviewgender from './gender-overview';
 import { Link } from 'react-router-dom';
 import OrdersNoti from './notifecation-orders';
 import Storiesapp from '../stories/storiesdisplay';
+import NotificationComponent from '../notifications/notifications';
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -28,7 +29,14 @@ const App = () => {
 
   return (
     <div>
-      {message && <p style={{color: 'white', textAlign: 'center'}}>{message}<Link to='/login'><p>Login</p></Link></p>}
+      {message && (
+        <p style={{ color: 'white', textAlign: 'center' }}>
+          {message}
+          <Link to='/login'>
+            <p>Login</p>
+          </Link>
+        </p>
+      )}
       {token ? null : <button onClick={handleLogin}>Login</button>}
     </div>
   );
@@ -40,6 +48,7 @@ Chart.register(...registerables);
 const AdminOverview = () => {
   const [orders, setOrders] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState('oneDay');
+  const [showNotification, setShowNotification] = useState(false);
   const token = localStorage.getItem('token');
 
   useEffect(() => {
@@ -99,6 +108,7 @@ const AdminOverview = () => {
     const data = generateChartData(selectedTimeRange, ordersData);
     createHourlyBarChart(selectedTimeRange, data);
   };
+
   const createHourlyBarChart = (timeRange, data) => {
     const canvasId = `orderChart-${timeRange}`;
     const canvasElement = document.getElementById(canvasId);
@@ -155,56 +165,64 @@ const AdminOverview = () => {
       console.error(`Canvas element '${canvasId}' not found.`);
     }
   };
+
   const handleTimeRangeChange = (range) => {
     setSelectedTimeRange(range);
     const data = generateChartData(range, orders);
+  };
 
+  const toggleNotification = () => {
+    setShowNotification(prevState => !prevState);
   };
 
   return (
     <div className="dashboard">
-      <App/>
-    <header className="header">
-      <Link to='/profile'>
-      <button style={{cursor: 'pointer'}}>Profile</button>
-      </Link>
-      <Link to='/Addshoppage1'>
-      <button style={{cursor: 'pointer'}}>Add shop +</button>
-      </Link>
-      <Link to='/search'>
-      <button style={{cursor: 'pointer'}}>Search</button>
-      </Link>
-      <Link to='/orders'>
-      <button style={{cursor: 'pointer'}}>Orders</button>
-      </Link>
-      <Link to='/add/Blinkfeed'>
-      <button style={{cursor: 'pointer'}}>Add Blinkfeed</button>
-      </Link>
-    </header>
-    <div className='stories-dropment-main-page' style={{margin: '20px 20px'}}>
-        <Storiesapp/>
+      <App />
+      <header className="header">
+        <Link to='/profile'>
+          <button style={{ cursor: 'pointer' }}>Profile</button>
+        </Link>
+        <Link to='/Addshoppage1'>
+          <button style={{ cursor: 'pointer' }}>Add shop +</button>
+        </Link>
+        <Link to='/search'>
+          <button style={{ cursor: 'pointer' }}>Search</button>
+        </Link>
+        <Link to='/orders'>
+          <button style={{ cursor: 'pointer' }}>Orders</button>
+        </Link>
+        <button onClick={toggleNotification} style={{ cursor: 'pointer' }}>Notifications</button>
+        <Link to='/add/Blinkfeed'>
+          <button style={{ cursor: 'pointer' }}>Add Blinkfeed</button>
+        </Link>
+      </header>
+      <div className={`notification ${showNotification ? 'show' : 'hide'}`}>
+        <NotificationComponent/>
       </div>
-    <div className="main-content">
-      <main className="main">
-        <div className="container">
-          <h2 className="section-title">Orders Overview</h2>
-          <div className="chart-container">
-            <div className="chart">
-              <canvas id={`orderChart-${selectedTimeRange}`}></canvas>
-            </div>
-            <div className="summary">
-              <h2 className="summary-title">Order Summary</h2>
-              <div className="summary-details">
-                <p className="summary-text">Total Orders</p>
-                <h2 className="summary-value">{orders.length}</h2>
+      <div className='stories-dropment-main-page' style={{ margin: '20px 20px' }}>
+        <Storiesapp />
+      </div>
+      <div className="main-content">
+        <main className="main">
+          <div className="container">
+            <h2 className="section-title">Orders Overview</h2>
+            <div className="chart-container">
+              <div className="chart">
+                <canvas id={`orderChart-${selectedTimeRange}`}></canvas>
+              </div>
+              <div className="summary">
+                <h2 className="summary-title">Order Summary</h2>
+                <div className="summary-details">
+                  <p className="summary-text">Total Orders</p>
+                  <h2 className="summary-value">{orders.length}</h2>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
+      <OrdersNoti />
     </div>
-    <OrdersNoti/>
-  </div>
   );
 };
 
