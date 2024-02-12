@@ -132,7 +132,8 @@ const Orderform = (props) => {
 
     fetchUsers2Handler();
   }, []);
-
+  const navigate = useNavigate();
+      
   const orderHandler = async (e) => {
     e.preventDefault();
     try {
@@ -150,8 +151,7 @@ const Orderform = (props) => {
       
       // Combine date and time in ISO format
       const dateTimeISO = `${formattedDate} ${formattedTime}`;
-
-      
+  
       const response = await Axios.post(
         "https://apifordropment.online/place/order",
         {
@@ -179,6 +179,7 @@ const Orderform = (props) => {
           },
         }
       );
+      navigate("/placed/order/successful");
       console.log(response.data);
     } catch (error) {
       console.error("Error placing order:", error);
@@ -368,7 +369,7 @@ const Orderform = (props) => {
         onChange={e => setzipcode(e.target.value)}
       />
     </div>
-    <button type="submit" onClick={openPaymentLink}>Place Order</button>
+    <button type="submit">Place Order</button>
   </form>
 </section>
         </div>

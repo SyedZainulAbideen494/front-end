@@ -1,0 +1,27 @@
+.success-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34; /* Dark mode background color */
+    color: #fff; /* Text color */
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .done-btn {
+    background-color: #61dafb; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .done-btn:hover {
+    background-color: #42a5f5; /* Button background color on hover */
+  }

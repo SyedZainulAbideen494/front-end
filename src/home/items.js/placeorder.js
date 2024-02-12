@@ -1,43 +1,24 @@
-import React, { Fragment, useState } from "react";
-import "./items.css";
-import { Link } from "react-router-dom";
-const Placeorder = (props) => {
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './success-place-order.css'; // Importing CSS file
+
+const SuccessPage = () => {
+  const navigate = useNavigate();
+
+  const handleDoneClick = () => {
+    navigate('/home');
+  };
+
   return (
-    <Fragment>
-      <div className="ordsuccess">
-        <div className="ord1">
-          <h1>
-            Your order has been placed
-            <br />
-            Successfully!
-          </h1>
-          <div className="greentick">
-          </div>
-        </div>
-        <div className="ord2">
-          <h3>
-            The seller will get in contact
-            <br />
-            with you soon.
-          </h3>
-        </div>
-        <div className="ord3">
-          <h2>
-            Thank you for shoping with
-            <br />
-            <span className="dropment">
-              <h1>Dropment</h1>
-            </span>
-          </h2>
-        </div>
-        <div className="confbtn">
-          <Link to="/">
-            <button>Ok</button>
-          </Link>
-        </div>
+    <div className="success-page">
+      <div className="content">
+        <h1>Order Placed Successfully</h1>
+        <p>The seller will contact you shortly via WhatsApp using the provided number.</p>
+        <p>Thank you for using Dropment!</p>
+        <button className="done-btn" onClick={handleDoneClick}>Done</button>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
-export default Placeorder;
+export default SuccessPage;

@@ -108,6 +108,7 @@ import DropmentAdminmain from "./home/dropment-admin/dropmentadmin-main";
 import AdminOverview from "./home/adminview/over-view-admin";
 import Passwordreset from "./home/passwordreset/password-reset";
 import ResetPassword from "./home/passwordreset/password-reset-page";
+import Placeorder from "./home/items.js/placeorder";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -208,6 +209,7 @@ const router = createBrowserRouter([
   {path: '/dropment/admin/for/owner', element: <DropmentAdminmain/>},
   {path: '/forgot-password', element: <Passwordreset/>},
   {path: '/resetpassword/:email', element: <ResetPassword/>},
+  {path: '/placed/order/successful', element: <Placeorder/>},
   {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
   {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>},
   {path: '/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store', element: <Blog3/>}
