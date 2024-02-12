@@ -129,7 +129,19 @@ const Orders = () => {
                                 </div>
                             </td>
                             <td>
-                                <button onClick={() => initiateWhatsAppChat(order.Phone)}>Chat on WhatsApp</button>
+                            <button 
+    onClick={() => initiateWhatsAppChat(order.Phone)} 
+    style={{
+        backgroundColor: '#25D366', // WhatsApp green color
+        color: 'white',
+        border: 'none',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        cursor: 'pointer'
+    }}
+>
+    Chat on WhatsApp
+</button>
                             </td>
                         </tr>
                     ))}
