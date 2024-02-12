@@ -171,9 +171,6 @@ const AdminOverview = () => {
     const data = generateChartData(range, orders);
   };
 
-  const toggleNotification = () => {
-    setShowNotification(prevState => !prevState);
-  };
 
   return (
     <div className="dashboard">
@@ -191,14 +188,10 @@ const AdminOverview = () => {
         <Link to='/orders'>
           <button style={{ cursor: 'pointer' }}>Orders</button>
         </Link>
-        <button onClick={toggleNotification} style={{ cursor: 'pointer' }}>Notifications</button>
         <Link to='/add/Blinkfeed'>
           <button style={{ cursor: 'pointer' }}>Add Blinkfeed</button>
         </Link>
       </header>
-      <div className={`notification ${showNotification ? 'show' : 'hide'}`}>
-        <NotificationComponent/>
-      </div>
       <div className='stories-dropment-main-page' style={{ margin: '20px 20px' }}>
         <Storiesapp />
       </div>

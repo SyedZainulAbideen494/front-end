@@ -29,7 +29,6 @@ const NotificationComponent = ({ closeNotifications }) => {
     <div className="notifications-container">
       <div className="notifications-header">
         <h2>Notifications</h2>
-        <button onClick={closeNotifications} className='close-btn-noti'>Close</button>
       </div>
       <ul className="notification-list">
         {notifications.map((notification) => (

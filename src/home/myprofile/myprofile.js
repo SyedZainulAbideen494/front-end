@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Template1app from "../template1/template1app";
 import message from '../header/images/icons8-messages-48.png'
 import backarrow from '../header/images/icons8-back-24.png'
+import NotificationComponent from "../notifications/notifications";
+
 const Spinner = () => {
   return (
     <div className="spinner-container">
@@ -17,7 +19,7 @@ const MyProfile = () => {
   const [img, setimage] = useState([]);
   const [loading, setloading] = useState(false);
   const [followerCount, setFollowerCount] = useState(0);
-
+  const [showNotification, setShowNotification] = useState(false);
   const fetchimagehandler = useCallback(async () => {
     setloading(true);
     const token = localStorage.getItem("token");
@@ -86,6 +88,10 @@ const MyProfile = () => {
     fontSize: '24px', // Change size as needed
     display: 'inline-block',
   };
+  const toggleNotification = () => {
+    setShowNotification(prevState => !prevState);
+  };
+
   return (
     <div className="profile-container">
       {/* Header Section */}
@@ -102,6 +108,7 @@ const MyProfile = () => {
         <Link to="/Addshoppage1">
           <button className="btn-myporfile-main-div">Add Shop</button>
         </Link>
+        <button  className="btn-myporfile-main-div" onClick={toggleNotification} style={{ cursor: 'pointer' }}>Notifications</button>
         {auth ? (
         <button onClick={handleLogout} className="logout-btn">
           Logout
@@ -118,6 +125,9 @@ const MyProfile = () => {
         </Link>
       )}
     </div>
+      </div>
+      <div className={`notification ${showNotification ? 'show' : 'hide'}`}>
+        <NotificationComponent/>
       </div>
 
       {/* Main Profile Section */}
