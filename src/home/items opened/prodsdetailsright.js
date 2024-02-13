@@ -31,7 +31,7 @@ const Editbtndisplay = () => {
   }
 
   const showedit = () => {
-    setshowitem(true);
+    setshowitem(prevState => !prevState);
   };
   const hideedit = () => {
     setshowitem(false);
@@ -112,9 +112,12 @@ const Editbtndisplay = () => {
       name[0].user_id === name[0].user_id
     ) {
       return<Fragment>
-        <button onClick={showedit}>Edit</button>
-        <button onClick={deleteproduct}>Delete Product</button>
-        </Fragment> ;
+      <h2 style={{ color: 'white' }}>Admin Menu</h2>
+      <div style={{ backgroundColor: '#333', padding: '20px', borderRadius: '10px', marginBottom: '20px' }}>
+        <button style={{ marginRight: '10px', backgroundColor: 'black', color: 'white', border: '1px solid white', borderRadius: '5px', padding: '8px 16px', cursor: 'pointer' }} onClick={showedit}>Edit</button>
+        <button style={{ backgroundColor: 'red', color: 'white', border: 'none', borderRadius: '5px', padding: '8px 16px', cursor: 'pointer' }} onClick={deleteproduct}>Delete Product</button>
+      </div>
+    </Fragment>
     } else {
       return <h2></h2>;
     }
