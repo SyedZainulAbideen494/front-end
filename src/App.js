@@ -19,8 +19,6 @@ import Storeabout from "./home/store/about us/shopaboutapp";
 import Plans from "./home/plans/plans";
 import Productdeatils from "./home/productdetails/productdeatils";
 import Addshopform1 from "./home/addnewshop/addshopform1";
-import ItemsDetails from "./home/items opened/itemsdetails";
-import Productdetailsapp from "./home/items opened/prodsdetailsright";
 import Dropshipping from "./home/dropshipping mode/dropshipping";
 import Prodsright from "./home/items opened/prodsdetailsright";
 import Productsdeatilspage from "./home/items opened/itemdetailspage";
