@@ -98,13 +98,21 @@ const Editbtndisplay = () => {
 
     fetchUser2sHandler();
   }, []);
+
+
   const deleteproduct = async () => {
     try {
       const response = await Axios.delete(`https://apifordropment.online/product/delete/${params.id}`);
+      // Check if deletion was successful
+      if (response.status === 200) {
+        // Redirect to /home route
+        nav('/home');
+      }
     } catch (error) {
       console.error(error);
     }
   };
+  
   const EEditbtn = () => {
     if (
       name.length > 0 &&
