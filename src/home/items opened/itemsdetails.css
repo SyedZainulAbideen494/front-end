@@ -190,3 +190,9 @@
 .copy-button.copied:hover {
   background-color: #00aa00;
 }
+
+.product-edit-main {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}

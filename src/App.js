@@ -21,7 +21,6 @@ import Productdeatils from "./home/productdetails/productdeatils";
 import Addshopform1 from "./home/addnewshop/addshopform1";
 import Dropshipping from "./home/dropshipping mode/dropshipping";
 import Prodsright from "./home/items opened/prodsdetailsright";
-import Productsdeatilspage from "./home/items opened/itemdetailspage";
 import Shopsright from "./home/shopsowner/shopsright";
 import Addproductstodatabase from "./home/addproducts/addproductsinshop";
 import Addshopniche from "./home/addnewshop/addshopniche";
@@ -107,6 +106,7 @@ import AdminOverview from "./home/adminview/over-view-admin";
 import Passwordreset from "./home/passwordreset/password-reset";
 import ResetPassword from "./home/passwordreset/password-reset-page";
 import Placeorder from "./home/items.js/placeorder";
+import ItemEdit from "./home/items opened/items-edit";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -208,6 +208,7 @@ const router = createBrowserRouter([
   {path: '/forgot-password', element: <Passwordreset/>},
   {path: '/resetpassword/:email', element: <ResetPassword/>},
   {path: '/placed/order/successful', element: <Placeorder/>},
+  {path: '/item/edit/:id', element: <ItemEdit/>},
   {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
   {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>},
   {path: '/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store', element: <Blog3/>}
