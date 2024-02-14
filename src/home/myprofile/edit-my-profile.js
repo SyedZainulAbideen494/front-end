@@ -1,7 +1,6 @@
 import React,{useCallback, useState} from "react";
 import axios from "axios";
 import './my-profile-edit.css'
-import Addimage1 from "./profilepicupdate";
 import { Link } from "react-router-dom";
 
 const EditMyProfile = () => {
