@@ -144,6 +144,7 @@ function UserProfile() {
         bio: itemsdata.bio,
         unique_id: itemsdata.unique_id,
         profilepic: `https://apifordropment.online/images/${itemsdata.porfilepic}`,
+        Phone: itemsdata.phoneno
       };
     });
     setUserInfo(transformeduserinfo);
@@ -216,7 +217,14 @@ function UserProfile() {
     }, [params.user_id]);
   
     const handleChatButtonClick = () => {
-      // Implement your logic for opening WhatsApp chat here
+      // Replace the phone number with the desired number
+      const phoneNumber = userInfo[0]?.Phone;
+    
+      // Form the WhatsApp URL
+      const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    
+      // Open the WhatsApp chat in a new window/tab
+      window.open(whatsappUrl);
     };
   
     return (
