@@ -186,6 +186,48 @@ function UserProfile() {
     }
   };
 
+
+  const ChatButton = () => {
+    const [chatPriv, setChatPriv] = useState('none');
+  
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          // Fetch token from local storage
+          const token = localStorage.getItem('token');
+  
+          // Check if token exists
+          if (!token) {
+            console.error('Token not found in local storage');
+            return;
+          }
+  
+          const response = await Axios.get(`https://apifordropment.online/api/users/${params.user_id}`, {
+            headers: {
+              Authorization: token, // Pass token in the Authorization header
+            },
+          });
+          setChatPriv(response.data.chat_priv);
+        } catch (error) {
+          console.error('Error fetching user chat privacy:', error);
+        }
+      }
+      fetchData();
+    }, [params.user_id]);
+  
+    const handleChatButtonClick = () => {
+      // Implement your logic for opening WhatsApp chat here
+    };
+  
+    return (
+      <div>
+        {(chatPriv === 'all' || chatPriv === 'who_follow_me') && ( // Check both conditions
+          <button className='homebtnprofilesusrs' onClick={handleChatButtonClick}>Chat</button>
+        )}
+      </div>
+    );
+  };
+  
   return (<Fragment>
   <div className='headerforprofiles'>
     <header>
@@ -200,6 +242,7 @@ function UserProfile() {
     ) : (
       <button onClick={toggleFollow} className='followbtn'>Link</button>
     )} 
+    <ChatButton/>
   <div className='folloiwngandunfloowingbtn'>
         <button>Linked {followerCount}</button>
       </div>
