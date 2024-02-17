@@ -46,10 +46,10 @@ function ProfileSettings() {
                         <h2>Settings</h2>
                         <div className="button-wrapper">
                             <Link to='/profile'>
-                                <button className="back-button">Back</button>
+                                <button className="edit-button-settings">Back</button>
                             </Link>
                             <Link to='/edit/myprofile'>
-                                <button className="edit-button">Edit</button>
+                                <button className="edit-button-settings">Edit</button>
                             </Link>
                         </div>
                     </header>

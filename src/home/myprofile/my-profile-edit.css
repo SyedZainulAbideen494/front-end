@@ -112,7 +112,7 @@
   display: flex;
 }
 
-.back-button, .edit-button {
+.back-button-settings, .edit-button-settings {
   background-color: #333;
   color: white;
   padding: 10px 20px;
@@ -120,13 +120,13 @@
   border: none;
   border-radius: 15px;
   font-size: 15px;
+  cursor: pointer;
   text-decoration: none;
 }
 
-.back-button:hover, .edit-button:hover {
+.back-button-settings:hover, .edit-button-settings:hover {
   background-color: #555;
   cursor: pointer;
-  margin: 5px 10px;
 }
 
 .section-1-settings {
