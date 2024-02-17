@@ -126,6 +126,7 @@
 .back-button:hover, .edit-button:hover {
   background-color: #555;
   cursor: pointer;
+  margin: 5px 10px;
 }
 
 .section-1-settings {
