@@ -1,0 +1,6 @@
+   <div className="unique-switch-container">
+        <label className="unique-switch">
+          <input type="checkbox" checked={isChecked} onChange={toggleSwitch} />
+          <span className="unique-slider unique-round"></span>
+        </label>
+      </div>

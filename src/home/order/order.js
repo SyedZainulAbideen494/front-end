@@ -253,7 +253,7 @@ function Order() {
             </div>
           </div>
           <div className="order-details">
-            <strong>Order ID: {item.orders_id}</strong>
+            <strong style={{color: 'white'}}>Order ID: {item.orders_id}</strong>
             <p>Product: {item.product}</p>
             <p>
               Ship To: {item.name}, {item.streetadrs}, {item.city}, {item.state} {item.zipcode}

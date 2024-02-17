@@ -99,7 +99,7 @@ const MyProfile = () => {
         <Link to="/home">
           <button className="btn-myporfile-main-div" style={{padding: '8px'}}><img src={backarrow} style={{width: '20px'}}/></button>
         </Link>
-        <Link to="/edit/myprofile">
+        <Link to="/settings/profile">
           <button className="btn-myporfile-main-div">Settings</button>
         </Link>
         <button  className="btn-myporfile-main-div" onClick={toggleNotification} style={{ cursor: 'pointer' }}>Notifications</button>

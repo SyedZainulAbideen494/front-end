@@ -107,6 +107,7 @@ import Passwordreset from "./home/passwordreset/password-reset";
 import ResetPassword from "./home/passwordreset/password-reset-page";
 import Placeorder from "./home/items.js/placeorder";
 import ItemEdit from "./home/items opened/items-edit";
+import ProfileSettings from "./home/myprofile/profile-settings";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -209,6 +210,7 @@ const router = createBrowserRouter([
   {path: '/resetpassword/:email', element: <ResetPassword/>},
   {path: '/placed/order/successful', element: <Placeorder/>},
   {path: '/item/edit/:id', element: <ItemEdit/>},
+  {path: '/settings/profile', element: <ProfileSettings/>},
   {path: '/blog/Unlocking-Success:-Leveraging-Customer-Data-to-Optimize-Your-Dropment-Store', element: <Blog1/>},
   {path: '/blog/Mastering-Social-Media:-Proven-Marketing-Tips-for-Dropment-Shop-Owner', element: <Blog2/>},
   {path: '/blog/The-Power-of-Storytelling:-Crafting-Irresistible-Blinkfeeds-for-Your-Dropment-Store', element: <Blog3/>}
