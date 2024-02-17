@@ -261,12 +261,7 @@ function Order() {
             <p>Phone: {item.Phone}</p>
             <p>Status: {item.status}</p>
           </div>
-          <button
-            className="order-details-button"
-            onClick={() => chatHandler(item.sender_id, item.name)}
-          >
-            Chat
-          </button>
+         
           {item.status !== 'cancel' && ( // Show cancel button only if status is not 'cancel'
             <button
               className="order-details-button cancel-button"
