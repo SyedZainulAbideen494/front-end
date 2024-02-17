@@ -235,6 +235,8 @@ function UserProfile() {
       </div>
     );
   };
+
+  
   
   return (<Fragment>
   <div className='headerforprofiles'>

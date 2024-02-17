@@ -113,11 +113,6 @@ const MyProfile = () => {
         </Link>
       )}
         <div>
-      {img[0]?.user_id === 1 && (
-        <Link to='/dropment/admin/for/owner'>
-        <button className="btn-myporfile-main-div">Admin</button>
-        </Link>
-      )}
     </div>
       </div>
       <div className={`notification ${showNotification ? 'show' : 'hide'}`}>

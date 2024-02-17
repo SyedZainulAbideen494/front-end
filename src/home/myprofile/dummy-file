@@ -4,3 +4,12 @@
           <span className="unique-slider unique-round"></span>
         </label>
       </div>
+
+      // chat btn order
+
+      <button>
+      className="order-details-button"
+      onClick={() => chatHandler(item.sender_id, item.name)}
+    >
+      Chat
+    </button>
