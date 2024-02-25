@@ -2,7 +2,41 @@ import React, { Fragment, useState, useEffect } from 'react';
 import './my-profile-edit.css'; // Assuming you have a CSS file for styling
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+const App = () => {
+    const [token, setToken] = useState(localStorage.getItem('token'));
+    const [message, setMessage] = useState('');
+  
+    useEffect(() => {
+      if (token) {
+        axios.post('https://apifordropment.online/login/user/check', { token })
+          .then(response => {
+            setMessage(response.data.message);
+          })
+          .catch(error => {
+            setMessage(error.response.data.message);
+          });
+      }
+    }, [token]);
+  
+    const handleLogin = () => {
+      // Logic to handle login
+    };
+  
+    return (
+      <div>
+        {message && (
+          <p style={{ color: 'white', textAlign: 'center' }}>
+            {message}
+            <Link to='/login'>
+              <p>Login</p>
+            </Link>
+          </p>
+        )}
+        {token ? null : <button onClick={handleLogin}>Login</button>}
+      </div>
+    );
+  };
+  
 function ProfileSettings() {
     const [privacySetting, setPrivacySetting] = useState('all');
     const [token, setToken] = useState('');
@@ -37,10 +71,12 @@ function ProfileSettings() {
                 console.error('Error updating privacy setting:', error);
             });
     };
+    
 
     return (
         <Fragment>
             <div className='settings-container'>
+                <App/>
                 <div className='settings-header'>
                     <header>
                         <h2>Settings</h2>
