@@ -46,6 +46,9 @@ const Products = () => {
   
     return (
         <div class='products-list'>
+        <div className="note-section-prod-edit">
+  <p><b>Note*</b> Add More images to your products by going to edit page of your product by clicking the button "Edit"</p>
+</div>
         <div class='inventory-table'>
           <div class='table-header'>
             <div>Image</div>
