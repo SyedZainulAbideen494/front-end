@@ -1,5 +1,5 @@
 import React,{useState, Fragment} from "react";
-import './itemsdetails.css'
+import './item-edit.css'
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 
@@ -44,18 +44,6 @@ const ItemEdit = () => {
                 value={title}
                 onChange={(e) => settitle(e.target.value)}
                 placeholder="Enter title"
-              />
-              <input
-                type="text"
-                value={price}
-                onChange={(e) => setprice(e.target.value)}
-                placeholder="price"
-              />
-              <input
-                type="text"
-                value={amount}
-                onChange={(e) => setamount(e.target.value)}
-                placeholder="amount"
               />
               <button type="submit">Update</button>
               

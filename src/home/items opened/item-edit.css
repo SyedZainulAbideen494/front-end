@@ -1,0 +1,74 @@
+/* Styles for the main section */
+.product-edit-main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Styles for the form inside the main section */
+  .product-edit-main form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styles for input fields inside the form */
+  .product-edit-main form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styles for the button inside the form */
+  .product-edit-main form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styles for paragraph elements inside the main section */
+  .product-edit-main p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Styles for the section containing image upload form */
+  .product-edit-img-section {
+    margin-top: 20px;
+  }
+  
+  /* Styles for the heading inside the image upload section */
+  .product-edit-img-section h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Styles for labels inside the image upload form */
+  .product-edit-img-section form label {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Styles for file input inside the image upload form */
+  .product-edit-img-section form input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the button inside the image upload form */
+  .product-edit-img-section form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

@@ -64,6 +64,7 @@ const Products = () => {
               <div className='mobile-inventroy' style={{color: 'white'}}><p style={{color: 'white'}}>Quantity:</p>{product.amount}</div>
               <div>
           <button class='delete-button' onClick={() => handleDelete(product.id)}>Delete</button>
+          <Link className='delete-button' style={{textDecoration: 'none'}} to={`/item/edit/${product.id}`}>Edit</Link>
           <div>
             <button class='delete-button'  onClick={() => handleInventoryUpdate(product.id, 'decrease')}>-</button>
             <button class='delete-button'  onClick={() => handleInventoryUpdate(product.id, 'increase')}>+</button>
