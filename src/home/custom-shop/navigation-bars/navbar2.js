@@ -1,6 +1,6 @@
 import React,{useCallback, useEffect, useState, Fragment, useRef} from 'react';
 import './nav-bars.css';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import logo from '../../header/images/drop2_logo.png'
 
 const NavBar2 = () => {
@@ -99,7 +99,9 @@ const NavBar2 = () => {
       <nav className="nav-header2">
         <ul className="nav-list-header2">
           <li className="nav-item-header2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Products</li>
+          <Link to='/login'>
           <li className="nav-item-header2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Login</li>
+          </Link>
           <li className="nav-item-header2" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Shop</li>
         </ul>
       </nav>

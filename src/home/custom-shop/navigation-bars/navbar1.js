@@ -1,5 +1,5 @@
 import React,{Fragment, useState, useCallback, useEffect, useRef} from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import './nav-bars.css'
 import logo from '../../header/images/drop2_logo.png'
 
@@ -97,9 +97,13 @@ const NavBar1 = () => {
         <img src={items[0]?.logo} alt="Logo" />
       </div>
       <div className="buttons-header1">
+        <Link to='/home'>
         <button className="button-header1" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Home</button>
+        </Link>
         <button className="button-header1" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Products</button>
+        <Link to='/login'>
         <button className="button-header1" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Login</button>
+        </Link>      
       </div>
       <div className="shopName-header1">
         <h1 style={{color: color[0]?.font_colour1}}>{items[0]?.shop_name}</h1>

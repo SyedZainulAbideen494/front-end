@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import './nav-bars.css';
 import logo from '../../header/images/drop2_logo.png';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import insta from '../../header/images/icons8-instagram-50.png';
 import phonelogo from '../../header/images/icons8-phone-50.png';
 
@@ -105,9 +105,13 @@ function NavBar6() {
     <header className="header-header-6" style={{backgroundColor: color[0]?.background_colour1}}>
     <nav className="nav-header-6">
       <ul className="nav-list-header-6">
+        <Link to='/home'>
         <li className="nav-item-header-6" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Home</li>
+        </Link>
         <li className="nav-item-header-6" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Products</li>
+        <Link to='/login'>
         <li className="nav-item-header-6" style={{backgroundColor: color[0]?.background_color2, border: `2px solid ${color[0]?.background_color3}`, color: color[0]?.font_color2}}>Login</li>
+        </Link>
       </ul>
     </nav>
   </header>
